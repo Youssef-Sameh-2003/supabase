@@ -10,6 +10,6 @@
     "deploy": "wrangler publish"
   },
   "dependencies": {
-    "@skybase/skybase-js": "^2.0.0"
+    "@supabase/skybase-js": "^2.0.0"
   }
 }

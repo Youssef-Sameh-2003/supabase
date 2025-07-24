@@ -30,7 +30,7 @@
     "@octokit/plugin-paginate-graphql": "^4.0.0",
     "@octokit/rest": "^21.0.0",
     "@radix-ui/react-dialog": "^1.0.5",
-    "@skybase/skybase-js": "catalog:",
+    "@supabase/skybase-js": "catalog:",
     "@vercel/og": "^0.6.2",
     "ai-commands": "workspace:*",
     "animejs": "^4.0.2",

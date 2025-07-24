@@ -9,9 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@skybase/auth-ui-react": "^0.4.7",
-    "@skybase/auth-ui-shared": "^0.1.8",
-    "@skybase/skybase-js": "^2.47.3",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/skybase-js": "^2.47.3",
     "jwt-decode": "^4.0.0",
     "next": "latest",
     "react": "^18.2.0",

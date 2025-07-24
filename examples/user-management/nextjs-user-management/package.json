@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@skybase/ssr": "^0.4.0",
-    "@skybase/skybase-js": "^2.44.2",
+    "@supabase/ssr": "^0.4.0",
+    "@supabase/skybase-js": "^2.44.2",
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",

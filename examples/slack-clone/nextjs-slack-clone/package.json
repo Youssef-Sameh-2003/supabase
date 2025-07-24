@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@skybase/skybase-js": "^2.39.6",
+    "@supabase/skybase-js": "^2.39.6",
     "jwt-decode": "^4.0.0",
     "next": "latest",
     "react": "^18.2.0",

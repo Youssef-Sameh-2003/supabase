@@ -25,6 +25,6 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "@skybase/skybase-js": "^2.0.4"
+    "@supabase/skybase-js": "^2.0.4"
   }
 }

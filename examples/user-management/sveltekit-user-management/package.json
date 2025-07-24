@@ -21,9 +21,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@skybase/auth-ui-shared": "^0.1.8",
-		"@skybase/auth-ui-svelte": "^0.2.9",
-		"@skybase/ssr": "^0.4.0",
-		"@skybase/skybase-js": "^2.44.2"
+		"@supabase/auth-ui-shared": "^0.1.8",
+		"@supabase/auth-ui-svelte": "^0.2.9",
+		"@supabase/ssr": "^0.4.0",
+		"@supabase/skybase-js": "^2.44.2"
 	}
 }
