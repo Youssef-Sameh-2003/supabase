@@ -1,12 +1,12 @@
 ---
 # Specify the following for Cursor rules
-description: For when modifying the Supabase database schema.
+description: For when modifying the Skybase database schema.
 alwaysApply: false
 ---
 
 # Database: Declarative Database Schema
 
-Mandatory Instructions for Supabase Declarative Schema Management
+Mandatory Instructions for Skybase Declarative Schema Management
 
 ## 1. **Exclusive Use of Declarative Schema**
 
@@ -19,7 +19,7 @@ Mandatory Instructions for Supabase Declarative Schema Management
 
 ## 3. **Migration Generation**
 
-- Before generating migrations, **stop the local Supabase development environment**
+- Before generating migrations, **stop the local Skybase development environment**
   ```bash
   supabase stop
   ```

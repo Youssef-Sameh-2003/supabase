@@ -1,4 +1,4 @@
-# Supabase Studio E2E Tests
+# Skybase Studio E2E Tests
 
 ## Set up
 

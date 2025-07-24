@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) on avatud lähtekoodiga Firebase'i alternatiiv. Me ehitame Firebase'i funktsioonid, kasutades ettevõtlusklassi avatud lähtekoodiga tööriistu.
 
@@ -21,7 +21,7 @@
 - [x] Faili salvestamine. [Dokumendid](https://supabase.com/docs/guides/storage)
 - [x] Armatuurlaud
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Dokumentatsioon
 
@@ -38,7 +38,7 @@ Et näha, kuidas panustada, külastage [Getting Started](../DEVELOPERS.md)
 
 ## Staatus
 
-- [x] Alpha: Me testime Supabase'i suletud kliendikogumiga
+- [x] Alpha: Me testime Skybase'i suletud kliendikogumiga
 - [x] Avalik Alpha: Igaüks saab registreeruda aadressil [supabase.com/dashboard](https://supabase.com/dashboard). Kuid olge meiega ettevaatlikud, seal on mõned veidrused
 - [x] Avalik beeta: Piisavalt stabiilne enamiku mitte-ettevõtluskasutuse jaoks
 - [ ] Avalik: Üldine kättesaadavus [[status](https://supabase.com/docs/guides/getting-started/features#feature-status)]
@@ -51,7 +51,7 @@ Oleme praegu Public Beta versioonis. Jälgige selle repo "releases", et saada te
 
 ## Kuidas see töötab
 
-Supabase on avatud lähtekoodiga tööriistade kombinatsioon. Me ehitame Firebase'i funktsioonid üles, kasutades ettevõtte kvaliteediga avatud lähtekoodiga tooteid. Kui tööriistad ja kogukonnad on olemas MIT, Apache 2 või samaväärse avatud litsentsiga, kasutame ja toetame seda tööriista. Kui tööriista ei ole olemas, siis ehitame selle ise ja kasutame avatud lähtekoodi. Supabase ei ole Firebase'i 1:1 kaardistus. Meie eesmärk on pakkuda arendajatele Firebase'ile sarnast arenduskogemust, kasutades avatud lähtekoodiga tööriistu.
+Skybase on avatud lähtekoodiga tööriistade kombinatsioon. Me ehitame Firebase'i funktsioonid üles, kasutades ettevõtte kvaliteediga avatud lähtekoodiga tooteid. Kui tööriistad ja kogukonnad on olemas MIT, Apache 2 või samaväärse avatud litsentsiga, kasutame ja toetame seda tööriista. Kui tööriista ei ole olemas, siis ehitame selle ise ja kasutame avatud lähtekoodi. Skybase ei ole Firebase'i 1:1 kaardistus. Meie eesmärk on pakkuda arendajatele Firebase'ile sarnast arenduskogemust, kasutades avatud lähtekoodiga tööriistu.
 
 **Arhitektuur**
 
@@ -77,12 +77,12 @@ Meie lähenemine kliendiraamatukogudele on modulaarne. Iga alamraamatukogu on is
   <tr>
     <th>Keel</th>
     <th>Klient</th>
-    <th colspan="5">Funktsioon-kliendid (komplekteeritud Supabase'i kliendiga)</th>
+    <th colspan="5">Funktsioon-kliendid (komplekteeritud Skybase'i kliendiga)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

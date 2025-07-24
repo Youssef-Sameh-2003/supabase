@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [सुपाबेस](https://supabase.com) एक ओपन सोर्स फ़ाायरबेस विकल्प है। हम एंटरप्राइज़-गुणवत्ता ओपन सोर्स सॉफ़्टवेयर उपकरण का उपयोग करके फ़ाायरबेस की सुविधाओं का निर्माण कर रहे हैं।
 
@@ -21,7 +21,7 @@
 - [x] भंडारण। [प्रलेखन](https://supabase.com/docs/guides/storage)
 - [x] डैशबोर्ड।
 
-![सुपाबेस का डैशबोर्ड।](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![सुपाबेस का डैशबोर्ड।](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## प्रलेखन
 

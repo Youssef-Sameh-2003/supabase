@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/8291514/213727225-56186826-bee8-43b5-9b15-86e839d89393.png#gh-dark-mode-only">
 </p>
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) är ett alternativ till Firebase med öppen källkod. Vi bygger upp funktionerna från Firebase med hjälp av öppen källkod-verktyg i företagsklass.
 
@@ -20,7 +20,7 @@
 - [x] AI + Vektor/Inbäddningsverktyg. [Docs](https://supabase.com/docs/guides/ai)
 - [x] Kontrollpanel
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 Bevaka "releases" i denna repo för att få information om större uppdateringar.
 
@@ -41,7 +41,7 @@ För att se hur man bidrar, besök [Getting Started](../DEVELOPERS.md)
 
 ## Hur det fungerar
 
-Supabase är en kombination av verktyg med öppen källkod. Vi bygger funktionerna i Firebase med hjälp av öppna källkodsprodukter i företagsklass. Om verktygen och gemenskaperna finns med en MIT-, Apache 2- eller motsvarande öppen licens kommer vi att använda och stödja det verktyget. Om verktyget inte finns, bygger vi det själv och använder öppen källkod. Supabase är inte en 1-till-1-mappning av Firebase. Vårt mål är att ge utvecklare en Firebase-liknande utvecklarupplevelse med hjälp av verktyg med öppen källkod.
+Skybase är en kombination av verktyg med öppen källkod. Vi bygger funktionerna i Firebase med hjälp av öppna källkodsprodukter i företagsklass. Om verktygen och gemenskaperna finns med en MIT-, Apache 2- eller motsvarande öppen licens kommer vi att använda och stödja det verktyget. Om verktyget inte finns, bygger vi det själv och använder öppen källkod. Skybase är inte en 1-till-1-mappning av Firebase. Vårt mål är att ge utvecklare en Firebase-liknande utvecklarupplevelse med hjälp av verktyg med öppen källkod.
 
 **Arkitektur**
 
@@ -67,12 +67,12 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
   <tr>
     <th>Språk</th>
     <th>Klient</th>
-    <th colspan="5">Feature-Clients (ingår i Supabase-klienten)</th>
+    <th colspan="5">Feature-Clients (ingår i Skybase-klienten)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
@@ -200,7 +200,7 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
 
 ## Märken
 
-![Made with Supabase](../apps/www/public/badge-made-with-supabase.svg)
+![Made with Skybase](../apps/www/public/badge-made-with-supabase.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase.svg)](https://supabase.com)
@@ -212,12 +212,12 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```
 
-![Made with Supabase (dark)](../apps/www/public/badge-made-with-supabase-dark.svg)
+![Made with Skybase (dark)](../apps/www/public/badge-made-with-skybase-dark.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
@@ -229,7 +229,7 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase-dark.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```

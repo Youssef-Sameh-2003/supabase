@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) is een open source Firebase alternatief. We bouwen de functies van Firebase met behulp van enterprise-grade open source tools.
 
@@ -21,7 +21,7 @@
 - [x] Bestandsopslag. [Docs](https://supabase.com/docs/guides/storage)
 - [x] Dashboard
 
-[Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+[Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Documentatie
 
@@ -38,7 +38,7 @@ Om te zien hoe u kunt bijdragen, bezoek [Aan de slag](../DEVELOPERS.md)
 
 ## Status
 
-- [Alpha: We testen Supabase met een gesloten groep klanten
+- [Alpha: We testen Skybase met een gesloten groep klanten
 - [x] Publieke Alpha: Iedereen kan zich aanmelden op [supabase.com/dashboard](https://supabase.com/dashboard). Maar doe het rustig aan, er zijn een paar kinken
 - [Publieke Beta: Stabiel genoeg voor de meeste niet-bedrijfsmatige toepassingen
 - [Publiek: General Availability [[status](https://supabase.com/docs/guides/getting-started/features#feature-status)]
@@ -51,7 +51,7 @@ We zijn momenteel in Openbare Beta. Bekijk "releases" van deze repo om op de hoo
 
 ## Hoe het werkt
 
-Supabase is een combinatie van open source tools. We bouwen de functies van Firebase met behulp van enterprise-grade, open source producten. Als de tools en communities bestaan, met een MIT, Apache 2, of gelijkwaardige open licentie, zullen we die tool gebruiken en ondersteunen. Als de tool niet bestaat, bouwen en openen we hem zelf. Supabase is geen 1-op-1 mapping van Firebase. Ons doel is om ontwikkelaars een Firebase-achtige ontwikkelaarservaring te geven met behulp van open source tools.
+Skybase is een combinatie van open source tools. We bouwen de functies van Firebase met behulp van enterprise-grade, open source producten. Als de tools en communities bestaan, met een MIT, Apache 2, of gelijkwaardige open licentie, zullen we die tool gebruiken en ondersteunen. Als de tool niet bestaat, bouwen en openen we hem zelf. Skybase is geen 1-op-1 mapping van Firebase. Ons doel is om ontwikkelaars een Firebase-achtige ontwikkelaarservaring te geven met behulp van open source tools.
 
 **Architectuur**
 
@@ -77,12 +77,12 @@ Onze aanpak voor client libraries is modulair. Elke sub-bibliotheek is een op zi
   <tr>
     <th>Taal</th>
     <th>Client</th>
-    <th colspan="5">Feature-Clients (gebundeld in Supabase client)</th>
+    <th colspan="5">Feature-Clients (gebundeld in Skybase client)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

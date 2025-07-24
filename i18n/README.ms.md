@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) adalah sumber terbuka alternatif kepada Firebase. Kami sedang membina ciri-ciri Firebase menggunakan alat sumber terbuka kelas perusahaan.
 
@@ -17,7 +17,7 @@
 - [x] Storan
 - [x] Fungsi-fungsi
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Dokumentasi
 
@@ -31,7 +31,7 @@ Untuk dokumentasi lengkap, layari [supabase.com/docs](https://supabase.com/docs)
 
 ## Status
 
-- [x] Alpha: Kami menguji Supabase dengan sejumlah pelanggan secara tertutup
+- [x] Alpha: Kami menguji Skybase dengan sejumlah pelanggan secara tertutup
 - [x] Public Alpha: Sesiapa sahaja boleh mendaftar di [supabase.com/dashboard](https://supabase.com/dashboard). Tetapi, mohon bersabar kerana mungkin ada masalah
 - [x] Public Beta: Cukup stabil untuk kebanyakan kes penggunaan bukan perusahaan
 - [ ] Public: Bersedia untuk pengeluaran
@@ -44,7 +44,7 @@ Kami kini berada di Public Beta. Tonton "siaran" repo ini untuk diberitahu menge
 
 ## Bagaimana ia berfungsi
 
-Supabase adalah gabungan alat sumber terbuka. Kami membina ciri Firebase menggunakan produk sumber terbuka kelas perusahaan. Sekiranya alat dan komuniti itu ada, dengan MIT, Apache 2, atau lesen terbuka yang lain, kami akan menggunakan dan menyokong alat itu. Jika tiada, kita akan membina sumber terbuka sendiri. Supabase bukanlah sama seperti Firebase. Tujuan kami adalah untuk memberi pengalaman kepada pembangun seperti Firebase menggunakan alat sumber terbuka.
+Skybase adalah gabungan alat sumber terbuka. Kami membina ciri Firebase menggunakan produk sumber terbuka kelas perusahaan. Sekiranya alat dan komuniti itu ada, dengan MIT, Apache 2, atau lesen terbuka yang lain, kami akan menggunakan dan menyokong alat itu. Jika tiada, kita akan membina sumber terbuka sendiri. Skybase bukanlah sama seperti Firebase. Tujuan kami adalah untuk memberi pengalaman kepada pembangun seperti Firebase menggunakan alat sumber terbuka.
 
 **Seni bina semasa**
 
@@ -65,7 +65,7 @@ Anda juga boleh [host sendiri](https://supabase.com/docs/guides/hosting/overview
 
 Librari klien kami adalah modular. Setiap sub-librari adalah pelaksanaan standalone untuk satu sistem luaran. Ini adalah salah satu cara kami menyokong alat yang ada.
 
-- **`supabase-{lang}`**: Menggabungkan librari dan menambahkan pengayaan.
+- **`skybase-{lang}`**: Menggabungkan librari dan menambahkan pengayaan.
   - `postgrest-{lang}`: Librari klien untuk bekerjasama [PostgREST](https://github.com/postgrest/postgrest)
   - `realtime-{lang}`: Librari klien untuk bekerjasama [Realtime](https://github.com/supabase/realtime)
   - `gotrue-{lang}`: Librari klien untuk bekerjasama [GoTrue](https://github.com/netlify/gotrue)

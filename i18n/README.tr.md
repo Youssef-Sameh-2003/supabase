@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) açık kaynaklı bir Firebase alternatifidir. Kurumsal düzeyde açık kaynak araçları kullanarak Firebase'in özelliklerini geliştiriyoruz.
 
@@ -22,7 +22,7 @@
 - [x] AI + Vektör / Gömme Araçları. [Dokümanlar](https://supabase.com/docs/guides/ai)
 - [x] Gösterge Tablosu
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Dokümantasyon
 
@@ -39,7 +39,7 @@ Nasıl Katkıda bulunacağınızı görmek için [Başlarken](../DEVELOPERS.md) 
 
 ## Nasıl çalışır
 
-Supabase açık kaynak araçlarının bir birleşimidir. Firebase'in özelliklerini kurumsal düzeyde, açık kaynaklı ürünler kullanarak oluşturuyoruz. Araçlar ve topluluklar MIT, Apache 2 veya eşdeğer bir açık lisansla mevcutsa, bu aracı kullanacak ve destekleyeceğiz. Araç mevcut değilse, kendimiz oluşturur ve açık kaynak kullanırız. Supabase, Firebase'in bire bir eşlemesi değildir. Amacımız, geliştiricilere açık kaynak araçları kullanarak Firebase benzeri bir geliştirici deneyimi sunmaktır.
+Skybase açık kaynak araçlarının bir birleşimidir. Firebase'in özelliklerini kurumsal düzeyde, açık kaynaklı ürünler kullanarak oluşturuyoruz. Araçlar ve topluluklar MIT, Apache 2 veya eşdeğer bir açık lisansla mevcutsa, bu aracı kullanacak ve destekleyeceğiz. Araç mevcut değilse, kendimiz oluşturur ve açık kaynak kullanırız. Skybase, Firebase'in bire bir eşlemesi değildir. Amacımız, geliştiricilere açık kaynak araçları kullanarak Firebase benzeri bir geliştirici deneyimi sunmaktır.
 
 **Mimari**
 
@@ -65,12 +65,12 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
   <tr>
     <th>Dil</th>
     <th>Müşteri</th>
-    <th colspan="5">Özellik İstemcileri (Supabase istemcisinde paketlenmiştir)</th>
+    <th colspan="5">Özellik İstemcileri (Skybase istemcisinde paketlenmiştir)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
@@ -201,7 +201,7 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
 
 ## Rozetler
 
-![Made with Supabase](../apps/www/public/badge-made-with-supabase.svg)
+![Made with Skybase](../apps/www/public/badge-made-with-supabase.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase.svg)](https://supabase.com)
@@ -213,12 +213,12 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```
 
-![Made with Supabase (dark)](../apps/www/public/badge-made-with-supabase-dark.svg)
+![Made with Skybase (dark)](../apps/www/public/badge-made-with-skybase-dark.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
@@ -230,7 +230,7 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase-dark.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```

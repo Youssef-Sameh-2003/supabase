@@ -1,8 +1,8 @@
-# Caching data with Next.js 13 and Supabase
+# Caching data with Next.js 13 and Skybase
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-It showcases how to [fetch and cache data](https://beta.nextjs.org/docs/data-fetching/caching) with Next.js and Supabase.
+It showcases how to [fetch and cache data](https://beta.nextjs.org/docs/data-fetching/caching) with Next.js and Skybase.
 
 ## Getting Started
 

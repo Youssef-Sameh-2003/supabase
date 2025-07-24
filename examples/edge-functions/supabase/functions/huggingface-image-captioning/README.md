@@ -1,4 +1,4 @@
-# Image Captioning with Supabase Storage and Huggingface.js
+# Image Captioning with Skybase Storage and Huggingface.js
 
 [Hugging Face](https://huggingface.co/) is the collaboration platform for the machine learning community.
 
@@ -17,7 +17,7 @@ Putting this together with [Supabase Storage](https://supabase.com/storage) and 
 - Create a `caption` column of type `text`.
 
 5. Regenerate TypeScript types to include new `image_caption` table.
-6. Deploy the function to Supabase: `supabase functions deploy huggingface-image-captioning`.
+6. Deploy the function to Skybase: `supabase functions deploy huggingface-image-captioning`.
 7. Create the Database Webhook in the [Supabase Dashboard](https://supabase.com/dashboard/project/_/database/hooks) to trigger the `huggingface-image-captioning` function anytime a record is added to the `storage.objects` table.
 
 ## Generate TypeScript Types

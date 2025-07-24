@@ -17,7 +17,7 @@
 - [x] સ્ટોરેજ
 - [x] ફંક્શન્સ
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## દસ્તાવેજીકરણ
 
@@ -65,7 +65,7 @@
 
 અમારી ક્લાયંટ લાઇબ્રેરી મોડ્યુલર છે. દરેક સબ-લાઇબ્રેરી એ એક બાહ્ય સિસ્ટમ માટે એકલ અમલીકરણ છે. હાલના સાધનોને સમર્થન આપવાની અમારી આ એક રીત છે.
 
-- **`supabase-{lang}`**: લાઇબ્રેરીઝને જોડે છે અને સમૃધ્ધિ ઉમેરે છે.
+- **`skybase-{lang}`**: લાઇબ્રેરીઝને જોડે છે અને સમૃધ્ધિ ઉમેરે છે.
   - `postgrest-{lang}`: [PostgREST](https://github.com/postgrest/postgrest) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
   - `realtime-{lang}`: [Realtime](https://github.com/supabase/realtime) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
   - `gotrue-{lang}`: [GoTrue](https://github.com/netlify/gotrue) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.

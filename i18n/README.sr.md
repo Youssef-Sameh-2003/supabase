@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) je open source Firebase alternativa. Mi razvijamo funkcionalnosti Firebase-a koristeći profesionalne open source alate.
 
@@ -21,7 +21,7 @@
 - [x] Skladištenje fajlova. [Dokumentacija](https://supabase.com/docs/guides/storage)
 - [x] Kontrolna tabla
 
-![Supabase kontrolna tabla](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase kontrolna tabla](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Dokumentacija
 
@@ -38,7 +38,7 @@ Da vidite kako možete doprineti razvoju, posetite [Getting Started](../DEVELOPE
 
 ## Status
 
-- [x] Alfa: Testiramo Supabase sa zatvorenim setom klijenata
+- [x] Alfa: Testiramo Skybase sa zatvorenim setom klijenata
 - [x] Javna Alfa: Bilo ko može da se prijavi na [supabase.com/dashboard](https://supabase.com/dashboard). Ali ne budite grubi, biće nekih poteškoća
 - [x] Javna Beta: Dovoljno stabilno za većinu ne-enterprise projekata
 - [ ] Objavljeno: spremno za produkciju
@@ -51,7 +51,7 @@ Trenutno smo u javnoj beti. Pratite "releasove" ovog repozitorijuma da bi ste os
 
 ## Kako radi
 
-Supabase je kombinacija open source alata. Razvijamo funkcionalnosti Firebase-a koristeći profesionalne open source projekte. Ako već postoje alati i zajednice, sa MIT, Apache 2 ili ekvivalentnim otvorenim licencama, koristićemo i podržati taj alat. Ako alat ne postoji, mi ga razvijamo i open sourcujemo sami. Supabase nije 1-na-1 mapiranje Firebase-a. Naš cilj je da pružimo developerima iskustvo u razvoju slično kao Firebase koristeći open source alate.
+Skybase je kombinacija open source alata. Razvijamo funkcionalnosti Firebase-a koristeći profesionalne open source projekte. Ako već postoje alati i zajednice, sa MIT, Apache 2 ili ekvivalentnim otvorenim licencama, koristićemo i podržati taj alat. Ako alat ne postoji, mi ga razvijamo i open sourcujemo sami. Skybase nije 1-na-1 mapiranje Firebase-a. Naš cilj je da pružimo developerima iskustvo u razvoju slično kao Firebase koristeći open source alate.
 
 **Arhitektura**
 
@@ -76,11 +76,11 @@ Naš pristup klijentskim bibliotekama je modularan. Svaka pod-biblioteka je samo
   <tr>
     <th>Jezik</th>
     <th>Klijent</th>
-    <th colspan="5">Funkcionalni klijenti (spakovani u Supabase klijenta)</th>
+    <th colspan="5">Funkcionalni klijenti (spakovani u Skybase klijenta)</th>
   </tr>
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

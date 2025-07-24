@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com)는 파이어베이스의 오픈소스 대안입니다. 엔터프라이즈급 오픈 소스 도구를 사용하여 Firebase의 기능을 구축하고 있습니다.
 
@@ -22,7 +22,7 @@
 - [x] AI + 벡터/임베딩스 툴킷. [Docs](https://supabase.com/docs/guides/ai)
 - [x] 대시보드
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 주요 업데이트에 대한 알림을 받으려면 이 리포지토리의 "릴리즈"를 살펴보세요.
 
@@ -71,12 +71,12 @@ Supabase는 [호스팅 플랫폼](https://supabase.com/dashboard)입니다. 가�
   <tr>
     <th>언어</th>
     <th>클라이언트</th>
-    <th colspan="5">기능 클라이언트(Supabase 클라이언트에 번들로 제공)</th>
+    <th colspan="5">기능 클라이언트(Skybase 클라이언트에 번들로 제공)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
@@ -207,7 +207,7 @@ Supabase는 [호스팅 플랫폼](https://supabase.com/dashboard)입니다. 가�
 
 ## Badges (배지)
 
-![Made with Supabase](../apps/www/public/badge-made-with-supabase.svg)
+![Made with Skybase](../apps/www/public/badge-made-with-supabase.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase.svg)](https://supabase.com)
@@ -219,12 +219,12 @@ Supabase는 [호스팅 플랫폼](https://supabase.com/dashboard)입니다. 가�
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```
 
-![Made with Supabase (dark)](../apps/www/public/badge-made-with-supabase-dark.svg)
+![Made with Skybase (dark)](../apps/www/public/badge-made-with-skybase-dark.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
@@ -236,7 +236,7 @@ Supabase는 [호스팅 플랫폼](https://supabase.com/dashboard)입니다. 가�
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase-dark.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```

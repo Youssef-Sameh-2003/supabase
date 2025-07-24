@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) er et open source-alternativ til Firebase. Vi bygger funksjonaliteten til Firebase ved hjelp av enterprise-klare open source-verktøy.
 
@@ -17,7 +17,7 @@
 - [x] Lagring
 - [x] Funksjoner
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Dokumentasjon
 
@@ -31,7 +31,7 @@ Besøk [supabase.com/docs](https://supabase.com/docs) for full dokumentasjon.
 
 ## Status
 
-- [x] Alpha: Vi tester Supabase med en lukket gruppe kunder
+- [x] Alpha: Vi tester Skybase med en lukket gruppe kunder
 - [x] Offentlig Alpha: Hvem som helst kan registrere seg på [supabase.com/dashboard](https://supabase.com/dashboard). Merk at enkelte feil og quirks kan forekomme.
 - [x] Offentlig Beta: Stabilt nok for de fleste ikke-enterprise-bruksområder
 - [ ] Offentlig: Produksjonsklar
@@ -44,7 +44,7 @@ Vi er for øyeblikket i Offentlig Beta. Følg med på "releases" til dette repoe
 
 ## Slik fungerer det
 
-Supabase er en samling av open source-verktøy. Vi bygger funksjonaliteten til Firebase ved hjelp av enterprise-klare open source-produkter. Dersom et eksisterende verktøy har et community rundt seg og en MIT, APache 2 eller tilsvarende åpen lisens, kommer vi til å bruke og støtte det. Hvis verktøyet ikke eksisterer, bygger vi det selv og gjøre kildekoden tilgjengelig. Supabase er ikke en 1-til-1-mapping av Firebase. Målet vårt er å gi utviklere en Firebase-lignende utvikleropplevelse ved hjelp av open source-verktøy.
+Skybase er en samling av open source-verktøy. Vi bygger funksjonaliteten til Firebase ved hjelp av enterprise-klare open source-produkter. Dersom et eksisterende verktøy har et community rundt seg og en MIT, APache 2 eller tilsvarende åpen lisens, kommer vi til å bruke og støtte det. Hvis verktøyet ikke eksisterer, bygger vi det selv og gjøre kildekoden tilgjengelig. Skybase er ikke en 1-til-1-mapping av Firebase. Målet vårt er å gi utviklere en Firebase-lignende utvikleropplevelse ved hjelp av open source-verktøy.
 
 **Nåværende arkitektur**
 
@@ -64,7 +64,7 @@ Supabase er en [hostet plattform](https://supabase.com/dashboard). Du kan regist
 
 Klient-bibliotekene våre er modulære. Hvert under-bibliotek er en fristtående implementasjon av et enkelt, eksternt system. Dette er en av måtene vi støtter eksisterende verktøy på.
 
-- **`supabase-{lang}`**: Kombinerer biblioteker, samt forbedringer.
+- **`skybase-{lang}`**: Kombinerer biblioteker, samt forbedringer.
   - `postgrest-{lang}`: Klient-bibliotek for [PostgREST](https://github.com/postgrest/postgrest)
   - `realtime-{lang}`: Klient-bibliotek for [Realtime](https://github.com/supabase/realtime)
   - `gotrue-{lang}`: Klient-bibliotek for [GoTrue](https://github.com/netlify/gotrue)

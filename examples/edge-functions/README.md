@@ -1,6 +1,6 @@
-# Supabase Edge Function Examples
+# Skybase Edge Function Examples
 
-## What are Supabase Edge Functions?
+## What are Skybase Edge Functions?
 
 [Supabase Edge Functions](https://supabase.com/edge-functions) are written in TypeScript, run via Deno, and deployed with the Supabase CLI. Please [download](https://github.com/supabase/cli#install-the-cli) the latest version of the Supabase CLI, or [upgrade](https://github.com/supabase/cli#install-the-cli) it if you have it already installed.
 
@@ -62,9 +62,9 @@ This example includes a create-react-app in the [`./app/`](./app/) directory whi
 
 ### Deploy via GitHub Actions
 
-This example includes a [deploy GitHub Action](./.github/workflows/deploy.yaml) that automatically deploys your Supabase Edge Functions when pushing to or merging into the main branch.
+This example includes a [deploy GitHub Action](./.github/workflows/deploy.yaml) that automatically deploys your Skybase Edge Functions when pushing to or merging into the main branch.
 
-You can use the [`setup-cli` GitHub Action](https://github.com/marketplace/actions/supabase-cli-action) to run Supabase CLI commands in your GitHub Actions, for example to deploy a Supabase Edge Function:
+You can use the [`setup-cli` GitHub Action](https://github.com/marketplace/actions/skybase-cli-action) to run Skybase CLI commands in your GitHub Actions, for example to deploy a Skybase Edge Function:
 
 ```yaml
 name: Deploy Function

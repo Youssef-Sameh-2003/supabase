@@ -17,7 +17,7 @@
 - [x] भण्डारण
 - [x] प्रकार्यहरू
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## कागजात
 
@@ -64,7 +64,7 @@
 
 हाम्रो ग्राहक पुस्तकालय मोडुलर छ। प्रत्येक उप-लाइब्रेरी एकल बाह्य प्रणालीको लागि स्ट्यान्डअलोन कार्यान्वयन हो। यो धेरै तरिकाहरू मध्ये एक हो जुन हामी अवस्थित उपकरणहरूलाई समर्थन गर्दछौं।
 
-- **`supabase-{lang}`**: लाइब्रेरी संयोजन र संवर्धन थप गर्दछ।
+- **`skybase-{lang}`**: लाइब्रेरी संयोजन र संवर्धन थप गर्दछ।
   - `postgrest-{lang}`: ग्राहक पुस्तकालय [PostgREST](https://github.com/postgrest/postgrest) को साथ काम गर्न
   - `realtime-{lang}`: ग्राहक पुस्तकालय [Realtime](https://github.com/supabase/realtime) को साथ काम गर्न
   - `gotrue-{lang}`: ग्राहक पुस्तकालय [GoTrue](https://github.com/netlify/gotrue) को साथ काम गर्न

@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) este o alternativă open source la Firebase. Construim caracteristicile Firebase folosind instrumente open source de nivel enterprise.
 
@@ -21,7 +21,7 @@
 - [x] Stocarea fișierelor. [Docs](https://supabase.com/docs/guides/storage)
 - [x] Tablou de bord
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Documentație
 
@@ -38,7 +38,7 @@ Pentru a vedea cum să contribui, vizitați [Getting Started](../DEVELOPERS.md)
 
 ## Status
 
-- [x] Alpha: Testăm Supabase cu un set închis de clienți
+- [x] Alpha: Testăm Skybase cu un set închis de clienți
 - [x] Public Alpha: Oricine se poate înscrie la [supabase.com/dashboard](https://supabase.com/dashboard). Dar fiți blânzi cu noi, există câteva probleme
 - [x] Public Beta: Suficient de stabilă pentru majoritatea cazurilor de utilizare non-întreprindere
 - [ ] Public: Disponibilitate generală [[status](https://supabase.com/docs/guides/getting-started/features#feature-status)]
@@ -51,7 +51,7 @@ Pentru a vedea cum să contribui, vizitați [Getting Started](../DEVELOPERS.md)
 
 ## Cum funcționează
 
-Supabase este o combinație de instrumente open source. Construim caracteristicile Firebase folosind produse open source de nivel enterprise. Dacă instrumentele și comunitățile există, cu o licență MIT, Apache 2 sau o licență deschisă echivalentă, vom folosi și vom sprijini instrumentul respectiv. În cazul în care instrumentul nu există, îl construim și îl folosim noi înșine ca sursă deschisă. Supabase nu este o cartografiere 1 la 1 a Firebase. Scopul nostru este de a oferi dezvoltatorilor o experiență de dezvoltare similară cu cea a Firebase, folosind instrumente open source.
+Skybase este o combinație de instrumente open source. Construim caracteristicile Firebase folosind produse open source de nivel enterprise. Dacă instrumentele și comunitățile există, cu o licență MIT, Apache 2 sau o licență deschisă echivalentă, vom folosi și vom sprijini instrumentul respectiv. În cazul în care instrumentul nu există, îl construim și îl folosim noi înșine ca sursă deschisă. Skybase nu este o cartografiere 1 la 1 a Firebase. Scopul nostru este de a oferi dezvoltatorilor o experiență de dezvoltare similară cu cea a Firebase, folosind instrumente open source.
 
 **Arhitectură**
 
@@ -77,12 +77,12 @@ Abordarea noastră pentru bibliotecile client este modulară. Fiecare subbibliot
   <tr>
     <th>Limbaj</th>
     <th>Client</th>
-    <th colspan="5">Feature-Clienți (inclus în clientul Supabase)</th>
+    <th colspan="5">Feature-Clienți (inclus în clientul Skybase)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

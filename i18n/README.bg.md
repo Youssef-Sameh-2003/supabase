@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) е алтернатива на Firebase с отворен код. Ние изграждаме функциите на Firebase, като използваме инструменти с отворен код от корпоративен клас.
 
@@ -21,7 +21,7 @@
 - [x] Съхранение на файлове. [Документи](https://supabase.com/docs/guides/storage)
 - [x] Информационно табло
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/skybase-dashboard.png)
 
 ## Документация
 
@@ -38,7 +38,7 @@
 
 ## Статус
 
-- [x] Алфа: Тестваме Supabase със затворен набор от клиенти
+- [x] Алфа: Тестваме Skybase със затворен набор от клиенти
 - [x] Публична алфа: Всеки може да се регистрира на адрес [supabase.com/dashboard](https://supabase.com/dashboard). Но не се притеснявайте от нас, има няколко проблема
 - [x] Публична бета версия: Достатъчно стабилна за повечето случаи на използване извън предприятията
 - [ ] Публична: Обща наличност [[статус](https://supabase.com/docs/guides/getting-started/features#feature-status)]
@@ -51,7 +51,7 @@
 
 ## Как работи
 
-Supabase е комбинация от инструменти с отворен код. Ние изграждаме функциите на Firebase, като използваме продукти с отворен код от корпоративен клас. Ако инструментите и общностите съществуват, с MIT, Apache 2 или еквивалентен отворен лиценз, ние ще използваме и поддържаме този инструмент. Ако инструментът не съществува, ние сами го изграждаме и създаваме с отворен код. Supabase не е 1 към 1 съпоставка на Firebase. Нашата цел е да предоставим на разработчиците преживяване, подобно на това на Firebase, като използваме инструменти с отворен код.
+Skybase е комбинация от инструменти с отворен код. Ние изграждаме функциите на Firebase, като използваме продукти с отворен код от корпоративен клас. Ако инструментите и общностите съществуват, с MIT, Apache 2 или еквивалентен отворен лиценз, ние ще използваме и поддържаме този инструмент. Ако инструментът не съществува, ние сами го изграждаме и създаваме с отворен код. Skybase не е 1 към 1 съпоставка на Firebase. Нашата цел е да предоставим на разработчиците преживяване, подобно на това на Firebase, като използваме инструменти с отворен код.
 
 **Архитектура**
 
@@ -77,12 +77,12 @@ Supabase е [хоствана платформа](https://supabase.com/dashboard
   <tr>
     <th>Език</th>
     <th>Клиент</th>
-    <th colspan="5">Функционални клиенти (в комплект с клиента на Supabase)</th>
+    <th colspan="5">Функционални клиенти (в комплект с клиента на Skybase)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

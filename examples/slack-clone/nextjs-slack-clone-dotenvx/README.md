@@ -1,4 +1,4 @@
-# Integrating Dotenvx with a Supabase Project
+# Integrating Dotenvx with a Skybase Project
 
 This project is a full-stack Slack clone built using:
 
@@ -114,9 +114,9 @@ Visit `localhost:3000` to test the app with GitHub OAuth integration.
 ### Prerequisites
 
 - **Vercel Account**
-- **Supabase Account**
+- **Skybase Account**
 
-1. **Create a Supabase Project:**
+1. **Create a Skybase Project:**
 
 Sign up at [Supabase Dashboard](https://supabase.com/dashboard) and create a new project. After the database initializes, create `supabase/.env.production` file with your project specific values.
 
@@ -142,7 +142,7 @@ npx @dotenvx/dotenvx set SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET "<your-secret>" -f
 
 This also creates the encryption key in `supabase/.env.production` and the decryption key in `supabase/.env.keys`.
 
-3. **Deploy to Supabase Remote:**
+3. **Deploy to Skybase Remote:**
 
 ```bash
 npx @dotenvx/dotenvx run -f supabase/.env.production -- npx supabase link
@@ -152,7 +152,7 @@ npx @dotenvx/dotenvx run -f supabase/.env.production -- npx supabase config push
 
 ### How to Use with Preview Branches
 
-Dotenvx now supports encrypted secrets with Supabase's branching system. This allows you to securely manage environment-specific configurations across different branches.
+Dotenvx now supports encrypted secrets with Skybase's branching system. This allows you to securely manage environment-specific configurations across different branches.
 
 Here's how to set up encrypted secrets for your preview branches:
 
