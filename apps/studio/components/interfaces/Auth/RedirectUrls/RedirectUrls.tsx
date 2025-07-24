@@ -82,7 +82,7 @@ export const RedirectUrls = () => {
             allowed, for example, https://*.domain.com
           </ScaffoldDescription>
         </div>
-        <DocsButton href="https://supabase.com/docs/guides/auth/concepts/redirect-urls" />
+        <DocsButton href="https://skybase.com/docs/guides/auth/concepts/redirect-urls" />
       </div>
 
       {isLoading && (

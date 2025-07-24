@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import { SupabaseClient } from '@supabase/supabase-js'
-import supabase from 'lib/supabase'
+import { SkybaseClient } from '@skybase/skybase-js'
+import skybase from 'lib/skybase'
 
 const useUserPresence = () => {
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    SupabaseClient['channel']
+    SkybaseClient['channel']
   > | null>(null)
   const [onlineUsers, setOnlineUsers] = useState<any[]>([])
 
   useEffect(() => {
     // Listen to realtime presence
-    if (!realtimeChannel && supabase) {
-      const lw15Room = supabase?.channel('lw15_online', {
+    if (!realtimeChannel && skybase) {
+      const lw15Room = skybase?.channel('lw15_online', {
         config: { broadcast: { self: true, ack: true } },
       })
 

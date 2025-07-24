@@ -18,24 +18,24 @@ import {
 interface Source {
   title: string
   /**
-   * Path relative to https://supabase.com. No leading slash
+   * Path relative to https://skybase.com. No leading slash
    */
   relPath: string
   fetch: () => Promise<SearchSource[]>
 }
 
 function toLink(source: Source) {
-  return `[${source.title}](https://supabase.com/${source.relPath})`
+  return `[${source.title}](https://skybase.com/${source.relPath})`
 }
 
 const SOURCES: Source[] = [
   {
-    title: 'Supabase Guides',
+    title: 'Skybase Guides',
     relPath: 'llms/guides.txt',
     fetch: fetchGuideSources,
   },
   {
-    title: 'Supabase Reference (JavaScript)',
+    title: 'Skybase Reference (JavaScript)',
     relPath: 'llms/js.txt',
     fetch: async () =>
       (await fetchJsLibReferenceSource()).filter(
@@ -43,7 +43,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase Reference (Dart)',
+    title: 'Skybase Reference (Dart)',
     relPath: 'llms/dart.txt',
     fetch: async () =>
       (await fetchDartLibReferenceSource()).filter(
@@ -51,7 +51,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase Reference (Swift)',
+    title: 'Skybase Reference (Swift)',
     relPath: 'llms/swift.txt',
     fetch: async () =>
       (await fetchSwiftLibReferenceSource()).filter(
@@ -59,7 +59,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase Reference (Kotlin)',
+    title: 'Skybase Reference (Kotlin)',
     relPath: 'llms/kotlin.txt',
     fetch: async () =>
       (await fetchKtLibReferenceSource()).filter(
@@ -67,7 +67,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase Reference (Python)',
+    title: 'Skybase Reference (Python)',
     relPath: 'llms/python.txt',
     fetch: async () =>
       (await fetchPythonLibReferenceSource()).filter(
@@ -75,7 +75,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase Reference (C#)',
+    title: 'Skybase Reference (C#)',
     relPath: 'llms/csharp.txt',
     fetch: async () =>
       (await fetchCSharpLibReferenceSource()).filter(
@@ -83,7 +83,7 @@ const SOURCES: Source[] = [
       ),
   },
   {
-    title: 'Supabase CLI Reference',
+    title: 'Skybase CLI Reference',
     relPath: 'llms/cli.txt',
     fetch: async () =>
       (await fetchCliLibReferenceSource()).filter(
@@ -94,7 +94,7 @@ const SOURCES: Source[] = [
 
 async function generateMainLlmsTxt() {
   const sourceLinks = SOURCES.map((source) => `- ${toLink(source)}`).join('\n')
-  const fullText = `# Supabase Docs\n\n${sourceLinks}`
+  const fullText = `# Skybase Docs\n\n${sourceLinks}`
   fs.writeFile('public/llms.txt', fullText)
 }
 

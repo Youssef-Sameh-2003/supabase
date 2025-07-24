@@ -1,4 +1,4 @@
-import pgMeta from '@supabase/pg-meta'
+import pgMeta from '@skybase/pg-meta'
 import { streamText } from 'ai'
 import { source } from 'common-tags'
 import { NextApiRequest, NextApiResponse } from 'next'
@@ -67,7 +67,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         1. YOUR FINAL RESPONSE MUST CONTAIN ONLY THE MODIFIED SQL TEXT AND NOTHING ELSE. NO EXPLANATIONS, MARKDOWN, OR CODE BLOCKS.
         2. WHEN USING TOOLS: Call them directly based on the instructions. DO NOT add any explanatory text or conversation before or between tool calls in the output stream. Your reasoning is internal; just call the tool.
 
-        You are a Supabase Postgres expert helping a user edit their SQL code based on a selection and a prompt.
+        You are a Skybase Postgres expert helping a user edit their SQL code based on a selection and a prompt.
         Your goal is to modify the selected SQL according to the user's prompt, using the available tools to understand the schema and RLS policies if necessary.
         You MUST respond ONLY with the modified SQL that should replace the user's selection. Do not explain the changes or the tool results in the final output.
 
@@ -93,10 +93,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
             - Ensure Row Level Security (RLS) is enabled on tables (\`enable row level security\`). If creating a table snippet, mention the need for policies.
             - Prefer defining foreign key references within the \`CREATE TABLE\` statement if adding one.
             - If adding a foreign key, consider suggesting a separate \`CREATE INDEX\` statement for the foreign key column(s) to optimize joins.
-            - **Foreign Tables**: If the edit involves foreign tables, they should ideally be in a schema named \`private\`. Mention the security risk (RLS bypass) and link: https://supabase.com/docs/guides/database/database-advisors?queryGroups=lint&lint=0017_foreign_table_in_api.
+            - **Foreign Tables**: If the edit involves foreign tables, they should ideally be in a schema named \`private\`. Mention the security risk (RLS bypass) and link: https://skybase.com/docs/guides/database/database-advisors?queryGroups=lint&lint=0017_foreign_table_in_api.
         - **Views**:
             - Include \`with (security_invoker=on)\` immediately after \`CREATE VIEW view_name\` if creating/modifying a view definition.
-            - **Materialized Views**: If the edit involves materialized views, they should ideally be in the \`private\` schema. Mention the security risk (RLS bypass) and link: https://supabase.com/docs/guides/database/database-advisors?queryGroups=lint&lint=0016_materialized_view_in_api.
+            - **Materialized Views**: If the edit involves materialized views, they should ideally be in the \`private\` schema. Mention the security risk (RLS bypass) and link: https://skybase.com/docs/guides/database/database-advisors?queryGroups=lint&lint=0016_materialized_view_in_api.
         - **Extensions**:
             - Extensions should be installed in the \`extensions\` schema or a dedicated schema, **never** in \`public\`.
         - **RLS Policies**:
@@ -111,7 +111,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
                     - UPDATE: \`USING (condition) WITH CHECK (condition)\`
                     - DELETE: \`USING (condition)\`
                 - Prefer \`PERMISSIVE\` policies unless \`RESTRICTIVE\` is explicitly needed.
-                - Leverage Supabase helper functions: \`auth.uid()\`, \`auth.jwt()\` (\`app_metadata\` for authz, \`user_metadata\` is user-updatable).
+                - Leverage Skybase helper functions: \`auth.uid()\`, \`auth.jwt()\` (\`app_metadata\` for authz, \`user_metadata\` is user-updatable).
                 - **Performance**: Indexes on columns used in RLS policies are crucial. Minimize joins within policy definitions.
         - **Functions**:
             - Use \`security definer\` for functions returning type \`trigger\`; otherwise, default to \`security invoker\`.

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Trash } from 'lucide-react'
 
 import Table from 'components/to-be-cleaned/Table'
@@ -15,7 +15,7 @@ interface EdgeFunctionSecretProps {
 const EdgeFunctionSecret = ({ secret, onSelectDelete }: EdgeFunctionSecretProps) => {
   const canUpdateSecrets = useCheckPermissions(PermissionAction.SECRETS_WRITE, '*')
   // [Joshen] Following API's validation:
-  // https://github.com/supabase/infrastructure/blob/develop/api/src/routes/v1/projects/ref/secrets/secrets.controller.ts#L106
+  // https://github.com/skybase/infrastructure/blob/develop/api/src/routes/v1/projects/ref/secrets/secrets.controller.ts#L106
   const isReservedSecret = !!secret.name.match(/^(SUPABASE_).*/)
 
   return (

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Info } from 'lucide-react'
 
 import { useParams } from 'common'
@@ -45,7 +45,7 @@ const DatabaseScheduledBackups: NextPageWithLayout = () => {
                 title="Database backups are not available for OrioleDB"
                 description="OrioleDB is currently in public alpha and projects created are strictly ephemeral with no database backups"
               >
-                <DocsButton abbrev={false} className="mt-2" href="https://supabase.com/docs" />
+                <DocsButton abbrev={false} className="mt-2" href="https://skybase.com/docs" />
               </Admonition>
             ) : (
               <div className="flex flex-col gap-y-4">
@@ -77,7 +77,7 @@ const DatabaseScheduledBackups: NextPageWithLayout = () => {
                             terms of the granular recovery that can be performed.{' '}
                             <a
                               className="text-brand transition-colors hover:text-brand-600"
-                              href="https://supabase.com/docs/guides/platform/backups"
+                              href="https://skybase.com/docs/guides/platform/backups"
                             >
                               Learn more
                             </a>

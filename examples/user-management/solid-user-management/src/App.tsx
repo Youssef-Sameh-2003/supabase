@@ -1,6 +1,6 @@
 import { Component, createEffect, createSignal } from 'solid-js'
-import { supabase } from './supabaseClient'
-import { AuthSession } from '@supabase/supabase-js'
+import { skybase } from './skybaseClient'
+import { AuthSession } from '@skybase/skybase-js'
 import Account from './Account'
 import Auth from './Auth'
 
@@ -8,11 +8,11 @@ const App: Component = () => {
 	const [session, setSession] = createSignal<AuthSession | null>(null)
 
 	createEffect(() => {
-		supabase.auth.getSession().then(({ data: { session } }) => {
+		skybase.auth.getSession().then(({ data: { session } }) => {
 			setSession(session)
 		})
 
-		supabase.auth.onAuthStateChange((_event, session) => {
+		skybase.auth.onAuthStateChange((_event, session) => {
 			setSession(session)
 		})
 	})

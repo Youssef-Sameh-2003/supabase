@@ -1,4 +1,4 @@
-import { Session, SupabaseClient } from '@supabase/supabase-js'
+import { Session, SkybaseClient } from '@skybase/skybase-js'
 import { createContext, useContext } from 'react'
 
 export type TicketState = 'registration' | 'ticket' | 'loading' | 'game'
@@ -32,7 +32,7 @@ export type UserData = {
 }
 
 type ConfDataContextType = {
-  supabase: SupabaseClient | null
+  skybase: SkybaseClient | null
   session: Session | null
   userData: UserData
   setUserData: React.Dispatch<React.SetStateAction<UserData>>

@@ -1,4 +1,4 @@
-import { type PostgrestError } from '@supabase/supabase-js'
+import { type PostgrestError } from '@skybase/skybase-js'
 import {
   ApiErrorGeneric,
   CollectionQueryError,
@@ -6,7 +6,7 @@ import {
   NoDataError,
 } from '~/app/api/utils'
 import { Result } from '~/features/helpers.fn'
-import { supabase } from '~/lib/supabase'
+import { skybase } from '~/lib/skybase'
 import { type CollectionFetch } from '../utils/connections'
 
 export const SERVICES = {
@@ -62,7 +62,7 @@ export class ErrorModel {
     service: Service
   }): Promise<Result<ErrorModel, ApiErrorGeneric>> {
     return new Result(
-      await supabase()
+      await skybase()
         .schema('content')
         .from('error')
         .select('id, code, service(name), httpStatusCode:http_status_code, message')
@@ -136,7 +136,7 @@ async function fetchTotalErrorCount(
   service?: Service,
   code?: string
 ): Promise<Result<number, PostgrestError>> {
-  const query = supabase()
+  const query = skybase()
     .schema('content')
     .from('error')
     .select('id, service!inner(name)', { count: 'exact', head: true })
@@ -180,7 +180,7 @@ async function fetchErrorDescriptions({
   service?: Service
   code?: string
 }): Promise<Result<ErrorDescription[], PostgrestError>> {
-  const query = supabase()
+  const query = skybase()
     .schema('content')
     .from('error')
     .select('id, code, service!inner(name), httpStatusCode: http_status_code, message')

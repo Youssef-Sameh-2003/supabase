@@ -1,5 +1,5 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { JwtSecretUpdateStatus } from '@supabase/shared-types/out/events'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
+import { JwtSecretUpdateStatus } from '@skybase/shared-types/out/events'
 import { AlertCircle, Loader } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -14,17 +14,17 @@ import { Input, SimpleCodeBlock } from 'ui'
 
 const generateInitSnippet = (endpoint: string) => ({
   js: `
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 
-const supabaseUrl = '${endpoint}'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)`,
+const skybaseUrl = '${endpoint}'
+const skybaseKey = process.env.SUPABASE_KEY
+const skybase = createClient(skybaseUrl, skybaseKey)`,
   dart: `
-const supabaseUrl = '${endpoint}';
-const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
+const skybaseUrl = '${endpoint}';
+const skybaseKey = String.fromEnvironment('SUPABASE_KEY');
 
 Future<void> main() async {
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  await Skybase.initialize(url: skybaseUrl, anonKey: skybaseKey);
   runApp(MyApp());
 }`,
 })
@@ -85,7 +85,7 @@ const APIKeys = () => {
           <p className="text-sm text-foreground-light">
             Your API is secured behind an API gateway which requires an API Key for every request.
             <br />
-            You can use the parameters below to use Supabase client libraries.
+            You can use the parameters below to use Skybase client libraries.
           </p>
         </div>
       }

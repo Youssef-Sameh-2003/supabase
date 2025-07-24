@@ -158,7 +158,7 @@ export function DiskSizeField({
             <div className="mt-3">
               <DocsButton
                 abbrev={false}
-                href="https://supabase.com/docs/guides/platform/database-size"
+                href="https://skybase.com/docs/guides/platform/database-size"
               />
             </div>
           </span>

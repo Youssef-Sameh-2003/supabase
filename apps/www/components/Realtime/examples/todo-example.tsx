@@ -6,12 +6,12 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Generate a unique instance ID for this session
 const instanceId = '${instanceId}';
@@ -33,7 +33,7 @@ export default function App() {
   useEffect(() => {
     const signInAnonymously = async () => {
       try {
-        const { data, error } = await supabase.auth.signInAnonymously({
+        const { data, error } = await skybase.auth.signInAnonymously({
           options: {
             data: { instanceId }
           }
@@ -60,7 +60,7 @@ export default function App() {
     
     const fetchTodos = async () => {
       try {
-        const { data, error } = await supabase
+        const { data, error } = await skybase
           .from(TABLE)
           .select('*')
           .eq('channel', instanceId)
@@ -80,8 +80,8 @@ export default function App() {
     fetchTodos();
     
     const setupRealtimeChannel = async () => {
-      await supabase.realtime.setAuth(); // Needed for Realtime Authorization
-      const changes = supabase
+      await skybase.realtime.setAuth(); // Needed for Realtime Authorization
+      const changes = skybase
         .channel(CHANNEL, {
           config: { private: true },
         })
@@ -116,7 +116,7 @@ export default function App() {
     setUsername(randomName);
 
     // Subscribe to presence channel
-    const presenceChannel = supabase.channel(\`presence:\${instanceId}\`);
+    const presenceChannel = skybase.channel(\`presence:\${instanceId}\`);
 
     // Track presence state
     presenceChannel.on('presence', { event: 'sync' }, () => {
@@ -155,9 +155,9 @@ export default function App() {
     if (!newTodo.trim() || !isConnected || !user) return;
 
     try {
-      // Insert the todo into the Supabase table
+      // Insert the todo into the Skybase table
       // The database trigger will handle broadcasting
-      const { error } = await supabase
+      const { error } = await skybase
         .from(TABLE)
         .insert({
           text: newTodo.trim(),
@@ -184,7 +184,7 @@ export default function App() {
     try {
       // Update the todo in the database
       // The database trigger will handle broadcasting
-      const { error } = await supabase
+      const { error } = await skybase
         .from(TABLE)
         .update({ completed: !todo.completed })
         .eq('id', todo.id)
@@ -204,7 +204,7 @@ export default function App() {
     try {
       // Delete the todo from the database
       // The database trigger will handle broadcasting
-      const { error } = await supabase
+      const { error } = await skybase
         .from(TABLE)
         .delete()
         .eq('id', todo.id)

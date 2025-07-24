@@ -1,18 +1,18 @@
-import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
-import { RealtimePresenceState } from '@supabase/supabase-js'
+import { createServerSkybaseClient } from '@skybase/auth-helpers-nextjs'
+import { useSkybaseClient, useUser } from '@skybase/auth-helpers-react'
+import { RealtimePresenceState } from '@skybase/skybase-js'
 import type { GetServerSidePropsContext, NextPage } from 'next'
 import { useEffect, useState } from 'react'
 
 const HomePage: NextPage = () => {
-  const supabaseClient = useSupabaseClient()
+  const skybaseClient = useSkybaseClient()
   const this_user = useUser()
   const [userState, setUserState] = useState<RealtimePresenceState>({})
 
   useEffect(() => {
     console.log('user: ', this_user)
 
-    const channel = supabaseClient.channel('online-users', {
+    const channel = skybaseClient.channel('online-users', {
       config: {
         presence: {
           key: this_user?.email ? this_user?.email : 'Unknown',
@@ -43,7 +43,7 @@ const HomePage: NextPage = () => {
   }, [])
   return (
     <>
-      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
+      <button onClick={() => skybaseClient.auth.signOut()}>Sign out</button>
 
       <p> List of Currently Logged in Users: </p>
       {Object.keys(userState).map((key) => (
@@ -54,12 +54,12 @@ const HomePage: NextPage = () => {
 }
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx)
+  // Create authenticated Skybase Client
+  const skybase = createServerSkybaseClient(ctx)
   // Check if we have a session
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await skybase.auth.getSession()
 
   if (!session)
     return {

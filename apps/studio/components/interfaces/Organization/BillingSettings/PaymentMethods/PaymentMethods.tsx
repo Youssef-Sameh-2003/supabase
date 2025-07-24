@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { CreditCardIcon, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -66,7 +66,7 @@ const PaymentMethods = () => {
         </ScaffoldSectionDetail>
         <ScaffoldSectionContent>
           {selectedOrganization?.managed_by !== undefined &&
-          selectedOrganization?.managed_by !== 'supabase' ? (
+          selectedOrganization?.managed_by !== 'skybase' ? (
             <PartnerManagedResource
               partner={selectedOrganization?.managed_by}
               resource="Payment Methods"

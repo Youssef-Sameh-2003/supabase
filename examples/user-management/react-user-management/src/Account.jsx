@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './supabaseClient'
+import { skybase } from './skybaseClient'
 import Avatar from './Avatar'
 
 export default function Account({ session }) {
@@ -13,7 +13,7 @@ export default function Account({ session }) {
       setLoading(true)
       const { user } = session
 
-      let { data, error } = await supabase
+      let { data, error } = await skybase
         .from('profiles')
         .select(`username, website, avatar_url`)
         .eq('id', user.id)
@@ -47,7 +47,7 @@ export default function Account({ session }) {
       updated_at: new Date(),
     }
 
-    let { error } = await supabase.from('profiles').upsert(updates)
+    let { error } = await skybase.from('profiles').upsert(updates)
 
     if (error) {
       alert(error.message)
@@ -97,7 +97,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block" type="button" onClick={() => supabase.auth.signOut()}>
+        <button className="button block" type="button" onClick={() => skybase.auth.signOut()}>
           Sign Out
         </button>
       </div>

@@ -80,8 +80,8 @@ const ProjectUpgradeAlert = () => {
   const isDiskSizeUpdated = diskAttributes?.attributes.size_gb !== includedDiskGB
 
   const { data } = useProjectUpgradeEligibilityQuery({ projectRef: ref })
-  const currentPgVersion = (data?.current_app_version ?? '').split('supabase-postgres-')[1]
-  const latestPgVersion = (data?.latest_app_version ?? '').split('supabase-postgres-')[1]
+  const currentPgVersion = (data?.current_app_version ?? '').split('skybase-postgres-')[1]
+  const latestPgVersion = (data?.latest_app_version ?? '').split('skybase-postgres-')[1]
 
   const durationEstimateHours = data?.duration_estimate_hours || 1
   const legacyAuthCustomRoles = data?.legacy_auth_custom_roles || []
@@ -184,7 +184,7 @@ const ProjectUpgradeAlert = () => {
                     extLinks
                     className="text-foreground"
                     content={`Your current disk size of ${diskAttributes?.attributes.size_gb}GB will also be
-                    [right-sized](https://supabase.com/docs/guides/platform/upgrading#disk-sizing) with the upgrade.`}
+                    [right-sized](https://skybase.com/docs/guides/platform/upgrading#disk-sizing) with the upgrade.`}
                   />
                 )}
                 {/* @ts-ignore */}
@@ -201,7 +201,7 @@ const ProjectUpgradeAlert = () => {
                       <div>
                         <Button size="tiny" type="default" asChild>
                           <Link
-                            href="https://supabase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
+                            href="https://skybase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -243,7 +243,7 @@ const ProjectUpgradeAlert = () => {
                       <div>
                         <Button size="tiny" type="default" asChild>
                           <Link
-                            href="https://supabase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
+                            href="https://skybase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -268,7 +268,7 @@ const ProjectUpgradeAlert = () => {
                             <SelectGroup_Shadcn_>
                               {(data?.target_upgrade_versions || [])?.map((value) => {
                                 const postgresVersion =
-                                  value.app_version.split('supabase-postgres-')[1]
+                                  value.app_version.split('skybase-postgres-')[1]
                                 return (
                                   <SelectItem_Shadcn_
                                     key={formatValue(value)}

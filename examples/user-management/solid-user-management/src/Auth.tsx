@@ -1,5 +1,5 @@
 import { Component, createSignal } from 'solid-js'
-import { supabase } from './supabaseClient'
+import { skybase } from './skybaseClient'
 
 const Auth: Component = () => {
 	const [loading, setLoading] = createSignal(false)
@@ -10,7 +10,7 @@ const Auth: Component = () => {
 
 		try {
 			setLoading(true)
-			const { error } = await supabase.auth.signInWithOtp({ email: email() })
+			const { error } = await skybase.auth.signInWithOtp({ email: email() })
 			if (error) throw error
 			alert('Check your email for the login link!')
 		} catch (error) {
@@ -25,7 +25,7 @@ const Auth: Component = () => {
 	return (
 		<div class="row flex-center flex">
 			<div class="col-6 form-widget" aria-live="polite">
-				<h1 class="header">Supabase + SolidJS</h1>
+				<h1 class="header">Skybase + SolidJS</h1>
 				<p class="description">Sign in via magic link with your email below</p>
 				<form class="form-widget" onSubmit={handleLogin}>
 					<div>

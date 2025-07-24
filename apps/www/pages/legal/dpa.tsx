@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import CTABanner from 'components/CTABanner/index'
 import Layout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
-import supabase from '~/lib/supabaseMisc'
+import skybase from '~/lib/skybaseMisc'
 import { Download } from 'lucide-react'
 
 const DPA = () => {
@@ -22,7 +22,7 @@ const DPA = () => {
   const handleFormSubmit = async (values: typeof INITIAL_VALUES, { resetForm }: any) => {
     try {
       setError(undefined)
-      const { error } = await supabase
+      const { error } = await skybase
         .from('dpa_downloads')
         .insert([{ contact_email: values.email, document: 'dpa' }])
 
@@ -30,7 +30,7 @@ const DPA = () => {
 
       resetForm()
       setFormSubmitted(true)
-      window.open('https://supabase.com/downloads/docs/Supabase+DPA+250314.pdf', '_blank')
+      window.open('https://skybase.com/downloads/docs/Skybase+DPA+250314.pdf', '_blank')
     } catch (error: any) {
       setError(error.message)
     }
@@ -53,11 +53,11 @@ const DPA = () => {
                   You can download our latest DPA document by submitting your email here. For the
                   document to be considered executed, you must return the signed DPA document to{' '}
                   <a
-                    href="mailto:privacy@supabase.com"
+                    href="mailto:privacy@skybase.com"
                     target="_blank"
                     className="text-brand hover:text-brand"
                   >
-                    privacy@supabase.com
+                    privacy@skybase.com
                   </a>
                   .
                 </p>

@@ -8,8 +8,8 @@ import { DEFAULT_EASE } from '~/lib/animations'
 import MenuItem from './MenuItem'
 
 import { useIsLoggedIn, useIsUserLoading } from 'common'
-import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wordmark--dark.png'
-import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
+import * as skybaseLogoWordmarkDark from 'common/assets/images/skybase-logo-wordmark--dark.png'
+import * as skybaseLogoWordmarkLight from 'common/assets/images/skybase-logo-wordmark--light.png'
 import { ChevronRight } from 'lucide-react'
 import { useKey } from 'react-use'
 import staticContent from '~/.contentlayer/generated/staticContent/_index.json' with { type: 'json' }
@@ -87,7 +87,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
             <div className="flex flex-col gap-1 !leading-3">
               <span>Features</span>
               <span className="text-foreground-lighter text-xs leading-4">
-                Explore everything you can do with Supabase.
+                Explore everything you can do with Skybase.
               </span>
             </div>
             <ChevronRight
@@ -211,18 +211,18 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                 className="block w-auto h-6 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-foreground-lighter focus-visible:ring-offset-4 focus-visible:ring-offset-background-alternative focus-visible:rounded-sm"
               >
                 <Image
-                  src={supabaseLogoWordmarkLight}
+                  src={skybaseLogoWordmarkLight}
                   width={124}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Skybase Logo"
                   className="dark:hidden"
                   priority
                 />
                 <Image
-                  src={supabaseLogoWordmarkDark}
+                  src={skybaseLogoWordmarkDark}
                   width={124}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Skybase Logo"
                   className="hidden dark:block"
                   priority
                 />
@@ -267,7 +267,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                   ) : (
                     <>
                       <Link
-                        href="https://supabase.com/dashboard"
+                        href="https://skybase.com/dashboard"
                         passHref
                         legacyBehavior
                         onClick={() =>
@@ -284,7 +284,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                         </Button>
                       </Link>
                       <Link
-                        href="https://supabase.com/dashboard"
+                        href="https://skybase.com/dashboard"
                         passHref
                         legacyBehavior
                         onClick={() =>

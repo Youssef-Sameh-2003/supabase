@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_auth_ui/supabase_auth_ui.dart';
+import 'package:skybase_auth_ui/skybase_auth_ui.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

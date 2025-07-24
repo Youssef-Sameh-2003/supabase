@@ -96,7 +96,7 @@ export const parseCronJobCommand = (originalCommand: string, projectRef: string)
     } catch {}
 
     if (
-      url.includes(`${projectRef}.supabase.`) &&
+      url.includes(`${projectRef}.skybase.`) &&
       url.includes('/functions/v1/') &&
       searchParams.length === 0 &&
       urlHash.length === 0

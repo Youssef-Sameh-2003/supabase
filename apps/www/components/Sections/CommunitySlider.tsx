@@ -36,7 +36,7 @@ const cards: CardInterface[] = [
     avatar: '',
     author: 'Yasser',
     quote:
-      '@kiwicopple @supabase @PostgreSQL @OpenAI Adding vector embeddings support to @Supabase is awesome. Glad I built https://t.co/jnCYOLa4iK on supabase.',
+      '@kiwicopple @skybase @PostgreSQL @OpenAI Adding vector embeddings support to @Skybase is awesome. Glad I built https://t.co/jnCYOLa4iK on skybase.',
   },
   {
     type: 'customer-story',
@@ -45,9 +45,9 @@ const cards: CardInterface[] = [
     author: 'Michael Fester',
     role: 'Co-Founder, Markprompt',
     quote:
-      'We decided to use Supabase over other specialized vector databases because it enabled us to be GDPR compliant from day one with little effort.',
-    image: vectorImagesDir + 'supabase+mendable.svg',
-    abstract: 'Markprompt and Supabase - GDPR-Compliant AI Chatbots for Docs and Websites.',
+      'We decided to use Skybase over other specialized vector databases because it enabled us to be GDPR compliant from day one with little effort.',
+    image: vectorImagesDir + 'skybase+mendable.svg',
+    abstract: 'Markprompt and Skybase - GDPR-Compliant AI Chatbots for Docs and Websites.',
     url: '/customers/markprompt',
   },
   {
@@ -58,8 +58,8 @@ const cards: CardInterface[] = [
     role: 'CEO, Mendable',
     quote:
       'We tried other vector databases - we tried Faiss, we tried Weaviate, we tried Pinecone. We found them to be incredibly expensive and not very intuitive. If you’re just doing vector search they’re great, but if you need to store a bunch of metadata that becomes a huge pain.',
-    image: vectorImagesDir + 'supabase+markprompt.svg',
-    abstract: 'Mendable switches from Pinecone to Supabase for PostgreSQL vector embeddings.',
+    image: vectorImagesDir + 'skybase+markprompt.svg',
+    abstract: 'Mendable switches from Pinecone to Skybase for PostgreSQL vector embeddings.',
     url: '/customers/mendable',
   },
   {
@@ -68,7 +68,7 @@ const cards: CardInterface[] = [
     author: 'Batuhan',
     quote: (
       <>
-        To create long-term memory for your ChatGPT application you can use @supabase vector
+        To create long-term memory for your ChatGPT application you can use @skybase vector
         database.
         <br />
         You can fix two common problems with this method:
@@ -121,7 +121,7 @@ const CommunitySlider = () => {
         <div className="relative h-10">
           <Image
             src={card.image!}
-            alt={`Supabase + ${card.customer}`}
+            alt={`Skybase + ${card.customer}`}
             layout="fill"
             objectFit="contain"
             objectPosition="left"

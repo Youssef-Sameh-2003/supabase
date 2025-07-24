@@ -4,19 +4,19 @@ import 'package:canvas/project/projects_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_auth_ui/supabase_auth_ui.dart';
+import 'package:skybase_auth_ui/skybase_auth_ui.dart';
 
 void main() async {
   usePathUrlStrategy();
 
-  await Supabase.initialize(
+  await Skybase.initialize(
     url: 'YOUR_SUPABASE_URL',
     anonKey: 'YOUR_SUPABASE_ANON_KEY',
   );
   runApp(const MyApp());
 }
 
-final supabase = Supabase.instance.client;
+final skybase = Skybase.instance.client;
 
 final _router = GoRouter(
   initialLocation: '/signin',
@@ -36,7 +36,7 @@ final _router = GoRouter(
     ),
   ],
   redirect: (BuildContext context, GoRouterState state) {
-    final isSignedIn = supabase.auth.currentSession != null;
+    final isSignedIn = skybase.auth.currentSession != null;
     if (state.path != '/signin') {
       if (!isSignedIn) {
         return '/signin';

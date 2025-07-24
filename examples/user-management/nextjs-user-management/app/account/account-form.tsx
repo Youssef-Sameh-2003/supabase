@@ -1,11 +1,11 @@
 'use client'
 import { useCallback, useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
-import { type User } from '@supabase/supabase-js'
+import { createClient } from '@/utils/skybase/client'
+import { type User } from '@skybase/skybase-js'
 import Avatar from './avatar'
 
 export default function AccountForm({ user }: { user: User | null }) {
-  const supabase = createClient()
+  const skybase = createClient()
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)
@@ -16,7 +16,7 @@ export default function AccountForm({ user }: { user: User | null }) {
     try {
       setLoading(true)
 
-      const { data, error, status } = await supabase
+      const { data, error, status } = await skybase
         .from('profiles')
         .select(`full_name, username, website, avatar_url`)
         .eq('id', user?.id)
@@ -38,7 +38,7 @@ export default function AccountForm({ user }: { user: User | null }) {
     } finally {
       setLoading(false)
     }
-  }, [user, supabase])
+  }, [user, skybase])
 
   useEffect(() => {
     getProfile()
@@ -57,7 +57,7 @@ export default function AccountForm({ user }: { user: User | null }) {
     try {
       setLoading(true)
 
-      const { error } = await supabase.from('profiles').upsert({
+      const { error } = await skybase.from('profiles').upsert({
         id: user?.id as string,
         full_name: fullname,
         username,

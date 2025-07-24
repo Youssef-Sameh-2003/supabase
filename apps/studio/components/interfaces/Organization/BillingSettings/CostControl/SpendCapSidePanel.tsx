@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -108,7 +108,7 @@ const SpendCapSidePanel = () => {
           <h4>Spend cap</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/guides/platform/cost-control#spend-cap"
+              href="https://skybase.com/docs/guides/platform/cost-control#spend-cap"
               target="_blank"
               rel="noreferrer"
             >

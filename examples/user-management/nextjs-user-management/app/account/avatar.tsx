@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { createClient } from '@/utils/supabase/client'
+import { createClient } from '@/utils/skybase/client'
 import Image from 'next/image'
 
 export default function Avatar({
@@ -14,14 +14,14 @@ export default function Avatar({
   size: number
   onUpload: (url: string) => void
 }) {
-  const supabase = createClient()
+  const skybase = createClient()
   const [avatarUrl, setAvatarUrl] = useState<string | null>(url)
   const [uploading, setUploading] = useState(false)
 
   useEffect(() => {
     async function downloadImage(path: string) {
       try {
-        const { data, error } = await supabase.storage.from('avatars').download(path)
+        const { data, error } = await skybase.storage.from('avatars').download(path)
         if (error) {
           throw error
         }
@@ -34,7 +34,7 @@ export default function Avatar({
     }
 
     if (url) downloadImage(url)
-  }, [url, supabase])
+  }, [url, skybase])
 
   const uploadAvatar: React.ChangeEventHandler<HTMLInputElement> = async (event) => {
     try {
@@ -48,7 +48,7 @@ export default function Avatar({
       const fileExt = file.name.split('.').pop()
       const filePath = `${uid}-${Math.random()}.${fileExt}`
 
-      const { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file)
+      const { error: uploadError } = await skybase.storage.from('avatars').upload(filePath, file)
 
       if (uploadError) {
         throw uploadError

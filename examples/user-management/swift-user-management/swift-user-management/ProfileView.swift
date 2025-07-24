@@ -6,7 +6,7 @@
 //
 
 import PhotosUI
-import Supabase
+import Skybase
 import SwiftUI
 
 struct ProfileView: View {
@@ -77,7 +77,7 @@ struct ProfileView: View {
         ToolbarItem {
           Button("Sign out", role: .destructive) {
             Task {
-              try? await supabase.auth.signOut()
+              try? await skybase.auth.signOut()
             }
           }
         }
@@ -94,9 +94,9 @@ struct ProfileView: View {
 
   func getInitialProfile() async {
     do {
-      let currentUser = try await supabase.auth.session.user
+      let currentUser = try await skybase.auth.session.user
 
-      let profile: Profile = try await supabase.database
+      let profile: Profile = try await skybase.database
         .from("profiles")
         .select()
         .eq("id", value: currentUser.id)
@@ -124,7 +124,7 @@ struct ProfileView: View {
       do {
         let imageURL = try await uploadImage()
 
-        let currentUser = try await supabase.auth.session.user
+        let currentUser = try await skybase.auth.session.user
 
         let updatedProfile = Profile(
           username: username,
@@ -133,7 +133,7 @@ struct ProfileView: View {
           avatarURL: imageURL
         )
 
-        try await supabase.database
+        try await skybase.database
           .from("profiles")
           .update(updatedProfile)
           .eq("id", value: currentUser.id)
@@ -155,7 +155,7 @@ struct ProfileView: View {
   }
 
   private func downloadImage(path: String) async throws {
-    let data = try await supabase.storage.from("avatars").download(path: path)
+    let data = try await skybase.storage.from("avatars").download(path: path)
     avatarImage = AvatarImage(data: data)
   }
 
@@ -164,7 +164,7 @@ struct ProfileView: View {
 
     let filePath = "\(UUID().uuidString).jpeg"
 
-    try await supabase.storage
+    try await skybase.storage
       .from("avatars")
       .upload(
         path: filePath,

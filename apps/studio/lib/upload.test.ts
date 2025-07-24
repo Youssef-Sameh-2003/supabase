@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { uploadAttachment } from './upload'
 
-vi.mock('@supabase/supabase-js', () => ({
+vi.mock('@skybase/skybase-js', () => ({
   createClient: vi.fn(),
 }))
 
@@ -18,7 +18,7 @@ describe('uploadAttachment', () => {
     })),
   }
 
-  const mockSupabaseClient = {
+  const mockSkybaseClient = {
     storage: mockStorage,
   }
 
@@ -26,13 +26,13 @@ describe('uploadAttachment', () => {
 
   beforeEach(() => {
     vi.clearAllMocks()
-    ;(createClient as any).mockReturnValue(mockSupabaseClient)
+    ;(createClient as any).mockReturnValue(mockSkybaseClient)
   })
 
   it('uploads file and returns public URL when getUrl is true', async () => {
     mockUpload.mockResolvedValue({ data: { path: 'folder/test.png' }, error: null })
     mockGetPublicUrl.mockReturnValue({
-      data: { publicUrl: 'https://cdn.supabase.io/folder/test.png' },
+      data: { publicUrl: 'https://cdn.skybase.io/folder/test.png' },
     })
 
     const url = await uploadAttachment('bucket', 'test.png', mockFile, true)
@@ -40,7 +40,7 @@ describe('uploadAttachment', () => {
     expect(createClient).toHaveBeenCalled()
     expect(mockUpload).toHaveBeenCalledWith('test.png', mockFile, { cacheControl: '3600' })
     expect(mockGetPublicUrl).toHaveBeenCalledWith('folder/test.png')
-    expect(url).toBe('https://cdn.supabase.io/folder/test.png')
+    expect(url).toBe('https://cdn.skybase.io/folder/test.png')
   })
 
   it('returns undefined if upload succeeds but getUrl is false', async () => {

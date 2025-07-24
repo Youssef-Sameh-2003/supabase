@@ -54,7 +54,7 @@ const NewProjectPanel = () => {
                 </Button>
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <Link
-                    href="https://supabase.com/docs/guides/database"
+                    href="https://skybase.com/docs/guides/database"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -73,7 +73,7 @@ const NewProjectPanel = () => {
               <div className="max-w-2xl space-y-2">
                 <h3 className="text-xl text-foreground">Explore our other products</h3>
                 <p className="text-base text-foreground-light">
-                  Supabase provides all the backend features you need to build a product. You can
+                  Skybase provides all the backend features you need to build a product. You can
                   use it completely, or just the features you need.
                 </p>
               </div>
@@ -103,7 +103,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://supabase.com/docs/guides/auth"
+                          href="https://skybase.com/docs/guides/auth"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -139,7 +139,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://supabase.com/docs/guides/storage"
+                          href="https://skybase.com/docs/guides/storage"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -175,7 +175,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://supabase.com/docs/guides/functions"
+                          href="https://skybase.com/docs/guides/functions"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -209,7 +209,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://supabase.com/docs/guides/realtime"
+                          href="https://skybase.com/docs/guides/realtime"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -231,8 +231,8 @@ const NewProjectPanel = () => {
             <h3 className="text-xl text-foreground">Connecting to your new project</h3>
             <p className="text-base text-foreground-light lg:max-w-sm">
               Interact with your database through the{' '}
-              <Link href="https://supabase.com/docs/reference" className="text-brand">
-                Supabase client libraries
+              <Link href="https://skybase.com/docs/reference" className="text-brand">
+                Skybase client libraries
               </Link>{' '}
               with your API keys.
             </p>
@@ -247,7 +247,7 @@ const NewProjectPanel = () => {
             </Button>
             <Button asChild className="translate-y-[1px]" type="default" icon={<ExternalLink />}>
               <Link
-                href="https://supabase.com/docs/guides/database/api"
+                href="https://skybase.com/docs/guides/database/api"
                 target="_blank"
                 rel="noreferrer"
               >

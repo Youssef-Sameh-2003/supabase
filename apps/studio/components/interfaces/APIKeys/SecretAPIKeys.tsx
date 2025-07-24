@@ -2,7 +2,7 @@ import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useMemo, useRef } from 'react'
 
 import { useParams } from 'common'

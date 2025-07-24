@@ -9,7 +9,7 @@ type TableRolesAccessArgs = {
 
 /**
  * [Joshen] Specifically just checking for anon and authenticated roles since this is
- * just to verify if the table is exposed via the Supabase API
+ * just to verify if the table is exposed via the Skybase API
  */
 export const getTableRolesAccessSql = ({ schema, table }: TableRolesAccessArgs) => {
   const sql = /* SQL */ `

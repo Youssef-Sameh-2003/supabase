@@ -57,10 +57,10 @@ function RealtimePage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/realtime`,
+          url: `https://skybase.com/realtime`,
           images: [
             {
-              url: `https://supabase.com${basePath}/images/realtime/og.jpg`,
+              url: `https://skybase.com${basePath}/images/realtime/og.jpg`,
             },
           ],
         }}
@@ -192,7 +192,7 @@ function RealtimePage() {
           id="quote"
           className="!pb-8 md:!pb-12"
           quote={{
-            text: 'Supabase takes out the mental effort from our back-end infrastructure so we can focus on our customers needs.',
+            text: 'Skybase takes out the mental effort from our back-end infrastructure so we can focus on our customers needs.',
             author: 'Aaron Sullivan',
             role: 'Principal Software Engineer Epsilon3',
             link: '/customers/epsilon3',

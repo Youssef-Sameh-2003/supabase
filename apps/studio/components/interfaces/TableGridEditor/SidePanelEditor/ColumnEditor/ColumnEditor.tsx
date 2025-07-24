@@ -1,4 +1,4 @@
-import type { PostgresColumn, PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresColumn, PostgresTable } from '@skybase/postgres-meta'
 import { isEmpty, noop } from 'lodash'
 import { ExternalLink, Plus } from 'lucide-react'
 import Link from 'next/link'
@@ -246,7 +246,7 @@ const ColumnEditor = ({
                   icon={<ExternalLink size={14} strokeWidth={2} />}
                 >
                   <Link
-                    href="https://supabase.com/docs/guides/database/tables#data-types"
+                    href="https://skybase.com/docs/guides/database/tables#data-types"
                     target="_blank"
                     rel="noreferrer"
                   >

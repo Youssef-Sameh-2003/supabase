@@ -34,7 +34,7 @@ function AuthPage() {
 
   const meta_title = 'Auth | Built-in user management'
   const meta_description =
-    'Authentication that you can afford that is built in to your supabase project.'
+    'Authentication that you can afford that is built in to your skybase project.'
 
   return (
     <>
@@ -44,10 +44,10 @@ function AuthPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/auth`,
+          url: `https://skybase.com/auth`,
           images: [
             {
-              url: `https://supabase.com${basePath}/images/product/auth/auth-og.jpg`,
+              url: `https://skybase.com${basePath}/images/product/auth/auth-og.jpg`,
             },
           ],
         }}
@@ -70,7 +70,7 @@ function AuthPage() {
             </span>,
           ]}
           subheader={[
-            'Every Supabase project comes with a complete User Management system that works without any additional tools.',
+            'Every Skybase project comes with a complete User Management system that works without any additional tools.',
             "Including PostgreSQL's policy engine, for fine-grained access rules.",
           ]}
           image={[
@@ -144,7 +144,7 @@ function AuthPage() {
               </div>
               <h4 className="h4">Own your data</h4>
               <p className="p text-base">
-                User data stored in your Supabase database so you never have to worry about 3rd
+                User data stored in your Skybase database so you never have to worry about 3rd
                 party privacy issues. Host your data in 16 different locations.
               </p>
             </div>
@@ -155,7 +155,7 @@ function AuthPage() {
           id="quote"
           className="[&_q]:max-w-2xl"
           quote={{
-            text: 'Supabase is not only super easy to get started, but also provides all the backend solutions we require as we continue to grow.',
+            text: 'Skybase is not only super easy to get started, but also provides all the backend solutions we require as we continue to grow.',
             author: 'Alfred Lua',
             role: 'Cofounder of Pebblely',
             link: '/customers/pebblely',
@@ -227,7 +227,7 @@ function AuthPage() {
               <h2 className="h3">User permissions without the middleware</h2>
 
               <p className="p text-base lg:text-lg">
-                Supabase Auth works without any additional servers. Build Authorization rules with
+                Skybase Auth works without any additional servers. Build Authorization rules with
                 Postgres' Row Level Security, controlling who can create, edit and delete specific
                 rows in your database.
               </p>

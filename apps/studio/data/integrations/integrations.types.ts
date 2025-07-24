@@ -114,7 +114,7 @@ export type VercelGitLink =
       productionBranch?: string
     }
 
-export type SupabaseConfigVercel = {
+export type SkybaseConfigVercel = {
   environmentVariables: {
     production: boolean
     preview: boolean
@@ -127,7 +127,7 @@ export type SupabaseConfigVercel = {
 
 export type Imetadata = {
   id: string
-  supabaseConfig?: {
+  skybaseConfig?: {
     environmentVariables?: {
       production: boolean
       preview: boolean
@@ -136,8 +136,8 @@ export type Imetadata = {
       production: boolean
       preview: boolean
     }
-    supabaseDirectory?: string
-    supabaseChangesOnly?: boolean
+    skybaseDirectory?: string
+    skybaseChangesOnly?: boolean
     branchLimit?: number
   }
   link?: VercelGitLink
@@ -150,7 +150,7 @@ export type IntegrationProjectConnection = {
   inserted_at: string
   updated_at: string
   added_by: addedBy
-  supabase_project_ref: string
+  skybase_project_ref: string
   foreign_project_id: string
   organization_integration_id: string
   env_sync_targets?: string[]
@@ -160,7 +160,7 @@ export type IntegrationProjectConnection = {
 
 export type IntegrationProjectConnectionPayload = {
   foreignProjectId: string
-  supabaseProjectId: string
+  skybaseProjectId: string
   integrationId: string
   metadata: Imetadata
 }
@@ -243,7 +243,7 @@ export type IntegrationConnectionsCreateVariables = {
   organizationIntegrationId: string
   connection: {
     foreign_project_id: string
-    supabase_project_ref: string
+    skybase_project_ref: string
     integration_id: string
     metadata: any
   }
@@ -265,7 +265,7 @@ export type GitHubConnection = {
   branch_limit: number
   installation_id: number
   new_branch_per_pr: boolean
-  supabase_changes_only: boolean
+  skybase_changes_only: boolean
   workdir: string
   project: {
     id: number

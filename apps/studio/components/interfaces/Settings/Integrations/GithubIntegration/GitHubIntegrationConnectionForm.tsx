@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ChevronDown, Loader2, PlusIcon } from 'lucide-react'
 import { useCallback, useEffect, useState, useMemo } from 'react'
 import { useForm } from 'react-hook-form'
@@ -138,8 +138,8 @@ const GitHubIntegrationConnectionForm = ({
       enableProductionSync: z.boolean().default(true),
       branchName: z.string().default('main'),
       new_branch_per_pr: z.boolean().default(true),
-      supabaseDirectory: z.string().default('.'),
-      supabaseChangesOnly: z.boolean().default(true),
+      skybaseDirectory: z.string().default('.'),
+      skybaseChangesOnly: z.boolean().default(true),
       branchLimit: z.string().default('50'),
     })
     .superRefine(async (val, ctx) => {
@@ -174,8 +174,8 @@ const GitHubIntegrationConnectionForm = ({
       enableProductionSync: true,
       branchName: 'main',
       new_branch_per_pr: true,
-      supabaseDirectory: '.',
-      supabaseChangesOnly: true,
+      skybaseDirectory: '.',
+      skybaseChangesOnly: true,
       branchLimit: '50',
     },
   })
@@ -225,8 +225,8 @@ const GitHubIntegrationConnectionForm = ({
         installation_id: selectedRepo.installation_id,
         project_ref: selectedProject.ref,
         repository_id: Number(selectedRepo.id),
-        workdir: data.supabaseDirectory,
-        supabase_changes_only: data.supabaseChangesOnly,
+        workdir: data.skybaseDirectory,
+        skybase_changes_only: data.skybaseChangesOnly,
         branch_limit: Number(data.branchLimit),
         new_branch_per_pr: data.new_branch_per_pr,
       },
@@ -275,8 +275,8 @@ const GitHubIntegrationConnectionForm = ({
       connectionId: currentConnection.id,
       organizationId: selectedOrganization.id,
       connection: {
-        workdir: data.supabaseDirectory,
-        supabase_changes_only: data.supabaseChangesOnly,
+        workdir: data.skybaseDirectory,
+        skybase_changes_only: data.skybaseChangesOnly,
         branch_limit: Number(data.branchLimit),
         new_branch_per_pr: data.new_branch_per_pr,
       },
@@ -314,8 +314,8 @@ const GitHubIntegrationConnectionForm = ({
         enableProductionSync: true,
         branchName: 'main',
         new_branch_per_pr: true,
-        supabaseDirectory: '.',
-        supabaseChangesOnly: true,
+        skybaseDirectory: '.',
+        skybaseChangesOnly: true,
         branchLimit: '50',
       })
     } catch (error) {
@@ -363,8 +363,8 @@ const GitHubIntegrationConnectionForm = ({
         enableProductionSync: hasGitBranch,
         branchName: prodBranch?.git_branch || 'main',
         new_branch_per_pr: connection.new_branch_per_pr,
-        supabaseDirectory: connection.workdir || '',
-        supabaseChangesOnly: connection.supabase_changes_only,
+        skybaseDirectory: connection.workdir || '',
+        skybaseChangesOnly: connection.skybase_changes_only,
         branchLimit: String(connection.branch_limit),
       })
     }
@@ -495,17 +495,17 @@ const GitHubIntegrationConnectionForm = ({
             <CardContent className={cn(!currentRepositoryId && 'opacity-25 pointer-events-none')}>
               <FormField_Shadcn_
                 control={githubSettingsForm.control}
-                name="supabaseDirectory"
+                name="skybaseDirectory"
                 render={({ field }) => (
                   <FormItemLayout
                     layout="flex-row-reverse"
-                    label="Supabase directory"
-                    description="Relative path to your supabase folder"
+                    label="Skybase directory"
+                    description="Relative path to your skybase folder"
                   >
                     <FormControl_Shadcn_>
                       <Input_Shadcn_
                         {...field}
-                        placeholder="supabase"
+                        placeholder="skybase"
                         autoComplete="off"
                         disabled={disabled || !canUpdateGitHubConnection}
                       />
@@ -624,12 +624,12 @@ const GitHubIntegrationConnectionForm = ({
 
                   <FormField_Shadcn_
                     control={githubSettingsForm.control}
-                    name="supabaseChangesOnly"
+                    name="skybaseChangesOnly"
                     render={({ field }) => (
                       <FormItemLayout
                         layout="flex-row-reverse"
-                        label="Supabase changes only"
-                        description="Only create branches when Supabase files change"
+                        label="Skybase changes only"
+                        description="Only create branches when Skybase files change"
                       >
                         <FormControl_Shadcn_>
                           <Switch
@@ -702,7 +702,7 @@ const GitHubIntegrationConnectionForm = ({
         loading={isUpdatingConnection}
       >
         <p className="text-sm text-foreground-light">
-          Open pull requests will only update your Supabase project on merge if the git base branch
+          Open pull requests will only update your Skybase project on merge if the git base branch
           matches this new production git branch.
         </p>
       </ConfirmationModal>
@@ -720,7 +720,7 @@ const GitHubIntegrationConnectionForm = ({
         <div className="space-y-3">
           <p className="text-sm text-foreground-light">
             This will disconnect your current repository and create a new connection with the
-            selected repository. All existing Supabase branches that are connected to the old
+            selected repository. All existing Skybase branches that are connected to the old
             repository will no longer be synced.
           </p>
         </div>

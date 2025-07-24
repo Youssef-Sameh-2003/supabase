@@ -169,7 +169,7 @@ export const StorageReport: NextPageWithLayout = () => {
                 hits is better.{' '}
                 <span className="flex items-center gap-1 text-foreground-lighter">
                   <Link
-                    href="https://supabase.com/docs/guides/storage/cdn/fundamentals"
+                    href="https://skybase.com/docs/guides/storage/cdn/fundamentals"
                     target="_blank"
                   >
                     Read More

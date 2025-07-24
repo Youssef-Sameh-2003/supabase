@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { REALTIME_CHANNEL_STATES, RealtimeChannel, SupabaseClient } from '@supabase/supabase-js'
+import { REALTIME_CHANNEL_STATES, RealtimeChannel, SkybaseClient } from '@skybase/skybase-js'
 
 import useConfData from './use-conf-data'
 import { LW14_URL } from '~/lib/constants'
-import supabase from '../supabase'
+import skybase from '../skybase'
 
 function subscribeToTicketChanges(
   username: string,
   onChange: (payload: any) => void
 ): RealtimeChannel {
-  return supabase
+  return skybase
     .channel('changes')
     .on(
       'postgres_changes',
@@ -62,7 +62,7 @@ export const useRegistration = ({ onError, onRegister }: RegistrationProps = {})
 
       // console.log('Inserting ticket for user', username, referal)
 
-      const { error: ticketInsertError } = await supabase
+      const { error: ticketInsertError } = await skybase
         .from('tickets')
         .insert({
           user_id: userId,
@@ -79,10 +79,10 @@ export const useRegistration = ({ onError, onRegister }: RegistrationProps = {})
       if (ticketInsertError && ticketInsertError?.code !== '23505') {
         dispatch({ type: 'USER_TICKET_FETCH_ERROR', payload: ticketInsertError })
         callbacksRef.current.onError?.(ticketInsertError)
-        return supabase.auth.signOut()
+        return skybase.auth.signOut()
       }
 
-      const { data, error: ticketsViewError } = await supabase
+      const { data, error: ticketsViewError } = await skybase
         .from('tickets_view')
         .select('*')
         .eq('launch_week', 'lw14')
@@ -118,7 +118,7 @@ export const useRegistration = ({ onError, onRegister }: RegistrationProps = {})
       redirectTo += `?referal=${referal}`
     }
 
-    const response = await supabase?.auth.signInWithOAuth({
+    const response = await skybase?.auth.signInWithOAuth({
       provider: 'github',
       options: {
         redirectTo,
@@ -161,14 +161,14 @@ export const useRegistration = ({ onError, onRegister }: RegistrationProps = {})
   }, [dispatch, fetchOrCreateUser, sessionUser?.user_metadata?.user_name])
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data, error }) => {
+    skybase.auth.getSession().then(({ data, error }) => {
       if (error) console.error('Session error', error)
       dispatch({ type: 'SESSION_UPDATED', payload: data.session })
     })
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = skybase.auth.onAuthStateChange((_event, session) => {
       dispatch({ type: 'SESSION_UPDATED', payload: session })
 
       if (session && window.location.hash.includes('access_token')) {
@@ -190,7 +190,7 @@ export const useRegistration = ({ onError, onRegister }: RegistrationProps = {})
         return
       }
 
-      const { error } = await supabase
+      const { error } = await skybase
         .from('tickets')
         .update({ game_won_at: new Date() })
         .eq('launch_week', 'lw14')

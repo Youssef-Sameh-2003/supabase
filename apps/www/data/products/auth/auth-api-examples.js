@@ -5,7 +5,7 @@ export default [
     description: '',
     code: `
   // Sign up with email
-  const { user, error } = await supabase.auth.signUp({
+  const { user, error } = await skybase.auth.signUp({
     email: 'example@email.com',
     password: 'example-password',
   })
@@ -30,7 +30,7 @@ export default [
     description: '',
     code: `
   // Sign in with email
-  const { user, error } = await supabase.auth.signIn({
+  const { user, error } = await skybase.auth.signIn({
     email: 'example@email.com',
     password: 'example-password',
   })
@@ -54,7 +54,7 @@ export default [
     description: '',
     code: `
   // Sign in with magic links
-  const { user, error } = await supabase.auth.signIn({
+  const { user, error } = await skybase.auth.signIn({
     email: 'example@email.com'
   })
 
@@ -80,7 +80,7 @@ export default [
     code: `
   // Sign in with GitHub
   // And request extra permissions!
-  const { user, error } = await supabase.auth.signIn({
+  const { user, error } = await skybase.auth.signIn({
     provider: 'github',
   }, {
     scopes: 'repo gist notifications'

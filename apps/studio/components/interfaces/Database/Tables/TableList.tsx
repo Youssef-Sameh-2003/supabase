@@ -1,5 +1,5 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import type { PostgresTable } from '@skybase/postgres-meta'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { noop } from 'lodash'
 import {
   Check,
@@ -177,7 +177,7 @@ const TableList = ({
     connectionString: project?.connectionString,
   })
   const realtimePublication = (publications ?? []).find(
-    (publication) => publication.name === 'supabase_realtime'
+    (publication) => publication.name === 'skybase_realtime'
   )
 
   const entities = formatAllEntities({ tables, views, materializedViews, foreignTables }).filter(

@@ -12,33 +12,33 @@ const MigrationsEmptyState = () => {
   const commands = [
     {
       comment: 'Link your project',
-      command: `supabase link --project-ref ${ref}`,
+      command: `skybase link --project-ref ${ref}`,
       jsx: () => {
         return (
           <>
-            <span className="text-brand-600">supabase</span> link --project-ref {ref}
+            <span className="text-brand-600">skybase</span> link --project-ref {ref}
           </>
         )
       },
     },
     {
       comment: 'Create a new migration called "new-migration"',
-      command: `supabase migration new new-migration`,
+      command: `skybase migration new new-migration`,
       jsx: () => {
         return (
           <>
-            <span className="text-brand-600">supabase</span> migration new new-migration
+            <span className="text-brand-600">skybase</span> migration new new-migration
           </>
         )
       },
     },
     {
       comment: 'Run all migrations against this project',
-      command: `supabase db push`,
+      command: `skybase db push`,
       jsx: () => {
         return (
           <>
-            <span className="text-brand-600">supabase</span> db push
+            <span className="text-brand-600">skybase</span> db push
           </>
         )
       },
@@ -53,7 +53,7 @@ const MigrationsEmptyState = () => {
           <p className="text-sm text-foreground-light">
             Database changes are managed through "migrations" and they are a common way of tracking
             changes to your database over time. You can run migrations against your project's
-            database via the Supabase CLI.
+            database via the Skybase CLI.
           </p>
         </div>
 

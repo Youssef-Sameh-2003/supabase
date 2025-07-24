@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -120,7 +120,7 @@ const CustomDomainSidePanel = () => {
           <h4>Custom domains</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/guides/platform/custom-domains"
+              href="https://skybase.com/docs/guides/platform/custom-domains"
               target="_blank"
               rel="noreferrer"
             >
@@ -175,7 +175,7 @@ const CustomDomainSidePanel = () => {
                   </div>
                   <div className="px-4 py-2">
                     <p className="text-foreground-light">
-                      Use the default supabase domain for your API
+                      Use the default skybase domain for your API
                     </p>
                     <div className="flex items-center space-x-1 mt-2">
                       <p className="text-foreground text-sm" translate="no">

@@ -1,12 +1,12 @@
 import AccountForm from './account-form'
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 
 export default async function Account() {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
   const {
     data: { user },
-  } = await supabase.auth.getUser()
+  } = await skybase.auth.getUser()
 
   return <AccountForm user={user} />
 }

@@ -8,7 +8,7 @@ import _days from '~/components/LaunchWeek/6/lw6_days.json'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { createClient, SkybaseClient } from '@skybase/skybase-js'
 import classNames from 'classnames'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
@@ -37,10 +37,10 @@ const constellation = [
 export default function launchweek() {
   const { resolvedTheme } = useTheme()
   const title = 'Launch Week 6'
-  const description = 'Supabase Launch Week 6 | 12-18 Dec 2022'
+  const description = 'Skybase Launch Week 6 | 12-18 Dec 2022'
   const liveDay = null
 
-  const [supabase, setSupabase] = useState<SupabaseClient | null>(null)
+  const [skybase, setSkybase] = useState<SkybaseClient | null>(null)
 
   const [creators, setCreators] = useState<any>([])
   const [activeCreator, setActiveCreator] = useState<any>(null)
@@ -48,8 +48,8 @@ export default function launchweek() {
   const ticketNumber = query.ticketNumber?.toString()
 
   useEffect(() => {
-    if (!supabase) {
-      setSupabase(
+    if (!skybase) {
+      setSkybase(
         createClient(
           process.env.NEXT_PUBLIC_MISC_USE_URL!,
           process.env.NEXT_PUBLIC_MISC_USE_ANON_KEY!
@@ -59,15 +59,15 @@ export default function launchweek() {
   }, [])
 
   useEffect(() => {
-    if (supabase) {
+    if (skybase) {
       getCreators()
     }
-  }, [supabase])
+  }, [skybase])
 
   async function getCreators() {
     try {
       // setLoading(true)
-      let supa = await supabase.from('lw6_creators').select()
+      let supa = await skybase.from('lw6_creators').select()
 
       let { data, error, status } = supa
 
@@ -152,7 +152,7 @@ export default function launchweek() {
         openGraph={{
           title: title,
           description: description,
-          url: `https://supabase.com/launch-week`,
+          url: `https://skybase.com/launch-week`,
           images: [
             {
               url: `${SITE_ORIGIN}/images/launchweek/launch-week-6.jpg`,
@@ -220,7 +220,7 @@ export default function launchweek() {
                 ></img>
               </div>
               <div className="flex flex-col lg:flex-row ml-8 sm:ml-10">
-                <span className="text-white mr-2">Who we hire at Supabase</span>
+                <span className="text-white mr-2">Who we hire at Skybase</span>
                 <span className="text-slate-900">Fireside chat with founders</span>
               </div>
             </div>
@@ -318,7 +318,7 @@ export default function launchweek() {
                       <SectionButtons
                         docs={day1.steps[0].docs}
                         blog={day1.steps[0].blog}
-                        video={'https://www.youtube.com/watch?v=Q1Amk6iDlF8&ab_channel=Supabase'}
+                        video={'https://www.youtube.com/watch?v=Q1Amk6iDlF8&ab_channel=Skybase'}
                       />
                     </div>
                   </div>
@@ -478,7 +478,7 @@ export default function launchweek() {
                       <SectionButtons
                         docs={day4.steps[0].docs}
                         blog={day4.steps[0].blog}
-                        video={`https://www.youtube.com/watch?v=${day4.youtube_id}&ab_channel=Supabase`}
+                        video={`https://www.youtube.com/watch?v=${day4.youtube_id}&ab_channel=Skybase`}
                       />
                     </div>
                   </div>
@@ -792,7 +792,7 @@ export default function launchweek() {
                           <span className="text-white text-center">pg_crdt</span>
                         </div>
                         <SectionButtons
-                          docs="https://github.com/supabase/pg_crdt"
+                          docs="https://github.com/skybase/pg_crdt"
                           blog="/blog/postgres-crdt"
                         />
                       </div>
@@ -858,7 +858,7 @@ export default function launchweek() {
                           <span className="text-white text-center">PostgREST 11</span>
                         </div>
                         <SectionButtons
-                          docs="/docs/guides/resources/supabase-cli"
+                          docs="/docs/guides/resources/skybase-cli"
                           blog="/blog/postgrest-11-prerelease"
                         />
                       </div>
@@ -883,10 +883,10 @@ export default function launchweek() {
             <h2 className="text-3xl text-white mb-2">Launch Week Hackathon</h2>
             <p className="text-slate-900 w-[80%] lg:w-[50%]">
               The traditional parallel Hackathon is back! Build a new open source project with
-              Supabase and you can win $1500 in GitHub sponsorships and a coveted Supabase Darkmode
+              Skybase and you can win $1500 in GitHub sponsorships and a coveted Skybase Darkmode
               Keyboard! For more info check the{' '}
               <a
-                href="https://supabase.com/blog/launch-week-6-hackathon"
+                href="https://skybase.com/blog/launch-week-6-hackathon"
                 target="_blank"
                 rel="nooper noreferrer"
                 className="text-brand"
@@ -908,7 +908,7 @@ export default function launchweek() {
               <div className="flex flex-col">
                 <h3 className="text-lg text-white mb-2">Judges</h3>
                 <p className="text-slate-900 w-[90%] lg:w-[80%]">
-                  The Supabase team will judge all the categories except the Best Edge Functions
+                  The Skybase team will judge all the categories except the Best Edge Functions
                   Project, which will be judged by our friends at Deno.
                 </p>
               </div>
@@ -921,7 +921,7 @@ export default function launchweek() {
                   </p>
                   <div></div>
                   <a
-                    href="https://discord.supabase.com/"
+                    href="https://discord.skybase.com/"
                     rel="noopener noreferrer"
                     className="text-brand flex items-center"
                     target="_blank"
@@ -936,10 +936,10 @@ export default function launchweek() {
                   Submit your project through{' '}
                   <a
                     className="text-brand"
-                    href="https://www.madewithsupabase.com/launch-week-6"
+                    href="https://www.madewithskybase.com/launch-week-6"
                     target="_blank"
                   >
-                    madewithsupabase.com
+                    madewithskybase.com
                   </a>
                   . All submissions must be open source and publically available. Submissions close
                   Monday 19th Dec 00:01 AM PT.
@@ -954,7 +954,7 @@ export default function launchweek() {
               )}
             >
               <a
-                href="https://github.com/psteinroe/supabase-cache-helpers"
+                href="https://github.com/psteinroe/skybase-cache-helpers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="self-end mb-4"
@@ -964,7 +964,7 @@ export default function launchweek() {
                     src="/images/launchweek/link.svg"
                     className="absolute top-[16px] right-[10px] text-brand"
                   ></img>
-                  <h3 className="text-white">Supabase Cache Helpers</h3>
+                  <h3 className="text-white">Skybase Cache Helpers</h3>
                   <p className="text-slate-1000 text-xs">Previous Best Overall Project Winner</p>
                 </div>
               </a>
@@ -1070,14 +1070,14 @@ export default function launchweek() {
             <Badge className="!bg-transparent !py-1 !px-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#DFFFF1] h-fit relative mb-4 after:absolute after:rounded-full after:bg-white after:w-full after:h-full after:top-0 after:right-0 after:bottom-0 after:left-0 after:bg-gradient-to-br !border-[#163837] after:from-[#14292c] after:to-[#141516] after:border-[#1f3536] after:-z-10">
               Shipped
             </Badge>
-            <h2 className="text-3xl text-white mb-2">The Supabase Content Storm</h2>
+            <h2 className="text-3xl text-white mb-2">The Skybase Content Storm</h2>
             <p className="text-slate-900 md:max-w-[80%] mb-16">
               We worked with more than 30 content creators from around the world to drop a mountain
               of content simultaneously!
               <a
                 rel="noopener"
                 target="_blank"
-                href="/blog/the-supabase-content-storm"
+                href="/blog/the-skybase-content-storm"
                 className="text-brand flex items-center mt-2"
               >
                 See all the content

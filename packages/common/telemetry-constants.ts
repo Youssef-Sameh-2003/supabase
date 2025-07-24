@@ -4,7 +4,7 @@
  * Note that events are not emitted for users that have opted out of telemetry.
  *
  * Original definitions located at:
- * https://github.com/supabase/supabase/blob/master/packages/common/telemetry-constants.ts
+ * https://github.com/skybase/skybase/blob/master/packages/common/telemetry-constants.ts
  *
  * @module telemetry-frontend
  */
@@ -190,7 +190,7 @@ export interface FeaturePreviewEnabledEvent {
   action: 'feature_preview_enabled'
   properties: {
     /**
-     * Feature key of the preview that was enabled. e.g. supabase-ui-api-side-panel
+     * Feature key of the preview that was enabled. e.g. skybase-ui-api-side-panel
      */
     feature: string
   }
@@ -209,7 +209,7 @@ export interface FeaturePreviewDisabledEvent {
   action: 'feature_preview_disabled'
   properties: {
     /**
-     * Feature key of the preview that was disabled. e.g. supabase-ui-api-side-panel
+     * Feature key of the preview that was disabled. e.g. skybase-ui-api-side-panel
      */
     feature: string
   }
@@ -1168,14 +1168,14 @@ export interface AiAssistantInSupportFormClickedEvent {
 }
 
 /**
- * User copied the command for a Supabase UI component.
+ * User copied the command for a Skybase UI component.
  *
  * @group Events
- * @source supabase-ui
+ * @source skybase-ui
  * @page /ui/docs/{framework}/{templateTitle}
  */
-export interface SupabaseUiCommandCopyButtonClickedEvent {
-  action: 'supabase_ui_command_copy_button_clicked'
+export interface SkybaseUiCommandCopyButtonClickedEvent {
+  action: 'skybase_ui_command_copy_button_clicked'
   properties: {
     templateTitle: string
     command: string
@@ -1469,7 +1469,7 @@ export type TelemetryEvent =
   | EdgeFunctionDeployUpdatesButtonClickedEvent
   | EdgeFunctionTestSendButtonClickedEvent
   | EdgeFunctionTestSidePanelOpenedEvent
-  | SupabaseUiCommandCopyButtonClickedEvent
+  | SkybaseUiCommandCopyButtonClickedEvent
   | SupportTicketSubmittedEvent
   | AiAssistantInSupportFormClickedEvent
   | OrganizationMfaEnforcementUpdated

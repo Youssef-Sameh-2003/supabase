@@ -1,6 +1,6 @@
 'use client'
 
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { Check, MessageSquareQuote, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import {
@@ -80,7 +80,7 @@ function Feedback({ className }: { className?: string }) {
   const pathname = usePathname() ?? ''
   const sendTelemetryEvent = useSendTelemetryEvent()
   const { mutate: sendFeedbackComment } = useSendFeedbackMutation()
-  const supabase = useConstant(() =>
+  const skybase = useConstant(() =>
     IS_PLATFORM
       ? createClient<Database>(
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -96,9 +96,9 @@ function Feedback({ className }: { className?: string }) {
   const showNo = unanswered || isNo
 
   async function sendFeedbackVote(response: Response) {
-    if (!supabase) return
+    if (!skybase) return
 
-    const { error } = await supabase.from('feedback').insert({
+    const { error } = await skybase.from('feedback').insert({
       vote: response,
       page: pathname,
       metadata: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ImageResponse } from '@vercel/og'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import useTicketBg from 'components/LaunchWeek/15/hooks/use-ticket-bg'
 
 export const runtime = 'edge' // 'nodejs' is the default
@@ -18,7 +18,7 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/images/launch-week/lw15`
 // Load custom fonts
 const FONT_URLS = {
-  SANS: 'https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/fonts/CircularStd-Book.otf',
+  SANS: 'https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/fonts/CircularStd-Book.otf',
 }
 
 const LW_TABLE = 'tickets'
@@ -35,21 +35,21 @@ export async function GET(req: Request, res: Response) {
   try {
     if (!username) throw new Error('missing username param')
 
-    const supabaseAdminClient = createClient(
+    const skybaseAdminClient = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL as string,
       process.env.LIVE_SUPABASE_COM_SERVICE_ROLE_KEY as string
     )
 
     // Track social shares
     if (userAgent?.toLocaleLowerCase().includes('twitter')) {
-      await supabaseAdminClient
+      await skybaseAdminClient
         .from(LW_TABLE)
         .update({ shared_on_twitter: 'now' })
         .eq('launch_week', 'lw15')
         .eq('username', username)
         .is('shared_on_twitter', null)
     } else if (userAgent?.toLocaleLowerCase().includes('linkedin')) {
-      await supabaseAdminClient
+      await skybaseAdminClient
         .from(LW_TABLE)
         .update({ shared_on_linkedin: 'now' })
         .eq('launch_week', 'lw15')
@@ -58,7 +58,7 @@ export async function GET(req: Request, res: Response) {
     }
 
     // Get ticket data
-    const { data: user, error } = await supabaseAdminClient
+    const { data: user, error } = await skybaseAdminClient
       .from(LW_MATERIALIZED_VIEW)
       .select(
         'id, name, metadata, shared_on_twitter, shared_on_linkedin, role, company, location, ticket_number'
@@ -95,7 +95,7 @@ export async function GET(req: Request, res: Response) {
     const TICKET_RATIO = 940 / 1500
     const TICKET_WIDTH = 480
     const TICKET_HEIGHT = TICKET_WIDTH / TICKET_RATIO
-    const SUPABASE_LOGO_IMG = `${STORAGE_URL}/assets/supabase-white.png`
+    const SUPABASE_LOGO_IMG = `${STORAGE_URL}/assets/skybase-white.png`
     const SUPABASE_LOGO_RATIO = 541 / 103
     const SUPABASE_LOGO_HEIGHT = 24
     const DATE_FONT_SIZE = 75
@@ -485,7 +485,7 @@ export async function GET(req: Request, res: Response) {
     // return generatedTicketImage
 
     // Upload image to storage.
-    const { error: storageError } = await supabaseAdminClient.storage
+    const { error: storageError } = await skybaseAdminClient.storage
       .from('images')
       .upload(`launch-week/lw15/og/${ticketType}/${username}.png`, generatedTicketImage.body!, {
         contentType: 'image/png',

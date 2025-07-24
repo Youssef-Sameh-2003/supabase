@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ChevronRightIcon, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -261,11 +261,11 @@ const RestoreToNewProject = () => {
         description={
           <>
             Physical backups must be enabled to restore your database to a new project.
-            <br /> Find out more about how backups work at supabase{' '}
+            <br /> Find out more about how backups work at skybase{' '}
             <Link
               target="_blank"
               className="underline"
-              href="https://supabase.com/docs/guides/platform/backups"
+              href="https://skybase.com/docs/guides/platform/backups"
             >
               in our docs
             </Link>

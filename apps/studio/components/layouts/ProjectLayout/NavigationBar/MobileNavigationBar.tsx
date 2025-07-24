@@ -33,8 +33,8 @@ const MobileNavigationBar = () => {
           className="flex items-center h-[26px] w-[26px] min-w-[26px]"
         >
           <img
-            alt="Supabase"
-            src={`${router.basePath}/img/supabase-logo.svg`}
+            alt="Skybase"
+            src={`${router.basePath}/img/skybase-logo.svg`}
             className="absolute h-[26px] w-[26px] cursor-pointer rounded"
           />
         </Link>

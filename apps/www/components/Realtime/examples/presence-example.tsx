@@ -6,12 +6,12 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Generate a random user ID and avatar
 const userId = Math.random().toString(36).substring(2, 15);
@@ -35,7 +35,7 @@ export default function App() {
     setUsername(randomName);
 
     // Subscribe to presence channel
-    const channel = supabase.channel(CHANNEL);
+    const channel = skybase.channel(CHANNEL);
 
     // Track presence state
     channel
@@ -109,7 +109,7 @@ const layoutProps: ExampleLayoutProps = {
   files: presenceFiles,
   title: 'Presence',
   description:
-    "A demonstration of Supabase Realtime's presence feature that tracks and displays online users in real-time with their avatars and usernames.",
+    "A demonstration of Skybase Realtime's presence feature that tracks and displays online users in real-time with their avatars and usernames.",
 }
 
 export default layoutProps

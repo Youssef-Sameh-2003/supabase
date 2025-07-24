@@ -85,7 +85,7 @@ const NoResultAlert = ({
                 <p className="text-foreground">Not sure what to do?</p>
                 <p className="text-foreground-lighter text-xs">Browse our documentation</p>
               </div>
-              <DocsButton href="https://supabase.com/docs/guides/realtime" />
+              <DocsButton href="https://skybase.com/docs/guides/realtime" />
             </div>
           </div>
         </>

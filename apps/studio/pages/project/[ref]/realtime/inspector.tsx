@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import type { NextPageWithLayout } from 'types'
 
 import { RealtimeInspector } from 'components/interfaces/Realtime/Inspector'

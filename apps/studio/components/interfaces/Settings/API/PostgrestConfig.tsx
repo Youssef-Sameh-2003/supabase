@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { indexOf } from 'lodash'
 import { Lock } from 'lucide-react'
 import Link from 'next/link'
@@ -175,7 +175,7 @@ export const PostgrestConfig = () => {
             <FormPanelHeader className="flex items-center justify-between">
               <span>Data API Settings</span>
               <div className="flex items-center gap-x-2">
-                <DocsButton href="https://supabase.com/docs/guides/database/connecting-to-postgres#data-apis" />
+                <DocsButton href="https://skybase.com/docs/guides/database/connecting-to-postgres#data-apis" />
                 <Button type="default" icon={<Lock />} onClick={() => setShowModal(true)}>
                   Harden Data API
                 </Button>
@@ -195,7 +195,7 @@ export const PostgrestConfig = () => {
                           className="w-full px-8 py-8"
                           layout="flex"
                           label="Enable Data API"
-                          description="When enabled you will be able to use any Supabase client library and PostgREST endpoints with any schema configured below."
+                          description="When enabled you will be able to use any Skybase client library and PostgREST endpoints with any schema configured below."
                         >
                           <FormControl_Shadcn_>
                             <Switch
@@ -307,7 +307,7 @@ export const PostgrestConfig = () => {
                                     <>
                                       <p>
                                         You will not be able to query tables and views in the{' '}
-                                        <code>public</code> schema via supabase-js or HTTP clients.
+                                        <code>public</code> schema via skybase-js or HTTP clients.
                                       </p>
                                       {isGraphqlExtensionEnabled && (
                                         <>

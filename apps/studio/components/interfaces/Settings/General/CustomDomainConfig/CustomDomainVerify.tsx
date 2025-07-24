@@ -191,7 +191,7 @@ const CustomDomainVerify = () => {
 
       <Panel.Content>
         <div className="flex items-center justify-between">
-          <DocsButton href="https://supabase.com/docs/guides/platform/custom-domains" />
+          <DocsButton href="https://skybase.com/docs/guides/platform/custom-domains" />
           <div className="flex items-center space-x-2">
             <Button
               type="default"

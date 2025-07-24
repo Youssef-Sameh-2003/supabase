@@ -1,4 +1,4 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresTable } from '@skybase/postgres-meta'
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query'
 import { sortBy } from 'lodash'
 import { useCallback } from 'react'
@@ -6,7 +6,7 @@ import { useCallback } from 'react'
 import { get, handleError } from 'data/fetchers'
 import type { ResponseError } from 'types'
 import { tableKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type TablesVariables = {
   projectRef?: string

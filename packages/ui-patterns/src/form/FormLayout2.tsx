@@ -200,7 +200,7 @@ export const Page = () => {
                 render={({ field }) => (
                   <FormItemLayout
                     afterLabel="Switch"
-                    label="Use ./supabase directory for everything"
+                    label="Use ./skybase directory for everything"
                     description="This is an explanation."
                     layout="flex"
                   >

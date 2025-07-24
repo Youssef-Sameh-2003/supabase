@@ -118,7 +118,7 @@ const ClaimProjectPage: NextPageWithLayout = () => {
 ClaimProjectPage.getLayout = (page) => (
   <>
     <Head>
-      <title>Claim project | Supabase</title>
+      <title>Claim project | Skybase</title>
     </Head>
     <main className="flex-grow flex flex-col w-full h-full overflow-y-auto">{page}</main>
   </>

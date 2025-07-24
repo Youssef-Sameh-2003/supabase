@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Button } from 'ui'
 import useConfData from '../hooks/use-conf-data'
 import { LW15_TWEET_TEXT, LW15_URL } from '~/lib/constants'
-import supabase from '../supabase'
+import skybase from '../skybase'
 
 export default function LW15TicketShare() {
   const { resolvedTheme } = useTheme()
@@ -46,7 +46,7 @@ export default function LW15TicketShare() {
   const handleShare = async (social: 'twitter' | 'linkedin') => {
     setTimeout(async () => {
       if (social === 'twitter') {
-        await supabase
+        await skybase
           .from(TICKETS_TABLE)
           .update({
             shared_on_twitter: 'now',
@@ -55,7 +55,7 @@ export default function LW15TicketShare() {
           .eq('launch_week', 'lw15')
           .eq('username', username)
       } else if (social === 'linkedin') {
-        await supabase
+        await skybase
           .from(TICKETS_TABLE)
           .update({
             shared_on_linkedin: 'now',

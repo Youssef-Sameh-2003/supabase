@@ -19,7 +19,7 @@ const typeSpec = _typeSpec as any
 export const TYPESPEC_NODE_ANONYMOUS = Symbol('anonymous')
 
 /**
- * Definitions for the methods and types defined in each Supabase JS client
+ * Definitions for the methods and types defined in each Skybase JS client
  * library.
  */
 export interface ModuleTypes {

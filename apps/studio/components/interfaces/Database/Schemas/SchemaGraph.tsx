@@ -1,4 +1,4 @@
-import type { PostgresSchema } from '@supabase/postgres-meta'
+import type { PostgresSchema } from '@skybase/postgres-meta'
 import { toPng, toSvg } from 'html-to-image'
 import { Check, Download, Loader2, Clipboard, Info } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -128,7 +128,7 @@ export const SchemaGraph = () => {
       })
         .then((data) => {
           const a = document.createElement('a')
-          a.setAttribute('download', `supabase-schema-${ref}.svg`)
+          a.setAttribute('download', `skybase-schema-${ref}.svg`)
           a.setAttribute('href', data)
           a.click()
           toast.success('Successfully downloaded as SVG')
@@ -153,7 +153,7 @@ export const SchemaGraph = () => {
       })
         .then((data) => {
           const a = document.createElement('a')
-          a.setAttribute('download', `supabase-schema-${ref}.png`)
+          a.setAttribute('download', `skybase-schema-${ref}.png`)
           a.setAttribute('href', data)
           a.click()
           toast.success('Successfully downloaded as PNG')

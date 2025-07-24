@@ -1,7 +1,7 @@
 import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 
-import { Query } from '@supabase/pg-meta/src/query'
+import { Query } from '@skybase/pg-meta/src/query'
 import type { SupaRow } from 'components/grid/types'
 import { Markdown } from 'components/interfaces/Markdown'
 import { DocsButton } from 'components/ui/DocsButton'
@@ -108,7 +108,7 @@ export const useTableRowDeleteMutation = ({
                       View "{referencingTable}" table
                     </Link>
                   </Button> */}
-                  <DocsButton href="https://supabase.com/docs/guides/database/postgres/cascade-deletes" />
+                  <DocsButton href="https://skybase.com/docs/guides/database/postgres/cascade-deletes" />
                 </div>
               ),
             })
@@ -121,7 +121,7 @@ export const useTableRowDeleteMutation = ({
                     each row before updating or deleting the row.
                   </p>
                   <div className="mt-3">
-                    <DocsButton href="https://supabase.com/docs/guides/database/tables#primary-keys" />
+                    <DocsButton href="https://skybase.com/docs/guides/database/tables#primary-keys" />
                   </div>
                 </div>
               ),

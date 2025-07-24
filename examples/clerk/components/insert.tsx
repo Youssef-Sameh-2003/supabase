@@ -1,17 +1,17 @@
 'use client'
 
-import { useSupabaseClient } from '@/hooks/useSupabaseClient'
+import { useSkybaseClient } from '@/hooks/useSkybaseClient'
 import { useUser } from '@clerk/nextjs'
 
 export function InsertData() {
-  const supabase = useSupabaseClient()
+  const skybase = useSkybaseClient()
 
   const { user } = useUser()
   const organizationId = user?.organizationMemberships?.[0]?.organization?.id
 
   async function onInsertRow() {
     if (organizationId) {
-      const { error } = await supabase
+      const { error } = await skybase
         .from('secured_table')
         .insert({ organization_id: organizationId })
       if (error) {

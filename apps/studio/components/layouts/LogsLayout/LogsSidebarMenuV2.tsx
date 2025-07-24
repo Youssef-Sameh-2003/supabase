@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ChevronRight, CircleHelpIcon, FilePlus, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -236,7 +236,7 @@ export function LogsSidebarMenuV2() {
           title="New logs"
           description="Get early access"
           actions={
-            <Link href="https://forms.supabase.com/unified-logs-signup" target="_blank">
+            <Link href="https://forms.skybase.com/unified-logs-signup" target="_blank">
               <Button type="default" size="tiny">
                 Early access
               </Button>
@@ -266,7 +266,7 @@ export function LogsSidebarMenuV2() {
                 type="default"
                 className="px-1.5"
                 icon={<CircleHelpIcon />}
-                onClick={() => selectFeaturePreview('supabase-ui-preview-unified-logs')}
+                onClick={() => selectFeaturePreview('skybase-ui-preview-unified-logs')}
                 tooltip={{ content: { side: 'bottom', text: 'More information' } }}
               />
             </>

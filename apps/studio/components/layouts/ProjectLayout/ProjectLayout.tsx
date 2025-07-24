@@ -147,16 +147,16 @@ const ProjectLayout = forwardRef<HTMLDivElement, PropsWithChildren<ProjectLayout
         <Head>
           <title>
             {title
-              ? `${title} | Supabase`
+              ? `${title} | Skybase`
               : selectedTable
-                ? `${selectedTable} | ${projectName} | ${organizationName} | Supabase`
+                ? `${selectedTable} | ${projectName} | ${organizationName} | Skybase`
                 : projectName
-                  ? `${projectName} | ${organizationName} | Supabase`
+                  ? `${projectName} | ${organizationName} | Skybase`
                   : organizationName
-                    ? `${organizationName} | Supabase`
-                    : 'Supabase'}
+                    ? `${organizationName} | Skybase`
+                    : 'Skybase'}
           </title>
-          <meta name="description" content="Supabase Studio" />
+          <meta name="description" content="Skybase Studio" />
         </Head>
         <div className="flex flex-row h-full w-full">
           <ResizablePanelGroup direction="horizontal" autoSaveId="project-layout">
@@ -312,7 +312,7 @@ interface ContentWrapperProps {
  *
  * [Joshen] As of 210422: Current testing connection by pinging postgres
  * Ideally we'd have a more specific monitoring of the project such as during restarts
- * But that will come later: https://supabase.slack.com/archives/C01D6TWFFFW/p1650427619665549
+ * But that will come later: https://skybase.slack.com/archives/C01D6TWFFFW/p1650427619665549
  *
  * Just note that this logic does not differentiate between a "restarting" state and
  * a "something is wrong and can't connect to project" state.

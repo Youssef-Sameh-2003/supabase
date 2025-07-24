@@ -34,7 +34,7 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
   const entry = allTroubleshootingEntries.find((entry) => getArticleSlug(entry) === slug)
 
   return {
-    title: 'Supabase Docs | Troubleshooting' + (entry ? ` | ${entry.data.title}` : ''),
+    title: 'Skybase Docs | Troubleshooting' + (entry ? ` | ${entry.data.title}` : ''),
     alternates: {
       canonical: `${PROD_URL}/guides/troubleshooting/${slug}`,
     },

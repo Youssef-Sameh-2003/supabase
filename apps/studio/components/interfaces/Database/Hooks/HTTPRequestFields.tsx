@@ -23,7 +23,7 @@ import {
 import { HTTPArgument } from './EditHookPanel'
 
 interface HTTPRequestFieldsProps {
-  type: 'http_request' | 'supabase_function'
+  type: 'http_request' | 'skybase_function'
   errors: any
   httpHeaders: HTTPArgument[]
   httpParameters: HTTPArgument[]
@@ -64,7 +64,7 @@ const HTTPRequestFields = ({
           <FormSectionLabel className="lg:!col-span-4">
             {type === 'http_request'
               ? 'HTTP Request'
-              : type === 'supabase_function'
+              : type === 'skybase_function'
                 ? 'Edge Function'
                 : ''}
           </FormSectionLabel>
@@ -87,7 +87,7 @@ const HTTPRequestFields = ({
               placeholder="http://api.com/path/resource"
               descriptionText="URL of the HTTP request. Must include HTTP/HTTPS"
             />
-          ) : type === 'supabase_function' && edgeFunctions.length === 0 ? (
+          ) : type === 'skybase_function' && edgeFunctions.length === 0 ? (
             <div className="space-y-1">
               <p className="text-sm text-foreground-light">Select which edge function to trigger</p>
               <div className="px-4 py-4 border rounded bg-surface-300 border-strong flex items-center justify-between space-x-4">
@@ -98,12 +98,12 @@ const HTTPRequestFields = ({
               </div>
               {errors.http_url && <p className="text-sm text-red-900">{errors.http_url}</p>}
             </div>
-          ) : type === 'supabase_function' && edgeFunctions.length > 0 ? (
+          ) : type === 'skybase_function' && edgeFunctions.length > 0 ? (
             <Listbox id="http_url" name="http_url" label="Select which edge function to trigger">
               {edgeFunctions.map((fn) => {
                 const restUrl = selectedProject?.restUrl
                 const restUrlTld = restUrl ? new URL(restUrl).hostname.split('.').pop() : 'co'
-                const functionUrl = `https://${ref}.supabase.${restUrlTld}/functions/v1/${fn.slug}`
+                const functionUrl = `https://${ref}.skybase.${restUrlTld}/functions/v1/${fn.slug}`
 
                 return (
                   <Listbox.Option key={fn.id} id={functionUrl} value={functionUrl} label={fn.name}>
@@ -159,12 +159,12 @@ const HTTPRequestFields = ({
                 type="default"
                 size="tiny"
                 icon={<Plus />}
-                className={cn(type === 'supabase_function' && 'rounded-r-none px-3')}
+                className={cn(type === 'skybase_function' && 'rounded-r-none px-3')}
                 onClick={() => onAddHeaders()}
               >
                 Add a new header
               </Button>
-              {type === 'supabase_function' && (
+              {type === 'skybase_function' && (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button
@@ -203,7 +203,7 @@ const HTTPRequestFields = ({
                         onAddHeaders([
                           {
                             id: uuidv4(),
-                            name: 'x-supabase-webhook-source',
+                            name: 'x-skybase-webhook-source',
                             value: `[Use a secret value]`,
                           },
                         ])

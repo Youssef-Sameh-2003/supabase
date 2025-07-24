@@ -187,7 +187,7 @@ const OrganizationProjects = ({
       username: connection.user?.username ?? '',
     },
     foreign_project_id: String(connection.repository.id),
-    supabase_project_ref: connection.project.ref,
+    skybase_project_ref: connection.project.ref,
     organization_integration_id: 'unused',
     inserted_at: connection.inserted_at,
     updated_at: connection.updated_at,
@@ -240,10 +240,10 @@ const OrganizationProjects = ({
                   (resourceWarning) => resourceWarning.project === project.ref
                 )}
                 githubIntegration={githubConnections?.find(
-                  (connection) => connection.supabase_project_ref === project.ref
+                  (connection) => connection.skybase_project_ref === project.ref
                 )}
                 vercelIntegration={vercelConnections?.find(
-                  (connection) => connection.supabase_project_ref === project.ref
+                  (connection) => connection.skybase_project_ref === project.ref
                 )}
               />
             ))

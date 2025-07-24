@@ -1,21 +1,21 @@
 'use client'
 
-import { createClient } from '@/registry/default/fixtures/lib/supabase/client'
-import { PostgrestQueryBuilder } from '@supabase/postgrest-js'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { createClient } from '@/registry/default/fixtures/lib/skybase/client'
+import { PostgrestQueryBuilder } from '@skybase/postgrest-js'
+import { SkybaseClient } from '@skybase/skybase-js'
 import { useEffect, useRef, useSyncExternalStore } from 'react'
 
-const supabase = createClient()
+const skybase = createClient()
 
-// The following types are used to make the hook type-safe. It extracts the database type from the supabase client.
-type SupabaseClientType = typeof supabase
+// The following types are used to make the hook type-safe. It extracts the database type from the skybase client.
+type SkybaseClientType = typeof skybase
 
 // Utility type to check if the type is any
 type IfAny<T, Y, N> = 0 extends 1 & T ? Y : N
 
-// Extracts the database type from the supabase client. If the supabase client doesn't have a type, it will fallback properly.
+// Extracts the database type from the skybase client. If the skybase client doesn't have a type, it will fallback properly.
 type Database =
-  SupabaseClientType extends SupabaseClient<infer U>
+  SkybaseClientType extends SkybaseClient<infer U>
     ? IfAny<
         U,
         {
@@ -33,21 +33,21 @@ type Database =
 type DatabaseSchema = Database['public']
 
 // Extracts the table names from the database type
-type SupabaseTableName = keyof DatabaseSchema['Tables']
+type SkybaseTableName = keyof DatabaseSchema['Tables']
 
 // Extracts the table definition from the database type
-type SupabaseTableData<T extends SupabaseTableName> = DatabaseSchema['Tables'][T]['Row']
+type SkybaseTableData<T extends SkybaseTableName> = DatabaseSchema['Tables'][T]['Row']
 
-type SupabaseSelectBuilder<T extends SupabaseTableName> = ReturnType<
+type SkybaseSelectBuilder<T extends SkybaseTableName> = ReturnType<
   PostgrestQueryBuilder<DatabaseSchema, DatabaseSchema['Tables'][T], T>['select']
 >
 
 // A function that modifies the query. Can be used to sort, filter, etc. If .range is used, it will be overwritten.
-type SupabaseQueryHandler<T extends SupabaseTableName> = (
-  query: SupabaseSelectBuilder<T>
-) => SupabaseSelectBuilder<T>
+type SkybaseQueryHandler<T extends SkybaseTableName> = (
+  query: SkybaseSelectBuilder<T>
+) => SkybaseSelectBuilder<T>
 
-interface UseInfiniteQueryProps<T extends SupabaseTableName, Query extends string = '*'> {
+interface UseInfiniteQueryProps<T extends SkybaseTableName, Query extends string = '*'> {
   // The table name to query
   tableName: T
   // The columns to select, defaults to `*`
@@ -55,7 +55,7 @@ interface UseInfiniteQueryProps<T extends SupabaseTableName, Query extends strin
   // The number of items to fetch per page, defaults to `20`
   pageSize?: number
   // A function that modifies the query. Can be used to sort, filter, etc. If .range is used, it will be overwritten.
-  trailingQuery?: SupabaseQueryHandler<T>
+  trailingQuery?: SkybaseQueryHandler<T>
 }
 
 interface StoreState<TData> {
@@ -70,7 +70,7 @@ interface StoreState<TData> {
 
 type Listener = () => void
 
-function createStore<TData extends SupabaseTableData<T>, T extends SupabaseTableName>(
+function createStore<TData extends SkybaseTableData<T>, T extends SkybaseTableName>(
   props: UseInfiniteQueryProps<T>
 ) {
   const { tableName, columns = '*', pageSize = 20, trailingQuery } = props
@@ -101,9 +101,9 @@ function createStore<TData extends SupabaseTableData<T>, T extends SupabaseTable
 
     setState({ isFetching: true })
 
-    let query = supabase
+    let query = skybase
       .from(tableName)
-      .select(columns, { count: 'exact' }) as unknown as SupabaseSelectBuilder<T>
+      .select(columns, { count: 'exact' }) as unknown as SkybaseSelectBuilder<T>
 
     if (trailingQuery) {
       query = trailingQuery(query)
@@ -162,8 +162,8 @@ const initialState: any = {
 }
 
 function useInfiniteQuery<
-  TData extends SupabaseTableData<T>,
-  T extends SupabaseTableName = SupabaseTableName,
+  TData extends SkybaseTableData<T>,
+  T extends SkybaseTableName = SkybaseTableName,
 >(props: UseInfiniteQueryProps<T>) {
   const storeRef = useRef(createStore<TData, T>(props))
 
@@ -203,8 +203,8 @@ function useInfiniteQuery<
 
 export {
   useInfiniteQuery,
-  type SupabaseQueryHandler,
-  type SupabaseTableData,
-  type SupabaseTableName,
+  type SkybaseQueryHandler,
+  type SkybaseTableData,
+  type SkybaseTableName,
   type UseInfiniteQueryProps,
 }

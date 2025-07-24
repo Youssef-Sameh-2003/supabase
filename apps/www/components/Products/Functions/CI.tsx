@@ -7,10 +7,10 @@ const ciCode = `jobs:
  
   steps:
    - uses: actions/checkout@v4
-   - uses: supabase/setup-cli@v1
+   - uses: skybase/setup-cli@v1
    with:
     version: latest
-   - run: supabase functions deploy
+   - run: skybase functions deploy
 `
 
 const CI = () => (

@@ -17,7 +17,7 @@ export const Branching2Preview = () => {
         Branching 2.0 introduces a new workflow for managing database branches without having to use
         Git. Create branches, review changes and merge back into production all through the
         dashboard. Read the below limitations and our{' '}
-        <InlineLink href="https://supabase.com/docs/guides/platform/branching">
+        <InlineLink href="https://skybase.com/docs/guides/platform/branching">
           branching documentation
         </InlineLink>{' '}
         before opting in.

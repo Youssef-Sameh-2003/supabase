@@ -9,13 +9,13 @@ const fiveYears = new Date(now.getFullYear() + 5, now.getMonth(), now.getDate())
 
 const anonToken = {
   role: 'anon',
-  iss: 'supabase',
+  iss: 'skybase',
   iat: Math.floor(today.valueOf() / 1000),
   exp: Math.floor(fiveYears.valueOf() / 1000),
 }
 const serviceToken = {
   role: 'service_role',
-  iss: 'supabase',
+  iss: 'skybase',
   iat: Math.floor(today.valueOf() / 1000),
   exp: Math.floor(fiveYears.valueOf() / 1000),
 }

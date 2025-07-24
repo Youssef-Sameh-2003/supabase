@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import { SkybaseClient } from '@skybase/skybase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
@@ -33,8 +33,8 @@ export const config = {
 }
 
 const openAiKey = process.env.OPENAI_API_KEY
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const skybaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const skybaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -49,7 +49,7 @@ export default async function handler(req: NextRequest) {
     )
   }
 
-  if (!supabaseUrl) {
+  if (!skybaseUrl) {
     return new Response(
       JSON.stringify({
         error:
@@ -62,7 +62,7 @@ export default async function handler(req: NextRequest) {
     )
   }
 
-  if (!supabaseServiceKey) {
+  if (!skybaseServiceKey) {
     return new Response(
       JSON.stringify({
         error:
@@ -104,10 +104,10 @@ async function handlePost(request: NextRequest) {
     throw new UserError('Missing messages in request data')
   }
 
-  const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
+  const skybaseClient = new SkybaseClient(skybaseUrl, skybaseServiceKey)
 
   try {
-    const response = await clippy(openai, supabaseClient, messages)
+    const response = await clippy(openai, skybaseClient, messages)
 
     // Proxy the streamed SSE response from OpenAI
     return new Response(response.body, {

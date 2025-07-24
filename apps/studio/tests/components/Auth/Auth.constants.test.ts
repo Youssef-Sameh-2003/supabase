@@ -5,17 +5,17 @@ describe('Auth.constants: urlRegex', () => {
   it('should match valid URLs', () => {
     const validUrls = [
       'http://domain.com',
-      'https://supabase.io',
+      'https://skybase.io',
       'https://new-domain-vercel.com',
       'www.test-domain.com',
       'exp://exp.host/some-app',
       'exp://exp.host/some-app?release-channel=default',
-      'https://supabase.com/dashboard',
+      'https://skybase.com/dashboard',
       'http://localhost:3000',
-      'https://supabase.com?name=test',
-      'https://supabase.com?name=test&description=hello&page=2',
-      'https://supabase*.com',
-      'https://supabase.com/*',
+      'https://skybase.com?name=test',
+      'https://skybase.com?name=test&description=hello&page=2',
+      'https://skybase*.com',
+      'https://skybase.com/*',
       'https://new-*-domain.com/*',
       'https://new-*-domain.com/*/*/*',
       'https://sub-*-domain.new-*-domain.com/*/*/*',
@@ -27,7 +27,7 @@ describe('Auth.constants: urlRegex', () => {
   })
 
   it('should not match invalid URLs', () => {
-    const invalidUrls = ['supabase', 'mailto:test@gmail.com', 'hello world.com', 'email@domain.com']
+    const invalidUrls = ['skybase', 'mailto:test@gmail.com', 'hello world.com', 'email@domain.com']
 
     const failingInvalidUrls = invalidUrls.filter((url) => urlRegex().test(url))
     if (failingInvalidUrls.length > 0) {

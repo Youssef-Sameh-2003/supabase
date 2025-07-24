@@ -88,7 +88,7 @@ export const Restriction = () => {
                 </Button>
               )}
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://supabase.com/docs/guides/platform/cost-control#spend-cap">
+                <a href="https://skybase.com/docs/guides/platform/cost-control#spend-cap">
                   About spend cap
                 </a>
               </Button>
@@ -133,7 +133,7 @@ export const Restriction = () => {
               )}
 
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://supabase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://skybase.com/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>
@@ -173,7 +173,7 @@ export const Restriction = () => {
                 </Button>
               )}
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://supabase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://skybase.com/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>
@@ -211,7 +211,7 @@ export const Restriction = () => {
                 </Button>
               )}
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://supabase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://skybase.com/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>

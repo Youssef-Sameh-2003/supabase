@@ -6,7 +6,7 @@ import specAuthV1 from '~/spec/gotrue_v1_config.yaml' with { type: 'yml' }
 
 const meta = {
   title: 'Auth Self-hosting Config',
-  description: 'How to configure and deploy Supabase Auth.',
+  description: 'How to configure and deploy Skybase Auth.',
 }
 
 const generateMetadata = genGuideMeta(() => ({
@@ -21,7 +21,7 @@ const AuthConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'supabase/supabase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/auth/config/page.tsx'
+        'skybase/skybase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/auth/config/page.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

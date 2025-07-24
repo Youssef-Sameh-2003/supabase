@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabaseClient } from "../utility/supabaseClient";
+import { skybaseClient } from "../utility/skybaseClient";
 
 type TAvatarProps = {
   url?: string;
@@ -21,7 +21,7 @@ export default function Avatar({
 
   async function downloadImage(path: string) {
     try {
-      const { data, error } = await supabaseClient.storage
+      const { data, error } = await skybaseClient.storage
         .from("avatars")
         .download(path);
       if (error) {
@@ -47,7 +47,7 @@ export default function Avatar({
       const fileName = `${Math.random()}.${fileExt}`;
       const filePath = `${fileName}`;
 
-      const { error: uploadError } = await supabaseClient.storage
+      const { error: uploadError } = await skybaseClient.storage
         .from("avatars")
         .upload(filePath, file);
 

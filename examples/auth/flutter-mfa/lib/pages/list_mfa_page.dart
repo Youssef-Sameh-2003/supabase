@@ -10,7 +10,7 @@ class ListMFAPage extends StatelessWidget {
   static const route = '/list-mfa';
   ListMFAPage({super.key});
 
-  final _factorListFuture = supabase.auth.mfa.listFactors();
+  final _factorListFuture = skybase.auth.mfa.listFactors();
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +53,8 @@ class ListMFAPage extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () async {
-                                  await supabase.auth.mfa.unenroll(factor.id);
-                                  await supabase.auth.signOut();
+                                  await skybase.auth.mfa.unenroll(factor.id);
+                                  await skybase.auth.signOut();
                                   if (context.mounted) {
                                     context.go(RegisterPage.route);
                                   }

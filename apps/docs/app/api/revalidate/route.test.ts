@@ -1,6 +1,6 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { revalidateTag } from 'next/cache'
 import { headers } from 'next/headers'
 import { NextRequest } from 'next/server'
@@ -17,15 +17,15 @@ vi.mock('next/headers', () => ({
   headers: vi.fn(),
 }))
 
-// Mock Supabase client
-vi.mock('@supabase/supabase-js', () => ({
+// Mock Skybase client
+vi.mock('@skybase/skybase-js', () => ({
   createClient: vi.fn(),
 }))
 
 describe('_handleRevalidateRequest', () => {
   let mockDate: Date
   let originalEnv: NodeJS.ProcessEnv
-  let mockSupabaseClient: {
+  let mockSkybaseClient: {
     rpc: Mock
     from: Mock
   }
@@ -47,14 +47,14 @@ describe('_handleRevalidateRequest', () => {
     mockDate = new Date('2023-01-01T12:00:00Z')
     vi.setSystemTime(mockDate)
 
-    // Setup mock Supabase client
-    mockSupabaseClient = {
+    // Setup mock Skybase client
+    mockSkybaseClient = {
       rpc: vi.fn(),
       from: vi.fn(() => ({
         insert: vi.fn().mockResolvedValue({ error: null }),
       })),
     }
-    vi.mocked(createClient).mockReturnValue(mockSupabaseClient as any)
+    vi.mocked(createClient).mockReturnValue(mockSkybaseClient as any)
   })
 
   afterEach(() => {
@@ -117,7 +117,7 @@ describe('_handleRevalidateRequest', () => {
 
     vi.mocked(headers).mockReturnValue(Promise.resolve(new Headers(request.headers)))
 
-    mockSupabaseClient.rpc.mockResolvedValue({ data: [] })
+    mockSkybaseClient.rpc.mockResolvedValue({ data: [] })
 
     const response = await _handleRevalidateRequest(request)
     expect(response.status).toBe(204)
@@ -138,7 +138,7 @@ describe('_handleRevalidateRequest', () => {
     vi.mocked(headers).mockReturnValue(Promise.resolve(new Headers(request.headers)))
 
     const fiveHoursAgo = new Date(mockDate.getTime() - 5 * 60 * 60 * 1000)
-    mockSupabaseClient.rpc.mockResolvedValue({
+    mockSkybaseClient.rpc.mockResolvedValue({
       data: [{ created_at: fiveHoursAgo.toISOString() }],
     })
 
@@ -159,7 +159,7 @@ describe('_handleRevalidateRequest', () => {
     vi.mocked(headers).mockReturnValue(Promise.resolve(new Headers(request.headers)))
 
     const sevenHoursAgo = new Date(mockDate.getTime() - 7 * 60 * 60 * 1000)
-    mockSupabaseClient.rpc.mockResolvedValue({
+    mockSkybaseClient.rpc.mockResolvedValue({
       data: [{ created_at: sevenHoursAgo.toISOString() }],
     })
 
@@ -180,7 +180,7 @@ describe('_handleRevalidateRequest', () => {
     vi.mocked(headers).mockReturnValue(Promise.resolve(new Headers(request.headers)))
 
     const oneHourAgo = new Date(mockDate.getTime() - 1 * 60 * 60 * 1000)
-    mockSupabaseClient.rpc.mockResolvedValue({
+    mockSkybaseClient.rpc.mockResolvedValue({
       data: [{ created_at: oneHourAgo.toISOString() }],
     })
 

@@ -1,9 +1,9 @@
 import { useSession } from '@clerk/nextjs'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 
-export function useSupabaseClient() {
+export function useSkybaseClient() {
   const { session } = useSession()
-  const supabaseClient = createClient(
+  const skybaseClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -12,5 +12,5 @@ export function useSupabaseClient() {
       accessToken: async () => session?.getToken() ?? null,
     }
   )
-  return supabaseClient
+  return skybaseClient
 }

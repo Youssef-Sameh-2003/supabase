@@ -51,15 +51,15 @@ const VercelIntegration: NextPageWithLayout = () => {
       x.metadata?.configuration_id === configurationId
   )
 
-  const { data: supabaseProjectsData, isLoading: isLoadingSupabaseProjectsData } = useProjectsQuery(
+  const { data: skybaseProjectsData, isLoading: isLoadingSkybaseProjectsData } = useProjectsQuery(
     {
       enabled: integration?.id !== undefined,
     }
   )
 
-  const supabaseProjects = useMemo(
+  const skybaseProjects = useMemo(
     () =>
-      supabaseProjectsData
+      skybaseProjectsData
         ?.filter(
           (project) =>
             project.organization_id === organization?.id &&
@@ -70,7 +70,7 @@ const VercelIntegration: NextPageWithLayout = () => {
               project.status === PROJECT_STATUS['RESIZING'])
         )
         .map((project) => ({ name: project.name, ref: project.ref })) ?? EMPTY_ARR,
-    [organization?.id, supabaseProjectsData]
+    [organization?.id, skybaseProjectsData]
   )
 
   const { data: vercelProjectsData, isLoading: isLoadingVercelProjectsData } =
@@ -129,7 +129,7 @@ const VercelIntegration: NextPageWithLayout = () => {
           ...vars.connection,
           metadata: {
             ...vars.connection.metadata,
-            supabaseConfig: {
+            skybaseConfig: {
               projectEnvVars: {
                 write: true,
               },
@@ -150,14 +150,14 @@ const VercelIntegration: NextPageWithLayout = () => {
             <Markdown
               className="text-foreground-lighter"
               content={`
-This Supabase integration manages your environment variables automatically to provide the latest keys in the unlikely event that you will need to refresh your JWT token.
+This Skybase integration manages your environment variables automatically to provide the latest keys in the unlikely event that you will need to refresh your JWT token.
 `}
             />
           </header>
           <ProjectLinker
             organizationIntegrationId={integration?.id}
             foreignProjects={vercelProjects}
-            supabaseProjects={supabaseProjects}
+            skybaseProjects={skybaseProjects}
             onCreateConnections={onCreateConnections}
             installedConnections={integration?.connections}
             isLoading={isCreatingConnection}
@@ -170,7 +170,7 @@ This Supabase integration manages your environment variables automatically to pr
               }
             }}
             loadingForeignProjects={isLoadingVercelProjectsData}
-            loadingSupabaseProjects={isLoadingSupabaseProjectsData}
+            loadingSkybaseProjects={isLoadingSkybaseProjectsData}
             mode="Vercel"
           />
           <Markdown

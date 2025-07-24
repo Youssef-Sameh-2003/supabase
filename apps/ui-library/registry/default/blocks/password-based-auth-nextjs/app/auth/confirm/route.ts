@@ -1,5 +1,5 @@
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/server'
-import { type EmailOtpType } from '@supabase/supabase-js'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/server'
+import { type EmailOtpType } from '@skybase/skybase-js'
 import { redirect } from 'next/navigation'
 import { type NextRequest } from 'next/server'
 
@@ -11,9 +11,9 @@ export async function GET(request: NextRequest) {
   const next = _next?.startsWith('/') ? _next : '/'
 
   if (token_hash && type) {
-    const supabase = await createClient()
+    const skybase = await createClient()
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { error } = await skybase.auth.verifyOtp({
       type,
       token_hash,
     })

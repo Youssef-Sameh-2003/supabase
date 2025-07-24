@@ -233,13 +233,13 @@ export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
             label: 'Changelog',
             icon: 'changelog',
             hasLightIcon: true,
-            href: 'https://supabase.com/changelog',
+            href: 'https://skybase.com/changelog',
             level: 'changelog',
           },
           {
             label: 'Status',
             icon: 'status',
-            href: 'https://status.supabase.com/',
+            href: 'https://status.skybase.com/',
           },
           {
             label: 'Contributing',
@@ -254,7 +254,7 @@ export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
 
 export const gettingstarted: NavMenuConstant = {
   icon: 'getting-started',
-  title: 'Start with Supabase',
+  title: 'Start with Skybase',
   url: '/guides/getting-started',
   items: [
     { name: 'Features', url: '/guides/getting-started/features' },
@@ -1188,7 +1188,7 @@ export const database: NavMenuConstant = {
           url: '/guides/database/postgres/which-version-of-postgres',
         },
         {
-          name: 'Replicating from Supabase to External Postgres',
+          name: 'Replicating from Skybase to External Postgres',
           url: '/guides/database/postgres/setup-replication-external',
         },
       ],
@@ -1433,9 +1433,9 @@ export const functions: NavMenuConstant = {
       name: 'Integrations',
       url: undefined,
       items: [
-        { name: 'Supabase Auth', url: '/guides/functions/auth' },
-        { name: 'Supabase Database (Postgres)', url: '/guides/functions/connect-to-postgres' },
-        { name: 'Supabase Storage', url: '/guides/functions/storage-caching' },
+        { name: 'Skybase Auth', url: '/guides/functions/auth' },
+        { name: 'Skybase Database (Postgres)', url: '/guides/functions/connect-to-postgres' },
+        { name: 'Skybase Storage', url: '/guides/functions/storage-caching' },
       ],
     },
     {
@@ -1520,7 +1520,7 @@ export const functions: NavMenuConstant = {
       name: 'Third-Party Tools',
       url: undefined,
       items: [
-        { name: 'Dart Edge on Supabase', url: '/guides/functions/dart-edge' },
+        { name: 'Dart Edge on Skybase', url: '/guides/functions/dart-edge' },
         {
           name: 'Browserless.io',
           url: '/guides/functions/examples/screenshots',
@@ -2017,65 +2017,65 @@ export const MIGRATION_PAGES: Partial<NavMenuSection & ComponentProps<typeof Ico
   {
     name: 'Auth0',
     icon: '/docs/img/icons/auth0-icon',
-    url: '/guides/platform/migrating-to-supabase/auth0',
+    url: '/guides/platform/migrating-to-skybase/auth0',
     hasLightIcon: true,
   },
   {
     name: 'Firebase Auth',
     icon: '/docs/img/icons/firebase-icon',
-    url: '/guides/platform/migrating-to-supabase/firebase-auth',
+    url: '/guides/platform/migrating-to-skybase/firebase-auth',
   },
   {
     name: 'Firestore Data',
     icon: '/docs/img/icons/firebase-icon',
-    url: '/guides/platform/migrating-to-supabase/firestore-data',
+    url: '/guides/platform/migrating-to-skybase/firestore-data',
   },
   {
     name: 'Firebase Storage',
     icon: '/docs/img/icons/firebase-icon',
-    url: '/guides/platform/migrating-to-supabase/firebase-storage',
+    url: '/guides/platform/migrating-to-skybase/firebase-storage',
   },
   {
     name: 'Heroku',
     icon: '/docs/img/icons/heroku-icon',
-    url: '/guides/platform/migrating-to-supabase/heroku',
+    url: '/guides/platform/migrating-to-skybase/heroku',
   },
   {
     name: 'Render',
     icon: '/docs/img/icons/render-icon',
-    url: '/guides/platform/migrating-to-supabase/render',
+    url: '/guides/platform/migrating-to-skybase/render',
   },
   {
     name: 'Amazon RDS',
     icon: '/docs/img/icons/aws-rds-icon',
-    url: '/guides/platform/migrating-to-supabase/amazon-rds',
+    url: '/guides/platform/migrating-to-skybase/amazon-rds',
   },
   {
     name: 'Postgres',
     icon: '/docs/img/icons/postgres-icon',
-    url: '/guides/platform/migrating-to-supabase/postgres',
+    url: '/guides/platform/migrating-to-skybase/postgres',
   },
   {
     name: 'Vercel Postgres',
     icon: '/docs/img/icons/vercel-icon',
-    url: '/guides/platform/migrating-to-supabase/vercel-postgres',
+    url: '/guides/platform/migrating-to-skybase/vercel-postgres',
     hasLightIcon: true,
   },
   {
     name: 'Neon',
     icon: '/docs/img/icons/neon-icon',
-    url: '/guides/platform/migrating-to-supabase/neon',
+    url: '/guides/platform/migrating-to-skybase/neon',
     hasLightIcon: true,
   },
   {
     name: 'MySQL',
     icon: '/docs/img/icons/mysql-icon',
-    url: '/guides/platform/migrating-to-supabase/mysql',
+    url: '/guides/platform/migrating-to-skybase/mysql',
   },
   {
     name: 'MSSQL',
     icon: '/docs/img/icons/mssql-icon',
-    url: '/guides/platform/migrating-to-supabase/mssql',
+    url: '/guides/platform/migrating-to-skybase/mssql',
   },
 ]
 
@@ -2139,22 +2139,22 @@ export const platform: NavMenuConstant = {
       items: [
         { name: 'Upgrading', url: '/guides/platform/upgrading' },
         {
-          name: 'Migrating within Supabase',
-          url: '/guides/platform/migrating-within-supabase',
+          name: 'Migrating within Skybase',
+          url: '/guides/platform/migrating-within-skybase',
           items: [
             {
               name: 'Restore Dashboard backup',
-              url: '/guides/platform/migrating-within-supabase/dashboard-restore',
+              url: '/guides/platform/migrating-within-skybase/dashboard-restore',
             },
             {
               name: 'Backup and restore using CLI',
-              url: '/guides/platform/migrating-within-supabase/backup-restore',
+              url: '/guides/platform/migrating-within-skybase/backup-restore',
             },
           ],
         },
         {
-          name: 'Migrating to Supabase',
-          url: '/guides/platform/migrating-to-supabase',
+          name: 'Migrating to Skybase',
+          url: '/guides/platform/migrating-to-skybase',
           items: MIGRATION_PAGES,
         },
       ],
@@ -2218,8 +2218,8 @@ export const platform: NavMenuConstant = {
       url: undefined,
       items: [
         {
-          name: 'About billing on Supabase',
-          url: '/guides/platform/billing-on-supabase',
+          name: 'About billing on Skybase',
+          url: '/guides/platform/billing-on-skybase',
         },
         {
           name: 'Get set up for billing',
@@ -2525,20 +2525,20 @@ export const integrations: NavMenuConstant = {
       url: '/guides/integrations/vercel-marketplace',
     },
     {
-      name: 'Supabase Marketplace',
-      url: '/guides/integrations/supabase-marketplace',
+      name: 'Skybase Marketplace',
+      url: '/guides/integrations/skybase-marketplace',
     },
     {
       name: 'Build Your Own',
       url: undefined,
       items: [
         {
-          name: 'Build a Supabase integration',
-          url: '/guides/integrations/build-a-supabase-integration',
+          name: 'Build a Skybase integration',
+          url: '/guides/integrations/build-a-skybase-integration',
           items: [
             {
               name: 'OAuth scopes',
-              url: '/guides/integrations/build-a-supabase-integration/oauth-scopes',
+              url: '/guides/integrations/build-a-skybase-integration/oauth-scopes',
             },
           ],
         },
@@ -2556,19 +2556,19 @@ export const reference = {
       name: 'Client libraries',
       items: [
         {
-          name: 'supabase-js',
+          name: 'skybase-js',
           url: '/reference/javascript/start',
           level: 'reference_javascript',
           icon: '/img/icons/menu/reference-javascript',
         },
         {
-          name: 'supabase-dart',
+          name: 'skybase-dart',
           url: '/reference/dart/start',
           level: 'reference_dart',
           icon: '/img/icons/menu/reference-dart',
         },
         {
-          name: 'supabase-csharp',
+          name: 'skybase-csharp',
           url: '/reference/csharp/start',
           level: 'reference_csharp',
           icon: '/img/icons/menu/reference-csharp',
@@ -2587,7 +2587,7 @@ export const reference = {
           icon: '/img/icons/menu/reference-swift',
         },
         {
-          name: 'supabase-kt',
+          name: 'skybase-kt',
           url: '/reference/kotlin/start',
           level: 'reference_kotlin',
           items: [],
@@ -2599,7 +2599,7 @@ export const reference = {
       name: 'Other tools',
       items: [
         {
-          name: 'Supabase CLI',
+          name: 'Skybase CLI',
           url: '/reference/cli/start',
           icon: '/img/icons/menu/reference-cli',
         },
@@ -2619,8 +2619,8 @@ export const reference_javascript_v1 = {
   url: '/guides/reference/javascript',
   parent: '/reference',
   pkg: {
-    name: '@supabase/supabase-js',
-    repo: 'https://github.com/supabase/supabase-js',
+    name: '@skybase/skybase-js',
+    repo: 'https://github.com/skybase/skybase-js',
   },
 }
 
@@ -2630,8 +2630,8 @@ export const reference_javascript_v2 = {
   url: '/guides/reference/javascript',
   parent: '/reference',
   pkg: {
-    name: '@supabase/supabase-js',
-    repo: 'https://github.com/supabase/supabase-js',
+    name: '@skybase/skybase-js',
+    repo: 'https://github.com/skybase/skybase-js',
   },
 }
 
@@ -2641,8 +2641,8 @@ export const reference_dart_v1 = {
   url: '/guides/reference/dart',
   parent: '/reference',
   pkg: {
-    name: 'supabase_flutter',
-    repo: 'https://github.com/supabase/supabase-flutter',
+    name: 'skybase_flutter',
+    repo: 'https://github.com/skybase/skybase-flutter',
   },
 }
 
@@ -2652,8 +2652,8 @@ export const reference_dart_v2 = {
   url: '/guides/reference/dart',
   parent: '/reference',
   pkg: {
-    name: 'supabase_flutter',
-    repo: 'https://github.com/supabase/supabase-flutter',
+    name: 'skybase_flutter',
+    repo: 'https://github.com/skybase/skybase-flutter',
   },
 }
 
@@ -2663,8 +2663,8 @@ export const reference_csharp_v0 = {
   url: 'guides/reference/csharp',
   parent: '/reference',
   pkg: {
-    name: 'supabase',
-    repo: 'https://github.com/supabase-community/supabase-csharp',
+    name: 'skybase',
+    repo: 'https://github.com/skybase-community/skybase-csharp',
   },
 }
 
@@ -2674,8 +2674,8 @@ export const reference_csharp_v1 = {
   url: 'guides/reference/csharp',
   parent: '/reference',
   pkg: {
-    name: 'supabase',
-    repo: 'https://github.com/supabase-community/supabase-csharp',
+    name: 'skybase',
+    repo: 'https://github.com/skybase-community/skybase-csharp',
   },
 }
 
@@ -2685,8 +2685,8 @@ export const reference_python_v2 = {
   url: '/guides/reference/python',
   parent: '/reference',
   pkg: {
-    name: 'supabase-py',
-    repo: 'https://github.com/supabase/supabase-py',
+    name: 'skybase-py',
+    repo: 'https://github.com/skybase/skybase-py',
   },
 }
 
@@ -2696,8 +2696,8 @@ export const reference_swift_v1 = {
   url: 'guides/reference/swift',
   parent: '/reference',
   pkg: {
-    name: 'supabase-swift',
-    repo: 'https://github.com/supabase/supabase-swift',
+    name: 'skybase-swift',
+    repo: 'https://github.com/skybase/skybase-swift',
   },
 }
 
@@ -2707,8 +2707,8 @@ export const reference_swift_v2 = {
   url: 'guides/reference/swift',
   parent: '/reference',
   pkg: {
-    name: 'supabase-swift',
-    repo: 'https://github.com/supabase/supabase-swift',
+    name: 'skybase-swift',
+    repo: 'https://github.com/skybase/skybase-swift',
   },
 }
 
@@ -2718,8 +2718,8 @@ export const reference_kotlin_v1 = {
   url: 'guides/reference/kotlin',
   parent: '/reference',
   pkg: {
-    name: '@supabase-community/supabase-kt',
-    repo: 'https://github.com/supabase-community/supabase-kt',
+    name: '@skybase-community/skybase-kt',
+    repo: 'https://github.com/skybase-community/skybase-kt',
   },
 }
 
@@ -2729,8 +2729,8 @@ export const reference_kotlin_v2 = {
   url: 'guides/reference/kotlin',
   parent: '/reference',
   pkg: {
-    name: '@supabase-community/supabase-kt',
-    repo: 'https://github.com/supabase-community/supabase-kt',
+    name: '@skybase-community/skybase-kt',
+    repo: 'https://github.com/skybase-community/skybase-kt',
   },
 }
 
@@ -2740,19 +2740,19 @@ export const reference_kotlin_v3 = {
   url: 'guides/reference/kotlin',
   parent: '/reference',
   pkg: {
-    name: '@supabase-community/supabase-kt',
-    repo: 'https://github.com/supabase-community/supabase-kt',
+    name: '@skybase-community/skybase-kt',
+    repo: 'https://github.com/skybase-community/skybase-kt',
   },
 }
 
 export const reference_cli = {
   icon: 'reference-cli',
-  title: 'Supabase CLI',
+  title: 'Skybase CLI',
   url: '/guides/reference/cli',
   parent: '/',
   pkg: {
-    name: 'supabase',
-    repo: 'https://github.com/supabase/cli',
+    name: 'skybase',
+    repo: 'https://github.com/skybase/cli',
   },
 }
 export const reference_api = {
@@ -2802,41 +2802,41 @@ export const references = [
     label: 'Client libraries',
     items: [
       {
-        label: 'supabase-js',
+        label: 'skybase-js',
         versions: ['v2', 'v1'],
         description: 'something about the reference',
         icon: '/docs/img/icons/javascript-icon.svg',
         url: '/reference/javascript/start',
       },
       {
-        label: 'supabase-py',
+        label: 'skybase-py',
         description: 'something about the reference',
         icon: '/docs/img/icons/python-icon.svg',
         url: '/reference/python/start',
       },
       {
-        label: 'supabase-dart',
+        label: 'skybase-dart',
         versions: ['v1', 'v0'],
         description: 'something about the reference',
         icon: '/docs/img/icons/dart-icon.svg',
         url: '/reference/dart/start',
       },
       {
-        label: 'supabase-csharp',
+        label: 'skybase-csharp',
         versions: ['v0'],
         description: 'something about the reference',
         icon: '/docs/img/icons/c-sharp-icon.svg',
         url: '/reference/csharp/start',
       },
       {
-        label: 'supabase-swift',
+        label: 'skybase-swift',
         versions: ['v2', 'v1'],
         description: 'something about the reference',
         icon: '/docs/img/icons/swift-icon.svg',
         url: '/reference/swift/start',
       },
       {
-        label: 'supabase-kt',
+        label: 'skybase-kt',
         versions: ['v3', 'v2', 'v1'],
         description: 'something about the reference',
         icon: '/docs/img/icons/kotlin-icon.svg',

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { partition } from 'lodash'
 import { ArrowRight, GitMerge, MessageCircle, MoreVertical, Shield, X } from 'lucide-react'
 import { useRouter } from 'next/router'
@@ -373,12 +373,12 @@ const MergeRequestsPageWrapper = ({ children }: PropsWithChildren<{}>) => {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/orgs/supabase/discussions/18937"
+          href="https://github.com/orgs/skybase/discussions/18937"
         >
           Branching Feedback
         </a>
       </Button>
-      <DocsButton href="https://supabase.com/docs/guides/platform/branching" />
+      <DocsButton href="https://skybase.com/docs/guides/platform/branching" />
     </div>
   )
 

@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mfa_app/main.dart';
 import 'package:mfa_app/pages/auth/register_page.dart';
 import 'package:mfa_app/pages/home_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 
 class MFAVerifyPage extends StatefulWidget {
   static const route = '/mfa/verify';
@@ -22,7 +22,7 @@ class _MFAVerifyPageState extends State<MFAVerifyPage> {
         actions: [
           TextButton(
             onPressed: () {
-              supabase.auth.signOut();
+              skybase.auth.signOut();
               context.go(RegisterPage.route);
             },
             child: Text(
@@ -57,18 +57,18 @@ class _MFAVerifyPageState extends State<MFAVerifyPage> {
 
               // kick off the verification process once 6 characters are entered
               try {
-                final factorsResponse = await supabase.auth.mfa.listFactors();
+                final factorsResponse = await skybase.auth.mfa.listFactors();
                 final factor = factorsResponse.totp.first;
                 final factorId = factor.id;
 
                 final challenge =
-                    await supabase.auth.mfa.challenge(factorId: factorId);
-                await supabase.auth.mfa.verify(
+                    await skybase.auth.mfa.challenge(factorId: factorId);
+                await skybase.auth.mfa.verify(
                   factorId: factorId,
                   challengeId: challenge.id,
                   code: value,
                 );
-                await supabase.auth.refreshSession();
+                await skybase.auth.refreshSession();
                 if (mounted) {
                   context.go(HomePage.route);
                 }

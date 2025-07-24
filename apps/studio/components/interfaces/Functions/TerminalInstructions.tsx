@@ -51,24 +51,24 @@ export const TerminalInstructions = forwardRef<
 
   const commands: Commands[] = [
     {
-      command: 'supabase functions new hello-world',
+      command: 'skybase functions new hello-world',
       description: ' creates a function stub at ./functions/hello-world/index.ts',
       jsx: () => {
         return (
           <>
-            <span className="text-brand-600">supabase</span> functions new hello-world
+            <span className="text-brand-600">skybase</span> functions new hello-world
           </>
         )
       },
       comment: 'Create a function',
     },
     {
-      command: `supabase functions deploy hello-world --project-ref ${projectRef}`,
+      command: `skybase functions deploy hello-world --project-ref ${projectRef}`,
       description: 'Deploys function at ./functions/hello-world/index.ts',
       jsx: () => {
         return (
           <>
-            <span className="text-brand-600">supabase</span> functions deploy hello-world
+            <span className="text-brand-600">skybase</span> functions deploy hello-world
             --project-ref {projectRef}
           </>
         )
@@ -76,7 +76,7 @@ export const TerminalInstructions = forwardRef<
       comment: 'Deploy your function',
     },
     {
-      command: `curl -L -X POST 'https://${projectRef}.supabase.${restUrlTld}/functions/v1/hello-world' -H 'Authorization: Bearer ${apiKey}'${anonKey?.type === 'publishable' ? ` -H 'apikey: ${apiKey}'` : ''} --data '{"name":"Functions"}'`,
+      command: `curl -L -X POST 'https://${projectRef}.skybase.${restUrlTld}/functions/v1/hello-world' -H 'Authorization: Bearer ${apiKey}'${anonKey?.type === 'publishable' ? ` -H 'apikey: ${apiKey}'` : ''} --data '{"name":"Functions"}'`,
       description: 'Invokes the hello-world function',
       jsx: () => {
         return (
@@ -140,12 +140,12 @@ export const TerminalInstructions = forwardRef<
               </p>
             </div>
             <div className="flex gap-2">
-              <DocsButton href="https://supabase.com/docs/guides/functions" />
+              <DocsButton href="https://skybase.com/docs/guides/functions" />
               <Button asChild type="default" icon={<ExternalLink />}>
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://github.com/supabase/supabase/tree/master/examples/edge-functions/supabase/functions"
+                  href="https://github.com/skybase/skybase/tree/master/examples/edge-functions/skybase/functions"
                 >
                   Examples
                 </a>

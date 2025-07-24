@@ -672,7 +672,7 @@ export function jwtAPIKey(metadata: any) {
 
   if (
     payload.algorithm === 'HS256' &&
-    payload.issuer === 'supabase' &&
+    payload.issuer === 'skybase' &&
     ['anon', 'service_role'].includes(payload.role) &&
     !payload.subject
   ) {

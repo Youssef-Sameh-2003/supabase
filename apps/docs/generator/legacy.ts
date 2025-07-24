@@ -5,7 +5,7 @@
  *    tsx ReferenceGenerator.ts -o {output_dir} {input}.yml
  *
  * Example:
- *    tsx ReferenceGenerator.ts -o docs/client spec/supabase.yml
+ *    tsx ReferenceGenerator.ts -o docs/client spec/skybase.yml
  */
 
 import * as fs from 'fs'

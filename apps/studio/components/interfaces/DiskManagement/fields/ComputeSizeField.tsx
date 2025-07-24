@@ -133,7 +133,7 @@ export function ComputeSizeField({ form, disabled }: ComputeSizeFieldProps) {
                 <div className="mt-3">
                   <DocsButton
                     abbrev={false}
-                    href="https://supabase.com/docs/guides/platform/compute-and-disk"
+                    href="https://skybase.com/docs/guides/platform/compute-and-disk"
                   />
                 </div>
 

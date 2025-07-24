@@ -88,7 +88,7 @@ export const IndexAdvisorDisabledState = () => {
               Enable extensions
             </Button>
           )}
-          <DocsButton href="https://supabase.com/docs/guides/database/extensions/index_advisor" />
+          <DocsButton href="https://skybase.com/docs/guides/database/extensions/index_advisor" />
         </div>
       </AlertDescription_Shadcn_>
     </Alert_Shadcn_>

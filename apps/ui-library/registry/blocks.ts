@@ -24,17 +24,17 @@ const combine = (component: Registry['items'][number]) => {
     return registryItemAppend(
       {
         ...component,
-        name: `${component.name}-${client.name.replace('supabase-client-', '')}`,
+        name: `${component.name}-${client.name.replace('skybase-client-', '')}`,
       },
       [client]
     )
   })
 }
 
-const nextjsClient = clients.find((client) => client.name === 'supabase-client-nextjs')
-const reactClient = clients.find((client) => client.name === 'supabase-client-react')
-const tanstackClient = clients.find((client) => client.name === 'supabase-client-tanstack')
-const reactRouterClient = clients.find((client) => client.name === 'supabase-client-react-router')
+const nextjsClient = clients.find((client) => client.name === 'skybase-client-nextjs')
+const reactClient = clients.find((client) => client.name === 'skybase-client-react')
+const tanstackClient = clients.find((client) => client.name === 'skybase-client-tanstack')
+const reactRouterClient = clients.find((client) => client.name === 'skybase-client-react-router')
 
 export const blocks = [
   registryItemAppend(passwordBasedAuthNextjs as RegistryItem, [nextjsClient!]),

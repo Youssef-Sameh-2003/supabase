@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PostgresTable } from '@supabase/postgres-meta'
+import { PostgresTable } from '@skybase/postgres-meta'
 
 import { useParams } from 'common'
 import { TableList } from 'components/interfaces/Database'

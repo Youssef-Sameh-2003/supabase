@@ -21,21 +21,21 @@ const useSupportCommands = ({ enabled = true }: { enabled?: boolean } = {}) => {
           id: 'system-status',
           name: 'Go to System Status',
           value: 'Support: Go to System Status',
-          href: 'https://status.supabase.com',
+          href: 'https://status.skybase.com',
           icon: () => <LifeBuoy />,
         },
         {
           id: 'github-discussions',
           name: 'Go to GitHub Discussions',
           value: 'Support: Go to GitHub Discussions',
-          href: 'https://github.com/orgs/supabase/discussions',
+          href: 'https://github.com/orgs/skybase/discussions',
           icon: () => <LifeBuoy />,
         },
       ].map((command) => ({
         ...command,
         route:
           BASE_PATH && command.href.startsWith('/')
-            ? `https://supabase.com/${command.href}`
+            ? `https://skybase.com/${command.href}`
             : command.href,
       })) as ICommand[],
     [setOpen]

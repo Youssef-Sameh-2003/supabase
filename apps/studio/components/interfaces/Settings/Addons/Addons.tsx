@@ -63,7 +63,7 @@ const Addons = () => {
   const hasHipaaAddon = subscriptionHasHipaaAddon(subscription) && settings?.is_sensitive
 
   const cpuArchitecture = getCloudProviderArchitecture(selectedProject?.cloud_provider)
-  // Only projects of version greater than supabase-postgrest-14.1.0.44 can use PITR
+  // Only projects of version greater than skybase-postgrest-14.1.0.44 can use PITR
   const sufficientPgVersion =
     // introduced as generatedSemantic version could be < 141044 even if actual version is indeed past it
     // eg. 15.1.1.2 leads to 15112
@@ -173,7 +173,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://supabase.com/docs/guides/platform/compute-add-ons"
+                        href="https://skybase.com/docs/guides/platform/compute-add-ons"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -185,7 +185,7 @@ const Addons = () => {
                     </div>
                     <div>
                       <Link
-                        href="https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
+                        href="https://skybase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -339,7 +339,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://supabase.com/docs/guides/platform/ipv4-address"
+                        href="https://skybase.com/docs/guides/platform/ipv4-address"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -414,7 +414,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://supabase.com/docs/guides/platform/backups#point-in-time-recovery"
+                        href="https://skybase.com/docs/guides/platform/backups#point-in-time-recovery"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -537,7 +537,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://supabase.com/docs/guides/platform/custom-domains"
+                        href="https://skybase.com/docs/guides/platform/custom-domains"
                         target="_blank"
                         rel="noreferrer"
                       >

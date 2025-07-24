@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { groupBy, isEqual, isNull } from 'lodash'

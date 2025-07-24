@@ -94,7 +94,7 @@ const MembersView = ({ searchString }: MembersViewProps) => {
                         <a
                           target="_blank"
                           rel="noreferrer"
-                          href="https://supabase.com/docs/guides/platform/access-control"
+                          href="https://skybase.com/docs/guides/platform/access-control"
                         >
                           <HelpCircle size={14} className="text-foreground-light" />
                         </a>

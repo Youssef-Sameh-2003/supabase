@@ -39,10 +39,10 @@ const Index = () => {
         openGraph={{
           title: data.meta_title,
           description: data.meta_description,
-          url: `https://supabase.com/${router.pathname}`,
+          url: `https://skybase.com/${router.pathname}`,
           images: [
             {
-              url: `https://supabase.com/images/og/supabase-og.png`,
+              url: `https://skybase.com/images/og/skybase-og.png`,
             },
           ],
         }}

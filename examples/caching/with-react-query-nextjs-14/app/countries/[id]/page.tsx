@@ -1,16 +1,16 @@
 'use client'
 
-import useSupabaseBrowser from '@/utils/supabase-browser'
+import useSkybaseBrowser from '@/utils/skybase-browser'
 import { getCountryById } from '@/queries/get-country-by-id'
-import { useQuery } from '@supabase-cache-helpers/postgrest-react-query'
+import { useQuery } from '@skybase-cache-helpers/postgrest-react-query'
 
 export default function CountryPage({ params }: { params: { id: number } }) {
-  const supabase = useSupabaseBrowser()
+  const skybase = useSkybaseBrowser()
   const {
     data: country,
     isLoading,
     isError,
-  } = useQuery(getCountryById(supabase, params.id))
+  } = useQuery(getCountryById(skybase, params.id))
 
   if (isLoading) {
     return <div>Loading...</div>

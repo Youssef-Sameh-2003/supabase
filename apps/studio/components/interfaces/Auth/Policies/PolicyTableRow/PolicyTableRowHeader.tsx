@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { noop } from 'lodash'
 import { Lock, Unlock } from 'lucide-react'
 
@@ -125,7 +125,7 @@ const PolicyTableRowHeader = ({
                   text:
                     !canToggleRLS || !canCreatePolicies
                       ? 'You need additional permissions to create RLS policies'
-                      : 'Create with Supabase Assistant',
+                      : 'Create with Skybase Assistant',
                 },
               }}
             >

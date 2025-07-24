@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -101,7 +101,7 @@ const IPv4SidePanel = () => {
           <h4>Dedicated IPv4 address</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/guides/platform/ipv4-address"
+              href="https://skybase.com/docs/guides/platform/ipv4-address"
               target="_blank"
               rel="noreferrer"
             >

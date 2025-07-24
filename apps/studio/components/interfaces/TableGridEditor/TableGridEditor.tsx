@@ -1,11 +1,11 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 
 import { useParams } from 'common'
-import { SupabaseGrid } from 'components/grid/SupabaseGrid'
-import { useLoadTableEditorStateFromLocalStorageIntoUrl } from 'components/grid/SupabaseGrid.utils'
+import { SkybaseGrid } from 'components/grid/SkybaseGrid'
+import { useLoadTableEditorStateFromLocalStorageIntoUrl } from 'components/grid/SkybaseGrid.utils'
 import {
   Entity,
   isMaterializedView,
@@ -144,8 +144,8 @@ export const TableGridEditor = ({
 
   const gridKey = `${selectedTable.schema}_${selectedTable.name}`
 
-  /** [Joshen] We're going to need to refactor SupabaseGrid eventually to make the code here more readable
-   * For context we previously built the SupabaseGrid as a reusable npm component, but eventually decided
+  /** [Joshen] We're going to need to refactor SkybaseGrid eventually to make the code here more readable
+   * For context we previously built the SkybaseGrid as a reusable npm component, but eventually decided
    * to just integrate it directly into the dashboard. The header, and body (+footer) should be decoupled.
    */
 
@@ -158,7 +158,7 @@ export const TableGridEditor = ({
         table={selectedTable}
         editable={editable}
       >
-        <SupabaseGrid
+        <SkybaseGrid
           key={gridKey}
           gridProps={{ height: '100%' }}
           customHeader={
@@ -175,7 +175,7 @@ export const TableGridEditor = ({
           {(isViewSelected || isTableSelected) && selectedView === 'definition' && (
             <TableDefinition entity={selectedTable} />
           )}
-        </SupabaseGrid>
+        </SkybaseGrid>
 
         <SidePanelEditor
           editable={editable}

@@ -46,12 +46,12 @@ export type IntegrationDefinition = {
   ) => ComponentType<{}> | null
 } & ({ type: 'wrapper'; meta: WrapperMeta } | { type: 'postgres_extension' } | { type: 'custom' })
 
-const authorSupabase = {
-  name: 'Supabase',
-  websiteUrl: 'https://supabase.com',
+const authorSkybase = {
+  name: 'Skybase',
+  websiteUrl: 'https://skybase.com',
 }
 
-const supabaseIntegrations: IntegrationDefinition[] = [
+const skybaseIntegrations: IntegrationDefinition[] = [
   {
     id: 'queues',
     type: 'postgres_extension' as const,
@@ -172,7 +172,7 @@ const supabaseIntegrations: IntegrationDefinition[] = [
   {
     id: 'vault',
     type: 'postgres_extension' as const,
-    requiredExtensions: ['supabase_vault'],
+    requiredExtensions: ['skybase_vault'],
     missingExtensionsAlert: <UpgradeDatabaseAlert />,
     name: `Vault`,
     status: 'alpha',
@@ -180,8 +180,8 @@ const supabaseIntegrations: IntegrationDefinition[] = [
       <Vault className={cn('inset-0 p-2 text-black w-full h-full', className)} {...props} />
     ),
     description: 'Application level encryption for your project',
-    docsUrl: 'https://supabase.com/docs',
-    author: authorSupabase,
+    docsUrl: 'https://skybase.com/docs',
+    author: authorSkybase,
     navigation: [
       {
         route: 'overview',
@@ -224,8 +224,8 @@ const supabaseIntegrations: IntegrationDefinition[] = [
     ),
     description:
       'Send real-time data from your database to another system when a table event occurs',
-    docsUrl: 'https://supabase.com/docs',
-    author: authorSupabase,
+    docsUrl: 'https://skybase.com/docs',
+    author: authorSkybase,
     requiredExtensions: [],
     navigation: [
       {
@@ -278,8 +278,8 @@ const supabaseIntegrations: IntegrationDefinition[] = [
       />
     ),
     description: 'Run GraphQL queries through our interactive in-browser IDE',
-    docsUrl: 'https://supabase.com/docs',
-    author: authorSupabase,
+    docsUrl: 'https://skybase.com/docs',
+    author: authorSkybase,
     navigation: [
       {
         route: 'overview',
@@ -326,11 +326,11 @@ const wrapperIntegrations: IntegrationDefinition[] = WRAPPERS.map((w) => {
     icon: ({ className, ...props } = {}) => (
       <Image fill src={w.icon} alt={w.name} className={cn('p-2', className)} {...props} />
     ),
-    requiredExtensions: ['wrappers', 'supabase_vault'],
+    requiredExtensions: ['wrappers', 'skybase_vault'],
     description: w.description,
     docsUrl: w.docsUrl,
     meta: w,
-    author: authorSupabase,
+    author: authorSkybase,
     navigation: [
       {
         route: 'overview',
@@ -371,5 +371,5 @@ const wrapperIntegrations: IntegrationDefinition[] = WRAPPERS.map((w) => {
 
 export const INTEGRATIONS: IntegrationDefinition[] = [
   ...wrapperIntegrations,
-  ...supabaseIntegrations,
+  ...skybaseIntegrations,
 ]

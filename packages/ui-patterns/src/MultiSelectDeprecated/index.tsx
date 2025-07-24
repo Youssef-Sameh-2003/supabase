@@ -35,7 +35,7 @@ interface Props {
 }
 
 /**
- * Copy styling from supabase/ui default.theme
+ * Copy styling from skybase/ui default.theme
  * input base + standard
  */
 

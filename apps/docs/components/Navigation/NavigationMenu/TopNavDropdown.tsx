@@ -24,9 +24,9 @@ import MenuIconPicker from './MenuIconPicker'
 const menu = [
   [
     {
-      label: 'Supabase.com',
+      label: 'Skybase.com',
       icon: 'home',
-      href: 'https://supabase.com',
+      href: 'https://skybase.com',
       otherProps: {
         target: '_blank',
         rel: 'noreferrer noopener',
@@ -35,7 +35,7 @@ const menu = [
     {
       label: 'GitHub',
       icon: 'github',
-      href: 'https://github.com/supabase/supabase',
+      href: 'https://github.com/skybase/skybase',
       otherProps: {
         target: '_blank',
         rel: 'noreferrer noopener',
@@ -44,7 +44,7 @@ const menu = [
     {
       label: 'Support',
       icon: 'support',
-      href: 'https://supabase.com/support',
+      href: 'https://skybase.com/support',
       otherProps: {
         target: '_blank',
         rel: 'noreferrer noopener',

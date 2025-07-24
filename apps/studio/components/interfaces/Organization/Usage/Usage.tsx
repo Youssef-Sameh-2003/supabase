@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
@@ -196,9 +196,9 @@ const Usage = () => {
             description={
               <div>
                 You are currently viewing usage for the "
-                {selectedProject?.name || selectedProjectRef}" project. Supabase uses{' '}
+                {selectedProject?.name || selectedProjectRef}" project. Skybase uses{' '}
                 <Link
-                  href="/docs/guides/platform/billing-on-supabase#organization-based-billing"
+                  href="/docs/guides/platform/billing-on-skybase#organization-based-billing"
                   target="_blank"
                 >
                   organization-level billing

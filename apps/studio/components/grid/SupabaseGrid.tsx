@@ -23,7 +23,7 @@ import { GridProps } from './types'
 import { useTableFilter } from './hooks/useTableFilter'
 import { useTableSort } from './hooks/useTableSort'
 
-export const SupabaseGrid = ({
+export const SkybaseGrid = ({
   customHeader,
   gridProps,
   children,

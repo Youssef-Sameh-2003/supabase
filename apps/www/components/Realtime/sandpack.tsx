@@ -18,7 +18,7 @@ export default function SandpackWrapper({ files, dependencies = {} }: SandpackPr
 
   // Default dependencies
   const defaultDependencies = {
-    '@supabase/supabase-js': 'latest',
+    '@skybase/skybase-js': 'latest',
     'lucide-react': 'latest',
   }
 

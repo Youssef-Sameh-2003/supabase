@@ -132,7 +132,7 @@ const LWXStickyNav: FC = () => {
               <div className="flex items-center justify-end gap-2 md:gap-4 flex-1">
                 <li>
                   <Link
-                    href="https://x.com/supabase/status/1905603458742505516"
+                    href="https://x.com/skybase/status/1905603458742505516"
                     target="_blank"
                     className="p-1 transition-colors hover:text-foreground pointer-events-auto flex gap-1"
                   >

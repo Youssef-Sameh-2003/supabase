@@ -45,7 +45,7 @@ export const DownloadLogsButton = ({ searchParameters }: DownloadLogsButtonProps
     onSuccess: (res) => {
       if (selectedFormat === 'json') {
         const blob = new Blob([JSON.stringify(res, null, 2)], { type: 'text/json;charset=utf-8;' })
-        saveAs(blob, `supabase_logs.json`)
+        saveAs(blob, `skybase_logs.json`)
         toast.success('Downloading logs as JSON')
       } else {
         if (res.length === 0) return
@@ -59,7 +59,7 @@ export const DownloadLogsButton = ({ searchParameters }: DownloadLogsButtonProps
         })
         const csv = Papa.unparse(formattedResults, { columns: headers })
         const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
-        saveAs(blob, `supabase_logs.csv`)
+        saveAs(blob, `skybase_logs.csv`)
         toast.success('Downloading logs as CSV')
       }
 

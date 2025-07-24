@@ -57,7 +57,7 @@ export const componentPages: SidebarNavGroup = {
       supportedFrameworks: ['nextjs', 'react-router', 'tanstack', 'react'],
       href: '/docs/nextjs/client',
       items: [],
-      commandItemLabel: 'Supabase Client',
+      commandItemLabel: 'Skybase Client',
     },
     {
       title: 'Password-Based Auth',

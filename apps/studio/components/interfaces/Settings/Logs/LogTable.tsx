@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { isEqual } from 'lodash'
 import { Clipboard, Eye, EyeOff, Play } from 'lucide-react'
 import { Key, ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
@@ -262,7 +262,7 @@ const LogTable = ({
           type="text"
           text={`Results ${data && data.length ? `(${data.length})` : ''}`}
           results={data}
-          fileName={`supabase-logs-${ref}.csv`}
+          fileName={`skybase-logs-${ref}.csv`}
         />
       </div>
 

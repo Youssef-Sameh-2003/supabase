@@ -1,4 +1,4 @@
-import { Query } from '@supabase/pg-meta/src/query'
+import { Query } from '@skybase/pg-meta/src/query'
 import { UseQueryOptions, useQuery } from '@tanstack/react-query'
 import { executeSql } from '../sql/execute-sql-query'
 import { vaultSecretsKeys } from './keys'

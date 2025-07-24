@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { partition, sortBy } from 'lodash'
 import { Plus, Search, X } from 'lucide-react'
 import { useState } from 'react'
@@ -44,7 +44,7 @@ const RolesList = () => {
   const filteredRoles = (
     filterType === 'active' ? roles.filter((role) => role.activeConnections > 0) : roles
   ).filter((role) => role.name.includes(filterString))
-  const [supabaseRoles, otherRoles] = partition(filteredRoles, (role) =>
+  const [skybaseRoles, otherRoles] = partition(filteredRoles, (role) =>
     SUPABASE_ROLES.includes(role.name as SUPABASE_ROLE)
   )
 
@@ -168,13 +168,13 @@ const RolesList = () => {
       <div className="space-y-4">
         <div>
           <div className="bg-surface-100 border border-default px-4 md:px-6 py-3 rounded-t flex items-center space-x-4">
-            <p className="text-sm text-foreground-light">Roles managed by Supabase</p>
+            <p className="text-sm text-foreground-light">Roles managed by Skybase</p>
             <Badge variant="brand">Protected</Badge>
           </div>
 
           {isLoading
             ? Array.from({ length: 5 }).map((_, i) => <RoleRowSkeleton key={i} index={i} />)
-            : supabaseRoles.map((role) => (
+            : skybaseRoles.map((role) => (
                 <RoleRow
                   disabled
                   key={role.id}

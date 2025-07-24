@@ -1,4 +1,4 @@
-import { DatabaseUpgradeStatus } from '@supabase/shared-types/out/events'
+import { DatabaseUpgradeStatus } from '@skybase/shared-types/out/events'
 import dayjs from 'dayjs'
 import { X } from 'lucide-react'
 import Link from 'next/link'
@@ -17,7 +17,7 @@ export const ProjectUpgradeFailedBanner = () => {
   const { data } = useProjectUpgradingStatusQuery({ projectRef: ref }, { enabled: IS_PLATFORM })
   const { status, initiated_at, latest_status_at, error } = data?.databaseUpgradeStatus ?? {}
 
-  const key = `supabase-upgrade-${ref}-${initiated_at}`
+  const key = `skybase-upgrade-${ref}-${initiated_at}`
   const isAcknowledged =
     typeof window !== 'undefined' ? localStorage?.getItem(key) === 'true' : false
   const [showMessage, setShowMessage] = useState(!isAcknowledged)

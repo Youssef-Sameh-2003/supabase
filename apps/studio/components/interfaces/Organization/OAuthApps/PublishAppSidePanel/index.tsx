@@ -1,4 +1,4 @@
-import type { OAuthScope } from '@supabase/shared-types/out/constants'
+import type { OAuthScope } from '@skybase/shared-types/out/constants'
 import { Edit, Upload } from 'lucide-react'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
@@ -349,7 +349,7 @@ export const PublishAppSidePanel = ({
                           projects.
                         </span>
                       </div>
-                      <DocsButton href="https://supabase.com/docs/guides/platform/oauth-apps/oauth-scopes" />
+                      <DocsButton href="https://skybase.com/docs/guides/platform/oauth-apps/oauth-scopes" />
                     </div>
 
                     <ScopesPanel scopes={scopes} setScopes={setScopes} />

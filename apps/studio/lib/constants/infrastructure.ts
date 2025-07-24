@@ -41,14 +41,14 @@ export const PROVIDERS = {
   AWS: {
     id: 'AWS',
     name: 'AWS',
-    DEFAULT_SSH_KEY: 'supabase-app-instance',
+    DEFAULT_SSH_KEY: 'skybase-app-instance',
     default_region: AWS_REGIONS_DEFAULT,
     regions: { ...AWS_REGIONS },
   },
   AWS_K8S: {
     id: 'AWS_K8S',
     name: 'AWS (Revamped)',
-    DEFAULT_SSH_KEY: 'supabase-app-instance',
+    DEFAULT_SSH_KEY: 'skybase-app-instance',
     default_region: AWS_REGIONS_DEFAULT,
     regions: { ...AWS_REGIONS },
   },

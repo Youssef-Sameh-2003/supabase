@@ -116,7 +116,7 @@ export const PostgresVersionSelector = ({
           <SelectGroup_Shadcn_>
             {availableVersions.map((value) => {
               const postgresVersion = value.version
-                .split('supabase-postgres-')[1]
+                .split('skybase-postgres-')[1]
                 .replace('-orioledb', '')
               return (
                 <SelectItem_Shadcn_

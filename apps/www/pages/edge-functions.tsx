@@ -37,10 +37,10 @@ function EdgeFunctions() {
         openGraph={{
           title: pageData.metaTitle,
           description: pageData.metaDescription,
-          url: `https://supabase.com/edge-functions`,
+          url: `https://skybase.com/edge-functions`,
           images: [
             {
-              url: `https://supabase.com${basePath}/images/product/functions/functions-og.jpg`,
+              url: `https://skybase.com${basePath}/images/product/functions/functions-og.jpg`,
             },
           ],
         }}
@@ -55,7 +55,7 @@ function EdgeFunctions() {
           id="quote"
           className="!pb-8 md:!pb-12 [&_q]:max-w-2xl"
           quote={{
-            text: "Supabase gave us the flexibility and scalability needed at every growth stage. It's rare to find a tool that works just as well for startups as it does for large-scale operations.",
+            text: "Skybase gave us the flexibility and scalability needed at every growth stage. It's rare to find a tool that works just as well for startups as it does for large-scale operations.",
             author: 'Zeno Rocha',
             role: 'CEO at Resend',
             link: '/customers/resend',
@@ -95,9 +95,9 @@ function EdgeFunctions() {
           </SectionContainer>
         </div>
         <div className="overflow-hidden">
-          <SectionContainer className="flex flex-col gap-4 lg:gap-8" id="integrates-with-supabase">
-            <h2 className="h2">{pageData.integratesWithSupabase.title}</h2>
-            <TimedAccordionSection tabs={pageData.integratesWithSupabase.useCases} />
+          <SectionContainer className="flex flex-col gap-4 lg:gap-8" id="integrates-with-skybase">
+            <h2 className="h2">{pageData.integratesWithSkybase.title}</h2>
+            <TimedAccordionSection tabs={pageData.integratesWithSkybase.useCases} />
           </SectionContainer>
         </div>
         <ProductsCta currentProduct={PRODUCT_SHORTNAMES.FUNCTIONS} className="!pt-0 lg:!pt-16" />

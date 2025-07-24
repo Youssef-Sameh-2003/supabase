@@ -43,7 +43,7 @@ export type FeatureKey =
   | 'auth.anonSignIns'
   | 'auth.socialOAuthProviders'
   | 'auth.customSMTPServer'
-  | 'auth.removeSupabaseBranding'
+  | 'auth.removeSkybaseBranding'
   | 'auth.auditTrails'
   | 'auth.basicMFA'
   | 'auth.advancedMFAPhone'
@@ -266,8 +266,8 @@ export const pricing: Pricing = {
         usage_based: false,
       },
       {
-        key: 'auth.removeSupabaseBranding',
-        title: 'Remove Supabase branding from emails',
+        key: 'auth.removeSkybaseBranding',
+        title: 'Remove Skybase branding from emails',
         plans: {
           free: false,
           pro: true,

@@ -150,7 +150,7 @@ export const AnalyticBucketDetails = ({ bucket }: { bucket: Bucket }) => {
             Namespaces and tables connected to this bucket.
           </ScaffoldSectionDescription>
         </ScaffoldHeader>
-        <DocsButton href="https://supabase.com/docs/guides/storage/analytics/introduction" />
+        <DocsButton href="https://skybase.com/docs/guides/storage/analytics/introduction" />
       </ScaffoldContainer>
       <ScaffoldContainer className="flex flex-col gap-4" bottomPadding>
         {state === 'loading' && <GenericSkeletonLoader />}
@@ -184,7 +184,7 @@ export const AnalyticBucketDetails = ({ bucket }: { bucket: Bucket }) => {
                       target="_blank"
                       rel="noreferrer"
                       className="text-brand underline"
-                      href="https://supabase.com/docs/guides/storage/analytics/connecting-to-analytics-bucket"
+                      href="https://skybase.com/docs/guides/storage/analytics/connecting-to-analytics-bucket"
                     >
                       {' '}
                       to get started
@@ -238,7 +238,7 @@ export const AnalyticBucketDetails = ({ bucket }: { bucket: Bucket }) => {
                     )}
                     values={wrapperValues}
                   />
-                  <DocsButton href="https://supabase.com/docs/guides/storage/analytics/connecting-to-analytics-bucket" />
+                  <DocsButton href="https://skybase.com/docs/guides/storage/analytics/connecting-to-analytics-bucket" />
                 </div>
               </div>
               <Card className="flex flex-col gap-8 p-6">

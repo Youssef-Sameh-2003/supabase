@@ -97,7 +97,7 @@ export const MemberRow = ({ member }: MemberRowProps) => {
                 managed_by:
                   MEMBER_ORIGIN_TO_MANAGED_BY[
                     (member.metadata as any).origin as keyof typeof MEMBER_ORIGIN_TO_MANAGED_BY
-                  ] ?? 'supabase',
+                  ] ?? 'skybase',
               }}
               tooltipText="This user is managed by Vercel Marketplace."
             />

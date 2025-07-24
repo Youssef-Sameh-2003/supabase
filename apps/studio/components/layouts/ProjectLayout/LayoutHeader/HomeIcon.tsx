@@ -30,8 +30,8 @@ export const HomeIcon = () => {
   return (
     <Link href={href} className="items-center justify-center flex-shrink-0 hidden md:flex">
       <Image
-        alt="Supabase"
-        src={`${router.basePath}/img/supabase-logo.svg`}
+        alt="Skybase"
+        src={`${router.basePath}/img/skybase-logo.svg`}
         width={18}
         height={18}
         className="w-[18px] h-[18px]"

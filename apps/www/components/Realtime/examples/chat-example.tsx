@@ -6,12 +6,12 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState, useRef } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Generate a random user ID and avatar
 const userId = Math.random().toString(36).substring(2, 15);
@@ -37,7 +37,7 @@ export default function App() {
     setUsername(randomName);
 
     // Subscribe to broadcast channel
-    const channel = supabase.channel(CHANNEL);
+    const channel = skybase.channel(CHANNEL);
 
     // Track presence state
     channel.on('presence', { event: 'sync' }, () => {
@@ -89,7 +89,7 @@ export default function App() {
     };
 
     // Broadcast the message
-    supabase.channel(CHANNEL).send({
+    skybase.channel(CHANNEL).send({
       type: 'broadcast',
       event: 'message',
       payload: message,
@@ -184,7 +184,7 @@ const layoutProps: ExampleLayoutProps = {
   files: chatFiles,
   title: 'Chat Example',
   description:
-    "A real-time chat application that uses Supabase Realtime's broadcast and presence features to enable instant messaging and show online users.",
+    "A real-time chat application that uses Skybase Realtime's broadcast and presence features to enable instant messaging and show online users.",
 }
 
 export default layoutProps

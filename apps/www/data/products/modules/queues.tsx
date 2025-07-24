@@ -3,25 +3,25 @@ import BrowserFrame from '~/components/BrowserFrame'
 import { Image } from 'ui'
 
 export default () => ({
-  metaTitle: 'Supabase Queues | Durable Message Queues with Guaranteed Delivery',
+  metaTitle: 'Skybase Queues | Durable Message Queues with Guaranteed Delivery',
   metaDescription:
     'Postgres module that uses the pgmq database extension to manage Message Queues with guaranteed delivery.',
   metaImage: '/images/modules/queues/og.png',
-  url: 'https://supabase.com/dashboard/project/_/integrations/queues/overview',
+  url: 'https://skybase.com/dashboard/project/_/integrations/queues/overview',
   docsUrl: '/docs/guides/queues',
   heroSection: {
-    title: 'Supabase Queues',
+    title: 'Skybase Queues',
     h1: <>Create and Manage Message Queues using Postgres</>,
     subheader: (
       <>
-        Supabase Queues is a Postgres module that uses the pgmq database extension to manage Message
+        Skybase Queues is a Postgres module that uses the pgmq database extension to manage Message
         Queues with guaranteed delivery. Manage your Queues using any Postgres tooling.
       </>
     ),
     icon: PRODUCT_MODULES.queues.icon[24],
     cta: {
       label: 'Create your first Queue',
-      link: 'https://supabase.com/dashboard/project/_/integrations/queues/overview',
+      link: 'https://skybase.com/dashboard/project/_/integrations/queues/overview',
     },
     secondaryCta: {
       label: 'Explore documentation',
@@ -61,7 +61,7 @@ export default () => ({
       },
       {
         title: 'Exactly Once Message Delivery',
-        paragraph: 'Supabase Queues delivers a message exactly once within a visibility window.',
+        paragraph: 'Skybase Queues delivers a message exactly once within a visibility window.',
         svg: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ export default () => ({
       },
       {
         title: 'Real-Time Monitoring',
-        paragraph: "Track and manage messages in your Queues with Supabase's observability tools.",
+        paragraph: "Track and manage messages in your Queues with Skybase's observability tools.",
         svg: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@ export default () => ({
     subheading: 'Create Queues and manage messages using SQL with any Postgres client.',
     cta: {
       label: 'Start message queuing',
-      url: 'https://supabase.com/dashboard/project/_/integrations/queues/overview',
+      url: 'https://skybase.com/dashboard/project/_/integrations/queues/overview',
     },
     image: (
       <Image
@@ -197,10 +197,10 @@ export default () => ({
     label: 'API',
     heading: <>Manage via API</>,
     subheading:
-      'Create and manage messages either server-side or client-side via PostgREST using any Supabase client library.',
+      'Create and manage messages either server-side or client-side via PostgREST using any Skybase client library.',
     cta: {
       label: 'Start message queuing',
-      url: 'https://supabase.com/dashboard/project/_/integrations/queues/overview',
+      url: 'https://skybase.com/dashboard/project/_/integrations/queues/overview',
     },
     reverse: true,
     image: (
@@ -227,13 +227,13 @@ export default () => ({
       'Create Queues and manage messages in the Dashboard as well as monitor your Queues and message processing in real-time.',
     cta: {
       label: 'Start message queuing',
-      url: 'https://supabase.com/dashboard/project/_/integrations/queues/overview',
+      url: 'https://skybase.com/dashboard/project/_/integrations/queues/overview',
     },
     image: (
       <Image
         src={{
-          dark: '/images/blog/launch-week-13/day-4-supabase-queues/message-detail.jpg',
-          light: '/images/blog/launch-week-13/day-4-supabase-queues/message-detail-light.jpg',
+          dark: '/images/blog/launch-week-13/day-4-skybase-queues/message-detail.jpg',
+          light: '/images/blog/launch-week-13/day-4-skybase-queues/message-detail-light.jpg',
         }}
         alt="Queues via Dashboard UI"
         className="w-full max-w-[490px] aspect-[1/1.14] object-cover bg-cover"

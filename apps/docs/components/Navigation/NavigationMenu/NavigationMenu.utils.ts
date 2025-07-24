@@ -94,7 +94,7 @@ export function useSpec(specFile?: string) {
     }
     async function fetchSpec() {
       const spec = await import(
-        /* webpackInclude: /supabase_.*\.ya?ml$/ */
+        /* webpackInclude: /skybase_.*\.ya?ml$/ */
         /* webpackMode: "lazy" */
         `~/spec/${specFile}`
       )

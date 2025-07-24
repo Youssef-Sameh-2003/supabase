@@ -134,7 +134,7 @@ const FeaturePreviewModal = () => {
           </div>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://github.com/orgs/supabase/discussions/categories/feature-requests"
+              href="https://github.com/orgs/skybase/discussions/categories/feature-requests"
               target="_blank"
               rel="noreferrer"
             >

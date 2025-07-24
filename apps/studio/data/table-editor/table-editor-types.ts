@@ -4,7 +4,7 @@ import type {
   PostgresRelationship,
   PostgresTable,
   PostgresView,
-} from '@supabase/postgres-meta'
+} from '@skybase/postgres-meta'
 import { ENTITY_TYPE } from 'data/entity-types/entity-type-constants'
 
 interface TableRelationship extends PostgresRelationship {

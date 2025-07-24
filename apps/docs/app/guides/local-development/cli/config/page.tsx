@@ -8,7 +8,7 @@ import type { Parameter } from '~/lib/refGenerator/refTypes'
 import specFile from '~/spec/cli_v1_config.yaml' with { type: 'yml' }
 
 const meta = {
-  title: 'Supabase CLI config',
+  title: 'Skybase CLI config',
 }
 
 const generateMetadata = genGuideMeta(() => ({
@@ -33,7 +33,7 @@ const content = specFile.info.tags.map((tag: { id: string; title: string }, id: 
 })
 
 const Config = () => {
-  const editLink = newEditLink('supabase/supabase/blob/master/apps/docs/spec/cli_v1_config.yaml')
+  const editLink = newEditLink('skybase/skybase/blob/master/apps/docs/spec/cli_v1_config.yaml')
 
   return (
     <GuideTemplate meta={meta} editLink={editLink}>

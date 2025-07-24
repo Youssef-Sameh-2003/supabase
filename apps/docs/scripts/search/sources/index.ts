@@ -59,7 +59,7 @@ export async function fetchJsLibReferenceSource() {
     'js-lib',
     '/reference/javascript',
     { title: 'JavaScript Reference', language: 'JavaScript' },
-    'spec/supabase_js_v2.yml',
+    'spec/skybase_js_v2.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -69,7 +69,7 @@ export async function fetchDartLibReferenceSource() {
     'dart-lib',
     '/reference/dart',
     { title: 'Dart Reference', language: 'Dart' },
-    'spec/supabase_dart_v2.yml',
+    'spec/skybase_dart_v2.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -79,7 +79,7 @@ export async function fetchPythonLibReferenceSource() {
     'python-lib',
     '/reference/python',
     { title: 'Python Reference', language: 'Python' },
-    'spec/supabase_py_v2.yml',
+    'spec/skybase_py_v2.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -89,7 +89,7 @@ export async function fetchCSharpLibReferenceSource() {
     'csharp-lib',
     '/reference/csharp',
     { title: 'C# Reference', language: 'C#' },
-    'spec/supabase_csharp_v0.yml',
+    'spec/skybase_csharp_v0.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -99,7 +99,7 @@ export async function fetchSwiftLibReferenceSource() {
     'swift-lib',
     '/reference/swift',
     { title: 'Swift Reference', language: 'Swift' },
-    'spec/supabase_swift_v2.yml',
+    'spec/skybase_swift_v2.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -109,7 +109,7 @@ export async function fetchKtLibReferenceSource() {
     'kt-lib',
     '/reference/kotlin',
     { title: 'Kotlin Reference', language: 'Kotlin' },
-    'spec/supabase_kt_v1.yml',
+    'spec/skybase_kt_v1.yml',
     'spec/common-client-libs-sections.json'
   ).load()
 }
@@ -128,7 +128,7 @@ export async function fetchLintWarningsGuideSources() {
   return new LintWarningsGuideLoader(
     'guide',
     '/guides/database/database-advisors',
-    'supabase',
+    'skybase',
     'splinter',
     'main',
     'docs'
@@ -161,14 +161,14 @@ export async function fetchAllSources() {
     .then((data) => data.flat())
 
   const githubDiscussionSources = fetchDiscussions(
-    'supabase',
-    'supabase',
+    'skybase',
+    'skybase',
     'DIC_kwDODMpXOc4CUvEr' // 'Troubleshooting' category
   )
     .then((discussions) =>
       Promise.all(
         discussions.map((discussion) =>
-          new GitHubDiscussionLoader('supabase/supabase', discussion).load()
+          new GitHubDiscussionLoader('skybase/skybase', discussion).load()
         )
       )
     )

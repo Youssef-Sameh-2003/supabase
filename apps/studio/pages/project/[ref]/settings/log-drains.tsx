@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
@@ -89,7 +89,7 @@ const LogDrainsSettings: NextPageWithLayout = () => {
             </ScaffoldDescription>
           </div>
           <div className="flex items-center justify-end gap-2">
-            <DocsButton href="https://supabase.com/docs/guides/platform/log-drains" />
+            <DocsButton href="https://skybase.com/docs/guides/platform/log-drains" />
 
             {!(logDrains?.length === 0) && (
               <Button

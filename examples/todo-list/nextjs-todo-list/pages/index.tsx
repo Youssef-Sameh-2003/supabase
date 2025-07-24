@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
+import { useSession, useSkybaseClient } from '@skybase/auth-helpers-react'
+import { Auth, ThemeSupa } from '@skybase/auth-ui-react'
 import TodoList from '@/components/TodoList'
 
 export default function Home() {
   const session = useSession()
-  const supabase = useSupabaseClient()
+  const skybase = useSkybaseClient()
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function Home() {
                 <span className="font-sans text-4xl text-center pb-2 mb-1 border-b mx-4 align-center">
                   Login
                 </span>
-                <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} theme="dark" />
+                <Auth skybaseClient={skybase} appearance={{ theme: ThemeSupa }} theme="dark" />
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function Home() {
             <button
               className="btn-black w-full mt-12"
               onClick={async () => {
-                const { error } = await supabase.auth.signOut()
+                const { error } = await skybase.auth.signOut()
                 if (error) console.log('Error logging out:', error.message)
               }}
             >

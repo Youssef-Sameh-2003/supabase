@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { differenceInDays } from 'date-fns'
 import { MoreVertical, TrashIcon } from 'lucide-react'
 

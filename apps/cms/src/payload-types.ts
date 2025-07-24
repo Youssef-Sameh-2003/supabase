@@ -342,9 +342,9 @@ export interface Customer {
    */
   region?: ('Asia' | 'Europe' | 'North America' | 'South America' | 'Africa' | 'Oceania') | null;
   /**
-   * Supabase products being used
+   * Skybase products being used
    */
-  supabase_products?: ('database' | 'auth' | 'storage' | 'realtime' | 'functions' | 'vector')[] | null;
+  skybase_products?: ('database' | 'auth' | 'storage' | 'realtime' | 'functions' | 'vector')[] | null;
   meta?: {
     title?: string | null;
     /**
@@ -1228,7 +1228,7 @@ export interface CustomersSelect<T extends boolean = true> {
   industry?: T;
   company_size?: T;
   region?: T;
-  supabase_products?: T;
+  skybase_products?: T;
   meta?:
     | T
     | {

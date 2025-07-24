@@ -1,4 +1,4 @@
-import { OAuthScope } from '@supabase/shared-types/out/constants'
+import { OAuthScope } from '@skybase/shared-types/out/constants'
 import { Check } from 'lucide-react'
 
 export interface AuthorizeRequesterDetailsProps {

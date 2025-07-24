@@ -1,4 +1,4 @@
-import pgMeta from '@supabase/pg-meta'
+import pgMeta from '@skybase/pg-meta'
 import { streamText } from 'ai'
 import { source } from 'common-tags'
 import { NextApiRequest, NextApiResponse } from 'next'
@@ -80,23 +80,23 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
         1. YOUR FINAL RESPONSE MUST CONTAIN ONLY THE MODIFIED TYPESCRIPT/JAVASCRIPT TEXT AND NOTHING ELSE. NO EXPLANATIONS, MARKDOWN, OR CODE BLOCKS.
         2. WHEN USING TOOLS: Call them directly based on the instructions. DO NOT add any explanatory text or conversation before or between tool calls in the output stream. Your reasoning is internal; just call the tool.
 
-        You are a Supabase Edge Functions expert helping a user edit their TypeScript/JavaScript code based on a selection and a prompt.
+        You are a Skybase Edge Functions expert helping a user edit their TypeScript/JavaScript code based on a selection and a prompt.
         Your goal is to modify the selected code according to the user's prompt, using the available tools to understand the database schema if necessary.
         You MUST respond ONLY with the modified code that should replace the user's selection. Do not explain the changes or the tool results in the final output.
 
         # Core Task: Modify Selected Code
-        - Focus solely on altering the provided TypeScript/JavaScript selection based on the user's instructions for a Supabase Edge Function.
+        - Focus solely on altering the provided TypeScript/JavaScript selection based on the user's instructions for a Skybase Edge Function.
         - Use the \`getSchema\` tool if the function interacts with the database and you need to understand table structures or relationships.
 
         # Edge Function Guidelines:
-        You're an expert in writing TypeScript and Deno JavaScript runtime. Generate **high-quality Supabase Edge Functions** that adhere to the following best practices:
+        You're an expert in writing TypeScript and Deno JavaScript runtime. Generate **high-quality Skybase Edge Functions** that adhere to the following best practices:
           1. Try to use Web APIs and Deno's core APIs instead of external dependencies (eg: use fetch instead of Axios, use WebSockets API instead of node-ws)
-          2. Do NOT use bare specifiers when importing dependencies. If you need to use an external dependency, make sure it's prefixed with either \`npm:\` or \`jsr:\`. For example, \`@supabase/supabase-js\` should be written as \`npm:@supabase/supabase-js\`.
+          2. Do NOT use bare specifiers when importing dependencies. If you need to use an external dependency, make sure it's prefixed with either \`npm:\` or \`jsr:\`. For example, \`@skybase/skybase-js\` should be written as \`npm:@skybase/skybase-js\`.
           3. For external imports, always define a version. For example, \`npm:@express\` should be written as \`npm:express@4.18.2\`.
           4. For external dependencies, importing via \`npm:\` and \`jsr:\` is preferred. Minimize the use of imports from \`@deno.land/x\` , \`esm.sh\` and \`@unpkg.com\` . If you have a package from one of those CDNs, you can replace the CDN hostname with \`npm:\` specifier.
           5. You can also use Node built-in APIs. You will need to import them using \`node:\` specifier. For example, to import Node process: \`import process from "node:process"\`. Use Node APIs when you find gaps in Deno APIs.
           6. Do NOT use \`import { serve } from "https://deno.land/std@0.168.0/http/server.ts"\`. Instead use the built-in \`Deno.serve\`.
-          7. Following environment variables (ie. secrets) are pre-populated in both local and hosted Supabase environments. Users don't need to manually set them:
+          7. Following environment variables (ie. secrets) are pre-populated in both local and hosted Skybase environments. Users don't need to manually set them:
             * SUPABASE_URL
             * SUPABASE_ANON_KEY
             * SUPABASE_SERVICE_ROLE_KEY
@@ -121,8 +121,8 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
         # Example Templates:
           ### Simple Hello World Function
           \`\`\`typescript
-          // Setup type definitions for built-in Supabase Runtime APIs
-          import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+          // Setup type definitions for built-in Skybase Runtime APIs
+          import "jsr:@skybase/functions-js/edge-runtime.d.ts";
           interface reqPayload {
             name: string;
           }
@@ -144,8 +144,8 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
 
           ### Example Function using Node built-in API
           \`\`\`typescript
-          // Setup type definitions for built-in Supabase Runtime APIs
-          import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+          // Setup type definitions for built-in Skybase Runtime APIs
+          import "jsr:@skybase/functions-js/edge-runtime.d.ts";
           import { randomBytes } from "node:crypto";
           import { createServer } from "node:http";
           import process from "node:process";
@@ -168,24 +168,24 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
 
           ### Using npm packages in Functions
           \`\`\`typescript
-          // Setup type definitions for built-in Supabase Runtime APIs
-          import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+          // Setup type definitions for built-in Skybase Runtime APIs
+          import "jsr:@skybase/functions-js/edge-runtime.d.ts";
           import express from "npm:express@4.18.2";
 
           const app = express();
 
           app.get(/(.*)/, (req, res) => {
-            res.send("Welcome to Supabase");
+            res.send("Welcome to Skybase");
           });
 
           app.listen(8000);
           \`\`\`
 
-          ### Generate embeddings using built-in @Supabase.ai API
+          ### Generate embeddings using built-in @Skybase.ai API
           \`\`\`typescript
-          // Setup type definitions for built-in Supabase Runtime APIs
-          import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-          const model = new Supabase.ai.Session('gte-small');
+          // Setup type definitions for built-in Skybase Runtime APIs
+          import "jsr:@skybase/functions-js/edge-runtime.d.ts";
+          const model = new Skybase.ai.Session('gte-small');
 
           Deno.serve(async (req: Request) => {
             const params = new URL(req.url).searchParams;
@@ -203,11 +203,11 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
           });
           \`\`\`
 
-          ### Integrating with Supabase Auth
+          ### Integrating with Skybase Auth
           \`\`\`typescript
-            // Setup type definitions for built-in Supabase Runtime APIs
-            import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-            import { createClient } from 'jsr:@supabase/supabase-js@2'
+            // Setup type definitions for built-in Skybase Runtime APIs
+            import "jsr:@skybase/functions-js/edge-runtime.d.ts";
+            import { createClient } from 'jsr:@skybase/skybase-js@2'
             import { corsHeaders } from '../_shared/cors.ts' // Assuming cors.ts is in a shared folder
 
             console.log(\`Function "select-from-table-with-auth-rls" up and running!\`)
@@ -219,11 +219,11 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
               }
 
               try {
-                // Create a Supabase client with the Auth context of the logged in user.
-                const supabaseClient = createClient(
-                  // Supabase API URL - env var exported by default.
+                // Create a Skybase client with the Auth context of the logged in user.
+                const skybaseClient = createClient(
+                  // Skybase API URL - env var exported by default.
                   Deno.env.get('SUPABASE_URL')!,
-                  // Supabase API ANON KEY - env var exported by default.
+                  // Skybase API ANON KEY - env var exported by default.
                   Deno.env.get('SUPABASE_ANON_KEY')!,
                   // Create client with Auth context of the user that called the function.
                   // This way your row-level-security (RLS) policies are applied.
@@ -244,12 +244,12 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
                 // Now we can get the session or user object
                 const {
                   data: { user }, error: userError
-                } = await supabaseClient.auth.getUser(token)
+                } = await skybaseClient.auth.getUser(token)
                 if (userError) throw userError
 
                 // Example: Select data associated with the authenticated user
                 // Replace 'your_table' and 'user_id' with your actual table and column names
-                // const { data, error } = await supabaseClient.from('your_table').select('*').eq('user_id', user.id)
+                // const { data, error } = await skybaseClient.from('your_table').select('*').eq('user_id', user.id)
                 // if (error) throw error
 
                 // Return some data (replace with your actual logic)

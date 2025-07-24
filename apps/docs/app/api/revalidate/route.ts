@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { type Database } from 'common'
 import { revalidateTag } from 'next/cache'
 import { headers } from 'next/headers'
@@ -56,13 +56,13 @@ export async function _handleRevalidateRequest(request: NextRequest) {
     )
   }
 
-  const supabaseAdmin = createClient<Database>(
+  const skybaseAdmin = createClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SECRET_KEY!
   )
 
   if (authorizationLevel === AuthorizationLevel.Basic) {
-    const { data: lastRevalidation, error } = await supabaseAdmin.rpc(
+    const { data: lastRevalidation, error } = await skybaseAdmin.rpc(
       'get_last_revalidation_for_tags',
       {
         tags: result.tags,
@@ -85,7 +85,7 @@ export async function _handleRevalidateRequest(request: NextRequest) {
     }
   }
 
-  const { error } = await supabaseAdmin
+  const { error } = await skybaseAdmin
     .from('validation_history')
     .insert(result.tags.map((tag) => ({ tag })))
   if (error) {

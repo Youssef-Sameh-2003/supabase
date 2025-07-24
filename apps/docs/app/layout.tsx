@@ -14,11 +14,11 @@ import { BASE_PATH, IS_PRODUCTION } from '~/lib/constants'
 import { TelemetryTagManager } from 'common'
 
 const metadata: Metadata = {
-  applicationName: 'Supabase Docs',
-  title: 'Supabase Docs',
+  applicationName: 'Skybase Docs',
+  title: 'Skybase Docs',
   description:
-    'Supabase is the Postgres development platform providing all the backend features you need to build a product.',
-  metadataBase: new URL('https://supabase.com'),
+    'Skybase is the Postgres development platform providing all the backend features you need to build a product.',
+  metadataBase: new URL('https://skybase.com'),
   icons: genFaviconData(BASE_PATH),
   robots: {
     index: IS_PRODUCTION,
@@ -26,17 +26,17 @@ const metadata: Metadata = {
   },
   openGraph: {
     type: 'article',
-    authors: 'Supabase',
+    authors: 'Skybase',
     url: `${BASE_PATH}`,
-    images: `${BASE_PATH}/img/supabase-og-image.png`,
+    images: `${BASE_PATH}/img/skybase-og-image.png`,
     publishedTime: new Date().toISOString(),
     modifiedTime: new Date().toISOString(),
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@supabase',
-    creator: '@supabase',
-    images: `${BASE_PATH}/img/supabase-og-image.png`,
+    site: '@skybase',
+    creator: '@skybase',
+    images: `${BASE_PATH}/img/skybase-og-image.png`,
   },
 }
 

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Download, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -77,7 +77,7 @@ const SSLConfiguration = () => {
     <div id="ssl-configuration">
       <div className="flex items-center justify-between mb-6">
         <FormHeader className="mb-0" title="SSL Configuration" description="" />
-        <DocsButton href="https://supabase.com/docs/guides/platform/ssl-enforcement" />
+        <DocsButton href="https://skybase.com/docs/guides/platform/ssl-enforcement" />
       </div>
       <FormPanel>
         <FormSection
@@ -180,7 +180,7 @@ const SSLConfiguration = () => {
             ) : (
               <Button type="default" icon={<Download />}>
                 <a
-                  href={`https://supabase-downloads.s3-ap-southeast-1.amazonaws.com/${env}/ssl/${env}-ca-2021.crt`}
+                  href={`https://skybase-downloads.s3-ap-southeast-1.amazonaws.com/${env}/ssl/${env}-ca-2021.crt`}
                 >
                   Download certificate
                 </a>

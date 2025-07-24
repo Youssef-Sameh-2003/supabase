@@ -10,7 +10,7 @@ import getContent from 'data/solutions/developers'
 
 import { Solutions } from 'data/Solutions'
 
-const WhySupabase = dynamic(() => import('components/Solutions/FeaturesSection'))
+const WhySkybase = dynamic(() => import('components/Solutions/FeaturesSection'))
 const PlatformSection = dynamic(() => import('components/Solutions/PlatformSection'))
 const PlatformStarterSection = dynamic(() => import('components/Solutions/TwoColumnsSection'))
 const DXSection = dynamic(() => import('components/Solutions/DeveloperExperienceSection'))
@@ -31,7 +31,7 @@ const BeginnersPage: NextPage = () => {
         openGraph={{
           title: content.metadata.metaTitle,
           description: content.metadata.metaDescription,
-          url: `https://supabase.com/solutions/developers`,
+          url: `https://skybase.com/solutions/developers`,
         }}
       />
       <Layout className="overflow-visible">
@@ -41,7 +41,7 @@ const BeginnersPage: NextPage = () => {
           className="[&_h1]:2xl:!text-5xl bg-default border-0 lg:pb-8 [&_.ph-footer]:mt-0 [&_.ph-footer]:lg:mt-16 [&_.ph-footer]:xl:mt-32"
           sectionContainerClassName="lg:gap-4"
         />
-        <WhySupabase {...content.why} />
+        <WhySkybase {...content.why} />
         <PlatformSection {...content.platform} />
         <DXSection
           id={content.developerExperience.id}
@@ -69,7 +69,7 @@ const BeginnersPage: NextPage = () => {
           id="quote"
           className="!pb-8 md:!pb-12 [&_q]:max-w-2xl"
           quote={{
-            text: 'Supabase enabled us to focus on building the best email infrastructure for developers — without worrying about backend complexity. Their authentication, database, and support have been game-changers for our rapid growth.',
+            text: 'Skybase enabled us to focus on building the best email infrastructure for developers — without worrying about backend complexity. Their authentication, database, and support have been game-changers for our rapid growth.',
             author: 'Zeno Rocha',
             role: 'CEO at Resend',
             link: '/customers/resend',

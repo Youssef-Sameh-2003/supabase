@@ -7,7 +7,7 @@ import { useSendEventMutation } from 'data/telemetry/send-event-mutation'
 import { BASE_PATH } from 'lib/constants'
 import { AiIconAnimation, Button, Label_Shadcn_, Textarea } from 'ui'
 
-interface SupabaseService {
+interface SkybaseService {
   name: 'Auth' | 'Storage' | 'Database' | 'Edge Function' | 'Cron' | 'Queues' | 'Vector'
   reason: string
 }
@@ -16,7 +16,7 @@ interface SchemaGeneratorProps {
   step: 'initial' | 'second'
   onSqlGenerated: (sql: string) => void
   onReset?: () => void
-  onServicesUpdated: (services: SupabaseService[]) => void
+  onServicesUpdated: (services: SkybaseService[]) => void
   onTitleUpdated: (title: string) => void
   isOneOff?: boolean
 }
@@ -89,7 +89,7 @@ export const SchemaGenerator = ({
       }
 
       if (toolCall.toolName === 'setServices') {
-        const newServices = (toolCall.args as { services: SupabaseService[] }).services
+        const newServices = (toolCall.args as { services: SkybaseService[] }).services
         onServicesUpdated(newServices)
         return 'Services updated successfully'
       }

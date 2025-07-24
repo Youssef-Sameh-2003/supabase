@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
 import type { components } from 'data/api'
@@ -43,7 +43,7 @@ export const useProjectSettingsV2Query = <TData = ProjectSettingsData>(
   }: UseQueryOptions<ProjectSettingsData, ProjectSettingsError, TData> = {}
 ) => {
   // [Joshen] Sync with API perms checking here - shouldReturnApiKeys
-  // https://github.com/supabase/infrastructure/blob/develop/api/src/routes/platform/projects/ref/settings.controller.ts#L92
+  // https://github.com/skybase/infrastructure/blob/develop/api/src/routes/platform/projects/ref/settings.controller.ts#L92
   const canReadAPIKeys = useCheckPermissions(PermissionAction.TENANT_SQL_ADMIN_WRITE, '*')
 
   return useQuery<ProjectSettingsData, ProjectSettingsError, TData>(

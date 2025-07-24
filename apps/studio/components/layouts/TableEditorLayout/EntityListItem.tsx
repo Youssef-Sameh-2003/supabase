@@ -9,7 +9,7 @@ import {
   MAX_EXPORT_ROW_COUNT,
   MAX_EXPORT_ROW_COUNT_MESSAGE,
 } from 'components/grid/components/header/Header'
-import { parseSupaTable } from 'components/grid/SupabaseGrid.utils'
+import { parseSupaTable } from 'components/grid/SkybaseGrid.utils'
 import {
   formatTableRowsToSQL,
   getEntityLintDetails,

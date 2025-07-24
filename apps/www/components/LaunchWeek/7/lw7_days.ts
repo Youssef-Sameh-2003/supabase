@@ -116,7 +116,7 @@ const days: WeekDayProps[] = [
     d: 0,
     dd: 'Pre-release',
     youtube_id: '',
-    blogpost: 'https://supabase.com/blog/designing-with-ai-midjourney',
+    blogpost: 'https://skybase.com/blog/designing-with-ai-midjourney',
     docs: '',
     steps: [
       {
@@ -134,7 +134,7 @@ const days: WeekDayProps[] = [
       },
       {
         title: 'Supavisor',
-        github: 'https://github.com/supabase/supavisor',
+        github: 'https://github.com/skybase/supavisor',
         hackernews: 'https://news.ycombinator.com/item?id=35501718',
         thumb: '/images/launchweek/seven/day0/supavisor/supavisor-thumb.png',
         bg_layers: [{ img: images['0-supavisor-01'] }, { img: images['0-supavisor-02'] }],
@@ -156,7 +156,7 @@ const days: WeekDayProps[] = [
     steps: [
       {
         title: 'Open Source Logging',
-        blog: '/blog/supabase-logs-self-hosted',
+        blog: '/blog/skybase-logs-self-hosted',
         thumb: '/images/launchweek/seven/day1/self-hosted-logs-thumb.jpg',
         video: 'https://www.youtube.com/watch?v=Ai2BjHV36Ng',
         hackernews: 'https://news.ycombinator.com/item?id=35518786',
@@ -258,10 +258,10 @@ const days: WeekDayProps[] = [
     docs: '',
     steps: [
       {
-        title: 'Supabase Auth: SSO, Mobile, and Server-side support',
+        title: 'Skybase Auth: SSO, Mobile, and Server-side support',
         break_thumb_title: true,
         description: '',
-        blog: '/blog/supabase-auth-sso-pkce',
+        blog: '/blog/skybase-auth-sso-pkce',
         thumb: images['04-sso-thumb'],
         video: 'https://www.youtube.com/watch?v=hAwJeR6mhB0',
         docs: '/docs/guides/auth/sso/auth-sso-saml',
@@ -316,14 +316,14 @@ const days: WeekDayProps[] = [
       },
       {
         title: 'Studio Updates',
-        blog: '/blog/supabase-studio-2.0',
+        blog: '/blog/skybase-studio-2.0',
         thumb: images['05-studio-01-thumb'],
         steps: [
           {
             title: '⌘K',
             badge: 'New',
             className: 'span-full',
-            url: '#supabase-ai--assisted-database-development',
+            url: '#skybase-ai--assisted-database-development',
             hideInBlog: true,
             bg_layers: [
               {

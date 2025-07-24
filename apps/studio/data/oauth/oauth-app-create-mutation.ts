@@ -1,4 +1,4 @@
-import type { OAuthScope } from '@supabase/shared-types/out/constants'
+import type { OAuthScope } from '@skybase/shared-types/out/constants'
 import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 

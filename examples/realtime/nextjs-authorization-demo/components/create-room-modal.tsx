@@ -1,23 +1,23 @@
 'use client'
-import { createClient } from '@/utils/supabase/client'
+import { createClient } from '@/utils/skybase/client'
 import { redirect } from 'next/navigation'
 import { SubmitButton } from './submit-button'
 import { useEffect, useState } from 'react'
-import { RealtimeChannel } from '@supabase/supabase-js'
+import { RealtimeChannel } from '@skybase/skybase-js'
 
 export default function CreateRoomModal({ channel }: { channel: RealtimeChannel | null }) {
-  const supabase = createClient()
+  const skybase = createClient()
   const createRoom = async (formData: FormData) => {
     const topic = formData.get('topic') as string
-    const user = await supabase.auth.getUser()
-    const token = (await supabase.auth.getSession()).data.session!.access_token
+    const user = await skybase.auth.getUser()
+    const token = (await skybase.auth.getSession()).data.session!.access_token
 
-    supabase.realtime.setAuth(token)
+    skybase.realtime.setAuth(token)
 
-    const rooms_response = await supabase.from('rooms').insert({ topic }).select('topic')
+    const rooms_response = await skybase.from('rooms').insert({ topic }).select('topic')
 
     if (rooms_response.data) {
-      await supabase
+      await skybase
         .from('rooms_users')
         .insert({ user_id: user.data.user!.id, room_topic: rooms_response.data![0].topic })
 

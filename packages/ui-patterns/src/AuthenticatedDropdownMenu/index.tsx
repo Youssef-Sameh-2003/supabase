@@ -20,8 +20,8 @@ import {
 } from 'ui'
 import { themes } from 'ui/src/components/ThemeProvider/themes'
 
-import type { User } from '@supabase/supabase-js'
-import type { LucideIcon } from 'icons/src/createSupabaseIcon'
+import type { User } from '@skybase/skybase-js'
+import type { LucideIcon } from 'icons/src/createSkybaseIcon'
 import type { Theme } from 'ui/src/components/ThemeProvider/themes'
 
 interface Props {

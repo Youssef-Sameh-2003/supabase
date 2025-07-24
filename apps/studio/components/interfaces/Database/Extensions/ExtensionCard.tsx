@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { AlertTriangle, Book, Github, Loader2, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -39,7 +39,7 @@ const ExtensionCard = ({ extension }: ExtensionCardProps) => {
   const X_PADDING = 'px-5'
   const extensionMeta = extensions.find((item) => item.name === extension.name)
   const docsUrl = extensionMeta?.link.startsWith('/guides')
-    ? `https://supabase.com/docs${extensionMeta?.link}`
+    ? `https://skybase.com/docs${extensionMeta?.link}`
     : extensionMeta?.link ?? undefined
 
   const { mutate: disableExtension, isLoading: isDisabling } = useDatabaseExtensionDisableMutation({

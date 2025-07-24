@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+import { skybase } from '../lib/skybase'
 import { StyleSheet, View, Alert } from 'react-native'
 import { Button, Input } from '@rneui/themed'
-import { Session } from '@supabase/supabase-js'
+import { Session } from '@skybase/skybase-js'
 import Push from './Push'
 
 export default function Account({ session }: { session: Session }) {
@@ -20,7 +20,7 @@ export default function Account({ session }: { session: Session }) {
       setLoading(true)
       if (!session?.user) throw new Error('No user on the session!')
 
-      const { data, error, status } = await supabase
+      const { data, error, status } = await skybase
         .from('profiles')
         .select(`username, website, avatar_url`)
         .eq('id', session?.user.id)
@@ -64,7 +64,7 @@ export default function Account({ session }: { session: Session }) {
         updated_at: new Date(),
       }
 
-      const { error } = await supabase.from('profiles').upsert(updates)
+      const { error } = await skybase.from('profiles').upsert(updates)
 
       if (error) {
         throw error
@@ -99,7 +99,7 @@ export default function Account({ session }: { session: Session }) {
       </View>
 
       <View style={styles.verticallySpaced}>
-        <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
+        <Button title="Sign Out" onPress={() => skybase.auth.signOut()} />
       </View>
 
       <View style={[styles.verticallySpaced, { height: 200 }]}>

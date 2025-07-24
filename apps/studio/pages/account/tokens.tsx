@@ -26,7 +26,7 @@ const UserAccessTokens: NextPageWithLayout = () => {
         <div className="flex items-center space-x-2">
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/reference/api/introduction"
+              href="https://skybase.com/docs/reference/api/introduction"
               target="_blank"
               rel="noreferrer"
             >
@@ -35,7 +35,7 @@ const UserAccessTokens: NextPageWithLayout = () => {
           </Button>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/reference/cli/start"
+              href="https://skybase.com/docs/reference/cli/start"
               target="_blank"
               rel="noreferrer"
             >

@@ -1,5 +1,5 @@
-import { createBrowserSupabaseClient, Session } from '@supabase/auth-helpers-nextjs'
-import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { createBrowserSkybaseClient, Session } from '@skybase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@skybase/auth-helpers-react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -12,12 +12,12 @@ function MyApp({
   initialSession: Session
 }>) {
   const router = useRouter()
-  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
+  const [skybaseClient] = useState(() => createBrowserSkybaseClient())
 
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabaseClient.auth.onAuthStateChange((event, session) => {
+    } = skybaseClient.auth.onAuthStateChange((event, session) => {
       switch (event) {
         case 'SIGNED_IN':
           router.push('/')
@@ -32,7 +32,7 @@ function MyApp({
 
   return (
     <SessionContextProvider
-      supabaseClient={supabaseClient}
+      skybaseClient={skybaseClient}
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />

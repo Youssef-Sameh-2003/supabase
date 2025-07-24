@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useCallback } from 'react'
 import { toast } from 'sonner'
 
@@ -102,12 +102,12 @@ Connect any of your GitHub repositories to a project.
 
 ### How will GitHub connections work?
 
-You will be able to connect a GitHub repository to a Supabase project.
+You will be able to connect a GitHub repository to a Skybase project.
 The GitHub app will watch for changes in your repository such as file changes, branch changes as well as pull request activity.
 `
 
   const GitHubContentSectionBottom = gitHubAuthorization
-    ? `You are authorized with Supabase GitHub App. You can configure your GitHub App installations and repository access [here](${GITHUB_INTEGRATION_INSTALLATION_URL}). You can revoke your authorization [here](${GITHUB_INTEGRATION_REVOKE_AUTHORIZATION_URL}).`
+    ? `You are authorized with Skybase GitHub App. You can configure your GitHub App installations and repository access [here](${GITHUB_INTEGRATION_INSTALLATION_URL}). You can revoke your authorization [here](${GITHUB_INTEGRATION_REVOKE_AUTHORIZATION_URL}).`
     : ''
 
   const GitHubSection = () => (
@@ -137,7 +137,7 @@ The GitHub app will watch for changes in your repository such as file changes, b
                         username: connection.user?.username ?? '',
                       },
                       foreign_project_id: String(connection.repository.id),
-                      supabase_project_ref: connection.project.ref,
+                      skybase_project_ref: connection.project.ref,
                       organization_integration_id: 'unused',
                       inserted_at: connection.inserted_at,
                       updated_at: connection.updated_at,

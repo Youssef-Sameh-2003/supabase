@@ -94,7 +94,7 @@ export const GraphiQLTab = () => {
             <h1 className="mt-8 mb-2 text-2xl">Enable the GraphQL Extension</h1>
             <h2 className="text-sm text-foreground-light">
               Toggle the switch below to enable the GraphQL extension. You can then use the GraphQL
-              API with your Supabase Database.
+              API with your Skybase Database.
             </h2>
           </div>
 

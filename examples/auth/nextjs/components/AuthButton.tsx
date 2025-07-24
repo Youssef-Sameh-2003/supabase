@@ -1,19 +1,19 @@
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 export default async function AuthButton() {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
   const {
     data: { user },
-  } = await supabase.auth.getUser()
+  } = await skybase.auth.getUser()
 
   const signOut = async () => {
     'use server'
 
-    const supabase = await createClient()
-    await supabase.auth.signOut()
+    const skybase = await createClient()
+    await skybase.auth.signOut()
     return redirect('/login')
   }
 

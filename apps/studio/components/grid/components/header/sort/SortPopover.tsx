@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { formatSortURLParams } from 'components/grid/SupabaseGrid.utils'
+import { formatSortURLParams } from 'components/grid/SkybaseGrid.utils'
 import { useTableSort } from 'components/grid/hooks/useTableSort'
 import { useTableEditorTableStateSnapshot } from 'state/table-editor-table'
 import { SortPopoverPrimitive } from './SortPopoverPrimitive'

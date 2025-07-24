@@ -129,7 +129,7 @@ const LogsQueryPanel = ({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="bottom" align="start">
                   <DropdownMenuItem onClick={() => onDataSourceChange('logs')}>
-                    <DropdownMenuItemContent name="Logs" desc="Logs for all Supabase products" />
+                    <DropdownMenuItemContent name="Logs" desc="Logs for all Skybase products" />
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onDataSourceChange('warehouse')}>
                     <DropdownMenuItemContent
@@ -298,7 +298,7 @@ const LogsQueryPanel = ({
                     respective source. Do note that to access nested keys, you would need to perform
                     the necessary{' '}
                     <Link
-                      href="https://supabase.com/docs/guides/platform/logs#unnesting-arrays"
+                      href="https://skybase.com/docs/guides/platform/logs#unnesting-arrays"
                       target="_blank"
                       rel="noreferrer"
                       className="text-brand"

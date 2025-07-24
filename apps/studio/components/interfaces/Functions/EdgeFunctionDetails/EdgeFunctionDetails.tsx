@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import dayjs from 'dayjs'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
@@ -253,11 +253,11 @@ export const EdgeFunctionDetails = () => {
               <CommandRender
                 commands={[
                   {
-                    command: `supabase functions download ${selectedFunction?.slug}`,
+                    command: `skybase functions download ${selectedFunction?.slug}`,
                     description: 'Download the function to your local machine',
                     jsx: () => (
                       <>
-                        <span className="text-brand-600">supabase</span> functions download{' '}
+                        <span className="text-brand-600">skybase</span> functions download{' '}
                         {selectedFunction?.slug}
                       </>
                     ),
@@ -375,7 +375,7 @@ export const EdgeFunctionDetails = () => {
                         icon={<ExternalLink strokeWidth={1.5} />}
                       >
                         <Link
-                          href="https://supabase.com/docs/guides/functions/dependencies"
+                          href="https://skybase.com/docs/guides/functions/dependencies"
                           target="_blank"
                           rel="noreferrer"
                         >

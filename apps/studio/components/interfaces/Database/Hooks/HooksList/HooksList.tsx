@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { includes, map as lodashMap, uniqBy } from 'lodash'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
@@ -56,7 +56,7 @@ const HooksList = ({ createHook = noop, editHook = noop, deleteHook = noop }: Ho
           onChange={(e) => setFilterString(e.target.value)}
         />
         <div className="flex items-center gap-x-2">
-          <DocsButton href="https://supabase.com/docs/guides/database/webhooks" />
+          <DocsButton href="https://skybase.com/docs/guides/database/webhooks" />
           <ButtonTooltip
             onClick={() => createHook()}
             disabled={!isPermissionsLoaded || !canCreateWebhooks}

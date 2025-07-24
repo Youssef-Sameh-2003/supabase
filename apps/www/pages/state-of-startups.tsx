@@ -168,7 +168,7 @@ function StateOfStartupsPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/state-of-startups`,
+          url: `https://skybase.com/state-of-startups`,
           images: [
             {
               url: meta_image,
@@ -471,8 +471,8 @@ const Hero = (props: any) => {
             <div className="flex gap-2 mb-4 md:mb-8">
               <div className="w-11 h-11 relative flex items-center justify-center bg-default border rounded-lg">
                 <Image
-                  src="/images/supabase-logo-icon.svg"
-                  alt="Supabase icon"
+                  src="/images/skybase-logo-icon.svg"
+                  alt="Skybase icon"
                   width={60}
                   height={60}
                   className="w-6 h-6"

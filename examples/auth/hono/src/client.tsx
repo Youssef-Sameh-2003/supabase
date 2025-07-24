@@ -1,4 +1,4 @@
-import { createBrowserClient } from '@supabase/ssr';
+import { createBrowserClient } from '@skybase/ssr';
 import { hc } from 'hono/client';
 import { useEffect, useState } from 'hono/jsx';
 import { render } from 'hono/jsx/dom';
@@ -6,7 +6,7 @@ import type { AppType } from '.';
 
 const client = hc<AppType>('/');
 
-const supabase = createBrowserClient(
+const skybase = createBrowserClient(
   import.meta.env.VITE_SUPABASE_URL!,
   import.meta.env.VITE_SUPABASE_ANON_KEY!
 );
@@ -15,7 +15,7 @@ function App() {
   const [user, setUser] = useState<null | { id: string }>(null);
   // Check client-side if user is logged in:
   useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
+    skybase.auth.onAuthStateChange((event, session) => {
       console.log('Auth event:', event);
       if (event === 'SIGNED_OUT') {
         setUser(null);
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <h1>Hono Supabase Auth Example!</h1>
+      <h1>Hono Skybase Auth Example!</h1>
       <h2>Sign in</h2>
       {!user ? (
         <SignIn />
@@ -58,7 +58,7 @@ function SignIn() {
       <p>
         Ready about and enable{' '}
         <a
-          href="https://supabase.com/docs/guides/auth/auth-anonymous"
+          href="https://skybase.com/docs/guides/auth/auth-anonymous"
           target="_blank"
         >
           anonymous signins here!
@@ -67,7 +67,7 @@ function SignIn() {
       <button
         type="button"
         onClick={async () => {
-          const { data, error } = await supabase.auth.signInAnonymously();
+          const { data, error } = await skybase.auth.signInAnonymously();
           if (error) return console.error('Error signing in:', error.message);
           console.log('Signed in client-side!');
           alert('Signed in anonymously! User id: ' + data?.user?.id);

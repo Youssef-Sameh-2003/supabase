@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Eye, EyeOff } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -221,9 +221,9 @@ const ProtectionAuthSettingsForm = () => {
                           <InlineLink
                             href={
                               field.value === 'hcaptcha'
-                                ? 'https://supabase.com/docs/guides/auth/auth-captcha?queryGroups=captcha-method&captcha-method=hcaptcha-1'
+                                ? 'https://skybase.com/docs/guides/auth/auth-captcha?queryGroups=captcha-method&captcha-method=hcaptcha-1'
                                 : field.value === 'turnstile'
-                                  ? 'https://supabase.com/docs/guides/auth/auth-captcha?queryGroups=captcha-method&captcha-method=turnstile-1'
+                                  ? 'https://skybase.com/docs/guides/auth/auth-captcha?queryGroups=captcha-method&captcha-method=turnstile-1'
                                   : '/'
                             }
                             className="mt-2 text-xs text-foreground-light hover:text-foreground no-underline"

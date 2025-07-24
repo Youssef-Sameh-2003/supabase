@@ -46,7 +46,7 @@ export default function RLSDisableModalContent() {
       <DocsButton
         abbrev={false}
         className="w-min mt-3"
-        href="https://supabase.com/docs/guides/auth/row-level-security"
+        href="https://skybase.com/docs/guides/auth/row-level-security"
       />
     </div>
   )

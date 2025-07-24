@@ -26,7 +26,7 @@ export default function GeneratingTypes({ selectedLang }: Props) {
       const res = await generateTypes({ ref, included_schemas: config?.db_schema })
       let element = document.createElement('a')
       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(res.types))
-      element.setAttribute('download', 'supabase.ts')
+      element.setAttribute('download', 'skybase.ts')
       element.style.display = 'none'
       document.body.appendChild(element)
       element.click()
@@ -43,18 +43,18 @@ export default function GeneratingTypes({ selectedLang }: Props) {
     <>
       <h2 className="doc-heading flex items-center justify-between">
         <span>Generating types</span>
-        <DocsButton href="https://supabase.com/docs/guides/database/api/generating-types" />
+        <DocsButton href="https://skybase.com/docs/guides/database/api/generating-types" />
       </h2>
       <div className="doc-section">
         <article className="code-column text-foreground">
           <p>
-            Supabase APIs are generated from your database, which means that we can use database
+            Skybase APIs are generated from your database, which means that we can use database
             introspection to generate type-safe API definitions.
           </p>
           <p>
             You can generate types from your database either through the{' '}
-            <Link href="https://supabase.com/docs/guides/database/api/generating-types">
-              Supabase CLI
+            <Link href="https://skybase.com/docs/guides/database/api/generating-types">
+              Skybase CLI
             </Link>
             , or by downloading the types file via the button on the right and importing it in your
             application within <code>src/index.ts</code>.
@@ -97,7 +97,7 @@ const localSnippets = {
     title: 'Login via the CLI with your Personal Access Token',
     bash: {
       code: `
-npx supabase login
+npx skybase login
 `,
     },
   }),
@@ -105,7 +105,7 @@ npx supabase login
     title: 'Generate types',
     bash: {
       code: `
-npx supabase gen types typescript --project-id "${ref}" --schema public > types/supabase.ts
+npx skybase gen types typescript --project-id "${ref}" --schema public > types/skybase.ts
 `,
     },
   }),

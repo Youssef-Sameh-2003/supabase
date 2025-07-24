@@ -1,6 +1,6 @@
 'use client'
 
-import type { User } from '@supabase/supabase-js'
+import type { User } from '@skybase/skybase-js'
 import { LogOut, Globe, LifeBuoy, Settings, UserIcon, Database } from 'lucide-react'
 import { logOut } from 'common'
 
@@ -18,19 +18,19 @@ const useDropdownMenu = (user: User | null) => {
       {
         label: 'Account Preferences',
         icon: Settings,
-        href: 'https://supabase.com/dashboard/account/me',
+        href: 'https://skybase.com/dashboard/account/me',
       },
       {
         label: 'All Projects',
         icon: Database,
-        href: 'https://supabase.com/dashboard/projects',
+        href: 'https://skybase.com/dashboard/projects',
       },
     ],
     [
       {
-        label: 'Supabase.com',
+        label: 'Skybase.com',
         icon: Globe,
-        href: 'https://supabase.com',
+        href: 'https://skybase.com',
         otherProps: {
           target: '_blank',
           rel: 'noreferrer noopener',
@@ -39,7 +39,7 @@ const useDropdownMenu = (user: User | null) => {
       {
         label: 'GitHub',
         icon: IconGitHub as any,
-        href: 'https://github.com/supabase/supabase',
+        href: 'https://github.com/skybase/skybase',
         otherProps: {
           target: '_blank',
           rel: 'noreferrer noopener',
@@ -48,7 +48,7 @@ const useDropdownMenu = (user: User | null) => {
       {
         label: 'Support',
         icon: LifeBuoy,
-        href: 'https://supabase.com/support',
+        href: 'https://skybase.com/support',
         otherProps: {
           target: '_blank',
           rel: 'noreferrer noopener',

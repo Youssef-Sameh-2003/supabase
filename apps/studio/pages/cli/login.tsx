@@ -51,9 +51,9 @@ const CliLoginPage: NextPageWithLayout = () => {
         {device_code ? (
           <>
             <h1 className="text-xl py-2">
-              Your Supabase Account is being used to login on Supabase CLI.
+              Your Skybase Account is being used to login on Skybase CLI.
             </h1>
-            <p>Enter this verification code on Supabase CLI to authorize login.</p>
+            <p>Enter this verification code on Skybase CLI to authorize login.</p>
             <div className="flex flex-row gap-2 py-10">
               <InputOTP maxLength={8} value={device_code} disabled>
                 <InputOTPGroup>
@@ -74,7 +74,7 @@ const CliLoginPage: NextPageWithLayout = () => {
             </p>
             <Admonition
               type="tip"
-              title="Browser login flow requires Supabase CLI version 1.219.0 and above."
+              title="Browser login flow requires Skybase CLI version 1.219.0 and above."
               className="mt-16"
             />
           </>

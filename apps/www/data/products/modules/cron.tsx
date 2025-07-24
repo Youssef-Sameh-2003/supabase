@@ -4,25 +4,25 @@ import BrowserFrame from '~/components/BrowserFrame'
 import { Image } from 'ui'
 
 export default () => ({
-  metaTitle: 'Supabase Cron | Schedule Recurring Jobs in Postgres',
+  metaTitle: 'Skybase Cron | Schedule Recurring Jobs in Postgres',
   metaDescription:
-    'Supabase Cron is a Postgres Module that uses the pg_cron database extension to manage recurring tasks. Manage your Cron Jobs using any Postgres tooling.',
+    'Skybase Cron is a Postgres Module that uses the pg_cron database extension to manage recurring tasks. Manage your Cron Jobs using any Postgres tooling.',
   metaImage: '/images/modules/cron/og.png',
-  url: 'https://supabase.com/dashboard/project/_/integrations/cron/overview',
+  url: 'https://skybase.com/dashboard/project/_/integrations/cron/overview',
   docsUrl: '/docs/guides/cron',
   heroSection: {
-    title: 'Supabase Cron',
+    title: 'Skybase Cron',
     h1: <>Schedule and Recurring Jobs in Postgres</>,
     subheader: (
       <>
-        Supabase Cron is a Postgres Module that uses the pg_cron database extension to manage
+        Skybase Cron is a Postgres Module that uses the pg_cron database extension to manage
         recurring Jobs. Manage your Cron Jobs using any Postgres tooling.
       </>
     ),
     icon: PRODUCT_MODULES['cron'].icon[24],
     cta: {
       label: 'Schedule your first Job',
-      link: 'https://supabase.com/dashboard/project/_/integrations/cron/overview',
+      link: 'https://skybase.com/dashboard/project/_/integrations/cron/overview',
     },
     secondaryCta: {
       label: 'Explore documentation',
@@ -94,7 +94,7 @@ export default () => ({
       },
       {
         title: 'Real-Time Monitoring',
-        paragraph: "Track and debug scheduled Jobs with Supabase's observability tools.",
+        paragraph: "Track and debug scheduled Jobs with Skybase's observability tools.",
         svg: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +188,7 @@ export default () => ({
       'Create and manage Jobs using simple SQL commands for ease of use. Track changes to your recurring Jobs using Postgres migrations stored in source control.',
     cta: {
       label: 'Start scheduling',
-      url: 'https://supabase.com/dashboard/project/_/integrations/cron/overview',
+      url: 'https://skybase.com/dashboard/project/_/integrations/cron/overview',
     },
     reverse: true,
   },
@@ -197,7 +197,7 @@ export default () => ({
     label: 'UI',
     heading: <>Intuitive Scheduling Interface</>,
     subheading:
-      'Supabase Cron provides a clean and simple interface, including cron syntax and natural language options, to create Jobs with ease.',
+      'Skybase Cron provides a clean and simple interface, including cron syntax and natural language options, to create Jobs with ease.',
     image: (
       <Image
         src={{
@@ -214,7 +214,7 @@ export default () => ({
     ),
     cta: {
       label: 'Start scheduling',
-      url: 'https://supabase.com/dashboard/project/_/integrations/cron/overview',
+      url: 'https://skybase.com/dashboard/project/_/integrations/cron/overview',
     },
     className: 'md:!py-0',
   },
@@ -246,7 +246,7 @@ export default () => ({
     label: 'Extensible',
     heading: <>Designed to Just Work</>,
     subheading:
-      'Supabase Cron is integrated with the entire Supabase suite of tools. Create Jobs to call Database Functions, Supabase Edge Functions, and even remote webhooks.',
+      'Skybase Cron is integrated with the entire Skybase suite of tools. Create Jobs to call Database Functions, Skybase Edge Functions, and even remote webhooks.',
     image: (
       <Image
         src={{

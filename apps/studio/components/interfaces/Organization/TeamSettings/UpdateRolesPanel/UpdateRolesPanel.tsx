@@ -185,7 +185,7 @@ export const UpdateRolesPanel = ({ visible, member, onClose }: UpdateRolesPanelP
               <p className="truncate" title={`Manage access for ${member.username}`}>
                 Manage access for {member.username}
               </p>
-              <DocsButton href="https://supabase.com/docs/guides/platform/access-control" />
+              <DocsButton href="https://skybase.com/docs/guides/platform/access-control" />
             </SheetHeader>
 
             <SheetSection className="h-full overflow-auto flex flex-col gap-y-4">

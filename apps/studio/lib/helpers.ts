@@ -60,7 +60,7 @@ export const getURL = () => {
       : process?.env?.NEXT_PUBLIC_VERCEL_BRANCH_URL &&
           process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL !== ''
         ? process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL
-        : 'https://supabase.com/dashboard'
+        : 'https://skybase.com/dashboard'
   return url.includes('http') ? url : `https://${url}`
 }
 
@@ -263,12 +263,12 @@ export const removeCommentsFromSql = (sql: string) => {
 }
 
 const formatSemver = (version: string) => {
-  // e.g supabase-postgres-14.1.0.88
+  // e.g skybase-postgres-14.1.0.88
   // There's 4 segments instead so we can't use the semver package
-  const segments = version.split('supabase-postgres-')
+  const segments = version.split('skybase-postgres-')
   const semver = segments[segments.length - 1]
 
-  // e.g supabase-postgres-14.1.0.99-vault-rc1
+  // e.g skybase-postgres-14.1.0.99-vault-rc1
   const formattedSemver = semver.split('-')[0]
 
   return formattedSemver

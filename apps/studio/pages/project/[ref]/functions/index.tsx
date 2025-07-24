@@ -41,12 +41,12 @@ const EdgeFunctionsPage: NextPageWithLayout = () => {
   const hasFunctions = (functions ?? []).length > 0
 
   const secondaryActions = [
-    <DocsButton key="docs" href="https://supabase.com/docs/guides/functions" />,
+    <DocsButton key="docs" href="https://skybase.com/docs/guides/functions" />,
     <Button asChild key="edge-function-examples" type="default" icon={<ExternalLink />}>
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://github.com/supabase/supabase/tree/master/examples/edge-functions/supabase/functions"
+        href="https://github.com/skybase/skybase/tree/master/examples/edge-functions/skybase/functions"
       >
         Examples
       </a>

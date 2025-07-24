@@ -2,8 +2,8 @@
 # NOTE: It's highly recommended to use the new builder, Buildkit. https://docs.docker.com/build/buildkit/
 ## USAGE:
 # Build:        docker build . -f apps/studio/Dockerfile --target production -t studio:latest
-# Run:          docker run -p 3000:3000 supabase/studio
-# Deploy:       docker push supabase/studio:latest
+# Run:          docker run -p 3000:3000 skybase/studio
+# Deploy:       docker push skybase/studio:latest
 # Clean build:
 #    docker builder prune
 #    docker build . -f apps/studio/Dockerfile --target production -t studio:latest --no-cache

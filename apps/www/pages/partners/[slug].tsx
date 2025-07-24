@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import supabase from '~/lib/supabaseMisc'
+import skybase from '~/lib/skybaseMisc'
 import Error404 from '../404'
 
 function PartnerPage() {
@@ -9,7 +9,7 @@ function PartnerPage() {
 
 // This function gets called at build time
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: slugs } = await supabase.from('partners').select('slug')
+  const { data: slugs } = await skybase.from('partners').select('slug')
 
   const paths: {
     params: { slug: string }
@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  let { data: partner } = await supabase
+  let { data: partner } = await skybase
     .from('partners')
     .select('*')
     .eq('approved', true)

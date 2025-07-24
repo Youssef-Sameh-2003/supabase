@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+import { skybase } from '../lib/skybase'
 import { StyleSheet, View, Alert, Image, Button } from 'react-native'
 import DocumentPicker, { isCancel, isInProgress, types } from 'react-native-document-picker'
 
@@ -20,7 +20,7 @@ export default function Avatar({ url, size = 150, onUpload }: Props) {
 
   async function downloadImage(path: string) {
     try {
-      const { data, error } = await supabase.storage
+      const { data, error } = await skybase.storage
         .from('avatars')
         .download(path)
       
@@ -63,7 +63,7 @@ export default function Avatar({ url, size = 150, onUpload }: Props) {
       const fileExt = file.name.split('.').pop()
       const filePath = `${Math.random()}.${fileExt}`
 
-      let { error } = await supabase.storage
+      let { error } = await skybase.storage
         .from('avatars')
         .upload(filePath, formData)
 

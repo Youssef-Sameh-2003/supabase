@@ -15,7 +15,7 @@ const HackathonCallout = ({ className }: { className?: string }) => {
       <div className="!m-0 flex items-center">
         <TextLink
           label="Learn more"
-          url="/blog/supabase-oss-hackathon"
+          url="/blog/skybase-oss-hackathon"
           target="_blank"
           hasChevron
           className="m-0"

@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { compact } from 'lodash'
 import { Book, Github, Hash, MessageSquare } from 'lucide-react'
 
@@ -13,7 +13,7 @@ const SUPPORT_API_URL = process.env.NEXT_PUBLIC_SUPPORT_API_URL || ''
 const SUPPORT_API_KEY = process.env.NEXT_PUBLIC_SUPPORT_ANON_KEY || ''
 
 export const uploadAttachments = async (ref: string, files: File[]) => {
-  const supportSupabaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
+  const supportSkybaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
@@ -35,7 +35,7 @@ export const uploadAttachments = async (ref: string, files: File[]) => {
       const prefix = `${ref}/${uuidv4()}.${suffix}`
       const options = { cacheControl: '3600' }
 
-      const { data, error } = await supportSupabaseClient.storage
+      const { data, error } = await supportSkybaseClient.storage
         .from('support-attachments')
         .upload(prefix, file, options)
 
@@ -47,7 +47,7 @@ export const uploadAttachments = async (ref: string, files: File[]) => {
 
   if (keys.length === 0) return []
 
-  const { data, error } = await supportSupabaseClient.storage
+  const { data, error } = await supportSkybaseClient.storage
     .from('support-attachments')
     .createSignedUrls(keys, 10 * 365 * 24 * 60 * 60)
   if (error) {
@@ -96,9 +96,9 @@ export function generateLink(pageType: PageType, link: string): string {
   switch (pageType) {
     case PageType.Markdown:
     case PageType.Reference:
-      return `https://supabase.com/docs${link}`
+      return `https://skybase.com/docs${link}`
     case PageType.Integration:
-      return `https://supabase.com${link}`
+      return `https://skybase.com${link}`
     case PageType.GithubDiscussion:
       return link
     default:

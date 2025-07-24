@@ -80,11 +80,11 @@ function htmlShell(
   return (
     '<!doctype html><html>' +
     '<head>' +
-    `<title>${title} | Supabase Docs</title>` +
-    `<meta name="description" content="Supabase API reference for ${libraryName}${section.title ? ': ' + section.title : ''}">` +
-    `<meta name="og:image" content="https://supabase.com/docs/img/supabase-og-image.png">` +
-    `<meta name="twitter:image" content="https://supabase.com/docs/img/supabase-og-image.png">` +
-    `<link rel="canonical" href="https://supabase.com/docs/reference/${lib}` +
+    `<title>${title} | Skybase Docs</title>` +
+    `<meta name="description" content="Skybase API reference for ${libraryName}${section.title ? ': ' + section.title : ''}">` +
+    `<meta name="og:image" content="https://skybase.com/docs/img/skybase-og-image.png">` +
+    `<meta name="twitter:image" content="https://skybase.com/docs/img/skybase-og-image.png">` +
+    `<link rel="canonical" href="https://skybase.com/docs/reference/${lib}` +
     (slug ? '/' + slug : '') +
     `">` +
     '</head>' +

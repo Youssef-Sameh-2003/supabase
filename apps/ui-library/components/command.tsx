@@ -19,7 +19,7 @@ export function Command({ name, highlight }: CommandCopyProps) {
 
   const getBaseUrl = () => {
     if (process.env.NEXT_PUBLIC_VERCEL_TARGET_ENV === 'production') {
-      return `https://supabase.com`
+      return `https://skybase.com`
     } else if (process.env.NEXT_PUBLIC_VERCEL_TARGET_ENV === 'preview') {
       return `https://${process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}`
     } else {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:myauthapp/main.dart';
 import 'package:myauthapp/screens/profile_screen.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _setupAuthListener() {
-    supabase.auth.onAuthStateChange.listen((data) {
+    skybase.auth.onAuthStateChange.listen((data) {
       final event = data.event;
       if (event == AuthChangeEvent.signedIn) {
         Navigator.of(context).pushReplacement(
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
       throw 'No ID Token found.';
     }
 
-    return supabase.auth.signInWithIdToken(
+    return skybase.auth.signInWithIdToken(
       provider: OAuthProvider.google,
       idToken: idToken,
       accessToken: accessToken,

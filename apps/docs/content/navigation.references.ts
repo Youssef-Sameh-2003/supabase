@@ -2,7 +2,7 @@ export const REFERENCES = {
   javascript: {
     type: 'sdk',
     name: 'JavaScript',
-    library: 'supabase-js',
+    library: 'skybase-js',
     libPath: 'javascript',
     versions: ['v2', 'v1'],
     typeSpec: true,
@@ -10,101 +10,101 @@ export const REFERENCES = {
     meta: {
       v2: {
         libId: 'reference_javascript_v2',
-        specFile: 'supabase_js_v2',
+        specFile: 'skybase_js_v2',
       },
       v1: {
         libId: 'reference_javascript_v1',
-        specFile: 'supabase_js_v1',
+        specFile: 'skybase_js_v1',
       },
     },
   },
   dart: {
     type: 'sdk',
     name: 'Flutter',
-    library: 'supabase-dart',
+    library: 'skybase-dart',
     libPath: 'dart',
     versions: ['v2', 'v1'],
     icon: 'reference-dart',
     meta: {
       v2: {
         libId: 'reference_dart_v2',
-        specFile: 'supabase_dart_v2',
+        specFile: 'skybase_dart_v2',
       },
       v1: {
         libId: 'reference_dart_v1',
-        specFile: 'supabase_dart_v1',
+        specFile: 'skybase_dart_v1',
       },
     },
   },
   csharp: {
     type: 'sdk',
     name: 'C#',
-    library: 'supabase-csharp',
+    library: 'skybase-csharp',
     libPath: 'csharp',
     versions: ['v1', 'v0'],
     icon: 'reference-csharp',
     meta: {
       v1: {
         libId: 'reference_csharp_v1',
-        specFile: 'supabase_csharp_v1',
+        specFile: 'skybase_csharp_v1',
       },
       v0: {
         libId: 'reference_csharp_v0',
-        specFile: 'supabase_csharp_v0',
+        specFile: 'skybase_csharp_v0',
       },
     },
   },
   swift: {
     type: 'sdk',
     name: 'Swift',
-    library: 'supabase-swift',
+    library: 'skybase-swift',
     libPath: 'swift',
     versions: ['v2', 'v1'],
     icon: 'reference-swift',
     meta: {
       v2: {
         libId: 'reference_swift_v2',
-        specFile: 'supabase_swift_v2',
+        specFile: 'skybase_swift_v2',
       },
       v1: {
         libId: 'reference_swift_v1',
-        specFile: 'supabase_swift_v1',
+        specFile: 'skybase_swift_v1',
       },
     },
   },
   kotlin: {
     type: 'sdk',
     name: 'Kotlin',
-    library: 'supabase-kt',
+    library: 'skybase-kt',
     libPath: 'kotlin',
     versions: ['v3', 'v2', 'v1'],
     icon: 'reference-kotlin',
     meta: {
       v3: {
         libId: 'reference_kotlin_v3',
-        specFile: 'supabase_kt_v3',
+        specFile: 'skybase_kt_v3',
       },
       v2: {
         libId: 'reference_kotlin_v2',
-        specFile: 'supabase_kt_v2',
+        specFile: 'skybase_kt_v2',
       },
       v1: {
         libId: 'reference_kotlin_v1',
-        specFile: 'supabase_kt_v1',
+        specFile: 'skybase_kt_v1',
       },
     },
   },
   python: {
     type: 'sdk',
     name: 'Python',
-    library: 'supabase-py',
+    library: 'skybase-py',
     libPath: 'python',
     versions: ['v2'],
     icon: 'reference-python',
     meta: {
       v2: {
         libId: 'reference_python_v2',
-        specFile: 'supabase_py_v2',
+        specFile: 'skybase_py_v2',
       },
     },
   },

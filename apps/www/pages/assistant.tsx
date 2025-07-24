@@ -53,7 +53,7 @@ const welcomeMessages = [
           </g>
         </svg>
         <p>
-          Welcome Product Hunter! 👋 Thanks for checking out the Supabase Assistant. Let me show you
+          Welcome Product Hunter! 👋 Thanks for checking out the Skybase Assistant. Let me show you
           what I can do!
         </p>
       </div>
@@ -255,7 +255,7 @@ USING (
     ],
   },
   {
-    label: 'SQL to Supabase-js',
+    label: 'SQL to Skybase-js',
     messages: [
       {
         id: '23',
@@ -306,19 +306,19 @@ ORDER BY p.created_at DESC;`}
       {
         id: '25',
         role: 'user' as const,
-        content: 'Can you show me how to do this with the Supabase client?',
+        content: 'Can you show me how to do this with the Skybase client?',
         createdAt: new Date(),
       },
       {
         id: '26',
         role: 'assistant' as const,
-        content: "Here's how to perform the same query using the Supabase JavaScript client:",
+        content: "Here's how to perform the same query using the Skybase JavaScript client:",
         createdAt: new Date(),
         render: (
           <SqlSnippet
             id="projects-js"
-            title="Get All Projects with Supabase Client"
-            sql={`const { data: projects, error } = await supabase
+            title="Get All Projects with Skybase Client"
+            sql={`const { data: projects, error } = await skybase
   .from('projects')
   .select(\`
     id,
@@ -626,8 +626,8 @@ function Assistant() {
   const [incomingMessages, setIncomingMessages] = useState<Message[]>([])
   const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
-  const meta_title = 'AI | Supabase'
-  const meta_description = 'Build AI-powered applications with Supabase'
+  const meta_title = 'AI | Skybase'
+  const meta_description = 'Build AI-powered applications with Skybase'
   const router = useRouter()
   const { query } = router
 
@@ -657,7 +657,7 @@ function Assistant() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/ai`,
+          url: `https://skybase.com/ai`,
         }}
       />
       <DefaultLayout className="lg:h-screen min-h-screen overflow-hidden">
@@ -691,7 +691,7 @@ function Assistant() {
                     <Link
                       target="_blank"
                       rel="noreferrer noopener"
-                      href="https://supabase.com/blog/supabase-ai-assistant-v2"
+                      href="https://skybase.com/blog/skybase-ai-assistant-v2"
                     >
                       Blog Post
                     </Link>

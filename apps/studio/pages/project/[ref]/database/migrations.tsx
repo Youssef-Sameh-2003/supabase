@@ -28,7 +28,7 @@ const MigrationsPage: NextPageWithLayout = () => {
         <ScaffoldSectionDetail className="flex items-center md:justify-end gap-x-2">
           <DocsButton
             className="no-underline"
-            href="https://supabase.com/docs/guides/deployment/database-migrations"
+            href="https://skybase.com/docs/guides/deployment/database-migrations"
           />
         </ScaffoldSectionDetail>
         <div className="col-span-12 mt-3">

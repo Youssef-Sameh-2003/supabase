@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 
 const SUPPORT_API_URL = process.env.NEXT_PUBLIC_SUPPORT_API_URL || ''
 const SUPPORT_API_KEY = process.env.NEXT_PUBLIC_SUPPORT_ANON_KEY || ''
@@ -10,7 +10,7 @@ export const uploadAttachment = async (
   image: File,
   getUrl: boolean = true
 ) => {
-  const supabaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
+  const skybaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
@@ -27,7 +27,7 @@ export const uploadAttachment = async (
 
   const options = { cacheControl: '3600' }
 
-  const { data: file, error } = await supabaseClient.storage
+  const { data: file, error } = await skybaseClient.storage
     .from(bucket)
     .upload(fileName, image, options)
 
@@ -37,7 +37,7 @@ export const uploadAttachment = async (
   }
 
   if (file && getUrl) {
-    const { data } = await supabaseClient.storage.from(bucket).getPublicUrl(file.path)
+    const { data } = await skybaseClient.storage.from(bucket).getPublicUrl(file.path)
     return data?.publicUrl
   }
 

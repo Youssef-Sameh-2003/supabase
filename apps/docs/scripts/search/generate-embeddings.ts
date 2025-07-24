@@ -1,6 +1,6 @@
 import '../utils/dotenv.js'
 
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import { parseArgs } from 'node:util'
 import { OpenAI } from 'openai'
 import { v4 as uuidv4 } from 'uuid'
@@ -38,7 +38,7 @@ async function generateEmbeddings() {
     )
   }
 
-  const supabaseClient = createClient(
+  const skybaseClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SECRET_KEY!,
     {
@@ -82,7 +82,7 @@ async function generateEmbeddings() {
       } = embeddingSource.process()
 
       // Check for existing page in DB and compare checksums
-      const { error: fetchPageError, data: existingPage } = await supabaseClient
+      const { error: fetchPageError, data: existingPage } = await skybaseClient
         .from('page')
         .select('id, path, checksum')
         .filter('path', 'eq', path)
@@ -97,7 +97,7 @@ async function generateEmbeddings() {
       if (!shouldRefresh && existingPage?.checksum === checksum) {
         // No content/embedding update required on this page
         // Update other meta info
-        const { error: updatePageError } = await supabaseClient
+        const { error: updatePageError } = await skybaseClient
           .from('page')
           .update({
             type,
@@ -124,7 +124,7 @@ async function generateEmbeddings() {
           console.log(`[${path}] Refresh flag set, removing old page sections and their embeddings`)
         }
 
-        const { error: deletePageSectionError } = await supabaseClient
+        const { error: deletePageSectionError } = await skybaseClient
           .from('page_section')
           .delete()
           .filter('page_id', 'eq', existingPage.id)
@@ -136,7 +136,7 @@ async function generateEmbeddings() {
 
       // Create/update page record. Intentionally clear checksum until we
       // have successfully generated all page sections.
-      const { error: upsertPageError, data: page } = await supabaseClient
+      const { error: upsertPageError, data: page } = await skybaseClient
         .from('page')
         .upsert(
           {
@@ -175,7 +175,7 @@ async function generateEmbeddings() {
 
           const [responseData] = embeddingResponse.data
 
-          const { error: insertPageSectionError } = await supabaseClient
+          const { error: insertPageSectionError } = await skybaseClient
             .from('page_section')
             .insert({
               page_id: page.id,
@@ -207,7 +207,7 @@ async function generateEmbeddings() {
       }
 
       // Set page checksum so that we know this page was stored successfully
-      const { error: updatePageError } = await supabaseClient
+      const { error: updatePageError } = await skybaseClient
         .from('page')
         .update({ checksum })
         .filter('id', 'eq', page.id)
@@ -226,7 +226,7 @@ async function generateEmbeddings() {
   console.log(`Removing old pages and their sections`)
 
   // Delete pages that have been removed (and their sections via cascade)
-  const { error: deletePageError } = await supabaseClient
+  const { error: deletePageError } = await skybaseClient
     .from('page')
     .delete()
     .filter('version', 'neq', refreshVersion)

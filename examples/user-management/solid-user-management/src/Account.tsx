@@ -1,7 +1,7 @@
-import { AuthSession } from '@supabase/supabase-js'
+import { AuthSession } from '@skybase/skybase-js'
 import { Component, createEffect, createSignal } from 'solid-js'
 import Avatar from './Avatar'
-import { supabase } from './supabaseClient'
+import { skybase } from './skybaseClient'
 
 interface Props {
 	session: AuthSession
@@ -22,7 +22,7 @@ const Account: Component<Props> = ({ session }) => {
 			setLoading(true)
 			const { user } = session
 
-			let { data, error, status } = await supabase
+			let { data, error, status } = await skybase
 				.from('profiles')
 				.select(`username, website, avatar_url`)
 				.eq('id', user.id)
@@ -61,7 +61,7 @@ const Account: Component<Props> = ({ session }) => {
 				updated_at: new Date().toISOString(),
 			}
 
-			let { error } = await supabase.from('profiles').upsert(updates)
+			let { error } = await skybase.from('profiles').upsert(updates)
 
 			if (error) {
 				throw error
@@ -110,7 +110,7 @@ const Account: Component<Props> = ({ session }) => {
 						{loading() ? 'Saving ...' : 'Update profile'}
 					</button>
 				</div>
-				<button type="button" class="button block" onClick={() => supabase.auth.signOut()}>
+				<button type="button" class="button block" onClick={() => skybase.auth.signOut()}>
 					Sign Out
 				</button>
 			</form>

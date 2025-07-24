@@ -1,4 +1,4 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresTable } from '@skybase/postgres-meta'
 import { sortBy } from 'lodash'
 import { ArrowRight, Database, HelpCircle, Table, X } from 'lucide-react'
 import { Fragment, useEffect, useState } from 'react'
@@ -499,7 +499,7 @@ export const ForeignKeySelector = ({
                 label="Action if referenced row is removed"
                 // @ts-ignore
                 labelOptional={
-                  <DocsButton href="https://supabase.com/docs/guides/database/postgres/cascade-deletes" />
+                  <DocsButton href="https://skybase.com/docs/guides/database/postgres/cascade-deletes" />
                 }
                 descriptionText={
                   <>

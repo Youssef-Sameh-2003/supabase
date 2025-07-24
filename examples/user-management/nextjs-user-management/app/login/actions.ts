@@ -3,10 +3,10 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 
 export async function login(formData: FormData) {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -15,7 +15,7 @@ export async function login(formData: FormData) {
     password: formData.get('password') as string,
   }
 
-  const { error } = await supabase.auth.signInWithPassword(data)
+  const { error } = await skybase.auth.signInWithPassword(data)
 
   if (error) {
     redirect('/error')
@@ -26,7 +26,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -35,7 +35,7 @@ export async function signup(formData: FormData) {
     password: formData.get('password') as string,
   }
 
-  const { error } = await supabase.auth.signUp(data)
+  const { error } = await skybase.auth.signUp(data)
 
   if (error) {
     redirect('/error')

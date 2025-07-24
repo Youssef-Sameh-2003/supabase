@@ -14,7 +14,7 @@ const LWXSummary = () => {
           <span className="text-foreground tracking-[1px]">Launch Week</span>{' '}
           <Image
             src="/images/launchweek/lwx/logos/lwx_logo.svg"
-            alt="Supabase Launch Week X icon"
+            alt="Skybase Launch Week X icon"
             width={16}
             height={16}
             className="w-3 h-3"
@@ -69,10 +69,10 @@ const LWXSummary = () => {
             )}
             <ol className="border-t pt-4 mt-2">
               <Link
-                href="/blog/supabase-hackathon-lwx"
+                href="/blog/skybase-hackathon-lwx"
                 className="relative flex items-center justify-between group w-full py-1 hover:text-foreground"
               >
-                Supabase Launch Week X Hackathon
+                Skybase Launch Week X Hackathon
               </Link>
             </ol>
             <ol>
@@ -80,7 +80,7 @@ const LWXSummary = () => {
                 href="/blog/community-meetups-lwx"
                 className="relative flex items-center justify-between group w-full py-1 hover:text-foreground"
               >
-                Supabase Launch Week X Community Meetups
+                Skybase Launch Week X Community Meetups
               </Link>
             </ol>
           </ul>

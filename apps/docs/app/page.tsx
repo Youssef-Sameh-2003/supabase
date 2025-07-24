@@ -32,7 +32,7 @@ const products = [
     hasLightIcon: true,
     href: '/guides/database/overview',
     description:
-      'Supabase provides a full Postgres database for every project with Realtime functionality, database backups, extensions, and more.',
+      'Skybase provides a full Postgres database for every project with Realtime functionality, database backups, extensions, and more.',
     span: 'col-span-12 md:col-span-6',
   },
   {
@@ -150,25 +150,25 @@ const clientLibraries = [
 const additionalResources = [
   {
     title: 'Management API',
-    description: 'Manage your Supabase projects and organizations.',
+    description: 'Manage your Skybase projects and organizations.',
     icon: 'reference-api',
     href: '/reference/api/introduction',
   },
   {
-    title: 'Supabase CLI',
+    title: 'Skybase CLI',
     description: 'Use the CLI to develop, manage and deploy your projects.',
     icon: 'reference-cli',
     href: '/reference/cli/introduction',
   },
   {
     title: 'Platform Guides',
-    description: 'Learn more about the tools and services powering Supabase.',
+    description: 'Learn more about the tools and services powering Skybase.',
     icon: 'platform',
     href: '/guides/platform',
   },
   {
     title: 'Integrations',
-    description: 'Explore a variety of integrations from Supabase partners.',
+    description: 'Explore a variety of integrations from Skybase partners.',
     icon: 'integrations',
     href: '/guides/integrations',
   },
@@ -241,11 +241,11 @@ const HomePage = () => (
 
       <div className="flex flex-col lg:grid grid-cols-12 gap-6 py-12 border-b">
         <div className="col-span-4 flex flex-col gap-1 [&_h2]:m-0">
-          <h2 id="migrate-to-supabase" className="group scroll-mt-24">
-            Migrate to Supabase
+          <h2 id="migrate-to-skybase" className="group scroll-mt-24">
+            Migrate to Skybase
           </h2>
           <p className="text-foreground-light text-sm p-0 m-0">
-            Bring your existing data, auth and storage to Supabase following our migration guides.
+            Bring your existing data, auth and storage to Skybase following our migration guides.
           </p>
           <TextLink
             label="Explore more resources"
@@ -306,7 +306,7 @@ const HomePage = () => (
                 Self-Hosting
               </h3>
             </div>
-            <p className="text-foreground-light text-sm">Get started with self-hosting Supabase.</p>
+            <p className="text-foreground-light text-sm">Get started with self-hosting Skybase.</p>
             <TextLink
               label="More on Self-Hosting"
               url="/guides/self-hosting"

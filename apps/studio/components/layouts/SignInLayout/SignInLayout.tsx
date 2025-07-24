@@ -91,14 +91,14 @@ const SignInLayout = ({
           <nav className="relative flex items-center justify-between sm:h-10">
             <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <Link href={logoLinkToMarketingSite ? 'https://supabase.com' : '/organizations'}>
+                <Link href={logoLinkToMarketingSite ? 'https://skybase.com' : '/organizations'}>
                   <Image
                     src={
                       resolvedTheme?.includes('dark')
-                        ? `${BASE_PATH}/img/supabase-dark.svg`
-                        : `${BASE_PATH}/img/supabase-light.svg`
+                        ? `${BASE_PATH}/img/skybase-dark.svg`
+                        : `${BASE_PATH}/img/skybase-light.svg`
                     }
-                    alt="Supabase Logo"
+                    alt="Skybase Logo"
                     height={24}
                     width={120}
                   />
@@ -107,7 +107,7 @@ const SignInLayout = ({
             </div>
 
             <div className="items-center hidden space-x-3 md:ml-10 md:flex md:pr-4">
-              <DocsButton abbrev={false} href="https://supabase.com/docs" />
+              <DocsButton abbrev={false} href="https://skybase.com/docs" />
             </div>
           </nav>
         </div>
@@ -126,16 +126,16 @@ const SignInLayout = ({
             {showDisclaimer && (
               <div className="sm:text-center">
                 <p className="text-xs text-foreground-lighter sm:mx-auto sm:max-w-sm">
-                  By continuing, you agree to Supabase's{' '}
+                  By continuing, you agree to Skybase's{' '}
                   <Link
-                    href="https://supabase.com/terms"
+                    href="https://skybase.com/terms"
                     className="underline hover:text-foreground-light"
                   >
                     Terms of Service
                   </Link>{' '}
                   and{' '}
                   <Link
-                    href="https://supabase.com/privacy"
+                    href="https://skybase.com/privacy"
                     className="underline hover:text-foreground-light"
                   >
                     Privacy Policy
@@ -162,7 +162,7 @@ const SignInLayout = ({
                   className="flex items-center gap-4"
                 >
                   <img
-                    src={`https://supabase.com${quote.img_url}`}
+                    src={`https://skybase.com${quote.img_url}`}
                     alt={quote.handle}
                     className="w-12 h-12 rounded-full"
                   />

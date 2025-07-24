@@ -1,4 +1,4 @@
-import type { PostgresColumn } from '@supabase/postgres-meta'
+import type { PostgresColumn } from '@skybase/postgres-meta'
 import { isEqual, isNull } from 'lodash'
 import type { Dictionary } from 'types'
 

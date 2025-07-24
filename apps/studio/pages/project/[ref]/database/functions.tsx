@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useState } from 'react'
 
 import { useIsInlineEditorEnabled } from 'components/interfaces/App/FeaturePreview/FeaturePreviewContext'
@@ -77,7 +77,7 @@ $$;`,
           <div className="col-span-12">
             <FormHeader
               title="Database Functions"
-              docsUrl="https://supabase.com/docs/guides/database/functions"
+              docsUrl="https://skybase.com/docs/guides/database/functions"
             />
             <FunctionsList
               createFunction={createFunction}

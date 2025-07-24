@@ -5,7 +5,7 @@ const cards: { [name: string]: CardProps } = {
     title: 'Branching',
     badge: 'New',
     features: [
-      'Branch your Supabase project',
+      'Branch your Skybase project',
       'Sync with your git branches',
       'Manage every Preview from the Dashboard',
       'Support for Vercel Previews',
@@ -13,7 +13,7 @@ const cards: { [name: string]: CardProps } = {
     ctas: [
       {
         label: 'Learn more',
-        href: 'https://supabase.com/docs/guides/platform/branching',
+        href: 'https://skybase.com/docs/guides/platform/branching',
         target: '_blank',
         type: 'default',
       },
@@ -35,7 +35,7 @@ const cards: { [name: string]: CardProps } = {
     ctas: [
       {
         label: 'Learn more',
-        href: 'https://supabase.com/docs/guides/platform/read-replicas',
+        href: 'https://skybase.com/docs/guides/platform/read-replicas',
         target: '_blank',
         type: 'default',
       },

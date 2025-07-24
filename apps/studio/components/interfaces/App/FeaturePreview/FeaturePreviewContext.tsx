@@ -133,13 +133,13 @@ export const useFeaturePreviewModal = () => {
   const isFeaturePreviewReleasedToPublic = useCallback(
     (feature: (typeof FEATURE_PREVIEWS)[number]) => {
       switch (feature.key) {
-        case 'supabase-ui-realtime-settings':
+        case 'skybase-ui-realtime-settings':
           return isRealtimeSettingsEnabled
-        case 'supabase-ui-branching-2-0':
+        case 'skybase-ui-branching-2-0':
           return gitlessBranchingEnabled
-        case 'supabase-ui-advisor-rules':
+        case 'skybase-ui-advisor-rules':
           return advisorRulesEnabled
-        case 'supabase-ui-preview-unified-logs':
+        case 'skybase-ui-preview-unified-logs':
           return isUnifiedLogsPreviewAvailable
         default:
           return true

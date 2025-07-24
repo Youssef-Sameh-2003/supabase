@@ -672,7 +672,7 @@ export const SQLEditor = () => {
                   {isDiffOpen && (
                     <div className="w-full h-full">
                       <DiffEditor
-                        theme="supabase"
+                        theme="skybase"
                         language="pgsql"
                         original={defaultSqlDiff.original}
                         modified={defaultSqlDiff.modified}

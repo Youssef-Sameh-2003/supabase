@@ -46,18 +46,18 @@ const SidePanelVercelProjectLinker = () => {
   const selectedIntegration = vercelIntegrations?.find((x) => x.id === organizationIntegrationId)
 
   /**
-   * Supabase projects available
+   * Skybase projects available
    */
-  const { data: supabaseProjectsData } = useProjectsQuery({
+  const { data: skybaseProjectsData } = useProjectsQuery({
     enabled: organizationIntegrationId !== undefined,
   })
 
-  const supabaseProjects = useMemo(
+  const skybaseProjects = useMemo(
     () =>
-      supabaseProjectsData
+      skybaseProjectsData
         ?.filter((project) => project.organization_id === selectedOrganization?.id)
         .map((project) => ({ name: project.name, ref: project.ref })) ?? EMPTY_ARR,
-    [selectedOrganization?.id, supabaseProjectsData]
+    [selectedOrganization?.id, skybaseProjectsData]
   )
 
   const { data: vercelProjectsData } = useVercelProjectsQuery(
@@ -109,7 +109,7 @@ const SidePanelVercelProjectLinker = () => {
           ...vars.connection,
           metadata: {
             ...vars.connection.metadata,
-            supabaseConfig: {
+            skybaseConfig: {
               projectEnvVars: {
                 write: true,
               },
@@ -141,10 +141,10 @@ Check the details below before proceeding
         </SidePanel.Content>
         <SidePanel.Content className="flex flex-col gap-2">
           <ProjectLinker
-            defaultSupabaseProjectRef={ref}
+            defaultSkybaseProjectRef={ref}
             organizationIntegrationId={selectedIntegration?.id}
             foreignProjects={vercelProjects}
-            supabaseProjects={supabaseProjects}
+            skybaseProjects={skybaseProjects}
             onCreateConnections={onCreateConnections}
             installedConnections={selectedIntegration?.connections}
             isLoading={isCreatingConnection}

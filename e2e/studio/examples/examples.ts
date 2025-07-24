@@ -18,7 +18,7 @@ import { test } from '../utils/test'
 test('Loads the page 1', async ({ page }) => {
   if (isEnv('selfhosted')) return
 
-  await page.goto('https://www.supabase.com')
+  await page.goto('https://www.skybase.com')
   await expect(
     page.getByRole('heading', { name: 'Build in a weekend Scale to millions' })
   ).toBeVisible()
@@ -30,7 +30,7 @@ test('Loads the page 1', async ({ page }) => {
 test('Loads the page 2', async ({ page }) => {
   if (!isEnv(['staging', 'production'])) return
 
-  await page.goto('https://www.supabase.com')
+  await page.goto('https://www.skybase.com')
   await expect(
     page.getByRole('heading', { name: 'Build in a weekend Scale to millions' })
   ).toBeVisible()

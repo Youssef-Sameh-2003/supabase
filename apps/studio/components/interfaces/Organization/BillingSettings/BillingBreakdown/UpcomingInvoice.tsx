@@ -185,7 +185,7 @@ const UpcomingInvoice = ({ slug }: UpcomingInvoiceProps) => {
                             <Link
                               className="underline"
                               href={
-                                'https://supabase.com/docs/guides/platform/manage-your-usage/branching'
+                                'https://skybase.com/docs/guides/platform/manage-your-usage/branching'
                               }
                               target="_blank"
                             >

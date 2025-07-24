@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { createContext, Dispatch, useContext, useEffect, useReducer } from 'react'
-import type { RealtimeChannel, Session } from '@supabase/supabase-js'
+import type { RealtimeChannel, Session } from '@skybase/skybase-js'
 
 /**
  * This is copy of shared use-conf-data.ts. For launch week 15 we need different ticket states.

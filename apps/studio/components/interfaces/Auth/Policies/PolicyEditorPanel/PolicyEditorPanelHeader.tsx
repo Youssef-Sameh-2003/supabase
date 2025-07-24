@@ -1,4 +1,4 @@
-import type { PostgresPolicy } from '@supabase/postgres-meta'
+import type { PostgresPolicy } from '@skybase/postgres-meta'
 import { ChevronDown, PanelLeftClose, PanelRightClose, X } from 'lucide-react'
 import { useState } from 'react'
 

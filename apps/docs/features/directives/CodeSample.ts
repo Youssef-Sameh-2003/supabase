@@ -19,7 +19,7 @@
  * ```mdx
  * <$CodeSample
  *   external={true} // Note you must set the boolean, React pattern of omitting for true doesn't work
- *   org="supabase"
+ *   org="skybase"
  *   repo="wrappers"
  *   commit="68d5s42hvs7p342kl65ldk90dsafdsa"
  *   path="/path/to/file.ts"
@@ -44,7 +44,7 @@ import { IS_PLATFORM } from '~/lib/constants'
 import { EXAMPLES_DIRECTORY } from '~/lib/docs'
 import { getAttributeValue, getAttributeValueExpression } from './utils.server'
 
-const ALLOW_LISTED_GITHUB_ORGS = ['supabase', 'supabase-community'] as [string, ...string[]]
+const ALLOW_LISTED_GITHUB_ORGS = ['skybase', 'skybase-community'] as [string, ...string[]]
 
 const linesSchema = z.array(z.tuple([z.coerce.number(), z.coerce.number()]))
 const linesValidator = z
@@ -240,7 +240,7 @@ function rewriteNodes(contentMap: Map<MdxJsxFlowElement, [CodeSampleMeta, string
 
     const source = isExternalSource(meta)
       ? `https://github.com/${meta.org}/${meta.repo}/blob/${meta.commit}${meta.path}`
-      : `https://github.com/supabase/supabase/blob/${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ?? 'master'}/examples${meta.path}`
+      : `https://github.com/skybase/skybase/blob/${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ?? 'master'}/examples${meta.path}`
 
     const elidedContent = redactLines(content, meta.lines, lang, meta.hideElidedLines)
 

@@ -2,7 +2,7 @@ import { tool } from 'ai'
 import { stripIndent } from 'common-tags'
 import { z } from 'zod'
 
-// import { processSql, renderSupabaseJs } from '@supabase/sql-to-rest'
+// import { processSql, renderSkybaseJs } from '@skybase/sql-to-rest'
 import { IS_PLATFORM } from 'common'
 import { getDatabaseFunctions } from 'data/database-functions/database-functions-query'
 import { getDatabasePolicies } from 'data/database-policies/database-policies-query'
@@ -60,8 +60,8 @@ export const getTools = ({
     // [Ivan] The tool relies on `libpg-query` binaries which we've removed intentionally because they couldn't build on MacOS.
     // Once we figure out a way how to use wasm binaries, we can add it back.
     //
-    // convertSqlToSupabaseJs: tool({
-    //   description: 'Convert an sql query into supabase-js client code',
+    // convertSqlToSkybaseJs: tool({
+    //   description: 'Convert an sql query into skybase-js client code',
     //   parameters: z.object({
     //     sql: z
     //       .string()
@@ -72,7 +72,7 @@ export const getTools = ({
     //   execute: async ({ sql }) => {
     //     try {
     //       const statement = await processSql(sql)
-    //       const { code } = await renderSupabaseJs(statement)
+    //       const { code } = await renderSkybaseJs(statement)
     //       return code
     //     } catch (error) {
     //       return `Failed to convert SQL: ${error}`
@@ -112,7 +112,7 @@ export const getTools = ({
           .join('\n')
 
         return stripIndent`
-          You're a Supabase Postgres expert in writing row level security policies. Your purpose is to
+          You're a Skybase Postgres expert in writing row level security policies. Your purpose is to
           generate a policy with the constraints given by the user. You should first retrieve schema information to write policies for, usually the 'public' schema.
 
           The output should use the following instructions:
@@ -138,11 +138,11 @@ export const getTools = ({
           CREATE POLICY "My descriptive policy." ON books FOR INSERT to authenticated USING ( (select auth.uid()) = author_id ) WITH ( true );
           \`\`\`
 
-          Since you are running in a Supabase environment, take note of these Supabase-specific additions:
+          Since you are running in a Skybase environment, take note of these Skybase-specific additions:
 
           ## Authenticated and unauthenticated roles
 
-          Supabase maps every request to one of the roles:
+          Skybase maps every request to one of the roles:
 
           - \`anon\`: an unauthenticated request (the user is not logged in)
           - \`authenticated\`: an authenticated request (the user is logged in)
@@ -215,7 +215,7 @@ export const getTools = ({
 
           ## Helper functions
 
-          Supabase provides some helper functions that make it easier to write Policies.
+          Skybase provides some helper functions that make it easier to write Policies.
 
           ### \`auth.uid()\`
 
@@ -225,7 +225,7 @@ export const getTools = ({
 
           Returns the JWT of the user making the request. Anything that you store in the user's \`raw_app_meta_data\` column or the \`raw_user_meta_data\` column will be accessible using this function. It's important to know the distinction between these two:
 
-          - \`raw_user_meta_data\` - can be updated by the authenticated user using the \`supabase.auth.update()\` function. It is not a good place to store authorization data.
+          - \`raw_user_meta_data\` - can be updated by the authenticated user using the \`skybase.auth.update()\` function. It is not a good place to store authorization data.
           - \`raw_app_meta_data\` - cannot be updated by the user, so it's a good place to store authorization data.
 
           The \`auth.jwt()\` function is extremely versatile. For example, if you store some team data inside \`app_metadata\`, you can use it to determine whether a particular user belongs to a team. For example, if this was an array of IDs:
@@ -394,23 +394,23 @@ export const getTools = ({
       },
     }),
     getEdgeFunctionKnowledge: tool({
-      description: 'Get knowledge about how to write edge functions for Supabase',
+      description: 'Get knowledge about how to write edge functions for Skybase',
       parameters: z.object({}),
       execute: async ({}) => {
         return stripIndent`
-        # Writing Supabase Edge Functions
+        # Writing Skybase Edge Functions
 
-        You're an expert in writing TypeScript and Deno JavaScript runtime. Generate **high-quality Supabase Edge Functions** that adhere to the following best practices:
+        You're an expert in writing TypeScript and Deno JavaScript runtime. Generate **high-quality Skybase Edge Functions** that adhere to the following best practices:
 
         ## Guidelines
 
         1. Try to use Web APIs and Deno's core APIs instead of external dependencies (eg: use fetch instead of Axios, use WebSockets API instead of node-ws)
-        2. Do NOT use bare specifiers when importing dependencies. If you need to use an external dependency, make sure it's prefixed with either \`npm:\` or \`jsr:\`. For example, \`@supabase/supabase-js\` should be written as \`npm:@supabase/supabase-js\`.
+        2. Do NOT use bare specifiers when importing dependencies. If you need to use an external dependency, make sure it's prefixed with either \`npm:\` or \`jsr:\`. For example, \`@skybase/skybase-js\` should be written as \`npm:@skybase/skybase-js\`.
         3. For external imports, always define a version. For example, \`npm:@express\` should be written as \`npm:express@4.18.2\`.
         4. For external dependencies, importing via \`npm:\` and \`jsr:\` is preferred. Minimize the use of imports from @\`deno.land/x\` , \`esm.sh\` and @\`unpkg.com\` . If you have a package from one of those CDNs, you can replace the CDN hostname with \`npm:\` specifier.
         5. You can also use Node built-in APIs. You will need to import them using \`node:\` specifier. For example, to import Node process: \`import process from "node:process"\`. Use Node APIs when you find gaps in Deno APIs.
         6. Do NOT use \`import { serve } from "https://deno.land/std@0.168.0/http/server.ts"\`. Instead use the built-in \`Deno.serve\`.
-        7. Following environment variables (ie. secrets) are pre-populated in both local and hosted Supabase environments. Users don't need to manually set them:
+        7. Following environment variables (ie. secrets) are pre-populated in both local and hosted Skybase environments. Users don't need to manually set them:
           * SUPABASE_URL
           * SUPABASE_ANON_KEY
           * SUPABASE_SERVICE_ROLE_KEY
@@ -425,8 +425,8 @@ export const getTools = ({
         ### Simple Hello World Function
 
         \`\`\`edge
-        // Setup type definitions for built-in Supabase Runtime APIs
-        import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+        // Setup type definitions for built-in Skybase Runtime APIs
+        import "jsr:@skybase/functions-js/edge-runtime.d.ts";
         interface reqPayload {
           name: string;
         }
@@ -449,8 +449,8 @@ export const getTools = ({
         ### Example Function using Node built-in API
 
         \`\`\`edge
-        // Setup type definitions for built-in Supabase Runtime APIs
-        import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+        // Setup type definitions for built-in Skybase Runtime APIs
+        import "jsr:@skybase/functions-js/edge-runtime.d.ts";
         import { randomBytes } from "node:crypto";
         import { createServer } from "node:http";
         import process from "node:process";
@@ -474,25 +474,25 @@ export const getTools = ({
         ### Using npm packages in Functions
 
         \`\`\`edge
-        // Setup type definitions for built-in Supabase Runtime APIs
-        import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+        // Setup type definitions for built-in Skybase Runtime APIs
+        import "jsr:@skybase/functions-js/edge-runtime.d.ts";
         import express from "npm:express@4.18.2";
 
         const app = express();
 
         app.get(/(.*)/, (req, res) => {
-          res.send("Welcome to Supabase");
+          res.send("Welcome to Skybase");
         });
 
         app.listen(8000);
         \`\`\`
 
-        ### Generate embeddings using built-in @Supabase.ai API
+        ### Generate embeddings using built-in @Skybase.ai API
 
         \`\`\`edge
-        // Setup type definitions for built-in Supabase Runtime APIs
-        import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-        const model = new Supabase.ai.Session('gte-small');
+        // Setup type definitions for built-in Skybase Runtime APIs
+        import "jsr:@skybase/functions-js/edge-runtime.d.ts";
+        const model = new Skybase.ai.Session('gte-small');
 
         Deno.serve(async (req: Request) => {
           const params = new URL(req.url).searchParams;
@@ -510,12 +510,12 @@ export const getTools = ({
         });
         \`\`\`
 
-        ## Integrating with Supabase Auth
+        ## Integrating with Skybase Auth
 
         \`\`\`edge
-          // Setup type definitions for built-in Supabase Runtime APIs
-          import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-          import { createClient } from \\'jsr:@supabase/supabase-js@2\\'
+          // Setup type definitions for built-in Skybase Runtime APIs
+          import "jsr:@skybase/functions-js/edge-runtime.d.ts";
+          import { createClient } from \\'jsr:@skybase/skybase-js@2\\'
           import { corsHeaders } from \\'../_shared/cors.ts\\'
 
           console.log(\`Function "select-from-table-with-auth-rls" up and running!\`)
@@ -527,11 +527,11 @@ export const getTools = ({
             }
 
             try {
-              // Create a Supabase client with the Auth context of the logged in user.
-              const supabaseClient = createClient(
-                // Supabase API URL - env var exported by default.
+              // Create a Skybase client with the Auth context of the logged in user.
+              const skybaseClient = createClient(
+                // Skybase API URL - env var exported by default.
                 Deno.env.get('SUPABASE_URL')!,
-                // Supabase API ANON KEY - env var exported by default.
+                // Skybase API ANON KEY - env var exported by default.
                 Deno.env.get('SUPABASE_ANON_KEY')!,
                 // Create client with Auth context of the user that called the function.
                 // This way your row-level-security (RLS) policies are applied.
@@ -548,10 +548,10 @@ export const getTools = ({
               // Now we can get the session or user object
               const {
                 data: { user },
-              } = await supabaseClient.auth.getUser(token)
+              } = await skybaseClient.auth.getUser(token)
 
               // And we can run queries in the context of our authenticated user
-              const { data, error } = await supabaseClient.from(\\'users\\').select(\\'*\\')
+              const { data, error } = await skybaseClient.from(\\'users\\').select(\\'*\\')
               if (error) throw error
 
               return new Response(JSON.stringify({ user, data }), {

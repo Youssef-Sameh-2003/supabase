@@ -84,7 +84,7 @@ const SqlEditor = ({
   return (
     <Editor
       className="monaco-editor"
-      theme="supabase"
+      theme="skybase"
       defaultLanguage={language}
       defaultValue={defaultValue}
       path={queryId}

@@ -99,7 +99,7 @@ export const AdvancedConfiguration = ({
                 >
                   <DocsButton
                     className="mt-2"
-                    href="https://supabase.com/docs/guides/database/orioledb"
+                    href="https://skybase.com/docs/guides/database/orioledb"
                   />
                 </Admonition>
               )}

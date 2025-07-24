@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common'
 import dayjs, { Dayjs } from 'dayjs'
 import meanBy from 'lodash/meanBy'

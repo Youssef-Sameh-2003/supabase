@@ -33,13 +33,13 @@ const LocalDXImage = () => {
         draggable={false}
         className="object-cover absolute z-0 inset-0 dark:hidden block"
       />
-      <CopyToClipboard text="supabase functions serve <function-name>">
+      <CopyToClipboard text="skybase functions serve <function-name>">
         <button
           onClick={handleCopy}
           className="p-3 relative z-10 group hover:border-strong flex gap-2 xl:gap-4 items-center bg-alternative-200 rounded-xl border"
         >
           <div className="text-foreground-muted text-sm font-mono">$</div>
-          <div className="text-foreground text-sm font-mono">supabase functions serve</div>
+          <div className="text-foreground text-sm font-mono">skybase functions serve</div>
           <div className="text-foreground rounded p-1.5 ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
             {copied ? (
               <span className="text-brand">

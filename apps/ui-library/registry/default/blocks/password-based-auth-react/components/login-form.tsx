@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { createClient } from '@/registry/default/clients/react/lib/supabase/client'
+import { createClient } from '@/registry/default/clients/react/lib/skybase/client'
 import { Button } from '@/registry/default/components/ui/button'
 import {
   Card,
@@ -17,7 +17,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const supabase = createClient()
+  const skybase = createClient()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,7 +25,7 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await skybase.auth.signInWithPassword({
         email,
         password,
       })

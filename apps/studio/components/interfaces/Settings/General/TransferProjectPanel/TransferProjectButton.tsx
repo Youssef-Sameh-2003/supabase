@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Loader, Shield, Users, Wrench } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -162,7 +162,7 @@ const TransferProjectButton = () => {
           <DocsButton
             abbrev={false}
             className="mt-6"
-            href="https://supabase.com/docs/guides/platform/project-transfer"
+            href="https://skybase.com/docs/guides/platform/project-transfer"
           />
         </Modal.Content>
 

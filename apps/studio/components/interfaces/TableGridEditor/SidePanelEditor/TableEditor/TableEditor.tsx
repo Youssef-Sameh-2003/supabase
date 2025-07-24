@@ -1,4 +1,4 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresTable } from '@skybase/postgres-meta'
 import { isEmpty, isUndefined, noop } from 'lodash'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -109,7 +109,7 @@ const TableEditor = ({
     connectionString: project?.connectionString,
   })
   const realtimePublication = (publications ?? []).find(
-    (publication) => publication.name === 'supabase_realtime'
+    (publication) => publication.name === 'skybase_realtime'
   )
   const realtimeEnabledTables = realtimePublication?.tables ?? []
   const isRealtimeEnabled = isNewRecord
@@ -328,7 +328,7 @@ const TableEditor = ({
             <DocsButton
               abbrev={false}
               className="mt-2"
-              href="https://supabase.com/docs/guides/auth/row-level-security"
+              href="https://skybase.com/docs/guides/auth/row-level-security"
             />
           </Admonition>
         ) : (
@@ -346,7 +346,7 @@ const TableEditor = ({
             <DocsButton
               abbrev={false}
               className="mt-2"
-              href="https://supabase.com/docs/guides/auth/row-level-security"
+              href="https://skybase.com/docs/guides/auth/row-level-security"
             />
           </Admonition>
         )}

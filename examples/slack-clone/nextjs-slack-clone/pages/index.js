@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { supabase } from 'lib/Store'
+import { skybase } from 'lib/Store'
 
 const Home = () => {
   const [username, setUsername] = useState('')
@@ -9,8 +9,8 @@ const Home = () => {
     try {
       const { error, data: { user } } =
         type === 'LOGIN'
-          ? await supabase.auth.signInWithPassword({ email: username, password })
-          : await supabase.auth.signUp({ email: username, password })
+          ? await skybase.auth.signInWithPassword({ email: username, password })
+          : await skybase.auth.signUp({ email: username, password })
       // If the user doesn't exist here and an error hasn't been raised yet,
       // that must mean that a confirmation email has been sent.
       // NOTE: Confirming your email address is required by default.

@@ -73,7 +73,7 @@ export const getReportAttributes = (org: Organization, project: Project): Report
         tickFormatter: (value: any) => numberFormatter(value, 2),
       },
       defaultChartStyle: 'line',
-      docsUrl: 'https://supabase.com/docs/guides/platform/compute-and-disk#compute-size',
+      docsUrl: 'https://skybase.com/docs/guides/platform/compute-and-disk#compute-size',
       attributes: [
         {
           attribute: 'disk_iops_write',
@@ -199,7 +199,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
     {
       id: 'ram-usage',
       label: 'Memory usage',
-      docsUrl: 'https://supabase.com/docs/guides/telemetry/reports#memory-usage',
+      docsUrl: 'https://skybase.com/docs/guides/telemetry/reports#memory-usage',
       availableIn: ['team', 'enterprise'],
       hide: false,
       showTooltip: true,
@@ -241,7 +241,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
     {
       id: 'cpu-usage',
       label: 'CPU usage',
-      docsUrl: 'https://supabase.com/docs/guides/telemetry/reports#cpu-usage',
+      docsUrl: 'https://skybase.com/docs/guides/telemetry/reports#cpu-usage',
       syncId: 'database-reports',
       format: '%',
       valuePrecision: 2,
@@ -311,7 +311,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
       id: 'disk-iops',
       label: 'Disk Input/Output operations per second (IOPS)',
       docsUrl:
-        'https://supabase.com/docs/guides/telemetry/reports#disk-inputoutput-operations-per-second-iops',
+        'https://skybase.com/docs/guides/telemetry/reports#disk-inputoutput-operations-per-second-iops',
       syncId: 'database-reports',
       availableIn: ['team', 'enterprise'],
       hide: false,
@@ -355,7 +355,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
     {
       id: 'disk-io-usage',
       label: 'Disk IO Usage',
-      docsUrl: 'https://supabase.com/docs/guides/telemetry/reports#disk-io-usage',
+      docsUrl: 'https://skybase.com/docs/guides/telemetry/reports#disk-io-usage',
       syncId: 'database-reports',
       availableIn: ['team', 'enterprise'],
       hide: false,
@@ -395,7 +395,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
       showGrid: true,
       YAxisProps: { width: 30 },
       defaultChartStyle: 'line',
-      docsUrl: 'https://supabase.com/docs/guides/telemetry/reports#database-connections',
+      docsUrl: 'https://skybase.com/docs/guides/telemetry/reports#database-connections',
       attributes: [
         {
           attribute: 'client_connections_postgres',
@@ -411,23 +411,23 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
           tooltip: 'Connection pool managed by PostgREST',
         },
         {
-          attribute: 'client_connections_supabase_admin',
+          attribute: 'client_connections_skybase_admin',
           provider: 'infra-monitoring',
           label: 'Reserved',
           tooltip:
-            'Administrative connections used by various Supabase services for internal operations and maintenance tasks',
+            'Administrative connections used by various Skybase services for internal operations and maintenance tasks',
         },
         {
-          attribute: 'client_connections_supabase_auth_admin',
+          attribute: 'client_connections_skybase_auth_admin',
           provider: 'infra-monitoring',
           label: 'Auth',
-          tooltip: 'Connection pool managed by Supabase Auth',
+          tooltip: 'Connection pool managed by Skybase Auth',
         },
         {
-          attribute: 'client_connections_supabase_storage_admin',
+          attribute: 'client_connections_skybase_storage_admin',
           provider: 'infra-monitoring',
           label: 'Storage',
-          tooltip: 'Connection pool managed by Supabase Storage',
+          tooltip: 'Connection pool managed by Skybase Storage',
         },
         {
           attribute: 'client_connections_other',
@@ -459,7 +459,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
       YAxisProps: { width: 30 },
       hideChartType: false,
       defaultChartStyle: 'line',
-      docsUrl: 'https://supabase.com/docs/guides/platform/compute-and-disk#limits-and-constraints',
+      docsUrl: 'https://skybase.com/docs/guides/platform/compute-and-disk#limits-and-constraints',
       attributes: [
         {
           attribute: 'client_connections_pgbouncer',
@@ -517,7 +517,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
       },
       hideChartType: false,
       defaultChartStyle: 'line',
-      docsUrl: 'https://supabase.com/docs/guides/telemetry/reports#disk-size',
+      docsUrl: 'https://skybase.com/docs/guides/telemetry/reports#disk-size',
       attributes: [
         {
           attribute: 'disk_fs_used_system',
@@ -573,7 +573,7 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
                   1024 *
                   1024 *
                   1024 *
-                  0.9, // reaching 90% of the disk size will trigger a disk resize https://supabase.com/docs/guides/platform/database-size
+                  0.9, // reaching 90% of the disk size will trigger a disk resize https://skybase.com/docs/guides/platform/database-size
               }),
       ],
     },

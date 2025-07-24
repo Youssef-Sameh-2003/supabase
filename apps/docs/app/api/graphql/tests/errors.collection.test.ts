@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { supabase } from '~/lib/supabase'
+import { skybase } from '~/lib/skybase'
 import { POST } from '../route'
 
 describe('/api/graphql errors collection', () => {
   it('returns a list of errors with pagination info', async () => {
     // Get the expected order of errors from the database
-    const { data: dbErrors } = await supabase()
+    const { data: dbErrors } = await skybase()
       .schema('content')
       .from('error')
       .select('id, code, ...service(service:name), httpStatusCode:http_status_code, message')
@@ -356,7 +356,7 @@ describe('/api/graphql errors collection', () => {
 
   it('filters by code when code argument is provided', async () => {
     // First, get the first error code from the database to test with
-    const { data: dbErrors } = await supabase()
+    const { data: dbErrors } = await skybase()
       .schema('content')
       .from('error')
       .select('code')
@@ -394,7 +394,7 @@ describe('/api/graphql errors collection', () => {
 
   it('filters by both service and code when both arguments are provided', async () => {
     // Get an error that exists for AUTH service
-    const { data: authError } = await supabase()
+    const { data: authError } = await skybase()
       .schema('content')
       .from('error')
       .select('code, ...service(service:name)')

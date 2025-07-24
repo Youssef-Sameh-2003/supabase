@@ -1,20 +1,20 @@
 export const data = {
-  label: 'Compare Supabase',
+  label: 'Compare Skybase',
   comparisons: [
     {
-      text: 'Supabase vs Firebase',
+      text: 'Skybase vs Firebase',
       description: '',
-      url: '/alternatives/supabase-vs-firebase',
+      url: '/alternatives/skybase-vs-firebase',
     },
     {
-      text: 'Supabase vs Heroku Postgres',
+      text: 'Skybase vs Heroku Postgres',
       description: '',
-      url: '/alternatives/supabase-vs-heroku-postgres',
+      url: '/alternatives/skybase-vs-heroku-postgres',
     },
     {
-      text: 'Supabase vs Auth0',
+      text: 'Skybase vs Auth0',
       description: '',
-      url: '/alternatives/supabase-vs-auth0',
+      url: '/alternatives/skybase-vs-auth0',
     },
   ],
 }

@@ -18,9 +18,9 @@ function Commands() {
   ])
   useRegisterCommands('Route commands', [
     {
-      id: 'supabase-website',
-      name: 'Go to Supabase website',
-      route: 'https://supabase.com',
+      id: 'skybase-website',
+      name: 'Go to Skybase website',
+      route: 'https://skybase.com',
     },
   ])
 

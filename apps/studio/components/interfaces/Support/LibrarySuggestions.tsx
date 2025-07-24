@@ -11,7 +11,7 @@ interface LibrarySuggestionsProps {
 export const LibrarySuggestions = ({ library }: LibrarySuggestionsProps) => {
   const selectedLibrary = CLIENT_LIBRARIES.find((lib) => lib.language === library)
   const selectedClientLibraries = selectedLibrary?.libraries.filter((library) =>
-    library.name.includes('supabase-')
+    library.name.includes('skybase-')
   )
   return (
     <div className="px-6 flex flex-col gap-y-4">
@@ -51,12 +51,12 @@ export const LibrarySuggestions = ({ library }: LibrarySuggestionsProps) => {
           ].join(' ')}
         >
           <div className="space-y-1">
-            <p className="text-sm">supabase</p>
+            <p className="text-sm">skybase</p>
             <p className="text-sm text-foreground-light">For any issues about our API</p>
           </div>
           <div>
             <Button asChild type="default" icon={<ExternalLink size={14} strokeWidth={1.5} />}>
-              <Link href="https://github.com/supabase/supabase" target="_blank" rel="noreferrer">
+              <Link href="https://github.com/skybase/skybase" target="_blank" rel="noreferrer">
                 View Github issues
               </Link>
             </Button>

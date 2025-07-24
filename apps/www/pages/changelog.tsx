@@ -44,11 +44,11 @@ export type DiscussionsResponse = {
 
 /**
  * [Terry]
- * this page powers supabase.com/changelog
+ * this page powers skybase.com/changelog
  * this page used to just be a feed of the releases endpoint
- * (https://api.github.com/repos/supabase/supabase/releases) (rest api)
+ * (https://api.github.com/repos/skybase/skybase/releases) (rest api)
  * but is now a blend of that legacy relases and the new Changelog category of the Discussions
- * https://github.com/orgs/supabase/discussions/categories/changelog (graphql api)
+ * https://github.com/orgs/skybase/discussions/categories/changelog (graphql api)
  * We should use the Changelog Discussions category for all future changelog entries and stop using releases
  */
 
@@ -66,8 +66,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res, query }) => 
   async function fetchGitHubReleases() {
     try {
       const response = await octokitRest.repos.listReleases({
-        owner: 'supabase',
-        repo: 'supabase',
+        owner: 'skybase',
+        repo: 'skybase',
         per_page: 10,
         page: restPage,
       })
@@ -148,8 +148,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res, query }) => 
   }
 
   const { discussions, pageInfo } = await fetchDiscussions(
-    'supabase',
-    'supabase',
+    'skybase',
+    'skybase',
     'DIC_kwDODMpXOc4CAFUr', // 'Changelog' category
     next as string
   )
@@ -241,7 +241,7 @@ function ChangelogPage({ changelog, pageInfo, restPage }: ChangelogPageProps) {
   const { endCursor: end, hasNextPage, hasPreviousPage } = pageInfo
 
   const TITLE = 'Changelog'
-  const DESCRIPTION = 'New updates and improvements to Supabase'
+  const DESCRIPTION = 'New updates and improvements to Skybase'
   return (
     <>
       <NextSeo
@@ -249,7 +249,7 @@ function ChangelogPage({ changelog, pageInfo, restPage }: ChangelogPageProps) {
         openGraph={{
           title: TITLE,
           description: DESCRIPTION,
-          url: `https://supabase.com/changelog`,
+          url: `https://skybase.com/changelog`,
           type: 'article',
         }}
       />

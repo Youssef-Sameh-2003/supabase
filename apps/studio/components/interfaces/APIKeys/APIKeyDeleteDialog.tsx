@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 import { Trash2 } from 'lucide-react'
 
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common/hooks'
 import { useAPIKeyDeleteMutation } from 'data/api-keys/api-key-delete-mutation'
 import { APIKeysData } from 'data/api-keys/api-keys-query'
@@ -59,7 +59,7 @@ export const APIKeyDeleteDialog = ({ apiKey, lastSeen }: APIKeyDeleteDialogProps
         alert={{
           title: 'This cannot be undone',
           description: lastSeen
-            ? `This API key was used ${lastSeen.timestamp}. Make sure all backend components using it have been updated. Deletion will cause them to receive HTTP 401 Unauthorized status codes on all Supabase APIs.`
+            ? `This API key was used ${lastSeen.timestamp}. Make sure all backend components using it have been updated. Deletion will cause them to receive HTTP 401 Unauthorized status codes on all Skybase APIs.`
             : `This API key has not been used in the past 24 hours. Make sure you've updated all backend components using it before deletion.`,
         }}
       />

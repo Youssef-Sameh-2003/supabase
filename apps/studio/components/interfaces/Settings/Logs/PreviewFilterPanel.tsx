@@ -237,7 +237,7 @@ const PreviewFilterPanel = ({
             type="default"
             align="center"
             results={csvData ?? []}
-            fileName={`supabase-${logName}-${ref}.csv`}
+            fileName={`skybase-${logName}-${ref}.csv`}
           />
         )}
       </div>

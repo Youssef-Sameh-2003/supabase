@@ -27,7 +27,7 @@ const WorksWithStoragePanel = dynamic(
 )
 
 export default (isMobile?: boolean) => ({
-  metaTitle: 'Supabase Edge Functions - Deploy JavaScript globally in seconds',
+  metaTitle: 'Skybase Edge Functions - Deploy JavaScript globally in seconds',
   metaDescription:
     'Execute your code closest to your users with fast deploy times and low latency.',
   heroSection: {
@@ -211,7 +211,7 @@ export default (isMobile?: boolean) => ({
           <>
             The open source{' '}
             <Link
-              href="https://github.com/supabase/edge-runtime/"
+              href="https://github.com/skybase/edge-runtime/"
               className="underline hover:text-foreground-light transition-colors"
             >
               Edge runtime
@@ -237,10 +237,10 @@ export default (isMobile?: boolean) => ({
           <>
             Use the{' '}
             <Link
-              href="https://supabase.com/docs/guides/functions/cicd-workflow"
+              href="https://skybase.com/docs/guides/functions/cicd-workflow"
               className="underline hover:text-foreground-light transition-colors"
             >
-              Supabase CLI with Github actions
+              Skybase CLI with Github actions
             </Link>{' '}
             to preview and deploy your functions along with the rest of your application
           </>
@@ -265,7 +265,7 @@ export default (isMobile?: boolean) => ({
           <>
             Edge functions run globally or can be{' '}
             <Link
-              href="https://supabase.com/docs/guides/functions/regional-invocation"
+              href="https://skybase.com/docs/guides/functions/regional-invocation"
               className="underline hover:text-foreground-light transition-colors"
             >
               pinned to your database's proximity
@@ -311,18 +311,18 @@ export default (isMobile?: boolean) => ({
       },
     ],
   },
-  integratesWithSupabase: {
-    title: 'Integrates seamlessly with the Supabase ecosystem',
+  integratesWithSkybase: {
+    title: 'Integrates seamlessly with the Skybase ecosystem',
     useCases: [
       {
         label: 'Zero configuration',
-        paragraph: 'Pre-populated environment variables required to access your supabase project',
+        paragraph: 'Pre-populated environment variables required to access your skybase project',
         panel: <ZeroConfigPanel />,
       },
       {
         label: 'Connect to your database',
         paragraph:
-          'Connect to your Postgres database from an Edge Function by using the supabase-js client',
+          'Connect to your Postgres database from an Edge Function by using the skybase-js client',
         panel: <ConnectToDBPanel />,
       },
       {
@@ -332,30 +332,30 @@ export default (isMobile?: boolean) => ({
         panel: <TriggerViaWebhookPanel />,
       },
       {
-        label: 'Works with Supabase Auth',
+        label: 'Works with Skybase Auth',
         paragraph: (
           <>
             Edge Functions are designed to work seamlessly with{' '}
             <Link
-              href="https://supabase.com/docs/guides/functions/auth"
+              href="https://skybase.com/docs/guides/functions/auth"
               className="underline hover:text-foreground-light transition-colors"
             >
-              Supabase Auth
+              Skybase Auth
             </Link>
           </>
         ),
         panel: <WorksWithAuthPanel />,
       },
       {
-        label: 'Works with Supabase Storage',
+        label: 'Works with Skybase Storage',
         paragraph: (
           <>
             Edge Functions are designed to work seamlessly with{' '}
             <Link
-              href="https://supabase.com/docs/guides/functions/storage-caching"
+              href="https://skybase.com/docs/guides/functions/storage-caching"
               className="underline hover:text-foreground-light transition-colors"
             >
-              Supabase Storage
+              Skybase Storage
             </Link>
           </>
         ),

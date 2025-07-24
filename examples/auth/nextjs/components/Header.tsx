@@ -1,32 +1,32 @@
 import NextLogo from "./NextLogo";
-import SupabaseLogo from "./SupabaseLogo";
+import SkybaseLogo from "./SkybaseLogo";
 
 export default function Header() {
   return (
     <div className="flex flex-col gap-16 items-center">
       <div className="flex gap-8 justify-center items-center">
         <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+          href="https://skybase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
           target="_blank"
           rel="noreferrer"
         >
-          <SupabaseLogo />
+          <SkybaseLogo />
         </a>
         <span className="border-l rotate-45 h-6" />
         <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
           <NextLogo />
         </a>
       </div>
-      <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
+      <h1 className="sr-only">Skybase and Next.js Starter Template</h1>
       <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
         The fastest way to build apps with{" "}
         <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+          href="https://skybase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
           target="_blank"
           className="font-bold hover:underline"
           rel="noreferrer"
         >
-          Supabase
+          Skybase
         </a>{" "}
         and{" "}
         <a

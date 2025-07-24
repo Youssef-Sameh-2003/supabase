@@ -85,7 +85,7 @@ const TopNavBar: FC = () => {
             {!isUserLoading && (
               <Button asChild>
                 <a
-                  href="https://supabase.com/dashboard"
+                  href="https://skybase.com/dashboard"
                   className="h-[30px]"
                   target="_blank"
                   rel="noreferrer noopener"
@@ -123,21 +123,21 @@ const HeaderLogo = memo(() => {
     >
       <Image
         className="hidden dark:block !m-0"
-        src="/docs/supabase-dark.svg"
+        src="/docs/skybase-dark.svg"
         priority={true}
         loading="eager"
         width={96}
         height={18}
-        alt="Supabase wordmark"
+        alt="Skybase wordmark"
       />
       <Image
         className="block dark:hidden !m-0"
-        src="/docs/supabase-light.svg"
+        src="/docs/skybase-light.svg"
         priority={true}
         loading="eager"
         width={96}
         height={18}
-        alt="Supabase wordmark"
+        alt="Skybase wordmark"
       />
       <span className="font-mono text-sm font-medium text-brand-link mb-px">DOCS</span>
     </Link>

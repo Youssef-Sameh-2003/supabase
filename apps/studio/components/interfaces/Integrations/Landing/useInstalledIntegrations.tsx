@@ -43,12 +43,12 @@ export const useInstalledIntegrations = () => {
     connectionString: project?.connectionString,
   })
 
-  const isHooksEnabled = schemas?.some((schema) => schema.name === 'supabase_functions')
+  const isHooksEnabled = schemas?.some((schema) => schema.name === 'skybase_functions')
   const wrappers = useMemo(() => data ?? EMPTY_ARR, [data])
 
   const installedIntegrations = useMemo(() => {
     return INTEGRATIONS.filter((i) => {
-      // special handling for supabase webhooks
+      // special handling for skybase webhooks
       if (i.id === 'webhooks') {
         return isHooksEnabled
       }

@@ -1,4 +1,4 @@
-import { DatabaseUpgradeStatus } from '@supabase/shared-types/out/events'
+import { DatabaseUpgradeStatus } from '@skybase/shared-types/out/events'
 import { useQuery, useQueryClient, UseQueryOptions } from '@tanstack/react-query'
 import { get, handleError } from 'data/fetchers'
 import { PROJECT_STATUS } from 'lib/constants'

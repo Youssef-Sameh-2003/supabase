@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AuthSession } from '@supabase/supabase-js';
-import { Profile, SupabaseService } from '../supabase.service';
+import { AuthSession } from '@skybase/skybase-js';
+import { Profile, SkybaseService } from '../skybase.service';
 
 @Component({
   selector: 'app-account',
@@ -22,7 +22,7 @@ export class AccountComponent implements OnInit {
   });
 
   constructor(
-    private readonly supabase: SupabaseService,
+    private readonly skybase: SkybaseService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -45,7 +45,7 @@ export class AccountComponent implements OnInit {
     try {
       this.loading = true;
       const { user } = this.session;
-      let { data: profile, error, status } = await this.supabase.profile(user);
+      let { data: profile, error, status } = await this.skybase.profile(user);
 
       if (error && status !== 406) {
         throw error;
@@ -79,7 +79,7 @@ export class AccountComponent implements OnInit {
       const website = this.updateProfileForm.value.website as string;
       const avatar_url = this.updateProfileForm.value.avatar_url as string;
 
-      const { error } = await this.supabase.updateProfile({
+      const { error } = await this.skybase.updateProfile({
         id: user.id,
         username,
         website,
@@ -96,6 +96,6 @@ export class AccountComponent implements OnInit {
   }
 
   async signOut() {
-    await this.supabase.signOut();
+    await this.skybase.signOut();
   }
 }

@@ -1,10 +1,10 @@
 import { UseQueryOptions, useQuery } from '@tanstack/react-query'
 
-import { PostgresView } from '@supabase/postgres-meta'
+import { PostgresView } from '@skybase/postgres-meta'
 import { get, handleError } from 'data/fetchers'
 import type { ResponseError } from 'types'
 import { viewKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type ViewsVariables = {
   projectRef?: string

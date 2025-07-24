@@ -5,19 +5,19 @@ import 'package:mfa_app/pages/auth/register_page.dart';
 import 'package:mfa_app/pages/home_page.dart';
 import 'package:mfa_app/pages/list_mfa_page.dart';
 import 'package:mfa_app/pages/mfa/verify_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 import 'package:mfa_app/pages/mfa/enroll_page.dart';
 
 void main() async {
-  await Supabase.initialize(
+  await Skybase.initialize(
     url: 'YOUR_SUPABASE_URL',
     anonKey: 'YOUR_ANON_KEY',
   );
   runApp(const MyApp());
 }
 
-/// Extract SupabaseClient instance in a handy variable
-final supabase = Supabase.instance.client;
+/// Extract SkybaseClient instance in a handy variable
+final skybase = Skybase.instance.client;
 
 final _router = GoRouter(
   routes: [
@@ -52,20 +52,20 @@ final _router = GoRouter(
       return null;
     }
 
-    final session = supabase.auth.currentSession;
+    final session = skybase.auth.currentSession;
     // A user without a session should be redirected to the register page
     if (session == null) {
       return RegisterPage.route;
     }
 
     final assuranceLevelData =
-        supabase.auth.mfa.getAuthenticatorAssuranceLevel();
+        skybase.auth.mfa.getAuthenticatorAssuranceLevel();
 
     // The user has not setup MFA yet, so send them to enroll MFA page.
     if (assuranceLevelData.currentLevel == AuthenticatorAssuranceLevels.aal1) {
-      await supabase.auth.refreshSession();
+      await skybase.auth.refreshSession();
       final nextLevel =
-          supabase.auth.mfa.getAuthenticatorAssuranceLevel().nextLevel;
+          skybase.auth.mfa.getAuthenticatorAssuranceLevel().nextLevel;
       if (nextLevel == AuthenticatorAssuranceLevels.aal2) {
         // The user has already setup MFA, but haven't login via MFA
         // Redirect them to the verify page

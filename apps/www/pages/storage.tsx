@@ -41,10 +41,10 @@ function StoragePage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/storage`,
+          url: `https://skybase.com/storage`,
           images: [
             {
-              url: `https://supabase.com${basePath}/images/product/storage/storage-og.jpg`,
+              url: `https://skybase.com${basePath}/images/product/storage/storage-og.jpg`,
             },
           ],
         }}
@@ -95,7 +95,7 @@ function StoragePage() {
 
               <h4 className="h4">Interoperable</h4>
               <p className="p">
-                Integrates well with the rest of Supabase ecosystem, including Auth and Postgres.
+                Integrates well with the rest of Skybase ecosystem, including Auth and Postgres.
               </p>
             </div>
             <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
@@ -132,7 +132,7 @@ function StoragePage() {
           id="quote"
           className="[&_q]:max-w-3xl"
           quote={{
-            text: "Supabase is great because it has everything. I don't need a different solution for authentication, a different solution for database, or a different solution for storage.",
+            text: "Skybase is great because it has everything. I don't need a different solution for authentication, a different solution for database, or a different solution for storage.",
             author: 'Yasser Elsaid',
             role: 'Founder of Chatbase',
             link: '/customers/chatbase',
@@ -176,15 +176,15 @@ function StoragePage() {
                   description={
                     'Update a user account with public profile information, including uploading a profile image.'
                   }
-                  author={'supabase'}
-                  author_url={'https://github.com/supabase'}
+                  author={'skybase'}
+                  author_url={'https://github.com/skybase'}
                   author_img={'https://avatars.githubusercontent.com/u/54469796'}
                   repo_name={'nextjs-user-management'}
                   repo_url={
-                    'https://github.com/supabase/supabase/tree/master/examples/user-management/nextjs-user-management'
+                    'https://github.com/skybase/skybase/tree/master/examples/user-management/nextjs-user-management'
                   }
                   vercel_deploy_url={
-                    'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsupabase%2Fsupabase%2Ftree%2Fmaster%2Fexamples%2Fuser-management%2Fnextjs-user-management&project-name=supabase-nextjs-user-management&repository-name=supabase-nextjs-user-management&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fsupabase%2Fsupabase%2Ftree%2Fmaster%2Fexamples%2Fuser-management%2Fnextjs-user-management'
+                    'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fskybase%2Fskybase%2Ftree%2Fmaster%2Fexamples%2Fuser-management%2Fnextjs-user-management&project-name=skybase-nextjs-user-management&repository-name=skybase-nextjs-user-management&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fskybase%2Fskybase%2Ftree%2Fmaster%2Fexamples%2Fuser-management%2Fnextjs-user-management'
                   }
                   demo_url={''}
                 />
@@ -255,7 +255,7 @@ function StoragePage() {
                     <div className="col-span-12 mb-8 lg:col-span-5">
                       <h2 className="h3">
                         Integrates natively <br />
-                        with Supabase Auth
+                        with Skybase Auth
                       </h2>
 
                       <p className="p">

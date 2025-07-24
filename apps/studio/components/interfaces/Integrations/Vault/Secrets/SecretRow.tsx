@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common'
 import dayjs from 'dayjs'
 import Link from 'next/link'

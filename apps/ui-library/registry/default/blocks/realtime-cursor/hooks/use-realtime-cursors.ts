@@ -1,5 +1,5 @@
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/client'
-import { RealtimeChannel } from '@supabase/supabase-js'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/client'
+import { RealtimeChannel } from '@skybase/skybase-js'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 /**
@@ -37,7 +37,7 @@ const useThrottleCallback = <Params extends unknown[], Return>(
   )
 }
 
-const supabase = createClient()
+const skybase = createClient()
 
 const generateRandomColor = () => `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`
 
@@ -102,7 +102,7 @@ export const useRealtimeCursors = ({
   const handleMouseMove = useThrottleCallback(callback, throttleMs)
 
   useEffect(() => {
-    const channel = supabase.channel(roomName)
+    const channel = skybase.channel(roomName)
     channelRef.current = channel
 
     channel

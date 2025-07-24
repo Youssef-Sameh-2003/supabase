@@ -1,4 +1,4 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresTable } from '@skybase/postgres-meta'
 import { debounce, includes, noop } from 'lodash'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
@@ -89,7 +89,7 @@ const SpreadsheetImport = ({
           <p>For bulk data loading, we recommend doing so directly through the database.</p>
           <Button asChild type="default" icon={<ExternalLink />} className="!mt-2">
             <Link
-              href="https://supabase.com/docs/guides/database/tables#bulk-data-loading"
+              href="https://skybase.com/docs/guides/database/tables#bulk-data-loading"
               target="_blank"
               rel="noreferrer"
             >

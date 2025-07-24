@@ -29,8 +29,8 @@ import ShareArticleActions from '~/components/Blog/ShareArticleActions'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wordmark--dark.png'
-import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
+import * as skybaseLogoWordmarkDark from 'common/assets/images/skybase-logo-wordmark--dark.png'
+import * as skybaseLogoWordmarkLight from 'common/assets/images/skybase-logo-wordmark--light.png'
 
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import type Author from '~/types/author'
@@ -156,7 +156,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
   const ogImageUrl = event.og_image
     ? event.og_image
     : encodeURI(
-        `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.supabase.co'}/functions/v1/og-images?site=events&eventType=${event.type}&title=${event.meta_title ?? event.title}&description=${event.meta_description ?? event.description}&date=${dayjs(event.date).tz(event.timezone).format(`DD MMM YYYY`)}&duration=${event.duration}`
+        `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.skybase.co'}/functions/v1/og-images?site=events&eventType=${event.type}&title=${event.meta_title ?? event.title}&description=${event.meta_description ?? event.description}&date=${dayjs(event.date).tz(event.timezone).format(`DD MMM YYYY`)}&duration=${event.duration}`
       )
 
   const meta = {
@@ -166,7 +166,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
         hadEndDate ? `DD` : `DD MMM YYYY`
       )}${hadEndDate ? dayjs(event.end_date).tz(event.timezone).format(` - DD MMM`) : ''} | ${capitalize(event.type)}`,
     description: event.meta_description ?? event.description,
-    url: `https://supabase.com/events/${event.slug}`,
+    url: `https://skybase.com/events/${event.slug}`,
     image: ogImageUrl,
   }
 
@@ -334,8 +334,8 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
               <div className="order-first lg:col-span-full flex items-center gap-4 md:gap-6 lg:mb-4">
                 <figure className="h-6 [&_.next-image--dynamic-fill_img]:!h-full">
                   <Image
-                    src={{ dark: supabaseLogoWordmarkDark, light: supabaseLogoWordmarkLight }}
-                    alt="Supabase Logo"
+                    src={{ dark: skybaseLogoWordmarkDark, light: skybaseLogoWordmarkLight }}
+                    alt="Skybase Logo"
                     width={160}
                     height={30}
                     sizes="100%"
@@ -420,7 +420,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
                             <p>{speaker?.author}</p>
                             <span className="text-xs text-foreground-light">
                               {speaker?.position}
-                              {speaker?.company ? `, ${speaker?.company}` : ', Supabase'}
+                              {speaker?.company ? `, ${speaker?.company}` : ', Skybase'}
                             </span>
                           </div>
                         </Link>

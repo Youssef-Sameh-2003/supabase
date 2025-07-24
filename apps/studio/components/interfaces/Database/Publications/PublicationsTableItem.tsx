@@ -1,5 +1,5 @@
-import type { PostgresPublication, PostgresTable } from '@supabase/postgres-meta'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import type { PostgresPublication, PostgresTable } from '@skybase/postgres-meta'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useState } from 'react'
 import { Badge, Toggle } from 'ui'
 

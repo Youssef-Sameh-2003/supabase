@@ -38,7 +38,7 @@ test.describe('SQL Editor', () => {
       return
     }
 
-    //  since in local, we don't have access to the supabase platform, reloading would reload all the sql snippets.
+    //  since in local, we don't have access to the skybase platform, reloading would reload all the sql snippets.
     if (isCLI()) {
       await page.reload()
     }

@@ -1,7 +1,7 @@
 import { load } from 'cheerio'
 import { describe, expect, it } from 'vitest'
 
-const REFERENCE_DOCS_URL = 'https://supabase.com/docs/reference'
+const REFERENCE_DOCS_URL = 'https://skybase.com/docs/reference'
 // For dev testing: comment out above and uncomment below
 // const REFERENCE_DOCS_URL = 'http://localhost:3001/docs/reference'
 
@@ -18,21 +18,21 @@ describe('prod smoke test: crawler pages return correct data', () => {
 
     const $ = load(text)
     const title = $('title').text()
-    expect(title).toBe('JavaScript: Less than or equal to a range | Supabase Docs')
+    expect(title).toBe('JavaScript: Less than or equal to a range | Skybase Docs')
 
     const metaDescription = $('meta[name="description"]')
     expect(metaDescription.attr('content')).toBe(
-      'Supabase API reference for JavaScript: Less than or equal to a range'
+      'Skybase API reference for JavaScript: Less than or equal to a range'
     )
 
     const canonical = $('link[rel="canonical"]')
-    expect(canonical.attr('href')).toBe('https://supabase.com/docs/reference/javascript/rangelte')
+    expect(canonical.attr('href')).toBe('https://skybase.com/docs/reference/javascript/rangelte')
 
     const ogImage = $('meta[name="og:image"]')
-    expect(ogImage.attr('content')).toBe('https://supabase.com/docs/img/supabase-og-image.png')
+    expect(ogImage.attr('content')).toBe('https://skybase.com/docs/img/skybase-og-image.png')
 
     const twitterImage = $('meta[name="twitter:image"]')
-    expect(twitterImage.attr('content')).toBe('https://supabase.com/docs/img/supabase-og-image.png')
+    expect(twitterImage.attr('content')).toBe('https://skybase.com/docs/img/skybase-og-image.png')
   })
 
   it('markdown pages', async () => {
@@ -45,7 +45,7 @@ describe('prod smoke test: crawler pages return correct data', () => {
 
     const firstPara = $('h1').next().text()
     expect(/JavaScript library/.test(firstPara)).toBe(true)
-    expect(/supabase-js/.test(firstPara)).toBe(true)
+    expect(/skybase-js/.test(firstPara)).toBe(true)
   })
 
   it('function pages', async () => {

@@ -1,16 +1,16 @@
 import DeployButton from '@/components/DeployButton'
 import AuthButton from '@/components/AuthButton'
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 import FetchDataSteps from '@/components/tutorial/FetchDataSteps'
 import Header from '@/components/Header'
 import { redirect } from 'next/navigation'
 
 export default async function ProtectedPage() {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
   const {
     data: { user },
-  } = await supabase.auth.getUser()
+  } = await skybase.auth.getUser()
 
   if (!user) {
     return redirect('/login')
@@ -42,12 +42,12 @@ export default async function ProtectedPage() {
         <p>
           Powered by{' '}
           <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+            href="https://skybase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
           >
-            Supabase
+            Skybase
           </a>
         </p>
       </footer>

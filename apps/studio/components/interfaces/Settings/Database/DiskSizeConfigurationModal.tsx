@@ -1,4 +1,4 @@
-import { SupportCategories } from '@supabase/shared-types/out/constants'
+import { SupportCategories } from '@skybase/shared-types/out/constants'
 import dayjs from 'dayjs'
 import { ExternalLink, Info } from 'lucide-react'
 import Link from 'next/link'
@@ -144,7 +144,7 @@ const DiskSizeConfigurationModal = ({
                             )}. You can resize your database again in approximately ${formattedTimeTillNextAvailableResize}`}
                       </div>
                       <Button asChild type="default" iconRight={<ExternalLink size={14} />}>
-                        <Link href="https://supabase.com/docs/guides/platform/database-size#disk-management">
+                        <Link href="https://skybase.com/docs/guides/platform/database-size#disk-management">
                           Read more about disk management
                         </Link>
                       </Button>

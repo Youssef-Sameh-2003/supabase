@@ -1,7 +1,7 @@
 'use client'
 import CreateRoomModal from '@/components/create-room-modal'
-import { User, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { RealtimeChannel } from '@supabase/supabase-js'
+import { User, createClientComponentClient } from '@skybase/auth-helpers-nextjs'
+import { RealtimeChannel } from '@skybase/skybase-js'
 import { useState, useEffect, use } from 'react'
 
 export default function Chat() {
@@ -15,21 +15,21 @@ export default function Chat() {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
-  const supabase = createClientComponentClient()
+  const skybase = createClientComponentClient()
 
   const getChannels = async () => {
-    const channels = await supabase.from('rooms').select('topic')
+    const channels = await skybase.from('rooms').select('topic')
     setRooms(channels.data?.map(({ topic }) => topic) || [])
   }
 
   const addUserToChannel = async (email: string) => {
-    const user = await supabase.from('profiles').select('id').eq('email', email)
+    const user = await skybase.from('profiles').select('id').eq('email', email)
     if (!user.data?.length) {
       addMessage(true, true, `User ${email} not found`)
     } else {
-      const room = await supabase.from('rooms').select('topic').eq('topic', selectedRoom)
+      const room = await skybase.from('rooms').select('topic').eq('topic', selectedRoom)
 
-      await supabase
+      await skybase
         .from('rooms_users')
         .upsert({ user_id: user.data?.[0].id, room_topic: room.data?.[0].topic })
       addMessage(true, true, `Added ${email} to channel ${selectedRoom}`)
@@ -58,14 +58,14 @@ export default function Chat() {
   }
 
   useEffect(() => {
-    supabase.auth
+    skybase.auth
       .getUser()
       .then((user) => setUser(user.data.user))
       .then(async () => {
-        await supabase.auth.getUser()
-        const token = (await supabase.auth.getSession()).data.session?.access_token!
-        supabase.realtime.setAuth(token)
-        let main = supabase
+        await skybase.auth.getUser()
+        const token = (await skybase.auth.getSession()).data.session?.access_token!
+        skybase.realtime.setAuth(token)
+        let main = skybase
           .channel('supaslack')
           .on('broadcast', { event: 'new_room' }, () => getChannels())
           .subscribe()
@@ -75,7 +75,7 @@ export default function Chat() {
       .then(() => {
         setLoading(false)
       })
-  }, [supabase])
+  }, [skybase])
 
   useEffect(() => {
     if (document.getElementById('chat')) {
@@ -86,7 +86,7 @@ export default function Chat() {
       channel?.unsubscribe()
       setUsers(new Set())
 
-      let newChannel = supabase.channel(selectedRoom, {
+      let newChannel = skybase.channel(selectedRoom, {
         config: {
           broadcast: { self: true },
           private: true, // This line will tell the server that you want to use a private channel for this connection

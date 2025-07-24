@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Globe } from 'lucide-react'
 import { useState } from 'react'
 import { toast } from 'sonner'
@@ -78,7 +78,7 @@ const BannedIPs = () => {
           title="Network Bans"
           description="List of IP addresses that are temporarily blocked if their traffic pattern looks abusive"
         />
-        <DocsButton href="https://supabase.com/docs/reference/cli/supabase-network-bans" />
+        <DocsButton href="https://skybase.com/docs/reference/cli/skybase-network-bans" />
       </div>
       <FormPanel>
         {ipListLoading ? (

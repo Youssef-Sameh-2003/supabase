@@ -8,4 +8,4 @@ export const IS_DEV = process.env.NODE_ENV === 'development'
 export const IS_PLATFORM = process.env.NEXT_PUBLIC_IS_PLATFORM === 'true'
 export const IS_PRODUCTION = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 export const MISC_URL = process.env.NEXT_PUBLIC_MISC_URL ?? ''
-export const PROD_URL = `https://supabase.com${BASE_PATH}`
+export const PROD_URL = `https://skybase.com${BASE_PATH}`

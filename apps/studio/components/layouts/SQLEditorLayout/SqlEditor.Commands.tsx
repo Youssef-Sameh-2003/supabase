@@ -1,8 +1,8 @@
-import { type PostgresColumn } from '@supabase/postgres-meta'
+import { type PostgresColumn } from '@skybase/postgres-meta'
 import { AlertTriangle, Code, Loader2, Table2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common'
 import { COMMAND_MENU_SECTIONS } from 'components/interfaces/App/CommandMenu/CommandMenu.utils'
 import { orderCommandSectionsByPriority } from 'components/interfaces/App/CommandMenu/ordering'
@@ -306,7 +306,7 @@ function TableSelector() {
       connectionString: project?.connectionString,
       includeColumns: true,
     },
-    { select: excludeSupabaseControlledSchemas }
+    { select: excludeSkybaseControlledSchemas }
   )
 
   return (
@@ -360,7 +360,7 @@ from ${formatTableIdentifier(table)}
   `.trim()
 }
 
-function excludeSupabaseControlledSchemas(tables: TablesData) {
+function excludeSkybaseControlledSchemas(tables: TablesData) {
   return tables.filter((table) => !PROTECTED_SCHEMAS.includes(table.schema))
 }
 

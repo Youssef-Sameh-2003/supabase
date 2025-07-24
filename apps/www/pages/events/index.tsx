@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
 import { getSortedPosts } from 'lib/posts'
-import supabase from 'lib/supabase'
+import skybase from 'lib/skybase'
 
 import { cn } from 'ui'
 import DefaultLayout from 'components/Layouts/Default'
@@ -105,8 +105,8 @@ export default function Events({
     return updatedCategories
   }, [staticCategories, lumaEvents])
 
-  const meta_title = 'Supabase Events: webinars, talks, hackathons, and meetups'
-  const meta_description = 'Join Supabase and the open-source community at the upcoming events.'
+  const meta_title = 'Skybase Events: webinars, talks, hackathons, and meetups'
+  const meta_description = 'Join Skybase and the open-source community at the upcoming events.'
 
   return (
     <>
@@ -116,10 +116,10 @@ export default function Events({
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/${router.pathname}`,
+          url: `https://skybase.com/${router.pathname}`,
           images: [
             {
-              url: `https://supabase.com/images/og/supabase-og.png`,
+              url: `https://skybase.com/images/og/skybase-og.png`,
             },
           ],
         }}
@@ -127,14 +127,14 @@ export default function Events({
           {
             rel: 'alternate',
             type: 'application/rss+xml',
-            href: `https://supabase.com/rss.xml`,
+            href: `https://skybase.com/rss.xml`,
           },
         ]}
       />
       <DefaultLayout className="min-h-[80dvh]">
         <SectionContainer className="!py-8 lg:!py-16">
           <h1 className="h1">
-            <span className="sr-only">Supabase</span> Events
+            <span className="sr-only">Skybase</span> Events
           </h1>
           <p className="text-foreground-light">Join us at the following upcoming events</p>
         </SectionContainer>
@@ -210,7 +210,7 @@ export default function Events({
 }
 
 export async function getStaticProps() {
-  const { data: meetups, error } = await supabase
+  const { data: meetups, error } = await skybase
     .from('meetups')
     .select('id, city, country, link, start_at, timezone, launch_week')
     .eq('is_published', true)

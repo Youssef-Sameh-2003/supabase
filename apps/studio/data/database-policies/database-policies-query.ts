@@ -5,7 +5,7 @@ import { useSelectedProject } from 'hooks/misc/useSelectedProject'
 import { PROJECT_STATUS } from 'lib/constants'
 import type { ResponseError } from 'types'
 import { databasePoliciesKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type DatabasePoliciesVariables = {
   projectRef?: string

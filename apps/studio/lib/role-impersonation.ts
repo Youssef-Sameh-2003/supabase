@@ -47,7 +47,7 @@ export function getPostgrestClaims(projectRef: string, role: PostgrestImpersonat
   const nowTimestamp = Math.floor(Date.now() / 1000)
 
   if (role.role === 'authenticated') {
-    // Supabase native auth case
+    // Skybase native auth case
     if (role.userType === 'native' && role.user) {
       const user = role.user
       return {
@@ -58,7 +58,7 @@ export function getPostgrestClaims(projectRef: string, role: PostgrestImpersonat
         email: user.email,
         exp,
         iat: nowTimestamp,
-        iss: `https://${projectRef}.supabase.co/auth/v1`,
+        iss: `https://${projectRef}.skybase.co/auth/v1`,
         phone: user.phone,
         role: user.role ?? role.role,
         session_id: uuidv4(),
@@ -84,7 +84,7 @@ export function getPostgrestClaims(projectRef: string, role: PostgrestImpersonat
   }
 
   return {
-    iss: 'supabase',
+    iss: 'skybase',
     ref: projectRef,
     role: role.role,
     iat: nowTimestamp,

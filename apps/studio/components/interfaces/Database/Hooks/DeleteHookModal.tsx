@@ -1,4 +1,4 @@
-import type { PostgresTrigger } from '@supabase/postgres-meta'
+import type { PostgresTrigger } from '@skybase/postgres-meta'
 import { toast } from 'sonner'
 
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'

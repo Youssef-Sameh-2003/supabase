@@ -77,7 +77,7 @@ const LW11Summary = () => {
             )}
             <ol className="border-t pt-4 mt-2">
               <Link
-                href="/blog/supabase-oss-hackathon"
+                href="/blog/skybase-oss-hackathon"
                 className="relative flex items-center justify-between group w-full py-1 hover:text-foreground"
               >
                 Open Source Hackathon 2024

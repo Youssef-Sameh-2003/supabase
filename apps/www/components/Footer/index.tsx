@@ -1,16 +1,16 @@
 import { CheckIcon } from '@heroicons/react/outline'
-import { REALTIME_CHANNEL_STATES } from '@supabase/supabase-js'
+import { REALTIME_CHANNEL_STATES } from '@skybase/skybase-js'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wordmark--dark.png'
-import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
+import * as skybaseLogoWordmarkDark from 'common/assets/images/skybase-logo-wordmark--dark.png'
+import * as skybaseLogoWordmarkLight from 'common/assets/images/skybase-logo-wordmark--light.png'
 import footerData from 'data/Footer'
 import { Badge, IconDiscord, IconGitHubSolid, IconTwitterX, IconYoutubeSolid, cn } from 'ui'
 import { ThemeToggle } from 'ui-patterns/ThemeToggle'
-import supabase from '~/lib/supabase'
+import skybase from '~/lib/skybase'
 import useDarkLaunchWeeks from '../../hooks/useDarkLaunchWeeks'
 import SectionContainer from '../Layouts/SectionContainer'
 
@@ -27,7 +27,7 @@ const Footer = (props: Props) => {
   const forceDark = isDarkLaunchWeek
 
   useEffect(() => {
-    const channel = supabase.channel('footer')
+    const channel = skybase.channel('footer')
     if (channel.state === REALTIME_CHANNEL_STATES.closed) {
       channel.subscribe((status: string) => {
         if (status == 'SUBSCRIBED') {
@@ -87,25 +87,25 @@ const Footer = (props: Props) => {
           <div className="space-y-8 xl:col-span-2">
             <Link href="#" as="/" className="w-40">
               <Image
-                src={supabaseLogoWordmarkLight}
+                src={skybaseLogoWordmarkLight}
                 width={160}
                 height={30}
-                alt="Supabase Logo"
+                alt="Skybase Logo"
                 className="dark:hidden"
                 priority
               />
               <Image
-                src={supabaseLogoWordmarkDark}
+                src={skybaseLogoWordmarkDark}
                 width={160}
                 height={30}
-                alt="Supabase Logo"
+                alt="Skybase Logo"
                 className="hidden dark:block"
                 priority
               />
             </Link>
             <div className="flex space-x-5">
               <a
-                href="https://twitter.com/supabase"
+                href="https://twitter.com/skybase"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">Twitter</span>
@@ -113,7 +113,7 @@ const Footer = (props: Props) => {
               </a>
 
               <a
-                href="https://github.com/supabase"
+                href="https://github.com/skybase"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">GitHub</span>
@@ -121,7 +121,7 @@ const Footer = (props: Props) => {
               </a>
 
               <a
-                href="https://discord.supabase.com/"
+                href="https://discord.skybase.com/"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">Discord</span>
@@ -129,7 +129,7 @@ const Footer = (props: Props) => {
               </a>
 
               <a
-                href="https://youtube.com/c/supabase"
+                href="https://youtube.com/c/skybase"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">Youtube</span>
@@ -184,7 +184,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="border-default mt-32 flex justify-between border-t pt-8">
-          <small className="small">&copy; Supabase Inc</small>
+          <small className="small">&copy; Skybase Inc</small>
           <div className={cn(forceDark && 'hidden')}>
             <ThemeToggle forceDark={forceDark} />
           </div>

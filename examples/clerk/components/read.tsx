@@ -1,14 +1,14 @@
 'use client'
 
-import { useSupabaseClient } from '@/hooks/useSupabaseClient'
+import { useSkybaseClient } from '@/hooks/useSkybaseClient'
 import { useEffect, useState } from 'react'
 
 export function ReadData() {
-  const supabase = useSupabaseClient()
+  const skybase = useSkybaseClient()
   const [data, setData] = useState<Array<unknown>>([])
 
   useEffect(() => {
-    supabase
+    skybase
       .from('secured_table')
       .select('*')
       .then(({ data, error }) => {
@@ -18,7 +18,7 @@ export function ReadData() {
           setData(data)
         }
       })
-  }, [supabase])
+  }, [skybase])
 
   return <pre>{JSON.stringify(data, null, 2)}</pre>
 }

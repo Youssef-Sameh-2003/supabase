@@ -127,19 +127,19 @@ const GlobalMobileMenu = ({ open, setOpen }: Props) => {
               <Link href="/" className="flex items-center gap-2">
                 <Image
                   className="cursor-pointer hidden dark:block"
-                  src="/docs/supabase-dark.svg"
+                  src="/docs/skybase-dark.svg"
                   priority
                   width={96}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Skybase Logo"
                 />
                 <Image
                   className="cursor-pointer block dark:hidden"
-                  src="/docs/supabase-light.svg"
+                  src="/docs/skybase-light.svg"
                   priority
                   width={96}
                   height={24}
-                  alt="Supabase Logo"
+                  alt="Skybase Logo"
                 />
                 <span className="font-mono text-sm font-medium text-brand-link mb-px">DOCS</span>
               </Link>
@@ -163,15 +163,15 @@ const GlobalMobileMenu = ({ open, setOpen }: Props) => {
                 <>
                   {isLoggedIn ? (
                     <Button block size="medium" asChild>
-                      <Link href="https://supabase.com/dashboard/projects">Dashboard</Link>
+                      <Link href="https://skybase.com/dashboard/projects">Dashboard</Link>
                     </Button>
                   ) : (
                     <>
                       <Button block size="medium" type="default" asChild>
-                        <Link href="https://supabase.com/dashboard/sign-in">Sign in</Link>
+                        <Link href="https://skybase.com/dashboard/sign-in">Sign in</Link>
                       </Button>
                       <Button block size="medium" asChild>
-                        <Link href="https://supabase.com/dashboard/new">Start your project</Link>
+                        <Link href="https://skybase.com/dashboard/new">Start your project</Link>
                       </Button>
                     </>
                   )}

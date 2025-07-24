@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { debounce } from 'lodash'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
@@ -146,7 +146,7 @@ const Wizard: NextPageWithLayout = () => {
     ''
   )
 
-  // This is to make the database.new redirect work correctly. The database.new redirect should be set to supabase.com/dashboard/new/last-visited-org
+  // This is to make the database.new redirect work correctly. The database.new redirect should be set to skybase.com/dashboard/new/last-visited-org
   if (slug === 'last-visited-org') {
     if (lastVisitedOrganization) {
       router.replace(`/new/${lastVisitedOrganization}`, undefined, { shallow: true })
@@ -401,7 +401,7 @@ const Wizard: NextPageWithLayout = () => {
         )
       }
 
-      data['customSupabaseRequest'] = {
+      data['customSkybaseRequest'] = {
         ami: { search_tags: { 'tag:postgresVersion': postgresVersion } },
       }
     }
@@ -473,7 +473,7 @@ const Wizard: NextPageWithLayout = () => {
                             <p>
                               Each project includes a dedicated Postgres instance running on its own
                               server. You are charged for the{' '}
-                              <InlineLink href="https://supabase.com/docs/guides/platform/billing-on-supabase">
+                              <InlineLink href="https://skybase.com/docs/guides/platform/billing-on-skybase">
                                 Compute resource
                               </InlineLink>{' '}
                               of that server, independent of your database usage.
@@ -717,7 +717,7 @@ const Wizard: NextPageWithLayout = () => {
                                     <Link
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      href="https://supabase.com/docs/guides/platform/compute-add-ons"
+                                      href="https://skybase.com/docs/guides/platform/compute-add-ons"
                                     >
                                       <div className="flex items-center space-x-2 opacity-75 hover:opacity-100 transition">
                                         <p className="text-sm m-0">Compute Add-Ons</p>
@@ -727,7 +727,7 @@ const Wizard: NextPageWithLayout = () => {
                                     <Link
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      href="https://supabase.com/docs/guides/platform/manage-your-usage/compute"
+                                      href="https://skybase.com/docs/guides/platform/manage-your-usage/compute"
                                     >
                                       <div className="flex items-center space-x-2 opacity-75 hover:opacity-100 transition">
                                         <p className="text-sm m-0">Compute Billing</p>
@@ -981,7 +981,7 @@ const Wizard: NextPageWithLayout = () => {
               monthly costs by ${additionalMonthlySpend}, independent of how actively you use it. By
               clicking "I understand", you agree to the additional costs.{' '}
               <Link
-                href="https://supabase.com/docs/guides/platform/manage-your-usage/compute"
+                href="https://skybase.com/docs/guides/platform/manage-your-usage/compute"
                 target="_blank"
                 className="underline"
               >

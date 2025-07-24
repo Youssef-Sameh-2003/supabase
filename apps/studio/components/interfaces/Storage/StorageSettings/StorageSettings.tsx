@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useEffect, useMemo, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -263,7 +263,7 @@ const StorageSettings = () => {
                   </div>
                   <p className="text-sm text-foreground-light">
                     Optimize and resize images on the fly.{' '}
-                    <InlineLink href="https://supabase.com/docs/guides/storage/serving/image-transformations">
+                    <InlineLink href="https://skybase.com/docs/guides/storage/serving/image-transformations">
                       Learn more
                     </InlineLink>
                     .

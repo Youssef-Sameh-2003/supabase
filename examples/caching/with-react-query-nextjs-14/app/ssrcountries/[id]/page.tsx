@@ -3,8 +3,8 @@ import {
   HydrationBoundary,
   QueryClient,
 } from '@tanstack/react-query'
-import { prefetchQuery } from '@supabase-cache-helpers/postgrest-react-query'
-import useSupabaseServer from '@/utils/supabase-server'
+import { prefetchQuery } from '@skybase-cache-helpers/postgrest-react-query'
+import useSkybaseServer from '@/utils/skybase-server'
 import { cookies } from 'next/headers'
 import Country from '../country'
 import { getCountryById } from '@/queries/get-country-by-id'
@@ -16,9 +16,9 @@ export default async function CountryPage({
 }) {
   const queryClient = new QueryClient()
   const cookieStore = cookies()
-  const supabase = useSupabaseServer(cookieStore)
+  const skybase = useSkybaseServer(cookieStore)
 
-  await prefetchQuery(queryClient, getCountryById(supabase, params.id))
+  await prefetchQuery(queryClient, getCountryById(skybase, params.id))
 
   return (
     // Neat! Serialization is now as easy as passing props.

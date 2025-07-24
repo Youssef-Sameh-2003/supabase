@@ -1,11 +1,11 @@
 import { Compass, Globe, DollarSign, TrendingUp } from 'lucide-react'
 
 export default {
-  metaTitle: 'Partner with Supabase',
-  metaDescription: 'Become a Supabase Partner and enable new business opportunities.',
+  metaTitle: 'Partner with Skybase',
+  metaDescription: 'Become a Skybase Partner and enable new business opportunities.',
   heroSection: {
     title: 'Partners',
-    h1: <span className="heading-gradient">Partner with Supabase</span>,
+    h1: <span className="heading-gradient">Partner with Skybase</span>,
     subheader: (
       <>
         Apply to the Partners program to list your integration <br className="hidden md:block" /> in
@@ -40,14 +40,14 @@ export default {
     ),
     cta: {
       label: 'Become a Partner',
-      link: 'https://forms.supabase.com/partner',
+      link: 'https://forms.skybase.com/partner',
     },
   },
   oAuthApp: {
     steps: [
       {
         title: 'Register App',
-        text: 'An OAuth app first needs to be registered with Supabase',
+        text: 'An OAuth app first needs to be registered with Skybase',
       },
       {
         title: 'Add OAuth2 Support',
@@ -59,7 +59,7 @@ export default {
       },
       {
         title: 'Control Projects',
-        text: 'Use Supabase REST API to control projects and other settings',
+        text: 'Use Skybase REST API to control projects and other settings',
       },
     ],
   },
@@ -71,7 +71,7 @@ export default {
     },
     {
       title: 'Expand your ecosystem',
-      description: 'Offer your own products and services to Supabase customers.',
+      description: 'Offer your own products and services to Skybase customers.',
       icon: <Globe strokeWidth={1.5} />,
     },
     {
@@ -89,52 +89,52 @@ export default {
     {
       name: 'Arengu',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/arengu/arengu_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/arengu/arengu_logo.jpeg',
     },
     {
       name: 'Auth0',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/auth0/auth0_dark.png?t=2023-07-19T19%3A13%3A04.189Z',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/auth0/auth0_dark.png?t=2023-07-19T19%3A13%3A04.189Z',
     },
     {
       name: 'Appsmith',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/appsmith/appsmith-logo.png',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/appsmith/appsmith-logo.png',
     },
     {
       name: 'CALDA',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/calda/calda_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/experts/calda/calda_logo.jpeg',
     },
     {
       name: 'Morrow',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/morrow/morrow-logo.png',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/experts/morrow/morrow-logo.png',
     },
     {
       name: 'Voypost',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/voypost/33024474.png',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/experts/voypost/33024474.png',
     },
     {
       name: 'Vercel',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/vercel/vercel-icon.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/vercel/vercel-icon.jpeg',
     },
     {
       name: 'Prisma',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/prisma/prisma-icon.png',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/prisma/prisma-icon.png',
     },
     {
       name: 'Cloudflare-workers',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/cloudflare-integration/cloudflare_workers_logo.png?t=2023-07-21T11%3A07%3A47.005Z',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/cloudflare-integration/cloudflare_workers_logo.png?t=2023-07-21T11%3A07%3A47.005Z',
     },
     {
       name: 'Codesandbox',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/codesandbox/codesandbox_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/images/integrations/codesandbox/codesandbox_logo.jpeg',
     },
   ],
 }

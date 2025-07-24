@@ -7,7 +7,7 @@ import Logos from '~/components/logos'
 const Products = dynamic(() => import('~/components/Products/index'))
 const HeroFrameworks = dynamic(() => import('~/components/Hero/HeroFrameworks'))
 const CustomerStories = dynamic(() => import('components/CustomerStories'))
-const BuiltWithSupabase = dynamic(() => import('components/BuiltWithSupabase'))
+const BuiltWithSkybase = dynamic(() => import('components/BuiltWithSkybase'))
 const DashboardFeatures = dynamic(() => import('~/components/DashboardFeatures'))
 const TwitterSocialSection = dynamic(() => import('~/components/TwitterSocialSection'))
 const CTABanner = dynamic(() => import('components/CTABanner/index'))
@@ -22,7 +22,7 @@ const Index = () => {
       <Products {...content.productsSection} />
       <HeroFrameworks />
       <CustomerStories />
-      <BuiltWithSupabase />
+      <BuiltWithSkybase />
       <DashboardFeatures {...content.dashboardFeatures} />
       <TwitterSocialSection {...content.twitterSocialSection} />
       <CTABanner className="border-none" />

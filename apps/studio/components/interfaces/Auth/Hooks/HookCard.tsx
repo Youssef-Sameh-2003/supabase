@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Check, Webhook } from 'lucide-react'
 import { Badge, Input, copyToClipboard } from 'ui'
 
@@ -108,7 +108,7 @@ export const HookCard = ({ hook, onSelect }: HookCardProps) => {
           >
             Configure hook
           </ButtonTooltip>
-          <DocsButton href={'https://supabase.com/docs/guides/auth/auth-hooks/' + hook.docSlug} />
+          <DocsButton href={'https://skybase.com/docs/guides/auth/auth-hooks/' + hook.docSlug} />
         </div>
       </div>
       <div className="flex-1">

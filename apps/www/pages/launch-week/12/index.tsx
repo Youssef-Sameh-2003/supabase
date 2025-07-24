@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { Session } from '@supabase/supabase-js'
+import { Session } from '@skybase/skybase-js'
 import { LW12_DATE, LW12_TITLE, LW_URL, SITE_ORIGIN } from '~/lib/constants'
-import supabase from '~/lib/supabase'
+import skybase from '~/lib/skybase'
 
 import DefaultLayout from '~/components/Layouts/Default'
 import { TicketState, ConfDataContext, UserData } from '~/components/LaunchWeek/hooks/use-conf-data'
@@ -43,17 +43,17 @@ export default function LaunchWeekIndex() {
   const [ticketState, setTicketState] = useState<TicketState>('loading')
 
   useEffect(() => {
-    if (supabase) {
-      supabase.auth.getSession().then(({ data: { session } }) => setSession(session))
+    if (skybase) {
+      skybase.auth.getSession().then(({ data: { session } }) => setSession(session))
       const {
         data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
+      } = skybase.auth.onAuthStateChange((_event, session) => {
         setSession(session)
       })
 
       return () => subscription.unsubscribe()
     }
-  }, [supabase])
+  }, [skybase])
 
   useEffect(() => {
     if (session?.user) {
@@ -83,7 +83,7 @@ export default function LaunchWeekIndex() {
       />
       <ConfDataContext.Provider
         value={{
-          supabase,
+          skybase,
           session,
           userData,
           setUserData,

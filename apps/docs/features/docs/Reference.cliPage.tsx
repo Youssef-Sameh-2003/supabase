@@ -15,7 +15,7 @@ export async function CliReferencePage() {
         NavigationMenu={
           <ReferenceNavigation
             libraryId="cli"
-            name="Supabase CLI"
+            name="Skybase CLI"
             menuData={reference_cli}
             libPath="cli"
             version="latest"

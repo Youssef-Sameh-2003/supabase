@@ -155,7 +155,7 @@ const DeployNewReplicaPanel = ({
   })
 
   const currentPgVersion = Number(
-    (project?.dbVersion ?? '').split('supabase-postgres-')[1]?.split('.')[0]
+    (project?.dbVersion ?? '').split('skybase-postgres-')[1]?.split('.')[0]
   )
 
   const maxNumberOfReplicas = ['ci_micro', 'ci_small', 'ci_medium', 'ci_large'].includes(
@@ -259,7 +259,7 @@ const DeployNewReplicaPanel = ({
               <DocsButton
                 abbrev={false}
                 className="mt-3"
-                href="https://supabase.com/docs/guides/platform/read-replicas#prerequisites"
+                href="https://skybase.com/docs/guides/platform/read-replicas#prerequisites"
               />
             </AlertDescription_Shadcn_>
           </Alert_Shadcn_>
@@ -322,7 +322,7 @@ const DeployNewReplicaPanel = ({
                 </Button>
                 <DocsButton
                   abbrev={false}
-                  href="https://supabase.com/docs/guides/platform/read-replicas#prerequisites"
+                  href="https://skybase.com/docs/guides/platform/read-replicas#prerequisites"
                 />
               </div>
             </AlertDescription_Shadcn_>
@@ -363,7 +363,7 @@ const DeployNewReplicaPanel = ({
                 </Button>
                 <DocsButton
                   abbrev={false}
-                  href="https://supabase.com/docs/guides/platform/read-replicas#how-are-read-replicas-made"
+                  href="https://skybase.com/docs/guides/platform/read-replicas#how-are-read-replicas-made"
                 />
               </AlertDescription_Shadcn_>
             )}
@@ -541,7 +541,7 @@ const DeployNewReplicaPanel = ({
             <p className="text-foreground-light text-sm">
               Read more about{' '}
               <Link
-                href="https://supabase.com/docs/guides/platform/manage-your-usage/read-replicas"
+                href="https://skybase.com/docs/guides/platform/manage-your-usage/read-replicas"
                 target="_blank"
                 rel="noreferrer"
                 className="underline hover:text-foreground transition"

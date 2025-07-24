@@ -1,4 +1,4 @@
-import type { PostgresColumn, PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresColumn, PostgresTable } from '@skybase/postgres-meta'
 import { useQueryClient } from '@tanstack/react-query'
 import { isEmpty, isUndefined, noop } from 'lodash'
 import { useState } from 'react'
@@ -314,7 +314,7 @@ const SidePanelEditor = ({
 
   const updateTableRealtime = async (table: RetrieveTableResult, enabled: boolean) => {
     if (!project) return console.error('Project is required')
-    const realtimePublication = publications?.find((pub) => pub.name === 'supabase_realtime')
+    const realtimePublication = publications?.find((pub) => pub.name === 'skybase_realtime')
 
     try {
       if (realtimePublication === undefined) {
@@ -322,7 +322,7 @@ const SidePanelEditor = ({
         await createPublication({
           projectRef: project.ref,
           connectionString: project.connectionString,
-          name: 'supabase_realtime',
+          name: 'skybase_realtime',
           publish_insert: true,
           publish_update: true,
           publish_delete: true,

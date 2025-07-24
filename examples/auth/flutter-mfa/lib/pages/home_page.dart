@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final privatePostsFuture = supabase.from('private_posts').select();
+    final privatePostsFuture = skybase.from('private_posts').select();
 
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                 PopupMenuItem(
                   child: const Text('Logout'),
                   onTap: () {
-                    supabase.auth.signOut();
+                    skybase.auth.signOut();
                     context.go(RegisterPage.route);
                   },
                 ),

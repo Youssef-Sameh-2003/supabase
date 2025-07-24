@@ -92,7 +92,7 @@ select
         fk.table_name,
         fk.fkey_name
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys' as remediation,
     jsonb_build_object(
         'schema', fk.schema_name,
         'name', fk.table_name,
@@ -112,7 +112,7 @@ from
 where
     idx.index_ is null
     and fk.schema_name not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null -- exclude tables owned by extensions
 order by
@@ -132,7 +132,7 @@ select
         'View/Materialized View "%s" in the public schema may expose \`auth.users\` data to anon or authenticated roles.',
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0002_auth_users_exposed' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0002_auth_users_exposed' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -246,12 +246,12 @@ select
     array['PERFORMANCE'] as categories,
     'Detects if calls to \`auth.<function>()\` in RLS policies are being unnecessarily re-evaluated for each row' as description,
     format(
-        'Table \`%s.%s\` has a row level security policy \`%s\` that re-evaluates an auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \`auth.<function>()\` with \`(select auth.<function>())\`. See [docs](https://supabase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.',
+        'Table \`%s.%s\` has a row level security policy \`%s\` that re-evaluates an auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \`auth.<function>()\` with \`(select auth.<function>())\`. See [docs](https://skybase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.',
         schema_name,
         table_name,
         policy_name
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan' as remediation,
     jsonb_build_object(
         'schema', schema_name,
         'name', table_name,
@@ -264,7 +264,7 @@ where
     is_rls_active
     -- NOTE: does not include realtime in support of monitoring policies on realtime.messages
     and schema_name not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and (
         -- Example: auth.uid()
@@ -315,7 +315,7 @@ select
         pgns.nspname,
         pgc.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0004_no_primary_key' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0004_no_primary_key' as remediation,
      jsonb_build_object(
         'schema', pgns.nspname,
         'name', pgc.relname,
@@ -338,7 +338,7 @@ from
 where
     pgc.relkind = 'r' -- regular tables
     and pgns.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null -- exclude tables owned by extensions
 group by
@@ -362,7 +362,7 @@ select
         psui.schemaname,
         psui.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0005_unused_index' as remediation,
     jsonb_build_object(
         'schema', psui.schemaname,
         'name', psui.relname,
@@ -388,7 +388,7 @@ where
     and not pi.indisprimary
     and dep.objid is null -- exclude tables owned by extensions
     and psui.schemaname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     ))
 union all
 (
@@ -407,7 +407,7 @@ select
         act.cmd,
         array_agg(p.polname order by p.polname)
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -450,10 +450,10 @@ where
     c.relkind = 'r' -- regular tables
     and p.polpermissive -- policy is permissive
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and r.rolname not like 'pg_%'
-    and r.rolname not like 'supabase%admin'
+    and r.rolname not like 'skybase%admin'
     and not r.rolbypassrls
     and dep.objid is null -- exclude tables owned by extensions
 group by
@@ -478,7 +478,7 @@ select
         c.relname,
         array_agg(p.polname order by p.polname)
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0007_policy_exists_rls_disabled' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0007_policy_exists_rls_disabled' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -501,7 +501,7 @@ from
 where
     c.relkind = 'r' -- regular tables
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     -- RLS is disabled
     and not c.relrowsecurity
@@ -523,7 +523,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -546,7 +546,7 @@ from
 where
     c.relkind = 'r' -- regular tables
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     -- RLS is enabled
     and c.relrowsecurity
@@ -570,7 +570,7 @@ select
         c.relname,
         array_agg(pi.indexname order by pi.indexname)
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0009_duplicate_index' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0009_duplicate_index' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -600,7 +600,7 @@ from
 where
     c.relkind in ('r', 'm') -- tables and materialized views
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null -- exclude tables owned by extensions
 group by
@@ -624,7 +624,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0010_security_definer_view' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0010_security_definer_view' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -651,7 +651,7 @@ where
     and substring(pg_catalog.version() from 'PostgreSQL ([0-9]+)') >= '15' -- security invoker was added in pg15
     and n.nspname = any(array(select trim(unnest(string_to_array(current_setting('pgrst.db_schemas', 't'), ',')))))
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null -- exclude views owned by extensions
     and not (
@@ -677,7 +677,7 @@ select
         n.nspname,
         p.proname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0011_function_search_path_mutable' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0011_function_search_path_mutable' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', p.proname,
@@ -698,7 +698,7 @@ from
         and dep.deptype = 'e'
 where
     n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null -- exclude functions owned by extensions
     -- Search path not set to ''
@@ -717,7 +717,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0013_rls_disabled_in_public' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0013_rls_disabled_in_public' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -742,7 +742,7 @@ where
     )
     and n.nspname = any(array(select trim(unnest(string_to_array(current_setting('pgrst.db_schemas', 't'), ',')))))
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     ))
 union all
 (
@@ -757,7 +757,7 @@ select
         'Extension \`%s\` is installed in the public schema. Move it to another schema.',
         pe.extname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0014_extension_in_public' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0014_extension_in_public' as remediation,
     jsonb_build_object(
         'schema', pe.extnamespace::regnamespace,
         'name', pe.extname,
@@ -804,14 +804,14 @@ select
     'ERROR' as level,
     'EXTERNAL' as facing,
     array['SECURITY'] as categories,
-    'Detects when Supabase Auth user_metadata is referenced insecurely in a row level security (RLS) policy.' as description,
+    'Detects when Skybase Auth user_metadata is referenced insecurely in a row level security (RLS) policy.' as description,
     format(
-        'Table \`%s.%s\` has a row level security policy \`%s\` that references Supabase Auth \`user_metadata\`. \`user_metadata\` is editable by end users and should never be used in a security context.',
+        'Table \`%s.%s\` has a row level security policy \`%s\` that references Skybase Auth \`user_metadata\`. \`user_metadata\` is editable by end users and should never be used in a security context.',
         schema_name,
         table_name,
         policy_name
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0015_rls_references_user_metadata' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0015_rls_references_user_metadata' as remediation,
     jsonb_build_object(
         'schema', schema_name,
         'name', table_name,
@@ -822,7 +822,7 @@ from
     policies
 where
     schema_name not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and (
         -- Example: auth.jwt() -> 'user_metadata'
@@ -847,7 +847,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0016_materialized_view_in_api' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0016_materialized_view_in_api' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -873,7 +873,7 @@ where
     )
     and n.nspname = any(array(select trim(unnest(string_to_array(current_setting('pgrst.db_schemas', 't'), ',')))))
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null)
 union all
@@ -890,7 +890,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=0017_foreign_table_in_api' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=0017_foreign_table_in_api' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -916,7 +916,7 @@ where
     )
     and n.nspname = any(array(select trim(unnest(string_to_array(current_setting('pgrst.db_schemas', 't'), ',')))))
     and n.nspname not in (
-        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'supabase_functions', 'supabase_migrations', 'tiger', 'topology', 'vault'
+        '_timescaledb_cache', '_timescaledb_catalog', '_timescaledb_config', '_timescaledb_internal', 'auth', 'cron', 'extensions', 'graphql', 'graphql_public', 'information_schema', 'net', 'pgroonga', 'pgsodium', 'pgsodium_masks', 'pgtle', 'pgbouncer', 'pg_catalog', 'pgtle', 'realtime', 'repack', 'storage', 'skybase_functions', 'skybase_migrations', 'tiger', 'topology', 'vault'
     )
     and dep.objid is null)
 union all
@@ -935,7 +935,7 @@ select
         a.attname,
         t.typname
     ) as detail,
-    'https://supabase.com/docs/guides/database/database-linter?lint=unsupported_reg_types' as remediation,
+    'https://skybase.com/docs/guides/database/database-linter?lint=unsupported_reg_types' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,

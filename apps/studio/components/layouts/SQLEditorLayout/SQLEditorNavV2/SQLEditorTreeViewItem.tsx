@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { IS_PLATFORM } from 'common'
 import { useParams } from 'common/hooks/useParams'
 import { useSQLSnippetFolderContentsQuery } from 'data/content/sql-folder-contents-query'

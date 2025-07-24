@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Check } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'

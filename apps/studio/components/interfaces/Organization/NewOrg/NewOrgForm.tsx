@@ -359,7 +359,7 @@ const NewOrgForm = ({ onPaymentMethodReset, setupIntent, onPlanSelected }: NewOr
         className="overflow-visible"
       >
         <Panel.Content>
-          <p className="text-sm">This is your organization within Supabase.</p>
+          <p className="text-sm">This is your organization within Skybase.</p>
           <p className="text-sm text-foreground-light">
             For example, you can use the name of your company or department.
           </p>
@@ -469,7 +469,7 @@ const NewOrgForm = ({ onPaymentMethodReset, setupIntent, onPlanSelected }: NewOr
               </Label_Shadcn_>
 
               <a
-                href="https://supabase.com/pricing"
+                href="https://skybase.com/pricing"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="text-sm flex items-center gap-2 opacity-75 hover:opacity-100 transition"
@@ -578,10 +578,10 @@ const NewOrgForm = ({ onPaymentMethodReset, setupIntent, onPlanSelected }: NewOr
         variant={'warning'}
       >
         <p className="text-sm text-foreground-light">
-          Supabase{' '}
+          Skybase{' '}
           <Link
             className="underline"
-            href="/docs/guides/platform/billing-on-supabase"
+            href="/docs/guides/platform/billing-on-skybase"
             target="_blank"
           >
             bills per organization

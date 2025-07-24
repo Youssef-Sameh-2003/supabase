@@ -87,7 +87,7 @@ const ConnectingState = ({ project }: ConnectingStateProps) => {
                 <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                   <Link
                     href={
-                      'https://supabase.com/docs/guides/platform/troubleshooting#unable-to-connect-to-your-supabase-project'
+                      'https://skybase.com/docs/guides/platform/troubleshooting#unable-to-connect-to-your-skybase-project'
                     }
                     className="translate-y-[1px]"
                   >

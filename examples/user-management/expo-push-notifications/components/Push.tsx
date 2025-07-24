@@ -3,8 +3,8 @@ import { Text, View, Button, Platform } from "react-native";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
-import { Session } from "@supabase/supabase-js";
-import { supabase } from "../lib/supabase";
+import { Session } from "@skybase/skybase-js";
+import { skybase } from "../lib/skybase";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -81,7 +81,7 @@ export default function Push({ session }: { session: Session }) {
     registerForPushNotificationsAsync().then(async (token) => {
       setExpoPushToken(token);
 
-      const { error } = await supabase
+      const { error } = await skybase
         .from("profiles")
         .upsert({ id: session?.user.id, expo_push_token: token });
       console.log(error);

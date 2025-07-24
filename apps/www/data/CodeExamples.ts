@@ -15,15 +15,15 @@ export const createUserExample: ExampleProps = {
   description: 'Sign up a new user in an example chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const skybaseUrl = 'https://chat-room.skybase.co'
+  const skybaseKey = 'public-anon-key'
+  const skybase = createClient(skybaseUrl, skybaseKey)
   
   // Create a new user
-  const { user, error } = await supabase.auth.signUp({
+  const { user, error } = await skybase.auth.signUp({
     email: 'example@email.com',
     password: 'example-password',
   })
@@ -37,15 +37,15 @@ export const subscribeExample: ExampleProps = {
   description: 'Receive realtime messages in an example chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const skybaseUrl = 'https://chat-room.skybase.co'
+  const skybaseKey = 'public-anon-key'
+  const skybase = createClient(skybaseUrl, skybaseKey)
   
   // Get notified of all new chat messages
-  const realtime = supabase
+  const realtime = skybase
     .from('messages')
     .on('INSERT', message => {
       console.log('New message!', message)
@@ -61,15 +61,15 @@ export const readExample: ExampleProps = {
   description: 'Get all public rooms and their messages',
   code: {
     javascript: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const skybaseUrl = 'https://chat-room.skybase.co'
+  const skybaseKey = 'public-anon-key'
+  const skybase = createClient(skybaseUrl, skybaseKey)
   
   // Get public rooms and their messages
-  const publicRooms = await supabase
+  const publicRooms = await skybase
     .from('rooms')
     .select(\`
       name,
@@ -86,17 +86,17 @@ export const createExample: ExampleProps = {
   description: 'Create a new chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const skybaseUrl = 'https://chat-room.skybase.co'
+  const skybaseKey = 'public-anon-key'
+  const skybase = createClient(skybaseUrl, skybaseKey)
   
   // Create a new chat room
-  const newRoom = await supabase
+  const newRoom = await skybase
     .from('rooms')
-    .insert({ name: 'Supabase Fan Club', public: true })
+    .insert({ name: 'Skybase Fan Club', public: true })
     `,
   },
 }
@@ -107,15 +107,15 @@ export const updateExample: ExampleProps = {
   description: 'Update a user',
   code: {
     javascript: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const skybaseUrl = 'https://chat-room.skybase.co'
+  const skybaseKey = 'public-anon-key'
+  const skybase = createClient(skybaseUrl, skybaseKey)
   
   // Update multiple users
-  const updatedUsers = await supabase
+  const updatedUsers = await skybase
     .from('users')
     .eq('account_type', 'paid')
     .update({ highlight_color: 'gold' })
@@ -124,28 +124,28 @@ export const updateExample: ExampleProps = {
 }
 
 // const heroExample = `
-//   const messages = supabase
+//   const messages = skybase
 //     .from('messages')
 //     .select(\`
 //       id, text,
 //       user ( id, name )
 //     \`)
 
-//   const newMessages = supabase
+//   const newMessages = skybase
 //     .from('messages')
 //     .on('INSERT', message => console.log('New message!', message) )
 //     .subscribe()
 //   `
 // const subscribeExample = `
-//   import { createClient } from '@supabase/supabase-js'
+//   import { createClient } from '@skybase/skybase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const skybaseUrl = 'https://chat-room.skybase.co'
+//   const skybaseKey = 'public-anon-key'
+//   const skybase = createClient(skybaseUrl, skybaseKey)
 
 //   // Get notified of all new chat messages
-//   const realtime = supabase
+//   const realtime = skybase
 //     .from('messages')
 //     .on('INSERT', message => {
 //       console.log('New message!', message)
@@ -153,15 +153,15 @@ export const updateExample: ExampleProps = {
 //     .subscribe()
 //   `
 // const readExample = `
-//   import { createClient } from '@supabase/supabase-js'
+//   import { createClient } from '@skybase/skybase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const skybaseUrl = 'https://chat-room.skybase.co'
+//   const skybaseKey = 'public-anon-key'
+//   const skybase = createClient(skybaseUrl, skybaseKey)
 
 //   // Get public rooms and their messages
-//   const publicRooms = await supabase
+//   const publicRooms = await skybase
 //     .from('rooms')
 //     .select(\`
 //       name,
@@ -170,37 +170,37 @@ export const updateExample: ExampleProps = {
 //     .eq('public', true)
 //   `
 // const createExample = `
-//   import { createClient } from '@supabase/supabase-js'
+//   import { createClient } from '@skybase/skybase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const skybaseUrl = 'https://chat-room.skybase.co'
+//   const skybaseKey = 'public-anon-key'
+//   const skybase = createClient(skybaseUrl, skybaseKey)
 
 //   // Create a new chat room
-//   const newRoom = await supabase
+//   const newRoom = await skybase
 //     .from('rooms')
-//     .insert({ name: 'Supabase Fan Club', public: true })
+//     .insert({ name: 'Skybase Fan Club', public: true })
 //   `
 // const updateExample = `
-//   import { createClient } from '@supabase/supabase-js'
+//   import { createClient } from '@skybase/skybase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const skybaseUrl = 'https://chat-room.skybase.co'
+//   const skybaseKey = 'public-anon-key'
+//   const skybase = createClient(skybaseUrl, skybaseKey)
 
 //   // Update multiple users
-//   const updatedUsers = await supabase
+//   const updatedUsers = await skybase
 //     .from('users')
 //     .eq('account_type', 'paid')
 //     .update({ highlight_color: 'gold' })
 //   `
 // const nodeTSExample = `
 //   import { NextApiRequest, NextApiResponse } from 'next';
-//   import { createClient } from '@supabase/supabase-js';
+//   import { createClient } from '@skybase/skybase-js';
 
-//   const supabase = createClient(
+//   const skybase = createClient(
 //     process.env.NEXT_PUBLIC_SUPABASE_URL,
 //     process.env.SUPABASE_SECRET_KEY
 //   );
@@ -212,7 +212,7 @@ export const updateExample: ExampleProps = {
 //   };
 
 //   export default async (req: NextApiRequest, res: NextApiResponse) => {
-//     const allOnlineUsers = await supabase
+//     const allOnlineUsers = await skybase
 //       .from<User>('users')
 //       .select('*')
 //       .eq('status', 'ONLINE');
@@ -221,16 +221,16 @@ export const updateExample: ExampleProps = {
 //   `
 
 // const umdExample = `
-//   <script src="https://unpkg.com/@supabase/supabase-js/umd/supabase.js"></script>
+//   <script src="https://unpkg.com/@skybase/skybase-js/umd/skybase.js"></script>
 
 //   <script>
 //     // Initialize
-//     const supabaseUrl = 'https://chat-room.supabase.co'
-//     const supabaseKey = 'public-anon-key'
-//     const supabase = Supabase.createClient(supabaseUrl, supabaseKey)
+//     const skybaseUrl = 'https://chat-room.skybase.co'
+//     const skybaseKey = 'public-anon-key'
+//     const skybase = Skybase.createClient(skybaseUrl, skybaseKey)
 
 //     // Get public rooms and their messages
-//     supabase
+//     skybase
 //       .from('rooms')
 //       .select(\`
 //         name,

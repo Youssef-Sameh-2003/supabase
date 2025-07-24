@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Database, EditIcon, TrashIcon } from 'lucide-react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'

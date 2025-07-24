@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { sortBy } from 'lodash'
 import { Loader, Search, X } from 'lucide-react'
 import { Fragment, useEffect, useState } from 'react'
@@ -103,7 +103,7 @@ export const SecretsManagement = () => {
             </div>
           </div>
           <div className="flex items-center gap-x-2">
-            <DocsButton href="https://supabase.com/docs/guides/database/vault" />
+            <DocsButton href="https://skybase.com/docs/guides/database/vault" />
             <ButtonTooltip
               type="primary"
               disabled={!canManageSecrets}

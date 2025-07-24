@@ -245,7 +245,7 @@ const CreateBucketModal = ({ visible, onClose }: CreateBucketModalProps) => {
                                     className="underline"
                                     target="_blank"
                                     rel="noreferrer"
-                                    href="https://forms.supabase.com/analytics-buckets"
+                                    href="https://forms.skybase.com/analytics-buckets"
                                   >
                                     here
                                   </a>
@@ -427,7 +427,7 @@ const CreateBucketModal = ({ visible, onClose }: CreateBucketModalProps) => {
               {icebergWrapperExtensionState === 'installed' ? (
                 <Label_Shadcn_ className="text-foreground-lighter leading-1 flex flex-col gap-y-2">
                   <p>
-                    <span>Supabase will setup a </span>
+                    <span>Skybase will setup a </span>
                     <a
                       href={`${BASE_PATH}/project/${ref}/integrations/iceberg_wrapper/overview`}
                       target="_blank"

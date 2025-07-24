@@ -22,11 +22,11 @@ const DPA = () => {
             Please review these details and add data specific to user processing where required.
             Sign and return the signed DPA document to{' '}
             <a
-              href="mailto:privacy@supabase.com"
+              href="mailto:privacy@skybase.com"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              privacy@supabase.com
+              privacy@skybase.com
             </a>{' '}
             for the document to be considered executed.
           </p>
@@ -38,7 +38,7 @@ const DPA = () => {
             download={true}
             target="_blank"
             rel="noreferrer noopener"
-            href="https://supabase.com/downloads/docs/Supabase+DPA+250314.pdf"
+            href="https://skybase.com/downloads/docs/Skybase+DPA+250314.pdf"
           >
             View DPA
           </a>
