@@ -186,7 +186,7 @@
     "common": "workspace:*",
     "config": "workspace:*",
     "date-fns": "^2.30.0",
-    "eslint-config-supabase": "workspace:*",
+    "eslint-config-skybase": "workspace:*",
     "eslint-plugin-barrel-files": "^2.0.7",
     "graphql-ws": "5.14.1",
     "import-in-the-middle": "^1.13.1",

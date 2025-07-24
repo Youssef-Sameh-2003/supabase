@@ -1,6 +1,6 @@
 # Open Graph (OG) Image Generator
 
-Generate OG Images for the sites at supabase.
+Generate OG Images for the sites at skybase.
 
 ## How to use
 

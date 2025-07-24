@@ -1,5 +1,5 @@
-# A string used to distinguish different Supabase projects on the same host. Defaults to the working
-# directory name when running `supabase init`.
+# A string used to distinguish different Skybase projects on the same host. Defaults to the working
+# directory name when running `skybase init`.
 project_id = "supabase"
 
 [remotes.prod]
