@@ -7,7 +7,7 @@ Since Edge Functions cannot run a Headless Browser instance due to resource cons
 ## Develop locally
 
 ```bash
-supabase functions serve --env-file ./supabase/.env.local --no-verify-jwt
+skybase functions serve --env-file ./skybase/.env.local --no-verify-jwt
 ```
 
 Navigate to http://localhost:54321/functions/v1/puppeteer
@@ -15,5 +15,5 @@ Navigate to http://localhost:54321/functions/v1/puppeteer
 ## Deploy
 
 ```bash
-supabase functions deploy puppeteer --no-verify-jwt
+skybase functions deploy puppeteer --no-verify-jwt
 ```

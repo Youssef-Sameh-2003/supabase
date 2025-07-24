@@ -2,12 +2,12 @@ openref: 0.1
 
 info:
   id: reference/dart
-  title: Supabase Dart Client
+  title: Skybase Dart Client
   description: |
 
-    Supabase Dart.
+    Skybase Dart.
   slugPrefix: '/'
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_dart_v2.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_dart_v2.yml
   libraries:
     - name: 'Dart'
       id: 'dart'
@@ -17,27 +17,27 @@ functions:
   - id: initializing
     title: 'Initializing'
     description: |
-      You can initialize Supabase with the static `initialize()` method of the `Supabase` class.
+      You can initialize Skybase with the static `initialize()` method of the `Skybase` class.
 
-      The Supabase client is your entrypoint to the rest of the Supabase functionality
-      and is the easiest way to interact with everything we offer within the Supabase ecosystem.
+      The Skybase client is your entrypoint to the rest of the Skybase functionality
+      and is the easiest way to interact with everything we offer within the Skybase ecosystem.
     params:
       - name: url
         isOptional: false
         type: string
-        description: The unique Supabase URL which is supplied when you create a new project in your project dashboard.
+        description: The unique Skybase URL which is supplied when you create a new project in your project dashboard.
       - name: anonKey
         isOptional: false
         type: string
-        description: The unique Supabase Key which is supplied when you create a new project in your project dashboard.
+        description: The unique Skybase Key which is supplied when you create a new project in your project dashboard.
       - name: headers
         isOptional: true
         type: Map<String, String>
-        description: Custom header to be passed to the Supabase client.
+        description: Custom header to be passed to the Skybase client.
       - name: httpClient
         isOptional: true
         type: Client
-        description: Custom http client to be used by the Supabase client.
+        description: Custom http client to be used by the Skybase client.
       - name: authOptions
         isOptional: true
         type: FlutterAuthClientOptions
@@ -63,7 +63,7 @@ functions:
           - name: schema
             isOptional: true
             type: String
-            description: Schema to query with the Supabase client. Defaults to `public`.
+            description: Schema to query with the Skybase client. Defaults to `public`.
       - name: realtimeClientOptions
         isOptional: true
         type: RealtimeClientOptions
@@ -88,23 +88,23 @@ functions:
         code: |
           ```dart
           Future<void> main() async {
-            await Supabase.initialize(
-              url: 'https://xyzcompany.supabase.co',
+            await Skybase.initialize(
+              url: 'https://xyzcompany.skybase.co',
               anonKey: 'public-anon-key',
             );
 
             runApp(MyApp());
           }
 
-          // Get a reference your Supabase client
-          final supabase = Supabase.instance.client;
+          // Get a reference your Skybase client
+          final skybase = Skybase.instance.client;
           ```
       - id: for-other-dart-projects
         name: For other Dart projects
         code: |
           ```dart
-          final supabase = SupabaseClient(
-            'https://xyzcompany.supabase.co',
+          final skybase = SkybaseClient(
+            'https://xyzcompany.skybase.co',
             'public-anon-key',
           );
           ```
@@ -114,11 +114,11 @@ functions:
     description: |
       Creates a new user.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://supabase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://skybase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://supabase.com/dashboard/project/_/auth/url-configuration).
+      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://skybase.com/dashboard/project/_/auth/url-configuration).
       - If signUp() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -157,7 +157,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signUp(
+          final AuthResponse res = await skybase.auth.signUp(
             email: 'example@email.com',
             password: 'example-password',
           );
@@ -247,7 +247,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signUp(
+          final AuthResponse res = await skybase.auth.signUp(
             phone: '123456789',
             password: 'example-password',
             channel: OtpChannel.sms,
@@ -258,7 +258,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signUp(
+          final AuthResponse res = await skybase.auth.signUp(
             email: 'example@email.com',
             password: 'example-password',
             data: {'username': 'my_user_name'},
@@ -273,10 +273,10 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signUp(
+          final AuthResponse res = await skybase.auth.signUp(
             email: 'example@email.com',
             password: 'example-password',
-            emailRedirectTo: 'com.supabase.myapp://callback',
+            emailRedirectTo: 'com.skybase.myapp://callback',
           );
           final Session? session = res.session;
           final User? user = res.user;
@@ -303,7 +303,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.signInAnonymously();
+          await skybase.auth.signInAnonymously();
           ```
         response: |
           ```json
@@ -349,7 +349,7 @@ functions:
         isSpotlight: false
         code: |
           ```dart
-          await supabase.auth.signInAnonymously(
+          await skybase.auth.signInAnonymously(
             data: {'hello': 'world'},
           );
           ```
@@ -382,7 +382,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signInWithPassword(
+          final AuthResponse res = await skybase.auth.signInWithPassword(
             email: 'example@email.com',
             password: 'example-password',
           );
@@ -470,7 +470,7 @@ functions:
         name: Sign in with phone and password
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.signInWithPassword(
+          final AuthResponse res = await skybase.auth.signInWithPassword(
             phone: '+13334445555',
             password: 'example-password',
           );
@@ -484,7 +484,7 @@ functions:
       - This method is used for passwordless sign-ins where an OTP is sent to the user's email or phone number.
       - If you're using an email, you can configure whether you want the user to receive a magiclink or an OTP.
       - If you're using phone, you can configure whether you want the user to receive an OTP.
-      - The magic link's destination URL is determined by the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://supabase.com/dashboard/project/_/auth/url-configuration).
+      - The magic link's destination URL is determined by the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://skybase.com/dashboard/project/_/auth/url-configuration).
     params:
       - name: email
         isOptional: true
@@ -523,9 +523,9 @@ functions:
           You can pass `emailRedirectTo` with a dynamic link to bring the users back to your app after they click on the magic link.
         code: |
           ```dart
-          await supabase.auth.signInWithOtp(
+          await skybase.auth.signInWithOtp(
             email: 'example@email.com',
-            emailRedirectTo: kIsWeb ? null : 'io.supabase.flutter://signin-callback/',
+            emailRedirectTo: kIsWeb ? null : 'io.skybase.flutter://signin-callback/',
           );
           ```
         response: |
@@ -540,7 +540,7 @@ functions:
         description: The user will be sent a SMS which contains an OTP. By default, a given user can only request an OTP once every 60 seconds.
         code: |
           ```dart
-          await supabase.auth.signInWithOtp(
+          await skybase.auth.signInWithOtp(
             phone: '+13334445555',
           );
           ```
@@ -550,7 +550,7 @@ functions:
         description: The user will be sent a WhatsApp message which contains an OTP. By default, a given user can only request an OTP once every 60 seconds. Note that a user will need to have a valid WhatsApp account that is linked to Twilio in order to use this feature.
         code: |
           ```dart
-          await supabase.auth.signInWithOtp(
+          await skybase.auth.signInWithOtp(
             phone: '+13334445555',
             channel: OtpChannel.whatsapp,
           );
@@ -588,17 +588,17 @@ functions:
           You can perform native Google sign in on Android and iOS using [google_sign_in](https://pub.dev/packages/google_sign_in).
           For platform specific settings, follow the instructions in the package README.
 
-          First, create client IDs for your app. You need to create a web client ID as well to perform Google sign-in with Supabase.
+          First, create client IDs for your app. You need to create a web client ID as well to perform Google sign-in with Skybase.
 
           - [Steps to obtain web client ID](https://developers.google.com/identity/sign-in/android/start-integrating#configure_a_project)
           - [Steps to obtain Android client ID](https://developers.google.com/identity/sign-in/android/start-integrating#configure_a_project)
           - [Steps to obtain iOS client ID](https://developers.google.com/identity/sign-in/ios/start-integrating#get_an_oauth_client_id)
 
-          Add the web client ID to the `Authentication -> Providers -> Google -> Client IDs` section in your Supabase dashboard
+          Add the web client ID to the `Authentication -> Providers -> Google -> Client IDs` section in your Skybase dashboard
         code: |
           ```dart
           import 'package:google_sign_in/google_sign_in.dart';
-          import 'package:supabase_flutter/supabase_flutter.dart';
+          import 'package:skybase_flutter/skybase_flutter.dart';
 
           const webClientId = '<web client ID that you registered on Google Cloud, for example my-web.apps.googleusercontent.com>';
 
@@ -620,7 +620,7 @@ functions:
             throw 'No ID Token found.';
           }
 
-          final response = await supabase.auth.signInWithIdToken(
+          final response = await skybase.auth.signInWithIdToken(
             provider: OAuthProvider.google,
             idToken: idToken,
             accessToken: accessToken,
@@ -687,15 +687,15 @@ functions:
           ```
       - id: sign-in-with-apple
         name: Native Apple Sign in
-        description: You need to [register your app ID with Apple](https://developer.apple.com/help/account/manage-identifiers/register-an-app-id/) with the `Sign In with Apple` capability selected, and add the bundle ID to your Supabase dashboard in `Authentication -> Providers -> Apple` before performing native Apple sign in.
+        description: You need to [register your app ID with Apple](https://developer.apple.com/help/account/manage-identifiers/register-an-app-id/) with the `Sign In with Apple` capability selected, and add the bundle ID to your Skybase dashboard in `Authentication -> Providers -> Apple` before performing native Apple sign in.
         code: |
           ```dart
           import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-          import 'package:supabase_flutter/supabase_flutter.dart';
+          import 'package:skybase_flutter/skybase_flutter.dart';
           import 'package:crypto/crypto.dart';
 
           /// Performs Apple sign in on iOS or macOS
-          final rawNonce = supabase.auth.generateRawNonce();
+          final rawNonce = skybase.auth.generateRawNonce();
           final hashedNonce = sha256.convert(utf8.encode(rawNonce)).toString();
 
           final credential = await SignInWithApple.getAppleIDCredential(
@@ -713,7 +713,7 @@ functions:
             );
           }
 
-          final response = await supabase.auth.signInWithIdToken(
+          final response = await skybase.auth.signInWithIdToken(
             provider: OAuthProvider.apple,
             idToken: idToken,
             nonce: rawNonce,
@@ -725,7 +725,7 @@ functions:
       Signs the user in using third-party OAuth providers.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Supabase supports many different [third-party providers](https://supabase.com/docs/guides/auth#providers).
+      - Skybase supports many different [third-party providers](https://skybase.com/docs/guides/auth#providers).
     params:
       - name: provider
         isOptional: false
@@ -753,7 +753,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.signInWithOAuth(
+          await skybase.auth.signInWithOAuth(
             OAuthProvider.github,
             redirectTo: kIsWeb ? null : 'my.scheme://my-host', // Optionally set the redirect link to bring back the user via deeplink.
             authScreenLaunchMode:
@@ -767,9 +767,9 @@ functions:
           Note that `redirectTo` should be null for Flutter Web.
         code: |
           ```dart
-          await supabase.auth.signInWithOAuth(
+          await skybase.auth.signInWithOAuth(
             OAuthProvider.github,
-            redirectTo: kIsWeb ? null : 'io.supabase.flutter://reset-callback/',
+            redirectTo: kIsWeb ? null : 'io.skybase.flutter://reset-callback/',
           );
           ```
       - id: sign-in-with-scopes
@@ -779,20 +779,20 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider.
         code: |
           ```dart
-          await supabase.auth.signInWithOAuth(
+          await skybase.auth.signInWithOAuth(
             OAuthProvider.github,
             scopes: 'repo gist notifications'
           );
           ...
           // after user comes back from signin flow
 
-          final Session? session = supabase.auth.currentSession;
+          final Session? session = skybase.auth.currentSession;
           final String? oAuthToken = session?.providerToken;
           ```
   - id: sign-in-with-sso
     title: 'signInWithSSO()'
     notes: |
-      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/supabase-sso) to do this.
+      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/skybase-sso) to do this.
       - If you've associated an email domain to the identity provider, you can use the `domain` property to start a sign-in flow.
       - In case you need to use a different way to start the authentication flow with an identity provider, you can use the `providerId` property. For example:
           - Mapping specific user email addresses with an identity provider.
@@ -824,7 +824,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.signInWithSSO(
+          await skybase.auth.signInWithSSO(
             domain: 'company.com',
           );
           ```
@@ -833,7 +833,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.signInWithSSO(
+          await skybase.auth.signInWithSSO(
             providerId: '21648a9d-8d5a-4555-a9d1-d6375dc14e92',
           );
           ```
@@ -854,7 +854,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.signOut();
+          await skybase.auth.signOut();
           ```
   - id: verify-otp
     title: 'verifyOtp()'
@@ -896,7 +896,7 @@ functions:
         isSpotlight: false
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.verifyOTP(
+          final AuthResponse res = await skybase.auth.verifyOTP(
             type: OtpType.signup,
             token: token,
             phone: '+13334445555',
@@ -986,7 +986,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.verifyOTP(
+          final AuthResponse res = await skybase.auth.verifyOTP(
             type: OtpType.sms,
             token: '111111',
             phone: '+13334445555',
@@ -1004,7 +1004,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final Session? session = supabase.auth.currentSession;
+          final Session? session = skybase.auth.currentSession;
           ```
         response: |
           ```json
@@ -1057,7 +1057,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final User? user = supabase.auth.currentUser;
+          final User? user = skybase.auth.currentUser;
           ```
         response: |
           ```json
@@ -1102,7 +1102,7 @@ functions:
     notes: |
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://supabase.com/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://skybase.com/dashboard/project/_/auth/providers).
     params:
       - name: attributes
         isOptional: false
@@ -1140,7 +1140,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final UserResponse res = await supabase.auth.updateUser(
+          final UserResponse res = await skybase.auth.updateUser(
             UserAttributes(
               email: 'example@email.com',
             ),
@@ -1190,7 +1190,7 @@ functions:
         isSpotlight: false
         code: |
           ```dart
-          final UserResponse res = await supabase.auth.updateUser(
+          final UserResponse res = await skybase.auth.updateUser(
             UserAttributes(
               password: 'new password',
             ),
@@ -1202,7 +1202,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final UserResponse res = await supabase.auth.updateUser(
+          final UserResponse res = await skybase.auth.updateUser(
             UserAttributes(
               data: { 'hello': 'world' },
             ),
@@ -1215,7 +1215,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          supabase.auth.updateUser(UserAttributes(
+          skybase.auth.updateUser(UserAttributes(
             email: 'example@email.com',
             nonce: '123456',
           ));
@@ -1232,7 +1232,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final identities = await supabase.auth.getUserIdentities();
+          final identities = await skybase.auth.getUserIdentities();
           ```
         response: |
           ```json
@@ -1289,7 +1289,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.linkIdentity(OAuthProvider.google);
+          await skybase.auth.linkIdentity(OAuthProvider.google);
           ```
   - id: unlink-identity
     title: 'unlinkIdentity()'
@@ -1312,7 +1312,7 @@ functions:
         code: |
           ```dart
           // retrieve all identites linked to a user
-          final identities = await supabase.auth.getUserIdentities();
+          final identities = await skybase.auth.getUserIdentities();
 
           // find the google identity
           final googleIdentity = identities.firstWhere(
@@ -1320,7 +1320,7 @@ functions:
           );
 
           // unlink the google identity
-          await supabase.auth.unlinkIdentity(googleIdentity);
+          await skybase.auth.unlinkIdentity(googleIdentity);
           ```
   - id: send-password-reauthentication
     title: 'reauthenticate()'
@@ -1334,7 +1334,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.reauthenticate();
+          await skybase.auth.reauthenticate();
           ```
   - id: resend-email-or-phone-otps
     title: 'resend()'
@@ -1350,7 +1350,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final ResendResponse res = await supabase.auth.resend(
+          final ResendResponse res = await skybase.auth.resend(
             type: OtpType.signup,
             email: 'email@example.com',
           );
@@ -1367,7 +1367,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final authSubscription = supabase.auth.onAuthStateChange.listen((data) {
+          final authSubscription = skybase.auth.onAuthStateChange.listen((data) {
             final AuthChangeEvent event = data.event;
             final Session? session = data.session;
 
@@ -1397,7 +1397,7 @@ functions:
         name: Listen to a specific event
         code: |
           ```dart
-          final authSubscription = supabase.auth.onAuthStateChange.listen((data) {
+          final authSubscription = skybase.auth.onAuthStateChange.listen((data) {
             final AuthChangeEvent event = data.event;
             if (event == AuthChangeEvent.signedIn) {
               // handle signIn
@@ -1408,7 +1408,7 @@ functions:
         name: Unsubscribe from auth subscription
         code: |
           ```dart
-          final authSubscription = supabase.auth.onAuthStateChange.listen((data) {});
+          final authSubscription = skybase.auth.onAuthStateChange.listen((data) {});
 
           authSubscription.cancel();
           ```
@@ -1420,9 +1420,9 @@ functions:
       Sends a password reset request to an email address. When the user clicks the reset link in the email they are redirected back to your application. Prompt the user for a new password and call auth.updateUser():
 
       ```dart
-      await supabase.auth.resetPasswordForEmail(
+      await skybase.auth.resetPasswordForEmail(
         'sample@email.com',
-        redirectTo: kIsWeb ? null : 'io.supabase.flutter://reset-callback/',
+        redirectTo: kIsWeb ? null : 'io.skybase.flutter://reset-callback/',
       );
       ```
     examples:
@@ -1432,9 +1432,9 @@ functions:
         code: |
           `redirectTo` is used to open the app via deeplink when user opens the password reset email.
           ```dart
-          await supabase.auth.resetPasswordForEmail(
+          await skybase.auth.resetPasswordForEmail(
             'sample@email.com',
-            redirectTo: kIsWeb ? null : 'io.supabase.flutter://reset-callback/',
+            redirectTo: kIsWeb ? null : 'io.skybase.flutter://reset-callback/',
           );
           ```
   - id: set-session
@@ -1456,8 +1456,8 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final refreshToken = supabase.currentSession?.refreshToken ?? '';
-          final AuthResponse response = await supabase.auth.setSession(refreshToken);
+          final refreshToken = skybase.currentSession?.refreshToken ?? '';
+          final AuthResponse response = await skybase.auth.setSession(refreshToken);
 
           final session = res.session;
           ```
@@ -1548,7 +1548,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final AuthResponse res = await supabase.auth.refreshSession();
+          final AuthResponse res = await skybase.auth.refreshSession();
           final session = res.session;
           ```
         response: |
@@ -1631,13 +1631,13 @@ functions:
   - id: auth-mfa-api
     title: 'Overview'
     notes: |
-      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `supabase.auth.mfa` namespace.
+      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `skybase.auth.mfa` namespace.
 
       Currently, we only support time-based one-time password (TOTP) as the 2nd factor. We don't support recovery codes but we allow users to enroll more than 1 TOTP factor, with an upper limit of 10.
 
       Having a 2nd TOTP factor for recovery means the user doesn't have to store their recovery codes. It also reduces the attack surface since the recovery factor is usually time-limited and not a single static code.
 
-      Learn more about implementing MFA on your application on our guide [here](https://supabase.com/docs/guides/auth/auth-mfa#overview).
+      Learn more about implementing MFA on your application on our guide [here](https://skybase.com/docs/guides/auth/auth-mfa#overview).
   - id: mfa-enroll
     title: 'mfa.enroll()'
     notes: |
@@ -1667,7 +1667,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.mfa.enroll(factorType: FactorType.totp);
+          final res = await skybase.auth.mfa.enroll(factorType: FactorType.totp);
 
           final qrCodeUrl = res.totp.qrCode;
           ```
@@ -1700,7 +1700,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.mfa.challenge(
+          final res = await skybase.auth.mfa.challenge(
             factorId: '34e770dd-9ff9-416c-87fa-43b31d7ef225',
           );
           ```
@@ -1735,7 +1735,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.mfa.verify(
+          final res = await skybase.auth.mfa.verify(
             factorId: '34e770dd-9ff9-416c-87fa-43b31d7ef225',
             challengeId: '4034ae6f-a8ce-4fb5-8ee5-69a5863a7c15',
             code: '123456',
@@ -1815,7 +1815,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.mfa.challengeAndVerify(
+          final res = await skybase.auth.mfa.challengeAndVerify(
             factorId: '34e770dd-9ff9-416c-87fa-43b31d7ef225',
             code: '123456',
           );
@@ -1889,7 +1889,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.mfa.unenroll(
+          final res = await skybase.auth.mfa.unenroll(
             '34e770dd-9ff9-416c-87fa-43b31d7ef225',
           );
           ```
@@ -1904,7 +1904,7 @@ functions:
     notes: |
       Returns the Authenticator Assurance Level (AAL) for the active session.
       - Authenticator Assurance Level (AAL) is the measure of the strength of an authentication mechanism.
-      - In Supabase, having an AAL of `aal1` means the user has signed in with their first factor, such as email, password, or OAuth sign-in. An AAL of `aal2` means the user has also signed in with their second factor, such as a time-based, one-time-password (TOTP).
+      - In Skybase, having an AAL of `aal1` means the user has signed in with their first factor, such as email, password, or OAuth sign-in. An AAL of `aal2` means the user has also signed in with their second factor, such as a time-based, one-time-password (TOTP).
       - If the user has a verified factor, the `nextLevel` field returns `aal2`. Otherwise, it returns `aal1`.
     examples:
       - id: get-aal
@@ -1912,7 +1912,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = supabase.auth.mfa.getAuthenticatorAssuranceLevel();
+          final res = skybase.auth.mfa.getAuthenticatorAssuranceLevel();
           final currentLevel = res.currentLevel;
           final nextLevel = res.nextLevel;
           final currentAuthenticationMethods = res.currentAuthenticationMethods;
@@ -1933,7 +1933,7 @@ functions:
   - id: admin-api
     title: 'Overview'
     notes: |
-      - Any method under the `supabase.auth.admin` namespace requires a `service_role` key.
+      - Any method under the `skybase.auth.admin` namespace requires a `service_role` key.
       - These methods are considered admin methods and should be called on a trusted server. Never expose your `service_role` key in the Flutter app.
     examples:
       - id: create-auth-admin-client
@@ -1941,7 +1941,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final supabase = SupabaseClient(supabaseUrl, serviceRoleKey);
+          final skybase = SkybaseClient(skybaseUrl, serviceRoleKey);
           ```
   - id: get-user-by-id
     title: 'getUserById()'
@@ -1960,7 +1960,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.admin.getUserById(userId);
+          final res = await skybase.auth.admin.getUserById(userId);
           final user = res.user;
           ```
         response: |
@@ -2022,7 +2022,7 @@ functions:
         code: |
           ```dart
           // Returns the first 50 users.
-          final List<User> users = await supabase.auth.admin.listUsers();
+          final List<User> users = await skybase.auth.admin.listUsers();
           ```
         response: |
           ```json
@@ -2068,7 +2068,7 @@ functions:
         code: |
           ```dart
           // Returns the 101th - 200th users.
-          final List<User> res = await supabase.auth.admin.listUsers(
+          final List<User> res = await skybase.auth.admin.listUsers(
             page: 2,
             perPage: 100,
           );
@@ -2124,7 +2124,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.admin.createUser(AdminUserAttributes(
+          final res = await skybase.auth.admin.createUser(AdminUserAttributes(
             email: 'user@email.com',
             password: 'password',
             userMetadata: {'name': 'Yoda'},
@@ -2172,7 +2172,7 @@ functions:
         name: Auto-confirm the user's email
         code: |
           ```dart
-          final res = await supabase.auth.admin.createUser(AdminUserAttributes(
+          final res = await skybase.auth.admin.createUser(AdminUserAttributes(
             email: 'user@email.com',
             emailConfirm: true,
           ));
@@ -2181,7 +2181,7 @@ functions:
         name: Auto-confirm the user's phone number
         code: |
           ```dart
-          final res = await supabase.auth.admin.createUser(AdminUserAttributes(
+          final res = await skybase.auth.admin.createUser(AdminUserAttributes(
             phone: '1234567890',
             phoneConfirm: true,
           ));
@@ -2202,7 +2202,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase.auth.admin
+          await skybase.auth.admin
               .deleteUser('715ed5db-f090-4b8c-a067-640ecee36aa0');
           ```
   - id: invite-user-by-email
@@ -2228,7 +2228,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final UserResponse res = await supabase.auth.admin
+          final UserResponse res = await skybase.auth.admin
               .inviteUserByEmail('email@example.com');
           final User? user = res.user;
           ```
@@ -2275,7 +2275,7 @@ functions:
     notes: |
       Generates email links and OTPs to be sent via a custom email provider.
       - The following types can be passed into `generateLink()`: `signup`, `magiclink`, `invite`, `recovery`, `emailChangeCurrent`, `emailChangeNew`, `phoneChange`.
-      - `generateLink()` only generates the email link for `email_change_email` if the "Secure email change" setting is enabled under the "Email" provider in your Supabase project.
+      - `generateLink()` only generates the email link for `email_change_email` if the "Secure email change" setting is enabled under the "Email" provider in your Skybase project.
       - `generateLink()` handles the creation of the user for `signup`, `invite` and `magiclink`.
     params:
       - name: type
@@ -2304,7 +2304,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.auth.admin.generateLink(
+          final res = await skybase.auth.admin.generateLink(
             type: GenerateLinkType.signup,
             email: 'email@example.com',
             password: 'secret',
@@ -2406,7 +2406,7 @@ functions:
         isSpotlight: false
         code: |
           ```dart
-          await supabase.auth.admin.updateUserById(
+          await skybase.auth.admin.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             attributes: AdminUserAttributes(
               email: 'new@email.com',
@@ -2416,7 +2416,7 @@ functions:
   - id: invoke
     title: 'invoke()'
     description: |
-      Invokes a Supabase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
+      Invokes a Skybase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
     notes: |
       - Requires an Authorization header.
       - Invoke params generally match the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) spec.
@@ -2443,7 +2443,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.functions.invoke('hello', body: {'foo': 'baa'});
+          final res = await skybase.functions.invoke('hello', body: {'foo': 'baa'});
           final data = res.data;
           ```
       - id: parsing-custom-headers
@@ -2453,11 +2453,11 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final res = await supabase.functions.invoke(
+          final res = await skybase.functions.invoke(
             'hello',
             body: {'foo': 'baa'},
             headers: {
-              'Authorization': 'Bearer ${supabase.auth.currentSession?.accessToken}'
+              'Authorization': 'Bearer ${skybase.auth.currentSession?.accessToken}'
             },
           );
           ```
@@ -2466,10 +2466,10 @@ functions:
       Perform a SELECT query on the table or view.
     title: 'Fetch data: select()'
     notes: |
-      - By default, Supabase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - By default, Skybase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `select()` can be combined with [Filters](/docs/reference/dart/using-filters)
       - `select()` can be combined with [Modifiers](/docs/reference/dart/using-modifiers)
-      - `apikey` is a reserved keyword if you're using the [Supabase Platform](/docs/guides/platform) and [should be avoided as a column name](https://github.com/supabase/supabase/issues/5465).
+      - `apikey` is a reserved keyword if you're using the [Skybase Platform](/docs/guides/platform) and [should be avoided as a column name](https://github.com/skybase/skybase/issues/5465).
     params:
       - name: columns
         isOptional: true
@@ -2481,7 +2481,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select();
           ```
@@ -2520,7 +2520,7 @@ functions:
         description: You can select specific fields from your tables.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('''
               name
@@ -2558,7 +2558,7 @@ functions:
         description: If your database has relationships, you can query related tables too.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('''
               name,
@@ -2613,7 +2613,7 @@ functions:
         name: Query referenced tables through a join table
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .select('''
               name,
@@ -2703,7 +2703,7 @@ functions:
           columns as `to` and `from`.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('messages')
             .select('''
               content,
@@ -2753,7 +2753,7 @@ functions:
         name: Filtering through referenced tables
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name, orchestral_sections(*)')
             .eq('orchestral_sections.name', 'percussion');
@@ -2806,7 +2806,7 @@ functions:
           Allowed values for count option are [CountOption.exact](https://postgrest.org/en/stable/api.html#exact-count), [CountOptionplanned](https://postgrest.org/en/stable/api.html#planned-count) and [CountOption.estimated](https://postgrest.org/en/stable/api.html#estimated-count).
         code: |
           ```dart
-          final res = await supabase
+          final res = await skybase
               .from('instruments')
               .select('name')
               .count(CountOption.exact);
@@ -2857,7 +2857,7 @@ functions:
           [PostgREST docs](http://postgrest.org/en/v7.0.0/api.html#json-columns) for more details.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .select('''
               id, name,
@@ -2893,7 +2893,7 @@ functions:
         name: Querying referenced table with inner join
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('name, instruments!inner(name)')
             .eq('orchestral_sections.name', 'strings')
@@ -2940,7 +2940,7 @@ functions:
         name: Switching schemas per query
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .schema('myschema')
             .from('mytable')
             .select();
@@ -2985,7 +2985,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase
+          await skybase
               .from('cities')
               .insert({'name': 'The Shire', 'country_id': 554});
           ```
@@ -3001,7 +3001,7 @@ functions:
         code: |
           ```dart
           final List<Map<String, dynamic>> data =
-                  await supabase.from('cities').insert([
+                  await skybase.from('cities').insert([
                 {'name': 'The Shire', 'country_id': 554},
                 {'name': 'Rohan', 'country_id': 555},
               ]).select();
@@ -3025,7 +3025,7 @@ functions:
         name: Bulk create
         code: |
           ```dart
-          await supabase.from('cities').insert([
+          await skybase.from('cities').insert([
             {'name': 'The Shire', 'country_id': 554},
             {'name': 'Rohan', 'country_id': 555},
           ]);
@@ -3063,7 +3063,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase
+          await skybase
             .from('instruments')
             .update({ 'name': 'piano' })
             .eq('id', 1);
@@ -3083,7 +3083,7 @@ functions:
         name: Update a record and return it
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .update({ 'name': 'piano' })
             .eq('id', 1)
@@ -3114,7 +3114,7 @@ functions:
         name: Update JSON data
         code: |
           ```dart
-          await supabase
+          await skybase
             .from('users')
             .update({
               'address': {
@@ -3186,7 +3186,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .upsert({ 'id': 1, 'name': 'piano' })
             .select();
@@ -3215,7 +3215,7 @@ functions:
         name: Bulk Upsert your data
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .upsert([
               { 'id': 1, 'name': 'piano' },
@@ -3253,7 +3253,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .upsert({ 'id': 42, 'handle': 'saoirse', 'display_name': 'Saoirse' }, { onConflict: 'handle' })
             .select();
@@ -3303,7 +3303,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          await supabase
+          await skybase
             .from('countries')
             .delete()
             .eq('id', 1);
@@ -3323,7 +3323,7 @@ functions:
         name: Delete multiple records
         code: |
           ```dart
-          await supabase
+          await skybase
             .from('countries')
             .delete()
             .inFilter('id', [1, 2, 3])
@@ -3343,7 +3343,7 @@ functions:
         name: Fetch deleted records
         code: |
           ```dart
-          final List<Map<String,dynamic>> data = await supabase
+          final List<Map<String,dynamic>> data = await skybase
             .from('cities')
             .delete()
             .match({ 'id': 666 })
@@ -3371,7 +3371,7 @@ functions:
         name: Call a Postgres function without arguments
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .rpc('hello_world');
           ```
         data:
@@ -3391,7 +3391,7 @@ functions:
         name: Call a Postgres function with arguments
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .rpc('echo_city', params: { 'say': '👋' });
           ```
         data:
@@ -3410,7 +3410,7 @@ functions:
         name: Bulk processing
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .rpc('add_one_each', params: { arr: [1, 2, 3] });
           ```
         data:
@@ -3435,7 +3435,7 @@ functions:
         name: Call a Postgres function with filters
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .rpc('list_stored_countries')
             .eq('id', 1)
             .single();
@@ -3480,7 +3480,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries')
               .onPostgresChanges(
                   event: PostgresChangeEvent.all,
@@ -3495,7 +3495,7 @@ functions:
         name: Listen to inserts
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries')
               .onPostgresChanges(
                   event: PostgresChangeEvent.insert,
@@ -3509,7 +3509,7 @@ functions:
       - id: listen-to-updates
         name: Listen to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -3517,7 +3517,7 @@ functions:
           ```
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries')
               .onPostgresChanges(
                   event: PostgresChangeEvent.update,
@@ -3531,7 +3531,7 @@ functions:
       - id: listen-to-deletes
         name: Listen to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -3539,7 +3539,7 @@ functions:
           ```
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries')
               .onPostgresChanges(
                   event: PostgresChangeEvent.delete,
@@ -3555,7 +3555,7 @@ functions:
         description: You can chain listeners if you want to listen to multiple events for each table.
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries')
               .onPostgresChanges(
                   event: PostgresChangeEvent.insert,
@@ -3578,7 +3578,7 @@ functions:
         description: You can listen to individual rows by using the `filter` parameter passing a `PostgresChangeFilter` object with `PostgresChangeFilterType.eq` as `type`.
         code: |
           ```dart
-          supabase
+          skybase
               .channel('public:countries:id=eq.200')
               .onPostgresChanges(
                   event: PostgresChangeEvent.delete,
@@ -3598,7 +3598,7 @@ functions:
         name: Listen to broadcast messages
         code: |
           ```dart
-          supabase
+          skybase
               .channel('room1')
               .onBroadcast(
                   event: 'cursor-pos',
@@ -3611,7 +3611,7 @@ functions:
         name: Listen to presence events
         code: |
           ```dart
-          final channel = supabase.channel('room1');
+          final channel = skybase.channel('room1');
 
           channel.onPresenceSync((payload) {
             print('Synced presence state: ${channel.presenceState()}');
@@ -3630,14 +3630,14 @@ functions:
       Unsubscribes and removes Realtime channel from Realtime client.
     title: 'removeChannel()'
     notes: |
-      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
       - id: removes-a-channel
         name: Remove a channel
         isSpotlight: true
         code: |
           ```dart
-          final status = await supabase.removeChannel(channel);
+          final status = await skybase.removeChannel(channel);
           ```
 
   - id: remove-all-channels
@@ -3645,14 +3645,14 @@ functions:
       Unsubscribes and removes all Realtime channels from Realtime client.
     title: 'removeAllChannels()'
     notes: |
-      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
       - id: remove-all-channels
         name: Remove all channels
         isSpotlight: true
         code: |
           ```dart
-          final statuses = await supabase.removeAllChannels();
+          final statuses = await skybase.removeAllChannels();
           ```
 
   - id: get-channels
@@ -3665,7 +3665,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final channels = supabase.getChannels();
+          final channels = skybase.getChannels();
           ```
 
   - id: stream
@@ -3690,7 +3690,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          supabase.from('countries')
+          skybase.from('countries')
             .stream(primaryKey: ['id'])
             .listen((List<Map<String, dynamic>> data) {
             // Do something awesome with the data
@@ -3700,7 +3700,7 @@ functions:
         name: With filter, order and limit
         code: |
           ```dart
-          supabase.from('countries')
+          skybase.from('countries')
             .stream(primaryKey: ['id'])
             .eq('id', 120)
             .order('name')
@@ -3710,7 +3710,7 @@ functions:
         name: With an IN filter
         code: |
           ```dart
-          supabase.from('countries')
+          skybase.from('countries')
             .stream(primaryKey: ['id'])
             .inFilter('id', [1, 2, 3])
             .order('name')
@@ -3722,7 +3722,7 @@ functions:
           When using `stream()` with a `StreamBuilder` within your Flutter application, make sure to store your stream in a variable to prevent refetching upon rebuilding.
         code: |
           ```dart
-          final supabase = Supabase.instance.client;
+          final skybase = Skybase.instance.client;
 
           class MyWidget extends StatefulWidget {
             const MyWidget({Key? key}) : super(key: key);
@@ -3733,7 +3733,7 @@ functions:
 
           class _MyWidgetState extends State<MyWidget> {
             // Persist the stream in a local variable to prevent refetching upon rebuilds
-            final _stream = supabase.from('countries').stream(primaryKey: ['id']);
+            final _stream = skybase.from('countries').stream(primaryKey: ['id']);
 
             @override
             Widget build(BuildContext context) {
@@ -3755,14 +3755,14 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     examples:
       - id: list-buckets
         name: List buckets
         isSpotlight: true
         code: |
           ```dart
-          final List<Bucket> buckets = await supabase
+          final List<Bucket> buckets = await skybase
             .storage
             .listBuckets();
           ```
@@ -3792,7 +3792,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3804,7 +3804,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final Bucket bucket = await supabase
+          final Bucket bucket = await skybase
             .storage
             .getBucket('avatars');
           ```
@@ -3831,7 +3831,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `insert`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3860,7 +3860,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String bucketId = await supabase
+          final String bucketId = await skybase
             .storage
             .createBucket('avatars');
           ```
@@ -3877,7 +3877,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: `select` and `delete`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3889,7 +3889,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String res = await supabase
+          final String res = await skybase
             .storage
             .emptyBucket('avatars');
           ```
@@ -3905,7 +3905,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `update`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3934,7 +3934,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String res = await supabase
+          final String res = await skybase
             .storage
             .updateBucket('avatars', const BucketOptions(public: false));
           ```
@@ -3951,7 +3951,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select` and `delete`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3963,7 +3963,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String res = await supabase
+          final String res = await skybase
             .storage
             .deleteBucket('avatars');
           ```
@@ -3980,7 +3980,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `insert`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -3997,7 +3997,7 @@ functions:
           - name: cacheControl
             isOptional: true
             type: String
-            description: The number of seconds the asset is cached in the browser and in the Supabase CDN. This is set in the `Cache-Control` header as `max-age=<seconds>`. Defaults to 3600 seconds.
+            description: The number of seconds the asset is cached in the browser and in the Skybase CDN. This is set in the `Cache-Control` header as `max-age=<seconds>`. Defaults to 3600 seconds.
           - name: upsert
             isOptional: true
             type: bool
@@ -4021,7 +4021,7 @@ functions:
         code: |
           ```dart
           final avatarFile = File('path/to/file');
-          final String fullPath = await supabase.storage.from('avatars').upload(
+          final String fullPath = await skybase.storage.from('avatars').upload(
                 'public/avatar1.png',
                 avatarFile,
                 fileOptions: const FileOptions(cacheControl: '3600', upsert: false),
@@ -4036,7 +4036,7 @@ functions:
         code: |
           ```dart
           final Uint8List avatarFile = file.bytes;
-          final String fullPath = await supabase.storage.from('avatars').uploadBinary(
+          final String fullPath = await skybase.storage.from('avatars').uploadBinary(
                 'public/avatar1.png',
                 avatarFile,
                 fileOptions: const FileOptions(cacheControl: '3600', upsert: false),
@@ -4055,7 +4055,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `update` and `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4072,7 +4072,7 @@ functions:
           - name: cacheControl
             isOptional: true
             type: String
-            description: The number of seconds the asset is cached in the browser and in the Supabase CDN. This is set in the `Cache-Control` header as `max-age=<seconds>`. Defaults to 3600 seconds.
+            description: The number of seconds the asset is cached in the browser and in the Skybase CDN. This is set in the `Cache-Control` header as `max-age=<seconds>`. Defaults to 3600 seconds.
           - name: upsert
             isOptional: true
             type: bool
@@ -4096,7 +4096,7 @@ functions:
         code: |
           ```dart
           final avatarFile = File('path/to/local/file');
-          final String path = await supabase.storage.from('avatars').update(
+          final String path = await skybase.storage.from('avatars').update(
                 'public/avatar1.png',
                 avatarFile,
                 fileOptions: const FileOptions(cacheControl: '3600', upsert: false),
@@ -4111,7 +4111,7 @@ functions:
         code: |
           ```dart
           final Uint8List avatarFile = file.bytes;
-          final String path = await supabase.storage.from('avatars').updateBinary(
+          final String path = await skybase.storage.from('avatars').updateBinary(
                 'public/avatar1.png',
                 avatarFile,
                 fileOptions: const FileOptions(cacheControl: '3600', upsert: false),
@@ -4130,7 +4130,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `update` and `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: fromPath
         isOptional: false
@@ -4146,7 +4146,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String result = await supabase
+          final String result = await skybase
             .storage
             .from('avatars')
             .move('public/avatar1.png', 'private/avatar2.png');
@@ -4164,7 +4164,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4205,7 +4205,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String signedUrl = await supabase
+          final String signedUrl = await skybase
             .storage
             .from('avatars')
             .createSignedUrl('avatar1.png', 60);
@@ -4214,7 +4214,7 @@ functions:
         name: With transform
         code: |
           ```dart
-          final String signedUrl = await supabase
+          final String signedUrl = await skybase
             .storage
             .from('avatars')
             .createSignedUrl(
@@ -4228,7 +4228,7 @@ functions:
           ```
         response: |
           ```json
-          'https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>''
+          'https://example.skybase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>''
           ```
 
   - id: from-get-public-url
@@ -4236,11 +4236,11 @@ functions:
       Retrieve URLs for assets in public buckets
     title: 'from.getPublicUrl()'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/dart/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/dart/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4277,21 +4277,21 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final String publicUrl = supabase
+          final String publicUrl = skybase
             .storage
             .from('public-bucket')
             .getPublicUrl('avatar1.png');
           ```
         response: |
           ```json
-          'https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
+          'https://example.skybase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
           ```
       - id: returns-the-url-for-an-asset-in-a-public-bucket-with-transform
         name: With transform
         isSpotlight: true
         code: |
           ```dart
-          final String publicUrl = await supabase
+          final String publicUrl = await skybase
             .storage
             .from('public-bucket')
             .getPublicUrl(
@@ -4304,7 +4304,7 @@ functions:
           ```
         response: |
           ```json
-          'https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
+          'https://example.skybase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
           ```
 
   - id: from-download
@@ -4315,7 +4315,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4352,7 +4352,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final Uint8List file = await supabase
+          final Uint8List file = await skybase
             .storage
             .from('avatars')
             .download('avatar1.png');
@@ -4366,7 +4366,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final Uint8List file = await supabase
+          final Uint8List file = await skybase
             .storage
             .from('avatars')
             .download(
@@ -4390,7 +4390,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `delete` and `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: paths
         isOptional: false
@@ -4402,7 +4402,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final List<FileObject> objects = await supabase
+          final List<FileObject> objects = await skybase
             .storage
             .from('avatars')
             .remove(['avatar1.png']);
@@ -4436,7 +4436,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://supabase.com/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://skybase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4476,7 +4476,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final List<FileObject> objects = await supabase
+          final List<FileObject> objects = await skybase
             .storage
             .from('avatars')
             .list();
@@ -4520,7 +4520,7 @@ functions:
         name: With `upsert()`
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .upsert({ 'id': 1, 'name': 'piano' })
             .select();
@@ -4574,7 +4574,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('id, name')
             .order('id', ascending: false);
@@ -4613,7 +4613,7 @@ functions:
         name: On a referenced table
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
               .from('orchestral_sections')
               .select('''
                 name,
@@ -4670,7 +4670,7 @@ functions:
         name: Order parent table by a referenced table
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
               .from('instruments')
               .select('''
                 name,
@@ -4735,7 +4735,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name')
             .limit(1);
@@ -4765,7 +4765,7 @@ functions:
         name: On a referenced table
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('''
               name,
@@ -4833,7 +4833,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name')
             .range(0, 1);
@@ -4872,7 +4872,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name')
             .limit(1)
@@ -4904,7 +4904,7 @@ functions:
         name: With `select()`
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .eq('name', 'guzheng')
@@ -4936,7 +4936,7 @@ functions:
         name: Return data as CSV
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .csv();
@@ -4998,7 +4998,7 @@ functions:
         name: Get the execution plan
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .explain();
@@ -5031,7 +5031,7 @@ functions:
         name: Get the execution plan with analyze and verbose
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .explain(analyze:true, verbose:true);
@@ -5082,12 +5082,12 @@ functions:
           [modifiers](/docs/reference/dart/using-modifiers).
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('cities')
             .select('name, country_id')
             .eq('name', 'The Shire');  // Correct
 
-          final data = await supabase
+          final data = await skybase
             .from('cities')
             .eq('name', 'The Shire')  // Incorrect
             .select('name, country_id');
@@ -5098,7 +5098,7 @@ functions:
           Filters can be chained together to produce advanced queries as shown in the example code.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('cities')
             .select('name, country_id')
             .gte('population', 1000)
@@ -5114,7 +5114,7 @@ functions:
           final filterPopLow = 1000;
           final filterPopHigh = 10000;
 
-          var query = supabase
+          var query = skybase
             .from('cities')
             .select('name, country_id');
 
@@ -5156,7 +5156,7 @@ functions:
           ```
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .select()
             .eq('address->postcode', 90210);
@@ -5165,7 +5165,7 @@ functions:
         name: Filter Referenced Tables
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('''
               name,
@@ -5241,7 +5241,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name')
             .or('id.eq.2,name.eq.cello');
@@ -5274,7 +5274,7 @@ functions:
         name: Use `or` with `and`
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('name')
             .or('id.gt.3,and(id.eq.1,name.eq.violin)');
@@ -5304,7 +5304,7 @@ functions:
         name: Use `or` on referenced tables
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('''
               name,
@@ -5385,7 +5385,7 @@ functions:
         isSpotlight: false
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .not('name', 'is', null)
@@ -5415,7 +5415,7 @@ functions:
         name: With update()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('cities')
             .update({ 'name': 'Mordor' })
             .not('name', 'eq', 'Rohan');
@@ -5424,7 +5424,7 @@ functions:
         name: With delete()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('cities')
             .delete()
             .not('name', 'eq', 'Mordor');
@@ -5434,7 +5434,7 @@ functions:
         code: |
           ```dart
           // Only valid if the Stored Procedure returns a table type.
-          final data = await supabase
+          final data = await skybase
             .rpc('echo_all_cities')
             .not('name', 'eq', 'Mordor');
           ```
@@ -5453,7 +5453,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .match({ 'id': 2, 'name': 'viola' });
@@ -5500,7 +5500,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select()
             .eq('name', 'viola');
@@ -5548,7 +5548,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .select('id, name')
             .neq('name', 'viola');
@@ -5600,7 +5600,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .gt('id', 2);
@@ -5648,7 +5648,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .gte('id', 2);
@@ -5700,7 +5700,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .lt('id', 2);
@@ -5748,7 +5748,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .lte('id', 2);
@@ -5800,7 +5800,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('planets')
             .select()
             .like('name', '%Ea%');
@@ -5848,7 +5848,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('planets')
             .select()
             .ilike('name', '%ea%');
@@ -5896,7 +5896,7 @@ functions:
         name: Checking for nullness, true or false
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .select()
             .isFilter('name', null);
@@ -5949,7 +5949,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('characters')
             .select()
             .inFilter('name', ['Luke', 'Leia']);
@@ -6005,7 +6005,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('issues')
             .select()
             .contains('tags', ['is:open', 'priority:low']);
@@ -6041,7 +6041,7 @@ functions:
         name: On range columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .contains('during', '[2000-01-01 13:00, 2000-01-01 13:30)');
@@ -6082,7 +6082,7 @@ functions:
         name: On `jsonb` columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .select('name')
             .contains('address', { 'street': 'Melrose Place' });
@@ -6132,7 +6132,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('classes')
             .select('name')
             .containedBy('days', ['monday', 'tuesday', 'wednesday', 'friday']);
@@ -6166,7 +6166,7 @@ functions:
         name: On range columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .containedBy('during', '[2000-01-01 00:00, 2000-01-01 23:59)');
@@ -6207,7 +6207,7 @@ functions:
         name: On `jsonb` columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('users')
             .select('name')
             .containedBy('address', {'postcode': 90210});
@@ -6256,7 +6256,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .rangeLt('during', '[2000-01-01 15:00, 2000-01-01 16:00)');
@@ -6313,7 +6313,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .rangeGt('during', '[2000-01-02 08:00, 2000-01-02 09:00)');
@@ -6370,7 +6370,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .rangeGte('during', '[2000-01-02 08:30, 2000-01-02 09:30)');
@@ -6427,7 +6427,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .rangeLte('during', '[2000-01-01 15:00, 2000-01-01 16:00)');
@@ -6484,7 +6484,7 @@ functions:
         name: With select()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .rangeAdjacent('during', '[2000-01-01 12:00, 2000-01-01 13:00)');
@@ -6541,7 +6541,7 @@ functions:
         name: On array columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('issues')
             .select('title')
             .overlaps('tags', ['is:closed', 'severity:high']);
@@ -6576,7 +6576,7 @@ functions:
         name: On range columns
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('reservations')
             .select()
             .overlaps('during', '[2000-01-01 12:45, 2000-01-01 13:15)');
@@ -6640,7 +6640,7 @@ functions:
         name: Text search
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('content', "'eggs' & 'ham'",
@@ -6676,7 +6676,7 @@ functions:
         description: Uses PostgreSQL's `plainto_tsquery` function.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', "'fat' & 'cat'",
@@ -6689,7 +6689,7 @@ functions:
         description: Uses PostgreSQL's `phraseto_tsquery` function.
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', "'fat' & 'cat'",
@@ -6711,7 +6711,7 @@ functions:
 
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', "'fat or cat'",
@@ -6751,7 +6751,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('characters')
             .select()
             .filter('name', 'in', '("Ron","Dumbledore")')
@@ -6782,7 +6782,7 @@ functions:
         name: With update()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('instruments')
             .update({ 'name': 'piano' })
             .filter('name', 'in', '("harpsichord","clavichord")');
@@ -6791,7 +6791,7 @@ functions:
         name: With delete()
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('countries')
             .delete()
             .filter('name', 'in', '("Rohan","Mordor")');
@@ -6801,7 +6801,7 @@ functions:
         code: |
           ```dart
           // Only valid if the Stored Procedure returns a table type.
-          final data = await supabase
+          final data = await skybase
             .rpc('echo_all_countries')
             .filter('name', 'in', '("Rohan","Mordor")');
           ```
@@ -6809,7 +6809,7 @@ functions:
         name: On a referenced table
         code: |
           ```dart
-          final data = await supabase
+          final data = await skybase
             .from('orchestral_sections')
             .select('''
               name,

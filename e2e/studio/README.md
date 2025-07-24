@@ -1,4 +1,4 @@
-# Supabase Studio E2E Tests
+# Skybase Studio E2E Tests
 
 ## Set up
 
@@ -21,8 +21,8 @@ pnpm exec playwright install
 ### Staging
 
 ```bash
-STUDIO_URL=https://supabase.green/dashboard
-API_URL=https://api.supabase.green
+STUDIO_URL=https://skybase.green/dashboard
+API_URL=https://api.skybase.green
 AUTHENTICATION=true
 EMAIL=your@email.com
 PASSWORD=yourpassword

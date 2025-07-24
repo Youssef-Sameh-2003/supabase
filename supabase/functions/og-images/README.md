@@ -1,6 +1,6 @@
 # Open Graph (OG) Image Generator
 
-Generate OG Images for the sites at supabase.
+Generate OG Images for the sites at skybase.
 
 ## How to use
 
@@ -20,22 +20,22 @@ If any of the required parameters are missing, you will receive a 404 response w
 
 Here is an example link that you can use to test the website:
 
-https://obuldanrptloktxcffvn.supabase.co/functions/v1/og-images?site=docs&title=Example%20Title&description=Example%20Description&type=Auth&icon=google
+https://obuldanrptloktxcffvn.skybase.co/functions/v1/og-images?site=docs&title=Example%20Title&description=Example%20Description&type=Auth&icon=google
 
 This link will generate an image for the docs site with the title "Example Title", the description "Example Description", the Auth type, and the Google icon.
 
 ## Run locally
 
-First we need to start up supabase using the [supabase cli](https://supabase.com/docs/reference/cli/introduction)
+First we need to start up skybase using the [skybase cli](https://skybase.com/docs/reference/cli/introduction)
 
 ```bash
-supabase start
+skybase start
 ```
 
 Then run the function
 
 ```bash
-supabase functions serve og-images
+skybase functions serve og-images
 ```
 
 Now we can visit [localhost:54321/functions/v1/og-images/?site=docs&title=Title&description=Description&type=Auth](http://localhost:54321/functions/v1/og-images/?site=docs&title=Title&description=Description&type=Auth) to see your changes localy.
@@ -45,5 +45,5 @@ Now we can visit [localhost:54321/functions/v1/og-images/?site=docs&title=Title&
 To deploy this function, you currently need to depoy it locally. To do this follow the steps below.
 
 ```bash
-supabase functions deploy og-images --no-verify-jwt
+skybase functions deploy og-images --no-verify-jwt
 ```

@@ -34,7 +34,7 @@ jobs:
           key: 3186b58a532c98d7f470f2b887c2b74a086d5f2e
       - name: install linter
         if: steps.cache-cargo.outputs.cache-hit != 'true'
-        run: cargo install --locked --git https://github.com/supabase-community/supa-mdx-lint --rev 3186b58a532c98d7f470f2b887c2b74a086d5f2e
+        run: cargo install --locked --git https://github.com/skybase-community/supa-mdx-lint --rev 3186b58a532c98d7f470f2b887c2b74a086d5f2e
       - name: run linter
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
           supa-mdx-lint apps/docs/content || {
             echo "Linter failed, attempting to fix errors..."
             git config --global user.name 'github-docs-bot'
-            git config --global user.email 'github-docs-bot@supabase.com'
+            git config --global user.email 'github-docs-bot@skybase.com'
             BRANCH_NAME="bot/docs-lint-fixes"
             EXISTING_BRANCH=$(git ls-remote --heads origin $BRANCH_NAME)
             if [[ -n "$EXISTING_BRANCH" ]]; then

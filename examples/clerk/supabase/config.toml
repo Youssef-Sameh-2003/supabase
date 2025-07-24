@@ -1,5 +1,5 @@
-# A string used to distinguish different Supabase projects on the same host. Defaults to the
-# working directory name when running `supabase init`.
+# A string used to distinguish different Skybase projects on the same host. Defaults to the
+# working directory name when running `skybase init`.
 project_id = "clerk"
 
 [api]
@@ -45,11 +45,11 @@ enabled = true
 
 [studio]
 enabled = true
-# Port to use for Supabase Studio.
+# Port to use for Skybase Studio.
 port = 54323
 # External URL of the API server that frontend connects to.
 api_url = "http://127.0.0.1"
-# OpenAI API Key to use for Supabase AI in the Supabase Studio.
+# OpenAI API Key to use for Skybase AI in the Skybase Studio.
 openai_api_key = "env(OPENAI_API_KEY)"
 
 # Email testing server. Emails sent with the local dev setup are not actually sent - rather, they
@@ -98,7 +98,7 @@ enable_confirmations = false
 # Uncomment to customize email template
 # [auth.email.template.invite]
 # subject = "You have been invited"
-# content_path = "./supabase/templates/invite.html"
+# content_path = "./skybase/templates/invite.html"
 
 [auth.sms]
 # Allow/disallow new user signups via SMS to your project.

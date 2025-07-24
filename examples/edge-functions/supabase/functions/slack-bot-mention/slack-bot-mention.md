@@ -16,7 +16,7 @@ For your bot to seamlessly interact with Slack, you'll need to configure Slack A
 Deploy the following code as an Edge function using the CLI:
 
 ```bash
-supabase --project-ref nacho_slacker secrets \
+skybase --project-ref nacho_slacker secrets \
 set SLACK_TOKEN=<xoxb-0000000000-0000000000-01010101010nacho101010>
 ```
 

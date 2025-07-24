@@ -1,5 +1,5 @@
-# A string used to distinguish different Supabase projects on the same host. Defaults to the working
-# directory name when running `supabase init`.
+# A string used to distinguish different Skybase projects on the same host. Defaults to the working
+# directory name when running `skybase init`.
 project_id = "edge-functions"
 
 [api]
@@ -28,7 +28,7 @@ major_version = 15
 # If enabled, seeds the database after migrations during a db reset.
 enabled = false
 # Specifies an ordered list of seed files to load during db reset.
-# Supports glob patterns relative to supabase directory. For example:
+# Supports glob patterns relative to skybase directory. For example:
 # sql_paths = ['./seeds/*.sql', '../project-src/seeds/*-load-testing.sql']
 
 [storage.buckets.my-bucket]
@@ -42,7 +42,7 @@ objects_path = "./buckets/images"
 [functions.background-upload-storage]
 [functions.browser-with-cors]
 [functions.cloudflare-turnstile]
-[functions.connect-supabase]
+[functions.connect-skybase]
 [functions.discord-bot]
 [functions.file-upload-storage]
 [functions.get-tshirt-competition]

@@ -6,8 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@supabase/ssr": "latest",
-    "@supabase/supabase-js": "latest",
+    "@skybase/ssr": "latest",
+    "@skybase/skybase-js": "latest",
     "autoprefixer": "10.4.17",
     "geist": "^1.2.1",
     "next": "latest",

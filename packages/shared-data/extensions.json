@@ -175,7 +175,7 @@
     "comment": "optimize query performance with automatic index recommendation",
     "tags": ["Utility"],
     "link": "/guides/database/extensions/index_advisor",
-    "github_url": "https://github.com/supabase/index_advisor",
+    "github_url": "https://github.com/skybase/index_advisor",
     "product": "Index Advisor Report",
     "product_url": "/project/{ref}/advisors/query-performance"
   },
@@ -230,7 +230,7 @@
     "tags": ["Utility"],
     "link": "/guides/database/extensions/pg_cron",
     "github_url": "https://github.com/citusdata/pg_cron",
-    "product": "Supabase Cron",
+    "product": "Skybase Cron",
     "product_url": "/project/{ref}/integrations/cron"
   },
   {
@@ -247,7 +247,7 @@
     "comment": "pg_graphql: GraphQL support",
     "tags": ["Utility"],
     "link": "/guides/database/extensions/pg_graphql",
-    "github_url": "https://github.com/supabase/pg_graphql",
+    "github_url": "https://github.com/skybase/pg_graphql",
     "product": "GraphiQL",
     "product_url": "/project/{ref}/api/graphiql"
   },
@@ -274,7 +274,7 @@
     "comment": "Async HTTP",
     "tags": ["Utility", "Notifications"],
     "link": "/guides/database/extensions/pg_net",
-    "github_url": "https://github.com/supabase/pg_net",
+    "github_url": "https://github.com/skybase/pg_net",
     "product": "Database Webhooks",
     "product_url": "/project/{ref}/database/hooks"
   },
@@ -393,7 +393,7 @@
     "tags": ["Utility", "Cryptography"],
     "link": "/guides/database/extensions/pgsodium",
     "github_url": "https://github.com/michelp/pgsodium",
-    "product": "Supabase Vault",
+    "product": "Skybase Vault",
     "product_url": "/project/{ref}/settings/vault/secrets"
   },
   {
@@ -592,7 +592,7 @@
     "tags": ["AI", "Data Type", "Search"],
     "link": "/guides/database/extensions/pgvector",
     "github_url": "https://github.com/pgvector/pgvector",
-    "product": "Supabase Vector",
+    "product": "Skybase Vector",
     "product_url": null
   },
   {
@@ -603,11 +603,11 @@
   },
   {
     "name": "wrappers",
-    "comment": "Foreign data wrappers developed by Supabase",
+    "comment": "Foreign data wrappers developed by Skybase",
     "tags": ["Admin", "Utility"],
     "link": "/guides/database/extensions/wrappers/overview",
-    "github_url": "https://github.com/supabase/wrappers",
-    "product": "Supabase Wrappers",
+    "github_url": "https://github.com/skybase/wrappers",
+    "product": "Skybase Wrappers",
     "product_url": "/project/{ref}/database/wrappers"
   }
 ]

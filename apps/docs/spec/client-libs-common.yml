@@ -1,213 +1,213 @@
 clisCommon: '001'
 commands:
-  - id: supabase-test
-    title: supabase test
+  - id: skybase-test
+    title: skybase test
     product: 'general'
 
-  - id: supabase-login
-    title: supabase login
+  - id: skybase-login
+    title: skybase login
     product: 'general'
 
-  - id: supabase-link
-    title: supabase link
+  - id: skybase-link
+    title: skybase link
     product: 'general'
 
-  - id: supabase-init
-    title: supabase init
+  - id: skybase-init
+    title: skybase init
     product: 'general'
 
-  - id: supabase-test-db
-    title: supabase test db
+  - id: skybase-test-db
+    title: skybase test db
     product: 'general'
 
-  - id: supabase-stop
-    title: supabase stop
+  - id: skybase-stop
+    title: skybase stop
     product: 'general'
 
-  - id: supabase-status
-    title: supabase status
+  - id: skybase-status
+    title: skybase status
     product: 'general'
 
-  - id: supabase-start
-    title: supabase start
+  - id: skybase-start
+    title: skybase start
     product: 'general'
 
-  - id: supabase-gen
-    title: supabase gen
+  - id: skybase-gen
+    title: skybase gen
     product: 'general'
 
-  - id: supabase-gen-types
-    title: supabase gen types
+  - id: skybase-gen-types
+    title: skybase gen types
     product: 'general'
 
-  - id: supabase-secrets
-    title: supabase secrets
+  - id: skybase-secrets
+    title: skybase secrets
     product: 'secrets'
 
-  - id: supabase-secrets-unset
-    title: supabase secrets unset
+  - id: skybase-secrets-unset
+    title: skybase secrets unset
     product: 'secrets'
 
-  - id: supabase-secrets-set
-    title: supabase secrets set
+  - id: skybase-secrets-set
+    title: skybase secrets set
     product: 'secrets'
 
-  - id: supabase-secrets-list
-    title: supabase secrets list
+  - id: skybase-secrets-list
+    title: skybase secrets list
     product: 'secrets'
 
-  - id: supabase-projects
-    title: supabase projects
+  - id: skybase-projects
+    title: skybase projects
     product: 'projects'
 
-  - id: supabase-projects-list
-    title: supabase projects list
+  - id: skybase-projects-list
+    title: skybase projects list
     product: 'projects'
 
-  - id: supabase-projects-create
-    title: supabase projects create
+  - id: skybase-projects-create
+    title: skybase projects create
     product: 'projects'
 
-  - id: supabase-sso
-    title: supabase sso
+  - id: skybase-sso
+    title: skybase sso
     product: 'auth'
 
-  - id: supabase-sso-info
-    title: supabase sso info
+  - id: skybase-sso-info
+    title: skybase sso info
     product: 'auth'
 
-  - id: supabase-sso-list
-    title: supabase sso list
+  - id: skybase-sso-list
+    title: skybase sso list
     product: 'auth'
 
-  - id: supabase-sso-show
-    title: supabase sso show
+  - id: skybase-sso-show
+    title: skybase sso show
     product: 'auth'
 
-  - id: supabase-sso-add
-    title: supabase sso add
+  - id: skybase-sso-add
+    title: skybase sso add
     product: 'auth'
 
-  - id: supabase-sso-remove
-    title: supabase sso remove
+  - id: skybase-sso-remove
+    title: skybase sso remove
     product: 'auth'
 
-  - id: supabase-sso-update
-    title: supabase sso update
+  - id: skybase-sso-update
+    title: skybase sso update
     product: 'auth'
 
-  - id: supabase-orgs
-    title: supabase orgs
+  - id: skybase-orgs
+    title: skybase orgs
     product: 'organizations'
 
-  - id: supabase-orgs-list
-    title: supabase orgs list
+  - id: skybase-orgs-list
+    title: skybase orgs list
     product: 'organizations'
 
-  - id: supabase-migration
-    title: supabase migration
+  - id: skybase-migration
+    title: skybase migration
     product: 'migration'
 
-  - id: supabase-migration-new
-    title: supabase migration new
+  - id: skybase-migration-new
+    title: skybase migration new
     product: 'migration'
 
-  - id: supabase-migration-list
-    title: supabase migration list
+  - id: skybase-migration-list
+    title: skybase migration list
     product: 'migration'
 
-  - id: supabase-functions
-    title: supabase functions
+  - id: skybase-functions
+    title: skybase functions
     product: 'functions'
 
-  - id: supabase-functions-serve
-    title: supabase functions serve
+  - id: skybase-functions-serve
+    title: skybase functions serve
     product: 'functions'
 
-  - id: supabase-functions-new
-    title: supabase functions new
+  - id: skybase-functions-new
+    title: skybase functions new
     product: 'functions'
 
-  - id: supabase-functions-deploy
-    title: supabase functions deploy
+  - id: skybase-functions-deploy
+    title: skybase functions deploy
     product: 'functions'
 
-  - id: supabase-functions-delete
-    title: supabase functions delete
+  - id: skybase-functions-delete
+    title: skybase functions delete
     product: 'functions'
 
-  - id: supabase-domains
-    title: supabase domains
+  - id: skybase-domains
+    title: skybase domains
     product: 'domains'
 
-  - id: supabase-domains-reverify
-    title: supabase domains reverify
+  - id: skybase-domains-reverify
+    title: skybase domains reverify
     product: 'domains'
 
-  - id: supabase-domains-get
-    title: supabase domains get
+  - id: skybase-domains-get
+    title: skybase domains get
     product: 'domains'
 
-  - id: supabase-domains-delete
-    title: supabase domains delete
+  - id: skybase-domains-delete
+    title: skybase domains delete
     product: 'domains'
 
-  - id: supabase-domains-create
-    title: supabase domains create
+  - id: skybase-domains-create
+    title: skybase domains create
     product: 'domains'
 
-  - id: supabase-domains-activate
-    title: supabase domains activate
+  - id: skybase-domains-activate
+    title: skybase domains activate
     product: 'domains'
 
-  - id: supabase-db
-    title: supabase db
+  - id: skybase-db
+    title: skybase db
     product: 'database'
 
-  - id: supabase-db-reset
-    title: supabase db reset
+  - id: skybase-db-reset
+    title: skybase db reset
     product: 'database'
 
-  - id: supabase-db-remote
-    title: supabase db remote
+  - id: skybase-db-remote
+    title: skybase db remote
     product: 'database'
 
-  - id: supabase-db-remote-commit
-    title: supabase db remote commit
+  - id: skybase-db-remote-commit
+    title: skybase db remote commit
     product: 'database'
 
-  - id: supabase-db-remote-changes
-    title: supabase db remote changes
+  - id: skybase-db-remote-changes
+    title: skybase db remote changes
     product: 'database'
 
-  - id: supabase-db-push
-    title: supabase db push
+  - id: skybase-db-push
+    title: skybase db push
     product: 'database'
 
-  - id: supabase-db-lint
-    title: supabase db lint
+  - id: skybase-db-lint
+    title: skybase db lint
     product: 'database'
 
-  - id: supabase-db-diff
-    title: supabase db diff
+  - id: skybase-db-diff
+    title: skybase db diff
     product: 'database'
 
-  - id: supabase-completion
-    title: supabase completion
+  - id: skybase-completion
+    title: skybase completion
     product: 'completion'
 
-  - id: supabase-completion-zsh
-    title: supabase completion zsh
+  - id: skybase-completion-zsh
+    title: skybase completion zsh
     product: 'completion'
 
-  - id: supabase-completion-powershell
-    title: supabase completion powershell
+  - id: skybase-completion-powershell
+    title: skybase completion powershell
     product: 'completion'
 
-  - id: supabase-completion-fish
-    title: supabase completion fish
+  - id: skybase-completion-fish
+    title: skybase completion fish
     product: 'completion'
 
-  - id: supabase-completion-bash
-    title: supabase completion bash
+  - id: skybase-completion-bash
+    title: skybase completion bash
     product: 'completion'

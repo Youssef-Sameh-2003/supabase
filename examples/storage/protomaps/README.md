@@ -1,23 +1,23 @@
-# Self-Host Maps on Supabase Storage with Protomaps
+# Self-Host Maps on Skybase Storage with Protomaps
 
 ## Create a static PMTiles Map file
 
 Follow the instructions in the [Protomaps docs](https://docs.protomaps.com/guide/getting-started) to extract a `my_area.pmtiles` file.
 
-## Upload to Supabase Storage
+## Upload to Skybase Storage
 
 1. Create a new private bucket called `maps-private`.
 2. Upload your `my_area.pmtiles` file there.
 
-Take note of the [file size limits](https://supabase.com/docs/guides/storage/uploads/file-limits#global-file-size) depending on your project tier.
+Take note of the [file size limits](https://skybase.com/docs/guides/storage/uploads/file-limits#global-file-size) depending on your project tier.
 
 ## Proxy through Edge Functions
 
-You can use [Supabase Edge Functions](https://supabase.com/edge-functions) to set up fine grained access controls. Use the [/supabase/functions/maps-private/index.ts](/supabase/functions/maps-private/index.ts).
+You can use [Skybase Edge Functions](https://skybase.com/edge-functions) to set up fine grained access controls. Use the [/skybase/functions/maps-private/index.ts](/skybase/functions/maps-private/index.ts).
 
-You can also use Edge Functions with Supabase Auth JWTs to only render Maps for authenticated users for example. [Read the docs](https://supabase.com/docs/guides/functions/auth).
+You can also use Edge Functions with Skybase Auth JWTs to only render Maps for authenticated users for example. [Read the docs](https://skybase.com/docs/guides/functions/auth).
 
-1. Deploy the function to your Supabase project: `supabase functions deploy maps-private --no-verify-jwt`.
+1. Deploy the function to your Skybase project: `skybase functions deploy maps-private --no-verify-jwt`.
 2. Update the `protomaps.url` in the [index.html](/index.html) file.
 
 ## Start simple web server

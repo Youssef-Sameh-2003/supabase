@@ -16,14 +16,14 @@ Turnstile is Cloudflare's CAPTCHA alternative: https://developers.cloudflare.com
 - https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 
 ```bash
-supabase functions deploy cloudflare-turnstile
-supabase secrets set CLOUDFLARE_TURNSTILE_SECRET_KEY=your_secret_key
+skybase functions deploy cloudflare-turnstile
+skybase secrets set CLOUDFLARE_TURNSTILE_SECRET_KEY=your_secret_key
 ```
 
 ## Invoke the function from your site
 
 ```js
-const { data, error } = await supabase.functions.invoke('cloudflare-turnstile', {
+const { data, error } = await skybase.functions.invoke('cloudflare-turnstile', {
   body: { token },
 })
 ```

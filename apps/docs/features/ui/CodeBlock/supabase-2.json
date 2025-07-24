@@ -1,6 +1,6 @@
 {
-  "name": "Supabase Theme",
-  "displayName": "Supabase Theme",
+  "name": "Skybase Theme",
+  "displayName": "Skybase Theme",
   "semanticHighlighting": true,
   "colors": {
     "editor.background": "var(--background-surface-75) / 0.75",

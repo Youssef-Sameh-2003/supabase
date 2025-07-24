@@ -1,14 +1,14 @@
 openref: 0.1
 
 info:
-  id: reference/supabase-py
-  title: Supabase Python Client
+  id: reference/skybase-py
+  title: Skybase Python Client
   description: |
 
-    Supabase Python
+    Skybase Python
 
   definition: spec/enrichments/tsdoc_v2/combined.json
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_py_v2.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_py_v2.yml
   slugPrefix: '/'
   libraries:
     - name: 'Python'
@@ -18,20 +18,20 @@ info:
 functions:
   - id: initializing
     description: |
-      You can initialize a new Supabase client using the `create_client()` method.
+      You can initialize a new Skybase client using the `create_client()` method.
 
-      The Supabase client is your entrypoint to the rest of the Supabase functionality
-      and is the easiest way to interact with everything we offer within the Supabase ecosystem.
+      The Skybase client is your entrypoint to the rest of the Skybase functionality
+      and is the easiest way to interact with everything we offer within the Skybase ecosystem.
 
     params:
-      - name: supabase_url
+      - name: skybase_url
         isOptional: false
         type: string
-        description: The unique Supabase URL which is supplied when you create a new project in your project dashboard.
-      - name: supabase_key
+        description: The unique Skybase URL which is supplied when you create a new project in your project dashboard.
+      - name: skybase_key
         isOptional: false
         type: string
-        description: The unique Supabase Key which is supplied when you create a new project in your project dashboard.
+        description: The unique Skybase Key which is supplied when you create a new project in your project dashboard.
       - name: options
         isOptional: true
         type: ClientOptions
@@ -40,7 +40,7 @@ functions:
           - name: schema
             isOptional: true
             type: string
-            description: The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to 'public'.
+            description: The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to 'public'.
           - name: headers
             isOptional: true
             type: dictionary
@@ -80,23 +80,23 @@ functions:
         code: |
           ```python
           import os
-          from supabase import create_client, Client
+          from skybase import create_client, Client
 
           url: str = os.environ.get("SUPABASE_URL")
           key: str = os.environ.get("SUPABASE_KEY")
-          supabase: Client = create_client(url, key)
+          skybase: Client = create_client(url, key)
           ```
       - id: with-timeout-option
         name: With timeout option
         code: |
           ```python
           import os
-          from supabase import create_client, Client
-          from supabase.client import ClientOptions
+          from skybase import create_client, Client
+          from skybase.client import ClientOptions
 
           url: str = os.environ.get("SUPABASE_URL")
           key: str = os.environ.get("SUPABASE_KEY")
-          supabase: Client = create_client(
+          skybase: Client = create_client(
               url,
               key,
               options=ClientOptions(
@@ -110,8 +110,8 @@ functions:
   - id: auth-api
     title: 'Overview'
     notes: |
-      - The auth methods can be accessed via the `supabase.auth` namespace.
-      - By default, the supabase client sets `persist_session` to true and attempts to store the session in memory.
+      - The auth methods can be accessed via the `skybase.auth` namespace.
+      - By default, the skybase client sets `persist_session` to true and attempts to store the session in memory.
       - Any email links and one-time passwords (OTPs) sent have a default expiry of 24 hours. We have the following [rate limits](/docs/guides/platform/going-into-prod#auth-rate-limits) in place to guard against brute force attacks.
       - The expiry of an access token can be set in the "JWT expiry limit" field in [your project's auth settings](/dashboard/project/_/settings/auth). A refresh token never expires and can only be used once.
   - id: sign-up
@@ -141,7 +141,7 @@ functions:
                 description: >
                   Only for email signups.
                   The redirect URL embedded in the email link.
-                  Must be a configured redirect URL for your Supabase instance.
+                  Must be a configured redirect URL for your Skybase instance.
               - name: data
                 isOptional: true
                 type: object
@@ -157,11 +157,11 @@ functions:
                   The channel to use for sending messages.
                   Only for phone signups.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://supabase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://skybase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://supabase.com/dashboard/project/_/auth/url-configuration).
+      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://skybase.com/dashboard/project/_/auth/url-configuration).
       - If sign_up() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -171,7 +171,7 @@ functions:
         name: Sign up with an email and password
         code: |
           ```python
-          response = supabase.auth.sign_up(
+          response = skybase.auth.sign_up(
               {
                   "email": "email@example.com",
                   "password": "password",
@@ -279,7 +279,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.sign_up(
+          response = skybase.auth.sign_up(
               {
                   "phone": "123456789",
                   "password": "password",
@@ -293,7 +293,7 @@ functions:
           The user will be sent a WhatsApp message which contains a OTP. By default, a given user can only request a OTP once every 60 seconds. Note that a user will need to have a valid WhatsApp account that is linked to Twilio in order to use this feature.
         code: |
           ```python
-          response = supabase.auth.sign_up(
+          response = skybase.auth.sign_up(
               {
                   "phone": "123456789",
                   "password": "password",
@@ -305,7 +305,7 @@ functions:
         name: Sign up with additional user metadata
         code: |
           ```python
-          response = supabase.auth.sign_up(
+          response = skybase.auth.sign_up(
               {
                   "email": "email@example.com",
                   "password": "password",
@@ -319,7 +319,7 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/redirect-urls) to add additional redirect URLs to your project.
         code: |
           ```python
-          response = supabase.auth.sign_up(
+          response = skybase.auth.sign_up(
               {
                   "email": "hello1@example.com",
                   "password": "password",
@@ -358,7 +358,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.sign_in_anonymously(
+          response = skybase.auth.sign_in_anonymously(
               {"options": {"captcha_token": ""}}
           )
           ```
@@ -429,7 +429,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.sign_in_anonymously(
+          response = skybase.auth.sign_in_anonymously(
               {"options": {"data": {}}}
           )
           ```
@@ -465,7 +465,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.sign_in_with_password(
+          response = skybase.auth.sign_in_with_password(
               {
                   "email": "email@example.com",
                   "password": "example-password",
@@ -549,7 +549,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.sign_in_with_password(
+          response = skybase.auth.sign_in_with_password(
               {
                   "phone": "+13334445555",
                   "password": "some-password",
@@ -580,7 +580,7 @@ functions:
                 description: >
                   Only for email signups.
                   The redirect URL embedded in the email link.
-                  Must be a configured redirect URL for your Supabase instance.
+                  Must be a configured redirect URL for your Skybase instance.
               - name: should_create_user
                 isOptional: true
                 type: boolean
@@ -609,7 +609,7 @@ functions:
       - If you're using phone, you can configure whether you want the user to receive a OTP.
       - The magic link's destination URL is determined by the [`SITE_URL`](/docs/guides/auth/redirect-urls).
       - See [redirect URLs and wildcards](/docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) to add additional redirect URLs to your project.
-      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://supabase.com/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
+      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://skybase.com/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
     examples:
       - id: sign-in-with-email
         name: Sign in with email
@@ -617,7 +617,7 @@ functions:
         description: The user will be sent an email which contains either a magiclink or a OTP or both. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_otp(
+          response = skybase.auth.sign_in_with_otp(
               {
                   "email": "email@example.com",
                   "options": {
@@ -640,7 +640,7 @@ functions:
         description: The user will be sent a SMS which contains a OTP. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_otp(
+          response = skybase.auth.sign_in_with_otp(
               {"phone": "+13334445555"}
           )
           ```
@@ -650,7 +650,7 @@ functions:
         description: The user will be sent a WhatsApp message which contains a OTP. By default, a given user can only request a OTP once every 60 seconds. Note that a user will need to have a valid WhatsApp account that is linked to Twilio in order to use this feature.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_otp(
+          response = skybase.auth.sign_in_with_otp(
               {
                   "phone": "+13334445555",
                   "options": {
@@ -688,14 +688,14 @@ functions:
                 description: An object of query params
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Supabase supports many different [third-party providers](/docs/guides/auth#configure-third-party-providers).
+      - Skybase supports many different [third-party providers](/docs/guides/auth#configure-third-party-providers).
     examples:
       - id: sign-in-using-a-third-party-provider
         name: Sign in using a third-party provider
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.sign_in_with_oauth(
+          response = skybase.auth.sign_in_with_oauth(
               {"provider": "github"}
           )
           ```
@@ -707,7 +707,7 @@ functions:
           - See [redirect URLs and wildcards](docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) to add additional redirect URLs to your project.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_oauth(
+          response = skybase.auth.sign_in_with_oauth(
               {
                   "provider": "github",
                   "options": {
@@ -724,7 +724,7 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider. The list of scopes will be documented by the third-party provider you are using and specifying scopes will enable you to use the OAuth provider token to call additional APIs supported by the third-party provider to get more information.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_oauth(
+          response = skybase.auth.sign_in_with_oauth(
               {
                   "provider": "github",
                   "options": {
@@ -774,7 +774,7 @@ functions:
         name: 'Sign In using ID Token'
         code: |
           ```python
-          response = supabase.auth.sign_in_with_id_token(
+          response = skybase.auth.sign_in_with_id_token(
               {
                   "provider": "google",
                   "token": "your-id-token",
@@ -887,11 +887,11 @@ functions:
                 type: string
                 description: >
                   The URL to redirect the user to after they have signed in.
-                  Must be a configured redirect URL for your Supabase instance.
+                  Must be a configured redirect URL for your Skybase instance.
               - name: captcha_token
                 type: string
     notes: |
-      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/supabase-sso) to do this.
+      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/skybase-sso) to do this.
       - If you've associated an email domain to the identity provider, you can use the `domain` property to start a sign-in flow.
       - In case you need to use a different way to start the authentication flow with an identity provider, you can use the `provider_id` property. For example:
           - Mapping specific user email addresses with an identity provider.
@@ -904,7 +904,7 @@ functions:
           You can extract the user's email domain and use it to trigger the authentication flow with the correct identity provider.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_sso(
+          response = skybase.auth.sign_in_with_sso(
               {"domain": "company.com"}
           )
           ```
@@ -921,7 +921,7 @@ functions:
           Useful when you need to map a user's sign in request according to different rules that can't use email domains.
         code: |
           ```python
-          response = supabase.auth.sign_in_with_sso(
+          response = skybase.auth.sign_in_with_sso(
               {"provider_id": "21648a9d-8d5a-4555-a9d1-d6375dc14e92"}
           )
           ```
@@ -940,13 +940,13 @@ functions:
     notes: |
       - In order to use the `sign_out()` method, the user needs to be signed in first.
       - By default, `sign_out()` uses the global scope, which signs out all other sessions that the user is logged into as well.
-      - Since Supabase Auth uses JWTs for authentication, the access token JWT will be valid until it's expired. When the user signs out, Supabase revokes the refresh token and deletes the JWT from the client-side. This does not revoke the JWT and it will still be valid until it expires.
+      - Since Skybase Auth uses JWTs for authentication, the access token JWT will be valid until it's expired. When the user signs out, Skybase revokes the refresh token and deletes the JWT from the client-side. This does not revoke the JWT and it will still be valid until it expires.
     examples:
       - id: sign-out
         name: Sign out
         code: |
           ```python
-          response = supabase.auth.sign_out()
+          response = skybase.auth.sign_out()
           ```
   - id: verify-otp
     title: 'verify_otp'
@@ -998,7 +998,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.verify_otp(
+          response = skybase.auth.verify_otp(
               {
                   "email": "email@example.com",
                   "token": "123456",
@@ -1079,7 +1079,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.verify_otp(
+          response = skybase.auth.verify_otp(
               {
                   "phone": "+13334445555",
                   "token": "123456",
@@ -1092,7 +1092,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.verify_otp(
+          response = skybase.auth.verify_otp(
               {
                   "email": "email@example.com",
                   "token_hash": "<token-hash>",
@@ -1113,7 +1113,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.get_session()
+          response = skybase.auth.get_session()
           ```
         response: |
           ```json
@@ -1170,7 +1170,7 @@ functions:
         isSpotlight: true
         code: |
           ```
-          response = supabase.auth.get_user()
+          response = skybase.auth.get_user()
           ```
         response: |
           ```json
@@ -1210,7 +1210,7 @@ functions:
         isSpotlight: false
         code: |
           ```
-          response = supabase.auth.get_user(jwt)
+          response = skybase.auth.get_user(jwt)
           ```
   - id: update-user
     title: 'update_user()'
@@ -1257,7 +1257,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.update_user(
+          response = skybase.auth.update_user(
               {"email": "new@email.com"}
           )
           ```
@@ -1317,7 +1317,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.update_user(
+          response = skybase.auth.update_user(
               {"phone": "123456789"}
           )
           ```
@@ -1326,7 +1326,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.update_user(
+          response = skybase.auth.update_user(
               {"password": "new password"}
           )
           ```
@@ -1335,7 +1335,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.update_user(
+          response = skybase.auth.update_user(
               {
                   "data": {"hello": "world"},
               }
@@ -1348,7 +1348,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.update_user(
+          response = skybase.auth.update_user(
               {
                   "password": "new password",
                   "nonce": "123456",
@@ -1366,7 +1366,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.get_user_identities()
+          response = skybase.auth.get_user_identities()
           ```
         response: |
           ```json
@@ -1429,7 +1429,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.link_identity(
+          response = skybase.auth.link_identity(
               {provider: "github"}
           )
           ```
@@ -1483,7 +1483,7 @@ functions:
         code: |
           ```python
           # retrieve all identites linked to a user
-          response = supabase.auth.get_user_identities()
+          response = skybase.auth.get_user_identities()
 
           # find the google identity
           google_identity = list(
@@ -1491,7 +1491,7 @@ functions:
           ).pop()
 
           # unlink the google identity
-          response = supabase.auth.unlink_identity(google_identity)
+          response = skybase.auth.unlink_identity(google_identity)
           ```
   - id: send-password-reauthentication
     title: 'reauthenticate()'
@@ -1507,7 +1507,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.reauthenticate()
+          response = skybase.auth.reauthenticate()
           ```
   - id: resend-email-or-phone-otps
     title: 'resend()'
@@ -1552,7 +1552,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.resend(
+          response = skybase.auth.resend(
               {
                   "type": "signup",
                   "email": "email@example.com",
@@ -1567,7 +1567,7 @@ functions:
         description: Resends the phone signup confirmation email to the user
         code: |
           ```python
-          response = supabase.auth.resend(
+          response = skybase.auth.resend(
               {
                   "type": "sms",
                   "phone": "1234567890",
@@ -1579,7 +1579,7 @@ functions:
         description: Resends the email change email to the user
         code: |
           ```python
-          response = supabase.auth.resend(
+          response = skybase.auth.resend(
               {
                   "type": "email_change",
                   "email": "email@example.com",
@@ -1591,7 +1591,7 @@ functions:
         description: Resends the phone change OTP to the user
         code: |
           ```python
-          response = supabase.auth.resend(
+          response = skybase.auth.resend(
               {
                   "type": "phone_change",
                   "phone": "1234567890",
@@ -1619,7 +1619,7 @@ functions:
         description: Sets the session data from refresh_token and returns current session or raise an error if the refresh_token is invalid.
         code: |
           ```python
-          response = supabase.auth.set_session(access_token, refresh_token)
+          response = skybase.auth.set_session(access_token, refresh_token)
           ```
         response: |
           ```json
@@ -1708,7 +1708,7 @@ functions:
         name: Refresh session using the current session
         code: |
           ```
-          response = supabase.auth.refresh_session()
+          response = skybase.auth.refresh_session()
           ```
         response: |
           ```json
@@ -1797,7 +1797,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.exchange_code_for_session(
+          response = skybase.auth.exchange_code_for_session(
               {"auth_code": "34e770dd-9ff9-416c-87fa-43b31d7ef225"}
           )
           ```
@@ -1957,7 +1957,7 @@ functions:
   - id: auth-mfa-api
     title: 'Overview'
     notes: |
-      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `supabase.auth.mfa` namespace.
+      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `skybase.auth.mfa` namespace.
 
       Currently, we only support time-based one-time password (TOTP) as the 2nd factor. We don't support recovery codes but we allow users to enroll more than 1 TOTP factor, with an upper limit of 10.
 
@@ -1975,7 +1975,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.enroll(
+          response = skybase.auth.mfa.enroll(
               {
                   "factor_type": "totp",
                   "friendly_name": "your_friendly_name",
@@ -1993,7 +1993,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.challenge(
+          response = skybase.auth.mfa.challenge(
               {"factor_id": "34e770dd-9ff9-416c-87fa-43b31d7ef225"}
           )
           ```
@@ -2007,7 +2007,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.verify(
+          response = skybase.auth.mfa.verify(
               {
                   "factor_id": "34e770dd-9ff9-416c-87fa-43b31d7ef225",
                   "challenge_id": "4034ae6f-a8ce-4fb5-8ee5-69a5863a7c15",
@@ -2026,7 +2026,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.challenge_and_verify(
+          response = skybase.auth.mfa.challenge_and_verify(
               {
                   "factor_id": "34e770dd-9ff9-416c-87fa-43b31d7ef225",
                   "code": "123456",
@@ -2041,7 +2041,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.unenroll(
+          response = skybase.auth.mfa.unenroll(
               {"factor_id": "34e770dd-9ff9-416c-87fa-43b31d7ef225"}
           )
           ```
@@ -2049,7 +2049,7 @@ functions:
     title: 'mfa.get_authenticator_assurance_level()'
     notes: |
       - Authenticator Assurance Level (AAL) is the measure of the strength of an authentication mechanism.
-      - In Supabase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
+      - In Skybase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
       - If the user has a verified factor, the `next_level` field will return `aal2`, else, it will return `aal1`.
     examples:
       - id: get-aal
@@ -2057,12 +2057,12 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.mfa.get_authenticator_assurance_level()
+          response = skybase.auth.mfa.get_authenticator_assurance_level()
           ```
   - id: admin-api
     title: 'Overview'
     notes: |
-      - Any method under the `supabase.auth.admin` namespace requires a `service_role` key.
+      - Any method under the `skybase.auth.admin` namespace requires a `service_role` key.
       - These methods are considered admin methods and should be called on a trusted server. Never expose your `service_role` key in the browser.
     examples:
       - id: create-auth-admin-client
@@ -2070,11 +2070,11 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          from supabase import create_client
-          from supabase.lib.client_options import ClientOptions
+          from skybase import create_client
+          from skybase.lib.client_options import ClientOptions
 
-          supabase = create_client(
-              supabase_url,
+          skybase = create_client(
+              skybase_url,
               service_role_key,
               options=ClientOptions(
                   auto_refresh_token=False,
@@ -2083,7 +2083,7 @@ functions:
           )
 
           # Access auth admin api
-          admin_auth_client = supabase.auth.admin
+          admin_auth_client = skybase.auth.admin
           ```
 
   - id: get-user-by-id
@@ -2105,7 +2105,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.get_user_by_id(1)
+          response = skybase.auth.admin.get_user_by_id(1)
           ```
         response: |
           ```json
@@ -2171,14 +2171,14 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.list_users()
+          response = skybase.auth.admin.list_users()
           ```
       - id: get-paginated-list-of-users
         name: Paginated list of users
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.list_users(
+          response = skybase.auth.admin.list_users(
               page=1,
               per_page=1000,
           )
@@ -2242,7 +2242,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.create_user(
+          response = skybase.auth.admin.create_user(
               {
                   "email": "user@email.com",
                   "password": "password",
@@ -2293,7 +2293,7 @@ functions:
         name: Auto-confirm the user's email
         code: |
           ```python
-          response = supabase.auth.admin.create_user(
+          response = skybase.auth.admin.create_user(
               {
                   "email": "user@email.com",
                   "email_confirm": True,
@@ -2304,7 +2304,7 @@ functions:
         name: Auto-confirm the user's phone number
         code: |
           ```python
-          response = supabase.auth.admin.create_user(
+          response = skybase.auth.admin.create_user(
               {
                   "phone": "1234567890",
                   "phone_confirm": True,
@@ -2334,7 +2334,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          supabase.auth.admin.delete_user(
+          skybase.auth.admin.delete_user(
               "715ed5db-f090-4b8c-a067-640ecee36aa0"
           )
           ```
@@ -2370,7 +2370,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.invite_user_by_email("email@example.com")
+          response = skybase.auth.admin.invite_user_by_email("email@example.com")
           ```
         response: |
           ```json
@@ -2455,7 +2455,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "signup",
                   "email": "email@example.com",
@@ -2516,7 +2516,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "invite",
                   "email": "email@example.com",
@@ -2528,7 +2528,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "magiclink",
                   "email": "email@example.com",
@@ -2540,7 +2540,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "recovery",
                   "email": "email@example.com",
@@ -2553,7 +2553,7 @@ functions:
         code: |
           ```python
           # Generate an email change link to be sent to the current email address
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "email_change_current",
                   "email": "current.email@example.com",
@@ -2562,7 +2562,7 @@ functions:
           )
 
           # Generate an email change link to be sent to the new email address
-          response = supabase.auth.admin.generate_link(
+          response = skybase.auth.admin.generate_link(
               {
                   "type": "email_change_new",
                   "email": "current.email@example.com",
@@ -2631,7 +2631,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "11111111-1111-1111-1111-111111111111",
               {
                   "email": "new@email.com",
@@ -2692,7 +2692,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4",
               {
                   "password": "new_password",
@@ -2704,7 +2704,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4",
               {
                   "user_metadata": {"hello": "world"},
@@ -2716,7 +2716,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4",
               {
                   "app_metadata": {"plan": "trial"},
@@ -2728,7 +2728,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4",
               {
                   "email_confirm": True,
@@ -2740,7 +2740,7 @@ functions:
         isSpotlight: false
         code: |
           ```python
-          response = supabase.auth.admin.update_user_by_id(
+          response = skybase.auth.admin.update_user_by_id(
               "6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4",
               {
                   "phone_confirm": True,
@@ -2770,7 +2770,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          response = supabase.auth.admin.mfa.delete_factor(
+          response = skybase.auth.admin.mfa.delete_factor(
               {
                   "id": "34e770dd-9ff9-416c-87fa-43b31d7ef225",
                   "user_id": "a89baba7-b1b7-440f-b4bb-91026967f66b"
@@ -2814,7 +2814,7 @@ functions:
       See [redirect URLs and wildcards](docs/guides/auth/redirect-urls#use-wildcards-in-redirect-urls) to add additional redirect URLs to your project.
       - After the user has been redirected successfully, prompt them for a new password and call `update_user()`:
       ```python
-      response = supabase.auth.update_user(
+      response = skybase.auth.update_user(
           {"password": new_password}
       )
       ```
@@ -2824,7 +2824,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          supabase.auth.reset_password_for_email(
+          skybase.auth.reset_password_for_email(
               email,
               {
                   "redirect_to": "https://example.com/update-password",
@@ -2835,10 +2835,10 @@ functions:
   - id: select
     title: 'Fetch data: select()'
     notes: |
-      - By default, Supabase projects return a maximum of 1,000 rows. This setting can be changed in your project's [API settings](/dashboard/project/_/settings/api). It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - By default, Skybase projects return a maximum of 1,000 rows. This setting can be changed in your project's [API settings](/dashboard/project/_/settings/api). It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `select()` can be combined with [Filters](/docs/reference/python/using-filters)
       - `select()` can be combined with [Modifiers](/docs/reference/python/using-modifiers)
-      - `apikey` is a reserved keyword if you're using the [Supabase Platform](/docs/guides/platform) and [should be avoided as a column name](https://github.com/supabase/supabase/issues/5465).
+      - `apikey` is a reserved keyword if you're using the [Skybase Platform](/docs/guides/platform) and [should be avoided as a column name](https://github.com/skybase/skybase/issues/5465).
     params:
       - name: columns
         isOptional: true
@@ -2854,7 +2854,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .execute()
           )
@@ -2897,7 +2897,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .execute()
           )
@@ -2939,7 +2939,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments(name)")
               .execute()
           )
@@ -2996,7 +2996,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .select("name, teams(name)")
               .execute()
           )
@@ -3078,7 +3078,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("messages")
+              skybase.table("messages")
               .select("content,from:sender_id(name),to:receiver_id(name)")
               .execute()
           )
@@ -3134,7 +3134,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments(*)")
               .eq("instruments.name", "guqin")
               .execute()
@@ -3189,7 +3189,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("*, instruments(count)")
               .execute()
           )
@@ -3244,7 +3244,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*", count="exact")
               .execute()
           )
@@ -3291,7 +3291,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .select("id, name, address->city")
               .execute()
           )
@@ -3335,7 +3335,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .select("name, orchestral_sections!inner(name)")
               .eq("orchestral_sections.name", "woodwinds")
               .execute()
@@ -3387,7 +3387,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.schema("myschema")
+              skybase.schema("myschema")
               .table("mytable")
               .select("*")
               .execute()
@@ -3447,7 +3447,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .insert({"id": 1, "name": "Pluto"})
               .execute()
           )
@@ -3478,7 +3478,7 @@ functions:
           ```python
           try:
               response = (
-                  supabase.table("characters")
+                  skybase.table("characters")
                   .insert([
                       {"id": 1, "name": "Frodo"},
                       {"id": 2, "name": "Sam"},
@@ -3533,7 +3533,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .update({"name": "piano"})
               .eq("id", 1)
               .execute()
@@ -3569,7 +3569,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .update({"address": {"street": "Melrose Place", "postcode": 90210}})
               .eq("address->postcode", 90210)
               .execute()
@@ -3644,7 +3644,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .upsert({"id": 1, "name": "piano"})
               .execute()
           )
@@ -3679,7 +3679,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .upsert([{"id": 1, "name": "piano"}, {"id": 2, "name": "guitar"}])
               .execute()
           )
@@ -3717,7 +3717,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .upsert(
                   {"id": 42, "handle": "saoirse", "display_name": "Saoirse"},
                   on_conflict="handle",
@@ -3785,7 +3785,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("countries")
+              skybase.table("countries")
               .delete()
               .eq("id", 1)
               .execute()
@@ -3821,7 +3821,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("countries")
+              skybase.table("countries")
               .delete()
               .in_("id", [1, 2, 3])
               .execute()
@@ -3900,7 +3900,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.rpc("hello_world")
+              skybase.rpc("hello_world")
               .execute()
           )
           ```
@@ -3925,7 +3925,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.rpc("echo", { "say": "👋" })
+              skybase.rpc("echo", { "say": "👋" })
               .execute()
           )
           ```
@@ -3949,7 +3949,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.rpc("add_one_each", {"arr": [1, 2, 3]})
+              skybase.rpc("add_one_each", {"arr": [1, 2, 3]})
               .execute()
           )
           ```
@@ -3979,7 +3979,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.rpc("list_stored_planets")
+              skybase.rpc("list_stored_planets")
               .eq("id", 1)
               .single()
               .execute()
@@ -4019,7 +4019,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.rpc("hello_world", get=True)
+              skybase.rpc("hello_world", get=True)
               .execute()
           )
           ```
@@ -4058,7 +4058,7 @@ functions:
           ```python
           # Correct
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .select("name, section_id")
               .eq("name", "flute")
               .execute()
@@ -4066,7 +4066,7 @@ functions:
 
           # Incorrect
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .eq("name", "flute")
               .select("name, section_id")
               .execute()
@@ -4103,7 +4103,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .select("name, section_id")
               .gte("octave_range", 3)
               .lt("octave_range", 7)
@@ -4156,7 +4156,7 @@ functions:
           filterOctaveLow = 3
           filterOctaveHigh = 7
 
-          query = supabase.table("instruments").select("name, section_id")
+          query = skybase.table("instruments").select("name, section_id")
 
           if filterByName:
               query = query.eq("name", filterByName)
@@ -4210,7 +4210,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .select("*")
               .eq("address->postcode", 90210)
               .execute()
@@ -4252,7 +4252,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments!inner(name)")
               .eq("instruments.name", "flute")
               .execute()
@@ -4320,7 +4320,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .eq("name", "Earth")
               .execute()
@@ -4372,7 +4372,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .neq("name", "Earth")
               .execute()
@@ -4428,7 +4428,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .gt("id", 2)
               .execute()
@@ -4483,7 +4483,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .gte("id", 2)
               .execute()
@@ -4539,7 +4539,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .lt("id", 2)
               .execute()
@@ -4591,7 +4591,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .lte("id", 2)
               .execute()
@@ -4647,7 +4647,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .like("name", "%Ea%")
               .execute()
@@ -4699,7 +4699,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .ilike("name", "%ea%")
               .execute()
@@ -4751,7 +4751,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .is_("name", "null")
               .execute()
@@ -4808,7 +4808,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .in_("name", ["Earth", "Mars"])
               .execute()
@@ -4864,7 +4864,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("issues")
+              skybase.table("issues")
               .select("*")
               .contains("tags", ["is:open", "priority:low"])
               .execute()
@@ -4909,7 +4909,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .contains("during", "[2000-01-01 13:00, 2000-01-01 13:30)")
               .execute()
@@ -4955,7 +4955,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .select("*")
               .contains("address", {"postcode": 90210})
               .execute()
@@ -5013,7 +5013,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("classes")
+              skybase.table("classes")
               .select("name")
               .contained_by("days", ["monday", "tuesday", "wednesday", "friday"])
               .execute()
@@ -5053,7 +5053,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .contained_by("during", "[2000-01-01 00:00, 2000-01-01 23:59)")
               .execute()
@@ -5099,7 +5099,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("users")
+              skybase.table("users")
               .select("name")
               .contained_by("address", {})
               .execute()
@@ -5152,7 +5152,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .range_gt("during", ["2000-01-02 08:00", "2000-01-02 09:00"])
               .execute()
@@ -5210,7 +5210,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .range_gte("during", ["2000-01-02 08:30", "2000-01-02 09:30"])
               .execute()
@@ -5268,7 +5268,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .range_lt("during", ["2000-01-01 15:00", "2000-01-01 16:00"])
               .execute()
@@ -5326,7 +5326,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .range_lte("during", ["2000-01-01 14:00", "2000-01-01 16:00"])
               .execute()
@@ -5385,7 +5385,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .range_adjacent("during", ["2000-01-01 12:00", "2000-01-01 13:00"])
               .execute()
@@ -5444,7 +5444,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("issues")
+              skybase.table("issues")
               .select("title")
               .overlaps("tags", ["is:closed", "severity:high"])
               .execute()
@@ -5484,7 +5484,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("reservations")
+              skybase.table("reservations")
               .select("*")
               .overlaps("during", "[2000-01-01 12:45, 2000-01-01 13:15)")
               .execute()
@@ -5559,7 +5559,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("texts")
+              skybase.table("texts")
               .select("content")
               .text_search(
                   "content",
@@ -5602,7 +5602,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("quotes")
+              skybase.table("quotes")
               .select("catchphrase")
               .text_search(
                   "catchphrase",
@@ -5618,7 +5618,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("quotes")
+              skybase.table("quotes")
               .select("catchphrase")
               .text_search(
                   "catchphrase",
@@ -5643,7 +5643,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("quotes")
+              skybase.table("quotes")
               .select("catchphrase")
               .text_search(
                   "catchphrase",
@@ -5669,7 +5669,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .match({"id": 2, "name": "Earth"})
               .execute()
@@ -5717,7 +5717,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .not_.is_("name", "null")
               .execute()
@@ -5773,7 +5773,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .or_("id.eq.2,name.eq.Mars")
               .execute()
@@ -5813,7 +5813,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .or_("id.gt.3,and(id.eq.1,name.eq.Mercury)")
               .execute()
@@ -5849,7 +5849,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments!inner(name)")
               .or_("book_id.eq.1,name.eq.guqin", reference_table="instruments")
               .execute()
@@ -5924,7 +5924,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .filter("name", "in", '("Mars","Tatooine")')
               .execute()
@@ -5962,7 +5962,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments!inner(name)")
               .filter("instruments.name", "eq", "flute")
               .execute()
@@ -6046,7 +6046,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .order("name", desc=True)
               .execute()
@@ -6092,7 +6092,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments(name)")
               .order("name", desc=True, foreign_table="instruments")
               .execute()
@@ -6153,7 +6153,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("instruments")
+              skybase.table("instruments")
               .select("name, section:orchestral_sections(name)")
               .order("section(name)", desc=False)
           )
@@ -6219,7 +6219,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .limit(1)
               .execute()
@@ -6256,7 +6256,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments(name)")
               .limit(1, foreign_table="instruments")
               .execute()
@@ -6326,7 +6326,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .range(0, 1)
               .execute()
@@ -6366,7 +6366,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("orchestral_sections")
+              skybase.table("orchestral_sections")
               .select("name, instruments(name)")
               .range(0, 1, foreign_table="instruments")
               .execute()
@@ -6438,7 +6438,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("name")
               .limit(1)
               .single()
@@ -6478,7 +6478,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .eq("name", "Earth")
               .maybe_single()
@@ -6520,7 +6520,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .csv()
               .execute()
@@ -6596,7 +6596,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .explain()
               .execute()
@@ -6631,7 +6631,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.table("planets")
+              skybase.table("planets")
               .select("*")
               .explain(analyze=True, verbose=True)
               .execute()
@@ -6670,7 +6670,7 @@ functions:
   - id: invoke
     title: 'invoke()'
     description: |
-      Invoke a Supabase Function.
+      Invoke a Skybase Function.
     notes: |
       - Requires an Authorization header.
       - When you pass in a body to your function, we automatically attach the Content-Type header for `Blob`, `ArrayBuffer`, `File`, `FormData` and `String`. If it doesn't match any of these types we assume the payload is `json`, serialise it and attach the `Content-Type` header as `application/json`. You can override this behaviour by passing in a `Content-Type` header of your own.
@@ -6680,7 +6680,7 @@ functions:
         description:
         code: |
           ```python
-          response = supabase.functions.invoke(
+          response = skybase.functions.invoke(
               "hello-world",
               invoke_options={
                   "body": {"name": "Functions"},
@@ -6693,14 +6693,14 @@ functions:
           Returns one of the following errors:
 
           - `FunctionsHttpError`: if your function throws an error
-          - `FunctionsRelayError`: if the Supabase Relay encounters an error processing your function
+          - `FunctionsRelayError`: if the Skybase Relay encounters an error processing your function
         isSpotlight: true
         code: |
           ```python
           from supafunc.errors import FunctionsRelayError, FunctionsHttpError
 
           try:
-              response = supabase.functions.invoke(
+              response = skybase.functions.invoke(
                   "hello-world",
                   invoke_options={
                       "body": {"foo": "bar"},
@@ -6719,11 +6719,11 @@ functions:
         description: |
           The library accepts custom headers via the `headers` option.
 
-          Note: `supabase-py` automatically populates the `Authorization` header if there is a signed in user.
+          Note: `skybase-py` automatically populates the `Authorization` header if there is a signed in user.
         isSpotlight: true
         code: |
           ```python
-          response = supabase.functions.invoke(
+          response = skybase.functions.invoke(
               "hello-world",
               invoke_options={
                   "headers": {
@@ -6738,7 +6738,7 @@ functions:
     title: 'Overview'
     description: |
       Realtime in Python only works with the asynchronous client.
-      You can initialize a new Supabase client using the `acreate_client()` method.
+      You can initialize a new Skybase client using the `acreate_client()` method.
 
       - Some Realtime methods are asynchronous and must be awaited. Ensure these methods are called within an `async` function.
       - In the following Realtime examples, certain methods are awaited. These should be enclosed within an `async` function.
@@ -6750,14 +6750,14 @@ functions:
           ```python
           import os
           import asyncio
-          from supabase import acreate_client, AsyncClient
+          from skybase import acreate_client, AsyncClient
 
           url: str = os.environ.get("SUPABASE_URL")
           key: str = os.environ.get("SUPABASE_KEY")
 
-          async def create_supabase():
-            supabase: AsyncClient = await acreate_client(url, key)
-            return supabase
+          async def create_skybase():
+            skybase: AsyncClient = await acreate_client(url, key)
+            return skybase
           ```
 
   - id: subscribe
@@ -6773,7 +6773,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channel = supabase.channel("room1")
+          channel = skybase.channel("room1")
 
           def on_subscribe(status, err):
               if status == RealtimeSubscribeStates.SUBSCRIBED:
@@ -6792,7 +6792,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channel = supabase.channel("room1")
+          channel = skybase.channel("room1")
 
           def on_subscribe(status, err):
               if status == RealtimeSubscribeStates.SUBSCRIBED:
@@ -6808,7 +6808,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channel = supabase.channel("room1")
+          channel = skybase.channel("room1")
 
           def handle_presence_join(key, current_presence, new_presence):
               print("Newly joined presences: ", new_presence)
@@ -6824,7 +6824,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channel = supabase.channel("room1")
+          channel = skybase.channel("room1")
 
           def handle_presence_leave(key, current_presence, left_presence):
               print("Newly left presences: ", left_presence)
@@ -6842,7 +6842,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("*", schema="*", callback=handle_record_updated)
               .subscribe()
           )
@@ -6852,7 +6852,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("*", schema="public", table="countries", callback=handle_record_updated)
               .subscribe()
           )
@@ -6862,7 +6862,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("INSERT", schema="public", table="countries", callback=handle_record_inserted)
               .subscribe()
           )
@@ -6870,7 +6870,7 @@ functions:
       - id: listen-to-updates
         name: Listen to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening to:
 
           ```sql
@@ -6879,7 +6879,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("UPDATE", schema="public", table="countries", callback=handle_record_updated)
               .subscribe()
           )
@@ -6887,7 +6887,7 @@ functions:
       - id: listen-to-deletes
         name: Listen to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -6896,7 +6896,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("DELETE", schema="public", table="countries", callback=handle_record_deleted)
               .subscribe()
           )
@@ -6907,7 +6907,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("INSERT", schema="public", table="countries", callback=handle_record_inserted)
               .on_postgres_changes("DELETE", schema="public", table="countries", callback=handle_record_deleted)
               .subscribe()
@@ -6921,7 +6921,7 @@ functions:
         code: |
           ```python
           response = (
-              await supabase.channel("room1")
+              await skybase.channel("room1")
               .on_postgres_changes("UPDATE", schema="public", table="countries", filter="id=eq.200", callback=handle_record_updated)
               .subscribe()
           )
@@ -6936,7 +6936,7 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channel = supabase.channel("room1")
+          channel = skybase.channel("room1")
 
           def on_subscribe(status, err):
               if status == RealtimeSubscribeStates.SUBSCRIBED:
@@ -6956,33 +6956,33 @@ functions:
         isSpotlight: true
         code: |
           ```python
-          channels = supabase.get_channels()
+          channels = skybase.get_channels()
           ```
 
   - id: remove-channel
     title: removeChannel()
     notes: |
-      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
       - id: removes-a-channel
         name: Removes a channel
         isSpotlight: true
         code: |
           ```python
-          await supabase.remove_channel(myChannel)
+          await skybase.remove_channel(myChannel)
           ```
 
   - id: remove-all-channels
     title: removeAllChannels()
     notes: |
-      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
       - id: remove-all-channels
         name: Remove all channels
         isSpotlight: true
         code: |
           ```python
-          await supabase.remove_all_channels()
+          await skybase.remove_all_channels()
           ```
 
   - id: list-buckets
@@ -6999,7 +6999,7 @@ functions:
         name: List buckets
         code: |
           ```python
-          response = supabase.storage.list_buckets()
+          response = skybase.storage.list_buckets()
           ```
         response: |
           ```json
@@ -7038,7 +7038,7 @@ functions:
         name: Get bucket
         code: |
           ```python
-          response = supabase.storage.get_bucket("avatars")
+          response = skybase.storage.get_bucket("avatars")
           ```
         response: |
           ```json
@@ -7092,7 +7092,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .create_bucket(
                   "avatars",
                   options={
@@ -7129,7 +7129,7 @@ functions:
         name: Empty bucket
         code: |
           ```python
-          response = supabase.storage.empty_bucket("avatars")
+          response = skybase.storage.empty_bucket("avatars")
           ```
         response: |
           ```json
@@ -7173,7 +7173,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .update_bucket(
                   "avatars",
                   options={
@@ -7210,7 +7210,7 @@ functions:
         name: Delete bucket
         code: |
           ```python
-          response = supabase.storage.delete_bucket("avatars")
+          response = skybase.storage.delete_bucket("avatars")
           ```
         response: |
           ```json
@@ -7245,7 +7245,7 @@ functions:
             isOptional: true
             type: string
             description: |
-              The number of seconds the asset is cached in the browser and in the Supabase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
+              The number of seconds the asset is cached in the browser and in the Skybase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
           - name: content-type
             isOptional: true
             type: string
@@ -7262,7 +7262,7 @@ functions:
           ```python
           with open("./public/avatar1.png", "rb") as f:
               response = (
-                  supabase.storage
+                  skybase.storage
                   .from_("avatars")
                   .upload(
                       file=f,
@@ -7303,7 +7303,7 @@ functions:
             isOptional: true
             type: string
             description: |
-              The number of seconds the asset is cached in the browser and in the Supabase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
+              The number of seconds the asset is cached in the browser and in the Skybase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
           - name: content-type
             isOptional: true
             type: string
@@ -7320,7 +7320,7 @@ functions:
           ```python
           with open("./public/avatar1.png", "rb") as f:
               response = (
-                  supabase.storage
+                  skybase.storage
                   .from_("avatars")
                   .update(
                       file=f,
@@ -7359,7 +7359,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .move(
                   "public/avatar1.png",
@@ -7396,7 +7396,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .copy(
                   "public/avatar1.png",
@@ -7445,7 +7445,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .create_signed_urls(
                   ["folder/avatar1.png", "folder/avatar2.png"],
@@ -7460,13 +7460,13 @@ functions:
               "error": null,
               "path": "folder/avatar1.png",
               "signedURL": "/object/sign/avatars/folder/avatar1.png?token=<TOKEN>",
-              "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
+              "signedUrl": "https://example.skybase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
             },
             {
               "error": null,
               "path": "folder/avatar2.png",
               "signedURL": "/object/sign/avatars/folder/avatar2.png?token=<TOKEN>",
-              "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar2.png?token=<TOKEN>"
+              "signedUrl": "https://example.skybase.co/storage/v1/object/sign/avatars/folder/avatar2.png?token=<TOKEN>"
             }
           ]
           ```
@@ -7529,7 +7529,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .create_signed_url(
                   "folder/avatar1.png",
@@ -7540,7 +7540,7 @@ functions:
         response: |
           ```json
           {
-            "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
+            "signedUrl": "https://example.skybase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
           }
           ```
       - id: create-signed-url-with-transformations
@@ -7549,7 +7549,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .create_signed_url(
                   "folder/avatar1.png",
@@ -7564,7 +7564,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .create_signed_url(
                   "folder/avatar1.png",
@@ -7594,7 +7594,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .create_signed_upload_url("folder/avatar1.png")
           )
@@ -7602,7 +7602,7 @@ functions:
         response: |
           ```json
           {
-            "signedUrl": "https://example.supabase.co/storage/v1/object/upload/sign/avatars/folder/cat.jpg?token=<TOKEN>",
+            "signedUrl": "https://example.skybase.co/storage/v1/object/upload/sign/avatars/folder/cat.jpg?token=<TOKEN>",
               "path": "folder/cat.jpg",
               "token": "<TOKEN>"
           }
@@ -7637,7 +7637,7 @@ functions:
             isOptional: true
             type: string
             description: |
-              The number of seconds the asset is cached in the browser and in the Supabase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
+              The number of seconds the asset is cached in the browser and in the Skybase CDN. This is set in the `Cache-Control: max-age=<seconds>` header. Defaults to 3600 seconds.
           - name: content-type
             isOptional: true
             type: string
@@ -7654,7 +7654,7 @@ functions:
           ```python
           with open("./public/avatar1.png", "rb") as f:
               response = (
-                  supabase.storage
+                  skybase.storage
                   .from_("avatars")
                   .upload_to_signed_url(
                       path="folder/cat.jpg",
@@ -7676,7 +7676,7 @@ functions:
     description: |
       A simple convenience function to get the URL for an asset in a public bucket. If you do not want to use this function, you can construct the public URL by concatenating the bucket URL with the path to the asset. This function does not verify if the bucket is public. If a public URL is created for a bucket which is not public, you will not be able to download the asset.
     notes: |
-      - The bucket needs to be set to public, either via [update_bucket()](/docs/reference/python/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [update_bucket()](/docs/reference/python/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none
@@ -7728,7 +7728,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .get_public_url("folder/avatar1.jpg")
           )
@@ -7736,7 +7736,7 @@ functions:
         response: |
           ```json
           {
-            "publicURL": "https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png"
+            "publicURL": "https://example.skybase.co/storage/v1/object/public/public-bucket/folder/avatar1.png"
           }
           ```
       - id: transform-asset-in-public-bucket
@@ -7745,7 +7745,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .get_public_url(
                   "folder/avatar1.jpg",
@@ -7759,7 +7759,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .get_public_url(
                   "folder/avatar1.jpg",
@@ -7818,7 +7818,7 @@ functions:
           ```python
           with open("./myfolder/avatar1.png", "wb+") as f:
               response = (
-                  supabase.storage
+                  skybase.storage
                   .from_("avatars")
                   .download("folder/avatar1.png")
               )
@@ -7831,7 +7831,7 @@ functions:
           ```python
           with open("./myfolder/avatar1.png", "wb+") as f:
               response = (
-                  supabase.storage
+                  skybase.storage
                   .from_("avatars")
                   .download(
                       "folder/avatar1.png",
@@ -7861,7 +7861,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .remove(["folder/avatar1.png"])
           )
@@ -7940,7 +7940,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .list(
                   "folder",
@@ -7978,7 +7978,7 @@ functions:
         code: |
           ```python
           response = (
-              supabase.storage
+              skybase.storage
               .from_("avatars")
               .list(
                   "folder",

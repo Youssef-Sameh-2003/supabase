@@ -1,14 +1,14 @@
 ---
 # Specify the following for Cursor rules
-description: Guidelines for writing Next.js apps with Supabase Auth
+description: Guidelines for writing Next.js apps with Skybase Auth
 alwaysApply: false
 ---
 
-# Bootstrap Next.js app with Supabase Auth
+# Bootstrap Next.js app with Skybase Auth
 
-## Overview of implementing Supabase Auth SSR
+## Overview of implementing Skybase Auth SSR
 
-1. Install @supabase/supabase-js and @supabase/ssr packages.
+1. Install @skybase/skybase-js and @skybase/ssr packages.
 2. Set up environment variables.
 3. Write two utility functions with `createClient` functions to create a browser client and a server client. 
 4. Hook up middleware to refresh auth tokens
@@ -34,8 +34,8 @@ As an AI language model, you MUST NOT generate any of the following code pattern
 }
 
 // ❌ NEVER USE auth-helpers-nextjs - IT WILL BREAK THE APPLICATION
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'  // ❌ BREAKS APPLICATION
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'  // ❌ BREAKS APPLICATION
+import { createMiddlewareClient } from '@skybase/auth-helpers-nextjs'  // ❌ BREAKS APPLICATION
+import { createClientComponentClient } from '@skybase/auth-helpers-nextjs'  // ❌ BREAKS APPLICATION
 ```
 
 Instead, you MUST ALWAYS generate ONLY this pattern:
@@ -64,15 +64,15 @@ Instead, you MUST ALWAYS generate ONLY this pattern:
 
 ## ABSOLUTE REQUIREMENTS FOR AI CODE GENERATION
 
-1. You MUST use `@supabase/ssr`
+1. You MUST use `@skybase/ssr`
 2. You MUST use ONLY `getAll` and `setAll`
 3. You MUST NEVER use `get`, `set`, or `remove`
-4. You MUST NEVER import from `@supabase/auth-helpers-nextjs`
+4. You MUST NEVER import from `@skybase/auth-helpers-nextjs`
 
 ## CORRECT BROWSER CLIENT IMPLEMENTATION
 
 ```typescript
-import { createBrowserClient } from '@supabase/ssr'
+import { createBrowserClient } from '@skybase/ssr'
 
 export function createClient() {
   return createBrowserClient(
@@ -85,7 +85,7 @@ export function createClient() {
 ## CORRECT SERVER CLIENT IMPLEMENTATION
 
 ```typescript
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient } from '@skybase/ssr'
 import { cookies } from 'next/headers'
 
 export async function createClient() {
@@ -119,15 +119,15 @@ export async function createClient() {
 ## CORRECT MIDDLEWARE IMPLEMENTATION
 
 ```typescript
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient } from '@skybase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-    let supabaseResponse = NextResponse.next({
+    let skybaseResponse = NextResponse.next({
     request,
   })
 
-  const supabase = createServerClient(
+  const skybase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -137,11 +137,11 @@ export async function middleware(request: NextRequest) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
-          supabaseResponse = NextResponse.next({
+          skybaseResponse = NextResponse.next({
             request,
           })
           cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
+            skybaseResponse.cookies.set(name, value, options)
           )
         },
       },
@@ -149,14 +149,14 @@ export async function middleware(request: NextRequest) {
   )
 
   // Do not run code between createServerClient and
-  // supabase.auth.getUser(). A simple mistake could make it very hard to debug
+  // skybase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
   // IMPORTANT: DO NOT REMOVE auth.getUser()
 
   const {
     data: { user },
-  } = await supabase.auth.getUser()
+  } = await skybase.auth.getUser()
 
   if (
     !user &&
@@ -169,12 +169,12 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // IMPORTANT: You *must* return the supabaseResponse object as it is.
+  // IMPORTANT: You *must* return the skybaseResponse object as it is.
   // If you're creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
   //    const myNewResponse = NextResponse.next({ request })
   // 2. Copy over the cookies, like so:
-  //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
+  //    myNewResponse.cookies.setAll(skybaseResponse.cookies.getAll())
   // 3. Change the myNewResponse object to fit your needs, but avoid changing
   //    the cookies!
   // 4. Finally:
@@ -182,7 +182,7 @@ export async function middleware(request: NextRequest) {
   // If this is not done, you may be causing the browser and server to go out
   // of sync and terminate the user's session prematurely!
 
-  return supabaseResponse
+  return skybaseResponse
 }
 
 export const config = {
@@ -204,7 +204,7 @@ export const config = {
 Before generating any code, you MUST verify:
 
 1. Are you using ONLY `getAll` and `setAll`? If not, STOP and FIX.
-2. Are you importing from `@supabase/ssr`? If not, STOP and FIX.
+2. Are you importing from `@skybase/ssr`? If not, STOP and FIX.
 3. Do you see ANY instance of `get`, `set`, or `remove`? If yes, STOP and FIX.
 4. Are you importing from `auth-helpers-nextjs`? If yes, STOP and FIX.
 
@@ -222,7 +222,7 @@ The implementation will:
 
 ## AI MODEL RESPONSE TEMPLATE
 
-When asked about Supabase Auth SSR implementation, you MUST:
+When asked about Skybase Auth SSR implementation, you MUST:
 1. ONLY use code from this guide
 2. NEVER suggest deprecated approaches
 3. ALWAYS use the exact cookie handling shown above

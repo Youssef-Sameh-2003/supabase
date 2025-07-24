@@ -107,11 +107,11 @@
     "author_image_url": "https://github.com/laurenceisla.png"
   },
   {
-    "author_id": "supabase",
-    "author": "Supabase",
+    "author_id": "skybase",
+    "author": "Skybase",
     "position": "",
-    "author_url": "https://github.com/supabase",
-    "author_image_url": "https://github.com/supabase.png"
+    "author_url": "https://github.com/skybase",
+    "author_image_url": "https://github.com/skybase.png"
   },
   {
     "author_id": "thor_schaeff",

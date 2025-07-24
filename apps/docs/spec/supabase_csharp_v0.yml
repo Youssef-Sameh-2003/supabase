@@ -2,14 +2,14 @@ openref: 0.1
 
 info:
   id: reference/csharp
-  title: Supabase C# Client
+  title: Skybase C# Client
   description: |
 
-    Supabase C#.
+    Skybase C#.
 
   definition: spec/enrichments/tsdoc_v2/combined.json
   slugPrefix: '/'
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_csharp_v0.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_csharp_v0.yml
   libraries:
     - name: 'C#'
       id: 'csharp'
@@ -22,7 +22,7 @@ functions:
       Initializing a new client is pretty straightforward. Find your project url and public key from the
       admin panel and pass it into your client initialization function.
 
-      `Supabase` is heavily dependent on Models deriving from `BaseModel`. To interact with the API, one must have the associated model (see example) specified.
+      `Skybase` is heavily dependent on Models deriving from `BaseModel`. To interact with the API, one must have the associated model (see example) specified.
 
       Leverage `Table`, `PrimaryKey`, and `Column` attributes to specify names of classes/properties that are different from their C# Versions.
 
@@ -34,13 +34,13 @@ functions:
           var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
           var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
-          var options = new Supabase.SupabaseOptions
+          var options = new Skybase.SkybaseOptions
           {
               AutoConnectRealtime = true
           };
 
-          var supabase = new Supabase.Client(url, key, options);
-          await supabase.InitializeAsync();
+          var skybase = new Skybase.Client(url, key, options);
+          await skybase.InitializeAsync();
           ```
       - id: csharp-init-maui
         name: Dependency Injection (Maui-like)
@@ -53,22 +53,22 @@ functions:
 
                 var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
                 var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
-                var options = new SupabaseOptions
+                var options = new SkybaseOptions
                 {
                   AutoRefreshToken = true,
                   AutoConnectRealtime = true,
-                  // SessionHandler = new SupabaseSessionHandler() <-- This must be implemented by the developer
+                  // SessionHandler = new SkybaseSessionHandler() <-- This must be implemented by the developer
                 };
 
                 // Note the creation as a singleton.
-                builder.Services.AddSingleton(provider => new Supabase.Client(url, key, options));
+                builder.Services.AddSingleton(provider => new Skybase.Client(url, key, options));
           }
           ```
       - id: csharp-init-showing-models
         name: With Models Example
         code: |
           ```c#
-          // Given the following Model representing the Supabase Database (Message.cs)
+          // Given the following Model representing the Skybase Database (Message.cs)
           [Table("messages")]
           public class Message : BaseModel
           {
@@ -119,11 +119,11 @@ functions:
     description: |
       Creates a new user.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://supabase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://skybase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://supabase.com/dashboard/project/_/auth/url-configuration).
+      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://skybase.com/dashboard/project/_/auth/url-configuration).
       - If SignUp() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -133,7 +133,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var session = await supabase.Auth.SignUp(email, password);
+          var session = await skybase.Auth.SignUp(email, password);
           ```
   - id: sign-in-with-password
     title: 'SignIn(email, password)'
@@ -147,13 +147,13 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var session = await supabase.Auth.SignIn(email, password);
+          var session = await skybase.Auth.SignIn(email, password);
           ```
       - id: sign-in-with-phone-and-password
         name: Sign in with phone and password
         code: |
           ```c#
-          var session = await supabase.Auth.SignIn(SignInType.Phone, phoneNumber, password);
+          var session = await skybase.Auth.SignIn(SignInType.Phone, phoneNumber, password);
           ```
   - id: sign-in-with-otp
     title: 'SendMagicLink() and SignIn(SignInType, Phone)'
@@ -162,7 +162,7 @@ functions:
       - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
       - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
       - If you're using phone, you can configure whether you want the user to receive a OTP.
-      - The magic link's destination URL is determined by the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://supabase.com/dashboard/project/_/auth/settings).
+      - The magic link's destination URL is determined by the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://skybase.com/dashboard/project/_/auth/settings).
     examples:
       - id: sign-in-with-email
         name: Send Magic Link.
@@ -173,17 +173,17 @@ functions:
         code: |
           ```c#
           var options = new SignInOptions { RedirectTo = "http://myredirect.example" };
-          var didSendMagicLink = await supabase.Auth.SendMagicLink("joseph@supabase.io", options);
+          var didSendMagicLink = await skybase.Auth.SendMagicLink("joseph@skybase.io", options);
           ```
       - id: sign-in-with-sms-otp
         name: Sign in with SMS OTP.
         description: The user will be sent a SMS which contains a OTP. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```c#
-          await supabase.Auth.SignIn(SignInType.Phone, "+13334445555");
+          await skybase.Auth.SignIn(SignInType.Phone, "+13334445555");
 
           // Paired with `VerifyOTP` to get a session
-          var session = await supabase.Auth.VerifyOTP("+13334445555", TOKEN, MobileOtpType.SMS);
+          var session = await skybase.Auth.VerifyOTP("+13334445555", TOKEN, MobileOtpType.SMS);
           ```
   - id: sign-in-with-oauth
     title: 'SignIn(Provider)'
@@ -191,14 +191,14 @@ functions:
       Signs the user in using third party OAuth providers.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Supabase supports many different [third-party providers](https://supabase.com/docs/guides/auth#providers).
+      - Skybase supports many different [third-party providers](https://skybase.com/docs/guides/auth#providers).
     examples:
       - id: sign-in-using-a-third-party-provider
         name: Sign in using a third-party provider
         isSpotlight: true
         code: |
           ```c#
-          var signInUrl = supabase.Auth.SignIn(Provider.Github);
+          var signInUrl = skybase.Auth.SignIn(Provider.Github);
           ```
       - id: sign-in-with-scopes
         name: With scopes
@@ -207,10 +207,10 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider.
         code: |
           ```c#
-          var signInUrl = supabase.Auth.SignIn(Provider.Github, 'repo gist notifications');
+          var signInUrl = skybase.Auth.SignIn(Provider.Github, 'repo gist notifications');
 
           // after user comes back from signin flow
-          var session = supabase.Auth.GetSessionFromUrl(REDIRECTED_URI);
+          var session = skybase.Auth.GetSessionFromUrl(REDIRECTED_URI);
           ```
   - id: sign-out
     title: 'SignOut()'
@@ -224,7 +224,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.Auth.SignOut();
+          await skybase.Auth.SignOut();
           ```
   - id: verify-otp
     title: 'VerifyOtp()'
@@ -237,7 +237,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var session = await supabase.Auth.VerifyOTP("+13334445555", TOKEN, MobileOtpType.SMS);
+          var session = await skybase.Auth.VerifyOTP("+13334445555", TOKEN, MobileOtpType.SMS);
           ```
   - id: get-session
     title: 'CurrentSession'
@@ -249,7 +249,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var session = supabase.Auth.CurrentSession;
+          var session = skybase.Auth.CurrentSession;
           ```
   - id: get-user
     title: 'CurrentUser'
@@ -260,7 +260,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var user = supabase.Auth.CurrentUser;
+          var user = skybase.Auth.CurrentUser;
           ```
   - id: update-user
     title: 'UpdateUser()'
@@ -269,7 +269,7 @@ functions:
     notes: |
       - In order to use the `UpdateUser()` method, the user needs to be signed in first.
       - By Default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://supabase.com/dashboard/project/_/auth/settings).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://skybase.com/dashboard/project/_/auth/settings).
     examples:
       - id: update-the-email-for-an-authenticated-user
         name: Update the email for an authenticated user
@@ -278,7 +278,7 @@ functions:
         code: |
           ```c#
           var attrs = new UserAttributes { Email = "new-email@example.com" };
-          var response = await supabase.Auth.Update(attrs);
+          var response = await skybase.Auth.Update(attrs);
           ```
       - id: update-the-password-for-an-authenticated-user
         name: Update the password for an authenticated user
@@ -286,7 +286,7 @@ functions:
         code: |
           ```c#
           var attrs = new UserAttributes { Password = "***********" };
-          var response = await supabase.Auth.Update(attrs);
+          var response = await skybase.Auth.Update(attrs);
           ```
       - id: update-the-users-metadata
         name: Update the user's metadata
@@ -297,7 +297,7 @@ functions:
           {
             Data = new Dictionary<string, string> { {"example", "data" } }
           };
-          var response = await supabase.Auth.Update(attrs);
+          var response = await skybase.Auth.Update(attrs);
           ```
   - id: on-auth-state-change
     title: 'StateChanged'
@@ -311,7 +311,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          supabase.Auth.AddStateChangedListener((sender, changed) =>
+          skybase.Auth.AddStateChangedListener((sender, changed) =>
           {
               switch (changed)
               {
@@ -341,12 +341,12 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.Auth.ResetPasswordForEmail("joseph@supabase.io");
+          await skybase.Auth.ResetPasswordForEmail("joseph@skybase.io");
           ```
   - id: invoke
     title: 'invoke()'
     description: |
-      Invokes a Supabase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
+      Invokes a Skybase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
     notes: |
       - Requires an Authorization header.
       - Invoke params generally match the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) spec.
@@ -362,7 +362,7 @@ functions:
               Body = new Dictionary<string, object> { { "foo", "bar" } }
           };
 
-          await supabase.Functions.Invoke("hello", options: options);
+          await skybase.Functions.Invoke("hello", options: options);
           ```
       - id: modeled-invocation
         name: Modeled invocation
@@ -374,7 +374,7 @@ functions:
               public string Name { get; set; }
           }
 
-          await supabase.Functions.Invoke<HelloResponse>("hello");
+          await skybase.Functions.Invoke<HelloResponse>("hello");
           ```
   - id: select
     description: |
@@ -383,11 +383,11 @@ functions:
     notes: |
       - **LINQ expressions do not currently support parsing embedded resource columns. For these cases, `string` will need to be used.**
       - **When using string Column Names to select, they must match names in database, not names specified on model properties.**
-      - Additional information on modeling + querying Joins and Inner Joins can be found [in the `postgrest-csharp README`](https://github.com/supabase-community/postgrest-csharp/blob/master/README.md#foreign-keys-join-tables-and-relationships)
-      - By default, Supabase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - Additional information on modeling + querying Joins and Inner Joins can be found [in the `postgrest-csharp README`](https://github.com/skybase-community/postgrest-csharp/blob/master/README.md#foreign-keys-join-tables-and-relationships)
+      - By default, Skybase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `From()` can be combined with [Modifiers](/docs/reference/csharp/using-modifiers)
       - `From()` can be combined with [Filters](/docs/reference/csharp/using-filters)
-      - If using the Supabase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/supabase/supabase/issues/5465).
+      - If using the Skybase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/skybase/skybase/issues/5465).
     examples:
       - id: getting-your-data
         name: Getting your data
@@ -411,7 +411,7 @@ functions:
           }
 
           // A result can be fetched like so.
-          var result = await supabase.From<City>().Get();
+          var result = await skybase.From<City>().Get();
           var cities = result.Models
           ```
       - id: selecting-specific-columns
@@ -436,7 +436,7 @@ functions:
           }
 
           // A result can be fetched like so.
-          var result = await supabase
+          var result = await skybase
             .From<Movie>()
             .Select(x => new object[] {x.Name, x.CreatedAt})
             .Get();
@@ -446,7 +446,7 @@ functions:
         description: If your database has relationships, you can query related tables too.
         code: |
           ```c#
-          var data = await supabase
+          var data = await skybase
             .From<Transactions>()
             .Select("id, supplier:supplier_id(name), purchaser:purchaser_id(name)")
             .Get();
@@ -458,7 +458,7 @@ functions:
           to select all rows in a `message` table which belong to a user with the `username` "Jane":
         code: |
           ```c#
-          var result = await supabase
+          var result = await skybase
             .From<Movie>()
             .Select("*, users!inner(*)")
             .Filter("user.username", Operator.Equals, "Jane")
@@ -471,7 +471,7 @@ functions:
           Allowed values for count option are [exact](https://postgrest.org/en/stable/api.html#exact-count), [planned](https://postgrest.org/en/stable/api.html#planned-count) and [estimated](https://postgrest.org/en/stable/api.html#estimated-count).
         code: |
           ```c#
-          var count = await supabase
+          var count = await skybase
             .From<Movie>()
             .Select(x => new object[] { x.Name })
             .Count(CountType.Exact);
@@ -486,7 +486,7 @@ functions:
           [PostgREST docs](http://postgrest.org/en/v7.0.0/api.html#json-columns) for more details.
         code: |
           ```c#
-           var result = await supabase
+           var result = await skybase
             .From<Users>()
             .Select("id, name, address->street")
             .Filter("address->postcode", Operator.Equals, 90210)
@@ -522,7 +522,7 @@ functions:
             CountryId = 554
           };
 
-          await supabase.From<City>().Insert(model);
+          await skybase.From<City>().Insert(model);
           ```
       - id: bulk-create
         name: Bulk create
@@ -547,13 +547,13 @@ functions:
             new City { Name = "Rohan", CountryId = 553 },
           };
 
-          await supabase.From<City>().Insert(models);
+          await skybase.From<City>().Insert(models);
           ```
       - id: fetch-inserted-data
         name: Fetch inserted record
         code: |
           ```c#
-          var result = await supabase
+          var result = await skybase
             .From<City>()
             .Insert(models, new QueryOptions { Returning = ReturnType.Representation });
           ```
@@ -570,7 +570,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var update = await supabase
+          var update = await skybase
             .From<City>()
             .Where(x => x.Name == "Auckland")
             .Set(x => x.Name, "Middle Earth")
@@ -580,7 +580,7 @@ functions:
         name: Update your data
         code: |
           ```c#
-          var model = await supabase
+          var model = await skybase
             .From<City>()
             .Where(x => x.Name == "Auckland")
             .Single();
@@ -609,13 +609,13 @@ functions:
             Name = "Middle Earth"
           };
 
-          await supabase.From<City>().Upsert(model);
+          await skybase.From<City>().Upsert(model);
           ```
       - id: upserting-into-tables-with-constraints
         name: Upserting into tables with constraints
         description: |
-          Running the following will cause supabase to upsert data into the `users` table.
-          If the username 'supabot' already exists, the `onConflict` argument tells supabase to overwrite that row
+          Running the following will cause skybase to upsert data into the `users` table.
+          If the username 'supabot' already exists, the `onConflict` argument tells skybase to overwrite that row
           based on the column passed into `onConflict`.
         isSpotlight: true
         code: |
@@ -626,7 +626,7 @@ functions:
             Name = "Middle Earth"
           };
 
-          await supabase
+          await skybase
             .From<City>()
             .OnConflict(x => x.Name)
             .Upsert(model);
@@ -643,7 +643,7 @@ functions:
             Name = "Middle Earth"
           };
 
-          await supabase
+          await skybase
             .From<City>()
             .Upsert(model, new QueryOptions { Count = QueryOptions.CountType.Exact });
           ```
@@ -660,7 +660,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase
+          await skybase
             .From<City>()
             .Where(x => x.Id == 342)
             .Delete();
@@ -680,13 +680,13 @@ functions:
         description: This is an example invoking a stored procedure.
         code: |
           ```c#
-          await supabase.Rpc("hello_world", null);
+          await skybase.Rpc("hello_world", null);
           ```
       - id: with-parameters
         name: With Parameters
         code: |
           ```c#
-          await supabase.Rpc("hello_world", new Dictionary<string, object> { { "foo", "bar"} });
+          await skybase.Rpc("hello_world", new Dictionary<string, object> { { "foo", "bar"} });
           ```
 
   - id: subscribe
@@ -711,7 +711,7 @@ functions:
               public int CursorY {get; set;}
           }
 
-          var channel = supabase.Realtime.Channel("any");
+          var channel = skybase.Realtime.Channel("any");
           var broadcast = channel.Register<CursorBroadcast>();
           broadcast.AddBroadcastEventHandler((sender, baseBroadcast) =>
           {
@@ -737,7 +737,7 @@ functions:
                 public DateTime OnlineAt {get; set;}
             }
 
-            var channel = supabase.Realtime.Channel("any");
+            var channel = skybase.Realtime.Channel("any");
             var presenceKey = Guid.NewGuid().ToString();
             var presence = channel.Register<UserPresence>(presenceKey);
             presence.AddPresenceEventHandler(EventType.Sync, (sender, type) =>
@@ -756,7 +756,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.From<City>().On(ListenType.All, (sender, change) =>
+          await skybase.From<City>().On(ListenType.All, (sender, change) =>
           {
               Debug.WriteLine(change.Payload.Data);
           });
@@ -765,7 +765,7 @@ functions:
         name: Listen to all database changes
         code: |
           ```c#
-          var channel = supabase.Realtime.Channel("realtime", "public", "*");
+          var channel = skybase.Realtime.Channel("realtime", "public", "*");
 
           channel.AddPostgresChangeHandler(ListenType.All, (sender, change) =>
           {
@@ -781,7 +781,7 @@ functions:
         name: Listening to inserts
         code: |
           ```c#
-          await supabase.From<City>().On(ListenType.Inserts, (sender, change) =>
+          await skybase.From<City>().On(ListenType.Inserts, (sender, change) =>
           {
               Debug.WriteLine(change.Payload.Data);
           });
@@ -789,7 +789,7 @@ functions:
       - id: listening-to-updates
         name: Listening to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -797,7 +797,7 @@ functions:
           ```
         code: |
           ```c#
-          await supabase.From<City>().On(ListenType.Updates, (sender, change) =>
+          await skybase.From<City>().On(ListenType.Updates, (sender, change) =>
           {
               Debug.WriteLine(change.Payload.Data);
           });
@@ -805,7 +805,7 @@ functions:
       - id: listening-to-deletes
         name: Listening to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -813,7 +813,7 @@ functions:
           ```
         code: |
           ```c#
-          await supabase.From<City>().On(ListenType.Deletes, (sender, change) =>
+          await skybase.From<City>().On(ListenType.Deletes, (sender, change) =>
           {
               Debug.WriteLine(change.Payload.Data);
           });
@@ -823,7 +823,7 @@ functions:
         description: You can listen to individual rows using the format `{table}:{col}=eq.{val}` - where `{col}` is the column name, and `{val}` is the value which you want to match.
         code: |
           ```c#
-          var channel = supabase.Realtime.Channel("realtime", "public", "countries", "id", "id=eq.200");
+          var channel = skybase.Realtime.Channel("realtime", "public", "countries", "id", "id=eq.200");
 
           channel.AddPostgresChangeHandler(ListenType.All, (sender, change) =>
           {
@@ -841,19 +841,19 @@ functions:
       Unsubscribes and removes Realtime channel from Realtime client.
     title: 'Unsubscribe()'
     notes: |
-      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
       - id: removes-a-channel
         name: Remove a channel
         isSpotlight: true
         code: |
           ```c#
-          var channel = await supabase.From<City>().On(ChannelEventType.All, (sender, change) => { });
+          var channel = await skybase.From<City>().On(ChannelEventType.All, (sender, change) => { });
           channel.Unsubscribe();
 
           // OR
 
-          var channel = supabase.Realtime.Channel("realtime", "public", "*");
+          var channel = skybase.Realtime.Channel("realtime", "public", "*");
           channel.Unsubscribe()
           ```
 
@@ -867,7 +867,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var channels = supabase.Realtime.Subscriptions;
+          var channels = skybase.Realtime.Subscriptions;
           ```
 
   - id: list-buckets
@@ -884,7 +884,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var buckets = await supabase.Storage.ListBuckets();
+          var buckets = await skybase.Storage.ListBuckets();
           ```
 
   - id: get-bucket
@@ -901,7 +901,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var bucket = await supabase.Storage.GetBucket("avatars");
+          var bucket = await skybase.Storage.GetBucket("avatars");
           ```
 
   - id: create-bucket
@@ -918,7 +918,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var bucket = await supabase.Storage.CreateBucket("avatars");
+          var bucket = await skybase.Storage.CreateBucket("avatars");
           ```
 
   - id: empty-bucket
@@ -935,7 +935,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var bucket = await supabase.Storage.EmptyBucket("avatars");
+          var bucket = await skybase.Storage.EmptyBucket("avatars");
           ```
   - id: update-bucket
     description: |
@@ -951,7 +951,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var bucket = await supabase.Storage.UpdateBucket("avatars", new BucketUpsertOptions { Public = false });
+          var bucket = await skybase.Storage.UpdateBucket("avatars", new BucketUpsertOptions { Public = false });
           ```
 
   - id: delete-bucket
@@ -968,7 +968,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          var result = await supabase.Storage.DeleteBucket("avatars");
+          var result = await skybase.Storage.DeleteBucket("avatars");
           ```
 
   - id: from-upload
@@ -987,7 +987,7 @@ functions:
           ```c#
           var imagePath = Path.Combine("Assets", "fancy-avatar.png");
 
-          await supabase.Storage
+          await skybase.Storage
             .From("avatars")
             .Upload(imagePath, "fancy-avatar.png", new FileOptions { CacheControl = "3600", Upsert = false });
           ```
@@ -997,7 +997,7 @@ functions:
           ```c#
           var imagePath = Path.Combine("Assets", "fancy-avatar.png");
 
-          await supabase.Storage
+          await skybase.Storage
             .From("avatars")
             .Upload(imagePath, "fancy-avatar.png", onProgress: (sender, progress) => Debug.WriteLine($"{progress}%"));
           ```
@@ -1017,7 +1017,7 @@ functions:
         code: |
           ```c#
           var imagePath = Path.Combine("Assets", "fancy-avatar.png");
-          await supabase.Storage.From("avatars").Update(imagePath, "fancy-avatar.png");
+          await skybase.Storage.From("avatars").Update(imagePath, "fancy-avatar.png");
           ```
 
   - id: from-move
@@ -1034,7 +1034,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.Storage.From("avatars")
+          await skybase.Storage.From("avatars")
             .Move("public/fancy-avatar.png", "private/fancy-avatar.png");
           ```
 
@@ -1052,7 +1052,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var url = await supabase.Storage.From("avatars").CreateSignedUrl("public/fancy-avatar.png", 60);
+          var url = await skybase.Storage.From("avatars").CreateSignedUrl("public/fancy-avatar.png", 60);
           ```
 
   - id: from-get-public-url
@@ -1060,7 +1060,7 @@ functions:
       Retrieve URLs for assets in public buckets
     title: 'from.getPublicUrl()'
     notes: |
-      - The bucket needs to be set to public, either via [UpdateBucket()](/docs/reference/csharp/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [UpdateBucket()](/docs/reference/csharp/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: none
@@ -1070,7 +1070,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var publicUrl = supabase.Storage.From("avatars").GetPublicUrl("public/fancy-avatar.png");
+          var publicUrl = skybase.Storage.From("avatars").GetPublicUrl("public/fancy-avatar.png");
           ```
 
   - id: from-download
@@ -1087,13 +1087,13 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var bytes = await supabase.Storage.From("avatars").Download("public/fancy-avatar.png");
+          var bytes = await skybase.Storage.From("avatars").Download("public/fancy-avatar.png");
           ```
       - id: download-file-with-progress
         name: Download file with Progress
         code: |
           ```c#
-          var bytes = await supabase.Storage
+          var bytes = await skybase.Storage
             .From("avatars")
             .Download("public/fancy-avatar.png", (sender, progress) => Debug.WriteLine($"{progress}%"));
           ```
@@ -1112,7 +1112,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.Storage.From("avatars").Remove(new List<string> { "public/fancy-avatar.png" });
+          await skybase.Storage.From("avatars").Remove(new List<string> { "public/fancy-avatar.png" });
           ```
 
   - id: from-list
@@ -1129,7 +1129,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var objects = await supabase.Storage.From("avatars").List();
+          var objects = await skybase.Storage.From("avatars").List();
           ```
   - id: using-modifiers
     title: Using Modifiers
@@ -1149,7 +1149,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Limit(10)
             .Get();
@@ -1158,7 +1158,7 @@ functions:
         name: With embedded resources
         code: |
           ```c#
-          var result = await supabase.From<Country>()
+          var result = await skybase.From<Country>()
             .Select("name, cities(name)")
             .Filter("name", Operator.Equals, "United States")
             .Limit(10, "cities")
@@ -1175,7 +1175,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Order(x => x.Id, Ordering.Descending)
             .Get();
@@ -1184,7 +1184,7 @@ functions:
         name: With embedded resources
         code: |
           ```c#
-           var result = await supabase.From<Country>()
+           var result = await skybase.From<Country>()
             .Select("name, cities(name)")
             .Filter(x => x.Name == "United States")
             .Order("cities", "name", Ordering.Descending)
@@ -1201,7 +1201,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select("name, country_id")
             .Range(0, 3)
             .Get();
@@ -1217,7 +1217,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Offset(25)
             .Get();
@@ -1233,7 +1233,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Single();
           ```
@@ -1251,7 +1251,7 @@ functions:
         name: Applying Filters
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
                 .Select(x => new object[] { x.Name, x.CountryId })
                 .Where(x => x.Name == "The Shire")
                 .Single();
@@ -1276,7 +1276,7 @@ functions:
             ```
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Filter("address->postcode", Operator.Equals, 90210)
             .Get();
           ```
@@ -1284,7 +1284,7 @@ functions:
         name: Filter Foreign Tables
         code: |
           ```c#
-          var results = await supabase.From<Country>()
+          var results = await skybase.From<Country>()
             .Select("name, cities!inner(name)")
             .Filter("cities.name", Operator.Equals, "Bali")
             .Get();
@@ -1300,7 +1300,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<Country>()
+          var result = await skybase.From<Country>()
             .Where(x => x.Id == 20 || x.Id == 30)
             .Get();
           ```
@@ -1308,7 +1308,7 @@ functions:
         name: Use `or` with `and`
         code: |
           ```c#
-          var result = await supabase.From<Country>()
+          var result = await skybase.From<Country>()
             .Where(x => x.Population > 300000 || x.BirthRate < 0.6)
             .Where(x => x.Name != "Mordor")
             .Get();
@@ -1324,7 +1324,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<Country>()
+          var result = await skybase.From<Country>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Where(x => x.Name != "Paris")
             .Get();
@@ -1347,7 +1347,7 @@ functions:
               Name = "Atlanta"
           };
 
-          var model = supabase.From<City>().Match(city).Single();
+          var model = skybase.From<City>().Match(city).Single();
           ```
       - id: with-dictionary
         name: With Dictionary
@@ -1359,7 +1359,7 @@ functions:
               {"country_id", "156"}
           };
 
-          var model = supabase.From<City>().Match(opts).Single();
+          var model = skybase.From<City>().Match(opts).Single();
           ```
 
   - id: eq
@@ -1372,7 +1372,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Where(x => x.Name == "Bali")
             .Get();
           ```
@@ -1387,7 +1387,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Where(x => x.Name != "Bali")
             .Get();
@@ -1403,7 +1403,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Where(x => x.CountryId > 250)
             .Get();
@@ -1419,7 +1419,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select(x => new object[] { x.Name, x.CountryId })
             .Where(x => x.CountryId >= 250)
             .Get();
@@ -1435,7 +1435,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Select("name, country_id")
             .Where(x => x.CountryId < 250)
             .Get();
@@ -1451,7 +1451,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Where(x => x.CountryId <= 250)
             .Get();
           ```
@@ -1466,7 +1466,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Filter(x => x.Name, Operator.Like, "%la%")
             .Get();
           ```
@@ -1481,7 +1481,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await supabase.From<City>()
+          await skybase.From<City>()
             .Filter(x => x.Name, Operator.ILike, "%la%")
             .Get();
           ```
@@ -1496,7 +1496,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Where(x => x.Name == null
             .Get();
           ```
@@ -1511,7 +1511,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Filter(x => x.Name, Operator.In, new List<object> { "Rio de Janiero", "San Francisco" })
             .Get();
           ```
@@ -1524,7 +1524,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Filter(x => x.MainExports, Operator.Contains, new List<object> { "oil", "fish" })
             .Get();
           ```
@@ -1537,7 +1537,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          var result = await supabase.From<City>()
+          var result = await skybase.From<City>()
             .Filter(x => x.MainExports, Operator.ContainedIn, new List<object> { "oil", "fish" })
             .Get();
           ```
@@ -1551,7 +1551,7 @@ functions:
         name: Text search
         code: |
           ```c#
-          var result = await supabase.From<Quote>()
+          var result = await skybase.From<Quote>()
             .Select(x => x.Catchphrase)
             .Filter(x => x.Catchphrase, Operator.FTS, new FullTextSearchConfig("'fat' & 'cat", "english"))
             .Get();
@@ -1561,7 +1561,7 @@ functions:
         description: Uses PostgreSQL's `plainto_tsquery` function.
         code: |
           ```c#
-          var result = await supabase.From<Quote>()
+          var result = await skybase.From<Quote>()
             .Select(x => x.Catchphrase)
             .Filter(x => x.Catchphrase, Operator.PLFTS, new FullTextSearchConfig("'fat' & 'cat", "english"))
             .Get();
@@ -1571,7 +1571,7 @@ functions:
         description: Uses PostgreSQL's `phraseto_tsquery` function.
         code: |
           ```c#
-          var result = await supabase.From<Quote>()
+          var result = await skybase.From<Quote>()
             .Select(x => x.Catchphrase)
             .Filter(x => x.Catchphrase, Operator.PHFTS, new FullTextSearchConfig("'fat' & 'cat", "english"))
             .Get();
@@ -1590,7 +1590,7 @@ functions:
 
         code: |
           ```c#
-          var result = await supabase.From<Quote>()
+          var result = await skybase.From<Quote>()
             .Select(x => x.Catchphrase)
             .Filter(x => x.Catchphrase, Operator.WFTS, new FullTextSearchConfig("'fat' & 'cat", "english"))
             .Get();

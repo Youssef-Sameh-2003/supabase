@@ -1,8 +1,8 @@
 {
   "name": "password-based-auth-react",
   "type": "registry:block",
-  "title": "Password Based Auth flow for React and Supabase",
-  "description": "Password Based Auth flow for React and Supabase",
+  "title": "Password Based Auth flow for React and Skybase",
+  "description": "Password Based Auth flow for React and Skybase",
   "registryDependencies": ["button", "card", "input", "label"],
   "files": [
     {
@@ -22,5 +22,5 @@
       "type": "registry:component"
     }
   ],
-  "dependencies": ["@supabase/supabase-js@latest"]
+  "dependencies": ["@skybase/skybase-js@latest"]
 }

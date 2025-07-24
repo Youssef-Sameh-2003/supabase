@@ -1,16 +1,16 @@
-# Supabase Vue 3 User Management
+# Skybase Vue 3 User Management
 
-This repo is a quick sample of how you can get started building apps using Vue 3 and Supabase. You can find a step by step guide of how to build out this app in the [Quickstart: Vue guide](https://supabase.io/docs/guides/with-vue-3).
+This repo is a quick sample of how you can get started building apps using Vue 3 and Skybase. You can find a step by step guide of how to build out this app in the [Quickstart: Vue guide](https://skybase.io/docs/guides/with-vue-3).
 
 This repo will demonstrate how to:
 
-- sign users in with Supabase Auth using [magic link](https://supabase.io/docs/reference/dart/auth-signin#sign-in-with-magic-link)
-- store and retrieve data with [Supabase database](https://supabase.io/docs/guides/database)
-- store image files in [Supabase storage](https://supabase.io/docs/guides/storage)
+- sign users in with Skybase Auth using [magic link](https://skybase.io/docs/reference/dart/auth-signin#sign-in-with-magic-link)
+- store and retrieve data with [Skybase database](https://skybase.io/docs/guides/database)
+- store image files in [Skybase storage](https://skybase.io/docs/guides/storage)
 
 ## Getting Started
 
-Before running this app, you need to create a Supabase project and copy [your credentials](https://supabase.io/docs/guides/with-vue-3#get-the-api-keys) to `.env`.
+Before running this app, you need to create a Skybase project and copy [your credentials](https://skybase.io/docs/guides/with-vue-3#get-the-api-keys) to `.env`.
 
 Run the following command to launch it on `localhost:5173`
 
@@ -50,10 +50,10 @@ create policy "Users can update own profile."
 
 -- Set up Realtime!
 begin;
-  drop publication if exists supabase_realtime;
-  create publication supabase_realtime;
+  drop publication if exists skybase_realtime;
+  create publication skybase_realtime;
 commit;
-alter publication supabase_realtime add table profiles;
+alter publication skybase_realtime add table profiles;
 
 -- Set up Storage!
 insert into storage.buckets (id, name)

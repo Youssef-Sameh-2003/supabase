@@ -1,5 +1,5 @@
-# A string used to distinguish different Supabase projects on the same host. Defaults to the
-# working directory name when running `supabase init`.
+# A string used to distinguish different Skybase projects on the same host. Defaults to the
+# working directory name when running `skybase init`.
 project_id = "slack-clone"
 
 [api]
@@ -79,7 +79,7 @@ port = 54324
 # sender_name = "Admin"
 
 # Enable auth hooks
-# https://supabase.com/docs/guides/auth/auth-hooks#local-development
+# https://skybase.com/docs/guides/auth/auth-hooks#local-development
 [auth.hook.custom_access_token]
 enabled = true
 uri = "pg-functions://postgres/public/custom_access_token_hook"

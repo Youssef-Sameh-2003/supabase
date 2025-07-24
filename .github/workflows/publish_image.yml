@@ -16,7 +16,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            supabase/studio
+            skybase/studio
           flavor: |
             latest=true
           tags: |
@@ -36,7 +36,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            supabase/studio
+            skybase/studio
           tags: |
             type=raw,value=${{ needs.settings.outputs.image_version }}_${{ env.arch }}
 
@@ -75,7 +75,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            supabase/studio
+            skybase/studio
           tags: |
             type=raw,value=${{ needs.settings.outputs.image_version }}_${{ env.arch }}
 
@@ -118,12 +118,12 @@ jobs:
 
       - name: Merge multi-arch manifests
         run: |
-          docker buildx imagetools create -t supabase/studio:${{ needs.settings.outputs.image_version }} \
-          supabase/studio@${{ needs.release_x86.outputs.image_digest }} \
-          supabase/studio@${{ needs.release_arm.outputs.image_digest }}
-          docker buildx imagetools create -t supabase/studio:latest \
-          supabase/studio@${{ needs.release_x86.outputs.image_digest }} \
-          supabase/studio@${{ needs.release_arm.outputs.image_digest }}
+          docker buildx imagetools create -t skybase/studio:${{ needs.settings.outputs.image_version }} \
+          skybase/studio@${{ needs.release_x86.outputs.image_digest }} \
+          skybase/studio@${{ needs.release_arm.outputs.image_digest }}
+          docker buildx imagetools create -t skybase/studio:latest \
+          skybase/studio@${{ needs.release_x86.outputs.image_digest }} \
+          skybase/studio@${{ needs.release_arm.outputs.image_digest }}
 
   publish:
     needs:

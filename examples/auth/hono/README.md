@@ -1,12 +1,12 @@
-# Hono Supabase Auth Example
+# Hono Skybase Auth Example
 
 Based on the Hono/JSX + Vite example by [@MathurAditya724](https://github.com/MathurAditya724) \o/
 
-This example shows how to use Supabase Auth both on the client and server side with Hono.
+This example shows how to use Skybase Auth both on the client and server side with Hono.
 
-## Supabase setup
+## Skybase setup
 
-- Create a new Supabase project at [database.new](https://database.new/)
+- Create a new Skybase project at [database.new](https://database.new/)
 - Go to the `SQL Editor` and run the following query to create the `countries` table.
 
 ```sql
@@ -34,7 +34,7 @@ for select to authenticated
 using (true);
 ```
 
-- [Enable anonymous sign-ins](https://supabase.com/dashboard/project/_/settings/auth) in the Auth settings.
+- [Enable anonymous sign-ins](https://skybase.com/dashboard/project/_/settings/auth) in the Auth settings.
 
 ## Setup
 

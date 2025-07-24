@@ -626,8 +626,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "cms-payload.customers_supabase_products": {
-      "name": "customers_supabase_products",
+    "cms-payload.customers_skybase_products": {
+      "name": "customers_skybase_products",
       "schema": "cms-payload",
       "columns": {
         "order": {
@@ -644,7 +644,7 @@
         },
         "value": {
           "name": "value",
-          "type": "enum_customers_supabase_products",
+          "type": "enum_customers_skybase_products",
           "typeSchema": "cms-payload",
           "primaryKey": false,
           "notNull": false
@@ -657,8 +657,8 @@
         }
       },
       "indexes": {
-        "customers_supabase_products_order_idx": {
-          "name": "customers_supabase_products_order_idx",
+        "customers_skybase_products_order_idx": {
+          "name": "customers_skybase_products_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -672,8 +672,8 @@
           "method": "btree",
           "with": {}
         },
-        "customers_supabase_products_parent_idx": {
-          "name": "customers_supabase_products_parent_idx",
+        "customers_skybase_products_parent_idx": {
+          "name": "customers_skybase_products_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -689,9 +689,9 @@
         }
       },
       "foreignKeys": {
-        "customers_supabase_products_parent_fk": {
-          "name": "customers_supabase_products_parent_fk",
-          "tableFrom": "customers_supabase_products",
+        "customers_skybase_products_parent_fk": {
+          "name": "customers_skybase_products_parent_fk",
+          "tableFrom": "customers_skybase_products",
           "tableTo": "customers",
           "schemaTo": "cms-payload",
           "columnsFrom": [
@@ -1273,8 +1273,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "cms-payload._customers_v_version_supabase_products": {
-      "name": "_customers_v_version_supabase_products",
+    "cms-payload._customers_v_version_skybase_products": {
+      "name": "_customers_v_version_skybase_products",
       "schema": "cms-payload",
       "columns": {
         "order": {
@@ -1291,7 +1291,7 @@
         },
         "value": {
           "name": "value",
-          "type": "enum__customers_v_version_supabase_products",
+          "type": "enum__customers_v_version_skybase_products",
           "typeSchema": "cms-payload",
           "primaryKey": false,
           "notNull": false
@@ -1304,8 +1304,8 @@
         }
       },
       "indexes": {
-        "_customers_v_version_supabase_products_order_idx": {
-          "name": "_customers_v_version_supabase_products_order_idx",
+        "_customers_v_version_skybase_products_order_idx": {
+          "name": "_customers_v_version_skybase_products_order_idx",
           "columns": [
             {
               "expression": "order",
@@ -1319,8 +1319,8 @@
           "method": "btree",
           "with": {}
         },
-        "_customers_v_version_supabase_products_parent_idx": {
-          "name": "_customers_v_version_supabase_products_parent_idx",
+        "_customers_v_version_skybase_products_parent_idx": {
+          "name": "_customers_v_version_skybase_products_parent_idx",
           "columns": [
             {
               "expression": "parent_id",
@@ -1336,9 +1336,9 @@
         }
       },
       "foreignKeys": {
-        "_customers_v_version_supabase_products_parent_fk": {
-          "name": "_customers_v_version_supabase_products_parent_fk",
-          "tableFrom": "_customers_v_version_supabase_products",
+        "_customers_v_version_skybase_products_parent_fk": {
+          "name": "_customers_v_version_skybase_products_parent_fk",
+          "tableFrom": "_customers_v_version_skybase_products",
           "tableTo": "_customers_v",
           "schemaTo": "cms-payload",
           "columnsFrom": [
@@ -6259,8 +6259,8 @@
         "developer-tools"
       ]
     },
-    "cms-payload.enum_customers_supabase_products": {
-      "name": "enum_customers_supabase_products",
+    "cms-payload.enum_customers_skybase_products": {
+      "name": "enum_customers_skybase_products",
       "schema": "cms-payload",
       "values": [
         "database",
@@ -6318,8 +6318,8 @@
         "developer-tools"
       ]
     },
-    "cms-payload.enum__customers_v_version_supabase_products": {
-      "name": "enum__customers_v_version_supabase_products",
+    "cms-payload.enum__customers_v_version_skybase_products": {
+      "name": "enum__customers_v_version_skybase_products",
       "schema": "cms-payload",
       "values": [
         "database",

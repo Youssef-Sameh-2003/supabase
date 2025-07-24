@@ -1,5 +1,5 @@
-# A string used to distinguish different Supabase projects on the same host. Defaults to the working
-# directory name when running `supabase init`.
+# A string used to distinguish different Skybase projects on the same host. Defaults to the working
+# directory name when running `skybase init`.
 project_id = "partitions"
 
 [db]
@@ -15,7 +15,7 @@ major_version = 15
 # If enabled, seeds the database after migrations during a db reset.
 enabled = true
 # Specifies an ordered list of seed files to load during db reset.
-# Supports glob patterns relative to supabase directory: './seeds/*.sql'
+# Supports glob patterns relative to skybase directory: './seeds/*.sql'
 sql_paths = ['./seed.sql']
 
 [api]

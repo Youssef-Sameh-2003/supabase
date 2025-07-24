@@ -6,7 +6,7 @@ sources:
   docker_host:
     type: docker_logs
     exclude_containers:
-      - supabase-vector
+      - skybase-vector
 
 transforms:
   project_logs:
@@ -30,13 +30,13 @@ transforms:
     inputs:
       - project_logs
     route:
-      kong: '.appname == "supabase-kong"'
-      auth: '.appname == "supabase-auth"'
-      rest: '.appname == "supabase-rest"'
-      realtime: '.appname == "supabase-realtime"'
-      storage: '.appname == "supabase-storage"'
-      functions: '.appname == "supabase-functions"'
-      db: '.appname == "supabase-db"'
+      kong: '.appname == "skybase-kong"'
+      auth: '.appname == "skybase-auth"'
+      rest: '.appname == "skybase-rest"'
+      realtime: '.appname == "skybase-realtime"'
+      storage: '.appname == "skybase-storage"'
+      functions: '.appname == "skybase-functions"'
+      db: '.appname == "skybase-db"'
   # Ignores non nginx errors since they are related with kong booting up
   kong_logs:
     type: remap

@@ -7,7 +7,7 @@
   },
   {
     "name": "Install from CDN",
-    "description": "Use Supabase in the browser without a build process",
+    "description": "Use Skybase in the browser without a build process",
     "badge": "",
     "url": "/docs/client/initializing"
   },
@@ -18,9 +18,9 @@
     "url": "/docs/guides/self-hosting"
   },
   {
-    "name": "Supabase CLI",
-    "description": "Manage Supabase projects from your local machine",
+    "name": "Skybase CLI",
+    "description": "Manage Skybase projects from your local machine",
     "badge": "",
-    "url": "https://github.com/supabase/cli"
+    "url": "https://github.com/skybase/cli"
   }
 ]

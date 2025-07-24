@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "name": "@supabase/auth-js",
+  "name": "@skybase/auth-js",
   "kind": 1,
   "kindString": "Project",
   "flags": {},
@@ -11454,7 +11454,7 @@
               "kindString": "Call signature",
               "flags": {},
               "comment": {
-                "shortText": "Gets the current user details if there is an existing session. This method\nperforms a network request to the Supabase Auth server, so the returned\nvalue is authentic and can be used to base authorization rules on."
+                "shortText": "Gets the current user details if there is an existing session. This method\nperforms a network request to the Skybase Auth server, so the returned\nvalue is authentic and can be used to base authorization rules on."
               },
               "parameters": [
                 {
@@ -36761,7 +36761,7 @@
                 "type": "intrinsic",
                 "name": "boolean"
               },
-              "defaultValue": "!!(\n    globalThis &&\n    supportsLocalStorage() &&\n    globalThis.localStorage &&\n    globalThis.localStorage.getItem('supabase.gotrue-js.locks.debug') === 'true'\n  )"
+              "defaultValue": "!!(\n    globalThis &&\n    supportsLocalStorage() &&\n    globalThis.localStorage &&\n    globalThis.localStorage.getItem('skybase.gotrue-js.locks.debug') === 'true'\n  )"
             }
           ],
           "groups": [
@@ -37073,7 +37073,7 @@
           "flags": {},
           "comment": {
             "shortText": "Implements a global exclusive lock using the Navigator LockManager API. It\nis available on all browsers released after 2022-03-15 with Safari being the\nlast one to release support. If the API is not available, this function will\nthrow. Make sure you check availablility before configuring {@link\nGoTrueClient}.",
-            "text": "You can turn on debugging by setting the `supabase.gotrue-js.locks.debug`\nlocal storage item to `true`.\n\nInternals:\n\nSince the LockManager API does not preserve stack traces for the async\nfunction passed in the `request` method, a trick is used where acquiring the\nlock releases a previously started promise to run the operation in the `fn`\nfunction. The lock waits for that promise to finish (with or without error),\nwhile the function will finally wait for the result anyway.\n"
+            "text": "You can turn on debugging by setting the `skybase.gotrue-js.locks.debug`\nlocal storage item to `true`.\n\nInternals:\n\nSince the LockManager API does not preserve stack traces for the async\nfunction passed in the `request` method, a trick is used where acquiring the\nlock releases a previously started promise to run the operation in the `fn`\nfunction. The lock waits for that promise to finish (with or without error),\nwhile the function will finally wait for the result anyway.\n"
           },
           "typeParameter": [
             {

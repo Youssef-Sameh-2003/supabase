@@ -19,14 +19,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.supabase.expousermanagement"
+      "bundleIdentifier": "com.skybase.expousermanagement"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.supabase.expousermanagement"
+      "package": "com.skybase.expousermanagement"
     },
     "web": {
       "favicon": "./assets/favicon.png"

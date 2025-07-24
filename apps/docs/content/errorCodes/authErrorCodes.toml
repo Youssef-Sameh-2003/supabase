@@ -1,4 +1,4 @@
-# Official error codes for Supabase Auth
+# Official error codes for Skybase Auth
 #
 # Error codes should be documented in the following format
 #
@@ -6,7 +6,7 @@
 # description = "Error description."
 # resolution = "How to resolve this error."
 # [[error_code.references]]
-# href = "https://supabase.com/docs/some/relevant/guide"
+# href = "https://skybase.com/docs/some/relevant/guide"
 # description = "Guide for doing some relevant thing"
 #
 # error_code should be a unique and stable identifier for the error, that the
@@ -28,7 +28,7 @@ description = "JWT sent in the Authorization header is not valid."
 description = "OAuth callback from provider to Auth does not have all the required attributes (state). Indicates an issue with the OAuth provider or client library implementation."
 
 [bad_oauth_state]
-description = "OAuth state (data echoed back by the OAuth provider to Supabase Auth) is not in the correct format. Indicates an issue with the OAuth provider integration."
+description = "OAuth state (data echoed back by the OAuth provider to Skybase Auth) is not in the correct format. Indicates an issue with the OAuth provider integration."
 
 [captcha_failed]
 description = "CAPTCHA challenge could not be verified with the CAPTCHA provider. Check your CAPTCHA integration."
@@ -40,9 +40,9 @@ description = "General database conflict, such as concurrent requests on resourc
 description = "Example and test domains are currently not supported. Use a different email address."
 
 [email_address_not_authorized]
-description = "Email sending is not allowed for this address as your project is using the default SMTP service. Emails can only be sent to members in your Supabase organization. If you want to send emails to others, set up a custom SMTP provider."
+description = "Email sending is not allowed for this address as your project is using the default SMTP service. Emails can only be sent to members in your Skybase organization. If you want to send emails to others, set up a custom SMTP provider."
 [[email_address_not_authorized.references]]
-href = "https://supabase.com/docs/guides/auth/auth-smtp"
+href = "https://skybase.com/docs/guides/auth/auth-smtp"
 description = "Setting up a custom SMTP provider"
 
 [email_conflict_identity_not_deletable]
@@ -84,7 +84,7 @@ description = "Identity to which the API call relates does not exist, such as wh
 [insufficient_aal]
 description = "To call this API, the user must have a higher Authenticator Assurance Level. To resolve, ask the user to solve an MFA challenge."
 [[insufficient_aal.references]]
-href = "https://supabase.com/docs/guides/auth/auth-mfa"
+href = "https://skybase.com/docs/guides/auth/auth-mfa"
 description = "MFA"
 
 [invite_not_found]
@@ -94,7 +94,7 @@ description = "Invite is expired or already used."
 description = "Login credentials or grant type not recognized."
 
 [manual_linking_disabled]
-description = "Calling the supabase.auth.linkUser() and related APIs is not enabled on the Auth server."
+description = "Calling the skybase.auth.linkUser() and related APIs is not enabled on the Auth server."
 
 [mfa_challenge_expired]
 description = "Responding to an MFA challenge should happen within a fixed time period. Request a new challenge when encountering this error."
@@ -126,7 +126,7 @@ description = "MFA challenge could not be verified -- wrong TOTP code."
 [mfa_verification_rejected]
 description = "Further MFA verification is rejected. Only returned if the MFA verification attempt hook returns a reject decision."
 [[mfa_verification_rejected.references]]
-href = "https://supabase.com/docs/guides/auth/auth-hooks?language=add-admin-role#hook-mfa-verification-attempt"
+href = "https://skybase.com/docs/guides/auth/auth-hooks?language=add-admin-role#hook-mfa-verification-attempt"
 description = "MFA verification hook"
 
 [mfa_verified_factor_exists]
@@ -178,10 +178,10 @@ description = "Signups are disabled for phone and password."
 description = "OAuth provider is disabled for use. Check your server's configuration."
 
 [provider_email_needs_verification]
-description = "Not all OAuth providers verify their user's email address. Supabase Auth requires emails to be verified, so this error is sent out when a verification email is sent after completing the OAuth flow."
+description = "Not all OAuth providers verify their user's email address. Skybase Auth requires emails to be verified, so this error is sent out when a verification email is sent after completing the OAuth flow."
 
 [reauthentication_needed]
-description = "A user needs to reauthenticate to change their password. Ask the user to reauthenticate by calling the supabase.auth.reauthenticate() API."
+description = "A user needs to reauthenticate to change their password. Ask the user to reauthenticate by calling the skybase.auth.reauthenticate() API."
 
 [reauthentication_not_valid]
 description = "Verifying a reauthentication failed, the code is incorrect. Ask the user to enter a new code."
@@ -192,7 +192,7 @@ description = "Session containing the refresh token not found."
 [refresh_token_already_used]
 description = "Refresh token has been revoked and falls outside the refresh token reuse interval. See the documentation on sessions for further information."
 [[refresh_token_already_used.references]]
-href = "https://supabase.com/docs/guides/auth/sessions"
+href = "https://skybase.com/docs/guides/auth/sessions"
 description = "Auth sessions"
 
 [request_timeout]
@@ -214,7 +214,7 @@ description = "(Admin API.) Updating the SAML metadata for a SAML identity provi
 description = "(Admin API.) Adding a SAML identity provider that is already added."
 
 [saml_idp_not_found]
-description = "SAML identity provider not found. Most often returned after IdP-initiated sign-in with an unregistered SAML identity provider in Supabase Auth."
+description = "SAML identity provider not found. Most often returned after IdP-initiated sign-in with an unregistered SAML identity provider in Skybase Auth."
 
 [saml_metadata_fetch_failed]
 description = "(Admin API.) Adding or updating a SAML provider failed as its metadata could not be fetched from the provided URL."
@@ -222,11 +222,11 @@ description = "(Admin API.) Adding or updating a SAML provider failed as its met
 [saml_provider_disabled]
 description = "Using Enterprise SSO with SAML 2.0 is not enabled on the Auth server."
 [[saml_provider_disabled.references]]
-href = "https://supabase.com/docs/guides/auth/enterprise-sso/auth-sso-saml"
+href = "https://skybase.com/docs/guides/auth/enterprise-sso/auth-sso-saml"
 description = "Enterprise SSO"
 
 [saml_relay_state_expired]
-description = "SAML relay state is an object that tracks the progress of a supabase.auth.signInWithSSO() request. The SAML identity provider should respond after a fixed amount of time, after which this error is shown. Ask the user to sign in again."
+description = "SAML relay state is an object that tracks the progress of a skybase.auth.signInWithSSO() request. The SAML identity provider should respond after a fixed amount of time, after which this error is shown. Ask the user to sign in again."
 
 [saml_relay_state_not_found]
 description = "SAML relay states are progressively cleaned up after they expire, which can cause this error. Ask the user to sign in again."
@@ -234,7 +234,7 @@ description = "SAML relay states are progressively cleaned up after they expire,
 [session_expired]
 description = "Session to which the API request relates has expired. This can occur if an inactivity timeout is configured, or the session entry has exceeded the configured timebox value. See the documentation on sessions for more information."
 [[session_expired.references]]
-href = "https://supabase.com/docs/guides/auth/sessions"
+href = "https://skybase.com/docs/guides/auth/sessions"
 description = "Auth sessions"
 
 [session_not_found]
@@ -253,13 +253,13 @@ description = "Sending an SMS message failed. Check your SMS provider configurat
 description = "(Admin API.) Only one SSO domain can be registered per SSO identity provider."
 
 [sso_provider_not_found]
-description = "SSO provider not found. Check the arguments in supabase.auth.signInWithSSO()."
+description = "SSO provider not found. Check the arguments in skybase.auth.signInWithSSO()."
 
 [too_many_enrolled_mfa_factors]
 description = "A user can only have a fixed number of enrolled MFA factors."
 
 [unexpected_audience]
-description = "(Deprecated feature not available via Supabase client libraries.) The request's X-JWT-AUD claim does not match the JWT's audience."
+description = "(Deprecated feature not available via Skybase client libraries.) The request's X-JWT-AUD claim does not match the JWT's audience."
 
 [unexpected_failure]
 description = "Auth service is degraded or a bug is present, without a specific reason."

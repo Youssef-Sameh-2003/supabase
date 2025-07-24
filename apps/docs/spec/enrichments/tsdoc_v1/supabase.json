@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "name": "@supabase/supabase-js",
+  "name": "@skybase/skybase-js",
   "kind": 1,
   "flags": {},
   "originalName": "",
@@ -14,7 +14,7 @@
       "children": [
         {
           "id": 202,
-          "name": "SupabaseClientOptions",
+          "name": "SkybaseClientOptions",
           "kind": 16777216,
           "kindString": "Reference",
           "flags": {},
@@ -29,7 +29,7 @@
         },
         {
           "id": 203,
-          "name": "SupabaseRealtimePayload",
+          "name": "SkybaseRealtimePayload",
           "kind": 16777216,
           "kindString": "Reference",
           "flags": {},
@@ -44,12 +44,12 @@
         },
         {
           "id": 111,
-          "name": "SupabaseClient",
+          "name": "SkybaseClient",
           "kind": 128,
           "kindString": "Class",
           "flags": {},
           "comment": {
-            "shortText": "Supabase Client.",
+            "shortText": "Skybase Client.",
             "text": "An isomorphic Javascript client for interacting with Postgres.\n"
           },
           "children": [
@@ -61,7 +61,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 61,
                   "character": 2
                 }
@@ -69,7 +69,7 @@
               "signatures": [
                 {
                   "id": 113,
-                  "name": "new SupabaseClient",
+                  "name": "new SkybaseClient",
                   "kind": 16384,
                   "kindString": "Constructor signature",
                   "flags": {},
@@ -79,12 +79,12 @@
                   "parameters": [
                     {
                       "id": 114,
-                      "name": "supabaseUrl",
+                      "name": "skybaseUrl",
                       "kind": 32768,
                       "kindString": "Parameter",
                       "flags": {},
                       "comment": {
-                        "shortText": "The unique Supabase URL which is supplied when you create a new project in your project dashboard."
+                        "shortText": "The unique Skybase URL which is supplied when you create a new project in your project dashboard."
                       },
                       "type": {
                         "type": "intrinsic",
@@ -93,12 +93,12 @@
                     },
                     {
                       "id": 115,
-                      "name": "supabaseKey",
+                      "name": "skybaseKey",
                       "kind": 32768,
                       "kindString": "Parameter",
                       "flags": {},
                       "comment": {
-                        "shortText": "The unique Supabase Key which is supplied when you create a new project in your project dashboard."
+                        "shortText": "The unique Skybase Key which is supplied when you create a new project in your project dashboard."
                       },
                       "type": {
                         "type": "intrinsic",
@@ -116,7 +116,7 @@
                       "type": {
                         "type": "reference",
                         "id": 79,
-                        "name": "SupabaseClientOptions"
+                        "name": "SkybaseClientOptions"
                       }
                     }
                   ],
@@ -135,18 +135,18 @@
               "kindString": "Property",
               "flags": {},
               "comment": {
-                "shortText": "Supabase Auth allows you to create and manage user sessions for access to data that is secured by access policies."
+                "shortText": "Skybase Auth allows you to create and manage user sessions for access to data that is secured by access policies."
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 30,
                   "character": 2
                 }
               ],
               "type": {
                 "type": "reference",
-                "name": "SupabaseAuthClient"
+                "name": "SkybaseAuthClient"
               }
             },
             {
@@ -159,7 +159,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 35,
                   "character": 12
                 }
@@ -179,7 +179,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 41,
                   "character": 12
                 }
@@ -209,7 +209,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 40,
                   "character": 12
                 }
@@ -299,7 +299,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 37,
                   "character": 12
                 }
@@ -319,7 +319,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 44,
                   "character": 12
                 }
@@ -368,7 +368,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 39,
                   "character": 12
                 }
@@ -388,7 +388,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 38,
                   "character": 12
                 }
@@ -396,7 +396,7 @@
               "type": {
                 "type": "reference",
                 "qualifiedName": "RealtimeClient",
-                "package": "@supabase/realtime-js",
+                "package": "@skybase/realtime-js",
                 "name": "default"
               }
             },
@@ -410,7 +410,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 34,
                   "character": 12
                 }
@@ -430,7 +430,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 33,
                   "character": 12
                 }
@@ -450,7 +450,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 32,
                   "character": 12
                 }
@@ -470,7 +470,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 42,
                   "character": 12
                 }
@@ -490,7 +490,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 36,
                   "character": 12
                 }
@@ -502,7 +502,7 @@
             },
             {
               "id": 138,
-              "name": "supabaseKey",
+              "name": "skybaseKey",
               "kind": 1024,
               "kindString": "Property",
               "flags": {
@@ -515,7 +515,7 @@
             },
             {
               "id": 137,
-              "name": "supabaseUrl",
+              "name": "skybaseUrl",
               "kind": 1024,
               "kindString": "Property",
               "flags": {
@@ -534,7 +534,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 106,
                   "character": 6
                 }
@@ -547,12 +547,12 @@
                   "kindString": "Get signature",
                   "flags": {},
                   "comment": {
-                    "shortText": "Supabase Functions allows you to deploy and invoke edge functions."
+                    "shortText": "Skybase Functions allows you to deploy and invoke edge functions."
                   },
                   "type": {
                     "type": "reference",
                     "qualifiedName": "FunctionsClient",
-                    "package": "@supabase/functions-js",
+                    "package": "@skybase/functions-js",
                     "name": "FunctionsClient"
                   }
                 }
@@ -566,7 +566,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 116,
                   "character": 6
                 }
@@ -579,12 +579,12 @@
                   "kindString": "Get signature",
                   "flags": {},
                   "comment": {
-                    "shortText": "Supabase Storage allows you to manage user-generated content, such as photos or videos."
+                    "shortText": "Skybase Storage allows you to manage user-generated content, such as photos or videos."
                   },
                   "type": {
                     "type": "reference",
                     "qualifiedName": "StorageClient",
-                    "package": "@supabase/storage-js",
+                    "package": "@skybase/storage-js",
                     "name": "StorageClient"
                   }
                 }
@@ -600,7 +600,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 194,
                   "character": 16
                 }
@@ -622,7 +622,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeSubscription",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "default"
                       }
                     }
@@ -647,7 +647,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 196,
                                   "character": 15
                                 }
@@ -696,7 +696,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 271,
                   "character": 10
                 }
@@ -726,7 +726,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 313,
                   "character": 10
                 }
@@ -748,7 +748,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "AuthChangeEvent",
-                        "package": "@supabase/gotrue-js",
+                        "package": "@skybase/gotrue-js",
                         "name": "AuthChangeEvent"
                       }
                     },
@@ -810,7 +810,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 262,
                   "character": 10
                 }
@@ -825,7 +825,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "PostgrestClient",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 }
@@ -841,7 +841,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 255,
                   "character": 10
                 }
@@ -865,7 +865,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "Options",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "Options"
                       }
                     }
@@ -873,7 +873,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "RealtimeClient",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "default"
                   }
                 }
@@ -881,7 +881,7 @@
             },
             {
               "id": 183,
-              "name": "_initSupabaseAuthClient",
+              "name": "_initSkybaseAuthClient",
               "kind": 2048,
               "kindString": "Method",
               "flags": {
@@ -889,7 +889,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 228,
                   "character": 10
                 }
@@ -897,7 +897,7 @@
               "signatures": [
                 {
                   "id": 184,
-                  "name": "_initSupabaseAuthClient",
+                  "name": "_initSkybaseAuthClient",
                   "kind": 4096,
                   "kindString": "Call signature",
                   "flags": {},
@@ -911,13 +911,13 @@
                       "type": {
                         "type": "reference",
                         "id": 79,
-                        "name": "SupabaseClientOptions"
+                        "name": "SkybaseClientOptions"
                       }
                     }
                   ],
                   "type": {
                     "type": "reference",
-                    "name": "SupabaseAuthClient"
+                    "name": "SkybaseAuthClient"
                   }
                 }
               ]
@@ -932,7 +932,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 306,
                   "character": 10
                 }
@@ -954,7 +954,7 @@
                       {
                         "type": "reference",
                         "qualifiedName": "Subscription",
-                        "package": "@supabase/gotrue-js",
+                        "package": "@skybase/gotrue-js",
                         "name": "Subscription"
                       }
                     ]
@@ -972,7 +972,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 279,
                   "character": 10
                 }
@@ -1010,7 +1010,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 209,
                   "character": 10
                 }
@@ -1032,7 +1032,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeSubscription",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "default"
                       }
                     }
@@ -1057,7 +1057,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 211,
                                   "character": 15
                                 }
@@ -1104,7 +1104,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 125,
                   "character": 2
                 }
@@ -1158,7 +1158,7 @@
                         "name": "T"
                       }
                     ],
-                    "name": "SupabaseQueryBuilder"
+                    "name": "SkybaseQueryBuilder"
                   }
                 }
               ]
@@ -1171,7 +1171,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 224,
                   "character": 2
                 }
@@ -1191,7 +1191,7 @@
                     "elementType": {
                       "type": "reference",
                       "qualifiedName": "RealtimeSubscription",
-                      "package": "@supabase/realtime-js",
+                      "package": "@skybase/realtime-js",
                       "name": "default"
                     }
                   }
@@ -1206,7 +1206,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 162,
                   "character": 8
                 }
@@ -1243,7 +1243,7 @@
                                 "flags": {},
                                 "sources": [
                                   {
-                                    "fileName": "src/SupabaseClient.ts",
+                                    "fileName": "src/SkybaseClient.ts",
                                     "line": 163,
                                     "character": 6
                                   }
@@ -1265,7 +1265,7 @@
                                         "flags": {},
                                         "sources": [
                                           {
-                                            "fileName": "src/SupabaseClient.ts",
+                                            "fileName": "src/SkybaseClient.ts",
                                             "line": 163,
                                             "character": 14
                                           }
@@ -1273,7 +1273,7 @@
                                         "type": {
                                           "type": "reference",
                                           "qualifiedName": "RealtimeSubscription",
-                                          "package": "@supabase/realtime-js",
+                                          "package": "@skybase/realtime-js",
                                           "name": "default"
                                         }
                                       }
@@ -1296,7 +1296,7 @@
                                 "flags": {},
                                 "sources": [
                                   {
-                                    "fileName": "src/SupabaseClient.ts",
+                                    "fileName": "src/SkybaseClient.ts",
                                     "line": 163,
                                     "character": 52
                                   }
@@ -1344,7 +1344,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 182,
                   "character": 8
                 }
@@ -1372,7 +1372,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeSubscription",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "default"
                       }
                     }
@@ -1397,7 +1397,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 184,
                                   "character": 15
                                 }
@@ -1419,7 +1419,7 @@
                                       "flags": {},
                                       "sources": [
                                         {
-                                          "fileName": "src/SupabaseClient.ts",
+                                          "fileName": "src/SkybaseClient.ts",
                                           "line": 184,
                                           "character": 23
                                         }
@@ -1448,7 +1448,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 184,
                                   "character": 52
                                 }
@@ -1495,7 +1495,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 146,
                   "character": 2
                 }
@@ -1579,7 +1579,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 152,
                                   "character": 25
                                 }
@@ -1616,7 +1616,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 152,
                                   "character": 9
                                 }
@@ -1649,7 +1649,7 @@
                       }
                     ],
                     "qualifiedName": "PostgrestFilterBuilder",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 }
@@ -1682,7 +1682,7 @@
           ],
           "sources": [
             {
-              "fileName": "src/SupabaseClient.ts",
+              "fileName": "src/SkybaseClient.ts",
               "line": 26,
               "character": 21
             }
@@ -1709,12 +1709,12 @@
               "kindString": "Call signature",
               "flags": {},
               "comment": {
-                "shortText": "Creates a new Supabase Client."
+                "shortText": "Creates a new Skybase Client."
               },
               "parameters": [
                 {
                   "id": 108,
-                  "name": "supabaseUrl",
+                  "name": "skybaseUrl",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},
@@ -1725,7 +1725,7 @@
                 },
                 {
                   "id": 109,
-                  "name": "supabaseKey",
+                  "name": "skybaseKey",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},
@@ -1745,7 +1745,7 @@
                   "type": {
                     "type": "reference",
                     "id": 79,
-                    "name": "SupabaseClientOptions"
+                    "name": "SkybaseClientOptions"
                   }
                 }
               ],
@@ -1785,14 +1785,14 @@
     },
     {
       "id": 1,
-      "name": "lib/SupabaseQueryBuilder",
+      "name": "lib/SkybaseQueryBuilder",
       "kind": 2,
       "kindString": "Module",
       "flags": {},
       "children": [
         {
           "id": 2,
-          "name": "SupabaseQueryBuilder",
+          "name": "SkybaseQueryBuilder",
           "kind": 128,
           "kindString": "Class",
           "flags": {},
@@ -1805,7 +1805,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 13,
                   "character": 2
                 }
@@ -1813,7 +1813,7 @@
               "signatures": [
                 {
                   "id": 4,
-                  "name": "new SupabaseQueryBuilder",
+                  "name": "new SkybaseQueryBuilder",
                   "kind": 16384,
                   "kindString": "Constructor signature",
                   "flags": {},
@@ -1863,7 +1863,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 27,
                                   "character": 6
                                 }
@@ -1953,7 +1953,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 23,
                                   "character": 6
                                 }
@@ -1972,7 +1972,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 25,
                                   "character": 6
                                 }
@@ -1980,7 +1980,7 @@
                               "type": {
                                 "type": "reference",
                                 "qualifiedName": "RealtimeClient",
-                                "package": "@supabase/realtime-js",
+                                "package": "@skybase/realtime-js",
                                 "name": "default"
                               }
                             },
@@ -1992,7 +1992,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 24,
                                   "character": 6
                                 }
@@ -2012,7 +2012,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 28,
                                   "character": 6
                                 }
@@ -2030,7 +2030,7 @@
                               "flags": {},
                               "sources": [
                                 {
-                                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                                   "line": 26,
                                   "character": 6
                                 }
@@ -2062,7 +2062,7 @@
                         "name": "T"
                       }
                     ],
-                    "name": "SupabaseQueryBuilder"
+                    "name": "SkybaseQueryBuilder"
                   },
                   "overwrites": {
                     "type": "reference",
@@ -2085,7 +2085,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 9,
                   "character": 10
                 }
@@ -2106,7 +2106,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 8,
                   "character": 10
                 }
@@ -2114,7 +2114,7 @@
               "type": {
                 "type": "reference",
                 "qualifiedName": "RealtimeClient",
-                "package": "@supabase/realtime-js",
+                "package": "@skybase/realtime-js",
                 "name": "default"
               }
             },
@@ -2128,7 +2128,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 10,
                   "character": 10
                 }
@@ -2148,7 +2148,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 7,
                   "character": 10
                 }
@@ -2163,7 +2163,7 @@
                   {
                     "type": "reference",
                     "id": 33,
-                    "name": "SupabaseRealtimeClient"
+                    "name": "SkybaseRealtimeClient"
                   }
                 ]
               },
@@ -2179,7 +2179,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 11,
                   "character": 10
                 }
@@ -2197,7 +2197,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseQueryBuilder.ts",
+                  "fileName": "src/lib/SkybaseQueryBuilder.ts",
                   "line": 44,
                   "character": 2
                 }
@@ -2225,7 +2225,7 @@
                       "type": {
                         "type": "reference",
                         "id": 102,
-                        "name": "SupabaseEventTypes"
+                        "name": "SkybaseEventTypes"
                       }
                     },
                     {
@@ -2269,7 +2269,7 @@
                                         "name": "T"
                                       }
                                     ],
-                                    "name": "SupabaseRealtimePayload"
+                                    "name": "SkybaseRealtimePayload"
                                   }
                                 }
                               ],
@@ -2286,7 +2286,7 @@
                   "type": {
                     "type": "reference",
                     "id": 33,
-                    "name": "SupabaseRealtimeClient"
+                    "name": "SkybaseRealtimeClient"
                   }
                 }
               ]
@@ -2311,7 +2311,7 @@
           ],
           "sources": [
             {
-              "fileName": "src/lib/SupabaseQueryBuilder.ts",
+              "fileName": "src/lib/SkybaseQueryBuilder.ts",
               "line": 6,
               "character": 13
             }
@@ -2336,7 +2336,7 @@
                 }
               ],
               "qualifiedName": "PostgrestQueryBuilder",
-              "package": "@supabase/postgrest-js",
+              "package": "@skybase/postgrest-js",
               "name": "default"
             }
           ]
@@ -2351,7 +2351,7 @@
       ],
       "sources": [
         {
-          "fileName": "src/lib/SupabaseQueryBuilder.ts",
+          "fileName": "src/lib/SkybaseQueryBuilder.ts",
           "line": 1,
           "character": 0
         }
@@ -2359,14 +2359,14 @@
     },
     {
       "id": 32,
-      "name": "lib/SupabaseRealtimeClient",
+      "name": "lib/SkybaseRealtimeClient",
       "kind": 2,
       "kindString": "Module",
       "flags": {},
       "children": [
         {
           "id": 33,
-          "name": "SupabaseRealtimeClient",
+          "name": "SkybaseRealtimeClient",
           "kind": 128,
           "kindString": "Class",
           "flags": {},
@@ -2379,7 +2379,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                  "fileName": "src/lib/SkybaseRealtimeClient.ts",
                   "line": 7,
                   "character": 2
                 }
@@ -2387,7 +2387,7 @@
               "signatures": [
                 {
                   "id": 35,
-                  "name": "new SupabaseRealtimeClient",
+                  "name": "new SkybaseRealtimeClient",
                   "kind": 16384,
                   "kindString": "Constructor signature",
                   "flags": {},
@@ -2401,7 +2401,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeClient",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "default"
                       }
                     },
@@ -2443,7 +2443,7 @@
                   "type": {
                     "type": "reference",
                     "id": 33,
-                    "name": "SupabaseRealtimeClient"
+                    "name": "SkybaseRealtimeClient"
                   }
                 }
               ]
@@ -2456,7 +2456,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                  "fileName": "src/lib/SkybaseRealtimeClient.ts",
                   "line": 5,
                   "character": 2
                 }
@@ -2464,7 +2464,7 @@
               "type": {
                 "type": "reference",
                 "qualifiedName": "RealtimeSubscription",
-                "package": "@supabase/realtime-js",
+                "package": "@skybase/realtime-js",
                 "name": "default"
               }
             },
@@ -2478,7 +2478,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                  "fileName": "src/lib/SkybaseRealtimeClient.ts",
                   "line": 19,
                   "character": 10
                 }
@@ -2520,7 +2520,7 @@
                           "flags": {},
                           "sources": [
                             {
-                              "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                              "fileName": "src/lib/SkybaseRealtimeClient.ts",
                               "line": 21,
                               "character": 6
                             }
@@ -2545,7 +2545,7 @@
                           "flags": {},
                           "sources": [
                             {
-                              "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                              "fileName": "src/lib/SkybaseRealtimeClient.ts",
                               "line": 22,
                               "character": 6
                             }
@@ -2583,7 +2583,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                  "fileName": "src/lib/SkybaseRealtimeClient.ts",
                   "line": 42,
                   "character": 2
                 }
@@ -2611,7 +2611,7 @@
                       "type": {
                         "type": "reference",
                         "id": 102,
-                        "name": "SupabaseEventTypes"
+                        "name": "SkybaseEventTypes"
                       }
                     },
                     {
@@ -2654,7 +2654,7 @@
                                         "name": "any"
                                       }
                                     ],
-                                    "name": "SupabaseRealtimePayload"
+                                    "name": "SkybaseRealtimePayload"
                                   }
                                 }
                               ],
@@ -2671,7 +2671,7 @@
                   "type": {
                     "type": "reference",
                     "id": 33,
-                    "name": "SupabaseRealtimeClient"
+                    "name": "SkybaseRealtimeClient"
                   }
                 }
               ]
@@ -2684,7 +2684,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/lib/SupabaseRealtimeClient.ts",
+                  "fileName": "src/lib/SkybaseRealtimeClient.ts",
                   "line": 64,
                   "character": 2
                 }
@@ -2718,7 +2718,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "RealtimeSubscription",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "default"
                   }
                 }
@@ -2744,7 +2744,7 @@
           ],
           "sources": [
             {
-              "fileName": "src/lib/SupabaseRealtimeClient.ts",
+              "fileName": "src/lib/SkybaseRealtimeClient.ts",
               "line": 4,
               "character": 13
             }
@@ -2760,7 +2760,7 @@
       ],
       "sources": [
         {
-          "fileName": "src/lib/SupabaseRealtimeClient.ts",
+          "fileName": "src/lib/SkybaseRealtimeClient.ts",
           "line": 1,
           "character": 0
         }
@@ -2845,9 +2845,9 @@
           ],
           "type": {
             "type": "literal",
-            "value": "supabase.auth.token"
+            "value": "skybase.auth.token"
           },
-          "defaultValue": "'supabase.auth.token'"
+          "defaultValue": "'skybase.auth.token'"
         }
       ],
       "groups": [
@@ -2991,7 +2991,7 @@
       "children": [
         {
           "id": 73,
-          "name": "SupabaseAuthClientOptions",
+          "name": "SkybaseAuthClientOptions",
           "kind": 256,
           "kindString": "Interface",
           "flags": {},
@@ -3089,7 +3089,7 @@
         },
         {
           "id": 79,
-          "name": "SupabaseClientOptions",
+          "name": "SkybaseClientOptions",
           "kind": 4194304,
           "kindString": "Type alias",
           "flags": {},
@@ -3159,7 +3159,7 @@
                     "objectType": {
                       "type": "reference",
                       "id": 73,
-                      "name": "SupabaseAuthClientOptions"
+                      "name": "SkybaseAuthClientOptions"
                     }
                   }
                 },
@@ -3261,7 +3261,7 @@
                     "objectType": {
                       "type": "reference",
                       "id": 73,
-                      "name": "SupabaseAuthClientOptions"
+                      "name": "SkybaseAuthClientOptions"
                     }
                   }
                 },
@@ -3332,7 +3332,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "Options",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "RealtimeClientOptions"
                   }
                 },
@@ -3345,7 +3345,7 @@
                     "isOptional": true
                   },
                   "comment": {
-                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to 'public'."
+                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to 'public'."
                   },
                   "sources": [
                     {
@@ -3402,7 +3402,7 @@
         },
         {
           "id": 102,
-          "name": "SupabaseEventTypes",
+          "name": "SkybaseEventTypes",
           "kind": 4194304,
           "kindString": "Type alias",
           "flags": {},
@@ -3437,7 +3437,7 @@
         },
         {
           "id": 92,
-          "name": "SupabaseRealtimePayload",
+          "name": "SkybaseRealtimePayload",
           "kind": 4194304,
           "kindString": "Type alias",
           "flags": {},

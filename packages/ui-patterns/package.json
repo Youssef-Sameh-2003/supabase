@@ -482,8 +482,8 @@
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
     "@monaco-editor/react": "^4.6.0",
-    "@supabase/sql-to-rest": "^0.1.6",
-    "@supabase/supabase-js": "catalog:",
+    "@skybase/sql-to-rest": "^0.1.6",
+    "@skybase/skybase-js": "catalog:",
     "@vitest/coverage-v8": "^3.0.9",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",

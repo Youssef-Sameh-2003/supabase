@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "name": "@supabase/supabase-js",
+  "name": "@skybase/skybase-js",
   "kind": 1,
   "flags": {},
   "originalName": "",
@@ -59,7 +59,7 @@
         },
         {
           "id": 225,
-          "name": "SupabaseClientOptions",
+          "name": "SkybaseClientOptions",
           "kind": 16777216,
           "kindString": "Reference",
           "flags": {},
@@ -74,12 +74,12 @@
         },
         {
           "id": 130,
-          "name": "SupabaseClient",
+          "name": "SkybaseClient",
           "kind": 128,
           "kindString": "Class",
           "flags": {},
           "comment": {
-            "shortText": "Supabase Client.",
+            "shortText": "Skybase Client.",
             "text": "An isomorphic Javascript client for interacting with Postgres.\n"
           },
           "children": [
@@ -91,7 +91,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 70,
                   "character": 2
                 }
@@ -99,7 +99,7 @@
               "signatures": [
                 {
                   "id": 132,
-                  "name": "new SupabaseClient",
+                  "name": "new SkybaseClient",
                   "kind": 16384,
                   "kindString": "Constructor signature",
                   "flags": {},
@@ -219,12 +219,12 @@
                   "parameters": [
                     {
                       "id": 136,
-                      "name": "supabaseUrl",
+                      "name": "skybaseUrl",
                       "kind": 32768,
                       "kindString": "Parameter",
                       "flags": {},
                       "comment": {
-                        "shortText": "The unique Supabase URL which is supplied when you create a new project in your project dashboard."
+                        "shortText": "The unique Skybase URL which is supplied when you create a new project in your project dashboard."
                       },
                       "type": {
                         "type": "intrinsic",
@@ -233,12 +233,12 @@
                     },
                     {
                       "id": 137,
-                      "name": "supabaseKey",
+                      "name": "skybaseKey",
                       "kind": 32768,
                       "kindString": "Parameter",
                       "flags": {},
                       "comment": {
-                        "shortText": "The unique Supabase Key which is supplied when you create a new project in your project dashboard."
+                        "shortText": "The unique Skybase Key which is supplied when you create a new project in your project dashboard."
                       },
                       "type": {
                         "type": "intrinsic",
@@ -263,10 +263,10 @@
                             "name": "SchemaName"
                           }
                         ],
-                        "name": "SupabaseClientOptions",
+                        "name": "SkybaseClientOptions",
                         "dereferenced": {
                           "id": 70,
-                          "name": "SupabaseClientOptions",
+                          "name": "SkybaseClientOptions",
                           "kind": 4194304,
                           "kindString": "Type alias",
                           "flags": {},
@@ -369,7 +369,7 @@
                                             "objectType": {
                                               "type": "reference",
                                               "id": 68,
-                                              "name": "SupabaseAuthClientOptions"
+                                              "name": "SkybaseAuthClientOptions"
                                             }
                                           }
                                         },
@@ -423,7 +423,7 @@
                                             "objectType": {
                                               "type": "reference",
                                               "id": 68,
-                                              "name": "SupabaseAuthClientOptions"
+                                              "name": "SkybaseAuthClientOptions"
                                             }
                                           }
                                         },
@@ -460,7 +460,7 @@
                                             "objectType": {
                                               "type": "reference",
                                               "id": 68,
-                                              "name": "SupabaseAuthClientOptions"
+                                              "name": "SkybaseAuthClientOptions"
                                             }
                                           }
                                         },
@@ -514,7 +514,7 @@
                                             "objectType": {
                                               "type": "reference",
                                               "id": 68,
-                                              "name": "SupabaseAuthClientOptions"
+                                              "name": "SkybaseAuthClientOptions"
                                             }
                                           }
                                         },
@@ -568,7 +568,7 @@
                                     "isOptional": true
                                   },
                                   "comment": {
-                                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to `public`."
+                                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to `public`."
                                   },
                                   "sources": [
                                     {
@@ -772,7 +772,7 @@
                                   "type": {
                                     "type": "reference",
                                     "qualifiedName": "RealtimeClientOptions",
-                                    "package": "@supabase/realtime-js",
+                                    "package": "@skybase/realtime-js",
                                     "name": "RealtimeClientOptions"
                                   }
                                 },
@@ -799,8 +799,8 @@
                                       "kindString": "Call signature",
                                       "flags": {},
                                       "comment": {
-                                        "shortText": "Optional function for using a third-party authentication system with\nSupabase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
-                                        "text": "When set, the `auth` namespace of the Supabase client cannot be used.\nCreate another client if you wish to use Supabase Auth and third-party\nauthentications concurrently in the same application.\n"
+                                        "shortText": "Optional function for using a third-party authentication system with\nSkybase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
+                                        "text": "When set, the `auth` namespace of the Skybase client cannot be used.\nCreate another client if you wish to use Skybase Auth and third-party\nauthentications concurrently in the same application.\n"
                                       },
                                       "type": {
                                         "type": "reference",
@@ -888,7 +888,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 54,
                   "character": 12
                 }
@@ -941,18 +941,18 @@
               "kindString": "Property",
               "flags": {},
               "comment": {
-                "shortText": "Supabase Auth allows you to create and manage user sessions for access to data that is secured by access policies."
+                "shortText": "Skybase Auth allows you to create and manage user sessions for access to data that is secured by access policies."
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 43,
                   "character": 2
                 }
               ],
               "type": {
                 "type": "reference",
-                "name": "SupabaseAuthClient"
+                "name": "SkybaseAuthClient"
               }
             },
             {
@@ -965,7 +965,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 47,
                   "character": 12
                 }
@@ -986,7 +986,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 53,
                   "character": 12
                 }
@@ -1007,7 +1007,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 52,
                   "character": 12
                 }
@@ -1097,7 +1097,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 49,
                   "character": 12
                 }
@@ -1117,7 +1117,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 56,
                   "character": 12
                 }
@@ -1147,7 +1147,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 44,
                   "character": 2
                 }
@@ -1155,7 +1155,7 @@
               "type": {
                 "type": "reference",
                 "qualifiedName": "RealtimeClient",
-                "package": "@supabase/realtime-js",
+                "package": "@skybase/realtime-js",
                 "name": "default"
               }
             },
@@ -1169,7 +1169,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 46,
                   "character": 12
                 }
@@ -1189,7 +1189,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 50,
                   "character": 12
                 }
@@ -1214,7 +1214,7 @@
                   }
                 ],
                 "qualifiedName": "PostgrestClient",
-                "package": "@supabase/postgrest-js",
+                "package": "@skybase/postgrest-js",
                 "name": "default"
               }
             },
@@ -1228,7 +1228,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 51,
                   "character": 12
                 }
@@ -1248,7 +1248,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 48,
                   "character": 12
                 }
@@ -1260,7 +1260,7 @@
             },
             {
               "id": 158,
-              "name": "supabaseKey",
+              "name": "skybaseKey",
               "kind": 1024,
               "kindString": "Property",
               "flags": {
@@ -1273,7 +1273,7 @@
             },
             {
               "id": 157,
-              "name": "supabaseUrl",
+              "name": "skybaseUrl",
               "kind": 1024,
               "kindString": "Property",
               "flags": {
@@ -1292,7 +1292,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 139,
                   "character": 6
                 }
@@ -1305,12 +1305,12 @@
                   "kindString": "Get signature",
                   "flags": {},
                   "comment": {
-                    "shortText": "Supabase Functions allows you to deploy and invoke edge functions."
+                    "shortText": "Skybase Functions allows you to deploy and invoke edge functions."
                   },
                   "type": {
                     "type": "reference",
                     "qualifiedName": "FunctionsClient",
-                    "package": "@supabase/functions-js",
+                    "package": "@skybase/functions-js",
                     "name": "FunctionsClient"
                   }
                 }
@@ -1324,7 +1324,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 149,
                   "character": 6
                 }
@@ -1337,12 +1337,12 @@
                   "kindString": "Get signature",
                   "flags": {},
                   "comment": {
-                    "shortText": "Supabase Storage allows you to manage user-generated content, such as photos or videos."
+                    "shortText": "Skybase Storage allows you to manage user-generated content, such as photos or videos."
                   },
                   "type": {
                     "type": "reference",
                     "qualifiedName": "StorageClient",
-                    "package": "@supabase/storage-js",
+                    "package": "@skybase/storage-js",
                     "name": "StorageClient"
                   }
                 }
@@ -1358,7 +1358,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 269,
                   "character": 16
                 }
@@ -1404,7 +1404,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 329,
                   "character": 10
                 }
@@ -1426,7 +1426,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "AuthChangeEvent",
-                        "package": "@supabase/auth-js",
+                        "package": "@skybase/auth-js",
                         "name": "AuthChangeEvent"
                       }
                     },
@@ -1481,7 +1481,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 315,
                   "character": 10
                 }
@@ -1503,7 +1503,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeClientOptions",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "RealtimeClientOptions"
                       }
                     }
@@ -1511,7 +1511,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "RealtimeClient",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "default"
                   }
                 }
@@ -1519,7 +1519,7 @@
             },
             {
               "id": 202,
-              "name": "_initSupabaseAuthClient",
+              "name": "_initSkybaseAuthClient",
               "kind": 2048,
               "kindString": "Method",
               "flags": {
@@ -1527,7 +1527,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 279,
                   "character": 10
                 }
@@ -1535,7 +1535,7 @@
               "signatures": [
                 {
                   "id": 203,
-                  "name": "_initSupabaseAuthClient",
+                  "name": "_initSkybaseAuthClient",
                   "kind": 4096,
                   "kindString": "Call signature",
                   "flags": {},
@@ -1549,10 +1549,10 @@
                       "type": {
                         "type": "reference",
                         "id": 68,
-                        "name": "SupabaseAuthClientOptions",
+                        "name": "SkybaseAuthClientOptions",
                         "dereferenced": {
                           "id": 68,
-                          "name": "SupabaseAuthClientOptions",
+                          "name": "SkybaseAuthClientOptions",
                           "kind": 256,
                           "kindString": "Interface",
                           "flags": {},
@@ -1683,7 +1683,7 @@
                   ],
                   "type": {
                     "type": "reference",
-                    "name": "SupabaseAuthClient"
+                    "name": "SkybaseAuthClient"
                   }
                 }
               ]
@@ -1698,7 +1698,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 322,
                   "character": 10
                 }
@@ -1731,7 +1731,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 241,
                   "character": 2
                 }
@@ -1773,7 +1773,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeChannelOptions",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "RealtimeChannelOptions"
                       },
                       "defaultValue": "..."
@@ -1782,7 +1782,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "RealtimeChannel",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "default"
                   }
                 }
@@ -1796,7 +1796,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 154,
                   "character": 2
                 }
@@ -1892,7 +1892,7 @@
                         "trueType": {
                           "type": "reference",
                           "qualifiedName": "R",
-                          "package": "@supabase/postgrest-js",
+                          "package": "@skybase/postgrest-js",
                           "name": "R"
                         },
                         "falseType": {
@@ -1902,7 +1902,7 @@
                       }
                     ],
                     "qualifiedName": "PostgrestQueryBuilder",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 },
@@ -1996,7 +1996,7 @@
                         "trueType": {
                           "type": "reference",
                           "qualifiedName": "R",
-                          "package": "@supabase/postgrest-js",
+                          "package": "@skybase/postgrest-js",
                           "name": "R"
                         },
                         "falseType": {
@@ -2006,7 +2006,7 @@
                       }
                     ],
                     "qualifiedName": "PostgrestQueryBuilder",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 }
@@ -2020,7 +2020,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 248,
                   "character": 2
                 }
@@ -2040,7 +2040,7 @@
                     "elementType": {
                       "type": "reference",
                       "qualifiedName": "RealtimeChannel",
-                      "package": "@supabase/realtime-js",
+                      "package": "@skybase/realtime-js",
                       "name": "default"
                     }
                   }
@@ -2055,7 +2055,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 265,
                   "character": 2
                 }
@@ -2109,7 +2109,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 258,
                   "character": 2
                 }
@@ -2137,7 +2137,7 @@
                       "type": {
                         "type": "reference",
                         "qualifiedName": "RealtimeChannel",
-                        "package": "@supabase/realtime-js",
+                        "package": "@skybase/realtime-js",
                         "name": "default"
                       }
                     }
@@ -2178,7 +2178,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 212,
                   "character": 2
                 }
@@ -2289,7 +2289,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 218,
                                   "character": 6
                                 }
@@ -2325,7 +2325,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 217,
                                   "character": 6
                                 }
@@ -2348,7 +2348,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/SupabaseClient.ts",
+                                  "fileName": "src/SkybaseClient.ts",
                                   "line": 216,
                                   "character": 6
                                 }
@@ -2480,7 +2480,7 @@
                       }
                     ],
                     "qualifiedName": "PostgrestFilterBuilder",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 }
@@ -2494,7 +2494,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/SupabaseClient.ts",
+                  "fileName": "src/SkybaseClient.ts",
                   "line": 178,
                   "character": 2
                 }
@@ -2508,7 +2508,7 @@
                   "flags": {},
                   "comment": {
                     "shortText": "Select a schema to query or perform an function (rpc) call.",
-                    "text": "The schema needs to be on the list of exposed schemas inside Supabase.\n"
+                    "text": "The schema needs to be on the list of exposed schemas inside Skybase.\n"
                   },
                   "typeParameter": [
                     {
@@ -2592,7 +2592,7 @@
                       }
                     ],
                     "qualifiedName": "PostgrestClient",
-                    "package": "@supabase/postgrest-js",
+                    "package": "@skybase/postgrest-js",
                     "name": "default"
                   }
                 }
@@ -2623,7 +2623,7 @@
           ],
           "sources": [
             {
-              "fileName": "src/SupabaseClient.ts",
+              "fileName": "src/SkybaseClient.ts",
               "line": 31,
               "character": 21
             }
@@ -2776,7 +2776,7 @@
               "kindString": "Call signature",
               "flags": {},
               "comment": {
-                "shortText": "Creates a new Supabase Client."
+                "shortText": "Creates a new Skybase Client."
               },
               "typeParameter": [
                 {
@@ -2891,7 +2891,7 @@
               "parameters": [
                 {
                   "id": 7,
-                  "name": "supabaseUrl",
+                  "name": "skybaseUrl",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},
@@ -2902,7 +2902,7 @@
                 },
                 {
                   "id": 8,
-                  "name": "supabaseKey",
+                  "name": "skybaseKey",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},
@@ -2929,10 +2929,10 @@
                         "name": "SchemaName"
                       }
                     ],
-                    "name": "SupabaseClientOptions",
+                    "name": "SkybaseClientOptions",
                     "dereferenced": {
                       "id": 70,
-                      "name": "SupabaseClientOptions",
+                      "name": "SkybaseClientOptions",
                       "kind": 4194304,
                       "kindString": "Type alias",
                       "flags": {},
@@ -3035,7 +3035,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -3089,7 +3089,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -3126,7 +3126,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -3180,7 +3180,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -3234,7 +3234,7 @@
                                 "isOptional": true
                               },
                               "comment": {
-                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to `public`."
+                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to `public`."
                               },
                               "sources": [
                                 {
@@ -3438,7 +3438,7 @@
                               "type": {
                                 "type": "reference",
                                 "qualifiedName": "RealtimeClientOptions",
-                                "package": "@supabase/realtime-js",
+                                "package": "@skybase/realtime-js",
                                 "name": "RealtimeClientOptions"
                               }
                             },
@@ -3465,8 +3465,8 @@
                                   "kindString": "Call signature",
                                   "flags": {},
                                   "comment": {
-                                    "shortText": "Optional function for using a third-party authentication system with\nSupabase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
-                                    "text": "When set, the `auth` namespace of the Supabase client cannot be used.\nCreate another client if you wish to use Supabase Auth and third-party\nauthentications concurrently in the same application.\n"
+                                    "shortText": "Optional function for using a third-party authentication system with\nSkybase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
+                                    "text": "When set, the `auth` namespace of the Skybase client cannot be used.\nCreate another client if you wish to use Skybase Auth and third-party\nauthentications concurrently in the same application.\n"
                                   },
                                   "type": {
                                     "type": "reference",
@@ -3594,7 +3594,7 @@
           "type": {
             "type": "reference",
             "id": 68,
-            "name": "SupabaseAuthClientOptions"
+            "name": "SkybaseAuthClientOptions"
           },
           "defaultValue": "..."
         },
@@ -3815,7 +3815,7 @@
           "type": {
             "type": "reference",
             "qualifiedName": "RealtimeClientOptions",
-            "package": "@supabase/realtime-js",
+            "package": "@skybase/realtime-js",
             "name": "RealtimeClientOptions"
           },
           "defaultValue": "{}"
@@ -3866,7 +3866,7 @@
               "parameters": [
                 {
                   "id": 40,
-                  "name": "supabaseKey",
+                  "name": "skybaseKey",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},
@@ -4414,10 +4414,10 @@
                         "name": "SchemaName"
                       }
                     ],
-                    "name": "SupabaseClientOptions",
+                    "name": "SkybaseClientOptions",
                     "dereferenced": {
                       "id": 70,
-                      "name": "SupabaseClientOptions",
+                      "name": "SkybaseClientOptions",
                       "kind": 4194304,
                       "kindString": "Type alias",
                       "flags": {},
@@ -4520,7 +4520,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -4574,7 +4574,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -4611,7 +4611,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -4665,7 +4665,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -4719,7 +4719,7 @@
                                 "isOptional": true
                               },
                               "comment": {
-                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to `public`."
+                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to `public`."
                               },
                               "sources": [
                                 {
@@ -4923,7 +4923,7 @@
                               "type": {
                                 "type": "reference",
                                 "qualifiedName": "RealtimeClientOptions",
-                                "package": "@supabase/realtime-js",
+                                "package": "@skybase/realtime-js",
                                 "name": "RealtimeClientOptions"
                               }
                             },
@@ -4950,8 +4950,8 @@
                                   "kindString": "Call signature",
                                   "flags": {},
                                   "comment": {
-                                    "shortText": "Optional function for using a third-party authentication system with\nSupabase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
-                                    "text": "When set, the `auth` namespace of the Supabase client cannot be used.\nCreate another client if you wish to use Supabase Auth and third-party\nauthentications concurrently in the same application.\n"
+                                    "shortText": "Optional function for using a third-party authentication system with\nSkybase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
+                                    "text": "When set, the `auth` namespace of the Skybase client cannot be used.\nCreate another client if you wish to use Skybase Auth and third-party\nauthentications concurrently in the same application.\n"
                                   },
                                   "type": {
                                     "type": "reference",
@@ -5017,10 +5017,10 @@
                         "name": "any"
                       }
                     ],
-                    "name": "SupabaseClientOptions",
+                    "name": "SkybaseClientOptions",
                     "dereferenced": {
                       "id": 70,
-                      "name": "SupabaseClientOptions",
+                      "name": "SkybaseClientOptions",
                       "kind": 4194304,
                       "kindString": "Type alias",
                       "flags": {},
@@ -5123,7 +5123,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -5177,7 +5177,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -5214,7 +5214,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -5268,7 +5268,7 @@
                                         "objectType": {
                                           "type": "reference",
                                           "id": 68,
-                                          "name": "SupabaseAuthClientOptions"
+                                          "name": "SkybaseAuthClientOptions"
                                         }
                                       }
                                     },
@@ -5322,7 +5322,7 @@
                                 "isOptional": true
                               },
                               "comment": {
-                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to `public`."
+                                "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to `public`."
                               },
                               "sources": [
                                 {
@@ -5526,7 +5526,7 @@
                               "type": {
                                 "type": "reference",
                                 "qualifiedName": "RealtimeClientOptions",
-                                "package": "@supabase/realtime-js",
+                                "package": "@skybase/realtime-js",
                                 "name": "RealtimeClientOptions"
                               }
                             },
@@ -5553,8 +5553,8 @@
                                   "kindString": "Call signature",
                                   "flags": {},
                                   "comment": {
-                                    "shortText": "Optional function for using a third-party authentication system with\nSupabase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
-                                    "text": "When set, the `auth` namespace of the Supabase client cannot be used.\nCreate another client if you wish to use Supabase Auth and third-party\nauthentications concurrently in the same application.\n"
+                                    "shortText": "Optional function for using a third-party authentication system with\nSkybase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
+                                    "text": "When set, the `auth` namespace of the Skybase client cannot be used.\nCreate another client if you wish to use Skybase Auth and third-party\nauthentications concurrently in the same application.\n"
                                   },
                                   "type": {
                                     "type": "reference",
@@ -5619,7 +5619,7 @@
                         "name": "SchemaName"
                       }
                     ],
-                    "name": "SupabaseClientOptions"
+                    "name": "SkybaseClientOptions"
                   }
                 ],
                 "qualifiedName": "Required",
@@ -5748,7 +5748,7 @@
       "children": [
         {
           "id": 68,
-          "name": "SupabaseAuthClientOptions",
+          "name": "SkybaseAuthClientOptions",
           "kind": 256,
           "kindString": "Interface",
           "flags": {},
@@ -6661,7 +6661,7 @@
           "type": {
             "type": "reference",
             "qualifiedName": "PostgrestError",
-            "package": "@supabase/postgrest-js",
+            "package": "@skybase/postgrest-js",
             "name": "PostgrestError"
           }
         },
@@ -6721,7 +6721,7 @@
         },
         {
           "id": 70,
-          "name": "SupabaseClientOptions",
+          "name": "SkybaseClientOptions",
           "kind": 4194304,
           "kindString": "Type alias",
           "flags": {},
@@ -6824,7 +6824,7 @@
                             "objectType": {
                               "type": "reference",
                               "id": 68,
-                              "name": "SupabaseAuthClientOptions"
+                              "name": "SkybaseAuthClientOptions"
                             }
                           }
                         },
@@ -6878,7 +6878,7 @@
                             "objectType": {
                               "type": "reference",
                               "id": 68,
-                              "name": "SupabaseAuthClientOptions"
+                              "name": "SkybaseAuthClientOptions"
                             }
                           }
                         },
@@ -6915,7 +6915,7 @@
                             "objectType": {
                               "type": "reference",
                               "id": 68,
-                              "name": "SupabaseAuthClientOptions"
+                              "name": "SkybaseAuthClientOptions"
                             }
                           }
                         },
@@ -6969,7 +6969,7 @@
                             "objectType": {
                               "type": "reference",
                               "id": 68,
-                              "name": "SupabaseAuthClientOptions"
+                              "name": "SkybaseAuthClientOptions"
                             }
                           }
                         },
@@ -7023,7 +7023,7 @@
                     "isOptional": true
                   },
                   "comment": {
-                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Supabase. Defaults to `public`."
+                    "shortText": "The Postgres schema which your tables belong to. Must be on the list of exposed schemas in Skybase. Defaults to `public`."
                   },
                   "sources": [
                     {
@@ -7227,7 +7227,7 @@
                   "type": {
                     "type": "reference",
                     "qualifiedName": "RealtimeClientOptions",
-                    "package": "@supabase/realtime-js",
+                    "package": "@skybase/realtime-js",
                     "name": "RealtimeClientOptions"
                   }
                 },
@@ -7254,8 +7254,8 @@
                       "kindString": "Call signature",
                       "flags": {},
                       "comment": {
-                        "shortText": "Optional function for using a third-party authentication system with\nSupabase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
-                        "text": "When set, the `auth` namespace of the Supabase client cannot be used.\nCreate another client if you wish to use Supabase Auth and third-party\nauthentications concurrently in the same application.\n"
+                        "shortText": "Optional function for using a third-party authentication system with\nSkybase. The function should return an access token or ID token (JWT) by\nobtaining it from the third-party auth client library. Note that this\nfunction may be called concurrently and many times. Use memoization and\nlocking techniques if this is not supported by the client libraries.",
+                        "text": "When set, the `auth` namespace of the Skybase client cannot be used.\nCreate another client if you wish to use Skybase Auth and third-party\nauthentications concurrently in the same application.\n"
                       },
                       "type": {
                         "type": "reference",

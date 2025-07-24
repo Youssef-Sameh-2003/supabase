@@ -1,15 +1,15 @@
 # stripe-webhooks
 
-Also check out our full Stripe Payments examples for [React Native (Expo)](https://github.com/supabase-community/expo-stripe-payments-with-supabase-functions) and [Flutter](https://github.com/supabase-community/flutter-stripe-payments-with-supabase-functions).
+Also check out our full Stripe Payments examples for [React Native (Expo)](https://github.com/skybase-community/expo-stripe-payments-with-skybase-functions) and [Flutter](https://github.com/skybase-community/flutter-stripe-payments-with-skybase-functions).
 
 ## Setup env vars
 
-- `cp supabase/.env.local.example supabase/.env.local`
+- `cp skybase/.env.local.example skybase/.env.local`
 
 ## Test locally
 
 - Terminal 1:
-  - `supabase functions serve --no-verify-jwt --env-file ./supabase/.env.local`
+  - `skybase functions serve --no-verify-jwt --env-file ./skybase/.env.local`
 - Terminal 2:
   - `stripe listen --forward-to localhost:54321/functions/v1/`
 - Terminal 3 (optional):
@@ -17,5 +17,5 @@ Also check out our full Stripe Payments examples for [React Native (Expo)](https
 
 ## Deploy
 
-- `supabase functions deploy --no-verify-jwt stripe-webhooks`
-- `supabase secrets set --env-file ./supabase/.env.local`
+- `skybase functions deploy --no-verify-jwt stripe-webhooks`
+- `skybase secrets set --env-file ./skybase/.env.local`

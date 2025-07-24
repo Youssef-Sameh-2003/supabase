@@ -1,14 +1,14 @@
 openref: 0.1
 
 info:
-  id: reference/supabase-js
-  title: Supabase Javascript Client
+  id: reference/skybase-js
+  title: Skybase Javascript Client
   description: |
 
-    Supabase JavaScript.
+    Skybase JavaScript.
 
   definition: spec/enrichments/tsdoc_v1/combined.json
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_js_v1.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_js_v1.yml
   slugPrefix: '/'
   libraries:
     - id: 'js'
@@ -18,22 +18,22 @@ info:
 functions:
   - id: initializing
     title: 'Initializing'
-    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.constructor'
     examples:
       - id: create-client
         name: Create Client
         code: |
           ```js
-            import { createClient } from '@supabase/supabase-js'
+            import { createClient } from '@skybase/skybase-js'
 
-            // Create a single supabase client for interacting with your database
-            const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
+            // Create a single skybase client for interacting with your database
+            const skybase = createClient('https://xyzcompany.skybase.co', 'public-anon-key')
           ```
       - id: with-additional-parameters
         name: With Additional Parameters
         code: |
           ```js
-            import { createClient } from '@supabase/supabase-js'
+            import { createClient } from '@skybase/skybase-js'
 
             const options = {
               schema: 'public',
@@ -42,13 +42,13 @@ functions:
               persistSession: true,
               detectSessionInUrl: true,
             }
-            const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', options)
+            const skybase = createClient('https://xyzcompany.skybase.co', 'public-anon-key', options)
           ```
       - id: api-schemas
         name: API schemas
         code: |
           ```js
-            import { createClient } from '@supabase/supabase-js'
+            import { createClient } from '@skybase/skybase-js'
 
             const options = {
               schema: 'public',
@@ -57,7 +57,7 @@ functions:
               persistSession: true,
               detectSessionInUrl: true,
             }
-            const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', options)
+            const skybase = createClient('https://xyzcompany.skybase.co', 'public-anon-key', options)
           ```
         description: |
           By default the API server points to the `public` schema. You can enable other database schemas within the Dashboard.
@@ -68,24 +68,24 @@ functions:
         name: Custom Fetch Implementation
         code: |
           ```js
-            import { createClient } from '@supabase/supabase-js'
+            import { createClient } from '@skybase/skybase-js'
 
-            const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
+            const skybase = createClient('https://xyzcompany.skybase.co', 'public-anon-key', {
               fetch: fetch.bind(globalThis),
             })
           ```
         description: |
-          `supabase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
+          `skybase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
           but an alternative `fetch` implementation can be provided as an option.
           This is most useful in environments where `cross-fetch` is not compatible (for instance Cloudflare Workers).
   - id: sign-up
     title: 'signUp()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signUp'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signUp'
     notes: |
-      - By default, the user will need to verify their email address before logging in. If you would like to change this, you can disable "Email Confirmations" by going to Authentication -> Settings on [supabase.com/dashboard](https://supabase.com/dashboard)
+      - By default, the user will need to verify their email address before logging in. If you would like to change this, you can disable "Email Confirmations" by going to Authentication -> Settings on [skybase.com/dashboard](https://skybase.com/dashboard)
       - If "Email Confirmations" is turned on, a `user` is returned but `session` will be null
       - If "Email Confirmations" is turned off, both a `user` and a `session` will be returned
-      - When the user confirms their email address, they will be redirected to localhost:3000 by default. To change this, you can go to Authentication -> Settings on [supabase.com/dashboard](https://supabase.com/dashboard)
+      - When the user confirms their email address, they will be redirected to localhost:3000 by default. To change this, you can go to Authentication -> Settings on [skybase.com/dashboard](https://skybase.com/dashboard)
       - If signUp() is called for an existing confirmed user:
           - If "Enable email confirmations" is enabled on the "Authentication" -> "Settings" page, an obfuscated / fake user object will be returned.
           - If "Enable email confirmations" is disabled, an error with a message "User already registered" will be returned.
@@ -96,7 +96,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signUp({
+          const { user, session, error } = await skybase.auth.signUp({
             email: 'example@email.com',
             password: 'example-password',
           })
@@ -106,7 +106,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signUp(
+          const { user, session, error } = await skybase.auth.signUp(
             {
               email: 'example@email.com',
               password: 'example-password',
@@ -127,27 +127,27 @@ functions:
       - id: sign-up-with-phone
         name: Sign up with Phone.
         description: |
-          Supabase supports Phone Auth. After a user has verified their number, they can use the [`signIn()`](/docs/reference/javascript/v1/auth-signin#sign-in-using-phone) method.
+          Skybase supports Phone Auth. After a user has verified their number, they can use the [`signIn()`](/docs/reference/javascript/v1/auth-signin#sign-in-using-phone) method.
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signUp({
+          const { user, session, error } = await skybase.auth.signUp({
             phone: '+13334445555',
             password: 'some-password',
           })
 
           // After receiving an SMS with One Time Password.
-          let { session, error } = await supabase.auth.verifyOTP({
+          let { session, error } = await skybase.auth.verifyOTP({
             phone: '+13334445555',
             token: '123456',
           })
           ```
   - id: sign-in
     title: 'signIn()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signIn'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signIn'
     notes: |
       - A user can sign up either via email or OAuth.
       - If you provide `email` without a `password`, the user will be sent a magic link.
-      - The magic link's destination URL is determined by the SITE_URL config variable. To change this, you can go to Authentication -> Settings on [supabase.com/dashboard](https://supabase.com/dashboard)
+      - The magic link's destination URL is determined by the SITE_URL config variable. To change this, you can go to Authentication -> Settings on [skybase.com/dashboard](https://skybase.com/dashboard)
       - Specifying a `provider` will open the browser to the relevant login page.
     examples:
       - id: sign-in-with-email-and-password
@@ -155,7 +155,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             email: 'example@email.com',
             password: 'example-password',
           })
@@ -165,16 +165,16 @@ functions:
         description: If no password is provided, the user will be sent a "magic link" to their email address, which they can click to open your application with a valid session. By default, a given user can only request a Magic Link once every 60 seconds.
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             email: 'example@email.com'
           })
           ```
       - id: sign-in-with-third-party-provider
         name: Sign in using third-party providers.
-        description: Supabase supports many different [third-party providers](https://supabase.com/docs/guides/auth#providers).
+        description: Skybase supports many different [third-party providers](https://skybase.com/docs/guides/auth#providers).
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             // provider can be 'github', 'google', 'gitlab', and more
             provider: 'github'
           })
@@ -184,7 +184,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             phone: '+13334445555',
             password: 'some-password',
           })
@@ -195,13 +195,13 @@ functions:
           Note that the `redirectTo` param is only relevant for OAuth logins, where the login flow is managed by
           the Auth server. If you are using email/phone logins you should set up your own redirects (within the email/sms template).
 
-          Sometimes you want to control where the user is redirected to after they are logged in. Supabase supports this for
-          any URL path on your website (the URL must either be on the same domain as your [Site URL](https://supabase.com/dashboard/project/_/auth/url-configuration) or match one of the Redirect URLs).
+          Sometimes you want to control where the user is redirected to after they are logged in. Skybase supports this for
+          any URL path on your website (the URL must either be on the same domain as your [Site URL](https://skybase.com/dashboard/project/_/auth/url-configuration) or match one of the Redirect URLs).
 
           See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             provider: 'github'
           }, {
             redirectTo: 'https://example.com/welcome'
@@ -214,7 +214,7 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider.
         code: |
           ```js
-          const { user, session, error } = await supabase.auth.signIn({
+          const { user, session, error } = await skybase.auth.signIn({
             provider: 'github'
           }, {
             scopes: 'repo gist notifications'
@@ -232,11 +232,11 @@ functions:
           const provider = 'google';
 
           AuthSession.startAsync({
-            authUrl: `https://MYSUPABASEAPP.supabase.co/auth/v1/authorize?provider=${provider}&redirect_to=${redirectUri}`,
+            authUrl: `https://MYSUPABASEAPP.skybase.co/auth/v1/authorize?provider=${provider}&redirect_to=${redirectUri}`,
             returnUrl: redirectUri,
           }).then(async (response: any) => {
             if (!response) return;
-            const { user, session, error } = await supabase.auth.signIn({
+            const { user, session, error } = await skybase.auth.signIn({
               refreshToken: response.params?.refresh_token,
             });
           });
@@ -244,31 +244,31 @@ functions:
 
   - id: sign-out
     title: 'signOut()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signOut'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signOut'
     examples:
       - id: sign-out
         name: Sign out
         isSpotlight: true
         code: |
           ```js
-          const { error } = await supabase.auth.signOut()
+          const { error } = await skybase.auth.signOut()
           ```
 
   - id: session
     title: 'session()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.session'
+    $ref: '@skybase/gotrue-js.GoTrueClient.session'
     examples:
       - id: get-the-session-data
         name: Get the session data
         isSpotlight: true
         code: |
           ```js
-          const session = supabase.auth.session()
+          const session = skybase.auth.session()
           ```
 
   - id: user
     title: 'user()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.user'
+    $ref: '@skybase/gotrue-js.GoTrueClient.user'
     notes: |
       This method gets the user object from memory.
     examples:
@@ -277,15 +277,15 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const user = supabase.auth.user()
+          const user = skybase.auth.user()
           ```
 
   - id: auth-update
     title: 'update()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.update'
+    $ref: '@skybase/gotrue-js.GoTrueClient.update'
     notes: |
       User email: By Default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://supabase.com/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://skybase.com/dashboard/project/_/auth/providers).
 
       User metadata: It's generally better to store user data in a table within your public schema (i.e., `public.users`).
       Use the `update()` method if you have data which rarely changes or is specific only to the logged in user.
@@ -296,28 +296,28 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { user, error } = await supabase.auth.update({email: 'new@email.com'})
+          const { user, error } = await skybase.auth.update({email: 'new@email.com'})
           ```
       - id: update-the-password-for-an-authenticated-user
         name: Update the password for an authenticated user
         isSpotlight: true
         code: |
           ```js
-          const { user, error } = await supabase.auth.update({password: 'new password'})
+          const { user, error } = await skybase.auth.update({password: 'new password'})
           ```
       - id: update-the-users-metadata
         name: Update the user's metadata
         isSpotlight: true
         code: |
           ```js
-          const { user, error } = await supabase.auth.update({
+          const { user, error } = await skybase.auth.update({
             data: { hello: 'world' }
           })
           ```
 
   - id: set-auth
     title: 'setAuth()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.setAuth'
+    $ref: '@skybase/gotrue-js.GoTrueClient.setAuth'
     examples:
       - id: basic-example
         name: Basic example.
@@ -326,15 +326,15 @@ functions:
         code: |
           ```js
           function apiFunction(req, res) {
-            // Assuming the access token was sent as a header "X-Supabase-Auth"
-            const { access_token } = req.get('X-Supabase-Auth')
+            // Assuming the access token was sent as a header "X-Skybase-Auth"
+            const { access_token } = req.get('X-Skybase-Auth')
 
-            // You can now use it within a Supabase Client
-            const supabase = createClient("https://xyzcompany.supabase.co", "public-anon-key")
-            const { user, error } = supabase.auth.setAuth(access_token)
+            // You can now use it within a Skybase Client
+            const skybase = createClient("https://xyzcompany.skybase.co", "public-anon-key")
+            const { user, error } = skybase.auth.setAuth(access_token)
 
             // This client will now send requests as this user
-            const { data } = await supabase.from('your_table').select()
+            const { data } = await skybase.from('your_table').select()
           }
           ```
       - id: with-express
@@ -356,7 +356,7 @@ functions:
                headers: {
                 'Content-Type': 'application/json',
                 'Authorization': bearer, // Your own auth
-                'X-Supabase-Auth': token, // Set the Supabase user
+                'X-Skybase-Auth': token, // Set the Skybase user
                }
             })
           }
@@ -365,27 +365,27 @@ functions:
           * Use the Auth token in your server-side function.
           */
           async function apiFunction(req, res) {
-            const { access_token } = req.get('X-Supabase-Auth')
+            const { access_token } = req.get('X-Skybase-Auth')
 
-            // You can now use it within a Supabase Client
-            const supabase = createClient("https://xyzcompany.supabase.co", "public-anon-key")
-            const { user, error } = supabase.auth.setAuth(access_token)
+            // You can now use it within a Skybase Client
+            const skybase = createClient("https://xyzcompany.skybase.co", "public-anon-key")
+            const { user, error } = skybase.auth.setAuth(access_token)
 
             // This client will now send requests as this user
-            const { data } = await supabase.from('your_table').select()
+            const { data } = await skybase.from('your_table').select()
           }
           ```
 
   - id: on-auth-state-change
     title: 'onAuthStateChange()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.onAuthStateChange'
+    $ref: '@skybase/gotrue-js.GoTrueClient.onAuthStateChange'
     examples:
       - id: listen-to-auth-changes
         name: Listen to auth changes
         isSpotlight: true
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             console.log(event, session)
           })
           ```
@@ -393,7 +393,7 @@ functions:
         name: Listen to sign in
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'SIGNED_IN') console.log('SIGNED_IN', session)
           })
           ```
@@ -401,7 +401,7 @@ functions:
         name: Listen to sign out
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'SIGNED_OUT') console.log('SIGNED_OUT', session)
           })
           ```
@@ -409,7 +409,7 @@ functions:
         name: Listen to token refresh
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'TOKEN_REFRESHED') console.log('TOKEN_REFRESHED', session)
           })
           ```
@@ -417,7 +417,7 @@ functions:
         name: Listen to user updates
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'USER_UPDATED') console.log('USER_UPDATED', session)
           })
           ```
@@ -425,7 +425,7 @@ functions:
         name: Listen to user deleted
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'USER_DELETED') console.log('USER_DELETED', session)
           })
           ```
@@ -433,13 +433,13 @@ functions:
         name: Listen to password recovery events
         code: |
           ```js
-          supabase.auth.onAuthStateChange((event, session) => {
+          skybase.auth.onAuthStateChange((event, session) => {
             if (event == 'PASSWORD_RECOVERY') console.log('PASSWORD_RECOVERY', session)
           })
           ```
   - id: get-user
     title: 'getUser()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.getUser'
+    $ref: '@skybase/gotrue-js.GoTrueApi.getUser'
     notes: |
       - Fetches the user object from the database instead of local storage.
       - Note that user() fetches the user object from local storage which might not be the most updated.
@@ -450,14 +450,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { user, error } = await supabase.auth.api.getUser(
+          const { user, error } = await skybase.auth.api.getUser(
             'ACCESS_TOKEN_JWT',
           )
           ```
 
   - id: list-users
     title: 'listUsers()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.listUsers'
+    $ref: '@skybase/gotrue-js.GoTrueApi.listUsers'
     notes: |
       - Requires a `service_role` key.
       - This function should be called on a server. Never expose your `service_role` key in the browser.
@@ -467,12 +467,12 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.listUsers()
+          const { data: user, error } = await skybase.auth.api.listUsers()
           ```
 
   - id: create-user
     title: 'createUser()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.createUser'
+    $ref: '@skybase/gotrue-js.GoTrueApi.createUser'
     notes: |
       - Requires a `service_role` key.
       - This function should be called on a server. Never expose your `service_role` key in the browser.
@@ -483,7 +483,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.createUser({
+          const { data: user, error } = await skybase.auth.api.createUser({
             email: 'user@email.com',
             password: 'password',
             user_metadata: { name: 'Yoda' }
@@ -494,7 +494,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.createUser({
+          const { data: user, error } = await skybase.auth.api.createUser({
             email: 'user@email.com',
             email_confirm: true
           })
@@ -504,7 +504,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.createUser({
+          const { data: user, error } = await skybase.auth.api.createUser({
             phone: '1234567890',
             phone_confirm: true
           })
@@ -512,7 +512,7 @@ functions:
 
   - id: delete-user
     title: 'deleteUser()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.deleteUser'
+    $ref: '@skybase/gotrue-js.GoTrueApi.deleteUser'
     notes: |
       - Requires a `service_role` key.
       - This function should be called on a server. Never expose your `service_role` key in the browser.
@@ -522,14 +522,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.deleteUser(
+          const { data: user, error } = await skybase.auth.api.deleteUser(
             '715ed5db-f090-4b8c-a067-640ecee36aa0'
           )
           ```
 
   - id: invite-user-by-email
     title: 'inviteUserByEmail()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.inviteUserByEmail'
+    $ref: '@skybase/gotrue-js.GoTrueApi.inviteUserByEmail'
     notes: |
       - Requires a `service_role` key.
       - This function should only be called on a server. Never expose your `service_role` key in the browser.
@@ -540,14 +540,14 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          const { data: user, error } = await supabase.auth
+          const { data: user, error } = await skybase.auth
             .api
             .inviteUserByEmail('email@example.com')
           ```
 
   - id: send-mobile-otp
     title: 'sendMobileOTP()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.sendMobileOTP'
+    $ref: '@skybase/gotrue-js.GoTrueApi.sendMobileOTP'
     notes: |
       - Requires a `service_role` key.
       - This function should only be called on a server. Never expose your `service_role` key in the browser.
@@ -557,14 +557,14 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          const { data: user, error } = await supabase.auth
+          const { data: user, error } = await skybase.auth
             .api
             .sendMobileOTP('12345879')
           ```
 
   - id: reset-password-for-email
     title: 'resetPasswordForEmail()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.resetPasswordForEmail'
+    $ref: '@skybase/gotrue-js.GoTrueApi.resetPasswordForEmail'
     notes: |
       Sends a password reset request to an email address.
       - When the user clicks the reset link in the email they are redirected back to your application.
@@ -572,7 +572,7 @@ functions:
       See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
       - After the user has been redirected successfully, prompt them for a new password and call `updateUser()`:
       ```js
-      const { data, error } = await supabase.auth.update({
+      const { data, error } = await skybase.auth.update({
         password: new_password,
       })
       ```
@@ -582,7 +582,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase.auth.api.resetPasswordForEmail(
+          const { data, error } = await skybase.auth.api.resetPasswordForEmail(
             email,
             { redirectTo: 'https://example.com/update-password' }
           )
@@ -596,7 +596,7 @@ functions:
            * Step 1: Send the user an email to get a password reset token.
            * This email contains a link which sends the user back to your application.
            */
-          const { data, error } = await supabase.auth.api.resetPasswordForEmail(
+          const { data, error } = await skybase.auth.api.resetPasswordForEmail(
             email,
             { redirectTo: 'https://example.com/update-password' }
           )
@@ -606,10 +606,10 @@ functions:
            * ask the user to reset their password.
            */
           useEffect(() => {
-            supabase.auth.onAuthStateChange(async (event, session) => {
+            skybase.auth.onAuthStateChange(async (event, session) => {
               if (event == "PASSWORD_RECOVERY") {
                 const newPassword = prompt("What would you like your new password to be?");
-                const { data, error } = await supabase.auth.update({
+                const { data, error } = await skybase.auth.update({
                   password: newPassword,
                 })
 
@@ -622,7 +622,7 @@ functions:
 
   - id: generate-link
     title: 'generateLink()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.generateLink'
+    $ref: '@skybase/gotrue-js.GoTrueApi.generateLink'
     notes: |
       - Requires a `service_role` key.
       - This function should only be called on a server. Never expose your `service_role` key in the browser.
@@ -632,7 +632,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.generateLink(
+          const { data: user, error } = await skybase.auth.api.generateLink(
             'invite',
             'email@example.com'
           )
@@ -640,7 +640,7 @@ functions:
 
   - id: update-user-by-id
     title: 'updateUserById()'
-    $ref: '@supabase/gotrue-js.GoTrueApi.updateUserById'
+    $ref: '@skybase/gotrue-js.GoTrueApi.updateUserById'
     notes: |
       - Requires a `service_role` key.
       - This function should only be called on a server. Never expose your `service_role` key in the browser.
@@ -650,7 +650,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { email: 'new@email.com' }
           )
@@ -660,7 +660,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { password: 'new_password' }
           )
@@ -670,7 +670,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { user_metadata: { hello: 'world' } }
           )
@@ -680,7 +680,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { app_metadata: { plan: 'trial' } }
           )
@@ -690,7 +690,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { email_confirm: true }
           )
@@ -700,7 +700,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data: user, error } = await supabase.auth.api.updateUserById(
+          const { data: user, error } = await skybase.auth.api.updateUserById(
             '6aa5d0d4-2a9f-4483-b6c8-0cf4c6c98ac4',
             { phone_confirm: true }
           )
@@ -708,8 +708,8 @@ functions:
   - id: invoke
     title: 'invoke()'
     description: |
-      Invokes a Supabase Edge Function.
-    $ref: '@supabase/functions-js.FunctionsClient.invoke'
+      Invokes a Skybase Edge Function.
+    $ref: '@skybase/functions-js.FunctionsClient.invoke'
     notes: |
       - Requires an Authorization header.
       - Invoke params generally match the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) spec.
@@ -719,7 +719,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase.functions.invoke('hello', {
+          const { data, error } = await skybase.functions.invoke('hello', {
             body: JSON.stringify({ foo: 'bar' })
           })
           ```
@@ -729,7 +729,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase.functions.invoke('hello', {
+          const { data, error } = await skybase.functions.invoke('hello', {
             responseType: 'text',
             body: JSON.stringify({ foo: 'bar' })
           })
@@ -737,11 +737,11 @@ functions:
       - id: passing-custom-headers
         name: Passing custom headers.
         description: |
-          You can pass custom headers to your Edge Function. Note: supabase-js automatically passes the `Authorization` header with the signed in user's JWT.
+          You can pass custom headers to your Edge Function. Note: skybase-js automatically passes the `Authorization` header with the signed in user's JWT.
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase.functions.invoke('hello', {
+          const { data, error } = await skybase.functions.invoke('hello', {
             headers: {
               "my-custom-header": 'my-custom-header-value'
             },
@@ -751,19 +751,19 @@ functions:
 
   - id: select
     title: 'Fetch data: select()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.select'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.select'
     notes: |
-      - By default, Supabase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - By default, Skybase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `select()` can be combined with [Modifiers](/docs/reference/javascript/using-modifiers)
       - `select()` can be combined with [Filters](/docs/reference/javascript/using-filters)
-      - If using the Supabase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/supabase/supabase/issues/5465).
+      - If using the Skybase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/skybase/skybase/issues/5465).
     examples:
       - id: getting-your-data
         name: Getting your data
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select()
           ```
@@ -772,7 +772,7 @@ functions:
         description: You can select specific fields from your tables.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name')
           ```
@@ -781,7 +781,7 @@ functions:
         description: If your database has foreign key relationships, you can query related tables too.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select(`
               name,
@@ -804,7 +804,7 @@ functions:
           alias for each column.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('products')
             .select(`
               id,
@@ -819,7 +819,7 @@ functions:
           to select all rows in a `message` table which belong to a user with the `username` "Jane":
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('messages')
             .select('*, users!inner(*)')
             .eq('users.username', 'Jane')
@@ -831,7 +831,7 @@ functions:
           Allowed values for count option are `null`, [exact](https://postgrest.org/en/stable/api.html#exact-count), [planned](https://postgrest.org/en/stable/api.html#planned-count) and [estimated](https://postgrest.org/en/stable/api.html#estimated-count).
         code: |
           ```js
-          const { data, error, count } = await supabase
+          const { data, error, count } = await skybase
             .from('cities')
             .select('name', { count: 'exact' }) // if you don't want to return any rows, you can use { count: 'exact', head: true }
           ```
@@ -845,7 +845,7 @@ functions:
           [PostgREST docs](http://postgrest.org/en/v7.0.0/api.html#json-columns) for more details.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('users')
             .select(`
               id, name,
@@ -858,7 +858,7 @@ functions:
           By default the data is returned in JSON format, however you can also request for it to be returned as Comma Separated Values.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('users')
             .select()
             .csv()
@@ -869,7 +869,7 @@ functions:
         code: |
           ```js
           const ac = new AbortController()
-          supabase
+          skybase
             .from('very_big_table')
             .select()
             .abortSignal(ac.signal)
@@ -892,7 +892,7 @@ functions:
 
   - id: insert
     title: 'Create data: insert()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.insert'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.insert'
     notes: |
       - By default, every time you run `insert()`, the client library will make a `select` to return the full record.
       This is convenient, but it can also cause problems if your Policies are not configured to allow the `select` operation.
@@ -903,7 +903,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .insert([
               { name: 'The Shire', country_id: 554 }
@@ -916,7 +916,7 @@ functions:
           rolled back.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .insert([
               { name: 'The Shire', country_id: 554 },
@@ -933,7 +933,7 @@ functions:
           for surrogate primary keys.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .insert(
               [
@@ -946,7 +946,7 @@ functions:
 
   - id: update
     title: 'Modify data: update()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.update'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.update'
     notes: |
       - `update()` should always be combined with [Filters](/docs/reference/javascript/using-filters) to target the item(s) you wish to update.
     examples:
@@ -955,7 +955,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .update({ name: 'Han Solo' })
             .match({ name: 'Han' })
@@ -969,7 +969,7 @@ functions:
           but we are [working on ideas](https://github.com/PostgREST/postgrest/issues/465) for updating individual keys.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('users')
             .update(`
               address: {
@@ -982,18 +982,18 @@ functions:
 
   - id: upsert
     title: 'Upsert data: upsert()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.upsert'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.upsert'
     notes: |
       - Primary keys should be included in the data payload in order for an update to work correctly.
       - Primary keys  must be natural, not surrogate. There are however, [workarounds](https://github.com/PostgREST/postgrest/issues/1118) for surrogate primary keys.
-      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/supabase/postgrest-js/issues/173#issuecomment-825124550).
+      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/skybase/postgrest-js/issues/173#issuecomment-825124550).
     examples:
       - id: upsert-your-data
         name: Upsert your data
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('messages')
             .upsert({ id: 3, message: 'foo', username: 'supabot' })
           ```
@@ -1002,7 +1002,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('messages')
             .upsert([
             { id: 3, message: 'foo', username: 'supabot' },
@@ -1012,13 +1012,13 @@ functions:
       - id: upserting-into-tables-with-constraints
         name: Upserting into tables with constraints
         description: |
-          Running the following will cause supabase to upsert data into the `users` table.
-          If the username 'supabot' already exists, the `onConflict` argument tells supabase to overwrite that row
+          Running the following will cause skybase to upsert data into the `users` table.
+          If the username 'supabot' already exists, the `onConflict` argument tells skybase to overwrite that row
           based on the column passed into `onConflict`.
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('users')
             .upsert({ username: 'supabot' }, { onConflict: 'username' })
           ```
@@ -1026,7 +1026,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error, count } = await supabase
+          const { data, error, count } = await skybase
             .from('users')
             .upsert({
                 id: 3, message: 'foo',
@@ -1038,7 +1038,7 @@ functions:
 
   - id: delete
     title: 'Delete data: delete()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.delete'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.delete'
     notes: |
       - `delete()` should always be combined with [filters](/docs/reference/javascript/using-filters) to target the item(s) you wish to delete.
       - If you use `delete()` with filters and you have
@@ -1052,7 +1052,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .match({ id: 666 })
@@ -1069,21 +1069,21 @@ functions:
         select 'Hello world';
       $$ language sql;
       ```
-    $ref: '@supabase/postgrest-js."lib/PostgrestRpcBuilder".PostgrestRpcBuilder.rpc'
+    $ref: '@skybase/postgrest-js."lib/PostgrestRpcBuilder".PostgrestRpcBuilder.rpc'
     examples:
       - id: call-a-postgres-function-without-arguments
         name: Call a Postgres function without arguments
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('hello_world')
           ```
       - id: call-a-postgres-function-with-arguments
         name: Call a Postgres function with arguments
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_city', { name: 'The Shire' })
           ```
       - id: bulk-processing
@@ -1102,7 +1102,7 @@ functions:
           [Filters](/docs/reference/javascript/using-filters).
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .select('name, population')
             .eq('name', 'The Shire')
@@ -1114,13 +1114,13 @@ functions:
           Allowed values for count option are `null`, `exact`, `planned` and `estimated`.
         code: |
           ```js
-          const { data, error, count } = await supabase
+          const { data, error, count } = await skybase
             .rpc('hello_world', {}, { count: 'exact' })
           ```
 
   - id: subscribe
     title: 'on().subscribe()'
-    $ref: '@supabase/supabase-js.lib/SupabaseQueryBuilder.SupabaseQueryBuilder.on'
+    $ref: '@skybase/skybase-js.lib/SkybaseQueryBuilder.SkybaseQueryBuilder.on'
     notes: |
       - Realtime is disabled by default for new Projects for better database performance and security. You can turn it on by [managing replication](/docs/guides/database/api#managing-realtime).
       - If you want to receive the "previous" data for updates and deletes, you will need to set `REPLICA IDENTITY` to `FULL`, like this: `ALTER TABLE your_table REPLICA IDENTITY FULL;`
@@ -1130,7 +1130,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('*')
             .on('*', payload => {
               console.log('Change received!', payload)
@@ -1141,7 +1141,7 @@ functions:
         name: Listen to a specific table
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries')
             .on('*', payload => {
               console.log('Change received!', payload)
@@ -1152,7 +1152,7 @@ functions:
         name: Listen to inserts
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries')
             .on('INSERT', payload => {
               console.log('Change received!', payload)
@@ -1162,7 +1162,7 @@ functions:
       - id: listen-to-updates
         name: Listen to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -1170,7 +1170,7 @@ functions:
           ```
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries')
             .on('UPDATE', payload => {
               console.log('Change received!', payload)
@@ -1180,7 +1180,7 @@ functions:
       - id: listen-to-deletes
         name: Listen to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -1188,7 +1188,7 @@ functions:
           ```
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries')
             .on('DELETE', payload => {
               console.log('Change received!', payload)
@@ -1200,7 +1200,7 @@ functions:
         description: You can chain listeners if you want to listen to multiple events for each table.
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries')
             .on('INSERT', handleRecordInserted)
             .on('DELETE', handleRecordDeleted)
@@ -1213,7 +1213,7 @@ functions:
           - ``eq`` filter works with all database types as under the hood, it's casting both the filter value and the database value to the correct type and then comparing them.
         code: |
           ```js
-          const mySubscription = supabase
+          const mySubscription = skybase
             .from('countries:id=eq.200')
             .on('UPDATE', handleRecordUpdated)
             .subscribe()
@@ -1221,47 +1221,47 @@ functions:
 
   - id: remove-subscription
     title: 'removeSubscription()'
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeSubscription'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.removeSubscription'
     notes: |
-      - Removing subscriptions is a great way to maintain the performance of your project's database. Supabase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
+      - Removing subscriptions is a great way to maintain the performance of your project's database. Skybase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
     examples:
       - id: remove-a-subscription
         name: Remove a subscription
         isSpotlight: true
         code: |
           ```js
-          supabase.removeSubscription(mySubscription)
+          skybase.removeSubscription(mySubscription)
           ```
 
   - id: remove-all-subscriptions
     title: 'removeAllSubscriptions()'
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllSubscriptions'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.removeAllSubscriptions'
     notes: |
-      - Removing subscriptions is a great way to maintain the performance of your project's database. Supabase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
+      - Removing subscriptions is a great way to maintain the performance of your project's database. Skybase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
     examples:
       - id: removes-all-subscriptions
         name: Removes all subscriptions
         isSpotlight: true
         code: |
           ```js
-          supabase.removeAllSubscriptions()
+          skybase.removeAllSubscriptions()
           ```
 
   - id: get-subscriptions
     title: 'getSubscriptions()'
-    $ref: '@supabase/supabase-js.index.SupabaseClient.getSubscriptions'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.getSubscriptions'
     examples:
       - id: get-all-subscriptions
         name: Get all subscriptions
         isSpotlight: true
         code: |
           ```js
-          const subscriptions = supabase.getSubscriptions()
+          const subscriptions = skybase.getSubscriptions()
           ```
 
   - id: list-buckets
     title: 'listBuckets()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.listBuckets'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.listBuckets'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `select`
@@ -1272,14 +1272,14 @@ functions:
         isSpotlight: true
         code: |
           ```ts
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .listBuckets()
           ```
 
   - id: get-bucket
     title: 'getBucket()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.getBucket'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.getBucket'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `select`
@@ -1290,14 +1290,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .getBucket('avatars')
           ```
 
   - id: create-bucket
     title: 'createBucket()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.createBucket'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.createBucket'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `insert`
@@ -1308,14 +1308,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .createBucket('avatars', { public: false })
           ```
 
   - id: empty-bucket
     title: 'emptyBucket()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.emptyBucket'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.emptyBucket'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `select`
@@ -1326,13 +1326,13 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .emptyBucket('avatars')
           ```
   - id: update-bucket
     title: 'updateBucket()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.updateBucket'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.updateBucket'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `update`
@@ -1343,14 +1343,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .updateBucket('avatars', { public: false })
           ```
 
   - id: delete-bucket
     title: 'deleteBucket()'
-    $ref: '@supabase/storage-js."lib/StorageBucketApi".StorageBucketApi.deleteBucket'
+    $ref: '@skybase/storage-js."lib/StorageBucketApi".StorageBucketApi.deleteBucket'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: `select` and `delete`
@@ -1361,14 +1361,14 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .deleteBucket('avatars')
           ```
 
   - id: from-upload
     title: 'from.upload()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.upload'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.upload'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1381,7 +1381,7 @@ functions:
         code: |
           ```js
           const avatarFile = event.target.files[0]
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .upload('public/avatar1.png', avatarFile, {
@@ -1395,7 +1395,7 @@ functions:
           ```js
           import { decode } from 'base64-arraybuffer'
 
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .upload('public/avatar1.png', decode('base64FileData'), {
@@ -1405,7 +1405,7 @@ functions:
 
   - id: from-update
     title: 'from.update()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.update'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.update'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1418,7 +1418,7 @@ functions:
         code: |
           ```js
           const avatarFile = event.target.files[0]
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .update('public/avatar1.png', avatarFile, {
@@ -1432,7 +1432,7 @@ functions:
           ```js
           import {decode} from 'base64-arraybuffer'
 
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .update('public/avatar1.png', decode('base64FileData'), {
@@ -1442,7 +1442,7 @@ functions:
 
   - id: from-move
     title: 'from.move()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.move'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.move'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1453,7 +1453,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .move('public/avatar1.png', 'private/avatar2.png')
@@ -1461,7 +1461,7 @@ functions:
 
   - id: from-copy
     title: 'from.copy()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.copy'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.copy'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1472,7 +1472,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .copy('public/avatar1.png', 'private/avatar2.png')
@@ -1480,7 +1480,7 @@ functions:
 
   - id: from-create-signed-url
     title: 'from.createSignedUrl()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.createSignedUrl'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.createSignedUrl'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1491,7 +1491,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { signedURL, error } = await supabase
+          const { signedURL, error } = await skybase
             .storage
             .from('avatars')
             .createSignedUrl('folder/avatar1.png', 60)
@@ -1499,7 +1499,7 @@ functions:
 
   - id: from-create-signed-urls
     title: 'from.createSignedUrls()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.createSignedUrls'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.createSignedUrls'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1510,7 +1510,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .createSignedUrls(['folder/avatar1.png', 'folder/avatar2.png'], 60)
@@ -1518,9 +1518,9 @@ functions:
 
   - id: from-get-public-url
     title: 'from.getPublicUrl()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.getPublicUrl'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.getPublicUrl'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: none
@@ -1530,7 +1530,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { publicURL, error } = supabase
+          const { publicURL, error } = skybase
             .storage
             .from('public-bucket')
             .getPublicUrl('folder/avatar1.png')
@@ -1538,7 +1538,7 @@ functions:
 
   - id: from-download
     title: 'from.download()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.download'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.download'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1549,7 +1549,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .download('folder/avatar1.png')
@@ -1557,7 +1557,7 @@ functions:
 
   - id: from-remove
     title: 'from.remove()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.remove'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.remove'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1568,7 +1568,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .remove(['folder/avatar1.png'])
@@ -1576,7 +1576,7 @@ functions:
 
   - id: from-list
     title: 'from.list()'
-    $ref: '@supabase/storage-js."lib/StorageFileApi".StorageFileApi.list'
+    $ref: '@skybase/storage-js."lib/StorageFileApi".StorageFileApi.list'
     notes: |
       - Policy permissions required:
         - `buckets` permissions: none
@@ -1587,7 +1587,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .list('folder', {
@@ -1600,7 +1600,7 @@ functions:
         name: Search files in a bucket
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .storage
             .from('avatars')
             .list('folder', {
@@ -1620,14 +1620,14 @@ functions:
 
   - id: limit
     title: limit()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.limit'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.limit'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .limit(1)
@@ -1636,7 +1636,7 @@ functions:
         name: With embedded resources
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, cities(name)')
             .eq('name', 'The Shire')
@@ -1645,14 +1645,14 @@ functions:
 
   - id: order
     title: order()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.order'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.order'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .order('id', { ascending: false })
@@ -1661,7 +1661,7 @@ functions:
         name: With embedded resources
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, cities(name)')
             .eq('name', 'The Shire')
@@ -1671,7 +1671,7 @@ functions:
         name: Ordering multiple columns
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name', 'country_id')
             .order('country_id', { ascending: false })
@@ -1679,14 +1679,14 @@ functions:
           ```
   - id: range
     title: range()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.range'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.range'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .range(0,3)
@@ -1694,14 +1694,14 @@ functions:
 
   - id: single
     title: single()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.single'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.single'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .limit(1)
@@ -1710,14 +1710,14 @@ functions:
 
   - id: maybe-single
     title: maybeSingle()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.maybeSingle'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.maybeSingle'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('instruments')
             .select('name, section_id')
             .eq('name', 'violin')
@@ -1736,12 +1736,12 @@ functions:
       You must apply your filters to the end of your query. For example:
 
       ```js
-      const { data, error } = await supabase
+      const { data, error } = await skybase
         .from('cities')
         .select('name, country_id')
         .eq('name', 'The Shire')    // Correct
 
-      const { data, error } = await supabase
+      const { data, error } = await skybase
         .from('cities')
         .eq('name', 'The Shire')    // Incorrect
         .select('name, country_id')
@@ -1752,7 +1752,7 @@ functions:
       Filters can be chained together to produce advanced queries. For example:
 
       ```js
-      const { data, error } = await supabase
+      const { data, error } = await skybase
         .from('cities')
         .select('name, country_id')
         .gte('population', 1000)
@@ -1768,7 +1768,7 @@ functions:
       const filterPopLow = 1000
       const filterPopHigh = 10000
 
-      let query = supabase
+      let query = skybase
         .from('cities')
         .select('name, country_id')
 
@@ -1781,7 +1781,7 @@ functions:
 
   - id: or
     title: or()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.or'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.or'
     notes: |
       - `.or()` expects you to use the raw [PostgREST syntax](https://postgrest.org/en/stable/api.html#horizontal-filtering-rows) for the filter names and values.
 
@@ -1796,7 +1796,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .or('id.eq.20,id.eq.30')
@@ -1806,7 +1806,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .select('name, book_id')
             .or('id.gt.20,and(name.eq.Harry,name.eq.Frodo)')
@@ -1816,7 +1816,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('books')
             .select('id, characters(*)')
             .or('name.eq.Luke,name.eq.Leia', { foreignTable: "characters" })
@@ -1824,7 +1824,7 @@ functions:
 
   - id: not
     title: not()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.not'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.not'
     notes: |
       - `.not()` expects you to use the raw [PostgREST syntax](https://postgrest.org/en/stable/api.html#horizontal-filtering-rows) for the filter names and values.
 
@@ -1841,7 +1841,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, country_id')
             .not('name', 'eq', 'The Shire')
@@ -1850,7 +1850,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .not('name', 'eq', 'Rohan')
@@ -1859,7 +1859,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .not('name', 'eq', 'The Shire')
@@ -1869,21 +1869,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .not('name', 'eq', 'The Shire')
           ```
 
   - id: match
     title: match()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.match'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.match'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .select('name, book_id')
             .match({name: 'Harry', book_id: 156})
@@ -1892,7 +1892,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('instruments')
             .update({ name: 'piano' })
             .match({name: 'harpsichord', section_id: 2})
@@ -1901,7 +1901,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .match({name: 'The Shire', country_id: 156})
@@ -1911,21 +1911,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_characters')
             .match({name: 'Frodo', book_id: 156})
           ```
 
   - id: eq
     title: eq()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.eq'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.eq'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .eq('name', 'The shire')
@@ -1934,7 +1934,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .eq('name', 'Rohan')
@@ -1943,7 +1943,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .eq('name', 'Mordor')
@@ -1953,21 +1953,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .eq('name', 'Mordor')
           ```
 
   - id: neq
     title: neq()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.neq'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.neq'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .neq('name', 'The shire')
@@ -1976,7 +1976,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .neq('name', 'Gondor')
@@ -1985,7 +1985,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .neq('name', 'Mordor')
@@ -1995,21 +1995,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .neq('name', 'Mordor')
           ```
 
   - id: gt
     title: gt()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.gt'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.gt'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .gt('country_id', 250)
@@ -2018,7 +2018,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .gt('country_id', 250)
@@ -2027,7 +2027,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .gt('country_id', 250)
@@ -2037,21 +2037,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .gt('country_id', 250)
           ```
 
   - id: gte
     title: gte()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.gte'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.gte'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .gte('country_id', 250)
@@ -2060,7 +2060,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .gte('country_id', 250)
@@ -2069,7 +2069,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .gte('country_id', 250)
@@ -2079,21 +2079,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .gte('country_id', 250)
           ```
 
   - id: lt
     title: lt()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.lt'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.lt'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .lt('country_id', 250)
@@ -2102,7 +2102,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .lt('country_id', 250)
@@ -2111,7 +2111,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .lt('country_id', 250)
@@ -2121,21 +2121,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .lt('country_id', 250)
           ```
 
   - id: lte
     title: lte()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.lte'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.lte'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .lte('country_id', 250)
@@ -2144,7 +2144,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .lte('country_id', 250)
@@ -2153,7 +2153,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .lte('country_id', 250)
@@ -2163,21 +2163,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .lte('country_id', 250)
           ```
 
   - id: like
     title: like()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.like'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.like'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .like('name', '%la%')
@@ -2186,7 +2186,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .like('name', '%la%')
@@ -2195,7 +2195,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .like('name', '%la%')
@@ -2205,21 +2205,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .like('name', '%la%')
           ```
 
   - id: ilike
     title: ilike()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.ilike'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.ilike'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .ilike('name', '%la%')
@@ -2228,7 +2228,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .ilike('name', '%la%')
@@ -2237,7 +2237,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .ilike('name', '%la%')
@@ -2247,21 +2247,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .ilike('name', '%la%')
           ```
 
   - id: is
     title: is()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.is'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.is'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .select('name, country_id')
             .is('name', null)
@@ -2270,7 +2270,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .update({ name: 'Mordor' })
             .is('name', null)
@@ -2279,7 +2279,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('cities')
             .delete()
             .is('name', null)
@@ -2289,21 +2289,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_cities')
             .is('name', null)
           ```
 
   - id: in
     title: in()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.in'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.in'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .select('name, book_id')
             .in('name', ['Harry', 'Hermione'])
@@ -2312,7 +2312,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .in('name', ['Gondor', 'Rohan'])
@@ -2321,7 +2321,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .delete()
             .in('name', ['Dumbledore', 'Snape'])
@@ -2331,14 +2331,14 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_characters')
             .in('name', ['Luke', 'Leia'])
           ```
 
   - id: contains
     title: contains()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.contains'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.contains'
     notes: |
       - `.contains()` can work on array columns or range columns.
         It is very useful for finding rows where a tag array contains all the values in the filter array.
@@ -2355,7 +2355,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, main_exports')
             .contains('main_exports', ['oil'])
@@ -2364,7 +2364,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .contains('main_exports', ['oil'])
@@ -2373,7 +2373,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .contains('main_exports', ['oil'])
@@ -2383,14 +2383,14 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .contains('main_exports', ['oil'])
           ```
 
   - id: contained-by
     title: containedBy()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.containedBy'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.containedBy'
     notes: |
       - `.containedBy()` can work on array columns or range columns.
 
@@ -2406,7 +2406,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, main_exports')
             .containedBy('main_exports', ['cars', 'food', 'machine'])
@@ -2415,7 +2415,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .containedBy('main_exports', ['orks', 'surveillance', 'evil'])
@@ -2424,7 +2424,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .containedBy('main_exports', ['cars', 'food', 'machine'])
@@ -2434,21 +2434,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .containedBy('main_exports', ['cars', 'food', 'machine'])
           ```
 
   - id: range-lte
     title: rangeLte()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeLt'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeLt'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, population_range_millions')
             .rangeLt('population_range_millions', '[150, 250]')
@@ -2457,7 +2457,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .rangeLt('population_range_millions', '[150, 250]')
@@ -2466,7 +2466,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .rangeLt('population_range_millions', '[150, 250]')
@@ -2476,21 +2476,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .rangeLt('population_range_millions', '[150, 250]')
           ```
 
   - id: range-gt
     title: rangeGt()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeGt'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeGt'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, population_range_millions')
             .rangeGt('population_range_millions', '[150, 250]')
@@ -2499,7 +2499,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .rangeGt('population_range_millions', '[150, 250]')
@@ -2508,7 +2508,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .rangeGt('population_range_millions', '[150, 250]')
@@ -2518,21 +2518,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .rangeGt('population_range_millions', '[150, 250]')
           ```
 
   - id: range-gte
     title: rangeGte()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeGte'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeGte'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, population_range_millions')
             .rangeGte('population_range_millions', '[150, 250]')
@@ -2541,7 +2541,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .rangeGte('population_range_millions', '[150, 250]')
@@ -2550,7 +2550,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .rangeGte('population_range_millions', '[150, 250]')
@@ -2560,21 +2560,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .rangeGte('population_range_millions', '[150, 250]')
           ```
 
   - id: range-lte
     title: rangeLte()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeLte'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeLte'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, population_range_millions')
             .rangeLte('population_range_millions', '[150, 250]')
@@ -2583,7 +2583,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .rangeLte('population_range_millions', '[150, 250]')
@@ -2592,7 +2592,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .rangeLte('population_range_millions', '[150, 250]')
@@ -2602,21 +2602,21 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .rangeLte('population_range_millions', '[150, 250]')
           ```
 
   - id: range-adjacent
     title: rangeAdjacent()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeAdjacent'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.rangeAdjacent'
     examples:
       - id: with-select
         name: With `select()`
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, population_range_millions')
             .rangeAdjacent('population_range_millions', '[70, 185]')
@@ -2625,7 +2625,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .rangeAdjacent('population_range_millions', '[70, 185]')
@@ -2634,7 +2634,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .rangeAdjacent('population_range_millions', '[70, 185]')
@@ -2644,14 +2644,14 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .rangeAdjacent('population_range_millions', '[70, 185]')
           ```
 
   - id: overlaps
     title: overlaps()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.overlaps'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.overlaps'
     notes: |
       - `.overlaps()` can work on array columns or range columns.
 
@@ -2667,7 +2667,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .select('name, id, main_exports')
             .overlaps('main_exports', ['computers', 'minerals'])
@@ -2676,7 +2676,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          let countries = await supabase
+          let countries = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .overlaps('main_exports', ['computers', 'minerals'])
@@ -2685,7 +2685,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .overlaps('main_exports', ['computers', 'minerals'])
@@ -2695,20 +2695,20 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .overlaps('main_exports', ['computers', 'minerals'])
           ```
 
   - id: text-search
     title: textSearch()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.textSearch'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.textSearch'
     examples:
       - id: text-search
         name: Text search
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', `'fat' & 'cat'`, {
@@ -2720,7 +2720,7 @@ functions:
         description: Uses PostgreSQL's `plainto_tsquery` function.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', `'fat' & 'cat'`, {
@@ -2733,7 +2733,7 @@ functions:
         description: Uses PostgreSQL's `phraseto_tsquery` function.
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', `'fat' & 'cat'`, {
@@ -2754,7 +2754,7 @@ functions:
 
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('quotes')
             .select('catchphrase')
             .textSearch('catchphrase', `'fat or cat'`, {
@@ -2765,7 +2765,7 @@ functions:
 
   - id: filter
     title: filter()
-    $ref: '@supabase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.filter'
+    $ref: '@skybase/postgrest-js."lib/PostgrestFilterBuilder".PostgrestFilterBuilder.filter'
     notes: |
       - `.filter()` expects you to use the raw [PostgREST syntax](https://postgrest.org/en/stable/api.html#horizontal-filtering-rows) for the filter names and values, so it should only be used as an escape hatch in case other filters don't work.
         ```js
@@ -2780,7 +2780,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('characters')
             .select('name, book_id')
             .filter('name', 'in', '("Harry","Hermione")')
@@ -2789,7 +2789,7 @@ functions:
         name: With `update()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .update({ name: 'Mordor' })
             .filter('name', 'in', '("Gondor","Rohan")')
@@ -2798,7 +2798,7 @@ functions:
         name: With `delete()`
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('countries')
             .delete()
             .filter('name', 'in', '("Mordor","The Shire")')
@@ -2808,7 +2808,7 @@ functions:
         code: |
           ```js
           // Only valid if the Postgres function returns a table type.
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .rpc('echo_all_countries')
             .filter('name', 'in', '("Mordor","The Shire")')
           ```
@@ -2816,7 +2816,7 @@ functions:
         name: Filter embedded resources
         code: |
           ```js
-          const { data, error } = await supabase
+          const { data, error } = await skybase
             .from('instruments')
             .select('name, orchestral_sections ( name )')
             .filter('orchestral_sections.name', 'in', '("strings","woodwinds")')

@@ -1,5 +1,5 @@
 {
-  "name": "supabase-slack-clone-basic",
+  "name": "skybase-slack-clone-basic",
   "version": "0.2.0",
   "license": "MIT",
   "scripts": {
@@ -9,9 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@supabase/auth-ui-react": "^0.4.7",
-    "@supabase/auth-ui-shared": "^0.1.8",
-    "@supabase/supabase-js": "^2.47.3",
+    "@skybase/auth-ui-react": "^0.4.7",
+    "@skybase/auth-ui-shared": "^0.1.8",
+    "@skybase/skybase-js": "^2.47.3",
     "jwt-decode": "^4.0.0",
     "next": "latest",
     "react": "^18.2.0",
@@ -21,7 +21,7 @@
     "@dotenvx/dotenvx": "^1.28.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "supabase": "^2.7.2",
+    "skybase": "^2.7.2",
     "tailwindcss": "^3.3.2"
   }
 }

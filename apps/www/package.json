@@ -1,7 +1,7 @@
 {
   "name": "www",
   "version": "0.0.3",
-  "description": "Supabase main website",
+  "description": "Skybase main website",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -30,7 +30,7 @@
     "@octokit/plugin-paginate-graphql": "^4.0.0",
     "@octokit/rest": "^21.0.0",
     "@radix-ui/react-dialog": "^1.0.5",
-    "@supabase/supabase-js": "catalog:",
+    "@skybase/skybase-js": "catalog:",
     "@vercel/og": "^0.6.2",
     "ai-commands": "workspace:*",
     "animejs": "^4.0.2",
@@ -43,7 +43,7 @@
     "config": "workspace:*",
     "contentlayer2": "0.5.3",
     "dayjs": "^1.11.12",
-    "eslint-config-supabase": "workspace:*",
+    "eslint-config-skybase": "workspace:*",
     "framer-motion": "^11.0.3",
     "globby": "^13.2.2",
     "gray-matter": "^4.0.3",

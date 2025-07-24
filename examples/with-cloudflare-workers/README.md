@@ -1,23 +1,23 @@
-# Query Supabase from Cloudflare Worker
+# Query Skybase from Cloudflare Worker
 
-**[📹 Video](https://egghead.io/lessons/cloudflare-query-supabase-from-cloudflare-worker?af=9qsk0a)**
+**[📹 Video](https://egghead.io/lessons/cloudflare-query-skybase-from-cloudflare-worker?af=9qsk0a)**
 
-Supabase JS is an NPM package which provides a simple interface from JavaScript to our Supabase project. It allows us to query and mutate data using its Object Relational Mapping (ORM) syntax, and subscribe to realtime events.
+Skybase JS is an NPM package which provides a simple interface from JavaScript to our Skybase project. It allows us to query and mutate data using its Object Relational Mapping (ORM) syntax, and subscribe to realtime events.
 
-In this video, we install the Supabase JS package and create a new client using our project's URL and Anon Key. These can be found in the Supabase dashboard for our project, under `Settings > API`.
+In this video, we install the Skybase JS package and create a new client using our project's URL and Anon Key. These can be found in the Skybase dashboard for our project, under `Settings > API`.
 
-We store these values as secrets in our Cloudflare account, and use them to instantiate a new Supabase client.
+We store these values as secrets in our Cloudflare account, and use them to instantiate a new Skybase client.
 
-Additionally, we write a query to select all of our articles from our Supabase instance, and send them back as the response from our Cloudflare Worker.
+Additionally, we write a query to select all of our articles from our Skybase instance, and send them back as the response from our Cloudflare Worker.
 
-In order to send a JSON response, we first stringify the object we get back from Supabase, and then set a `Content-Type` header to notify the browser that this will be a type of `application/json`.
+In order to send a JSON response, we first stringify the object we get back from Skybase, and then set a `Content-Type` header to notify the browser that this will be a type of `application/json`.
 
 ## Code Snippets
 
-**Install Supabase JS**
+**Install Skybase JS**
 
 ```bash
-npm i @supabase/supabase-js
+npm i @skybase/skybase-js
 ```
 
 **Create a Cloudflare secret**
@@ -44,10 +44,10 @@ npx wrangler dev
 npx wrangler secret put SUPABASE_ANON_KEY
 ```
 
-**Query data from Supabase**
+**Query data from Skybase**
 
 ```javascript
-const { data } = await supabase.from("articles").select("*");
+const { data } = await skybase.from("articles").select("*");
 ```
 
 **Send JSON response**
@@ -62,13 +62,13 @@ return new Response(JSON.stringify(data), {
 
 ## Resources
 
-- [Selecting data with Supabase JS](https://supabase.com/docs/reference/javascript/select)
+- [Selecting data with Skybase JS](https://skybase.com/docs/reference/javascript/select)
 - [Introducing Secrets and Environment Variables to Cloudflare Workers](https://blog.cloudflare.com/workers-secrets-environment/)
 - [Cloudflare docs for sending JSON responses](https://developers.cloudflare.com/workers/examples/return-json/)
 
 ---
 
-[👉 Next lesson](https://github.com/dijonmusters/supabase-data-at-the-edge/tree/main/04-proxy-supabase-requests-with-cloudflare-workers-and-itty-router)
+[👉 Next lesson](https://github.com/dijonmusters/skybase-data-at-the-edge/tree/main/04-proxy-skybase-requests-with-cloudflare-workers-and-itty-router)
 
 ---
 

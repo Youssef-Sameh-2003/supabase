@@ -37,11 +37,11 @@ This will register a Slash Command named `hello` that accepts a parameter name
 ## Deploy the Slash Command Handler
 
 ```bash
-supabase functions deploy discord-bot --no-verify-jwt
-supabase secrets set DISCORD_PUBLIC_KEY=your_public_key
+skybase functions deploy discord-bot --no-verify-jwt
+skybase secrets set DISCORD_PUBLIC_KEY=your_public_key
 ```
 
-Navigate to your Function details in the Supabase Dashboard to get your Endpoint URL.
+Navigate to your Function details in the Skybase Dashboard to get your Endpoint URL.
 
 ### Configure Discord application to use our URL as interactions endpoint URL
 
@@ -64,7 +64,7 @@ Open Discord, type `/Promise` and press **Enter**.
 
 First, start the bot on your local machine
 ```bash
-supabase functions serve discord-bot --no-verify-jwt --env-file ./supabase/.env.local
+skybase functions serve discord-bot --no-verify-jwt --env-file ./skybase/.env.local
 ```
 
 To use it with Discord you'll need a Public URL. There are a couple of options. 

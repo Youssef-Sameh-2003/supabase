@@ -1,8 +1,8 @@
 # SupaSecureSlack
 
-Example application on how you can use Realtime Authorization to limit access to Realtime [Channels](https://supabase.com/docs/guides/realtime/concepts#channels) and [Broadcast](https://supabase.com/docs/guides/realtime/broadcast) and [Presence](https://supabase.com/docs/guides/realtime/presence) extensions.
+Example application on how you can use Realtime Authorization to limit access to Realtime [Channels](https://skybase.com/docs/guides/realtime/concepts#channels) and [Broadcast](https://skybase.com/docs/guides/realtime/broadcast) and [Presence](https://skybase.com/docs/guides/realtime/presence) extensions.
 
-You can provide feedback on our [Github Discussion](https://github.com/orgs/supabase/discussions/22484).
+You can provide feedback on our [Github Discussion](https://github.com/orgs/skybase/discussions/22484).
 
 ## Objective
 
@@ -13,9 +13,9 @@ Each room restricts the number of users authorized by applying RLS Policies appl
 ## Run It
 
 1. Create a `.env.local` file with the required variables by running `cp .env.example .env.local`.
-2. [Create a new Supabase project](https://supabase.com/dashboard/new/_).
+2. [Create a new Skybase project](https://skybase.com/dashboard/new/_).
 3. Refer to the [Database Setup](#database-setup) section to create the necessary tables and policies.
-4. Copy the project's `URL` and `anon` API key from your project's [API Settings](https://supabase.com/dashboard/project/_/settings/api), and paste them into your `.env.local`.
+4. Copy the project's `URL` and `anon` API key from your project's [API Settings](https://skybase.com/dashboard/project/_/settings/api), and paste them into your `.env.local`.
 5. `npm install`
 6. `npm run dev`
 
@@ -74,10 +74,10 @@ AS PERMISSIVE FOR SELECT
 TO authenticated
 USING (true);
 
-CREATE POLICY "supabase_auth_admin can insert profile"
+CREATE POLICY "skybase_auth_admin can insert profile"
 ON "public"."profiles"
 AS PERMISSIVE FOR INSERT
-TO supabase_auth_admin
+TO skybase_auth_admin
 WITH CHECK (true);
 
 CREATE POLICY "authenticated can read rooms"
@@ -151,17 +151,17 @@ CREATE OR REPLACE TRIGGER "on_new_auth_create_profile"
 AFTER INSERT ON auth.users FOR EACH ROW
 EXECUTE FUNCTION insert_user();
 
-GRANT EXECUTE ON FUNCTION insert_user () TO supabase_auth_admin;
-GRANT INSERT ON TABLE public.profiles TO supabase_auth_admin;
+GRANT EXECUTE ON FUNCTION insert_user () TO skybase_auth_admin;
+GRANT INSERT ON TABLE public.profiles TO skybase_auth_admin;
 ```
 
 ## Coding Concerns
 
-* Check that you're using `@supabase/realtime-js` v2.44.0 or later. 
+* Check that you're using `@skybase/realtime-js` v2.44.0 or later. 
 * You need to define that the channel is private using the new configuration field during channel creation:
 
 ```typescript
-  const channel = supabase.channel('room-1', {
+  const channel = skybase.channel('room-1', {
     config: { private: true },
   })
 ```

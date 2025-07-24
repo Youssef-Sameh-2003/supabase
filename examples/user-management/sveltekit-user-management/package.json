@@ -1,5 +1,5 @@
 {
-	"name": "supabase-sveltekit",
+	"name": "skybase-sveltekit",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -21,9 +21,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/auth-ui-shared": "^0.1.8",
-		"@supabase/auth-ui-svelte": "^0.2.9",
-		"@supabase/ssr": "^0.4.0",
-		"@supabase/supabase-js": "^2.44.2"
+		"@skybase/auth-ui-shared": "^0.1.8",
+		"@skybase/auth-ui-svelte": "^0.2.9",
+		"@skybase/ssr": "^0.4.0",
+		"@skybase/skybase-js": "^2.44.2"
 	}
 }

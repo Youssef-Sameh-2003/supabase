@@ -1,13 +1,13 @@
 openref: 0.1
 
 info:
-  id: reference/supabase-swift
-  title: Supabase Swift Client
+  id: reference/skybase-swift
+  title: Skybase Swift Client
   description: |
 
-    Supabase Swift.
+    Skybase Swift.
 
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_swift_v2.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_swift_v2.yml
   slugPrefix: '/'
   libraries:
     - id: 'Swift'
@@ -17,28 +17,28 @@ functions:
   - id: initializing
     title: 'Initializing'
     description: |
-      You can initialize Supabase with the `SupabaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
-      The Supabase client is your entrypoint to the rest of the Supabase functionality and is the easiest way to interact with everything we offer within the Supabase ecosystem.
+      You can initialize Skybase with the `SkybaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
+      The Skybase client is your entrypoint to the rest of the Skybase functionality and is the easiest way to interact with everything we offer within the Skybase ecosystem.
 
     examples:
       - id: initialize-client
         name: Initialize Client
         code: |
           ```swift
-          import Supabase
+          import Skybase
 
-          let client = SupabaseClient(supabaseURL: URL(string: "https://xyzcompany.supabase.co")!, supabaseKey: "public-anon-key")
+          let client = SkybaseClient(skybaseURL: URL(string: "https://xyzcompany.skybase.co")!, skybaseKey: "public-anon-key")
           ```
       - id: initialize-client-custom-options
         name: Initialize Client with custom options
         code: |
           ```swift
-          import Supabase
+          import Skybase
 
-          let client = SupabaseClient(
-            supabaseURL: URL(string: "https://xyzcompany.supabase.co")!,
-            supabaseKey: "public-anon-key",
-            options: SupabaseClientOptions(
+          let client = SkybaseClient(
+            skybaseURL: URL(string: "https://xyzcompany.skybase.co")!,
+            skybaseKey: "public-anon-key",
+            options: SkybaseClientOptions(
               db: .init(
                 schema: "public"
               ),
@@ -57,19 +57,19 @@ functions:
         name: Initialize Client with Logging
         code: |
           ```swift
-          import Supabase
+          import Skybase
 
-          struct AppLogger: SupabaseLogger {
-            func log(message: SupabaseLogMessage) {
+          struct AppLogger: SkybaseLogger {
+            func log(message: SkybaseLogMessage) {
               print(message.description)
             }
           }
 
-          let client = SupabaseClient(
-            supabaseURL: URL(string: "https://xyzcompany.supabase.co")!,
-            supabaseKey: "public-anon-key",
-            options: SupabaseClientOptions(
-              global: SupabaseClientOptions.GlobalOptions(
+          let client = SkybaseClient(
+            skybaseURL: URL(string: "https://xyzcompany.skybase.co")!,
+            skybaseKey: "public-anon-key",
+            options: SkybaseClientOptions(
+              global: SkybaseClientOptions.GlobalOptions(
                 logger: AppLogger()
               )
             )
@@ -79,12 +79,12 @@ functions:
         name: With custom schemas
         code: |
           ```swift
-          import Supabase
+          import Skybase
 
-          let supabase = SupabaseClient(
-            supabaseURL: URL(string: "https://xyzcompany.supabase.co")!,
-            supabaseKey: "public-anon-key",
-            options: SupabaseClientOptions(
+          let skybase = SkybaseClient(
+            skybaseURL: URL(string: "https://xyzcompany.skybase.co")!,
+            skybaseKey: "public-anon-key",
+            options: SkybaseClientOptions(
               db: .init(
                 // Provide a custom schema. Defaults to "public".
                 schema: "other_schema"
@@ -100,7 +100,7 @@ functions:
   - id: auth-api
     title: 'Overview'
     notes: |
-      The auth methods can be accessed via the `supabase.auth` namespace.
+      The auth methods can be accessed via the `skybase.auth` namespace.
 
       ### Handling deep links
 
@@ -112,7 +112,7 @@ functions:
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
       ) -> Bool {
         if let url = launchOptions?[.url] as? URL {
-          supabase.auth.handle(url)
+          skybase.auth.handle(url)
         }
 
         return true
@@ -123,7 +123,7 @@ functions:
         open url: URL,
         options: [UIApplication.OpenURLOptionsKey: Any]
       ) -> Bool {
-        supabase.auth.handle(url)
+        skybase.auth.handle(url)
         return true
       }
 
@@ -134,7 +134,7 @@ functions:
       ```swift
       func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else { return }
-        supabase.auth.handle(url)
+        skybase.auth.handle(url)
       }
       ```
 
@@ -145,7 +145,7 @@ functions:
       ```swift
       SomeView()
         .onOpenURL { url in
-          supabase.auth.handle(url)
+          skybase.auth.handle(url)
         }
       ```
 
@@ -155,24 +155,24 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let supabase = SupabaseClient(supabaseURL: URL(string: "https://xyzcompany.supabase.co")!, supabaseKey: "public-anon-key")
-          let auth = supabase.auth
+          let skybase = SkybaseClient(skybaseURL: URL(string: "https://xyzcompany.skybase.co")!, skybaseKey: "public-anon-key")
+          let auth = skybase.auth
           ```
       - id: create-auth-client-with-custom-storage
         name: Create auth client with custom storage
         isSpotlight: true
         code: |
           ```swift
-          let supabase = SupabaseClient(
-            supabaseURL: URL(string: "https://xyzcompany.supabase.co")!,
-            supabaseKey: "public-anon-key",
+          let skybase = SkybaseClient(
+            skybaseURL: URL(string: "https://xyzcompany.skybase.co")!,
+            skybaseKey: "public-anon-key",
             options: .init(
               auth: .init(
                 MyCustomLocalStorage()
               )
             )
           )
-          let auth = supabase.auth
+          let auth = skybase.auth
           ```
   - id: sign-up
     title: 'signUp()'
@@ -208,7 +208,7 @@ functions:
         description: >
           Only for email signups.
           The redirect URL embedded in the email link.
-          Must be a configured redirect URL for your Supabase instance.
+          Must be a configured redirect URL for your Skybase instance.
       - name: captchaToken
         isOptional: true
         type: String
@@ -218,7 +218,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.signUp(
+          try await skybase.auth.signUp(
             email: "example@email.com",
             password: "example-password"
           )
@@ -228,7 +228,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.signUp(
+          try await skybase.auth.signUp(
             phone: "123456789",
             password: "example-password",
             channel: "sms"
@@ -241,7 +241,7 @@ functions:
           The user will be sent a WhatsApp message which contains a OTP. By default, a given user can only request a OTP once every 60 seconds. Note that a user will need to have a valid WhatsApp account that is linked to Twilio in order to use this feature.
         code: |
           ```swift
-          try await supabase.auth.signUp(
+          try await skybase.auth.signUp(
             phone: "123456789",
             password: "example-password",
             channel: "whatsapp"
@@ -254,7 +254,7 @@ functions:
           The custom data is defined as `[String: AnyJSON]`, where `AnyJSON` is a helper type defined in the library.
         code: |
           ```swift
-          try await supabase.auth.signUp(
+          try await skybase.auth.signUp(
             email: "example@email.com",
             password: "example-password",
             data: [
@@ -270,7 +270,7 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
         code: |
           ```swift
-          try await supabase.auth.signUp(
+          try await skybase.auth.signUp(
             email:  "example@email.com",
             password: "example-password",
             redirectTo: URL(string: "https://example.com/welcome")!
@@ -282,13 +282,13 @@ functions:
       - Subscribes to important events occurring on the user's session.
       - Emitted events:
         - `INITIAL_SESSION`
-          - Emitted right after the Supabase client is constructed and the initial session from storage is loaded.
+          - Emitted right after the Skybase client is constructed and the initial session from storage is loaded.
         - `SIGNED_IN`
           - Emitted each time a user session is confirmed or re-established, including on user sign in.
           - Avoid making assumptions as to when this event is fired, this may occur even when the user is already signed in. Instead, check the user object attached to the event to see if a new user has signed in and update your application's UI.
         - `SIGNED_OUT`
           - Emitted when the user signs out. This can be after:
-            - A call to `supabase.auth.signOut()`.
+            - A call to `skybase.auth.signOut()`.
             - After the user's session has expired for any reason:
               - User has signed out on another device.
               - The session has reached its timebox limit or inactivity timeout.
@@ -298,11 +298,11 @@ functions:
         - `TOKEN_REFRESHED`
           - Emitted each time a new access and refresh token are fetched for the signed in user.
           - It's best practice and highly recommended to extract the access token (JWT) and store it in memory for further use in your application.
-            - Avoid frequent calls to `supabase.auth.session` for the same purpose.
+            - Avoid frequent calls to `skybase.auth.session` for the same purpose.
           - There is a background process that keeps track of when the session should be refreshed so you will always receive valid tokens by listening to this event.
           - The frequency of this event is related to the JWT expiry limit configured on your project.
         - `USER_UPDATED`
-          - Emitted each time the `supabase.auth.update(user:)` method finishes successfully. Listen to it to update your application's UI based on new profile information.
+          - Emitted each time the `skybase.auth.update(user:)` method finishes successfully. Listen to it to update your application's UI based on new profile information.
         - `PASSWORD_RECOVERY`
           - Emitted instead of the `SIGNED_IN` event when the user lands on a page that includes a password recovery link in the URL.
           - Use it to show a UI to the user where they can [reset their password](/docs/guides/auth/passwords#resetting-a-users-password-forgot-password).
@@ -314,12 +314,12 @@ functions:
           ```swift
 
           // Using AsyncStream
-          for await (event, session) in await supabase.auth.authStateChanges {
+          for await (event, session) in await skybase.auth.authStateChanges {
             print(event, session)
           }
 
           // Using Closure
-          let subscription = await supabase.auth.onAuthStateChange { event, session in
+          let subscription = await skybase.auth.onAuthStateChange { event, session in
             print(event, session)
           }
 
@@ -333,7 +333,7 @@ functions:
         name: Listen to a specific event
         code: |
           ```swift
-          for await (_, session) in await supabase.auth.authStateChanges
+          for await (_, session) in await skybase.auth.authStateChanges
             .filter({ $0.event == .signedIn }) {
             // handle signIn event.
           }
@@ -349,14 +349,14 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let session = try await supabase.auth.signInAnonymously(captchaToken: captchaToken)
+          let session = try await skybase.auth.signInAnonymously(captchaToken: captchaToken)
           ```
       - id: sign-in-anonymously-with-user-metadata
         name: Create an anonymous user with custom user metadata
         isSpotlight: false
         code: |
           ```swift
-          let session = try await supabase.auth.signInAnonymously(
+          let session = try await skybase.auth.signInAnonymously(
             data: customData,
             captchaToken: captchaToken
           )
@@ -385,7 +385,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.signIn(
+          try await skybase.auth.signIn(
             email: "example@email.com",
             password: "example-password"
           )
@@ -395,13 +395,13 @@ functions:
         isSpotlight: false
         code: |
           ```swift
-          try await supabase.auth.signIn(
+          try await skybase.auth.signIn(
             phone: "+13334445555",
             password: "same-password"
           )
 
           // After receiving a SMS with a OTP.
-          try await supabase.auth.verifyOTP(
+          try await skybase.auth.verifyOTP(
             phone: "+13334445555",
             token: "123456",
             type: .sms
@@ -424,7 +424,7 @@ functions:
         description: >
           Only for email signups.
           The redirect URL embedded in the email link.
-          Must be a configured redirect URL for your Supabase instance.
+          Must be a configured redirect URL for your Skybase instance.
       - name: channel
         isOptional: true
         type: MessagingChannel
@@ -462,7 +462,7 @@ functions:
         description: The user will be sent an email which contains either a magiclink or a OTP or both. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```swift
-          try await supabase.auth.signInWithOTP(
+          try await skybase.auth.signInWithOTP(
             email: "example@email.com",
             redirectTo: URL(string: "my-app-scheme://")!
           )
@@ -473,7 +473,7 @@ functions:
         description: The user will be sent a SMS which contains a OTP. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```swift
-          try await supabase.auth.signInWithOTP(phone: "+13334445555")
+          try await skybase.auth.signInWithOTP(phone: "+13334445555")
           ```
       - id: sign-in-with-whatsapp-otp
         name: Sign in with WhatsApp OTP
@@ -481,7 +481,7 @@ functions:
         description: The user will be sent a WhatsApp message which contains a OTP. By default, a given user can only request a OTP once every 60 seconds. Note that a user will need to have a valid WhatsApp account that is linked to Twilio in order to use this feature.
         code: |
           ```swift
-          try await supabase.auth.signInWithOTP(
+          try await skybase.auth.signInWithOTP(
             phone: "+13334445555",
             channel: "whatsapp"
           )
@@ -515,7 +515,7 @@ functions:
           A custom configuration callback for opening the OAuth flow externally.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Supabase supports many different [third-party providers](https://supabase.com/docs/guides/auth#providers).
+      - Skybase supports many different [third-party providers](https://skybase.com/docs/guides/auth#providers).
     examples:
       - id: sign-in-using-ASWebAuthenticationSession
         name: Sign in with OAuth using ASWebAuthenticationSession
@@ -524,7 +524,7 @@ functions:
           - Use `configure` parameter to customize the `ASWebAuthenticationSession`
         code: |
           ```swift
-          let session = try await supabase.auth.signInWithOAuth(
+          let session = try await skybase.auth.signInWithOAuth(
             provider: .github
           ) { (session: ASWebAuthenticationSession) in
             // customize session
@@ -538,7 +538,7 @@ functions:
           - Use `launchFlow` parameter to customize the flow.
         code: |
           ```swift
-          let session = try await supabase.auth.signInWithOAuth(
+          let session = try await skybase.auth.signInWithOAuth(
             provider: .github
           ) { url in
             // use url to start OAuth flow
@@ -557,13 +557,13 @@ functions:
           - When using `ASWebAuthenticationSession` or any other implementation, use the returning URL as input to `session(from:)` method.
         code: |
           ```swift
-          let url = try await supabase.auth.getOAuthSignInURL(provider: .github, redirectTo: URL(string: "my-app-scheme://"))
+          let url = try await skybase.auth.getOAuthSignInURL(provider: .github, redirectTo: URL(string: "my-app-scheme://"))
 
           let session = ASWebAuthenticationSession(url: url, callbackURLScheme: "my-app-scheme") { url, error in
             guard let url else { return }
 
             Task {
-              try await supabase.auth.session(from: url)
+              try await skybase.auth.session(from: url)
             }
           }
 
@@ -580,7 +580,7 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider. The list of scopes will be documented by the third-party provider you are using and specifying scopes will enable you to use the OAuth provider token to call additional APIs supported by the third-party provider to get more information.
         code: |
           ```swift
-          let url = try await supabase.auth.signInWithOAuth(
+          let url = try await skybase.auth.signInWithOAuth(
             provider: .github,
             scopes: "repo gist notifications"
           )
@@ -593,7 +593,7 @@ functions:
         description: Use this method to implement native Sign In With Apple.
         code: |
           ```swift
-          let session = try await supabase.auth.signInWithIdToken(
+          let session = try await skybase.auth.signInWithIdToken(
             credentials: OpenIDConnectCredentials(
               provider: .apple,
               idToken: "your-id-token",
@@ -620,11 +620,11 @@ functions:
         type: String
         description: >
           The URL to redirect the user to after they have signed in.
-          Must be a configured redirect URL for your Supabase instance.
+          Must be a configured redirect URL for your Skybase instance.
       - name: captchaToken
         type: String
     notes: |
-      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/supabase-sso) to do this.
+      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/skybase-sso) to do this.
       - If you've associated an email domain to the identity provider, you can use the `domain` property to start a sign-in flow.
       - In case you need to use a different way to start the authentication flow with an identity provider, you can use the `providerId` property. For example:
           - Mapping specific user email addresses with an identity provider.
@@ -638,7 +638,7 @@ functions:
             // You can extract the user's email domain and use it to trigger the
             // authentication flow with the correct identity provider.
 
-            let url = try await await supabase.auth.signInWithSSO{
+            let url = try await await skybase.auth.signInWithSSO{
               domain: "company.com"
             }
 
@@ -653,7 +653,7 @@ functions:
             // Useful when you need to map a user's sign in request according
             // to different rules that can't use email domains.
 
-            let url = try await supabase.auth.signInWithSSO{
+            let url = try await skybase.auth.signInWithSSO{
               providerId: "21648a9d-8d5a-4555-a9d1-d6375dc14e92"
             }
 
@@ -670,7 +670,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.signOut()
+          try await skybase.auth.signOut()
           ```
   - id: verify-otp
     title: 'verifyOTP()'
@@ -714,7 +714,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.verifyOTP(
+          try await skybase.auth.verifyOTP(
             phone: "+13334445555",
             token: "123456",
             type: .sms
@@ -725,7 +725,7 @@ functions:
         isSpotlight: false
         code: |
           ```swift
-             try await supabase.auth.verifyOTP(
+             try await skybase.auth.verifyOTP(
               email: "example@example-email.com",
               token: "123456",
               type: .signup
@@ -741,7 +741,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.session
+          try await skybase.auth.session
           ```
       - id: get-current-session-no-validation
         name: Get the current session without validation
@@ -749,7 +749,7 @@ functions:
         description: The session returned by this property may be expired.
         code: |
           ```swift
-          let session = supabase.auth.currentSession
+          let session = skybase.auth.currentSession
           ```
   - id: get-user
     title: 'user()'
@@ -763,14 +763,14 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let user = try await supabase.auth.user()
+          let user = try await skybase.auth.user()
           ```
       - id: get-the-logged-in-user-with-a-custom-access-token-jwt
         name: Get the logged in user with a custom access token jwt
         isSpotlight: false
         code: |
           ```swift
-          let user = try await supabase.auth.user(jwt: "custom-jwt")
+          let user = try await skybase.auth.user(jwt: "custom-jwt")
           ```
       - id: get-current-user
         name: Get current user
@@ -778,14 +778,14 @@ functions:
         description: The user returned by this property may be outdated.
         code: |
           ```swift
-          let user = supabase.auth.currentUser
+          let user = skybase.auth.currentUser
           ```
   - id: update-user
     title: 'updateUser()'
     notes: |
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://supabase.com/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://skybase.com/dashboard/project/_/auth/providers).
     examples:
       - id: update-the-email-for-an-authenticated-user
         name: Update the email for an authenticated user
@@ -793,7 +793,7 @@ functions:
         isSpotlight: false
         code: |
           ```swift
-          try await supabase.auth.update(user: UserAttributes(email: "new@email.com"))
+          try await skybase.auth.update(user: UserAttributes(email: "new@email.com"))
           ```
         response: |
           ```json
@@ -851,7 +851,7 @@ functions:
         isSpotlight: false
         code: |
           ```swift
-          try await supabase.auth.update(
+          try await skybase.auth.update(
             user: UserAttributes(
               phone: "123456789"
             )
@@ -862,14 +862,14 @@ functions:
         isSpotlight: false
         code: |
           ```swift
-          try await supabase.auth.update(user: UserAttributes(password: "newPassw0rd?"))
+          try await skybase.auth.update(user: UserAttributes(password: "newPassw0rd?"))
           ```
       - id: update-the-users-metadata
         name: Update the user's metadata
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.update(
+          try await skybase.auth.update(
             user: UserAttributes(
               data: [
                 "hello": .string("world")
@@ -884,7 +884,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.update(
+          try await skybase.auth.update(
             user: UserAttributes(
               password: "new password",
               nonce: "123456"
@@ -901,7 +901,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let identities = try await supabase.auth.userIdentities()
+          let identities = try await skybase.auth.userIdentities()
           ```
   - id: link-identity
     title: 'linkIdentity()'
@@ -915,7 +915,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.linkIdentity(provider: provider)
+          try await skybase.auth.linkIdentity(provider: provider)
           ```
         description: |
           Uses:
@@ -927,7 +927,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.linkIdentity(provider: provider) { url in
+          try await skybase.auth.linkIdentity(provider: provider) { url in
             // custom URL opening logic
           }
           ```
@@ -945,7 +945,7 @@ functions:
         code: |
           ```swift
           // retrieve all identites linked to a user
-          let identities = try await supabase.auth.userIdentities()
+          let identities = try await skybase.auth.userIdentities()
 
           // find the google identity
           let googleIdentity = identities.first {
@@ -953,7 +953,7 @@ functions:
           }
 
           // unlink the google identity
-          try await supabase.auth.unlinkIdentity(googleIdentity)
+          try await skybase.auth.unlinkIdentity(googleIdentity)
           ```
   - id: send-password-reauthentication
     title: 'reauthenticate()'
@@ -969,7 +969,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.reauthenticate()
+          try await skybase.auth.reauthenticate()
           ```
   - id: resend-email-or-phone-otps
     title: 'resend()'
@@ -986,7 +986,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.resend(
+          try await skybase.auth.resend(
             email: "email@example.com",
             type: .signup,
             emailRedirectTo: URL(string: "my-app-scheme://")
@@ -997,7 +997,7 @@ functions:
         description: Resends the phone signup confirmation email to the user
         code: |
           ```swift
-          try await supabase.auth.resend(
+          try await skybase.auth.resend(
             phone: "1234567890",
             type: .sms
           )
@@ -1007,7 +1007,7 @@ functions:
         description: Resends the email change email to the user
         code: |
           ```swift
-          try await supabase.auth.resend(
+          try await skybase.auth.resend(
             email: "email@example.com",
             type: .emailChange
           )
@@ -1017,7 +1017,7 @@ functions:
         description: Resends the phone change OTP to the user
         code: |
           ```swift
-          try await supabase.auth.resend(
+          try await skybase.auth.resend(
             phone: "1234567890",
             type: .phoneChange
           )
@@ -1028,7 +1028,7 @@ functions:
       - `setSession()` takes in a refresh token and uses it to get a new session.
       - The refresh token can only be used once to obtain a new session.
       - [Refresh token rotation](/docs/reference/auth/config#refresh_token_rotation_enabled) is enabled by default on all projects to guard against replay attacks.
-      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://supabase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
+      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://skybase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
     examples:
       - id: refresh-the-session
         name: Refresh the session
@@ -1036,7 +1036,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-            try await supabase.auth.setSession(accessToken: "access_token", refreshToken: "refresh_token")
+            try await skybase.auth.setSession(accessToken: "access_token", refreshToken: "refresh_token")
           ```
   - id: refresh-session
     title: 'refreshSession()'
@@ -1048,14 +1048,14 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let session = try await supabase.auth.refreshSession()
+          let session = try await skybase.auth.refreshSession()
           ```
       - id: refresh-session-using-a-passed-in-session
         name: Refresh session using a refresh token
         isSpotlight: false
         code: |
           ```swift
-          let session = try await supabase.auth.refreshSession(refreshToken: "custom-refresh-token")
+          let session = try await skybase.auth.refreshSession(refreshToken: "custom-refresh-token")
           ```
 
   - id: exchange-code-for-session
@@ -1068,12 +1068,12 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.exchangeCodeForSession(authCode: "34e770dd-9ff9-416c-87fa-43b31d7ef225")
+          try await skybase.auth.exchangeCodeForSession(authCode: "34e770dd-9ff9-416c-87fa-43b31d7ef225")
           ```
   - id: auth-mfa-api
     title: 'Overview'
     notes: |
-      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `supabase.auth.mfa` namespace.
+      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `skybase.auth.mfa` namespace.
 
       Currently, we only support time-based one-time password (TOTP) as the 2nd factor. We don't support recovery codes but we allow users to enroll more than 1 TOTP factor, with an upper limit of 10.
 
@@ -1092,7 +1092,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.auth.mfa.enroll(
+          let response = try await skybase.auth.mfa.enroll(
             params: MFAEnrollParams(
               issuer: "optional issuer",
               friendlyName: "optional friendly name"
@@ -1119,7 +1119,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.auth.mfa.challenge(
+          let response = try await skybase.auth.mfa.challenge(
             params: MFAChallengeParams(
               factorId: "34e770dd-9ff9-416c-87fa-43b31d7ef225"
             )
@@ -1135,7 +1135,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let session = try await supabase.auth.mfa.verify(
+          let session = try await skybase.auth.mfa.verify(
             params: MFAVerifyParams(
               factorId: "34e770dd-9ff9-416c-87fa-43b31d7ef225",
               challengeId: "4034ae6f-a8ce-4fb5-8ee5-69a5863a7c15",
@@ -1154,7 +1154,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let session = try await supabase.auth.mfa.challengeAndVerify(
+          let session = try await skybase.auth.mfa.challengeAndVerify(
             params: MFAChallengeAndVerifyParams(
               factorId: "34e770dd-9ff9-416c-87fa-43b31d7ef225",
               code: "123456"
@@ -1169,7 +1169,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.auth.mfa.unenroll(
+          let response = try await skybase.auth.mfa.unenroll(
             params: MFAUnenrollParams(
               factorId: "34e770dd-9ff9-416c-87fa-43b31d7ef225"
             )
@@ -1179,7 +1179,7 @@ functions:
     title: 'mfa.getAuthenticatorAssuranceLevel()'
     notes: |
       - Authenticator Assurance Level (AAL) is the measure of the strength of an authentication mechanism.
-      - In Supabase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
+      - In Skybase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
       - If the user has a verified factor, the `nextLevel` field will return `aal2`, else, it will return `aal1`.
     examples:
       - id: get-aal
@@ -1187,7 +1187,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let aal = try await supabase.auth.mfa.getAuthenticatorAssuranceLevel()
+          let aal = try await skybase.auth.mfa.getAuthenticatorAssuranceLevel()
           let currentLevel = aal.currentLevel
           let nextLevel = aal.nextLevel
           let currentAuthenticationMethods = aal.currentAuthenticationMethods
@@ -1200,12 +1200,12 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let factors = try await supabase.auth.mfa.listFactors()
+          let factors = try await skybase.auth.mfa.listFactors()
           ```
   - id: admin-api
     title: 'Overview'
     notes: |
-      - Any method under the `supabase.auth.admin` namespace requires a `service_role` key.
+      - Any method under the `skybase.auth.admin` namespace requires a `service_role` key.
       - These methods are considered admin methods and should be called on a trusted server. Never expose your `service_role` key in the browser.
     examples:
       - id: create-auth-admin-client
@@ -1213,15 +1213,15 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          import Supabase
+          import Skybase
 
-          let supabase = SupabaseClient(
-            supabaseURL: supabaseURL,
-            supabaseKey: serviceRoleKey
+          let skybase = SkybaseClient(
+            skybaseURL: skybaseURL,
+            skybaseKey: serviceRoleKey
           )
 
           // Access auth admin api
-          let adminAuthClient = supabase.auth.admin
+          let adminAuthClient = skybase.auth.admin
           ```
   - id: delete-user
     title: 'deleteUser()'
@@ -1233,17 +1233,17 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.auth.admin.deleteUser(
+          try await skybase.auth.admin.deleteUser(
             id: "715ed5db-f090-4b8c-a067-640ecee36aa0"
           )
           ```
   - id: select
     title: 'Fetch data: select()'
     notes: |
-      - By default, Supabase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - By default, Skybase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `select()` can be combined with [Modifiers](/docs/reference/swift/using-modifiers)
       - `select()` can be combined with [Filters](/docs/reference/swift/using-filters)
-      - If using the Supabase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/supabase/supabase/issues/5465).
+      - If using the Skybase hosted platform `apikey` is technically a reserved keyword, since the API gateway will pluck it out for authentication. [It should be avoided as a column name](https://github.com/skybase/skybase/issues/5465).
       - The recommended solution for getting data is to use the value property which will return a decoded model. Create a `Codable` to easily decode your database responses.
     examples:
       - id: getting-your-data
@@ -1256,7 +1256,7 @@ functions:
             let name: String
           }
 
-          let instruments: [Instrument] = try await supabase
+          let instruments: [Instrument] = try await skybase
             .from("instruments")
             .select()
             .execute()
@@ -1304,7 +1304,7 @@ functions:
             let name: String
           }
 
-          let instruments: [Instrument] = try await supabase
+          let instruments: [Instrument] = try await skybase
             .from("instruments")
             .select("name")
             .execute()
@@ -1356,7 +1356,7 @@ functions:
             let name: String
           }
 
-          let orchestralSections: [OrchestralSection] = try await supabase
+          let orchestralSections: [OrchestralSection] = try await skybase
             .from("orchestral_sections")
             .select(
               """
@@ -1430,7 +1430,7 @@ functions:
               let name: String
             }
 
-            let users: [User] = try await supabase
+            let users: [User] = try await skybase
               .from("users")
               .select(
                 """
@@ -1530,7 +1530,7 @@ functions:
             let name: String
           }
 
-          let messages: [Message] = try await supabase
+          let messages: [Message] = try await skybase
             .from("messages")
             .select(
               """
@@ -1602,7 +1602,7 @@ functions:
             let name: String
           }
 
-          let instruments: [Instrument] = try await supabase
+          let instruments: [Instrument] = try await skybase
             .from("instruments")
             .select("name, orchestral_sections(*)")
             .eq("orchestral_sections.name", value: "percussion")
@@ -1668,7 +1668,7 @@ functions:
             let count: Int
           }
 
-          let orchestralSections: [OrchestralSection] = try await supabase
+          let orchestralSections: [OrchestralSection] = try await skybase
             .from("orchestral_sections")
             .select("*, instruments(count)")
             .execute()
@@ -1720,7 +1720,7 @@ functions:
         name: Querying with count option
         code: |
           ```swift
-          let count = try await supabase
+          let count = try await skybase
             .from("instruments")
             .select("*", head: true, count: .exact)
             .execute()
@@ -1761,7 +1761,7 @@ functions:
             let city: String
           }
 
-          let users: [User] = try await supabase
+          let users: [User] = try await skybase
             .from("users")
             .select(
               """
@@ -1820,7 +1820,7 @@ functions:
             let instruments: [Instrument]
           }
 
-          let orchestralSections: [OrchestralSection] = try await supabase
+          let orchestralSections: [OrchestralSection] = try await skybase
             .from("orchestral_sections")
             .select("name, instruments!inner(name)")
             .eq("name", value: "strings")
@@ -1885,7 +1885,7 @@ functions:
         name: Switching schemas per query
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .schema("myschema")
             .from("mytable")
             .select()
@@ -1930,7 +1930,7 @@ functions:
 
           let instrument = Instrument(id: 1, name: "ukelele")
 
-          try await supabase
+          try await skybase
             .from("instruments")
             .insert(instrument)
             .execute()
@@ -1959,7 +1959,7 @@ functions:
             let name: String
           }
 
-          let instrument: Instrument = try await supabase
+          let instrument: Instrument = try await skybase
             .from("instruments")
             .insert(Instrument(id: 1, name: "banjo"))
             .select()
@@ -2002,7 +2002,7 @@ functions:
             Instrument(id: 1, name: "tuba"),
           ]
 
-          try await supabase
+          try await skybase
             .from("instruments")
             .insert(instruments)
             .execute()
@@ -2040,7 +2040,7 @@ functions:
         name: Updating your data
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .update(["name": "piano"])
             .eq("id", value: 1)
@@ -2079,7 +2079,7 @@ functions:
             let name: String
           }
 
-          let instrument: Instrument = try await supabase
+          let instrument: Instrument = try await skybase
             .from("instruments")
             .update(["name": "piano"])
             .eq("id", value: 1)
@@ -2133,7 +2133,7 @@ functions:
             let address: User.Address
           }
 
-          let users: [User] = try await supabase
+          let users: [User] = try await skybase
             .from("users")
             .update(
               UpdateUser(
@@ -2199,7 +2199,7 @@ functions:
             let id: Int
             let name: String
           }
-          try await supabase
+          try await skybase
             .from("instruments")
             .upsert(Instrument(id: 1, name: "piano"))
             .execute()
@@ -2238,7 +2238,7 @@ functions:
             let id: Int
             let name: String
           }
-          try await supabase
+          try await skybase
             .from("instruments")
             .upsert([
               Instrument(id: 1, name: "piano"),
@@ -2291,7 +2291,7 @@ functions:
             }
           }
 
-          try await supabase
+          try await skybase
             .from("users")
             .upsert(
               User(id: 42, handle: "saoirse", displayName: "Saoirse"),
@@ -2351,7 +2351,7 @@ functions:
         name: Delete records
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .delete()
             .eq("id", value: 1)
@@ -2394,7 +2394,7 @@ functions:
         name: Call a Postgres function without arguments
         code: |
           ```swift
-          let value: String = try await supabase
+          let value: String = try await skybase
             .rpc("hello_world")
             .execute()
             .value
@@ -2420,7 +2420,7 @@ functions:
         name: Call a Postgres function with arguments
         code: |
           ```swift
-          let response: String = try await supabase
+          let response: String = try await skybase
             .rpc("echo", params: ["say": "👋"])
             .execute()
             .value
@@ -2445,7 +2445,7 @@ functions:
         name: Bulk processing
         code: |
           ```swift
-          let response: [Int] = try await supabase
+          let response: [Int] = try await skybase
             .rpc("add_one_each", params: ["arr": [1, 2, 3]])
             .execute()
             .value
@@ -2482,7 +2482,7 @@ functions:
             let name: String
           }
 
-          let instrument: Instrument = await supabase
+          let instrument: Instrument = await skybase
             .rpc("list_stored_instruments")
             .eq("id", value: 1)
             .single()
@@ -2543,12 +2543,12 @@ functions:
           [modifiers](/docs/reference/swift/using-modifiers).
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("cities")
             .select("name, country_id")
             .eq("name", value: "The Shire")    // Correct
 
-          try await supabase
+          try await skybase
             .from("citites")
             .eq("name", value: "The Shire")    // Incorrect
             .select("name, country_id")
@@ -2560,7 +2560,7 @@ functions:
           to query cities with population between 1,000 and 10,000:
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("cities")
             .select("name, country_id")
             .gte("population", value: 1000)
@@ -2576,7 +2576,7 @@ functions:
           let filterPopLow: Int? = 1000
           let filterPopHigh: Int? = 10000
 
-          var query = await supabase
+          var query = await skybase
             .from("cities")
             .select("name, country_id")
 
@@ -2599,7 +2599,7 @@ functions:
         name: Filter by values within a JSON column
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("users")
             .select()
             .eq("address->postcode", value: 90210)
@@ -2640,7 +2640,7 @@ functions:
         name: Filter Foreign Tables
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("orchestral_sections")
             .select(
               """
@@ -2709,7 +2709,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("name")
             .or("id.eq.2,name.eq.cello")
@@ -2748,7 +2748,7 @@ functions:
         name: Use `or` with `and`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("name")
             .or("id.gt.3,and(id.eq.1,name.eq.violin)")
@@ -2800,7 +2800,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select()
             .not("name", operator: .is, value: "")
@@ -2814,7 +2814,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("name")
             .match(["id": 2, "name": "viola"])
@@ -2861,7 +2861,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select()
             .filter("name", operator: "in", value: #"("cello","guzheng")"#)
@@ -2898,7 +2898,7 @@ functions:
         name: On a foreign table
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("orchestral_sections")
             .select(
               """
@@ -2972,7 +2972,7 @@ functions:
         name: With `upsert()`
         code: |
           ```swift
-            try await supabase
+            try await skybase
               .from("instruments")
               .upsert(InstrumentModel(id: 1, name: "piano"))
               .select()
@@ -3013,7 +3013,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("id, name")
             .order("id", ascending: false)
@@ -3059,7 +3059,7 @@ functions:
         name: On a foreign table
         code: |
           ```swift
-            try await supabase
+            try await skybase
               .from("orchestral_sections")
               .select(
                 """
@@ -3127,7 +3127,7 @@ functions:
         name: Order parent table by a referenced table
         code: |
           ```swift
-            try await supabase
+            try await skybase
               .from("instruments")
               .select(
                 """
@@ -3193,7 +3193,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("id, name")
             .limit(1)
@@ -3230,7 +3230,7 @@ functions:
         name: On a foreign table
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("orchestral_sections")
             .select(
               """
@@ -3292,7 +3292,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("name")
             .range(from: 0, to: 1)
@@ -3338,7 +3338,7 @@ functions:
         name: With `select()`
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select("name")
             .limit(1)
@@ -3377,7 +3377,7 @@ functions:
         name: Return data as CSV
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select()
             .csv()
@@ -3423,7 +3423,7 @@ functions:
         name: Get the execution plan
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select()
             .explain()
@@ -3458,7 +3458,7 @@ functions:
         name: Get the execution plan with analyze and verbose
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .from("instruments")
             .select()
             .explain(
@@ -3500,7 +3500,7 @@ functions:
   - id: invoke
     title: invoke()
     description: |
-      Invoke a Supabase Edge Function.
+      Invoke a Skybase Edge Function.
     notes: |
       - Requires an Authorization header.
       - When you pass in a body to your function, we automatically attach the Content-Type header for `String`, and `Data`. If it doesn't match any of these types we assume the payload is `json`, serialize it and attach the `Content-Type` header as `application/json`. You can override this behaviour by passing in a `Content-Type` header of your own.
@@ -3514,7 +3514,7 @@ functions:
             // Expected response definition
           }
 
-          let response: Response = try await supabase.functions
+          let response: Response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3527,7 +3527,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3548,22 +3548,22 @@ functions:
         code: |
           ```swift
           var response = Data()
-          for try await data try await supabase.functions._invokeWithStreamedResponse("hello") {
+          for try await data try await skybase.functions._invokeWithStreamedResponse("hello") {
             response.append(data)
           }
           ```
       - id: error-handling
         name: Error handling
         description: |
-          A `FunctionsError` error is returned if your function throws an error, `FunctionsRelayError` if the Supabase Relay has an error processing your function and `FunctionsFetchError` if there is a network error in calling your function.
+          A `FunctionsError` error is returned if your function throws an error, `FunctionsRelayError` if the Skybase Relay has an error processing your function and `FunctionsFetchError` if there is a network error in calling your function.
             - `httpError(code: Int, data: Data)` in case a non-2xx status code is returned by the edge function.
-            - `relayError` in case the Supabase Relay has an error processing your function.
+            - `relayError` in case the Skybase Relay has an error processing your function.
         isSpotlight: true
         code: |
           ```swift
 
           do {
-            let response = try await supabase.functions
+            let response = try await skybase.functions
               .invoke(
                 "hello",
                 options: FunctionInvokeOptions(
@@ -3581,11 +3581,11 @@ functions:
       - id: passing-custom-headers
         name: Passing custom headers
         description: |
-          You can pass custom headers to your function. Note: supabase-js automatically passes the `Authorization` header with the signed in user's JWT.
+          You can pass custom headers to your function. Note: skybase-js automatically passes the `Authorization` header with the signed in user's JWT.
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3617,7 +3617,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3633,7 +3633,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3652,7 +3652,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3670,7 +3670,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let response = try await supabase.functions
+          let response = try await skybase.functions
             .invoke(
               "hello",
               options: FunctionInvokeOptions(
@@ -3692,7 +3692,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let channel = supabase.channel("room1")
+          let channel = skybase.channel("room1")
 
           let broadcastStream = channel.broadcastStream(event: "cursor-pos")
 
@@ -3718,7 +3718,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let channel = supabase.channel("room1")
+          let channel = skybase.channel("room1")
 
           let subscription = channel.onBroadcast(event: "cursor-pos") { message in
             print("Cursor position received", message)
@@ -3746,7 +3746,7 @@ functions:
             let username: String
           }
 
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let presenceChange = channel.presenceChange()
 
@@ -3770,7 +3770,7 @@ functions:
             let username: String
           }
 
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPresenceChange() { presence in
             do {
@@ -3794,7 +3794,7 @@ functions:
         name: Listen to all database changes
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let changeStream = channel.postgresChange(AnyAction.self, schema: "public")
 
@@ -3813,7 +3813,7 @@ functions:
         name: Listen to all database changes using callback
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPostgresChange(AnyAction.self, schema: "public") { change in
             switch change {
@@ -3833,7 +3833,7 @@ functions:
         name: Listen to a specific table
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let changeStream = channel.postgresChange(
             AnyAction.self,
@@ -3856,7 +3856,7 @@ functions:
         name: Listen to a specific table using callback
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPostgresChange(
             AnyAction.self,
@@ -3880,7 +3880,7 @@ functions:
         name: Listen to inserts
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let insertions = channel.postgresChange(
             InsertAction.self,
@@ -3898,7 +3898,7 @@ functions:
         name: Listen to inserts using callback
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPostgresChange(
             InsertAction.self,
@@ -3916,7 +3916,7 @@ functions:
       - id: listen-to-updates
         name: Listen to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -3924,7 +3924,7 @@ functions:
           ```
         code: |
           ```swift
-           let channel = supabase.channel("channelId")
+           let channel = skybase.channel("channelId")
 
            let updates = channel.postgresChange(
              UpdateAction.self,
@@ -3941,7 +3941,7 @@ functions:
       - id: listen-to-updates-callback
         name: Listen to updates using callback
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -3949,7 +3949,7 @@ functions:
           ```
         code: |
           ```swift
-           let channel = supabase.channel("channelId")
+           let channel = skybase.channel("channelId")
 
            let subscription = channel.onPostgresChange(
              UpdateAction.self,
@@ -3967,7 +3967,7 @@ functions:
       - id: listen-to-deletes
         name: Listen to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -3975,7 +3975,7 @@ functions:
           ```
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let deletions = channel.postgresChange(
             DeleteAction.self,
@@ -3992,7 +3992,7 @@ functions:
       - id: listen-to-deletes-callback
         name: Listen to deletes using callback
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -4000,7 +4000,7 @@ functions:
           ```
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPostgresChange(
             DeleteAction.self,
@@ -4019,7 +4019,7 @@ functions:
         name: Listen to row level changes
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let deletions = channel.postgresChange(
             DeleteAction.self,
@@ -4038,7 +4038,7 @@ functions:
         name: Listen to row level changes using callback
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           let subscription = channel.onPostgresChange(
             DeleteAction.self,
@@ -4061,7 +4061,7 @@ functions:
     title: 'removeChannel()'
     notes: |
       - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes.
-      - Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
       - If you removed all channels, the client automatically disconnects from the Realtime websocket. This can be disabled in the Realtime config by setting `disconnectOnNoSubscriptions` to false.
     examples:
       - id: removes-a-channel
@@ -4069,27 +4069,27 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           //...
-          await supabase.removeChannel(channel)
+          await skybase.removeChannel(channel)
           ```
       - id: unsubscribe-channel
         name: Unsubscribe from a channel
         isSpotlight: true
         code: |
           ```swift
-          let channel = supabase.channel("channelId")
+          let channel = skybase.channel("channelId")
 
           //...
           await channel.unsubscribe()
           ```
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.removeAllChannels'
     notes: |
       Unsubscribes and removes all Realtime channels from Realtime client.
-      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
       - If you removed all channels, the client automatically disconnects from the Realtime websocket. This can be disabled in the Realtime config by setting `disconnectOnNoSubscriptions` to false.
     examples:
       - id: remove-all-channels
@@ -4097,11 +4097,11 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          await supabase.removeAllChannels()
+          await skybase.removeAllChannels()
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.getChannels'
     notes: |
       Returns all Realtime channels.
     examples:
@@ -4110,7 +4110,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let channels = supabase.channels
+          let channels = skybase.channels
           ```
 
   - id: list-buckets
@@ -4126,7 +4126,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .listBuckets()
           ```
 
@@ -4143,7 +4143,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let bucket = try await supabase.storage
+          let bucket = try await skybase.storage
             .getBucket("avatars")
           ```
 
@@ -4160,7 +4160,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .createBucket(
               "avatars",
               options: BucketOptions(
@@ -4184,7 +4184,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .emptyBucket("avatars")
           ```
   - id: update-bucket
@@ -4200,7 +4200,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .updateBucket(
               "avatars",
               options: BucketOptions(
@@ -4224,7 +4224,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .deleteBucket("avatars")
           ```
 
@@ -4243,7 +4243,7 @@ functions:
           ```swift
           let fileName = "avatar1.png"
 
-          try await supabase.storage
+          try await skybase.storage
             .from("avatars")
             .upload(
               path: "public/\(fileName)",
@@ -4271,7 +4271,7 @@ functions:
           ```swift
           let fileName = "avatar1.png"
 
-          try await supabase.storage
+          try await skybase.storage
             .from("avatars")
             .update(
               path: "public/\(fileName)",
@@ -4297,7 +4297,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .storage
             .from("avatars")
             .move(from: "public/avatar1.png", to: "private/avatar2.png")
@@ -4316,7 +4316,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase
+          try await skybase
             .storage
             .from("avatars")
             .copy(from: "public/avatar1.png", to: "private/avatar2.png")
@@ -4335,7 +4335,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let signedURL = try await supabase.storage
+          let signedURL = try await skybase.storage
             .from("avatars")
             .createSignedURL(path: "folder/avatar1.png", expiresIn: 60)
           ```
@@ -4344,7 +4344,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let signedURL = try await supabase.storage
+          let signedURL = try await skybase.storage
             .from("avatars")
             .createSignedURL(
               path: "folder/avatar1.png",
@@ -4360,7 +4360,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let signedURL = try await supabase.storage
+          let signedURL = try await skybase.storage
             .from("avatars")
             .createSignedURL(
               path: "folder/avatar1.png", expiresIn: 60,
@@ -4383,7 +4383,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let urls = try await supabase
+          let urls = try await skybase
             .storage
             .from("avatars")
             .createSignedURLs(paths: ["folder/avatar1.png", "folder/avatar2.png"], expiresIn: 60)
@@ -4392,7 +4392,7 @@ functions:
   - id: from-get-public-url
     title: from.getPublicUrl()
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none
@@ -4403,7 +4403,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let publicURL = try supabase.storage
+          let publicURL = try skybase.storage
             .from("public-bucket")
             .getPublicURL(path: "folder/avatar1.png")
           ```
@@ -4412,7 +4412,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let publicURL = try supabase.storage
+          let publicURL = try skybase.storage
             .from("public-bucket")
             .getPublicURL(
               path: "folder/avatar1.png",
@@ -4427,7 +4427,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let publicURL = try supabase.storage
+          let publicURL = try skybase.storage
             .from("public-bucket")
             .getPublicURL(
               path: "folder/avatar1.png",
@@ -4450,7 +4450,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let data = try await supabase.storage
+          let data = try await skybase.storage
             .from("avatars")
             .download(path: "folder/avatar1.png")
           ```
@@ -4459,7 +4459,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let data = try await supabase.storage
+          let data = try await skybase.storage
             .from("avatars")
             .download(
               path: "folder/avatar1.png",
@@ -4484,7 +4484,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          try await supabase.storage
+          try await skybase.storage
             .from("avatars")
             .remove(paths: ["folder/avatar1.png"])
           ```
@@ -4502,7 +4502,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let files = try await supabase.storage
+          let files = try await skybase.storage
             .from("avatars")
             .list(
               path: "folder",
@@ -4517,7 +4517,7 @@ functions:
         name: Search files in a bucket
         code: |
           ```swift
-          let files = try await supabase.storage
+          let files = try await skybase.storage
             .from("avatars")
             .list(
               path: "folder",

@@ -1,6 +1,6 @@
-# Resend with Supabase Edge Functions
+# Resend with Skybase Edge Functions
 
-This example shows how to use Resend with [Supabase Edge Functions](https://supabase.com/docs/guides/functions).
+This example shows how to use Resend with [Skybase Edge Functions](https://skybase.com/docs/guides/functions).
 
 ## Prerequisites
 
@@ -16,21 +16,21 @@ cp .env.example .env
 
 ## Instructions
 
-1. Make sure you have the latest version of the [Supabase CLI](https://supabase.com/docs/guides/cli#installation) installed.
+1. Make sure you have the latest version of the [Skybase CLI](https://skybase.com/docs/guides/cli#installation) installed.
 
 2. Run function locally:
 
 ```sh
-supabase start
-supabase functions serve --no-verify-jwt --env-file ./supabase/.env.local
+skybase start
+skybase functions serve --no-verify-jwt --env-file ./skybase/.env.local
 ```
 
 GET http://localhost:54321/functions/v1/send-email-resend
 
-3. Deploy function to Supabase:
+3. Deploy function to Skybase:
 
 ```sh
-supabase functions deploy resend --no-verify-jwt
+skybase functions deploy resend --no-verify-jwt
 ```
 
 ## License

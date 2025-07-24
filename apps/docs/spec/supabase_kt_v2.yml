@@ -1,13 +1,13 @@
 openref: 0.1
 
 info:
-  id: reference/supabase-kotlin
-  title: Supabase Kotlin Client
+  id: reference/skybase-kotlin
+  title: Skybase Kotlin Client
   description: |
 
-    Supabase Kotlin.
+    Skybase Kotlin.
 
-  specUrl: https://github.com/supabase/supabase/edit/master/apps/docs/spec/supabase_kt_v2.yml
+  specUrl: https://github.com/skybase/skybase/edit/master/apps/docs/spec/skybase_kt_v2.yml
   slugPrefix: '/'
   libraries:
     - name: 'Kotlin'
@@ -18,17 +18,17 @@ functions:
   - id: initializing
     title: 'Initializing'
     description: |
-      ### Create Supabase Client
+      ### Create Skybase Client
 
-      Independently of which Supabase module you are using, you will need to initialize the main client first and install the module.
+      Independently of which Skybase module you are using, you will need to initialize the main client first and install the module.
 
-      To create a new client, you can use the `createSupabaseClient` function.
+      To create a new client, you can use the `createSkybaseClient` function.
 
       When installing a module, you can pass a block to configure it.
 
       ### OAuth and OTP link verification
 
-      [supabase-kt](https://github.com/supabase-community/supabase-kt) provides several platform implementations for OAuth and OTP link verification.
+      [skybase-kt](https://github.com/skybase-community/skybase-kt) provides several platform implementations for OAuth and OTP link verification.
 
       **On Desktop platforms (JVM, MacOS\*, Linux)**, it uses a HTTP Callback Server to receive the session data from a successful OAuth login. The success page can be customized via `AuthConfig#httpCallbackConfig` \
       \* If no deeplinks are being used.
@@ -39,7 +39,7 @@ functions:
       **On JS**, it uses the website origin as the callback url. Session importing gets handled automatically. \
       **Windows, tvOS, watchOS & Linux** currently have no default implementation. Feel free to create a PR.
 
-      You always make your own implementation and use `auth.parseSessionFromFragment(fragment)` or `auth.parseSessionFromUrl(url)` to let [supabase-kt](https://github.com/supabase-community/supabase-kt) handle the parsing after receiving a callback.
+      You always make your own implementation and use `auth.parseSessionFromFragment(fragment)` or `auth.parseSessionFromUrl(url)` to let [skybase-kt](https://github.com/skybase-community/skybase-kt) handle the parsing after receiving a callback.
       Then you can simply use `auth.importSession(session)`.
 
       ### Configure deeplink callbacks for Authentication
@@ -48,13 +48,13 @@ functions:
       1. **Set up a deeplink** \
       On Android, set up a [deeplink](https://developer.android.com/training/app-links/deep-linking) in your Android manifest. \
       On iOS and MacOS, set up a [url scheme](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app).
-      2. **Add your deeplink to the [redirect URLs](https://supabase.com/dashboard/project/_/auth/url-configuration)** \
+      2. **Add your deeplink to the [redirect URLs](https://skybase.com/dashboard/project/_/auth/url-configuration)** \
       **Pattern**: scheme://host
       3. **Configure the Auth plugin**
       Set the `host` and `scheme` in the Auth config:
           ```kotlin
           install(Auth) {
-             host = "deeplink host" // this can be anything, eg. your package name or app/company url (not your Supabase url)
+             host = "deeplink host" // this can be anything, eg. your package name or app/company url (not your Skybase url)
              scheme = "deeplink scheme"
 
              // On Android only, you can set OAuth and SSO logins to open in a custom tab, rather than an external browser:
@@ -62,18 +62,18 @@ functions:
           }
           ```
       4. **Call platform specific function on startup** \
-      On Android: `supabase.handleDeeplinks(intent)` \
+      On Android: `skybase.handleDeeplinks(intent)` \
       If you don't want a separate activity, just call this function at the top of your `onCreate` function in your MainActivity. \
-      On iOS/MacOS: `supabase.handleDeeplinks(url)`
+      On iOS/MacOS: `skybase.handleDeeplinks(url)`
 
       Then you can log in using OAuth:
       ```kotlin
-      supabase.auth.signInWith(Google)
+      skybase.auth.signInWith(Google)
       ```
       Or open OTP links directly in your app.
 
       ### PKCE Authentication flow
-      supabase-kt supports the [PKCE authentication flow](https://supabase.com/blog/supabase-auth-sso-pkce).
+      skybase-kt supports the [PKCE authentication flow](https://skybase.com/blog/skybase-auth-sso-pkce).
       To use it, change the `flowType` in the Auth configuration:
       ```kotlin
       install(Auth) {
@@ -82,23 +82,23 @@ functions:
       ```
       That's it! If you already implemented deeplinks to handle OTPs and OAuth you don't have to change anything!
     params:
-      - name: supabaseUrl
+      - name: skybaseUrl
         isOptional: false
         type: String
-        description: The unique Supabase URL which is supplied when you create a new project in your project dashboard.
-      - name: supabaseKey
+        description: The unique Skybase URL which is supplied when you create a new project in your project dashboard.
+      - name: skybaseKey
         isOptional: false
         type: String
-        description: The unique Supabase Key which is supplied when you create a new project in your project dashboard.
+        description: The unique Skybase Key which is supplied when you create a new project in your project dashboard.
       - name: builder
         isOptional: true
-        type: SupabaseClientBuilder.() -> Unit
+        type: SkybaseClientBuilder.() -> Unit
         description: Apply additional configuration and install plugins.
         subContent:
           - name: useHTTPS
             isOptional: true
             type: Boolean
-            description: Whether to use HTTPS for network requests. Will be set automatically depending on your Supabase url, but can be changed manually.
+            description: Whether to use HTTPS for network requests. Will be set automatically depending on your Skybase url, but can be changed manually.
           - name: httpEngine
             isOptional: true
             type: HttpClientEngine?
@@ -106,7 +106,7 @@ functions:
           - name: ignoreModulesInUrl
             isOptional: true
             type: Boolean
-            description: Whether to ignore if [supabaseUrl] contains modules like 'realtime' or 'auth'. If false, an exception will be thrown. Defaults to false.
+            description: Whether to ignore if [skybaseUrl] contains modules like 'realtime' or 'auth'. If false, an exception will be thrown. Defaults to false.
           - name: requestTimeout
             isOptional: true
             type: Duration
@@ -117,7 +117,7 @@ functions:
             description: The default log level used for plugins. Can be overridden per plugin. Defaults to `LogLevel.INFO`.
           - name: defaultSerializer
             isOptional: true
-            type: SupabaseSerializer
+            type: SkybaseSerializer
             description: The default serializer used to serialize and deserialize custom data types. Defaults to `KotlinXSerializer`.
 
     examples:
@@ -125,9 +125,9 @@ functions:
         name: Initialize Client
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Auth)
               install(Postgrest)
@@ -138,9 +138,9 @@ functions:
         name: Configure Auth module
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Auth) {
                   alwaysAutoRefresh = false // default: true
@@ -162,7 +162,7 @@ functions:
 
           `codeVerifierCache` - Interface for saving and loading codes for the PKCE authentication flow. Default: `SettingsCodeVerifierCache`
 
-          `customUrl` - Custom url for the Auth API. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the Auth API. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
 
@@ -172,7 +172,7 @@ functions:
 
           **Android & iOS:**
 
-          `scheme` - The scheme for the redirect url, when using deep linking. Default: `supabase`
+          `scheme` - The scheme for the redirect url, when using deep linking. Default: `skybase`
 
           `host` - The host for the redirect url, when using deep linking. Default: `login`
 
@@ -186,18 +186,18 @@ functions:
 
           `timeout`: The timeout for the web server, when logging in with OAuth. Default: `1.minutes`.
 
-          `htmlTitle`: The title of the redirect page, when logging in with OAuth. Default: `"Supabase Auth"`.
+          `htmlTitle`: The title of the redirect page, when logging in with OAuth. Default: `"Skybase Auth"`.
 
           `htmlText`: The text of the redirect page, when logging in with OAuth. Default: `"Logged in. You may continue in your app."`.
 
-          `htmlIconUrl`: The icon of the redirect page, when logging in with OAuth. Default: `"https://supabase.com/brand-assets/supabase-logo-icon.png"`.
+          `htmlIconUrl`: The icon of the redirect page, when logging in with OAuth. Default: `"https://skybase.com/brand-assets/skybase-logo-icon.png"`.
       - id: configure-postgrest
         name: Configure PostgREST module
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Postgrest) {
                   defaultSchema = "schema" // default: "public"
@@ -210,16 +210,16 @@ functions:
 
           `defaultSchema` - The default schema to use for database requests. Default: `public`
 
-          `customUrl` - Custom url for the PostgREST API. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the PostgREST API. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
       - id: configure-storage
         name: Configure Storage module
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Storage) {
                   transferTimeout = 90.seconds // Default: 120 seconds
@@ -231,22 +231,22 @@ functions:
 
           `resumable.cache` - Interface for storing resumable upload urls. Default: `SettingsResumableCache`
 
-          `resumable.defaultChunkSize` - The default chunk size for resumable uploads. Supabase currently only supports a chunk size of 6MB, so be careful when changing this value. Default: `6MB`
+          `resumable.defaultChunkSize` - The default chunk size for resumable uploads. Skybase currently only supports a chunk size of 6MB, so be careful when changing this value. Default: `6MB`
 
           `resumable.retryTimeout` - the timeout for retrying resumable uploads when uploading a chunk fails. Default: `5.seconds`
 
           `resumable.onlyUpdateStateAfterChunk` - whether the upload state should only be updated after a chunk was uploaded successfully or also when the chunk is currently being uploaded. Default: `false`
 
-          `customUrl` - Custom url for the Storage API. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the Storage API. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
       - id: configure-realtime
         name: Configure Realtime module
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Realtime) {
                   reconnectDelay = 5.seconds // Default: 7 seconds
@@ -260,20 +260,20 @@ functions:
 
           `disconnectOnSessionLoss` - Whether to disconnect from the websocket when the session is lost. Default: `true`
 
-          `secure` - Whether to use wss or ws. Defaults to [SupabaseClient.useHTTPS] when null
+          `secure` - Whether to use wss or ws. Defaults to [SkybaseClient.useHTTPS] when null
 
           `websocketConfig` - Custom Ktor websocket config
 
-          `customUrl` - Custom url for the Realtime websocket. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the Realtime websocket. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
       - id: configure-functions
         name: Configure Functions plugin
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(Functions) {
                   //no custom settings
@@ -281,16 +281,16 @@ functions:
           }
           ```
         description: |
-          `customUrl` - Custom url for the Functions API. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the Functions API. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
       - id: configure-graphql
         name: Configure GraphQL plugin
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://xyzcompany.supabase.co",
-              supabaseKey = "public-anon-key"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://xyzcompany.skybase.co",
+              skybaseKey = "public-anon-key"
           ) {
               install(GraphQL) {
                   apolloConfiguration {
@@ -302,11 +302,11 @@ functions:
         description: |
           `apolloConfiguration` - Custom configuration for the ApolloClient
 
-          `customUrl` - Custom url for the GraphQL API. Can be safely ignored when using Supabase. Default: `null`
+          `customUrl` - Custom url for the GraphQL API. Can be safely ignored when using Skybase. Default: `null`
 
           `jwtToken` - Plugin specific JWT Token. Can be ignored when using the Auth plugin. Default: `null`
 
-          **You can access the created ApolloClient via `supabase.graphql.apolloClient`, which automatically adds the required headers depending on your session.**
+          **You can access the created ApolloClient via `skybase.graphql.apolloClient`, which automatically adds the required headers depending on your session.**
 
   - id: select
     title: 'Fetch data: select()'
@@ -334,14 +334,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val city = supabase.from("cities").select().decodeSingle<City>()
+          val city = skybase.from("cities").select().decodeSingle<City>()
           ```
       - id: selecting-specific-columns
         name: Selecting specific columns
         description: You can select specific fields from your tables.
         code: |
           ```kotlin
-          val city = supabase.from("cities").select(columns = Columns.list("id, name")).decodeSingle<City>()
+          val city = skybase.from("cities").select(columns = Columns.list("id, name")).decodeSingle<City>()
           ```
       - id: query-foreign-tables
         name: Query foreign tables
@@ -356,7 +356,7 @@ functions:
                 name
               )
           """.trimIndent())
-          val country = supabase.from("countries")
+          val country = skybase.from("countries")
             .select(
               columns = columns
             )
@@ -381,7 +381,7 @@ functions:
               from: sender_id(name),
               to: receiver_id(name)
           """.trimIndent())
-          val message = supabase.from("messages")
+          val message = skybase.from("messages")
               .select(columns = columns)
               .decodeSingle<Message>()
           ```
@@ -392,7 +392,7 @@ functions:
           Allowed values for count option are [Count.EXACT](https://postgrest.org/en/stable/api.html#exact-count), [Count.PLANNED](https://postgrest.org/en/stable/api.html#planned-count) and [Count.ESTIMATED](https://postgrest.org/en/stable/api.html#estimated-count).
         code: |
           ```kotlin
-          val count = supabase.from("countries")
+          val count = skybase.from("countries")
               .select {
                   count(Count.EXACT)
               }
@@ -412,14 +412,14 @@ functions:
               id, name
               address->city
           """.trimIndent())
-          val user = supabase.from("users")
+          val user = skybase.from("users")
               .select(columns = columns)
               .decodeSingle<User>()
           ```
 
   - id: insert
     title: 'Create data: insert()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.insert'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.insert'
     notes: |
       Perform an INSERT into the table or view.
       - When calling an `insert` method, you have to provide a [serializable value](/docs/reference/kotlin/installing#serialization).
@@ -441,7 +441,7 @@ functions:
         code: |
           ```kotlin
           val city = City(name = "The Shire", countryId = 554)
-          supabase.from("cities").insert(city)
+          skybase.from("cities").insert(city)
           ```
       - id: create-a-record-and-return
         name: Create a record and return it
@@ -449,7 +449,7 @@ functions:
         code: |
           ```kotlin
           val city = City(name = "The Shire", countryId = 554)
-          val result = supabase.from("cities").insert(city) {
+          val result = skybase.from("cities").insert(city) {
               select()
           }.decodeSingle<City>()
           ```
@@ -462,7 +462,7 @@ functions:
           ```kotlin
           val theShire = City(name = "The Shire", countryId = 554)
           val rohan = City(name = "Rohan", countryId = 554)
-          supabase.from("cities").insert(listOf(theShire, rohan))
+          skybase.from("cities").insert(listOf(theShire, rohan))
           ```
 
   - id: update
@@ -487,7 +487,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("characters").update(
+          skybase.from("characters").update(
               {
                  Character::name setTo "Harry"
                  //or
@@ -505,7 +505,7 @@ functions:
         name: Update a record and return it
         code: |
           ```kotlin
-          val newInstrument = supabase.from("instruments").update(
+          val newInstrument = skybase.from("instruments").update(
               {
                  Instrument::name setTo "piano"
                  //or
@@ -555,7 +555,7 @@ functions:
         code: |
           ```kotlin
           val address = Address(street = "Melrose Place", postcode = 90210)
-          supabase.from("users").update(
+          skybase.from("users").update(
               {
                  User::address setTo address
               }
@@ -568,12 +568,12 @@ functions:
 
   - id: upsert
     title: 'Upsert data: upsert()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.upsert'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.upsert'
     notes: |
       Perform an UPSERT on the table or view. Depending on the column(s) passed to `onConflict`, `.upsert()` allows you to perform the equivalent of `.insert()` if a row with the corresponding `onConflict` columns doesn't exist, or if it does exist, perform an alternative action depending on `ignoreDuplicates`.
       - Primary keys should be included in the data payload in order for an update to work correctly.
       - Primary keys  must be natural, not surrogate. There are however, [workarounds](https://github.com/PostgREST/postgrest/issues/1118) for surrogate primary keys.
-      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/supabase/postgrest-js/issues/173#issuecomment-825124550).
+      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/skybase/postgrest-js/issues/173#issuecomment-825124550).
       - When calling `insert` or `update`, you have to provide a [serializable value](/docs/reference/kotlin/installing#serialization) in the function parameter.
       - By default, `upsert` will not return the inserted data. If you want to return the inserted data, you can use the `select()` method inside the request.
     params:
@@ -604,7 +604,7 @@ functions:
         code: |
           ```kotlin
           val toUpsert = Message(id = 3, message = "foo", username = "supabot")
-          supabase.from("messages").upsert(toUpsert)
+          skybase.from("messages").upsert(toUpsert)
           ```
       - id: upsert-your-data-and-return
         name: Upsert your data and return it
@@ -612,21 +612,21 @@ functions:
         code: |
           ```kotlin
           val toUpsert = Message(id = 3, message = "foo", username = "supabot")
-          val message = supabase.from("messages").upsert(toUpsert) {
+          val message = skybase.from("messages").upsert(toUpsert) {
               select()
           }.decodeSingle<Message>()
           ```
       - id: upserting-into-tables-with-constraints
         name: Upserting into tables with constraints
         description: |
-          Running the following will cause Supabase to upsert data into the `users` table.
-          If the username 'supabot' already exists, the `onConflict` argument tells Supabase to overwrite that row
+          Running the following will cause Skybase to upsert data into the `users` table.
+          If the username 'supabot' already exists, the `onConflict` argument tells Skybase to overwrite that row
           based on the column passed into `onConflict`.
         isSpotlight: true
         code: |
           ```kotlin
           val toUpsert = User(username = "supabot")
-          supabase.from("users").upsert(toUpsert, onConflict = "username")
+          skybase.from("users").upsert(toUpsert, onConflict = "username")
           ```
       - id: upsert-return-row-count
         name: Return the exact number of rows
@@ -634,14 +634,14 @@ functions:
         code: |
           ```kotlin
           val toUpsert = User(username = "supabot")
-          val count = supabase.from("users").upsert(toUpsert, onConflict = "username") {
+          val count = skybase.from("users").upsert(toUpsert, onConflict = "username") {
               count(Count.EXACT)
           }.count()
           ```
 
   - id: delete
     title: 'Delete data: delete()'
-    $ref: '@supabase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.delete'
+    $ref: '@skybase/postgrest-js."lib/PostgrestQueryBuilder".PostgrestQueryBuilder.delete'
     notes: |
       Perform a DELETE on the table or view.
       - `delete()` should always be combined with a [filter](/docs/reference/kotlin/using-filters) block to target the item(s) you wish to delete.
@@ -662,7 +662,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                   City::id eq 666
                   //or
@@ -674,7 +674,7 @@ functions:
         name: Fetch deleted records
         code: |
           ```kotlin
-          val deletedCity = supabase.from("cities").delete {
+          val deletedCity = skybase.from("cities").delete {
               select()
               filter {
                   City::id eq 666
@@ -716,14 +716,14 @@ functions:
         description: This is an example invoking a stored procedure.
         code: |
           ```kotlin
-          supabase.postgrest.rpc("hello_world")
+          skybase.postgrest.rpc("hello_world")
           ```
       - id: with-parameters
         name: With Parameters
         code: |
           ```kotlin
           val rpcParams = City(name = "The Shire")
-          supabase.postgrest.rpc("echo_city", rpcParams)
+          skybase.postgrest.rpc("echo_city", rpcParams)
           ```
   - id: using-filters
     title: Using Filters
@@ -755,7 +755,7 @@ functions:
           `delete()`, and `rpc()`
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name", "country_id")) {
+          skybase.from("cities").select(columns = Columns.list("name", "country_id")) {
               filter {
                   City::name eq "The Shire"
                   //or
@@ -770,7 +770,7 @@ functions:
           `delete()`, and `rpc()`
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name, country_id")) {
+          skybase.from("cities").select(columns = Columns.list("name, country_id")) {
               filter {
                   and { //when both are true
                      City::population gt 40000
@@ -821,7 +821,7 @@ functions:
           ```
         code: |
           ```kotlin
-          supabase.from("users").select {
+          skybase.from("users").select {
               filter {
                   eq("address->postcode", 90210)
               }
@@ -837,7 +837,7 @@ functions:
                   name
               )
           """.trimIndent())
-          supabase.from("countries").select(
+          skybase.from("countries").select(
                 columns = columns
           ) {
               filter {
@@ -904,7 +904,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("countries").select(columns = Columns.list("name")) {
+          skybase.from("countries").select(columns = Columns.list("name")) {
               filter {
                   or {
                       Country::id eq 2
@@ -920,7 +920,7 @@ functions:
         name: Use `or` with `and`
         code: |
           ```kotlin
-          supabase.from("countries").select(columns = Columns.list("name")) {
+          skybase.from("countries").select(columns = Columns.list("name")) {
               filter {
                   or {
                       Country::id gt 3
@@ -958,7 +958,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("countries").select {
+          skybase.from("countries").select {
               filter {
                   filterNot("name", FilterOperation.IS, "")
               }
@@ -984,7 +984,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name", "country_id")) {
+          skybase.from("cities").select(columns = Columns.list("name", "country_id")) {
               filter {
                   City::name eq "The Shire"
                   //or
@@ -997,7 +997,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                   City::name eq "Hobbiton"
                   //or
@@ -1009,7 +1009,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                   City::name eq "Mordor"
                   //or
@@ -1021,7 +1021,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("function") {
+          skybase.postgrest.rpc("function") {
               filter {
                   City::name eq "Mordor"
                   //or
@@ -1049,7 +1049,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name", "country_id")) {
+          skybase.from("cities").select(columns = Columns.list("name", "country_id")) {
               filter {
                   City::name neq "The Shire"
                   //or
@@ -1062,7 +1062,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                   City::name neq "The Shire"
                   //or
@@ -1074,7 +1074,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                   City::name neq "The Shire"
                   //or
@@ -1086,7 +1086,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.rpc("echo_all_cities") {
+          skybase.rpc("echo_all_cities") {
               filter {
                   neq("address->postcode", 90210)
               }
@@ -1112,7 +1112,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::countryId gt 300
                  //or
@@ -1125,7 +1125,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::countryId gt 300
                  //or
@@ -1137,7 +1137,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::countryId gt 300
                  //or
@@ -1149,7 +1149,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::countryId gt 300
                  //or
@@ -1177,7 +1177,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::countryId gte 300
                  //or
@@ -1190,7 +1190,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::countryId gte 300
                  //or
@@ -1202,7 +1202,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::countryId gte 300
                  //or
@@ -1214,7 +1214,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::countryId gte 300
                  //or
@@ -1242,7 +1242,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::countryId lt 300
                  //or
@@ -1255,7 +1255,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::countryId lt 300
                  //or
@@ -1267,7 +1267,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::countryId lt 300
                  //or
@@ -1279,7 +1279,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::countryId lt 300
                  //or
@@ -1307,7 +1307,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::countryId lte 300
                  //or
@@ -1320,7 +1320,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::countryId lte 300
                  //or
@@ -1332,7 +1332,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::countryId lte 300
                  //or
@@ -1344,7 +1344,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::countryId lte 300
                  //or
@@ -1372,7 +1372,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::name like "%la%"
                  //or
@@ -1385,7 +1385,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::name like "%la%"
                  //or
@@ -1397,7 +1397,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::name like "%la%"
                  //or
@@ -1409,7 +1409,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::name like "%la%"
                  //or
@@ -1437,7 +1437,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::name ilike "%la%"
                  //or
@@ -1450,7 +1450,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::name ilike "%la%"
                  //or
@@ -1462,7 +1462,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::name ilike "%la%"
                  //or
@@ -1474,7 +1474,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::name ilike "%la%"
                  //or
@@ -1504,7 +1504,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::name isExact null
                  //or
@@ -1517,7 +1517,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::name isExact null
                  //or
@@ -1529,7 +1529,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::name isExact null
                  //or
@@ -1541,7 +1541,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::name isExact null
                  //or
@@ -1569,7 +1569,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::name isIn listOf("Hobbiton", "Edoras")
                  //or
@@ -1582,7 +1582,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::name isIn listOf("Hobbiton", "Edoras")
                  //or
@@ -1594,7 +1594,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::name isIn listOf("Hobbiton", "Edoras")
                  //or
@@ -1606,7 +1606,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::name isIn listOf("Hobbiton", "Edoras")
                  //or
@@ -1634,7 +1634,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.from("cities").select(columns = Columns.list("name")) {
+          skybase.from("cities").select(columns = Columns.list("name")) {
               filter {
                  City::mainExports contains listOf("oil")
                  //or
@@ -1647,7 +1647,7 @@ functions:
         code: |
           ```kotlin
           val toUpdate = City(name = "Mordor")
-          supabase.from("cities").update(toUpdate) {
+          skybase.from("cities").update(toUpdate) {
               filter {
                  City::mainExports contains listOf("oil")
                  //or
@@ -1659,7 +1659,7 @@ functions:
         name: With delete()
         code: |
           ```kotlin
-          supabase.from("cities").delete {
+          skybase.from("cities").delete {
               filter {
                  City::mainExports contains listOf("oil")
                  //or
@@ -1671,7 +1671,7 @@ functions:
         name: With rpc()
         code: |
           ```kotlin
-          supabase.postgrest.rpc("echo_all_cities") {
+          skybase.postgrest.rpc("echo_all_cities") {
               filter {
                  City::mainExports contains listOf("oil")
                  //or
@@ -1699,7 +1699,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-            supabase.from("reservations").select {
+            skybase.from("reservations").select {
                 filter {
                    Reservation::during rangeLt ("2000-01-02 08:30" to "2000-01-02 09:30")
                    //or
@@ -1763,7 +1763,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-            supabase.from("reservations").select {
+            skybase.from("reservations").select {
                 filter {
                    Reservation::during rangeGt ("2000-01-02 08:30" to "2000-01-02 09:30")
                    //or
@@ -1827,7 +1827,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-            supabase.from("reservations").select {
+            skybase.from("reservations").select {
                 filter {
                    Reservation::during rangeGte ("2000-01-02 08:30" to "2000-01-02 09:30")
                    //or
@@ -1885,14 +1885,14 @@ functions:
         isOptional: false
         type: Pair<Any, Any>
         description: The values to filter with.
-    $ref: '@supabase/postgrest-js.PostgrestFilterBuilder.rangeLte'
+    $ref: '@skybase/postgrest-js.PostgrestFilterBuilder.rangeLte'
     examples:
       - id: with-select
         name: With select()
         isSpotlight: true
         code: |
           ```kotlin
-            supabase.from("reservations").select {
+            skybase.from("reservations").select {
                 filter {
                    Reservation::during rangeLte ("2000-01-02 08:30" to "2000-01-02 09:30")
                    //or
@@ -1956,7 +1956,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-            supabase.from("reservations").select {
+            skybase.from("reservations").select {
                 filter {
                    Reservation::during adjacent ("2000-01-02 08:30" to "2000-01-02 09:30")
                    //or
@@ -1999,7 +1999,7 @@ functions:
 
   - id: overlaps
     title: overlaps()
-    $ref: '@supabase/postgrest-js.PostgrestFilterBuilder.overlaps'
+    $ref: '@skybase/postgrest-js.PostgrestFilterBuilder.overlaps'
     description: |
       Only relevant for array and range columns. Match only rows where column and value have an element in common.
     params:
@@ -2016,7 +2016,7 @@ functions:
         name: On array columns
         code: |
           ```kotlin
-          supabase.from("issues").select(columns = Columns.list("title")) {
+          skybase.from("issues").select(columns = Columns.list("title")) {
               filter {
                  Issue::tags overlaps listOf("is:closed", "severity:high")
                  //or
@@ -2058,7 +2058,7 @@ functions:
         name: On range columns
         code: |
           ```kotlin
-          supabase.from("issues").select(columns = Columns.list("title")) {
+          skybase.from("issues").select(columns = Columns.list("title")) {
               filter {
                  Issue::during overlaps listOf("2000-01-01 12:45", "2000-01-01 13:15")
                  //or
@@ -2108,7 +2108,7 @@ functions:
     description: |
       Only relevant for text and tsvector columns. Match only rows where `column` matches the query string in `query`.
 
-      For more information, see [Postgres full text search](https://supabase.com/docs/guides/database/full-text-search).
+      For more information, see [Postgres full text search](https://skybase.com/docs/guides/database/full-text-search).
     params:
       - name: column
         isOptional: false
@@ -2131,7 +2131,7 @@ functions:
         name: Text search
         code: |
           ```kotlin
-          supabase.from("quotes").select(columns = Columns.list("catchphrase")) {
+          skybase.from("quotes").select(columns = Columns.list("catchphrase")) {
               filter {
                  textSearch(column = "catchphrase", query = "'fat' & 'cat'", config = "english", type = TextSearchType.YOUR_TYPE)
               }
@@ -2141,7 +2141,7 @@ functions:
         name: Search multiple columns
         code: |
           ```kotlin
-          supabase.from("quotes").select(columns = Columns.list("catchphrase")) {
+          skybase.from("quotes").select(columns = Columns.list("catchphrase")) {
               filter {
                 or {
                   textSearch(column = "catchphrase", query = "'fat' & 'cat'", config = "english", type = TextSearchType.YOUR_TYPE)
@@ -2155,7 +2155,7 @@ functions:
         description: Uses PostgreSQL's `plainto_tsquery` function.
         code: |
           ```kotlin
-          supabase.from("quotes").select(columns = Columns.list("catchphrase")) {
+          skybase.from("quotes").select(columns = Columns.list("catchphrase")) {
               filter {
                  textSearch(column = "catchphrase", query = "'fat' & 'cat'", config = "english", type = TextSearchType.PLAINTO)
               }
@@ -2166,7 +2166,7 @@ functions:
         description: Uses PostgreSQL's `phraseto_tsquery` function.
         code: |
           ```kotlin
-          supabase.from("quotes").select(columns = Columns.list("catchphrase")) {
+          skybase.from("quotes").select(columns = Columns.list("catchphrase")) {
               filter {
                  textSearch(column = "catchphrase", query = "'fat' & 'cat'", config = "english", type = TextSearchType.PHRASETO)
               }
@@ -2186,7 +2186,7 @@ functions:
 
         code: |
           ```kotlin
-          supabase.from("quotes").select(columns = Columns.list("catchphrase")) {
+          skybase.from("quotes").select(columns = Columns.list("catchphrase")) {
               filter {
                  textSearch(column = "catchphrase", query = "'fat' & 'cat'", config = "english", type = TextSearchType.WEBSEARCH)
               }
@@ -2195,7 +2195,7 @@ functions:
 
   - id: filter
     title: filter()
-    $ref: '@supabase/postgrest-js.PostgrestFilterBuilder.filter'
+    $ref: '@skybase/postgrest-js.PostgrestFilterBuilder.filter'
     notes: |
       filter() expects you to use the raw PostgREST syntax for the filter values.
     params:
@@ -2216,7 +2216,7 @@ functions:
         name: With select()
         code: |
           ```kotlin
-          supabase.from("characters").select {
+          skybase.from("characters").select {
               filter {
                  filter(column = "name", operator = FilterOperator.IN, value = "('Han', 'Katniss')")
               }
@@ -2260,7 +2260,7 @@ functions:
                   name
               )
           """.trimIndent())
-          supabase.from("orchestral_sections").select(
+          skybase.from("orchestral_sections").select(
              columns = columns
           ) {
               filter {
@@ -2322,7 +2322,7 @@ functions:
       returns a table response).
   - id: db-modifiers-select
     title: select()
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.select'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.select'
     params:
       - name: columns
         isOptional: true
@@ -2334,7 +2334,7 @@ functions:
         code: |
           ```kotlin
           val toUpsert = Character(id = 2, name = "Leia")
-          val count = supabase.from("characters").upsert(toUpsert) {
+          val count = skybase.from("characters").upsert(toUpsert) {
               select()
           }.decodeSingle<Character>()
           ```
@@ -2368,7 +2368,7 @@ functions:
     title: order()
     description: |
       Order the query result by column.
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.order'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.order'
     params:
       - name: column
         isOptional: false
@@ -2391,7 +2391,7 @@ functions:
         name: With select()
         code: |
           ```kotlin
-          supabase.from("characters").select(columns = Columns.list("id", "name")) {
+          skybase.from("characters").select(columns = Columns.list("id", "name")) {
              order(column = "id", order = Order.DESCENDING)
           }
           ```
@@ -2441,7 +2441,7 @@ functions:
                   name
               )
           """.trimIndent())
-          supabase.from("orchestral_sections").select(
+          skybase.from("orchestral_sections").select(
               columns = columns
           ) {
               order(column = "id", order = Order.DESCENDING, referencedTable = "instruments")
@@ -2503,7 +2503,7 @@ functions:
     title: limit()
     description: |
       Limit the query result by count.
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.limit'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.limit'
     params:
       - name: count
         isOptional: false
@@ -2518,7 +2518,7 @@ functions:
         name: With select()
         code: |
           ```kotlin
-          supabase.from("countries").select {
+          skybase.from("countries").select {
               limit(count = 1)
           }
           ```
@@ -2559,7 +2559,7 @@ functions:
                   name
               )
           """)
-          supabase.from("orchestral_sections").select(
+          skybase.from("orchestral_sections").select(
               columns = columns
           ) {
               limit(count = 1, referencedTable = "instruments")
@@ -2627,7 +2627,7 @@ functions:
         name: With select()
         code: |
           ```kotlin
-          supabase.from("characters").select {
+          skybase.from("characters").select {
               range(1L..5L)
           }
           ```
@@ -2663,13 +2663,13 @@ functions:
         isSpotlight: true
   - id: single
     title: single()
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.single'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.single'
     examples:
       - id: with-select
         name: With select()
         code: |
           ```kotlin
-          val result = supabase.from("characters").select(Columns.list("name")) {
+          val result = skybase.from("characters").select(Columns.list("name")) {
               limit(1)
               single()
           }
@@ -2701,14 +2701,14 @@ functions:
         isSpotlight: true
 
   - id: csv
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.csv'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.csv'
     title: csv()
     examples:
       - id: return-data-as-csv
         name: Return data as CSV
         code: |
           ```kotlin
-          val (csvData, _) = supabase.from("characters").select {
+          val (csvData, _) = skybase.from("characters").select {
               csv()
           }
           ```
@@ -2739,7 +2739,7 @@ functions:
         isSpotlight: true
 
   - id: explain
-    $ref: '@supabase/postgrest-js.PostgrestTransformBuilder.explain'
+    $ref: '@skybase/postgrest-js.PostgrestTransformBuilder.explain'
     title: Using Explain
     description: |
       For debugging slow queries, you can get the [Postgres `EXPLAIN` execution plan](https://www.postgresql.org/docs/current/sql-explain.html) of a query
@@ -2779,7 +2779,7 @@ functions:
         name: Get the execution plan
         code: |
           ```kotlin
-          val result = supabase.from("characters").select {
+          val result = skybase.from("characters").select {
               explain()
           }
           ```
@@ -2809,26 +2809,26 @@ functions:
   - id: auth-api
     title: 'Overview'
     notes: |
-      - The auth methods can be accessed via the Supabase Auth client.
+      - The auth methods can be accessed via the Skybase Auth client.
     examples:
       - id: create-auth-client
         name: Create auth client
         isSpotlight: true
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(supabaseURL = "https://xyzcompany.supabase.co'", supabaseKey = "public-anon-key") { ... }
-          val auth = supabase.auth
+          val skybase = createSkybaseClient(skybaseURL = "https://xyzcompany.skybase.co'", skybaseKey = "public-anon-key") { ... }
+          val auth = skybase.auth
           ```
   - id: sign-up
     title: 'signUp()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signUp'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signUp'
     notes: |
       Creates a new user.
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://supabase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://skybase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, the return value is the user and you won't be logged in automatically.
         - If **Confirm email** is disabled, the return value is null and you will be logged in instead.
-      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://supabase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://supabase.com/dashboard/project/_/auth/url-configuration).
+      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://skybase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://skybase.com/dashboard/project/_/auth/url-configuration).
       - To learn how to handle OTP links & OAuth refer to [initializing](/docs/reference/kotlin/initializing)
       - If signUpWith() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
@@ -2869,7 +2869,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.signUpWith(Email) {
+          val user = skybase.auth.signUpWith(Email) {
               email = "example@email.com"
               password = "example-password"
           }
@@ -2879,7 +2879,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.signUpWith(Phone) {
+          val user = skybase.auth.signUpWith(Phone) {
               phone = "+4912345679"
               password = "example-password"
               channel = Phone.Channel.WHATSAPP
@@ -2890,7 +2890,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.signUpWith(Phone) {
+          val user = skybase.auth.signUpWith(Phone) {
               phone = "+4912345679"
               password = "example-password"
           }
@@ -2900,7 +2900,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val user = supabase.auth.signUpWith(Email) {
+          val user = skybase.auth.signUpWith(Email) {
               email = "example@email.com"
               password = "example-password"
               data = buildJsonObject {
@@ -2915,7 +2915,7 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
         code: |
           ```kotlin
-          val user = supabase.auth.signUpWith(Email, redirectUrl = "https://example.com") {
+          val user = skybase.auth.signUpWith(Email, redirectUrl = "https://example.com") {
               email = "example@email.com"
               password = "example-password"
           }
@@ -2924,7 +2924,7 @@ functions:
     title: 'signInAnonymously()'
     notes: |
       - Creates an anonymous user.
-      - The user can be retrieved by calling `supabase.auth.currentUserOrNull()`.
+      - The user can be retrieved by calling `skybase.auth.currentUserOrNull()`.
       - It is recommended to set up captcha for anonymous sign-ins to prevent abuse. You can pass in the captcha token in the `options` param.
     params:
       - name: captchaToken
@@ -2941,19 +2941,19 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signInAnonymously(captchaToken = "token")
+          skybase.auth.signInAnonymously(captchaToken = "token")
           ```
       - id: sign-in-anonymously-with-user-metadata
         name: Create an anonymous user with custom user metadata
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.signInAnonymously(data = customUserData)
+          skybase.auth.signInAnonymously(data = customUserData)
           ```
 
   - id: sign-in-with-password
     title: 'signInWith()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signInWithPassword'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signInWithPassword'
     notes: |
       Logs in an existing user.
       - Requires either an email and password or a phone number and password.
@@ -2989,7 +2989,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signInWith(Email) {
+          skybase.auth.signInWith(Email) {
               email = "example@email.com"
               password = "example-password"
           }
@@ -2999,7 +2999,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.signInWith(Phone) {
+          skybase.auth.signInWith(Phone) {
               phone = "+4912345679"
               password = "example-password"
           }
@@ -3046,7 +3046,7 @@ functions:
         name: 'Sign In using ID Token'
         code: |
           ```kotlin
-          supabase.auth.signInWith(IDToken) {
+          skybase.auth.signInWith(IDToken) {
               idToken = "token"
               provider = Google //Also supported: Apple, Azure and Facebook
               //optional:
@@ -3058,7 +3058,7 @@ functions:
           ```
   - id: sign-in-with-otp
     title: 'signInWith(OTP)'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signInWithOtp'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signInWithOtp'
     notes: |
       Sends a OTP to the user's email or phone number.
       - Requires either an email or phone number.
@@ -3070,7 +3070,7 @@ functions:
       - The magic link's destination URL is determined by the [`SITE_URL`](/docs/guides/auth/redirect-urls).
       - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
       - To learn how to handle OTP links & OAuth refer to [initializing](/docs/reference/kotlin/initializing)
-      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://supabase.com/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
+      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://skybase.com/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
     params:
       - name: provider
         isOptional: false
@@ -3100,7 +3100,7 @@ functions:
         description: The user will be sent an email which contains either a magiclink or a OTP or both. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```kotlin
-          supabase.auth.signInWith(OTP) {
+          skybase.auth.signInWith(OTP) {
               email = "example@email.com"
           }
           ```
@@ -3110,16 +3110,16 @@ functions:
         description: The user will be sent a SMS which contains a OTP. By default, a given user can only request a OTP once every 60 seconds.
         code: |
           ```kotlin
-          supabase.auth.signInWith(OTP) {
+          skybase.auth.signInWith(OTP) {
               phone = "+4912345679"
           }
           ```
   - id: sign-in-with-oauth
     title: 'signInWith(OAuthProvider)'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signInWithOAuth'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signInWithOAuth'
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Supabase supports many different [third-party providers](https://supabase.com/docs/guides/auth#providers).
+      - Skybase supports many different [third-party providers](https://skybase.com/docs/guides/auth#providers).
       - To learn how to handle OTP links & OAuth refer to [initializing](/docs/reference/kotlin/initializing)
     params:
       - name: provider
@@ -3149,14 +3149,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signInWith(Github)
+          skybase.auth.signInWith(Github)
           ```
       - id: sign-in-using-a-third-party-provider with scopes
         name: Sign in using a third-party provider with scopes
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signInWith(Github) {
+          skybase.auth.signInWith(Github) {
               scopes.add("email")
           }
           ```
@@ -3169,10 +3169,10 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
           - getOAuthUrl() provides the URL which needs to be opened in a browser.
           - The redirectTo URL needs to be setup correctly in your project under Authentication -> URL Configuration -> Redirect URLs.
-          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/supabase-community/supabase-kt/tree/development/demos/android-login) on GitHub.
+          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/skybase-community/skybase-kt/tree/development/demos/android-login) on GitHub.
         code: |
           ```kotlin
-          val url = supabase.auth.getOAuthUrl(Github, redirectUrl = "https://example.com")
+          val url = skybase.auth.getOAuthUrl(Github, redirectUrl = "https://example.com")
           ```
       - id: sign-in-with-scopes
         name: Create a custom url with scopes
@@ -3182,15 +3182,15 @@ functions:
           You may also need to specify the scopes in the provider's OAuth app settings, depending on the provider. The list of scopes will be documented by the third-party provider you are using and specifying scopes will enable you to use the OAuth provider token to call additional APIs supported by the third-party provider to get more information.
         code: |
           ```kotlin
-          val url = supabase.auth.getOAuthUrl(Github, redirectUrl = "https://example.com") {
+          val url = skybase.auth.getOAuthUrl(Github, redirectUrl = "https://example.com") {
               scopes.add("email")
           }
           ```
   - id: sign-in-with-sso
     title: 'signInWithSSO()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signInWithSSO'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signInWithSSO'
     notes: |
-      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/supabase-sso) to do this.
+      - Before you can call this method you need to [establish a connection](/docs/guides/auth/sso/auth-sso-saml#managing-saml-20-connections) to an identity provider. Use the [CLI commands](/docs/reference/cli/skybase-sso) to do this.
       - If you've associated an email domain to the identity provider, you can change the `domain` property in the `signInWith(SSO)` method to start a sign-in flow.
       - In case you need to use a different way to start the authentication flow with an identity provider, you can change the `providerId` property. For example:
           - Mapping specific user email addresses with an identity provider.
@@ -3227,7 +3227,7 @@ functions:
             // You can extract the user's email domain and use it to trigger the
             // authentication flow with the correct identity provider.
 
-            supabase.auth.signInWith(SSO) {
+            skybase.auth.signInWith(SSO) {
                 domain = "company.com"
             }
 
@@ -3241,7 +3241,7 @@ functions:
             // Useful when you need to map a user's sign in request according
             // to different rules that can't use email domains.
 
-            supabase.auth.signInWith(SSO) {
+            skybase.auth.signInWith(SSO) {
                 providerId = "21648a9d-8d5a-4555-a9d1-d6375dc14e92"
             }
 
@@ -3249,7 +3249,7 @@ functions:
           ```
   - id: sign-out
     title: 'signOut()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.signOut'
+    $ref: '@skybase/gotrue-js.GoTrueClient.signOut'
     notes: |
       Logs out the current user.
       - In order to use the `signOut()` method, the user needs to be signed in first.
@@ -3264,25 +3264,25 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signOut()
+          skybase.auth.signOut()
           ```
       - id: sign-out-all-sessions
         name: Sign out all sessions
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signOut(SignOutScope.GLOBAL)
+          skybase.auth.signOut(SignOutScope.GLOBAL)
           ```
       - id: sign-out-others
         name: Sign out all sessions except the current
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.signOut(SignOutScope.OTHERS)
+          skybase.auth.signOut(SignOutScope.OTHERS)
           ```
   - id: verify-otp
     title: 'Verify OTPs'
-    $ref: '@supabase/gotrue-js.GoTrueClient.verifyOtp'
+    $ref: '@skybase/gotrue-js.GoTrueClient.verifyOtp'
     notes: |
       - Verifying an OTP is done through either `verifyPhoneOtp` or `verifyEmailOtp`.
       - The verification type used should be determined based on the corresponding auth method called before using `verifyPhoneOtp`/`verifyEmailOtp` to sign up / sign-in a user.
@@ -3309,7 +3309,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.verifyEmailOtp(type = OtpType.Email.EMAIL, email = "example@email.com", token = "token")
+          skybase.auth.verifyEmailOtp(type = OtpType.Email.EMAIL, email = "example@email.com", token = "token")
           ```
         description: |
           Available types are:
@@ -3324,7 +3324,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.verifyPhoneOtp(type = OtpType.Phone.SMS, phone = "+491234567", token = "token")
+          skybase.auth.verifyPhoneOtp(type = OtpType.Phone.SMS, phone = "+491234567", token = "token")
           ```
         description: |
           Available types are:
@@ -3332,7 +3332,7 @@ functions:
             - `OtpType.Phone.PHONE_CHANGE`
   - id: send-password-reauthentication
     title: 'reauthenticate()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.reauthenticate'
+    $ref: '@skybase/gotrue-js.GoTrueClient.reauthenticate'
     notes: |
       - This method is used together with `updateUser()` when a user's password needs to be updated.
       - This method will send a nonce to the user's email. If the user doesn't have a confirmed email address, the method will send the nonce to the user's confirmed phone number instead.
@@ -3343,11 +3343,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.reauthenticate()
+          skybase.auth.reauthenticate()
           ```
   - id: resend-email-or-phone-otps
     title: 'resend()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.resend'
+    $ref: '@skybase/gotrue-js.GoTrueClient.resend'
     notes: |
       - Resends a signup confirmation, email change or phone change email to the user.
       - Passwordless sign-ins can be resent by calling the `signInWith(OTP)` method again.
@@ -3373,32 +3373,32 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.resendEmail(OtpType.Email.SIGNUP, "example@email.com")
+          skybase.auth.resendEmail(OtpType.Email.SIGNUP, "example@email.com")
           ```
       - id: resend-phone-signup-confirmation
         name: Resend a phone signup confirmation
         description: Resends the phone signup confirmation email to the user
         code: |
           ```kotlin
-          supabase.auth.resendPhone(OtpType.Phone.SMS, "1234567890")
+          skybase.auth.resendPhone(OtpType.Phone.SMS, "1234567890")
           ```
       - id: resend-email-change-email
         name: Resend email change email
         description: Resends the email change email to the user
         code: |
           ```kotlin
-          supabase.auth.resendEmail(OtpType.Email.EMAIL_CHANGE, "example@email.com")
+          skybase.auth.resendEmail(OtpType.Email.EMAIL_CHANGE, "example@email.com")
           ```
       - id: resend-phone-change
         name: Resend phone change OTP
         description: Resends the phone change OTP to the user
         code: |
           ```kotlin
-          supabase.auth.resendPhone(OtpType.Phone.PHONE_CHANGE, "1234567890")
+          skybase.auth.resendPhone(OtpType.Phone.PHONE_CHANGE, "1234567890")
           ```
   - id: get-session
     title: 'Get current session'
-    $ref: '@supabase/gotrue-js.GoTrueClient.getSession'
+    $ref: '@skybase/gotrue-js.GoTrueClient.getSession'
     notes: |
       Returns the current session, or `null` if there is none.
     examples:
@@ -3407,11 +3407,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val session = supabase.auth.currentSessionOrNull()
+          val session = skybase.auth.currentSessionOrNull()
           ```
   - id: get-user
     title: 'getUser()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.getUser'
+    $ref: '@skybase/gotrue-js.GoTrueClient.getUser'
     description: |
       - This method gets the user object from the current session.
       - Fetches the user object from the database instead of local session.
@@ -3427,7 +3427,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.retrieveUserForCurrentSession(updateSession = true)
+          val user = skybase.auth.retrieveUserForCurrentSession(updateSession = true)
           ```
         description: |
           `updateSession` updates the local session with the new user
@@ -3436,16 +3436,16 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.retrieveUser("JWT")
+          val user = skybase.auth.retrieveUser("JWT")
           ```
   - id: update-user
     title: 'updateUser()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.updateUser'
+    $ref: '@skybase/gotrue-js.GoTrueClient.updateUser'
     notes: |
       Modifies the user data.
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://supabase.com/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://skybase.com/dashboard/project/_/auth/providers).
     params:
       - name: updateCurrentUser
         isOptional: true
@@ -3486,7 +3486,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val user = supabase.auth.updateUser {
+          val user = skybase.auth.updateUser {
              email = "newEmail@email.com"
           }
           ```
@@ -3495,7 +3495,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val user = supabase.auth.updateUser {
+          val user = skybase.auth.updateUser {
              password = "secretPassword"
           }
           ```
@@ -3504,7 +3504,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.updateUser {
+          val user = skybase.auth.updateUser {
              data {
                 put("name", "John")
              }
@@ -3512,7 +3512,7 @@ functions:
           ```
   - id: get-user-identities
     title: 'currentIdentitiesOrNull()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.getUserIdentities'
+    $ref: '@skybase/gotrue-js.GoTrueClient.getUserIdentities'
     notes: |
       - The user needs to be signed in to call `currentIdentitiesOrNull()`.
     examples:
@@ -3522,13 +3522,13 @@ functions:
         code: |
           ```kotlin
           //get the identities from the current user
-          val identities = supabase.auth.currentIdentitiesOrNull()
+          val identities = skybase.auth.currentIdentitiesOrNull()
           //Or retrieve them
-          val identities = supabase.auth.retrieveUserForCurrentSession().identities
+          val identities = skybase.auth.retrieveUserForCurrentSession().identities
           ```
   - id: link-identity
     title: 'linkIdentity()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.linkIdentity'
+    $ref: '@skybase/gotrue-js.GoTrueClient.linkIdentity'
     notes: |
       - The **Enable Manual Linking** option must be enabled from your [project's authentication settings](/dashboard/project/_/settings/auth).
       - The user needs to be signed in to call `linkIdentity()`.
@@ -3562,14 +3562,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.linkIdentity(OAuthProvider)
+          skybase.auth.linkIdentity(OAuthProvider)
 
           //Example:
-          supabase.auth.linkIdentity(Google)
+          skybase.auth.linkIdentity(Google)
           ```
   - id: unlink-identity
     title: 'unlinkIdentity()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.unlinkIdentity'
+    $ref: '@skybase/gotrue-js.GoTrueClient.unlinkIdentity'
     notes: |
       - The **Enable Manual Linking** option must be enabled from your [project's authentication settings](/dashboard/project/_/settings/auth).
       - The user needs to be signed in to call `unlinkIdentity()`.
@@ -3591,22 +3591,22 @@ functions:
         code: |
           ```kotlin
           //get all identities linked to a user
-          val identities = supabase.auth.currentIdentitiesOrNull() ?: emptyList()
+          val identities = skybase.auth.currentIdentitiesOrNull() ?: emptyList()
 
           //find the google identity linked to the user
           val googleIdentity = identities.first { it.provider == "google" }
 
           //unlink the google identity from the user
-          supabase.auth.unlinkIdentity(googleIdentity.identityId!!)
+          skybase.auth.unlinkIdentity(googleIdentity.identityId!!)
           ```
   - id: set-session
     title: 'importSession()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.setSession'
+    $ref: '@skybase/gotrue-js.GoTrueClient.setSession'
     notes: |
       Changes the local session.
       - `importSession()` takes in a UserSession.
       - [Refresh token rotation](/docs/reference/auth/config#refresh_token_rotation_enabled) is enabled by default on all projects to guard against replay attacks.
-      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://supabase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
+      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://skybase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
     params:
       - name: session
         isOptional: false
@@ -3619,11 +3619,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.importSession(UserSession(accessToken = "token", refreshToken = "refresh", expiresIn = 2000, tokenType = "Bearer", user = null))
+          skybase.auth.importSession(UserSession(accessToken = "token", refreshToken = "refresh", expiresIn = 2000, tokenType = "Bearer", user = null))
           ```
   - id: refresh-session
     title: 'refreshSession()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.refreshSession'
+    $ref: '@skybase/gotrue-js.GoTrueClient.refreshSession'
     notes: |
       This method will refresh the session whether the current one is expired or not.
 
@@ -3639,18 +3639,18 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val session = supabase.auth.refreshCurrentSession()
+          val session = skybase.auth.refreshCurrentSession()
           ```
       - id: refresh-session-using-the-current-session
         name: Refresh session using the refresh token
         isSpotlight: true
         code: |
           ```kotlin
-          val session = supabase.auth.refreshSession(refreshToken = "refreshToken")
+          val session = skybase.auth.refreshSession(refreshToken = "refreshToken")
           ```
   - id: on-auth-state-change
     title: 'sessionStatus'
-    $ref: '@supabase/gotrue-js.GoTrueClient.onAuthStateChange'
+    $ref: '@skybase/gotrue-js.GoTrueClient.onAuthStateChange'
     notes: |
       Listen to session changes.
     examples:
@@ -3659,7 +3659,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.sessionStatus.collect {
+          skybase.auth.sessionStatus.collect {
               when(it) {
                   is SessionStatus.Authenticated -> {
                       println("Received new authenticated session.")
@@ -3702,7 +3702,7 @@ functions:
       - The user gets redirected back to your app, assuming you setup [OTP handling](/docs/reference/kotlin/initializing)
       - After the user has been redirected successfully, prompt them for a new password and call `updateUser()`:
         ```kotlin
-        supabase.auth.updateUser {
+        skybase.auth.updateUser {
             password = "1234567"
         }
         ```
@@ -3725,11 +3725,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.resetPasswordForEmail(email = "example@email.com")
+          skybase.auth.resetPasswordForEmail(email = "example@email.com")
           ```
   - id: exchange-code-for-session
     title: 'exchangeCodeForSession()'
-    $ref: '@supabase/gotrue-js.GoTrueClient.exchangeCodeForSession'
+    $ref: '@skybase/gotrue-js.GoTrueClient.exchangeCodeForSession'
     notes: |
       - Used when `flowType` is set to `FlowType.PKCE` in the Auth configuration.
     params:
@@ -3747,19 +3747,19 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.exchangeCodeForSession("34e770dd-9ff9-416c-87fa-43b31d7ef225")
+          skybase.auth.exchangeCodeForSession("34e770dd-9ff9-416c-87fa-43b31d7ef225")
           ```
   - id: auth-mfa-api
     title: 'Overview'
     notes: |
-      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `supabase.auth.mfa` namespace.
+      This section contains methods commonly used for Multi-Factor Authentication (MFA) and are invoked behind the `skybase.auth.mfa` namespace.
 
       Currently, we only support time-based one-time password (TOTP) as the 2nd factor. We don't support recovery codes but we allow users to enroll more than 1 TOTP factor, with an upper limit of 10.
 
       Having a 2nd TOTP factor for recovery frees the user of the burden of having to store their recovery codes somewhere. It also reduces the attack surface since multiple recovery codes are usually generated compared to just having 1 backup TOTP factor.
   - id: mfa-enroll
     title: 'Enroll a factor'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.enroll'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.enroll'
     notes: |
       Enrolls a new factor.
       - Use `FactorType.TOTP` or `FactorType.Phone` as the factorType and use the returned id to create a challenge.
@@ -3785,7 +3785,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val factor = supabase.auth.mfa.enroll(factorType = FactorType.TOTP, friendlyName = "Your friendly Name") {
+          val factor = skybase.auth.mfa.enroll(factorType = FactorType.TOTP, friendlyName = "Your friendly Name") {
                 // Optional
                 issuer = "example.com"
           }
@@ -3795,39 +3795,39 @@ functions:
           // The code will be generated upon scanning the qr_code or entering the secret into the authenticator app.
           val (id, type, qrCode) = factor.data //qrCode is a svg as a string
           val (factorId, factorType, _) = factor
-          val challenge = supabase.auth.mfa.createChallenge(factor.id)
+          val challenge = skybase.auth.mfa.createChallenge(factor.id)
           ```
       - id: enroll-phone-factor
         name: Enroll a Phone Factor
         isSpotlight: true
         code: |
           ```kotlin
-          val factor = supabase.auth.mfa.enroll(factorType = FactorType.Phone, friendlyName = "Your friendly Name") {
+          val factor = skybase.auth.mfa.enroll(factorType = FactorType.Phone, friendlyName = "Your friendly Name") {
                 phone = "+123456789"
           }
 
           // Use the id to create a challenge and send an SMS with a code to the user.
           val (phone) = factor.data
           val (factorId, factorType, _) = factor
-          val challenge = supabase.auth.mfa.createChallenge(factor.id)
+          val challenge = skybase.auth.mfa.createChallenge(factor.id)
           ```
       - id: get-local-verified-factors
         name: Check the local user for verified factors
         isSpotlight: true
         code: |
           ```kotlin
-          val verifiedFactors = supabase.auth.mfa.verifiedFactors
+          val verifiedFactors = skybase.auth.mfa.verifiedFactors
           ```
       - id: retrieve-verified-factors
         name: Retrieve verified factors
         isSpotlight: true
         code: |
           ```kotlin
-          val verifiedFactors = supabase.auth.mfa.retrieveFactorsForCurrentUser()
+          val verifiedFactors = skybase.auth.mfa.retrieveFactorsForCurrentUser()
           ```
   - id: mfa-challenge
     title: 'mfa.challenge()'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.challenge'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.challenge'
     notes: |
       Creates a challenge for a factor.
       - An [enrolled factor](/docs/reference/kotlin/auth-mfa-enroll) is required before creating a challenge.
@@ -3848,11 +3848,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val challenge = supabase.auth.mfa.createChallenge(factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225")
+          val challenge = skybase.auth.mfa.createChallenge(factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225")
           ```
   - id: mfa-verify
     title: 'mfa.verify()'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.verify'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.verify'
     notes: |
       Verifies a challenge for a factor.
       - To verify a challenge, please [create a challenge](/docs/reference/kotlin/auth-mfa-challenge) first.
@@ -3879,7 +3879,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.mfa.verifyChallenge(
+          skybase.auth.mfa.verifyChallenge(
               factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225",
               challengeId = "4034ae6f-a8ce-4fb5-8ee5-69a5863a7c15",
               code = "123456",
@@ -3888,7 +3888,7 @@ functions:
           ```
   - id: mfa-challenge-and-verify
     title: 'mfa.challengeAndVerify()'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.challengeAndVerify'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.challengeAndVerify'
     notes: |
       Creates and verifies a challenge for a factor.
       - Creating and verifying a challenge in a single step is not supported by the `Phone` factor type.
@@ -3913,7 +3913,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.mfa.createChallengeAndVerify(
+          skybase.auth.mfa.createChallengeAndVerify(
               factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225",
               code = "123456",
               saveSession = true // this is set to true by default, but you can set it to false if you want to handle the session yourself
@@ -3921,7 +3921,7 @@ functions:
           ```
   - id: mfa-unenroll
     title: 'mfa.unenroll()'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.unenroll'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.unenroll'
     notes: |
       Unenroll removes a MFA factor. A user has to have an `AAL2` authentication level in order to unenroll a verified factor.
     params:
@@ -3935,14 +3935,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.mfa.unenroll(factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225")
+          skybase.auth.mfa.unenroll(factorId = "34e770dd-9ff9-416c-87fa-43b31d7ef225")
           ```
   - id: mfa-get-authenticator-assurance-level
     title: 'mfa.getAuthenticatorAssuranceLevel()'
-    $ref: '@supabase/gotrue-js.GoTrueMFAApi.getAuthenticatorAssuranceLevel'
+    $ref: '@skybase/gotrue-js.GoTrueMFAApi.getAuthenticatorAssuranceLevel'
     notes: |
       - Authenticator Assurance Level (AAL) is the measure of the strength of an authentication mechanism.
-      - In Supabase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
+      - In Skybase, having an AAL of `aal1` refers to having the 1st factor of authentication such as an email and password or OAuth sign-in while `aal2` refers to the 2nd factor of authentication such as a time-based, one-time-password (TOTP).
       - If the user has a verified factor, the `next` field will return `AuthenticatorAssuranceLevel.AAL2`, else, it will return `AuthenticatorAssuranceLevel.AAL1`.
     examples:
       - id: get-aal
@@ -3950,30 +3950,30 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val (current, next) = supabase.auth.mfa.getAuthenticatorAssuranceLevel()
+          val (current, next) = skybase.auth.mfa.getAuthenticatorAssuranceLevel()
           ```
       - id: aal-enabled
         name: Check whether the user has at least one verified factor
         isSpotlight: true
         code: |
           ```kotlin
-          val (enabled, _) = supabase.auth.mfa.status
+          val (enabled, _) = skybase.auth.mfa.status
           //flow variant, automatically emitting new values on session changes
-          val statusFlow = supabase.auth.mfa.statusFlow
+          val statusFlow = skybase.auth.mfa.statusFlow
           ```
       - id: aal-enabled-for-current-session
         name: Check whether the user is logged in using AAL2
         isSpotlight: true
         code: |
           ```kotlin
-          val (_, active) = supabase.auth.mfa.status
+          val (_, active) = skybase.auth.mfa.status
           //flow variant, automatically emitting new values on session changes
-          val statusFlow = supabase.auth.mfa.statusFlow
+          val statusFlow = skybase.auth.mfa.statusFlow
           ```
   - id: admin-api
     title: 'Overview'
     notes: |
-      - Any method under the `supabase.auth.admin` namespace requires a `service_role` key.
+      - Any method under the `skybase.auth.admin` namespace requires a `service_role` key.
       - These methods are considered admin methods and should be called on a trusted server. Never expose your `service_role` key in the browser.
     examples:
       - id: create-auth-admin-client
@@ -3981,24 +3981,24 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val supabase = createSupabaseClient(
-              supabaseUrl = "https://id.supabase.co",
-              supabaseKey = "supabaseKey"
+          val skybase = createSkybaseClient(
+              skybaseUrl = "https://id.skybase.co",
+              skybaseKey = "skybaseKey"
           ) {
               install(Auth) {
                   minimalSettings() //disables session saving and auto-refreshing
               }
               // install other plugins (these will use the service role key)
           }
-          supabase.auth.importAuthToken("service_role")
+          skybase.auth.importAuthToken("service_role")
 
           // Access auth admin api
-          val adminAuthClient = supabase.auth.admin
+          val adminAuthClient = skybase.auth.admin
           ```
 
   - id: get-user-by-id
     title: 'getUserById()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.getUserById'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.getUserById'
     notes: |
       Fetches the user object from the database based on the user's id.
       - The `retrieveUserById()` method requires the user's id which maps to the `auth.users.id` column.
@@ -4013,12 +4013,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val user = supabase.auth.admin.retrieveUserById(uid = "f2a0b0a0-6b1a-4b7a-8f1a-4b7a6b1a8f1a")
+          val user = skybase.auth.admin.retrieveUserById(uid = "f2a0b0a0-6b1a-4b7a-8f1a-4b7a6b1a8f1a")
           ```
 
   - id: list-users
     title: 'listUsers()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.listUsers'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.listUsers'
     notes: |
       Retrieves a list of users.
       - Defaults to return 50 users per page.
@@ -4037,21 +4037,21 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val users = supabase.auth.admin.retrieveUsers()
+          val users = skybase.auth.admin.retrieveUsers()
           ```
       - id: get-paginated-list-of-users
         name: Paginated list of users
         isSpotlight: false
         code: |
           ```kotlin
-          val users = supabase.auth.admin.retrieveUsers(
+          val users = skybase.auth.admin.retrieveUsers(
               page = 1,
               perPage = 100
           )
           ```
   - id: create-user
     title: 'createUser()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.createUser'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.createUser'
     notes: |
       Creates a new user.
       - To confirm the user's email address or phone number, set `autoConfirm` to true. Both arguments default to false.
@@ -4087,7 +4087,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val userWithEmail = supabase.auth.admin.createUserWithEmail {
+          val userWithEmail = skybase.auth.admin.createUserWithEmail {
               email = "example@email.com"
               password = "secretpassword"
               userMetadata {
@@ -4100,7 +4100,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val userWithPhone = supabase.auth.admin.createUserWithPhone {
+          val userWithPhone = skybase.auth.admin.createUserWithPhone {
               phone = "+49123456789"
               password = "secretpassword"
               userMetadata {
@@ -4112,7 +4112,7 @@ functions:
         name: Auto-confirm the user's email
         code: |
           ```kotlin
-          val userWithEmail = supabase.auth.admin.createUserWithEmail {
+          val userWithEmail = skybase.auth.admin.createUserWithEmail {
               email = "example@email.com"
               password = "secretpassword"
               autoConfirm = true
@@ -4122,7 +4122,7 @@ functions:
         name: Auto-confirm the user's phone number
         code: |
           ```kotlin
-          val userWithPhone = supabase.auth.admin.createUserWithPhone {
+          val userWithPhone = skybase.auth.admin.createUserWithPhone {
               phone = "+49123456789"
               password = "secretpassword"
               autoConfirm = true
@@ -4130,7 +4130,7 @@ functions:
           ```
   - id: delete-user
     title: 'deleteUser()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.deleteUser'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.deleteUser'
     notes: |
       Deletes a user from the database.
       - The `deleteUser()` method requires the user's ID, which maps to the `auth.users.id` column.
@@ -4145,12 +4145,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.admin.deleteUser(uid = "uid")
+          skybase.auth.admin.deleteUser(uid = "uid")
           ```
 
   - id: invite-user-by-email
     title: 'inviteUserByEmail()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.inviteUserByEmail'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.inviteUserByEmail'
     notes: |
       Sends an invite link to the user's email address.
     params:
@@ -4172,7 +4172,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.admin.inviteUserByEmail(
+          skybase.auth.admin.inviteUserByEmail(
               email = "example@email.com",
               //optional:
               redirectTo = "https://example.com/redirect",
@@ -4184,7 +4184,7 @@ functions:
 
   - id: generate-link
     title: 'generateLink()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.generateLink'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.generateLink'
     notes: |
       Generates email links and OTPs to be sent via a custom email provider.
     params:
@@ -4206,7 +4206,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.Signup) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.Signup) {
               email = "example@email.com"
               password = "secretpassword"
           }
@@ -4216,7 +4216,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.Invite) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.Invite) {
               email = "example@email.com"
           }
           ```
@@ -4225,7 +4225,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.MagicLink) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.MagicLink) {
               email = "example@email.com"
           }
           ```
@@ -4234,7 +4234,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.Recovery) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.Recovery) {
               email = "example@email.com"
           }
           ```
@@ -4244,13 +4244,13 @@ functions:
         code: |
           ```kotlin
           // generate an email change link to be sent to the current email address
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.EmailChangeCurrent) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.EmailChangeCurrent) {
               email = "example@email.com"
               newEmail = "newEmail@email.com"
           }
 
           // generate an email change link to be sent to the new email address
-          val (url, user) = supabase.auth.admin.generateLinkFor(LinkType.EmailChangeNew) {
+          val (url, user) = skybase.auth.admin.generateLinkFor(LinkType.EmailChangeNew) {
               email = "example@email.com"
               newEmail = "newEmail@email.com"
           }
@@ -4258,7 +4258,7 @@ functions:
 
   - id: update-user-by-id
     title: 'updateUserById()'
-    $ref: '@supabase/gotrue-js.GoTrueAdminApi.updateUserById'
+    $ref: '@skybase/gotrue-js.GoTrueAdminApi.updateUserById'
     notes: |
       Updates the user data.
     params:
@@ -4313,7 +4313,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               email = "example@email.com"
           }
           ```
@@ -4322,7 +4322,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               password = "password"
           }
           ```
@@ -4331,7 +4331,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               userMetadata = buildJsonObject {
                   put("key", "value")
               }
@@ -4342,7 +4342,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               appMetadata = buildJsonObject {
                   put("key", "value")
               }
@@ -4353,7 +4353,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               emailConfirm = true
           }
           ```
@@ -4362,7 +4362,7 @@ functions:
         isSpotlight: false
         code: |
           ```kotlin
-          supabase.auth.admin.updateUserById(uid = "id") {
+          skybase.auth.admin.updateUserById(uid = "id") {
               phoneConfirm = true
           }
           ```
@@ -4381,7 +4381,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          const factors = supabase.auth.admin.retrieveFactors(uid = "id")
+          const factors = skybase.auth.admin.retrieveFactors(uid = "id")
           ```
   - id: mfa-delete-factor
     title: 'mfa.deleteFactor()'
@@ -4402,12 +4402,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.auth.admin.deleteFactor(uid = "id", factorId = "factor_id")
+          skybase.auth.admin.deleteFactor(uid = "id", factorId = "factor_id")
           ```
   - id: invoke
     title: 'invoke()'
     description: |
-      Invokes a Supabase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
+      Invokes a Skybase Function. See the [guide](/docs/guides/functions) for details on writing Functions.
       - When invoking a function with parameters, you have to provide a [serializable value](/docs/reference/kotlin/installing#serialization) in the function parameter.
     notes: |
       - Requires an Authorization header.
@@ -4434,7 +4434,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val response = supabase.functions.invoke("function_name")
+          val response = skybase.functions.invoke("function_name")
 
           // Decode the response body to a serializable class
           val data = response.body<FunctionResponse>()
@@ -4444,7 +4444,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.functions.invoke(
+          skybase.functions.invoke(
             function = "function_name",
             body = buildJsonObject {
                 put("foo", "bar")
@@ -4461,7 +4461,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val function = supabase.functions.buildEdgeFunction(
+          val function = skybase.functions.buildEdgeFunction(
             function = "function",
             headers = Headers.build {
                 /*Default headers*/
@@ -4508,7 +4508,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val flow: Flow<List<Country>> = supabase.from("countries").selectAsFlow(Country::id)
+          val flow: Flow<List<Country>> = skybase.from("countries").selectAsFlow(Country::id)
           flow.collect {
               for (country in it) {
                   println(country.name)
@@ -4520,7 +4520,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val flow: Flow<List<Country>> = supabase.from("countries").selectAsFlow(
+          val flow: Flow<List<Country>> = skybase.from("countries").selectAsFlow(
               Country::id,
               filter = FilterOperation("name", FilterOperator.ILIKE, "a%")
           )
@@ -4535,7 +4535,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val flow: Flow<Country> = supabase.from("countries").selectSingleValueAsFlow(Country::id) {
+          val flow: Flow<Country> = skybase.from("countries").selectSingleValueAsFlow(Country::id) {
               //You can use the same filter methods as in the `select` method, but the result is limited to a single row
               Country::id eq 1
               //or
@@ -4564,7 +4564,7 @@ functions:
           @Serializable
           data class Message(val content: String, val sender: String)
 
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               // optional config
           }
 
@@ -4586,7 +4586,7 @@ functions:
           @Serializable
           data class PresenceState(val username: String)
 
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
 
@@ -4611,7 +4611,7 @@ functions:
         name: Listen to all database changes
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
           val changeFlow = channel.postgresChangeFlow<PostgresAction>(schema = "public")
@@ -4632,7 +4632,7 @@ functions:
         name: Listen to a specific table
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
 
@@ -4665,7 +4665,7 @@ functions:
         name: Listen to inserts
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
           val changeFlow = channel.postgresChangeFlow<PostgresAction.Insert>(schema = "public") {
@@ -4682,7 +4682,7 @@ functions:
       - id: listen-to-updates
         name: Listen to updates
         description: |
-          By default, Supabase will send only the updated record. If you want to receive the previous values as well you can
+          By default, Skybase will send only the updated record. If you want to receive the previous values as well you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -4690,7 +4690,7 @@ functions:
           ```
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
 
@@ -4709,7 +4709,7 @@ functions:
       - id: listen-to-deletes
         name: Listen to deletes
         description: |
-          By default, Supabase does not send deleted records. If you want to receive the deleted record you can
+          By default, Skybase does not send deleted records. If you want to receive the deleted record you can
           enable full replication for the table you are listening too:
 
           ```sql
@@ -4717,7 +4717,7 @@ functions:
           ```
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
 
@@ -4736,7 +4736,7 @@ functions:
         name: Listen to row level changes
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
              //optional config
           }
 
@@ -4770,7 +4770,7 @@ functions:
     title: 'removeChannel()'
     notes: |
       - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes.
-      - Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
       - If you removed all channels, the client automatically disconnects from the Realtime websocket. This can be disabled in the Realtime config by setting `disconnectOnNoSubscriptions` to false.
     examples:
       - id: removes-a-channel
@@ -4778,18 +4778,18 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
           //...
-          supabase.realtime.removeChannel(channel)
+          skybase.realtime.removeChannel(channel)
           ```
       - id: unsubscribe-channel
         name: Unsubscribe from a channel
         isSpotlight: true
         code: |
           ```kotlin
-          val channel = supabase.channel("channelId") {
+          val channel = skybase.channel("channelId") {
               //optional config
           }
           //...
@@ -4797,10 +4797,10 @@ functions:
           ```
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.removeAllChannels'
     notes: |
       Unsubscribes and removes all Realtime channels from Realtime client.
-      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Supabase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
+      - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Skybase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
       - If you removed all channels, the client automatically disconnects from the Realtime websocket. This can be disabled in the Realtime config by setting `disconnectOnNoSubscriptions` to false.
     examples:
       - id: remove-all-channels
@@ -4808,11 +4808,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.realtime.removeAllChannels()
+          skybase.realtime.removeAllChannels()
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
+    $ref: '@skybase/skybase-js.index.SkybaseClient.getChannels'
     notes: |
       Returns all Realtime channels.
     examples:
@@ -4821,11 +4821,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val channels = supabase.realtime.subscriptions.entries
+          val channels = skybase.realtime.subscriptions.entries
           ```
   - id: list-buckets
     title: listBuckets()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.listBuckets'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.listBuckets'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `select`
@@ -4837,12 +4837,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val buckets = supabase.storage.retrieveBuckets()
+          val buckets = skybase.storage.retrieveBuckets()
           ```
 
   - id: get-bucket
     title: getBucket()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.getBucket'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.getBucket'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `select`
@@ -4854,12 +4854,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.retrieveBucketById(bucketId = "avatars")
+          val bucket = skybase.storage.retrieveBucketById(bucketId = "avatars")
           ```
 
   - id: create-bucket
     title: createBucket()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.createBucket'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.createBucket'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `insert`
@@ -4889,14 +4889,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.createBucket(id = "icons") {
+          skybase.storage.createBucket(id = "icons") {
               public = true
               fileSizeLimit = 5.megabytes
           }
           ```
   - id: update-bucket
     title: updateBucket()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.updateBucket'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.updateBucket'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `select` and `update`
@@ -4926,7 +4926,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.updateBucket("cards") {
+          skybase.storage.updateBucket("cards") {
               public = false
               fileSizeLimit = 20.megabytes
               allowedMimeTypes(ContentType.Image.PNG, ContentType.Image.JPEG)
@@ -4935,7 +4935,7 @@ functions:
 
   - id: empty-bucket
     title: emptyBucket()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.emptyBucket'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.emptyBucket'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `select`
@@ -4952,11 +4952,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.emptyBucket(bucketId = "icons")
+          skybase.storage.emptyBucket(bucketId = "icons")
           ```
   - id: delete-bucket
     title: deleteBucket()
-    $ref: '@supabase/storage-js.packages/StorageBucketApi.default.deleteBucket'
+    $ref: '@skybase/storage-js.packages/StorageBucketApi.default.deleteBucket'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: `select` and `delete`
@@ -4973,12 +4973,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.deleteBucket(bucketId = "icons")
+          skybase.storage.deleteBucket(bucketId = "icons")
           ```
 
   - id: from-upload
     title: from.upload()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.upload'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.upload'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5004,7 +5004,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.upload("myIcon.png", byteArray, upsert = false)
           //on JVM you can use java.io.File
           bucket.upload("myIcon.png", file, upsert = false)
@@ -5014,7 +5014,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.uploadAsFlow("test.png", byteArrayOf()).collect {
               when(it) {
                   is UploadStatus.Progress -> println("Progress: ${it.totalBytesSend.toFloat() / it.contentLength * 100}%")
@@ -5027,7 +5027,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           //JVM/Android:
           val upload = bucket.resumable.createOrContinueUpload("icon.png", File("icon.png"))
           //Other platforms:
@@ -5075,7 +5075,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
 
           //only on JVM/Android:
           bucket.resumable.continuePreviousFileUploads()
@@ -5096,7 +5096,7 @@ functions:
 
   - id: from-update
     title: from.update()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.update'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.update'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5121,7 +5121,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.update("myIcon.png", byteArray, upsert = false)
           //on JVM you can use java.io.File
           bucket.update("myIcon.png", file, upsert = false)
@@ -5129,7 +5129,7 @@ functions:
 
   - id: from-move
     title: from.move()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.move'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.move'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5154,12 +5154,12 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.move("icon1.png", "icon2.png")
           ```
   - id: from-copy
     title: from.copy()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.copy'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.copy'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5184,11 +5184,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.from("test").copy(from = "avatar.png", to = "avatar2.png")
+          skybase.storage.from("test").copy(from = "avatar.png", to = "avatar2.png")
           ```
   - id: from-create-signed-url
     title: from.createSignedUrl()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.createSignedUrl'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.createSignedUrl'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5234,14 +5234,14 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val url = bucket.createSignedUrl(path = "icon.png", expiresIn = 3.minutes)
           ```
       - id: create-signed-url-with-transformation
         name: Create Signed URL with transformation
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val url = bucket.createSignedUrl(path = "icon.png", expiresIn = 3.minutes) {
               size(100, 100)
               fill()
@@ -5270,11 +5270,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val urls = supabase.storage.from("avatars").createSignedUrls(20.minutes, "avata1.jpg", "avatar2.jpg")
+          val urls = skybase.storage.from("avatars").createSignedUrls(20.minutes, "avata1.jpg", "avatar2.jpg")
           ```
   - id: from-create-signed-upload-url
     title: from.createSignedUploadUrl()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.createSignedUploadUrl'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.createSignedUploadUrl'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5291,11 +5291,11 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val url = supabase.storage.from("avatars").createSignedUploadUrl("avatar.png")
+          val url = skybase.storage.from("avatars").createSignedUploadUrl("avatar.png")
           ```
   - id: from-upload-to-signed-url
     title: from.uploadToSignedUrl()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.uploadToSignedUrl'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.uploadToSignedUrl'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5320,15 +5320,15 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          supabase.storage.from("avatars").uploadToSignedUrl(path = "avatar.jpg", token = "token-from-createSignedUploadUrl", data = bytes)
+          skybase.storage.from("avatars").uploadToSignedUrl(path = "avatar.jpg", token = "token-from-createSignedUploadUrl", data = bytes)
           //or on JVM:
-          supabase.storage.from("avatars").uploadToSignedUrl(path = "avatar.jpg", token = "token-from-createSignedUploadUrl", file = File("avatar.jpg"))
+          skybase.storage.from("avatars").uploadToSignedUrl(path = "avatar.jpg", token = "token-from-createSignedUploadUrl", file = File("avatar.jpg"))
           ```
   - id: from-get-public-url
     title: from.getPublicUrl()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.getPublicUrl'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.getPublicUrl'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/kotlin/storage-updatebucket) or by going to Storage on [supabase.com/dashboard](https://supabase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/kotlin/storage-updatebucket) or by going to Storage on [skybase.com/dashboard](https://skybase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none
@@ -5344,21 +5344,21 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val url = supabase.storage.from("public-bucket").publicUrl("folder/avatar1.png")
+          val url = skybase.storage.from("public-bucket").publicUrl("folder/avatar1.png")
           ```
       - id: transform-asset-in-public-bucket
         name: Returns the URL for an asset in a public bucket with transformations
         isSpotlight: true
         code: |
           ```kotlin
-          val url = supabase.storage.from("public-bucket").publicRenderUrl("folder/avatar1.png") {
+          val url = skybase.storage.from("public-bucket").publicRenderUrl("folder/avatar1.png") {
               size(100, 100)
           }
           ```
 
   - id: from-download
     title: from.download()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.download'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.download'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5375,7 +5375,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val bytes = bucket.downloadAuthenticated("test.png")
           //or on JVM:
           bucket.downloadAuthenticatedTo("test.png", File("test.png"))
@@ -5385,7 +5385,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val bytes = bucket.downloadPublic("test.png")
           //or on JVM:
           bucket.downloadPublicTo("test.png", File("test.png"))
@@ -5394,7 +5394,7 @@ functions:
         name: Download file with transformation
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val bytes = bucket.downloadPublic("test.png") {
               size(100, 100)
               fill()
@@ -5411,7 +5411,7 @@ functions:
         name: Download file with progress
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.downloadAuthenticatedAsFlow("icon.png").collect {
               when(it) {
                   is DownloadStatus.ByteData -> println("Downloaded ${it.data.size} bytes")
@@ -5430,7 +5430,7 @@ functions:
           ```
   - id: from-remove
     title: from.remove()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.remove'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.remove'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5447,13 +5447,13 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           bucket.delete("test.png", "test2.png")
           ```
 
   - id: from-list
     title: from.list()
-    $ref: '@supabase/storage-js.packages/StorageFileApi.default.list'
+    $ref: '@skybase/storage-js.packages/StorageFileApi.default.list'
     notes: |
       - RLS policy permissions required:
         - `buckets` table permissions: none
@@ -5465,6 +5465,6 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val bucket = supabase.storage.from("avatars")
+          val bucket = skybase.storage.from("avatars")
           val files = bucket.list()
           ```
