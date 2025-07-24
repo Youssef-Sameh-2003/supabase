@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) là một giải pháp mã nguồn mở thay thế cho Firebase. Chúng tôi đang sử dụng các công cụ mã nguồn mở đạt chuẩn doanh nghiệp để xây dựng các chức năng mà Firebase cung cấp.
 
@@ -21,7 +21,7 @@
 - [x] Kho lưu trữ. [Tài liệu](https://supabase.com/docs/guides/storage)
 - [x] Bảng điều khiển
 
-![Bảng điều khiển của Supabase](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Bảng điều khiển của Skybase](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Tài liệu tham khảo
 
@@ -38,7 +38,7 @@
 
 ## Trạng thái
 
-- [x] Alpha: Chúng tôi đang thử nghiệm Supabase với một nhóm người dùng kín
+- [x] Alpha: Chúng tôi đang thử nghiệm Skybase với một nhóm người dùng kín
 - [x] Public Alpha: Bất kỳ ai cũng có thể đăng ký tại [supabase.com/dashboard](https://supabase.com/dashboard). Nhưng hãy bình tĩnh với chúng tôi, sẽ có một vài lỗi nhỏ.
 - [x] Public Beta: Đủ ổn định cho hầu hết các trường hợp sử dụng không dành cho môi trường doanh nghiệp (production)
 - [ ] Public: Sẵn sàng cho môi trường doanh nghiệp (production)
@@ -49,9 +49,9 @@ Chúng tôi hiện đang ở giai đoạn Public Beta. Hãy đón xem mục "rel
 
 ---
 
-## Cách Supabase hoạt động
+## Cách Skybase hoạt động
 
-Supabase là sự kết hợp của các công cụ mã nguồn mở. Các tính năng của Supabase được xây dựng dựa trên các sản phẩm đạt chuẩn doanh nghiệp và mã nguồn mở. Nếu các công cụ và cộng đồng hỗ trợ công cụ đó tồn tại, cùng với giấy phép MIT, Apache 2 hoặc giấy phép mở tương đương, chúng tôi sẽ sử dụng và hỗ trợ công cụ đó. Nếu công cụ không tồn tại, chúng tôi sẽ tự xây dựng và mở mã nguồn của nó. Supabase không phải là phiên bản 1 : 1 của Firebase. Mục đích của chúng tôi là cung cấp cho các nhà phát triển trải nghiệm tuyệt vời giống như sử dụng Firebase bằng cách sử dụng các công cụ nguồn mở.
+Skybase là sự kết hợp của các công cụ mã nguồn mở. Các tính năng của Skybase được xây dựng dựa trên các sản phẩm đạt chuẩn doanh nghiệp và mã nguồn mở. Nếu các công cụ và cộng đồng hỗ trợ công cụ đó tồn tại, cùng với giấy phép MIT, Apache 2 hoặc giấy phép mở tương đương, chúng tôi sẽ sử dụng và hỗ trợ công cụ đó. Nếu công cụ không tồn tại, chúng tôi sẽ tự xây dựng và mở mã nguồn của nó. Skybase không phải là phiên bản 1 : 1 của Firebase. Mục đích của chúng tôi là cung cấp cho các nhà phát triển trải nghiệm tuyệt vời giống như sử dụng Firebase bằng cách sử dụng các công cụ nguồn mở.
 
 **Kiến trúc**
 
@@ -76,11 +76,11 @@ Phương pháp tiếp cận của chúng tôi cho các thư viện hỗ trợ l�
   <tr>
     <th>Ngôn ngữ</th>
     <th>Thư viện</th>
-    <th colspan="5">Thư viện tính năng (được tích hợp vào thư viện của Supabase)</th>
+    <th colspan="5">Thư viện tính năng (được tích hợp vào thư viện của Skybase)</th>
   </tr>
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>

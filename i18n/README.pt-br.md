@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com) é uma alternativa de código aberto ao Firebase. Estamos desenvolvendo os recursos do Firebase usando ferramentas de código aberto de nível empresarial.
 
@@ -22,7 +22,7 @@
 - [x] AI + Vector/Toolkit de incorporações. [Docs](https://supabase.com/docs/guides/ai)
 - [x] Dashboard
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 Clique em Watch e selecione "releases" deste repositório para ser notificado sobre atualizações importantes.
 
@@ -43,7 +43,7 @@ Para ver como contribuir, visite [Getting Started](../DEVELOPERS.md)
 
 ## Como funciona
 
-Supabase é uma combinação de ferramentas de código aberto. Estamos desenvolvendo os recursos do Firebase usando produtos de código aberto de nível empresarial. Se as ferramentas e as comunidades existirem, com uma licença aberta MIT, Apache 2 ou equivalente, usaremos e daremos suporte a essa ferramenta. Se a ferramenta não existir, nós mesmos a criaremos e abriremos o código-fonte. Supabase não é um mapeamento 1 para 1 do Firebase. Nosso objetivo é oferecer aos desenvolvedores uma experiência semelhante à do Firebase usando ferramentas de código aberto.
+Skybase é uma combinação de ferramentas de código aberto. Estamos desenvolvendo os recursos do Firebase usando produtos de código aberto de nível empresarial. Se as ferramentas e as comunidades existirem, com uma licença aberta MIT, Apache 2 ou equivalente, usaremos e daremos suporte a essa ferramenta. Se a ferramenta não existir, nós mesmos a criaremos e abriremos o código-fonte. Skybase não é um mapeamento 1 para 1 do Firebase. Nosso objetivo é oferecer aos desenvolvedores uma experiência semelhante à do Firebase usando ferramentas de código aberto.
 
 **Arquitetura**
 
@@ -69,12 +69,12 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
   <tr>
     <th>Linguagem</th>
     <th>Cliente</th>
-    <th colspan="5">Feature-Clients (incluídos no cliente Supabase)</th>
+    <th colspan="5">Feature-Clients (incluídos no cliente Skybase)</th>
   </tr>
   
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
@@ -205,7 +205,7 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
 
 ## Badges
 
-![Made with Supabase](../apps/www/public/badge-made-with-supabase.svg)
+![Made with Skybase](../apps/www/public/badge-made-with-supabase.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase.svg)](https://supabase.com)
@@ -217,12 +217,12 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```
 
-![Made with Supabase (dark)](../apps/www/public/badge-made-with-supabase-dark.svg)
+![Made with Skybase (dark)](../apps/www/public/badge-made-with-supabase-dark.svg)
 
 ```md
 [![Made with Supabase](https://supabase.com/badge-made-with-supabase-dark.svg)](https://supabase.com)
@@ -234,7 +234,7 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
     width="168"
     height="30"
     src="https://supabase.com/badge-made-with-supabase-dark.svg"
-    alt="Made with Supabase"
+    alt="Made with Skybase"
   />
 </a>
 ```

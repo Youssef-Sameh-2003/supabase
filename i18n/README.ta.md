@@ -21,7 +21,7 @@
 - [x] கோப்பு சேமிப்பகம். [ஆவணம்](https://supabase.com/docs/guides/storage)
 - [x] டாஷ்போர்டு
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## ஆவணப்படுத்தல்
 

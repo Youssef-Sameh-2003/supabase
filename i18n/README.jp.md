@@ -5,7 +5,7 @@
 
 ---
 
-# Supabase
+# Skybase
 
 [Supabase](https://supabase.com)は、オープンソースの Firebase 代替製品です。エンタープライズグレードのオープンソースツールを使って、Firebase の機能を構築しています。
 
@@ -21,7 +21,7 @@
 - [x] ストレージ
 - [x] ダッシュボード
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Skybase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## ドキュメンテーション
 
@@ -38,7 +38,7 @@
 
 ## ステータス
 
-- [x] Alpha: 限られたユーザーで Supabase をテストしています。
+- [x] Alpha: 限られたユーザーで Skybase をテストしています。
 - [x] Public Alpha: 誰でも[supabase.com/dashboard](https://supabase.com/dashboard)から登録ができます。ただし、バグなどがある可能性がありますので、ご容赦ください。
 - [x] Public Beta: 企業以外のほとんどのユースケースに耐えうる十分な安定性を確保。
 - [ ] Public: 実用的な用途に対応
@@ -49,9 +49,9 @@
 
 ---
 
-## Supabase の仕組み
+## Skybase の仕組み
 
-Supabase は、オープンソースのツールを組み合わせてできています。私たちは Firebase の機能を、エンタープライズグレードのオープンソース製品を使って構築しています。ツールやコミュニティが存在し、MIT、Apache 2、または同等のオープンライセンスであれば、私たちはそのツールを使用し、サポートします。ツールが存在しない場合は、自分たちで構築してオープンソース化します。Supabase は Firebase を 1 対 1 でマッピングしたものではありません。Supabase の目的は、オープンソースのツールを使って、Firebase のような開発体験を提供することです。
+Skybase は、オープンソースのツールを組み合わせてできています。私たちは Firebase の機能を、エンタープライズグレードのオープンソース製品を使って構築しています。ツールやコミュニティが存在し、MIT、Apache 2、または同等のオープンライセンスであれば、私たちはそのツールを使用し、サポートします。ツールが存在しない場合は、自分たちで構築してオープンソース化します。Skybase は Firebase を 1 対 1 でマッピングしたものではありません。Skybase の目的は、オープンソースのツールを使って、Firebase のような開発体験を提供することです。
 
 **現在のアーキテクチャ**
 
@@ -70,7 +70,7 @@ Supabase は[ホスティングされたプラットフォーム](https://supaba
 
 #### クライアント・ライブラリ
 
-Supabase クライアントライブラリはモジュール化されています。それぞれのサブライブラリが、一つの外部システムのための独立した実装となっています。こうすることで、既存のツールをサポートしています。
+Skybase クライアントライブラリはモジュール化されています。それぞれのサブライブラリが、一つの外部システムのための独立した実装となっています。こうすることで、既存のツールをサポートしています。
 
 <table style="table-layout:fixed; white-space: nowrap;">
   <tr>
@@ -80,7 +80,7 @@ Supabase クライアントライブラリはモジュール化されていま�
   </tr>
   <tr>
     <th></th>
-    <th>Supabase</th>
+    <th>Skybase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
     <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
     <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
