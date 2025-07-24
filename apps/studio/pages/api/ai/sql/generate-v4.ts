@@ -1,4 +1,4 @@
-import pgMeta from '@supabase/pg-meta'
+import pgMeta from '@skybase/pg-meta'
 import { convertToCoreMessages, CoreMessage, streamText, tool, ToolSet } from 'ai'
 import { source } from 'common-tags'
 import { NextApiRequest, NextApiResponse } from 'next'

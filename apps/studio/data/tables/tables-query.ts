@@ -6,7 +6,7 @@ import { useCallback } from 'react'
 import { get, handleError } from 'data/fetchers'
 import type { ResponseError } from 'types'
 import { tableKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type TablesVariables = {
   projectRef?: string

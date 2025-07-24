@@ -18,7 +18,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
     "contentlayer2": "0.4.6",
-    "eslint-config-supabase": "workspace:*",
+    "eslint-config-skybase": "workspace:*",
     "icons": "workspace:*",
     "jotai": "^2.8.0",
     "lucide-react": "*",

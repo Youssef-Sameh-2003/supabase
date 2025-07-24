@@ -7,7 +7,7 @@ import { getAccessToken } from 'lib/gotrue'
 import { uuidv4 } from 'lib/helpers'
 import { ResponseError } from 'types'
 import type { paths } from './api' // generated from openapi-typescript
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 const DEFAULT_HEADERS = { Accept: 'application/json' }
 

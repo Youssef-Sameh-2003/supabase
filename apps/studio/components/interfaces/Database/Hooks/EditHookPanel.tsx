@@ -1,4 +1,4 @@
-import { PGTriggerCreate } from '@supabase/pg-meta/src/pg-meta-triggers'
+import { PGTriggerCreate } from '@skybase/pg-meta/src/pg-meta-triggers'
 import type { PostgresTrigger } from '@supabase/postgres-meta'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { toast } from 'sonner'

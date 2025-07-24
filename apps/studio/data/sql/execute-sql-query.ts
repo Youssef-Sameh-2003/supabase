@@ -9,7 +9,7 @@ import {
 } from 'lib/role-impersonation'
 import type { ResponseError } from 'types'
 import { sqlKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type ExecuteSqlVariables = {
   projectRef?: string

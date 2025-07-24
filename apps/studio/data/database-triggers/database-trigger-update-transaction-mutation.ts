@@ -6,7 +6,7 @@ import { quoteLiteral } from 'lib/pg-format'
 import type { ResponseError } from 'types'
 import { databaseTriggerKeys } from './keys'
 import { PostgresTrigger } from '@supabase/postgres-meta'
-import { PGTrigger, PGTriggerCreate } from '@supabase/pg-meta/src/pg-meta-triggers'
+import { PGTrigger, PGTriggerCreate } from '@skybase/pg-meta/src/pg-meta-triggers'
 
 // [Joshen] Writing this query within FE as the PATCH endpoint from pg-meta only supports updating
 // trigger name and enabled mode. So we'll delete and create the trigger, within a single transaction

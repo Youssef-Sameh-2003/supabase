@@ -30,7 +30,7 @@
     "common": "workspace:*",
     "config": "workspace:*",
     "cross-env": "^7.0.3",
-    "eslint-config-supabase": "workspace:*",
+    "eslint-config-skybase": "workspace:*",
     "graphql": "^16.8.1",
     "next": "catalog:",
     "payload": "3.33.0",
