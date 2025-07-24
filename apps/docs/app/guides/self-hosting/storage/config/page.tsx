@@ -6,7 +6,7 @@ import specStorageV0 from '~/spec/storage_v0_config.yaml' with { type: 'yml' }
 
 const meta = {
   title: 'Storage Self-hosting Config',
-  description: 'How to configure and deploy Supabase Storage.',
+  description: 'How to configure and deploy Skybase Storage.',
 }
 
 const generateMetadata = genGuideMeta(() => ({
@@ -21,7 +21,7 @@ const StorageConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'supabase/supabase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/storage/config/page.tsx'
+        'skybase/skybase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/storage/config/page.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

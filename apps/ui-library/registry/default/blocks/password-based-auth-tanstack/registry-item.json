@@ -1,10 +1,10 @@
 {
   "name": "password-based-auth-tanstack",
   "type": "registry:block",
-  "title": "Password Based Auth flow for tanstack and Supabase",
-  "description": "Password Based Auth flow for tanstack and Supabase",
+  "title": "Password Based Auth flow for tanstack and Skybase",
+  "description": "Password Based Auth flow for tanstack and Skybase",
   "registryDependencies": ["button", "card", "input", "label"],
-  "dependencies": ["@supabase/ssr@latest"],
+  "dependencies": ["@skybase/ssr@latest"],
   "files": [
     {
       "path": "registry/default/blocks/password-based-auth-tanstack/routes/login.tsx",
@@ -68,7 +68,7 @@
       "type": "registry:component"
     },
     {
-      "path": "registry/default/blocks/password-based-auth-tanstack/lib/supabase/fetch-user-server-fn.ts",
+      "path": "registry/default/blocks/password-based-auth-tanstack/lib/skybase/fetch-user-server-fn.ts",
       "type": "registry:lib"
     }
   ]

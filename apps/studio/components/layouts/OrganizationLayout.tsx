@@ -16,7 +16,7 @@ const OrganizationLayoutContent = ({ children }: PropsWithChildren<{}>) => {
 
   return (
     <div className={cn('w-full flex flex-col overflow-hidden')}>
-      {selectedOrganization && selectedOrganization?.managed_by !== 'supabase' && (
+      {selectedOrganization && selectedOrganization?.managed_by !== 'skybase' && (
         <Alert_Shadcn_
           variant="default"
           className="flex items-center gap-4 border-t-0 border-x-0 rounded-none"

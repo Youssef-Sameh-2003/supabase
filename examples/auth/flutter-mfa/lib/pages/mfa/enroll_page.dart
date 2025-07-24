@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mfa_app/main.dart';
 import 'package:mfa_app/pages/auth/register_page.dart';
 import 'package:mfa_app/pages/home_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 
 class MFAEnrollPage extends StatefulWidget {
   static const route = '/mfa/enroll';
@@ -16,7 +16,7 @@ class MFAEnrollPage extends StatefulWidget {
 }
 
 class _MFAEnrollPageState extends State<MFAEnrollPage> {
-  final _enrollFuture = supabase.auth.mfa.enroll();
+  final _enrollFuture = skybase.auth.mfa.enroll();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _MFAEnrollPageState extends State<MFAEnrollPage> {
         actions: [
           TextButton(
             onPressed: () {
-              supabase.auth.signOut();
+              skybase.auth.signOut();
               context.go(RegisterPage.route);
             },
             child: Text(
@@ -107,13 +107,13 @@ class _MFAEnrollPageState extends State<MFAEnrollPage> {
                   // kick off the verification process once 6 characters are entered
                   try {
                     final challenge =
-                        await supabase.auth.mfa.challenge(factorId: factorId);
-                    await supabase.auth.mfa.verify(
+                        await skybase.auth.mfa.challenge(factorId: factorId);
+                    await skybase.auth.mfa.verify(
                       factorId: factorId,
                       challengeId: challenge.id,
                       code: value,
                     );
-                    await supabase.auth.refreshSession();
+                    await skybase.auth.refreshSession();
                     if (mounted) {
                       context.go(HomePage.route);
                     }

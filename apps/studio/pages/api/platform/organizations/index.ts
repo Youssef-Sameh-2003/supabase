@@ -23,7 +23,7 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
       id: 1,
       name: process.env.DEFAULT_ORGANIZATION_NAME || 'Default Organization',
       slug: 'default-org-slug',
-      billing_email: 'billing@supabase.co',
+      billing_email: 'billing@skybase.co',
       plan: {
         id: 'enterprise',
         name: 'Enterprise',

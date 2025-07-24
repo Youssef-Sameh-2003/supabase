@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import { Auth } from '@supabase/auth-ui-react'
-import { supabase } from './utils/supabaseClient'
+import { Auth } from '@skybase/auth-ui-react'
+import { skybase } from './utils/skybaseClient'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth.UserContextProvider supabaseClient={supabase}>
+    <Auth.UserContextProvider skybaseClient={skybase}>
       <App />
     </Auth.UserContextProvider>
   </React.StrictMode>,

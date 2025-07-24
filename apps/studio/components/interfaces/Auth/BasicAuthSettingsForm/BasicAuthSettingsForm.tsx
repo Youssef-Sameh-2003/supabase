@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
@@ -147,7 +147,7 @@ const BasicAuthSettingsForm = () => {
                         Enable{' '}
                         <InlineLink
                           className="text-foreground-light hover:text-foreground"
-                          href="https://supabase.com/docs/guides/auth/auth-identity-linking#manual-linking-beta"
+                          href="https://skybase.com/docs/guides/auth/auth-identity-linking#manual-linking-beta"
                         >
                           manual linking APIs
                         </InlineLink>{' '}
@@ -179,7 +179,7 @@ const BasicAuthSettingsForm = () => {
                         Enable{' '}
                         <InlineLink
                           className="text-foreground-light hover:text-foreground"
-                          href="https://supabase.com/docs/guides/auth/auth-anonymous"
+                          href="https://skybase.com/docs/guides/auth/auth-anonymous"
                         >
                           anonymous sign-ins
                         </InlineLink>{' '}
@@ -223,7 +223,7 @@ const BasicAuthSettingsForm = () => {
                         to ensure that access to your data is restricted where required.
                       </p>
                       <Button asChild type="default" className="w-min" icon={<ExternalLink />}>
-                        <Link href="https://supabase.com/docs/guides/auth/auth-anonymous#access-control">
+                        <Link href="https://skybase.com/docs/guides/auth/auth-anonymous#access-control">
                           View access control docs
                         </Link>
                       </Button>

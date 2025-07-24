@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['eslint-config-supabase/next'],
+  extends: ['eslint-config-skybase/next'],
 }

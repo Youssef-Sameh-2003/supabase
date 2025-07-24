@@ -29,7 +29,7 @@ export const PauseDisabledState = () => {
   const [toastId, setToastId] = useState<string | number>()
   const [refetchInterval, setRefetchInterval] = useState<number | false>(false)
 
-  const dbVersion = project?.dbVersion?.replace('supabase-postgres-', '')
+  const dbVersion = project?.dbVersion?.replace('skybase-postgres-', '')
 
   const { data: pauseStatus } = useProjectPauseStatusQuery(
     { ref },
@@ -164,16 +164,16 @@ export const PauseDisabledState = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://supabase.com/docs/guides/platform/migrating-within-supabase/dashboard-restore"
+            href="https://skybase.com/docs/guides/platform/migrating-within-skybase/dashboard-restore"
           >
-            Restore backup to a new Supabase project guide
+            Restore backup to a new Skybase project guide
           </a>
         </Button>
         <Button asChild type="default" icon={<ExternalLink />} className="mb-3">
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://supabase.com/docs/guides/local-development/restoring-downloaded-backup"
+            href="https://skybase.com/docs/guides/local-development/restoring-downloaded-backup"
           >
             Restore backup on your local machine guide
           </a>

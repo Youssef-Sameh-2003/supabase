@@ -58,7 +58,7 @@ export interface RecentItem {
   }
 }
 
-const RECENT_ITEMS_STORAGE_KEY = 'supabase_recent_items'
+const RECENT_ITEMS_STORAGE_KEY = 'skybase_recent_items'
 const getRecentItemsStorageKey = (ref: string) => `${RECENT_ITEMS_STORAGE_KEY}_${ref}`
 
 function getSavedRecentItems(ref: string): RecentItem[] {
@@ -79,7 +79,7 @@ const DEFAULT_TABS_STATE = {
   tabsMap: {} as { [key: string]: Tab },
   previewTabId: undefined as string | undefined,
 }
-const TABS_STORAGE_KEY = 'supabase_studio_tabs'
+const TABS_STORAGE_KEY = 'skybase_studio_tabs'
 const getTabsStorageKey = (ref: string) => `${TABS_STORAGE_KEY}_${ref}`
 
 function getSavedTabs(ref: string) {

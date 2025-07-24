@@ -63,12 +63,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     dd: 'Mon',
     shipped: true,
     isToday: false,
-    blog: '/blog/supabase-ai-assistant-v2',
+    blog: '/blog/skybase-ai-assistant-v2',
     hasCountdown: false,
     date: '2 December',
     published_at: '2024-12-02T08:00:00.000-07:00',
-    title: 'Supabase AI Assistant v2',
-    description: 'Supabase AI Assistant v2',
+    title: 'Skybase AI Assistant v2',
+    description: 'Skybase AI Assistant v2',
     links: [
       {
         type: 'video',
@@ -105,10 +105,10 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     blog: '/blog/edge-functions-background-tasks-websockets',
     date: '3 December',
     published_at: '2024-12-03T08:00:00.000-07:00',
-    title: 'Supabase Functions: Background Tasks and WebSockets',
+    title: 'Skybase Functions: Background Tasks and WebSockets',
     description: (
       <>
-        Supabase Functions:
+        Skybase Functions:
         <br className="hidden sm:block" /> Background Tasks and WebSockets
       </>
     ),
@@ -145,13 +145,13 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     shipped: true,
     isToday: false,
     hasCountdown: false,
-    blog: '/blog/supabase-cron',
+    blog: '/blog/skybase-cron',
     date: '4 December',
     published_at: '2024-12-04T08:00:00.000-07:00',
-    title: 'Supabase Cron: Schedule Recurring Jobs in Postgres',
+    title: 'Skybase Cron: Schedule Recurring Jobs in Postgres',
     description: (
       <>
-        Supabase Cron:
+        Skybase Cron:
         <br className="hidden sm:block" /> Schedule Recurring Jobs in Postgres
       </>
     ),
@@ -186,13 +186,13 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     shipped: true,
     isToday: false,
     hasCountdown: false,
-    blog: '/blog/supabase-queues',
+    blog: '/blog/skybase-queues',
     date: '5 December',
     published_at: '2024-12-05T08:00:00.000-07:00',
-    title: 'Supabase Queues',
+    title: 'Skybase Queues',
     description: (
       <>
-        Supabase Queues:
+        Skybase Queues:
         <br className="hidden sm:block" /> Durable Message Queues with Guaranteed Delivery
       </>
     ),

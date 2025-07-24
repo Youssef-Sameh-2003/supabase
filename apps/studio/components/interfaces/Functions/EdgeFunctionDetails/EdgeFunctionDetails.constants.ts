@@ -17,13 +17,13 @@ export const INVOCATION_TABS: InvocationTab[] = [
   --data '{"name":"Functions"}'`,
   },
   {
-    id: 'supabase-js',
+    id: 'skybase-js',
     label: 'JavaScript',
     language: 'js',
     hideLineNumbers: true,
-    code: (_, functionName) => `import { createClient } from '@supabase/supabase-js'
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
-const { data, error } = await supabase.functions.invoke('${functionName}', {
+    code: (_, functionName) => `import { createClient } from '@skybase/skybase-js'
+const skybase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+const { data, error } = await skybase.functions.invoke('${functionName}', {
   body: { name: 'Functions' },
 })`,
   },
@@ -36,7 +36,7 @@ const { data, error } = await supabase.functions.invoke('${functionName}', {
   // Expected response definition
 }
 
-let response: Response = try await supabase.functions
+let response: Response = try await skybase.functions
   .invoke(
     "${functionName}",
     options: FunctionInvokeOptions(
@@ -52,7 +52,7 @@ let response: Response = try await supabase.functions
     code: (
       _,
       functionName
-    ) => `final res = await supabase.functions.invoke('${functionName}', body: {'name': 'Functions'});
+    ) => `final res = await skybase.functions.invoke('${functionName}', body: {'name': 'Functions'});
 final data = res.data;`,
   },
   {
@@ -60,7 +60,7 @@ final data = res.data;`,
     label: 'Python',
     language: 'python',
     hideLineNumbers: true,
-    code: (_, functionName) => `response = supabase.functions.invoke(
+    code: (_, functionName) => `response = skybase.functions.invoke(
     "${functionName}",
     invoke_options={"body": {"name": "Functions"}}
 )`,

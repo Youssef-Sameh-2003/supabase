@@ -110,7 +110,7 @@ const VercelIntegrationConnectionForm = ({
                   <Link
                     target="_blank"
                     rel="noreferrer"
-                    href="https://supabase.com/docs/guides/platform/branching"
+                    href="https://skybase.com/docs/guides/platform/branching"
                     className="underline"
                   >
                     Branching

@@ -13,7 +13,7 @@ import { SITE_ORIGIN, LW_URL } from '~/lib/constants'
 import useConfData from './use-conf-data'
 
 const useLwGame = (inputRef?: RefObject<HTMLInputElement>, disabled?: boolean) => {
-  const { supabase, userData: user } = useConfData()
+  const { skybase, userData: user } = useConfData()
   const [isGameMode, setIsGameMode] = useState<boolean>(false)
   const [gameState, setGameState] = useState<'playing' | 'winner' | 'loading'>('playing')
   const [value, setValue] = useState<string>('')
@@ -38,7 +38,7 @@ const useLwGame = (inputRef?: RefObject<HTMLInputElement>, disabled?: boolean) =
   const handleGithubSignIn = async () => {
     const redirectTo = `${LW_URL}${user.username ? '?referral=' + user.username : ''}`
 
-    supabase?.auth.signInWithOAuth({
+    skybase?.auth.signInWithOAuth({
       provider: 'github',
       options: {
         redirectTo,
@@ -50,9 +50,9 @@ const useLwGame = (inputRef?: RefObject<HTMLInputElement>, disabled?: boolean) =
     e?.preventDefault()
     setGameState('loading')
 
-    if (supabase) {
+    if (skybase) {
       if (user.id) {
-        await supabase
+        await skybase
           .from('tickets')
           .update({ game_won_at: new Date() })
           .eq('launch_week', 'lw13')

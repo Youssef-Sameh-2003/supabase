@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 
-export const supabase = createClient(
+export const skybase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
@@ -24,7 +24,7 @@ export const useStore = (props) => {
     // Get Channels
     fetchChannels(setChannels)
     // Listen for new and deleted messages
-    const messageListener = supabase
+    const messageListener = skybase
       .channel('public:messages')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, (payload) =>
         handleNewMessage(payload.new)
@@ -34,14 +34,14 @@ export const useStore = (props) => {
       )
       .subscribe()
     // Listen for changes to our users
-    const userListener = supabase
+    const userListener = skybase
       .channel('public:users')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'users' }, (payload) =>
         handleNewOrUpdatedUser(payload.new)
       )
       .subscribe()
     // Listen for new and deleted channels
-    const channelListener = supabase
+    const channelListener = skybase
       .channel('public:channels')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'channels' }, (payload) =>
         handleNewChannel(payload.new)
@@ -52,9 +52,9 @@ export const useStore = (props) => {
       .subscribe()
     // Cleanup on unmount
     return () => {
-      supabase.removeChannel(supabase.channel(messageListener))
-      supabase.removeChannel(supabase.channel(userListener))
-      supabase.removeChannel(supabase.channel(channelListener))
+      skybase.removeChannel(skybase.channel(messageListener))
+      skybase.removeChannel(skybase.channel(userListener))
+      skybase.removeChannel(skybase.channel(channelListener))
     }
   }, [])
 
@@ -120,7 +120,7 @@ export const useStore = (props) => {
  */
 export const fetchChannels = async (setState) => {
   try {
-    let { data } = await supabase.from('channels').select('*')
+    let { data } = await skybase.from('channels').select('*')
     if (setState) setState(data)
     return data
   } catch (error) {
@@ -135,7 +135,7 @@ export const fetchChannels = async (setState) => {
  */
 export const fetchUser = async (userId, setState) => {
   try {
-    let { data } = await supabase.from('users').select(`*`).eq('id', userId)
+    let { data } = await skybase.from('users').select(`*`).eq('id', userId)
     let user = data[0]
     if (setState) setState(user)
     return user
@@ -151,7 +151,7 @@ export const fetchUser = async (userId, setState) => {
  */
 export const fetchMessages = async (channelId, setState) => {
   try {
-    let { data } = await supabase
+    let { data } = await skybase
       .from('messages')
       .select(`*, author:user_id(*)`)
       .eq('channel_id', channelId)
@@ -170,7 +170,7 @@ export const fetchMessages = async (channelId, setState) => {
  */
 export const addChannel = async (slug, user_id) => {
   try {
-    let { data } = await supabase
+    let { data } = await skybase
       .from('channels')
       .insert([{ slug, created_by: user_id }])
       .select()
@@ -188,7 +188,7 @@ export const addChannel = async (slug, user_id) => {
  */
 export const addMessage = async (message, channel_id, user_id) => {
   try {
-    let { data } = await supabase
+    let { data } = await skybase
       .from('messages')
       .insert([{ message, channel_id, user_id }])
       .select()
@@ -204,7 +204,7 @@ export const addMessage = async (message, channel_id, user_id) => {
  */
 export const deleteChannel = async (channel_id) => {
   try {
-    let { data } = await supabase.from('channels').delete().match({ id: channel_id })
+    let { data } = await skybase.from('channels').delete().match({ id: channel_id })
     return data
   } catch (error) {
     console.log('error', error)
@@ -217,7 +217,7 @@ export const deleteChannel = async (channel_id) => {
  */
 export const deleteMessage = async (message_id) => {
   try {
-    let { data } = await supabase.from('messages').delete().match({ id: message_id })
+    let { data } = await skybase.from('messages').delete().match({ id: message_id })
     return data
   } catch (error) {
     console.log('error', error)

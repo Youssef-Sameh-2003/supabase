@@ -2,7 +2,7 @@ import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react
 import { toast } from 'sonner'
 import type { components } from 'data/api'
 import type { ResponseError } from 'types'
-import pgMeta from '@supabase/pg-meta'
+import pgMeta from '@skybase/pg-meta'
 import { executeSql } from 'data/sql/execute-sql-query'
 import { privilegeKeys } from './keys'
 

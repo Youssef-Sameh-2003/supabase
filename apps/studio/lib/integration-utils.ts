@@ -26,7 +26,7 @@ export type File = {
 
 /**
  * Returns the initial migration SQL from a GitHub repo.
- * @param externalId An external GitHub URL for example: https://github.com/vercel/next.js/tree/canary/examples/with-supabase
+ * @param externalId An external GitHub URL for example: https://github.com/vercel/next.js/tree/canary/examples/with-skybase
  */
 export async function getInitialMigrationSQLFromGitHubRepo(
   externalId?: string
@@ -37,19 +37,19 @@ export async function getInitialMigrationSQLFromGitHubRepo(
   const path = pathSegments.join('/')
 
   const baseGitHubUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`
-  const supabaseFolderUrl = `${baseGitHubUrl}/supabase?ref=${branch}`
-  const supabaseMigrationsPath = `supabase/migrations` // TODO: read this from the `supabase/config.toml` file
-  const migrationsFolderUrl = `${baseGitHubUrl}/${supabaseMigrationsPath}${
+  const skybaseFolderUrl = `${baseGitHubUrl}/skybase?ref=${branch}`
+  const skybaseMigrationsPath = `skybase/migrations` // TODO: read this from the `skybase/config.toml` file
+  const migrationsFolderUrl = `${baseGitHubUrl}/${skybaseMigrationsPath}${
     branch ? `?ref=${branch}` : ``
   }`
 
-  const [supabaseFilesResponse, migrationFilesResponse] = await Promise.all([
-    fetchGitHub<File[]>(supabaseFolderUrl),
+  const [skybaseFilesResponse, migrationFilesResponse] = await Promise.all([
+    fetchGitHub<File[]>(skybaseFolderUrl),
     fetchGitHub<File[]>(migrationsFolderUrl),
   ])
 
-  if (!isResponseOk(supabaseFilesResponse)) {
-    console.warn(`Failed to fetch supabase files from GitHub: ${supabaseFilesResponse.error}`)
+  if (!isResponseOk(skybaseFilesResponse)) {
+    console.warn(`Failed to fetch skybase files from GitHub: ${skybaseFilesResponse.error}`)
     return null
   }
   if (!isResponseOk(migrationFilesResponse)) {
@@ -57,7 +57,7 @@ export async function getInitialMigrationSQLFromGitHubRepo(
     return null
   }
 
-  const seedFileUrl = supabaseFilesResponse.find((file) => file.name === 'seed.sql')?.download_url
+  const seedFileUrl = skybaseFilesResponse.find((file) => file.name === 'seed.sql')?.download_url
   const sortedFiles = migrationFilesResponse.sort((a, b) => {
     // sort by name ascending
     if (a.name < b.name) return -1
@@ -77,8 +77,8 @@ export async function getInitialMigrationSQLFromGitHubRepo(
   const seed = isResponseOk(seedFileResponse) ? seedFileResponse : ''
 
   const migrationsTableSql = /* SQL */ `
-    create schema if not exists supabase_migrations;
-    create table if not exists supabase_migrations.schema_migrations (
+    create schema if not exists skybase_migrations;
+    create table if not exists skybase_migrations.schema_migrations (
       version text not null primary key,
       statements text[],
       name text
@@ -96,7 +96,7 @@ export async function getInitialMigrationSQLFromGitHubRepo(
       )
 
       return /* SQL */ `
-        insert into supabase_migrations.schema_migrations (version, statements, name)
+        insert into skybase_migrations.schema_migrations (version, statements, name)
         select '${version}', array_agg(jsonb_statements)::text[], '${file.name}'
         from jsonb_array_elements_text($statements$${statements}$statements$::jsonb) as jsonb_statements;
       `

@@ -58,8 +58,8 @@ export const IntegrationOverviewTab = ({
           >
             <Badge className="bg-surface-300 bg-opacity-100 flex items-center gap-x-2 w-max">
               <img
-                alt="Supabase"
-                src={`${router.basePath}/img/supabase-logo.svg`}
+                alt="Skybase"
+                src={`${router.basePath}/img/skybase-logo.svg`}
                 className=" h-2.5 cursor-pointer rounded"
               />
               <span>Postgres Module</span>

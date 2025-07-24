@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { SupabaseService } from '../supabase.service';
+import { SkybaseService } from '../skybase.service';
 
 @Component({
   selector: 'app-avatar',
@@ -21,7 +21,7 @@ export class AvatarComponent implements OnInit {
   @Output() upload = new EventEmitter<string>();
 
   constructor(
-    private readonly supabase: SupabaseService,
+    private readonly skybase: SkybaseService,
     private readonly dom: DomSanitizer
   ) {}
 
@@ -29,7 +29,7 @@ export class AvatarComponent implements OnInit {
 
   async downloadImage(path: string) {
     try {
-      const { data } = await this.supabase.downLoadImage(path);
+      const { data } = await this.skybase.downLoadImage(path);
       if (data instanceof Blob) {
         this._avatarUrl = this.dom.bypassSecurityTrustResourceUrl(
           URL.createObjectURL(data)
@@ -53,7 +53,7 @@ export class AvatarComponent implements OnInit {
       const fileExt = file.name.split('.').pop();
       const filePath = `${Math.random()}.${fileExt}`;
 
-      await this.supabase.uploadAvatar(filePath, file);
+      await this.skybase.uploadAvatar(filePath, file);
       this.upload.emit(filePath);
     } catch (error) {
       if (error instanceof Error) {

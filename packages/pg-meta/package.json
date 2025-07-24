@@ -2,9 +2,9 @@
   "name": "@supabase/pg-meta",
   "version": "0.0.0",
   "license": "MIT",
-  "author": "Supabase",
+  "author": "Skybase",
   "main": "./src/index.ts",
-  "repository": "supabase/supabase",
+  "repository": "skybase/skybase",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clean": "rimraf node_modules",

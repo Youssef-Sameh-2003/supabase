@@ -120,11 +120,11 @@ const TotalUsage = ({
           links: [
             {
               name: 'How billing works',
-              url: 'https://supabase.com/docs/guides/platform/billing-on-supabase',
+              url: 'https://skybase.com/docs/guides/platform/billing-on-skybase',
             },
             {
-              name: 'Supabase Plans',
-              url: 'https://supabase.com/pricing',
+              name: 'Skybase Plans',
+              url: 'https://skybase.com/pricing',
             },
           ],
         }}
@@ -153,7 +153,7 @@ const TotalUsage = ({
                   <span>
                     You have exceeded your{' '}
                     <span className="font-medium">{subscription?.plan.name}</span> Plan quota in
-                    this billing cycle. Upgrade your plan to continue using Supabase without
+                    this billing cycle. Upgrade your plan to continue using Skybase without
                     restrictions.
                   </span>
                 ) : hasExceededAnyLimits &&
@@ -162,7 +162,7 @@ const TotalUsage = ({
                   <span>
                     You have exceeded your{' '}
                     <span className="font-medium">{subscription?.plan.name}</span> Plan quota in
-                    this billing cycle. Disable your spend cap to continue using Supabase without
+                    this billing cycle. Disable your spend cap to continue using Skybase without
                     restrictions.
                   </span>
                 ) : hasExceededAnyLimits && subscription?.usage_billing_enabled === true ? (

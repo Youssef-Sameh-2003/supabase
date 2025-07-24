@@ -1,12 +1,12 @@
 import { redirect } from 'next/navigation'
 
 import { LogoutButton } from '@/registry/default/blocks/password-based-auth-nextjs/components/logout-button'
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/server'
 
 export default async function ProtectedPage() {
-  const supabase = await createClient()
+  const skybase = await createClient()
 
-  const { data, error } = await supabase.auth.getUser()
+  const { data, error } = await skybase.auth.getUser()
   if (error || !data?.user) {
     redirect('/auth/login')
   }

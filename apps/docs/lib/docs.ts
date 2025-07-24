@@ -117,7 +117,7 @@ export async function getGuidesStaticProps(
 
   const mdx = await readFile(fullPath, 'utf-8')
 
-  const editLink = `supabase/supabase/blob/master/apps/docs/content/guides/${relPath}.mdx`
+  const editLink = `skybase/skybase/blob/master/apps/docs/content/guides/${relPath}.mdx`
 
   const { data: frontmatter, content } = matter(mdx)
   if (!isValidGuideFrontmatter(frontmatter)) {

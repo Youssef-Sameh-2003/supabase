@@ -1,11 +1,11 @@
-import supabase from '../../../utils/supabase'
+import skybase from '../../../utils/skybase'
 import { notFound } from 'next/navigation'
 
 // do not cache this page
 export const revalidate = 0
 
 export async function generateStaticParams() {
-  const { data: posts } = await supabase.from('posts').select('id')
+  const { data: posts } = await skybase.from('posts').select('id')
 
   return posts?.map(({ id }) => ({
     id,
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params: { id } }: { params: { id: string } }) {
-  const { data: post } = await supabase.from('posts').select().match({ id }).single()
+  const { data: post } = await skybase.from('posts').select().match({ id }).single()
 
   if (!post) {
     notFound()

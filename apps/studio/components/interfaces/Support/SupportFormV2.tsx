@@ -559,7 +559,7 @@ export const SupportFormV2 = ({
                         href={
                           page.type === 'github-discussions'
                             ? page.path
-                            : `https://supabase.com/docs${page.path}`
+                            : `https://skybase.com/docs${page.path}`
                         }
                         target="_blank"
                         rel="noreferrer"
@@ -579,7 +579,7 @@ export const SupportFormV2 = ({
               <span>Check our </span>
               <Link
                 key="gh-discussions"
-                href={`https://github.com/orgs/supabase/discussions?discussions_q=${form.getValues('subject')}`}
+                href={`https://github.com/orgs/skybase/discussions?discussions_q=${form.getValues('subject')}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-x-1 underline hover:text-foreground transition"
@@ -790,7 +790,7 @@ export const SupportFormV2 = ({
                               We are committed to maintaining strict data privacy and security
                               standards in all support activities.{' '}
                               <Link
-                                href="https://supabase.com/privacy"
+                                href="https://skybase.com/privacy"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-foreground-light underline hover:text-foreground transition"
@@ -834,7 +834,7 @@ export const SupportFormV2 = ({
               <span className="text-foreground font-medium">{respondToEmail}</span>
             </div>
             <span className="text-foreground-light text-xs">
-              Please ensure emails from supabase.io are allowed
+              Please ensure emails from skybase.io are allowed
             </span>
           </div>
         </div>

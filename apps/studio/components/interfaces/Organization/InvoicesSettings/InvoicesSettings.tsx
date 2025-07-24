@@ -31,7 +31,7 @@ const InvoicesSettings = () => {
     {
       slug,
     },
-    { enabled: selectedOrganization?.managed_by === 'supabase' }
+    { enabled: selectedOrganization?.managed_by === 'skybase' }
   )
   const { data, error, isLoading, isError } = useInvoicesQuery(
     {
@@ -39,7 +39,7 @@ const InvoicesSettings = () => {
       offset,
       limit: PAGE_LIMIT,
     },
-    { enabled: selectedOrganization?.managed_by === 'supabase' }
+    { enabled: selectedOrganization?.managed_by === 'skybase' }
   )
   const invoices = data || []
 
@@ -58,7 +58,7 @@ const InvoicesSettings = () => {
 
   if (
     selectedOrganization?.managed_by !== undefined &&
-    selectedOrganization?.managed_by !== 'supabase'
+    selectedOrganization?.managed_by !== 'skybase'
   ) {
     return (
       <PartnerManagedResource

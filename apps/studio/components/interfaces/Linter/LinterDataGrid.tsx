@@ -266,7 +266,7 @@ const LinterDataGrid = ({
                               href={
                                 lintInfoMap.find((item) => item.name === selectedLint.name)
                                   ?.docsLink ||
-                                'https://supabase.com/docs/guides/database/database-linter'
+                                'https://skybase.com/docs/guides/database/database-linter'
                               }
                               target="_blank"
                               rel="noreferrer"

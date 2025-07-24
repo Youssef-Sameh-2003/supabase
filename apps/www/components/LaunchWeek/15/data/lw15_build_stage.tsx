@@ -22,24 +22,24 @@ export interface BuildDayLink {
 
 export const days: BuildDay[] = [
   {
-    title: 'Supabase UI: Platform Kit',
+    title: 'Skybase UI: Platform Kit',
     id: 'platform-kit',
     is_shipped: true,
     links: [
       {
-        url: '/blog/supabase-ui-platform-kit',
+        url: '/blog/skybase-ui-platform-kit',
         label: 'Blog post',
         target: '_blank',
       },
     ],
   },
   {
-    title: 'Create a Supabase backend using Figma Make',
+    title: 'Create a Skybase backend using Figma Make',
     id: 'figma',
     is_shipped: true,
     links: [
       {
-        url: '/blog/figma-make-support-for-supabase',
+        url: '/blog/figma-make-support-for-skybase',
         label: 'Blog post',
         target: '_blank',
       },
@@ -70,12 +70,12 @@ export const days: BuildDay[] = [
     ],
   },
   {
-    title: 'Algolia Connector for Supabase',
+    title: 'Algolia Connector for Skybase',
     id: 'algolia-connector',
     is_shipped: true,
     links: [
       {
-        url: '/blog/algolia-connector-for-supabase',
+        url: '/blog/algolia-connector-for-skybase',
         label: 'Blog post',
         target: '_blank',
       },

@@ -1,14 +1,14 @@
 //
-//  Supabase.swift
+//  Skybase.swift
 //  UserManagement
 //
 //  Created by Guilherme Souza on 17/11/23.
 //
 
 import Foundation
-import Supabase
+import Skybase
 
-let supabase = SupabaseClient(
-  supabaseURL: URL(string: DotEnv.SUPABASE_URL)!,
-  supabaseKey: DotEnv.SUPABASE_ANON_KEY
+let skybase = SkybaseClient(
+  skybaseURL: URL(string: DotEnv.SUPABASE_URL)!,
+  skybaseKey: DotEnv.SUPABASE_ANON_KEY
 )

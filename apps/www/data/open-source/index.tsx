@@ -1,15 +1,15 @@
 import { products, PRODUCT_MODULES } from 'shared-data'
 
 export default {
-  metaTitle: 'Supabase Open Source Community',
+  metaTitle: 'Skybase Open Source Community',
   metaDescription:
-    'Supabase is an open source company, actively fostering collaboration and supporting existing open source tools and communities.',
+    'Skybase is an open source company, actively fostering collaboration and supporting existing open source tools and communities.',
   heroSection: {
     title: 'The Power of Collaboration',
     h1: <span className="heading-gradient">Open Source Community</span>,
     subheader: (
       <>
-        Supabase is an open source company, actively fostering collaboration
+        Skybase is an open source company, actively fostering collaboration
         <br className="hidden md:inline" /> and supporting existing open source tools and
         communities.
       </>
@@ -41,12 +41,12 @@ export default {
         'postgres-wasm',
         'stripe-sync-engine',
         'supa_audit',
-        'supabase',
-        'supabase-dart',
-        'supabase-js',
-        'supabase-flutter',
-        'supabase-audit',
-        'supabase.dev',
+        'skybase',
+        'skybase-dart',
+        'skybase-js',
+        'skybase-flutter',
+        'skybase-audit',
+        'skybase.dev',
         'supautils',
         'supavisor',
         'wal2json',
@@ -57,9 +57,9 @@ export default {
       label: 'Auth',
       icon: products.authentication.icon[16],
       repos: [
-        'supabase',
-        'supabase-cli',
-        'supabase-js',
+        'skybase',
+        'skybase-cli',
+        'skybase-js',
         'auth-helpers',
         'auth-elements',
         'auth-ui',
@@ -72,7 +72,7 @@ export default {
     {
       label: 'Storage',
       icon: products.storage.icon[16],
-      repos: ['storage-api', 'supabase', 'storage-js', 'storage-dart'],
+      repos: ['storage-api', 'skybase', 'storage-js', 'storage-dart'],
     },
     {
       label: 'Edge Functions',
@@ -80,20 +80,20 @@ export default {
       repos: [
         'deno-arm64',
         'edge-runtime',
-        'supabase',
+        'skybase',
         'postgres-deno',
         'self-hosted-edge-functions-demo',
         'functions-dart',
         'functions-js',
         'functions-relay',
-        'supabase',
-        'supabase-js',
+        'skybase',
+        'skybase-js',
       ],
     },
     {
       label: 'Realtime',
       icon: products.realtime.icon[16],
-      repos: ['realtime', 'realtime-js', 'realtime-dart', 'supabase', 'supabase-js', 'walrus'],
+      repos: ['realtime', 'realtime-js', 'realtime-dart', 'skybase', 'skybase-js', 'walrus'],
     },
     {
       label: 'Vector',
@@ -102,8 +102,8 @@ export default {
         'embeddings-generator',
         'headless-vector-search',
         'pgvector',
-        'supabase',
-        'supabase-js',
+        'skybase',
+        'skybase-js',
         'vecs',
       ],
     },
@@ -138,7 +138,7 @@ export default {
         'setup-cli',
         'shared-types',
         'sql-formatter',
-        'supabase-action-example',
+        'skybase-action-example',
         'tests',
         'test-inspector',
         'test-reports',
@@ -146,7 +146,7 @@ export default {
         'ui',
         'valut',
         'workflows',
-        // 'supabase-ui-web', # DEPRECATED
+        // 'skybase-ui-web', # DEPRECATED
         'yet-another-cloudwatch-exporter',
       ],
     },
@@ -178,7 +178,7 @@ export default {
     {
       name: 'Open Collective Profile',
       description: 'We have contributed with more than $250,000 on paying sponsorships.',
-      url: 'https://opencollective.com/supabase',
+      url: 'https://opencollective.com/skybase',
     },
     {
       name: 'OrioleDB',
@@ -189,7 +189,7 @@ export default {
       name: 'Elixir',
       description:
         'Elixir is a dynamic, functional language for building scalable and maintainable applications.',
-      url: 'https://elixir-lang.org/blog/2022/10/05/my-future-with-elixir-set-theoretic-types/#:~:text=is%20sponsored%20by-,Supabase,-(they%20are',
+      url: 'https://elixir-lang.org/blog/2022/10/05/my-future-with-elixir-set-theoretic-types/#:~:text=is%20sponsored%20by-,Skybase,-(they%20are',
     },
   ],
 }

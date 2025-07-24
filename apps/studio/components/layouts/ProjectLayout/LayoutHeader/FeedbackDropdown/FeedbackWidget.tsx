@@ -236,7 +236,7 @@ export const FeedbackWidget = ({
               </span>
             </Link>{' '}
             or{' '}
-            <a href="https://supabase.com/docs" target="_blank" rel="noreferrer">
+            <a href="https://skybase.com/docs" target="_blank" rel="noreferrer">
               <span className="cursor-pointer text-brand transition-colors hover:text-brand-600">
                 see docs
               </span>

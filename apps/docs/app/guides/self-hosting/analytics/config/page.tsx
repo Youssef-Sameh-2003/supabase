@@ -6,7 +6,7 @@ import specAnalyticsV0 from '~/spec/analytics_v0_config.yaml' with { type: 'yml'
 
 const meta = {
   title: 'Analytics Self-hosting Config',
-  description: 'How to configure and deploy Supabase Analytics.',
+  description: 'How to configure and deploy Skybase Analytics.',
 }
 
 const generateMetadata = genGuideMeta(() => ({
@@ -21,7 +21,7 @@ const AnalyticsConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'supabase/supabase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/analytics/config/page.tsx'
+        'skybase/skybase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/analytics/config/page.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

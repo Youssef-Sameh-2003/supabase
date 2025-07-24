@@ -4,10 +4,10 @@ export default [
     title: 'Database changes',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
 
-  const supabaseClient = createClient('URL', 'ANON')
-  const channel = supabaseClient
+  const skybaseClient = createClient('URL', 'ANON')
+  const channel = skybaseClient
     .channel('postgresChangesChannel')
     .on('postgres_changes', {
       event: 'INSERT',
@@ -32,10 +32,10 @@ export default [
     title: 'Presence',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
 
-  const supabaseClient = createClient('URL', 'ANON')
-  const channel = supabaseClient.channel('presenceChannel', { configs: { presence: 'id123' } })
+  const skybaseClient = createClient('URL', 'ANON')
+  const channel = skybaseClient.channel('presenceChannel', { configs: { presence: 'id123' } })
 
   channel
     .on('presence', { event: 'sync' }, () => console.log(channel.presenceState()))
@@ -59,10 +59,10 @@ export default [
     title: 'Broadcast',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@skybase/skybase-js'
 
-  const supabaseClient = createClient('URL', 'ANON')
-  const channel = supabaseClient.channel('broadcastChannel', { configs: { broadcast: { self: true, ack: true } } })
+  const skybaseClient = createClient('URL', 'ANON')
+  const channel = skybaseClient.channel('broadcastChannel', { configs: { broadcast: { self: true, ack: true } } })
 
   channel
     .on('broadcast', { event: 'pos' }, payload => console.log(payload))

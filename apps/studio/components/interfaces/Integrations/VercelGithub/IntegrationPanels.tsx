@@ -24,7 +24,7 @@ export interface IntegrationInstallationProps extends RefAttributes<HTMLLIElemen
   disabled?: boolean
 }
 
-type HandleIconType = Integration['integration']['name'] | 'Supabase'
+type HandleIconType = Integration['integration']['name'] | 'Skybase'
 
 const HandleIcon = ({ type, className }: { type: HandleIconType; className?: string }) => {
   switch (type) {
@@ -47,8 +47,8 @@ const HandleIcon = ({ type, className }: { type: HandleIconType; className?: str
       )
 
       break
-    case 'Supabase':
-      return <img src={`${BASE_PATH}/img/supabase-logo.svg`} alt="Supabase" className="w-3.5"></img>
+    case 'Skybase':
+      return <img src={`${BASE_PATH}/img/skybase-logo.svg`} alt="Skybase" className="w-3.5"></img>
       break
 
     default:
@@ -150,7 +150,7 @@ const IntegrationConnection = forwardRef<HTMLLIElement, IntegrationConnectionPro
     ref
   ) => {
     const { data: projects } = useProjectsQuery()
-    const project = projects?.find((project) => project.ref === connection.supabase_project_ref)
+    const project = projects?.find((project) => project.ref === connection.skybase_project_ref)
 
     return (
       <li
@@ -174,7 +174,7 @@ const IntegrationConnection = forwardRef<HTMLLIElement, IntegrationConnectionPro
           <div className="flex flex-col gap-1 min-w-0">
             <div className="flex items-center gap-2">
               <div className="flex-shrink-0 flex gap-x-2 items-center max-w-40 ">
-                <HandleIcon type={'Supabase'} />
+                <HandleIcon type={'Skybase'} />
                 <span title={project?.name} className="text-sm truncate">
                   {project?.name}
                 </span>
@@ -237,7 +237,7 @@ const IntegrationConnection = forwardRef<HTMLLIElement, IntegrationConnectionPro
 const IntegrationConnectionOption = forwardRef<HTMLLIElement, IntegrationConnectionProps>(
   ({ connection, type, ...props }, ref) => {
     const { data: projects } = useProjectsQuery()
-    const project = projects?.find((project) => project.ref === connection.supabase_project_ref)
+    const project = projects?.find((project) => project.ref === connection.skybase_project_ref)
 
     return (
       <li
@@ -250,7 +250,7 @@ const IntegrationConnectionOption = forwardRef<HTMLLIElement, IntegrationConnect
       >
         <div className="flex flex-col gap-1">
           <div className="flex gap-2 items-center">
-            <HandleIcon type={'Supabase'} />
+            <HandleIcon type={'Skybase'} />
             <span className="text-sm">{project?.name}</span>
             <ArrowRight size={14} className="text-foreground-lighter" strokeWidth={1.5} />
             <HandleIcon type={type} />

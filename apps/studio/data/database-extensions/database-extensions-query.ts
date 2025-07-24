@@ -5,7 +5,7 @@ import { databaseExtensionsKeys } from './keys'
 import { components } from 'api-types'
 import { useSelectedProject } from 'hooks/misc/useSelectedProject'
 import { PROJECT_STATUS } from 'lib/constants'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type DatabaseExtension = components['schemas']['PostgresExtension']
 

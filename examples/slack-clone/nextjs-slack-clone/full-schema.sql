@@ -1,5 +1,5 @@
 --
--- For use with https://github.com/supabase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone
+-- For use with https://github.com/skybase/skybase/tree/master/examples/slack-clone/nextjs-slack-clone
 --
 
 -- Custom types
@@ -14,7 +14,7 @@ create table public.users (
   status      user_status default 'OFFLINE'::public.user_status
 );
 comment on table public.users is 'Profile data for each user.';
-comment on column public.users.id is 'References the internal Supabase Auth user.';
+comment on column public.users.id is 'References the internal Skybase Auth user.';
 
 -- CHANNELS
 create table public.channels (
@@ -128,16 +128,16 @@ create trigger on_auth_user_created
 
 begin; 
   -- remove the realtime publication
-  drop publication if exists supabase_realtime; 
+  drop publication if exists skybase_realtime; 
 
   -- re-create the publication but don't enable it for any tables
-  create publication supabase_realtime;  
+  create publication skybase_realtime;  
 commit;
 
 -- add tables to the publication
-alter publication supabase_realtime add table public.channels;
-alter publication supabase_realtime add table public.messages;
-alter publication supabase_realtime add table public.users;
+alter publication skybase_realtime add table public.channels;
+alter publication skybase_realtime add table public.messages;
+alter publication skybase_realtime add table public.users;
 
 /**
  * AUTH HOOKS
@@ -145,7 +145,7 @@ alter publication supabase_realtime add table public.users;
  */
 
 -- Create the auth hook function
--- https://supabase.com/docs/guides/auth/auth-hooks#hook-custom-access-token
+-- https://skybase.com/docs/guides/auth/auth-hooks#hook-custom-access-token
 create or replace function public.custom_access_token_hook(event jsonb)
 returns jsonb
 language plpgsql
@@ -175,11 +175,11 @@ as $$
   end;
 $$;
 
-grant usage on schema public to supabase_auth_admin;
+grant usage on schema public to skybase_auth_admin;
 
 grant execute
   on function public.custom_access_token_hook
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 revoke execute
   on function public.custom_access_token_hook
@@ -187,7 +187,7 @@ revoke execute
 
 grant all
   on table public.user_roles
-to supabase_auth_admin;
+to skybase_auth_admin;
 
 revoke all
   on table public.user_roles
@@ -195,7 +195,7 @@ revoke all
 
 create policy "Allow auth admin to read user roles" ON public.user_roles
 as permissive for select
-to supabase_auth_admin
+to skybase_auth_admin
 using (true)
 
 

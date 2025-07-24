@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supabase_quickstart/main.dart';
-import 'package:supabase_quickstart/pages/account_page.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
+import 'package:skybase_quickstart/main.dart';
+import 'package:skybase_quickstart/pages/account_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,10 +24,10 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _isLoading = true;
       });
-      await supabase.auth.signInWithOtp(
+      await skybase.auth.signInWithOtp(
         email: _emailController.text.trim(),
         emailRedirectTo:
-            kIsWeb ? null : 'io.supabase.flutterquickstart://login-callback/',
+            kIsWeb ? null : 'io.skybase.flutterquickstart://login-callback/',
       );
       if (mounted) {
         context.showSnackBar('Check your email for a login link!');
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    _authStateSubscription = supabase.auth.onAuthStateChange.listen(
+    _authStateSubscription = skybase.auth.onAuthStateChange.listen(
       (data) {
         if (_redirecting) return;
         final session = data.session;

@@ -58,7 +58,7 @@ const regionOptions = [
   { label: 'Oceania', value: 'Oceania' },
 ]
 
-const supabaseProductOptions = [
+const skybaseProductOptions = [
   { label: 'Database', value: 'database' },
   { label: 'Auth', value: 'auth' },
   { label: 'Storage', value: 'storage' },
@@ -217,12 +217,12 @@ export const Customers: CollectionConfig = {
               },
             },
             {
-              name: 'supabase_products',
+              name: 'skybase_products',
               type: 'select',
               hasMany: true,
-              options: supabaseProductOptions,
+              options: skybaseProductOptions,
               admin: {
-                description: 'Supabase products being used',
+                description: 'Skybase products being used',
               },
             },
           ],

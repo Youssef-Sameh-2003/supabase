@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "name": "@supabase/postgrest-js",
+  "name": "@skybase/postgrest-js",
   "kind": 1,
   "kindString": "Project",
   "flags": {},
@@ -421,7 +421,7 @@
                 "tags": [
                   {
                     "tag": "example",
-                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
+                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
                   }
                 ]
               },
@@ -1113,7 +1113,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/skybase/skybase-js/issues/92}\n"
               },
               "type": {
                 "type": "intersection",
@@ -2387,7 +2387,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Select a schema to query or perform an function (rpc) call.",
-                "text": "The schema needs to be on the list of exposed schemas inside Supabase.\n"
+                "text": "The schema needs to be on the list of exposed schemas inside Skybase.\n"
               },
               "typeParameter": [
                 {
@@ -2507,7 +2507,7 @@
           "kindString": "Type parameter",
           "flags": {},
           "comment": {
-            "shortText": "Types for the schema from the [type\ngenerator](https://supabase.com/docs/reference/javascript/next/typescript-support)\n"
+            "shortText": "Types for the schema from the [type\ngenerator](https://skybase.com/docs/reference/javascript/next/typescript-support)\n"
           },
           "default": {
             "type": "intrinsic",
@@ -4179,7 +4179,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Return `data` as the EXPLAIN plan for the query.",
-                "text": "You need to enable the\n[db_plan_enabled](https://supabase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
+                "text": "You need to enable the\n[db_plan_enabled](https://skybase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
               },
               "parameters": [
                 {
@@ -8946,7 +8946,7 @@
                 "tags": [
                   {
                     "tag": "example",
-                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
+                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
                   }
                 ]
               },
@@ -11351,7 +11351,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/skybase/skybase-js/issues/92}\n"
               },
               "type": {
                 "type": "intersection",
@@ -14197,7 +14197,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Return `data` as the EXPLAIN plan for the query.",
-                "text": "You need to enable the\n[db_plan_enabled](https://supabase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
+                "text": "You need to enable the\n[db_plan_enabled](https://skybase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
               },
               "parameters": [
                 {
@@ -15420,7 +15420,7 @@
                 "tags": [
                   {
                     "tag": "example",
-                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = supabase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
+                    "text": "\n```typescript\n// Merge with existing types (default behavior)\nconst query = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ custom_field: string }>()\n\n// Replace existing types completely\nconst replaceQuery = skybase\n  .from('users')\n  .select()\n  .overrideTypes<{ id: number; name: string }, { merge: false }>()\n```"
                   }
                 ]
               },
@@ -16561,7 +16561,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/skybase/skybase-js/issues/92}\n"
               },
               "type": {
                 "type": "intersection",

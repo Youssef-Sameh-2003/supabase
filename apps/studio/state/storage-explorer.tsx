@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import * as tus from 'tus-js-client'
 import { proxy, useSnapshot } from 'valtio'
 
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { createClient, SkybaseClient } from '@skybase/skybase-js'
 import { BlobReader, BlobWriter, ZipWriter } from '@zip.js/zip.js'
 import { LOCAL_STORAGE_KEYS } from 'common'
 import {
@@ -75,12 +75,12 @@ function createStorageExplorerState({
   projectRef,
   resumableUploadUrl,
   serviceKey,
-  supabaseClient,
+  skybaseClient,
 }: {
   projectRef: string
   resumableUploadUrl: string
   serviceKey: string
-  supabaseClient?: SupabaseClient<any, 'public', any>
+  skybaseClient?: SkybaseClient<any, 'public', any>
 }) {
   const localStorageKey = LOCAL_STORAGE_KEYS.STORAGE_PREFERENCE(projectRef)
   const { view, sortBy, sortByOrder } =
@@ -89,7 +89,7 @@ function createStorageExplorerState({
 
   const state = proxy({
     projectRef,
-    supabaseClient,
+    skybaseClient,
     resumableUploadUrl,
     serviceKey,
     uploadProgresses: [] as UploadProgress[],
@@ -265,7 +265,7 @@ function createStorageExplorerState({
     },
 
     addNewFolder: async (folderName: string, columnIndex: number) => {
-      if (!state.supabaseClient) return console.error('Supabase Client is missing')
+      if (!state.skybaseClient) return console.error('Skybase Client is missing')
 
       const autofix = false
       const formattedName = state.sanitizeNameForDuplicateInColumn({
@@ -293,7 +293,7 @@ function createStorageExplorerState({
       const formattedPathToEmptyPlaceholderFile =
         pathToFolder.length > 0 ? `${pathToFolder}/${emptyPlaceholderFile}` : emptyPlaceholderFile
 
-      await state.supabaseClient.storage
+      await state.skybaseClient.storage
         .from(state.selectedBucket.name)
         .upload(
           formattedPathToEmptyPlaceholderFile,
@@ -540,7 +540,7 @@ function createStorageExplorerState({
 
         if (data.length === 0) {
           const prefixToPlaceholder = `${parentFolderPrefix}/${EMPTY_FOLDER_PLACEHOLDER_FILE_NAME}`
-          await state.supabaseClient?.storage
+          await state.skybaseClient?.storage
             .from(state.selectedBucket.name)
             .upload(prefixToPlaceholder, new File([], EMPTY_FOLDER_PLACEHOLDER_FILE_NAME))
         }
@@ -1129,7 +1129,7 @@ function createStorageExplorerState({
               retryDelays: [0, 200, 500, 1500, 3000, 5000],
               headers: {
                 authorization: `Bearer ${state.serviceKey}`,
-                'x-source': 'supabase-dashboard',
+                'x-source': 'skybase-dashboard',
                 ...(state.serviceKey.includes('secret') ? { apikey: state.serviceKey } : {}),
               },
               uploadDataDuringCreation: uploadDataDuringCreation,
@@ -1484,7 +1484,7 @@ function createStorageExplorerState({
       const blobURL = URL.createObjectURL(await zipWriter.close())
       const link = document.createElement('a')
       link.href = blobURL
-      link.setAttribute('download', `supabase-files.zip`)
+      link.setAttribute('download', `skybase-files.zip`)
       document.body.appendChild(link)
       link.click()
       link.parentNode?.removeChild(link)
@@ -1724,7 +1724,7 @@ const DEFAULT_STATE_CONFIG = {
   projectRef: '',
   resumableUploadUrl: '',
   serviceKey: '',
-  supabaseClient: undefined,
+  skybaseClient: undefined,
 }
 
 const StorageExplorerStateContext = createContext<StorageExplorerState>(
@@ -1757,7 +1757,7 @@ export const StorageExplorerStateContextProvider = ({ children }: PropsWithChild
 
     if (!isPaused && hasDataReady) {
       const clientEndpoint = `${IS_PLATFORM ? 'https' : protocol}://${endpoint}`
-      const supabaseClient = createClient(clientEndpoint, serviceApiKey, {
+      const skybaseClient = createClient(clientEndpoint, serviceApiKey, {
         auth: {
           persistSession: false,
           autoRefreshToken: false,
@@ -1775,7 +1775,7 @@ export const StorageExplorerStateContextProvider = ({ children }: PropsWithChild
       setState(
         createStorageExplorerState({
           projectRef: project?.ref ?? '',
-          supabaseClient,
+          skybaseClient,
           resumableUploadUrl,
           serviceKey: serviceApiKey,
         })

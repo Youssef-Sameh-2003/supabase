@@ -11,7 +11,7 @@ import getContent from 'data/solutions/no-code'
 
 const PlatformSection = dynamic(() => import('components/Solutions/PlatformSection'))
 const PlatformStarterSection = dynamic(() => import('components/Solutions/TwoColumnsSection'))
-const WhySupabase = dynamic(() => import('components/Solutions/FeaturesSection'))
+const WhySkybase = dynamic(() => import('components/Solutions/FeaturesSection'))
 
 interface Solution {
   id: string
@@ -31,7 +31,7 @@ const BeginnersPage: NextPage = () => {
         openGraph={{
           title: content.metadata.metaTitle,
           description: content.metadata.metaDescription,
-          url: `https://supabase.com/solutions/no-code`,
+          url: `https://skybase.com/solutions/no-code`,
         }}
       />
       <Layout className="overflow-visible relative">
@@ -42,7 +42,7 @@ const BeginnersPage: NextPage = () => {
           sectionContainerClassName="lg:gap-4 [&_div:first-child]:lg:col-span-6 [&_div:nth-child(2)]:lg:col-span-6"
         />
         <Quotes {...content.quotes} />
-        <WhySupabase {...content.why} />
+        <WhySkybase {...content.why} />
         <PlatformSection {...content.platform} />
         <PlatformStarterSection {...content.platformStarterSection} />
       </Layout>

@@ -1,14 +1,14 @@
 import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, PageServerLoad } from './$types'
 
-export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession } }) => {
+export const load: PageServerLoad = async ({ locals: { skybase, safeGetSession } }) => {
   const { session } = await safeGetSession()
 
   if (!session) {
     redirect(303, '/')
   }
 
-  const { data: profile } = await supabase
+  const { data: profile } = await skybase
     .from('profiles')
     .select(`username, full_name, website, avatar_url`)
     .eq('id', session.user.id)
@@ -18,7 +18,7 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
 }
 
 export const actions: Actions = {
-  update: async ({ request, locals: { supabase, safeGetSession } }) => {
+  update: async ({ request, locals: { skybase, safeGetSession } }) => {
     const formData = await request.formData()
     const fullName = formData.get('fullName') as string
     const username = formData.get('username') as string
@@ -27,7 +27,7 @@ export const actions: Actions = {
 
     const { session } = await safeGetSession()
 
-    const { error } = await supabase.from('profiles').upsert({
+    const { error } = await skybase.from('profiles').upsert({
       id: session?.user.id,
       full_name: fullName,
       username,
@@ -52,10 +52,10 @@ export const actions: Actions = {
       avatarUrl,
     }
   },
-  signout: async ({ locals: { supabase, safeGetSession } }) => {
+  signout: async ({ locals: { skybase, safeGetSession } }) => {
     const { session } = await safeGetSession()
     if (session) {
-      await supabase.auth.signOut()
+      await skybase.auth.signOut()
       redirect(303, '/')
     }
   },

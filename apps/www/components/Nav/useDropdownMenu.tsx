@@ -1,6 +1,6 @@
 'use client'
 
-import type { User } from '@supabase/supabase-js'
+import type { User } from '@skybase/skybase-js'
 import { Command, Database, LogOut, Settings, UserIcon } from 'lucide-react'
 import { logOut } from 'common'
 
@@ -22,12 +22,12 @@ const useDropdownMenu = (user: User | null) => {
       {
         label: 'Account Preferences',
         icon: Settings,
-        href: 'https://supabase.com/dashboard/account/me',
+        href: 'https://skybase.com/dashboard/account/me',
       },
       {
         label: 'All Projects',
         icon: Database,
-        href: 'https://supabase.com/dashboard/projects',
+        href: 'https://skybase.com/dashboard/projects',
       },
       {
         label: 'Command Menu',

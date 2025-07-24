@@ -14,7 +14,7 @@ const data: CommunityItem[] = [
     title: 'Developers',
     stat: '1,700,000+',
     statLabel: 'Registered developers',
-    img: 'supabase.png',
+    img: 'skybase.png',
     detail: () => (
       <div className="mx-auto mt-5 grid max-w-lg gap-0 overflow-hidden rounded-lg border border-dashed text-center sm:grid-cols-3 lg:max-w-none lg:grid-cols-4 ">
         {DeveloperSignups.map((signup) => (

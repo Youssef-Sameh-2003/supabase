@@ -1,5 +1,5 @@
-import { Query } from '@supabase/pg-meta/src/query'
-import { getTableRowsSql } from '@supabase/pg-meta/src/query/table-row-query'
+import { Query } from '@skybase/pg-meta/src/query'
+import { getTableRowsSql } from '@skybase/pg-meta/src/query/table-row-query'
 import {
   useQuery,
   useQueryClient,
@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-query'
 
 import { IS_PLATFORM } from 'common'
-import { parseSupaTable } from 'components/grid/SupabaseGrid.utils'
+import { parseSupaTable } from 'components/grid/SkybaseGrid.utils'
 import { Filter, Sort, SupaRow, SupaTable } from 'components/grid/types'
 import { prefetchTableEditor } from 'data/table-editor/table-editor-query'
 import {

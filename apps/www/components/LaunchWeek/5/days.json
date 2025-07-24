@@ -3,14 +3,14 @@
     "title": "CLI and Management API",
     "shipped": true,
     "date": "15th Aug 2022",
-    "description": "We are moving Supabase CLI v1 out of beta, and releasing Management API beta.",
+    "description": "We are moving Skybase CLI v1 out of beta, and releasing Management API beta.",
     "d": 1,
     "dd": "Monday",
     "youtube_id": "OpPOaJI_Z28",
     "articles": [
       {
-        "title": "Supabase CLI v1 and Management API Beta",
-        "url": "/blog/supabase-cli-v1-and-admin-api-beta",
+        "title": "Skybase CLI v1 and Management API Beta",
+        "url": "/blog/skybase-cli-v1-and-admin-api-beta",
         "description": "Read our blog post outlining the new CLI and Management API.",
         "products": [
           {
@@ -28,23 +28,23 @@
     ]
   },
   {
-    "title": "supabase-js v2",
+    "title": "skybase-js v2",
     "shipped": true,
     "date": "16th Aug 2022",
-    "description": "Today we're releasing supabase-js v2, which focuses on “quality-of-life” improvements for developers.",
+    "description": "Today we're releasing skybase-js v2, which focuses on “quality-of-life” improvements for developers.",
     "d": 2,
     "dd": "Tuesday",
     "youtube_id": "iqZlPtl_b-I",
     "articles": [
       {
-        "title": "supabase-js v2 Release Candidate",
-        "url": "/blog/supabase-js-v2",
-        "description": "First peek of supabase-js v2, which focuses on quality-of-life improvements for developers.",
+        "title": "skybase-js v2 Release Candidate",
+        "url": "/blog/skybase-js-v2",
+        "description": "First peek of skybase-js v2, which focuses on quality-of-life improvements for developers.",
         "products": [
           {
-            "title": "Supabase.js v2 Docs",
+            "title": "Skybase.js v2 Docs",
             "url": "/docs/reference/javascript/installing",
-            "description": "Updated documentation for supabase-js"
+            "description": "Updated documentation for skybase-js"
           },
           {
             "title": "TypeScript support",
@@ -59,13 +59,13 @@
     "title": "Security",
     "shipped": true,
     "date": "17th Aug 2022",
-    "description": "An update on the ongoing security improvements of Supabase.",
+    "description": "An update on the ongoing security improvements of Skybase.",
     "d": 3,
     "dd": "Wednesday",
     "youtube_id": "6bGQotxisoY",
     "announcements": [
       {
-        "title": "Supabase is now SOC2 compliant",
+        "title": "Skybase is now SOC2 compliant",
         "url": "Something",
         "description": "Outline of the community changes",
         "type": "soc2"
@@ -73,23 +73,23 @@
     ],
     "articles": [
       {
-        "title": "Supabase is SOC2 compliant",
-        "url": "/blog/supabase-soc2",
-        "description": "Supabase is now SOC2 Type 1 compliant. Let’s dig into what that means, and explain the process we went through to get there. If you’re building a SaaS product, this blog post should provide a rough guide to getting your SOC2 certification.",
+        "title": "Skybase is SOC2 compliant",
+        "url": "/blog/skybase-soc2",
+        "description": "Skybase is now SOC2 Type 1 compliant. Let’s dig into what that means, and explain the process we went through to get there. If you’re building a SaaS product, this blog post should provide a rough guide to getting your SOC2 certification.",
         "products": [
           {
             "title": "Security portal",
-            "url": "https://security.supabase.com/",
-            "description": "Monitor security at Supabase."
+            "url": "https://security.skybase.com/",
+            "description": "Monitor security at Skybase."
           },
           {
             "title": "SOC 2 Document",
-            "url": "https://security.supabase.com/",
+            "url": "https://security.skybase.com/",
             "description": "Request the SOC 2 Type I document through the Security Portal."
           },
           {
             "title": "DPA Document",
-            "url": "https://security.supabase.com/",
+            "url": "https://security.skybase.com/",
             "description": "Request Data Processing Agreement document through the Security Portal."
           }
         ]
@@ -107,7 +107,7 @@
     "articles": [
       {
         "title": "Realtime: Multiplayer Edition",
-        "url": "/blog/supabase-realtime-multiplayer-general-availability",
+        "url": "/blog/skybase-realtime-multiplayer-general-availability",
         "description": "Origin story of Realtime, Broadcast and Presence features with examples, and one more thing.",
         "products": [
           {
@@ -160,8 +160,8 @@
           },
           {
             "title": "Egghead course",
-            "url": "/blog/launch-week-5-community-day#free-egghead-course-cache-supabase-data-at-the-edge-with-cloudflare-workers-and-kv-storage",
-            "description": "Cache Supabase data at the Edge with Cloudflare Workers and KV Storage."
+            "url": "/blog/launch-week-5-community-day#free-egghead-course-cache-skybase-data-at-the-edge-with-cloudflare-workers-and-kv-storage",
+            "description": "Cache Skybase data at the Edge with Cloudflare Workers and KV Storage."
           }
         ]
       },
@@ -171,24 +171,24 @@
         "description": "It's never just one more thing...",
         "products": [
           {
-            "title": "Supabase Vault",
-            "url": "/blog/supabase-vault",
+            "title": "Skybase Vault",
+            "url": "/blog/skybase-vault",
             "description": "Postgres extension for managing secrets and encryption inside your database."
           },
           {
             "title": "Auth UI",
             "url": "/blog/launch-week-5-one-more-thing#auth-ui",
-            "description": "Customizable React UI component for Supabase Auth."
+            "description": "Customizable React UI component for Skybase Auth."
           },
           {
             "title": "Dashboard permissions",
             "url": "/blog/launch-week-5-one-more-thing#dashboard-permissions",
-            "description": "We've released granular permissions on our Supabase dashboard."
+            "description": "We've released granular permissions on our Skybase dashboard."
           },
           {
             "title": "JSON schema validation",
             "url": "/blog/launch-week-5-one-more-thing#json-schema-validation",
-            "description": "We've released a new Postgres extension on the Supabase platform today, pg_jsonschema."
+            "description": "We've released a new Postgres extension on the Skybase platform today, pg_jsonschema."
           },
           {
             "title": "pg_graphql v0.4.0",

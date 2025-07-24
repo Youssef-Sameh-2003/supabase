@@ -62,7 +62,7 @@ const getGuidesMarkdownInternal = async (slug: string[]) => {
   }
 
   const editLink = newEditLink(
-    `supabase/supabase/blob/master/apps/docs/content/guides/${relPath}.mdx`
+    `skybase/skybase/blob/master/apps/docs/content/guides/${relPath}.mdx`
   )
 
   const { data: meta, content } = matter(mdx)
@@ -134,7 +134,7 @@ const genGuideMeta =
     const ogType = pathname.split('/')[2]
 
     return {
-      title: `${meta.title} | Supabase Docs`,
+      title: `${meta.title} | Skybase Docs`,
       description: meta.description || meta.subtitle,
       // @ts-ignore
       alternates: {

@@ -79,11 +79,11 @@ function CaseStudyPage(props: any) {
   } = props.blog
 
   const ogImageUrl = encodeURI(
-    `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.supabase.co'}/functions/v1/og-images?site=customers&customer=${slug}&title=${meta_title ?? title}`
+    `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.skybase.co'}/functions/v1/og-images?site=customers&customer=${slug}&title=${meta_title ?? title}`
   )
 
   const meta = {
-    title: meta_title ?? `${name} | Supabase Customer Stories`,
+    title: meta_title ?? `${name} | Skybase Customer Stories`,
     description: meta_description ?? description,
     image: ogImageUrl ?? `${SITE_ORIGIN}/images/customers/og/customer-stories.jpg`,
     url: `${SITE_ORIGIN}/customers/${slug}`,
@@ -202,7 +202,7 @@ function CaseStudyPage(props: any) {
                           <div>
                             <Button asChild type="default" iconRight={<ChevronRight />}>
                               <Link
-                                href="https://supabase.com/contact/enterprise"
+                                href="https://skybase.com/contact/enterprise"
                                 className="no-underline"
                               >
                                 Contact sales

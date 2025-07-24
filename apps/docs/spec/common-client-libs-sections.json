@@ -787,7 +787,7 @@
     "items": [
       {
         "id": "invoke",
-        "title": "Invokes a Supabase Edge Function.",
+        "title": "Invokes a Skybase Edge Function.",
         "slug": "functions-invoke",
         "product": "functions",
         "type": "function"

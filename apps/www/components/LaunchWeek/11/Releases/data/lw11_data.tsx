@@ -69,12 +69,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     published_at: '2024-04-15T08:00:00.000-07:00',
     videoId: 'bRtdk8D4X8w',
     videoThumbnail: '/images/launchweek/11/video-cover.jpg',
-    title: 'Supabase is officially launching into General Availability',
-    description: 'Supabase is officially launching into General Availability',
+    title: 'Skybase is officially launching into General Availability',
+    description: 'Skybase is officially launching into General Availability',
     links: [
       {
         type: 'xSpace',
-        href: 'https://supabase.link/twitter-space-ga',
+        href: 'https://skybase.link/twitter-space-ga',
       },
     ],
     steps: [
@@ -82,37 +82,37 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
         icon: products.database.icon[16],
         title: 'Database',
         description: 'Fully portable Postgres Database',
-        url: 'https://supabase.com/docs/guides/database/overview',
+        url: 'https://skybase.com/docs/guides/database/overview',
       },
       {
         icon: products.authentication.icon[16],
         title: 'Auth',
         description: 'User management out of the box',
-        url: 'https://supabase.com/docs/guides/auth',
+        url: 'https://skybase.com/docs/guides/auth',
       },
       {
         icon: products.storage.icon[16],
         title: 'Storage',
         description: 'Serverless storage for any media',
-        url: 'https://supabase.com/docs/guides/storage',
+        url: 'https://skybase.com/docs/guides/storage',
       },
       {
         icon: products.functions.icon[16],
         title: 'Edge Functions',
         description: 'Deploy code globally on the edge',
-        url: 'https://supabase.com/docs/guides/functions',
+        url: 'https://skybase.com/docs/guides/functions',
       },
       {
         icon: products.realtime.icon[16],
         title: 'Realtime',
         description: 'Synchronize and broadcast events',
-        url: 'https://supabase.com/docs/guides/realtime',
+        url: 'https://skybase.com/docs/guides/realtime',
       },
       {
         icon: ProductModules.vector.icon[16],
         title: 'Vector',
         description: 'AI toolkit to manage embeddings',
-        url: 'https://supabase.com/docs/guides/ai',
+        url: 'https://skybase.com/docs/guides/ai',
       },
     ],
   },
@@ -123,19 +123,19 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     shipped: true,
     isToday: false,
     hasCountdown: false,
-    blog: '/blog/ai-inference-now-available-in-supabase-edge-functions',
+    blog: '/blog/ai-inference-now-available-in-skybase-edge-functions',
     date: '16 April',
     published_at: '2024-04-16T08:00:00.000-07:00',
-    title: 'Supabase Functions now supports AI models',
+    title: 'Skybase Functions now supports AI models',
     description: (
       <>
-        Supabase Functions now supports <strong>AI models</strong>
+        Skybase Functions now supports <strong>AI models</strong>
       </>
     ),
     links: [
       {
         type: 'blog',
-        href: '/blog/ai-inference-now-available-in-supabase-edge-functions',
+        href: '/blog/ai-inference-now-available-in-skybase-edge-functions',
       },
       {
         type: 'video',
@@ -143,12 +143,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/twitter-space-ga-week-2',
+        href: 'https://skybase.link/twitter-space-ga-week-2',
       },
     ],
     steps: [
       {
-        title: 'Supabase Functions now supports AI models',
+        title: 'Skybase Functions now supports AI models',
         blog: '#',
         bg_layers: [
           {
@@ -174,10 +174,10 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     blog: '/blog/anonymous-sign-ins',
     date: '17 April',
     published_at: '2024-04-17T08:00:00.000-07:00',
-    title: 'Supabase Auth now supports Anonymous sign-ins',
+    title: 'Skybase Auth now supports Anonymous sign-ins',
     description: (
       <>
-        Supabase Auth now supports <strong>Anonymous sign-ins</strong>
+        Skybase Auth now supports <strong>Anonymous sign-ins</strong>
       </>
     ),
     links: [
@@ -191,12 +191,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/twitter-space-ga-week-3',
+        href: 'https://skybase.link/twitter-space-ga-week-3',
       },
     ],
     steps: [
       {
-        title: 'Supabase Auth now supports Anonymous sign-ins',
+        title: 'Skybase Auth now supports Anonymous sign-ins',
         blog: '/blog/anonymous-sign-ins',
         bg_layers: [
           {
@@ -222,10 +222,10 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     blog: '/blog/s3-compatible-storage',
     date: '18 April',
     published_at: '2024-04-18T08:00:00.000-07:00',
-    title: 'Supabase Storage: now supports the S3 protocol',
+    title: 'Skybase Storage: now supports the S3 protocol',
     description: (
       <>
-        Supabase Storage: now supports the <strong>S3 protocol</strong>
+        Skybase Storage: now supports the <strong>S3 protocol</strong>
       </>
     ),
     links: [
@@ -239,12 +239,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/twitter-space-ga-week-4',
+        href: 'https://skybase.link/twitter-space-ga-week-4',
       },
     ],
     steps: [
       {
-        title: 'Supabase Storage: now supports the S3 protocol',
+        title: 'Skybase Storage: now supports the S3 protocol',
         blog: '/blog/s3-compatible-storage',
         bg_layers: [
           {
@@ -270,10 +270,10 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     blog: '/blog/security-performance-advisor',
     date: '19 April',
     published_at: '2024-04-19T08:00:00.000-07:00',
-    title: 'Supabase Security Advisor & Performance Advisor',
+    title: 'Skybase Security Advisor & Performance Advisor',
     description: (
       <>
-        Supabase <strong>Security Advisor</strong> & <strong>Performance Advisor</strong>
+        Skybase <strong>Security Advisor</strong> & <strong>Performance Advisor</strong>
       </>
     ),
     links: [
@@ -287,12 +287,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/twitter-space-ga-week-5',
+        href: 'https://skybase.link/twitter-space-ga-week-5',
       },
     ],
     steps: [
       {
-        title: 'Supabase Storage: now supports the S3 protocol',
+        title: 'Skybase Storage: now supports the S3 protocol',
         blog: '/blog/s3-compatible-storage',
         bg_layers: [
           {

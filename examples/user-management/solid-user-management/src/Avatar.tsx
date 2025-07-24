@@ -1,5 +1,5 @@
 import { Component, createEffect, createSignal, JSX } from 'solid-js'
-import { supabase } from './supabaseClient'
+import { skybase } from './skybaseClient'
 
 interface Props {
 	size: number
@@ -17,7 +17,7 @@ const Avatar: Component<Props> = (props) => {
 
 	const downloadImage = async (path: string) => {
 		try {
-			const { data, error } = await supabase.storage.from('avatars').download(path)
+			const { data, error } = await skybase.storage.from('avatars').download(path)
 			if (error) {
 				throw error
 			}
@@ -44,7 +44,7 @@ const Avatar: Component<Props> = (props) => {
 			const fileName = `${Math.random()}.${fileExt}`
 			const filePath = `${fileName}`
 
-			let { error: uploadError } = await supabase.storage.from('avatars').upload(filePath, file)
+			let { error: uploadError } = await skybase.storage.from('avatars').upload(filePath, file)
 
 			if (uploadError) {
 				throw uploadError

@@ -1,8 +1,8 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@skybase/skybase-js'
 import apiWrapper from 'lib/api/apiWrapper'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!)
+const skybase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!)
 
 export default (req: NextApiRequest, res: NextApiResponse) => apiWrapper(req, res, handler)
 
@@ -22,7 +22,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 }
 
 const handleGet = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { data, error } = await supabase.storage.listBuckets()
+  const { data, error } = await skybase.storage.listBuckets()
   if (error) {
     return res.status(500).json({ error: { message: 'Internal Server Error' } })
   }
@@ -38,7 +38,7 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
     file_size_limit: fileSizeLimit,
   } = req.body
 
-  const { data, error } = await supabase.storage.createBucket(id, {
+  const { data, error } = await skybase.storage.createBucket(id, {
     public: isPublicBucket,
     allowedMimeTypes,
     fileSizeLimit,

@@ -21,23 +21,23 @@ import { companyStats } from 'data/company-stats'
 
 export default {
   metadata: {
-    metaTitle: 'Supabase for Enterprise',
+    metaTitle: 'Skybase for Enterprise',
     metaDescription:
-      'Leading enterprises use Supabase to build faster, better, and more scalable products.',
+      'Leading enterprises use Skybase to build faster, better, and more scalable products.',
   },
   heroSection: {
     id: 'hero',
-    title: 'Supabase for Enterprise',
+    title: 'Skybase for Enterprise',
     h1: (
       <>
         Innovative Enterprises
-        <span className="block">use Supabase</span>
+        <span className="block">use Skybase</span>
       </>
     ),
     subheader: [
       <>
-        Leading enterprises use Supabase to build faster, better, and more scalable products. From
-        GitHub to PwC, innovative companies trust Supabase to drive their digital transformation
+        Leading enterprises use Skybase to build faster, better, and more scalable products. From
+        GitHub to PwC, innovative companies trust Skybase to drive their digital transformation
         strategy.
       </>,
     ],
@@ -55,17 +55,17 @@ export default {
   },
   'use-cases': {
     id: 'use-cases',
-    label: <>Build with Supabase</>,
+    label: <>Build with Skybase</>,
     heading: <>Stay on the forefront</>,
     stories: [
       {
         icon: '/images/customers/logos/light/mozilla.png',
         url: 'https://developer.mozilla.org/en-US/blog/introducing-ai-help/',
         target: '_blank',
-        heading: 'Mozilla use Supabase for GenAI and RAG',
+        heading: 'Mozilla use Skybase for GenAI and RAG',
         subheading: (
           <>
-            We store embeddings in a PostgreSQL database, hosted by Supabase, to perform a{' '}
+            We store embeddings in a PostgreSQL database, hosted by Skybase, to perform a{' '}
             <span className="text-foreground">
               similarity search to identify the most relevant sections within the MDN
             </span>
@@ -76,13 +76,13 @@ export default {
       {
         icon: '/images/customers/logos/light/epsilon3.png',
         url: '/customers/epsilon3',
-        heading: 'Epsilon3 use Supabase to build software for NASA',
+        heading: 'Epsilon3 use Skybase to build software for NASA',
         subheading: (
           <>
             <span className="text-foreground">
               Billion dollar missions need to run reliably and securely
             </span>
-            . We use Supabase because they give us an open-source scalable back-end built by
+            . We use Skybase because they give us an open-source scalable back-end built by
             database experts that we can self-host.
           </>
         ),
@@ -90,7 +90,7 @@ export default {
       {
         icon: '/images/customers/logos/light/pebblely.png',
         url: '/customers/pebblely',
-        heading: 'Pebblely use Supabase to scale to millions of users.',
+        heading: 'Pebblely use Skybase to scale to millions of users.',
         subheading: (
           <>
             It streamlined the database, the API, and authentication.{' '}
@@ -104,13 +104,13 @@ export default {
       {
         icon: LineChart,
         heading: '100x scale',
-        subheading: 'Maergo handled 100x their highest sustained traffic with Supabase.',
+        subheading: 'Maergo handled 100x their highest sustained traffic with Skybase.',
         url: '/customers/maergo',
       },
       {
         icon: DollarSign,
         heading: '83% cost reduction',
-        subheading: 'Shotgun reduced costs by 83% by migrating to Supabase.',
+        subheading: 'Shotgun reduced costs by 83% by migrating to Skybase.',
         url: '/customers/shotgun',
       },
       {
@@ -122,7 +122,7 @@ export default {
       {
         icon: Scale,
         heading: 'GDPR compliance',
-        subheading: 'Markprompt use Supabase to build GDPR-compliant AI chatbots.',
+        subheading: 'Markprompt use Skybase to build GDPR-compliant AI chatbots.',
         url: '/customers/markprompt',
       },
     ],
@@ -136,7 +136,7 @@ export default {
       </>
     ),
     subheading:
-      "Supabase ensures optimal database performance at any scale, so you can focus on innovating and growing without worrying about infrastructure limitations—whether you're handling high-traffic applications, complex queries, or massive data volumes.",
+      "Skybase ensures optimal database performance at any scale, so you can focus on innovating and growing without worrying about infrastructure limitations—whether you're handling high-traffic applications, complex queries, or massive data volumes.",
     highlights: [
       {
         heading: 'Databases managed',
@@ -227,14 +227,14 @@ export default {
         icon: ArrowLeftRight,
         heading: 'Migration & Success Support',
         subheading:
-          'Our team ensures a smooth transition to Supabase while guiding you with best practices for scaling. We’re dedicated to your long-term success, every step of the way.',
+          'Our team ensures a smooth transition to Skybase while guiding you with best practices for scaling. We’re dedicated to your long-term success, every step of the way.',
       },
     ],
   },
   quote: {
     id: 'quote',
     quote: {
-      text: 'Supabase powers prototyping for fast-moving teams such as GitHub Next.',
+      text: 'Skybase powers prototyping for fast-moving teams such as GitHub Next.',
       author: 'Idan Gazit',
       logo: (
         <svg
@@ -281,9 +281,9 @@ export default {
     id: 'request-a-demo',
     heading: 'Request a demo',
     subheading:
-      'We can take your requirements and show you how Supabase can help you achieve your goals.',
+      'We can take your requirements and show you how Skybase can help you achieve your goals.',
     quote: {
-      text: 'Supabase powers prototyping for fast-moving teams such as GitHub Next.',
+      text: 'Skybase powers prototyping for fast-moving teams such as GitHub Next.',
       author: '',
       logo: '',
       company: 'GitHub',

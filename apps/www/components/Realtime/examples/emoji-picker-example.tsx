@@ -5,12 +5,12 @@ import { ExampleLayoutProps } from '../example-layout'
 const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState, useRef } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
 const CHANNEL = 'emoji-example-${instanceId}';
@@ -28,7 +28,7 @@ export default function App() {
   const channelRef = useRef(null);
   const containerRef = useRef(null);
   
-  // Set up Supabase channel
+  // Set up Skybase channel
   useEffect(() => {
     // Generate a random username
     const adjectives = ['Happy', 'Clever', 'Brave', 'Bright', 'Kind'];
@@ -39,7 +39,7 @@ export default function App() {
     setUsername(randomName);
     
     // Subscribe to channel
-    const channel = supabase.channel(CHANNEL, {
+    const channel = skybase.channel(CHANNEL, {
       config: {
         presence: {
           key: userId.current,
@@ -225,7 +225,7 @@ const layoutProps: ExampleLayoutProps = {
   files: emojiPickerFiles,
   title: 'Emoji Picker',
   description:
-    "An interactive emoji reaction system that uses Supabase Realtime's broadcast channel to sync emoji reactions across multiple users in real-time.",
+    "An interactive emoji reaction system that uses Skybase Realtime's broadcast channel to sync emoji reactions across multiple users in real-time.",
 }
 
 export default layoutProps

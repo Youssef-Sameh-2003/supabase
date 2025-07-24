@@ -45,7 +45,7 @@ jobs:
         run: pnpm i
 
       - name: Run tests
-        run: pnpm --filter=@supabase/pg-meta run test
+        run: pnpm --filter=@skybase/pg-meta run test
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3

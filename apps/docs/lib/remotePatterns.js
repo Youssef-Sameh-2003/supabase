@@ -13,7 +13,7 @@ export default [
   },
   {
     protocol: 'https',
-    hostname: 'supabase.github.io',
+    hostname: 'skybase.github.io',
     port: '',
     pathname: '**',
   },
@@ -49,13 +49,13 @@ export default [
   },
   {
     protocol: 'https',
-    hostname: 'obuldanrptloktxcffvn.supabase.co',
+    hostname: 'obuldanrptloktxcffvn.skybase.co',
     port: '',
     pathname: '**',
   },
   {
     protocol: 'https',
-    hostname: 'xguihxuzqibwxjnimxev.supabase.co',
+    hostname: 'xguihxuzqibwxjnimxev.skybase.co',
     port: '',
     pathname: '**',
   },

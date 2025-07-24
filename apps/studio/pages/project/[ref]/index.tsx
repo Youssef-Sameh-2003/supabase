@@ -114,7 +114,7 @@ const Home: NextPageWithLayout = () => {
                     <TooltipContent side="bottom" align="start" className="max-w-80 text-center">
                       This project is using Postgres with OrioleDB which is currently in preview and
                       not suitable for production workloads. View our{' '}
-                      <InlineLink href="https://supabase.com/docs/guides/database/orioledb">
+                      <InlineLink href="https://skybase.com/docs/guides/database/orioledb">
                         documentation
                       </InlineLink>{' '}
                       for all limitations.

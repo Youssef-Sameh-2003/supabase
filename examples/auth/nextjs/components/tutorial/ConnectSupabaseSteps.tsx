@@ -1,20 +1,20 @@
 import Step from "./Step";
 
-export default function ConnectSupabaseSteps() {
+export default function ConnectSkybaseSteps() {
   return (
     <ol className="flex flex-col gap-6">
-      <Step title="Create Supabase project">
+      <Step title="Create Skybase project">
         <p>
           Head over to{" "}
           <a
-            href="https://app.supabase.com/project/_/settings/api"
+            href="https://app.skybase.com/project/_/settings/api"
             target="_blank"
             className="font-bold hover:underline text-foreground/80"
             rel="noreferrer"
           >
             database.new
           </a>{" "}
-          and create a new Supabase project.
+          and create a new Skybase project.
         </p>
       </Step>
 
@@ -30,12 +30,12 @@ export default function ConnectSupabaseSteps() {
           </span>{" "}
           and populate with values from{" "}
           <a
-            href="https://app.supabase.com/project/_/settings/api"
+            href="https://app.skybase.com/project/_/settings/api"
             target="_blank"
             className="font-bold hover:underline text-foreground/80"
             rel="noreferrer"
           >
-            your Supabase project's API Settings
+            your Skybase project's API Settings
           </a>
           .
         </p>

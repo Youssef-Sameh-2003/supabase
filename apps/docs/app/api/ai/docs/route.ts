@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import { SkybaseClient } from '@skybase/skybase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
@@ -31,11 +31,11 @@ export const preferredRegion = [
 ]
 
 const openAiKey = process.env.OPENAI_API_KEY
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const skybaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const skybaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 export async function POST(req: NextRequest) {
-  if (!openAiKey || !supabaseUrl || !supabaseServiceKey) {
+  if (!openAiKey || !skybaseUrl || !skybaseServiceKey) {
     return NextResponse.json(
       { error: 'Missing environment variables for AI features.' },
       { status: 500 }
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
   }
 
   const openai = new OpenAI({ apiKey: openAiKey })
-  const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
+  const skybaseClient = new SkybaseClient(skybaseUrl, skybaseServiceKey)
 
   try {
     const { messages } = (await req.json()) as {
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
       throw new UserError('Missing messages in request data')
     }
 
-    const response = await clippy(openai, supabaseClient, messages)
+    const response = await clippy(openai, skybaseClient, messages)
 
     // Proxy the streamed SSE response from OpenAI
     return new NextResponse(response.body, {

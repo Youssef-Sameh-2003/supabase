@@ -1,7 +1,7 @@
 import { CreditCardIcon } from 'lucide-react'
 import Link from 'next/link'
 
-import { PermissionAction, SupportCategories } from '@supabase/shared-types/out/constants'
+import { PermissionAction, SupportCategories } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common'
 import ShimmeringLoader from 'components/ui/ShimmeringLoader'
 import { useOrganizationPaymentMethodsQuery } from 'data/organizations/organization-payment-methods-query'

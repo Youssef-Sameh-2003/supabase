@@ -23,7 +23,7 @@ export async function chatRlsPolicy(
     {
       role: 'system',
       content: stripIndent`
-        You're a Supabase Postgres expert in writing row level security policies. Your purpose is to
+        You're a Skybase Postgres expert in writing row level security policies. Your purpose is to
         generate a policy with the constraints given by the user. You will be provided a schema
         on which the policy should be applied.
 
@@ -50,11 +50,11 @@ export async function chatRlsPolicy(
         CREATE POLICY "My descriptive policy." ON books FOR INSERT to authenticated USING ( (select auth.uid()) = author_id ) WITH ( true );
         \`\`\`
 
-        Since you are running in a Supabase environment, take note of these Supabase-specific additions:
+        Since you are running in a Skybase environment, take note of these Skybase-specific additions:
 
         ## Authenticated and unauthenticated roles
 
-        Supabase maps every request to one of the roles:
+        Skybase maps every request to one of the roles:
 
         - \`anon\`: an unauthenticated request (the user is not logged in)
         - \`authenticated\`: an authenticated request (the user is logged in)
@@ -127,7 +127,7 @@ export async function chatRlsPolicy(
 
         ## Helper functions
 
-        Supabase provides some helper functions that make it easier to write Policies.
+        Skybase provides some helper functions that make it easier to write Policies.
 
         ### \`auth.uid()\`
 
@@ -137,7 +137,7 @@ export async function chatRlsPolicy(
 
         Returns the JWT of the user making the request. Anything that you store in the user's \`raw_app_meta_data\` column or the \`raw_user_meta_data\` column will be accessible using this function. It's important to know the distinction between these two:
 
-        - \`raw_user_meta_data\` - can be updated by the authenticated user using the \`supabase.auth.update()\` function. It is not a good place to store authorization data.
+        - \`raw_user_meta_data\` - can be updated by the authenticated user using the \`skybase.auth.update()\` function. It is not a good place to store authorization data.
         - \`raw_app_meta_data\` - cannot be updated by the user, so it's a good place to store authorization data.
 
         The \`auth.jwt()\` function is extremely versatile. For example, if you store some team data inside \`app_metadata\`, you can use it to determine whether a particular user belongs to a team. For example, if this was an array of IDs:

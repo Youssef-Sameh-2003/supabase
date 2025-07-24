@@ -93,7 +93,7 @@ export const EdgeFunctionBlock = ({
     const restUrlTld = restUrl ? new URL(restUrl).hostname.split('.').pop() : 'co'
     functionUrl =
       ref && functionName && restUrlTld
-        ? `https://${ref}.supabase.${restUrlTld}/functions/v1/${functionName}`
+        ? `https://${ref}.skybase.${restUrlTld}/functions/v1/${functionName}`
         : 'Function URL will be available after deployment'
   }
   return (
@@ -208,7 +208,7 @@ export const EdgeFunctionBlock = ({
               <CodeBlock
                 hideLineNumbers
                 language="bash"
-                value={`supabase functions download ${functionName}`}
+                value={`skybase functions download ${functionName}`}
                 className="text-xs p-2"
               />
             </>

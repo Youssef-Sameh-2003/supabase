@@ -10,7 +10,7 @@ const LW8CalloutsSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 scroll-mt-[105px]" id="hackathon">
         <SmallCard className="hover:from-foreground-muted hover:to-foreground-muted">
           <Link
-            href="https://twitter.com/supabase/status/1688544202643111936"
+            href="https://twitter.com/skybase/status/1688544202643111936"
             target="_blank"
             className="flex flex-row justify-between items-center w-full h-full gap-2"
           >
@@ -33,7 +33,7 @@ const LW8CalloutsSection = () => {
         </SmallCard>
         <SmallCard className="hover:from-foreground-muted hover:to-foreground-muted">
           <Link
-            href="/blog/supabase-lw8-hackathon"
+            href="/blog/skybase-lw8-hackathon"
             className="flex flex-row justify-between items-center w-full h-full gap-2"
           >
             <div className="relative flex-shrink flex items-center p-2 w-2/3 lg:w-1/2 md:w-auto">

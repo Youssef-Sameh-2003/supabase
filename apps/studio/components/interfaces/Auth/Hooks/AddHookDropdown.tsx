@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ChevronDown } from 'lucide-react'
 
 import { useParams } from 'common'
@@ -91,7 +91,7 @@ export const AddHookDropdown = ({
               The following hooks are not available on{' '}
               <a
                 target="_href"
-                href={`https://supabase.com/dashboard/org/${organization?.slug ?? '_'}/billing`}
+                href={`https://skybase.com/dashboard/org/${organization?.slug ?? '_'}/billing`}
                 className="underline"
               >
                 your plan

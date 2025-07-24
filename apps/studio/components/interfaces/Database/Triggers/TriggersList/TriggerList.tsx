@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { includes, sortBy } from 'lodash'
 import { Check, Edit, Edit2, MoreVertical, Trash, X } from 'lucide-react'
 

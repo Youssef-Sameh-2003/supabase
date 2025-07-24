@@ -1,15 +1,15 @@
-# Integrating Dotenvx with a Supabase Project
+# Integrating Dotenvx with a Skybase Project
 
 This project is a full-stack Slack clone built using:
 
 ### Frontend:
 
 - **[Next.js](https://github.com/vercel/next.js):** A React framework optimized for production.
-- **[Supabase.js](https://supabase.com/docs/library/getting-started):** For user management and real-time data syncing.
+- **[Skybase.js](https://skybase.com/docs/library/getting-started):** For user management and real-time data syncing.
 
 ### Backend:
 
-- **[Supabase](https://supabase.com/dashboard):** A hosted Postgres database with a RESTful API, used alongside Supabase.js.
+- **[Skybase](https://skybase.com/dashboard):** A hosted Postgres database with a RESTful API, used alongside Skybase.js.
 - **GitHub Authentication:** For user login.
 
 ---
@@ -36,7 +36,7 @@ This example guides you through deploying and managing app environments with dot
 
 ## Structuring Environment Files
 
-Following the conventions used in this project, environments are configured using dotenv files in `supabase` directory:
+Following the conventions used in this project, environments are configured using dotenv files in `skybase` directory:
 
 | File            | Environment | `.gitignore` it? | Encrypted |
 | --------------- | ----------- | ---------------- | --------- |
@@ -91,7 +91,7 @@ secret = "env(SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET)"
 
 ## Local Development
 
-Create `supabase/.env.local` with your own [GitHub OAuth App credentials](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app). This file should NOT be committed to git as it can contain plaintext values for secret fields.
+Create `skybase/.env.local` with your own [GitHub OAuth App credentials](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app). This file should NOT be committed to git as it can contain plaintext values for secret fields.
 
 ```dotenv
 SUPABASE_AUTH_EXTERNAL_GITHUB_CLIENT_ID=<client-id>
@@ -101,7 +101,7 @@ SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET=<client-secret>
 Run the local stack:
 
 ```bash
-npx supabase start
+npx skybase start
 npm run dev
 ```
 
@@ -114,14 +114,14 @@ Visit `localhost:3000` to test the app with GitHub OAuth integration.
 ### Prerequisites
 
 - **Vercel Account**
-- **Supabase Account**
+- **Skybase Account**
 
-1. **Create a Supabase Project:**
+1. **Create a Skybase Project:**
 
-Sign up at [Supabase Dashboard](https://supabase.com/dashboard) and create a new project. After the database initializes, create `supabase/.env.production` file with your project specific values.
+Sign up at [Skybase Dashboard](https://skybase.com/dashboard) and create a new project. After the database initializes, create `skybase/.env.production` file with your project specific values.
 
 ```dotenv
-NEXT_PUBLIC_SUPABASE_URL=https://<your-project>.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://<your-project>.skybase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-project-apikey>
 ```
 
@@ -137,39 +137,39 @@ SUPABASE_AUTH_ADDITIONAL_REDIRECT_URLS=https://<your-app-url>.vercel.app/**
 Encrypt GitHub credentials in dotenv file:
 
 ```bash
-npx @dotenvx/dotenvx set SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET "<your-secret>" -f supabase/.env.production
+npx @dotenvx/dotenvx set SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET "<your-secret>" -f skybase/.env.production
 ```
 
-This also creates the encryption key in `supabase/.env.production` and the decryption key in `supabase/.env.keys`.
+This also creates the encryption key in `skybase/.env.production` and the decryption key in `skybase/.env.keys`.
 
-3. **Deploy to Supabase Remote:**
+3. **Deploy to Skybase Remote:**
 
 ```bash
-npx @dotenvx/dotenvx run -f supabase/.env.production -- npx supabase link
-npx @dotenvx/dotenvx run -f supabase/.env.production -- npx supabase db push
-npx @dotenvx/dotenvx run -f supabase/.env.production -- npx supabase config push
+npx @dotenvx/dotenvx run -f skybase/.env.production -- npx skybase link
+npx @dotenvx/dotenvx run -f skybase/.env.production -- npx skybase db push
+npx @dotenvx/dotenvx run -f skybase/.env.production -- npx skybase config push
 ```
 
 ### How to Use with Preview Branches
 
-Dotenvx now supports encrypted secrets with Supabase's branching system. This allows you to securely manage environment-specific configurations across different branches.
+Dotenvx now supports encrypted secrets with Skybase's branching system. This allows you to securely manage environment-specific configurations across different branches.
 
 Here's how to set up encrypted secrets for your preview branches:
 
 1. **Generate Key Pair and Encrypt Your Secrets:**
 
 ```bash
-npx @dotenvx/dotenvx set SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET "<your-secret>" -f supabase/.env.preview
+npx @dotenvx/dotenvx set SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET "<your-secret>" -f skybase/.env.preview
 ```
 
-This creates a new encryption key in `supabase/.env.preview` and a new decryption key in `supabase/.env.keys`, specifically for your preview branches.
+This creates a new encryption key in `skybase/.env.preview` and a new decryption key in `skybase/.env.keys`, specifically for your preview branches.
 
 2. **Update Project Secrets:**
 
 We store both the production and preview decryption keys in the project's secret handler, allowing the branching executor to access and decrypt your values when configuring services:
 
 ```bash
-npx supabase secrets set --env-file supabase/.env.keys
+npx skybase secrets set --env-file skybase/.env.keys
 ```
 
 4. **Choose Your Configuration Approach:**

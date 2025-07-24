@@ -33,7 +33,7 @@ const UtilityTabResults = forwardRef<HTMLDivElement, UtilityTabResultsProps>(
     const result = snapV2.results[id]?.[0]
     const { data: subscription } = useOrgSubscriptionQuery({ orgSlug: organization?.slug })
 
-    // Customers on HIPAA plans should not have access to Supabase AI
+    // Customers on HIPAA plans should not have access to Skybase AI
     const { data: projectSettings } = useProjectSettingsV2Query({ projectRef: ref })
     const hasHipaaAddon = subscriptionHasHipaaAddon(subscription) && projectSettings?.is_sensitive
 
@@ -72,11 +72,11 @@ const UtilityTabResults = forwardRef<HTMLDivElement, UtilityTabResultsProps>(
                 </p>
                 <p className="text-sm text-foreground-light">
                   You can either{' '}
-                  <InlineLink href="https://supabase.com/docs/guides/platform/performance#examining-query-performance">
+                  <InlineLink href="https://skybase.com/docs/guides/platform/performance#examining-query-performance">
                     optimize your query
                   </InlineLink>
                   , or{' '}
-                  <InlineLink href="https://supabase.com/docs/guides/database/timeouts">
+                  <InlineLink href="https://skybase.com/docs/guides/database/timeouts">
                     increase the statement timeout
                   </InlineLink>
                   {' or '}

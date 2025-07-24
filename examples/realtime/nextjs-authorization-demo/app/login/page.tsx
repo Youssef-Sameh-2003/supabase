@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { headers } from 'next/headers'
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 import { redirect } from 'next/navigation'
 import { SubmitButton } from '../../components/submit-button'
 
@@ -10,9 +10,9 @@ export default function Login({ searchParams }: { searchParams: { message: strin
 
     const email = formData.get('email') as string
     const password = formData.get('password') as string
-    const supabase = await createClient()
+    const skybase = await createClient()
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await skybase.auth.signInWithPassword({
       email,
       password,
     })
@@ -30,9 +30,9 @@ export default function Login({ searchParams }: { searchParams: { message: strin
     const origin = headers().get('origin')
     const email = formData.get('email') as string
     const password = formData.get('password') as string
-    const supabase = await createClient()
+    const skybase = await createClient()
 
-    const { error } = await supabase.auth.signUp({
+    const { error } = await skybase.auth.signUp({
       email,
       password,
       options: {

@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://supabase.com/sitemap.xml
+Sitemap: https://skybase.com/sitemap.xml

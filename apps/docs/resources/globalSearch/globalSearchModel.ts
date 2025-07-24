@@ -2,7 +2,7 @@ import { type RootQueryTypeSearchDocsArgs } from '~/__generated__/graphql'
 import { convertPostgrestToApiError, type ApiErrorGeneric } from '~/app/api/utils'
 import { Result } from '~/features/helpers.fn'
 import { openAI } from '~/lib/openAi'
-import { supabase, type DatabaseCorrected } from '~/lib/supabase'
+import { skybase, type DatabaseCorrected } from '~/lib/skybase'
 import { GuideModel } from '../guide/guideModel'
 import {
   DB_METADATA_TAG_PLATFORM_CLI,
@@ -24,7 +24,7 @@ export abstract class SearchResultModel {
 
     return embeddingResult.flatMapAsync(async (embedding) => {
       const matchResult = new Result(
-        await supabase().rpc('search_content', {
+        await skybase().rpc('search_content', {
           embedding,
           include_full_content: includeFullContent,
           max_result: args.limit ?? undefined,
@@ -51,7 +51,7 @@ export abstract class SearchResultModel {
 
     return embeddingResult.flatMapAsync(async (embedding) => {
       const matchResult = new Result(
-        await supabase().rpc('search_content_hybrid', {
+        await skybase().rpc('search_content_hybrid', {
           query_text: query,
           query_embedding: embedding,
           include_full_content: includeFullContent,

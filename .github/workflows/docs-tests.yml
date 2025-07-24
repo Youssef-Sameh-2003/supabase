@@ -25,7 +25,7 @@ jobs:
             apps/docs
             examples
             packages
-            supabase
+            skybase
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
@@ -44,7 +44,7 @@ jobs:
       - name: Run tests
         run: |
           touch .env
-          # Needed to prevent local Supabase startup from erroring, due to
+          # Needed to prevent local Skybase startup from erroring, due to
           # GitHub Auth being enabled in config
           echo "GITHUB_CLIENT_ID=dummy-id" >> .env
           echo "GITHUB_SECRET=dummy-secret" >> .env

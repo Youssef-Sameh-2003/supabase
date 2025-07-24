@@ -51,7 +51,7 @@ const CustomDomainDelete = ({ projectRef, customDomain }: CustomDomainDeleteProp
 
       <Panel.Content className="w-full">
         <div className="flex items-center justify-between">
-          <DocsButton href="https://supabase.com/docs/guides/platform/custom-domains" />
+          <DocsButton href="https://skybase.com/docs/guides/platform/custom-domains" />
           <Button
             type="danger"
             icon={<Trash />}

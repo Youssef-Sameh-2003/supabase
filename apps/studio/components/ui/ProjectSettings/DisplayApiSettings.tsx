@@ -1,5 +1,5 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { JwtSecretUpdateStatus } from '@supabase/shared-types/out/events'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
+import { JwtSecretUpdateStatus } from '@skybase/shared-types/out/events'
 import { AlertCircle, Loader2 } from 'lucide-react'
 import { useMemo } from 'react'
 import { toast } from 'sonner'
@@ -84,7 +84,7 @@ export const DisplayApiSettings = ({
                 Your API is secured behind an API gateway which requires an API Key for every
                 request.
                 <br />
-                You can use the keys below in the Supabase client libraries.
+                You can use the keys below in the Skybase client libraries.
                 <br />
               </p>
             </div>
@@ -225,7 +225,7 @@ export const DisplayApiSettings = ({
               description={`
   \`anon\` and \`service_role\` API keys can now be replaced with \`publishable\` and \`secret\` API keys.
   `}
-              href="https://github.com/orgs/supabase/discussions/29260"
+              href="https://github.com/orgs/skybase/discussions/29260"
               buttonText="Read the announcement"
             />
           ) : (
@@ -235,7 +235,7 @@ export const DisplayApiSettings = ({
               description={`
 \`anon\` and \`service_role\` API keys will be changing to \`publishable\` and \`secret\` API keys.
 `}
-              href="https://github.com/orgs/supabase/discussions/29260"
+              href="https://github.com/orgs/skybase/discussions/29260"
               buttonText="Read the announcement"
             />
           )

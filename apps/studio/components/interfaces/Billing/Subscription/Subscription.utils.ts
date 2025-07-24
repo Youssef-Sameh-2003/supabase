@@ -14,7 +14,7 @@ export const subscriptionHasHipaaAddon = (subscription?: OrgSubscription): boole
   if (!IS_PLATFORM) return false
 
   return (subscription?.addons ?? []).some(
-    (addon) => addon.supabase_prod_id === 'addon_security_hipaa'
+    (addon) => addon.skybase_prod_id === 'addon_security_hipaa'
   )
 }
 

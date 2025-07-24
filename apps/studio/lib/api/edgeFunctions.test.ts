@@ -3,18 +3,18 @@ import { isValidEdgeFunctionURL } from './edgeFunctions'
 
 describe('isValidEdgeFunctionURL', () => {
   const validEdgeFunctionUrls = [
-    'https://projectref.supabase.co/functions/v1/hello-world',
-    'https://projectref.supabase.red/functions/v1/hello-world',
-    'https://projectref.supabase.red/functions/v3/hello-world',
-    'https://projectref.supabase.red/functions/v3/hello-world',
+    'https://projectref.skybase.co/functions/v1/hello-world',
+    'https://projectref.skybase.red/functions/v1/hello-world',
+    'https://projectref.skybase.red/functions/v3/hello-world',
+    'https://projectref.skybase.red/functions/v3/hello-world',
   ]
 
   const invalidEdgeFunctionUrls = [
-    'https://notsupabase.com/functions/v1/test',
-    'https://projectref.notsupabase.com/functions/v1/test',
-    'https://localhost?https://aaaa.supabase.co/functions/v1/xxx',
-    'https://localhost:3000/?https://aaaa.supabase.co/functions/v1/xxx',
-    'http://localhost:3000/?https://aaaa.supabase.co/functions/v1/xxx',
+    'https://notskybase.com/functions/v1/test',
+    'https://projectref.notskybase.com/functions/v1/test',
+    'https://localhost?https://aaaa.skybase.co/functions/v1/xxx',
+    'https://localhost:3000/?https://aaaa.skybase.co/functions/v1/xxx',
+    'http://localhost:3000/?https://aaaa.skybase.co/functions/v1/xxx',
   ]
 
   it('should match valid edge function URLs', () => {

@@ -6,7 +6,7 @@ on:
       - master
     paths:
       - '.github/workflows/search.yml'
-      - 'supabase/migrations/**'
+      - 'skybase/migrations/**'
       - 'apps/docs/**'
   workflow_dispatch:
     inputs:
@@ -45,7 +45,7 @@ jobs:
           sparse-checkout: |
             apps/docs
             apps/www/.env.local.example
-            supabase
+            skybase
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm

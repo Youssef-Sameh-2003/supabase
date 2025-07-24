@@ -21,7 +21,7 @@ import { ExpandableVideo } from 'ui-patterns/ExpandableVideo'
 import ImageModal from '~/components/ImageModal'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
-import supabase from '~/lib/supabaseMisc'
+import skybase from '~/lib/skybaseMisc'
 import type { Partner } from '~/types/partners'
 import Error404 from '../../404'
 
@@ -60,12 +60,12 @@ function Partner({
   return (
     <>
       <NextSeo
-        title={`${partner.title} | Works With Supabase`}
+        title={`${partner.title} | Works With Skybase`}
         description={partner.description}
         openGraph={{
-          title: `${partner.title} | Works With Supabase`,
+          title: `${partner.title} | Works With Skybase`,
           description: partner.description,
-          url: `https://supabase.com/partners/integrations/${partner.slug}`,
+          url: `https://skybase.com/partners/integrations/${partner.slug}`,
           images: [
             {
               url: partner.images ? partner.images[0] : partner.logo,
@@ -198,7 +198,7 @@ function Partner({
               <div className="bg-background hover:border-default-control border-default rounded-2xl border p-10 drop-shadow-sm max-w-5xl mx-auto mt-12">
                 <div className="flex flex-row justify-between">
                   <h1 className="text-2xl font-medium self-center">
-                    Get started with {partner.title} and Supabase.
+                    Get started with {partner.title} and Skybase.
                   </h1>
                   <a href={partner.call_to_action_link} target="_blank" rel="noreferrer">
                     <Button size="medium" type="secondary">
@@ -284,7 +284,7 @@ const PartnerDetails = ({ partner }: { partner: Partner }) => {
           )}
         </div>
         <p className="text-foreground-light text-sm">
-          Third-party integrations and docs are managed by Supabase partners.
+          Third-party integrations and docs are managed by Skybase partners.
         </p>
       </div>
     </div>
@@ -293,7 +293,7 @@ const PartnerDetails = ({ partner }: { partner: Partner }) => {
 
 // This function gets called at build time
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: slugs } = await supabase
+  const { data: slugs } = await skybase
     .from('partners')
     .select('slug')
     .eq('approved', true)
@@ -317,7 +317,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  let { data: partner } = await supabase
+  let { data: partner } = await skybase
     .from('partners')
     .select('*')
     .eq('approved', true)

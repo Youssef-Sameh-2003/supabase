@@ -1,9 +1,9 @@
-import type { PostgresPrimaryKey } from '@supabase/postgres-meta'
+import type { PostgresPrimaryKey } from '@skybase/postgres-meta'
 import { chunk, find, isEmpty, isEqual } from 'lodash'
 import Papa from 'papaparse'
 import { toast } from 'sonner'
 
-import { Query } from '@supabase/pg-meta/src/query'
+import { Query } from '@skybase/pg-meta/src/query'
 import SparkBar from 'components/ui/SparkBar'
 import { createDatabaseColumn } from 'data/database-columns/database-column-create-mutation'
 import { deleteDatabaseColumn } from 'data/database-columns/database-column-delete-mutation'

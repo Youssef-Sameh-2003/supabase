@@ -36,7 +36,7 @@ function ProviderSettings({ schema }: { schema: any }) {
   const attributes = schema.block.attributes
 
   const example = codeBlock`
-    provider "supabase" {
+    provider "skybase" {
         ${Object.keys(attributes).map(
           (attribute) =>
             `${attribute} = ${attributes[attribute].type === 'string' ? `""` : '<value>'}`
@@ -48,7 +48,7 @@ function ProviderSettings({ schema }: { schema: any }) {
     <section aria-labelledby="provider-settings" className="prose max-w-none">
       <Heading tag="h2">Provider settings</Heading>
       <p>
-        Use these settings to configure your Supabase provider and authenticate to your Supabase
+        Use these settings to configure your Skybase provider and authenticate to your Skybase
         project.
       </p>
       <Heading tag="h3">Example usage</Heading>
@@ -103,7 +103,7 @@ function Resources({ schema }: { schema: any }) {
   return (
     <section aria-labelledby="resources" className="prose max-w-none">
       <Heading tag="h2">Resources</Heading>
-      <p>You can configure these resources using the Supabase Terraform provider:</p>
+      <p>You can configure these resources using the Skybase Terraform provider:</p>
       <Tabs>
         {Object.keys(schema).map((resource) => (
           <TabPanel id={resource} label={resource}>
@@ -227,7 +227,7 @@ function DataSources({ schema }: { schema: any }) {
   return (
     <section aria-labelledby="data-sources" className="prose max-w-none">
       <Heading tag="h2">Data sources</Heading>
-      <p>You can read these resources using the Supabase Terraform provider:</p>
+      <p>You can read these resources using the Skybase Terraform provider:</p>
       <Tabs>
         {Object.keys(schema).map((dataSource) => (
           <TabPanel id={dataSource} label={dataSource}>
@@ -355,7 +355,7 @@ function DataSources({ schema }: { schema: any }) {
 const TerraformReferencePage = async () => {
   const { schema } = await getSchema()
 
-  const editLink = newEditLink('supabase/terraform-provider-supabase')
+  const editLink = newEditLink('skybase/terraform-provider-skybase')
 
   return (
     <GuideTemplate meta={meta} editLink={editLink}>
@@ -373,17 +373,17 @@ const TerraformReferencePage = async () => {
       >
         data sources
       </Link>
-      . Resources are infrastructure objects, such as a Supabase project, that you can declaratively
-      configure. Data sources are sources of information about your Supabase instances.
+      . Resources are infrastructure objects, such as a Skybase project, that you can declaratively
+      configure. Data sources are sources of information about your Skybase instances.
       <ProviderSettings
-        schema={schema.provider_schemas['registry.terraform.io/supabase/supabase'].provider}
+        schema={schema.provider_schemas['registry.terraform.io/skybase/skybase'].provider}
       />
       <Resources
-        schema={schema.provider_schemas['registry.terraform.io/supabase/supabase'].resource_schemas}
+        schema={schema.provider_schemas['registry.terraform.io/skybase/skybase'].resource_schemas}
       />
       <DataSources
         schema={
-          schema.provider_schemas['registry.terraform.io/supabase/supabase'].data_source_schemas
+          schema.provider_schemas['registry.terraform.io/skybase/skybase'].data_source_schemas
         }
       />
     </GuideTemplate>

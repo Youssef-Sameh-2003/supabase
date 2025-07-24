@@ -3,14 +3,14 @@
 import { ExampleLayoutProps } from '../example-layout'
 
 const appJsCode = `import { useEffect, useState, useCallback, useRef } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 import { AutoSizer, Table, Column, InfiniteLoader } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Constants
 const PAGE_SIZE = 50;
@@ -41,7 +41,7 @@ export default function App() {
   const gridRef = useRef(null);
   const newLogsRef = useRef([]);
 
-  // Function to load rows from Supabase
+  // Function to load rows from Skybase
   const loadMoreRows = async ({ startIndex, stopIndex }) => {
     try {
       setIsLoading(true);
@@ -53,8 +53,8 @@ export default function App() {
       const from = startIndex;
       const to = stopIndex;
 
-      // Query Supabase for the range of rows
-      const { data, error, count } = await supabase
+      // Query Skybase for the range of rows
+      const { data, error, count } = await skybase
         .from(TABLE_NAME)
         .select('*', { count: 'exact' })
         .range(from, to)
@@ -201,8 +201,8 @@ export default function App() {
         setIsLoading(true);
         setError(null);
 
-        // Query Supabase for the first page of logs
-        const { data, error, count } = await supabase
+        // Query Skybase for the first page of logs
+        const { data, error, count } = await skybase
           .from(TABLE_NAME)
           .select('*', { count: 'exact' })
           .order('created_at', { ascending: false })
@@ -233,7 +233,7 @@ export default function App() {
   // Subscribe to real-time updates
   useEffect(() => {
     // Set up the channel for real-time updates
-    const channel = supabase
+    const channel = skybase
       .channel('logs', { config: { private: true } })
       .on('broadcast', { event: 'INSERT' }, (payload) => {
         console.log('New log entry received:', payload);
@@ -409,7 +409,7 @@ const layoutProps: ExampleLayoutProps = {
   },
   title: 'Log Viewer',
   description:
-    "A real-time log viewer that uses Supabase Realtime's broadcast channel to stream and display log entries as they occur across multiple instances.",
+    "A real-time log viewer that uses Skybase Realtime's broadcast channel to stream and display log entries as they occur across multiple instances.",
 }
 
 export default layoutProps

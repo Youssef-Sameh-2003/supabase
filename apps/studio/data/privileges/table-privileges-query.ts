@@ -1,4 +1,4 @@
-import pgMeta from '@supabase/pg-meta'
+import pgMeta from '@skybase/pg-meta'
 import { QueryClient, UseQueryOptions, useQuery } from '@tanstack/react-query'
 import { z } from 'zod'
 

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useState } from 'react'
 
 import { useParams } from 'common'
@@ -42,7 +42,7 @@ export const OAuthSecrets = ({ selectedApp }: Props) => {
           <span className="text-sm text-foreground">Client secrets</span>
           <span className="text-sm text-foreground-light">
             For handling callbacks in the OAuth 2.0 flow. Learn more{' '}
-            <InlineLink href="https://supabase.com/docs/guides/integrations/build-a-supabase-integration#handling-the-callback">
+            <InlineLink href="https://skybase.com/docs/guides/integrations/build-a-skybase-integration#handling-the-callback">
               here
             </InlineLink>
             .

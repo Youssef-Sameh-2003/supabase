@@ -44,22 +44,22 @@ const SecondLevelNav = () => {
     entities: {
       title: 'Tables & Views',
       options: tables,
-      docsUrl: 'https://supabase.com/docs/reference/javascript/select',
+      docsUrl: 'https://skybase.com/docs/reference/javascript/select',
     },
     'stored-procedures': {
       title: 'Stored Procedures',
       options: functions,
-      docsUrl: 'https://supabase.com/docs/reference/javascript/rpc',
+      docsUrl: 'https://skybase.com/docs/reference/javascript/rpc',
     },
     storage: {
       title: 'Storage',
       options: buckets ?? [],
-      docsUrl: 'https://supabase.com/docs/reference/javascript/storage-createbucket',
+      docsUrl: 'https://skybase.com/docs/reference/javascript/storage-createbucket',
     },
     'edge-functions': {
       title: 'Edge Functions',
       options: edgeFunctions ?? [],
-      docsUrl: 'https://supabase.com/docs/reference/javascript/functions-invoke',
+      docsUrl: 'https://skybase.com/docs/reference/javascript/functions-invoke',
     },
   }
 

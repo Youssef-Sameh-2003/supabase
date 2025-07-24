@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supabase_quickstart/components/avatar.dart';
-import 'package:supabase_quickstart/main.dart';
-import 'package:supabase_quickstart/pages/login_page.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
+import 'package:skybase_quickstart/components/avatar.dart';
+import 'package:skybase_quickstart/main.dart';
+import 'package:skybase_quickstart/pages/login_page.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -25,9 +25,9 @@ class _AccountPageState extends State<AccountPage> {
     });
 
     try {
-      final userId = supabase.auth.currentSession!.user.id;
+      final userId = skybase.auth.currentSession!.user.id;
       final data =
-          await supabase.from('profiles').select().eq('id', userId).single();
+          await skybase.from('profiles').select().eq('id', userId).single();
       _usernameController.text = (data['username'] ?? '') as String;
       _websiteController.text = (data['website'] ?? '') as String;
       _avatarUrl = (data['avatar_url'] ?? '') as String;
@@ -53,7 +53,7 @@ class _AccountPageState extends State<AccountPage> {
     });
     final userName = _usernameController.text.trim();
     final website = _websiteController.text.trim();
-    final user = supabase.auth.currentUser;
+    final user = skybase.auth.currentUser;
     final updates = {
       'id': user!.id,
       'username': userName,
@@ -61,7 +61,7 @@ class _AccountPageState extends State<AccountPage> {
       'updated_at': DateTime.now().toIso8601String(),
     };
     try {
-      await supabase.from('profiles').upsert(updates);
+      await skybase.from('profiles').upsert(updates);
       if (mounted) context.showSnackBar('Successfully updated profile!');
     } on PostgrestException catch (error) {
       if (mounted) context.showSnackBar(error.message, isError: true);
@@ -80,7 +80,7 @@ class _AccountPageState extends State<AccountPage> {
 
   Future<void> _signOut() async {
     try {
-      await supabase.auth.signOut();
+      await skybase.auth.signOut();
     } on AuthException catch (error) {
       if (mounted) context.showSnackBar(error.message, isError: true);
     } catch (error) {
@@ -96,11 +96,11 @@ class _AccountPageState extends State<AccountPage> {
     }
   }
 
-  /// Called when image has been uploaded to Supabase storage from within Avatar widget
+  /// Called when image has been uploaded to Skybase storage from within Avatar widget
   Future<void> _onUpload(String imageUrl) async {
     try {
-      final userId = supabase.auth.currentUser!.id;
-      await supabase.from('profiles').upsert({
+      final userId = skybase.auth.currentUser!.id;
+      await skybase.from('profiles').upsert({
         'id': userId,
         'avatar_url': imageUrl,
       });

@@ -201,7 +201,7 @@ function BlogPostPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const meta = {
     title: props.blog.meta_title ?? props.blog.title,
     description: props.blog.meta_description ?? props.blog.description,
-    url: `https://supabase.com/blog/${props.blog.slug}`,
+    url: `https://skybase.com/blog/${props.blog.slug}`,
   }
 
   return (
@@ -240,7 +240,7 @@ function BlogPostPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
           },
           images: [
             {
-              url: `https://supabase.com${basePath}/images/blog/${
+              url: `https://skybase.com${basePath}/images/blog/${
                 props.blog.image ? props.blog.image : props.blog.thumb
               }`,
               alt: `${props.blog.title} thumbnail`,

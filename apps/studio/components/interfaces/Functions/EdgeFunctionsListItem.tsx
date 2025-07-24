@@ -25,7 +25,7 @@ export const EdgeFunctionsListItem = ({ function: item }: EdgeFunctionsListItemP
   // get the .co or .net TLD from the restUrl
   const restUrl = project?.restUrl
   const restUrlTld = restUrl !== undefined ? new URL(restUrl).hostname.split('.').pop() : 'co'
-  const functionUrl = `https://${ref}.supabase.${restUrlTld}/functions/v1/${item.slug}`
+  const functionUrl = `https://${ref}.skybase.${restUrlTld}/functions/v1/${item.slug}`
 
   const endpoint =
     customDomainData?.customDomain?.status === 'active'

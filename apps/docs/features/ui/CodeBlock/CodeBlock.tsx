@@ -5,7 +5,7 @@ import { cn } from 'ui'
 
 import { AnnotatedSpan, CodeCopyButton } from './CodeBlock.client'
 import { getFontStyle } from './CodeBlock.utils'
-import theme from './supabase-2.json' with { type: 'json' }
+import theme from './skybase-2.json' with { type: 'json' }
 import denoTypes from './types/lib.deno.d.ts.include'
 
 const extraFiles: ExtraFiles = { 'deno.d.ts': denoTypes }
@@ -54,7 +54,7 @@ export async function CodeBlock({
 
   const { tokens } = highlighter.codeToTokens(code, {
     lang: lang || undefined,
-    theme: 'Supabase Theme',
+    theme: 'Skybase Theme',
   })
 
   return (

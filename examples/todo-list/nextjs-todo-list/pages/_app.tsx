@@ -1,11 +1,11 @@
-import { supabase } from '@/lib/initSupabase'
+import { skybase } from '@/lib/initSkybase'
 import '@/styles/app.css'
-import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { SessionContextProvider } from '@skybase/auth-helpers-react'
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SessionContextProvider supabaseClient={supabase}>
+    <SessionContextProvider skybaseClient={skybase}>
       <Component {...pageProps} />
     </SessionContextProvider>
   )

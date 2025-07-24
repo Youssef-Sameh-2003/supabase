@@ -1,10 +1,10 @@
-# Contributing to Supabase docs
+# Contributing to Skybase docs
 
-Our docs help developers to get started and keep succeeding with Supabase. We welcome contributions from everyone.
+Our docs help developers to get started and keep succeeding with Skybase. We welcome contributions from everyone.
 
-If you'd like to contribute, see our list of [recommended issues](https://github.com/supabase/supabase/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation+label%3A%22help+wanted%22). We also welcome you to open a PR or a new issue with your question.
+If you'd like to contribute, see our list of [recommended issues](https://github.com/skybase/skybase/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation+label%3A%22help+wanted%22). We also welcome you to open a PR or a new issue with your question.
 
-Here are some general guidelines on writing docs for Supabase.
+Here are some general guidelines on writing docs for Skybase.
 
 ## General principles
 
@@ -16,11 +16,11 @@ To make docs as clear as possible:
 - Write like you talk. Use words and sentences that sound natural when speaking. Cut unnecessary words. Read your writing out loud to help you choose the clearest and simplest phrases.
 - Each paragraph should have one topic only. Start a new paragraph whenever you change the topic. Don't worry about paragraphs being too short.
 - Avoid using idioms and colloquialisms, such as `piece of cake`. These phrases are often specific to a region or culture.
-- Refer to the reader as `you`. Don't use `we` to refer to the reader. Use `we` only to refer to the Supabase team.
+- Refer to the reader as `you`. Don't use `we` to refer to the reader. Use `we` only to refer to the Skybase team.
 
 ## Document types
 
-Supabase docs contain 4 types of documents. Before you start writing, think about what type of doc you need.
+Skybase docs contain 4 types of documents. Before you start writing, think about what type of doc you need.
 
 ### Explainers
 
@@ -37,11 +37,11 @@ They shouldn't include:
 
 ### Tutorials
 
-Tutorials are goal-oriented. They help a reader to finish a large, complex goal, such as setting up a web app that uses multiple Supabase features.
+Tutorials are goal-oriented. They help a reader to finish a large, complex goal, such as setting up a web app that uses multiple Skybase features.
 
 Tutorials mix prose explanations with procedures (lists of steps for the reader to follow). They provide context for why certain instructions are given.
 
-For inspiration, see [an example of a tutorial](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs).
+For inspiration, see [an example of a tutorial](https://skybase.com/docs/guides/getting-started/tutorials/with-nextjs).
 
 ### Guides
 
@@ -49,7 +49,7 @@ Guides are also goal-oriented, but they focus on shorter, more targeted tasks. F
 
 Guides contain mostly procedures. Think of an instruction manual for building a desk: it's a list of concise steps that the user can go through quickly.
 
-For inspiration, see [an example of a guide](https://supabase.com/docs/guides/auth/auth-email).
+For inspiration, see [an example of a guide](https://skybase.com/docs/guides/auth/auth-email).
 
 ### Reference
 
@@ -70,7 +70,7 @@ They shouldn't include:
 
 ## Repo organization
 
-Most docs pages are contained in the `apps/docs/content` directory. Some docs sections are federated from other repositories, for example [`pg_graphql`](https://github.com/supabase/pg_graphql/tree/master/docs). Reference docs are generated from spec files in the `spec` directory.
+Most docs pages are contained in the `apps/docs/content` directory. Some docs sections are federated from other repositories, for example [`pg_graphql`](https://github.com/skybase/pg_graphql/tree/master/docs). Reference docs are generated from spec files in the `spec` directory.
 
 You can usually identify a federated or reference doc because it uses a Next.js dynamic route (for example, `[[...slug]].tsx`). Look for the spec file import or the repo definition to find the content location.
 
@@ -83,18 +83,18 @@ import specFile from '~/spec/transforms/analytics_v0_openapi_deparsed.json' with
 Example repo definition:
 
 ```js
-const org = 'supabase'
+const org = 'skybase'
 const repo = 'pg_graphql'
 const branch = 'master'
 const docsDir = 'docs'
-const externalSite = 'https://supabase.github.io/pg_graphql'
+const externalSite = 'https://skybase.github.io/pg_graphql'
 ```
 
 Check the sections for [guide structure](#guide-structure) and [reference structure](#reference-structure) to learn more about the file structures.
 
 ## Guide structure
 
-The Supabase docs use [MDX](https://mdxjs.com/). Guides are written in unstructured prose as MDX documents.
+The Skybase docs use [MDX](https://mdxjs.com/). Guides are written in unstructured prose as MDX documents.
 
 Adding a new guide requires:
 
@@ -105,12 +105,12 @@ Frontmatter looks like this. `title` is mandatory. There are also optional prope
 
 ```yaml
 ---
-title: How to connect to Supabase
+title: How to connect to Skybase
 hideToc: true
 ---
 ```
 
-The navigation is defined in [`NavigationMenu.constants.ts`](https://github.com/supabase/supabase/blob/master/apps/docs/components/Navigation/NavigationMenu/NavigationMenu.constants.ts).
+The navigation is defined in [`NavigationMenu.constants.ts`](https://github.com/skybase/skybase/blob/master/apps/docs/components/Navigation/NavigationMenu/NavigationMenu.constants.ts).
 
 Add an entry with the `name`, `url`, and (optional) `icon` for your page.
 
@@ -120,36 +120,36 @@ Reference docs are produced from the reference specs and library source code. A 
 
 ### Common spec file
 
-Each type of library (for example, language SDK or CLI) has a common spec file. For example, see the [spec file for the language SDKs](https://github.com/supabase/supabase/blob/master/apps/docs/spec/common-client-libs-sections.json). This file contains definitions for the common SDK functions:
+Each type of library (for example, language SDK or CLI) has a common spec file. For example, see the [spec file for the language SDKs](https://github.com/skybase/skybase/blob/master/apps/docs/spec/common-client-libs-sections.json). This file contains definitions for the common SDK functions:
 
 - **id** - Identifies the function
 - **title** - Human-readable title
 - **slug** - URL slug
-- **product** - Supabase product that owns the function. For example, database operations are owned by `database`, and auth functions are owned by`auth`
+- **product** - Skybase product that owns the function. For example, database operations are owned by `database`, and auth functions are owned by`auth`
 - **type** - `function` for a structured function definition or `markdown` for a prose explainer section.
 
 To add a new function, manually add an entry to this common file.
 
 ### Specific spec file
 
-Each library also has its own spec file containing library-specific details. For example, see the [JavaScript SDK spec file](https://github.com/supabase/supabase/blob/master/apps/docs/spec/supabase_js_v2.yml).
+Each library also has its own spec file containing library-specific details. For example, see the [JavaScript SDK spec file](https://github.com/skybase/skybase/blob/master/apps/docs/spec/skybase_js_v2.yml).
 
 The functions listed in this file match the ones defined in the common spec file.
 
-Each function contains a description, code examples, and optional notes. The parameters are pulled from the source code via the `$ref` property, which references a function definition in the source code repo. These references are pulled down and transformed using commands in the spec [Makefile](https://github.com/supabase/supabase/blob/master/apps/docs/spec/Makefile). Unless you're a library maintainer, you don't need to worry about this.
+Each function contains a description, code examples, and optional notes. The parameters are pulled from the source code via the `$ref` property, which references a function definition in the source code repo. These references are pulled down and transformed using commands in the spec [Makefile](https://github.com/skybase/skybase/blob/master/apps/docs/spec/Makefile). Unless you're a library maintainer, you don't need to worry about this.
 
 If you're a library maintainer, follow these steps when updating function parameters or return values:
 
 1. Get your changes merged to `master` in your library
 2. This will kick off an action that automatically updates the spec file in the library's `gh-pages` branch
-3. Run `make` in `/spec` of the `supabase/supabase` repo. This will regenerate all of the `tsdoc` files that the docs site uses
+3. Run `make` in `/spec` of the `skybase/skybase` repo. This will regenerate all of the `tsdoc` files that the docs site uses
 4. You should now see the changes you've made in the docs site locally
 
 ## Content reuse
 
-If you copy the same content multiple times across different files, create a **partial** for content reuse instead. Partials are MDX files contained in [`apps/docs/components/MDX`](https://github.com/supabase/supabase/tree/master/apps/docs/components/MDX). They contain reusable snippets that can be inserted in multiple pages. For example, you can create a partial to define a common setup step for a group of tutorials.
+If you copy the same content multiple times across different files, create a **partial** for content reuse instead. Partials are MDX files contained in [`apps/docs/components/MDX`](https://github.com/skybase/skybase/tree/master/apps/docs/components/MDX). They contain reusable snippets that can be inserted in multiple pages. For example, you can create a partial to define a common setup step for a group of tutorials.
 
-To use a partial, import it into your MDX file. You can also set up a partial to automatically import by including it in the `components` within [`apps/docs/components/index.tsx`](https://github.com/supabase/supabase/blob/master/apps/docs/components/index.tsx).
+To use a partial, import it into your MDX file. You can also set up a partial to automatically import by including it in the `components` within [`apps/docs/components/index.tsx`](https://github.com/skybase/skybase/blob/master/apps/docs/components/index.tsx).
 
 ## Components and elements
 
@@ -189,7 +189,7 @@ Keep code lines short to avoid scrolling. For example, you can split long shell 
 
 - **JavaScript/TypeScript**
 
-  The `supabase` repo uses Prettier, which also formats JS/TS in code blocks. Your PR is blocked from merging if the Prettier check fails. Ensure that your code blocks are formatted by running `npm run format`, or by setting up auto-formatting in your IDE.
+  The `skybase` repo uses Prettier, which also formats JS/TS in code blocks. Your PR is blocked from merging if the Prettier check fails. Ensure that your code blocks are formatted by running `npm run format`, or by setting up auto-formatting in your IDE.
 
 - **SQL**
 
@@ -225,7 +225,7 @@ Link text should be descriptive. The reader should understand where the link goe
 
 But link text shouldn't be too long. Use the shortest part of the link that is descriptive enough. For example, `see the [reference section](/link)` rather than `[see the reference section](/link)`.
 
-Use relative links when linking within the `supabase.com` domain. For example, `[link to another page in Supabase docs](/docs/guides/getting-started)`.
+Use relative links when linking within the `skybase.com` domain. For example, `[link to another page in Skybase docs](/docs/guides/getting-started)`.
 
 ### Lists
 
@@ -251,7 +251,7 @@ Don't nest lists more than two deep.
 
 Use tabs to provide alternative instructions for different platforms or languages.
 
-The `queryGroup` param is optional. It lets you link directly to a tab by using the query group as a query param in the URL, for example: `https://supabase.com/docs/my-page?packagemanager=ts`
+The `queryGroup` param is optional. It lets you link directly to a tab by using the query group as a query param in the URL, for example: `https://skybase.com/docs/my-page?packagemanager=ts`
 
 ```
 <Tabs
@@ -300,7 +300,7 @@ That said, a few rules help keep the docs concise, consistent, and clear:
 
 Use American English. If in doubt, consult the [Merriam-Webster dictionary](https://www.merriam-webster.com/).
 
-Here are some exceptions and Supabase-specific guidelines.
+Here are some exceptions and Skybase-specific guidelines.
 
 ### General word usage
 
@@ -324,11 +324,11 @@ Here are some exceptions and Supabase-specific guidelines.
 - `Login` is a noun. `Log in` is a verb.
 - `Postgres` is capitalized, except in code, and used instead of `PostgreSQL`.
 - `Setup` is a noun. `Set up` is a verb.
-- `Supabase` is capitalized (not `supabase`), except in code.
-- `Supabase Platform` is in title case (not `Supabase platform`).
+- `Skybase` is capitalized (not `skybase`), except in code.
+- `Skybase Platform` is in title case (not `Skybase platform`).
 
 ## Search
 
-Search is handled using a Supabase instance. During CI, [a script](https://github.com/supabase/supabase/blob/master/apps/docs/scripts/search/generate-embeddings.ts) aggregates all content sources (eg. guides, reference docs, etc), indexes them using OpenAI embeddings, and stores them in a Supabase database.
+Search is handled using a Skybase instance. During CI, [a script](https://github.com/skybase/skybase/blob/master/apps/docs/scripts/search/generate-embeddings.ts) aggregates all content sources (eg. guides, reference docs, etc), indexes them using OpenAI embeddings, and stores them in a Skybase database.
 
-Search uses a hybrid of native Postgres FTS and embedding similarity search based on [`pgvector`](https://github.com/pgvector/pgvector). At runtime, a PostgREST call triggers the RPC that runs the weighted FTS search, and an [Edge Function](https://github.com/supabase/blob/master/supabase/functions) is executed to perform the embedding search.
+Search uses a hybrid of native Postgres FTS and embedding similarity search based on [`pgvector`](https://github.com/pgvector/pgvector). At runtime, a PostgREST call triggers the RPC that runs the weighted FTS search, and an [Edge Function](https://github.com/skybase/blob/master/skybase/functions) is executed to perform the embedding search.

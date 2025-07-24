@@ -1,6 +1,6 @@
 # Use waitUntil to perform work after Cloudflare Worker returns response
 
-**[📹 Video](https://egghead.io/lessons/supabase-use-waituntil-to-perform-work-after-cloudflare-worker-returns-response?af=9qsk0a)**
+**[📹 Video](https://egghead.io/lessons/skybase-use-waituntil-to-perform-work-after-cloudflare-worker-returns-response?af=9qsk0a)**
 
 The `waitUntil` function allows us to continue performing work in our Cloudflare Worker, after a response has been sent back to the client.
 
@@ -19,7 +19,7 @@ router.post(
   async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }, context) => {
     const updateCache = async () => {
       const { type, record, old_record } = request.content;
-      const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const skybase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       if (type === "INSERT" || type === "UPDATE") {
         await writeTo(ARTICLES, `/articles/${record.id}`, record);
@@ -29,7 +29,7 @@ router.post(
         await ARTICLES.delete(`/articles/${old_record.id}`);
       }
 
-      const { data: articles } = await supabase.from("articles").select("*");
+      const { data: articles } = await skybase.from("articles").select("*");
       await writeTo(ARTICLES, "/articles", articles);
       console.log("updated cache");
     };
@@ -52,7 +52,7 @@ npx wrangler dev
 ## Resources
 
 - [Cloudflare waitUntil docs](https://developers.cloudflare.com/workers/runtime-apis/scheduled-event/)
-- [Supabase.js docs](https://github.com/supabase/supabase-js)
+- [Skybase.js docs](https://github.com/skybase/skybase-js)
 - [Wrangler CLI docs](https://developers.cloudflare.com/workers/wrangler/commands/)
 - [KV Storage docs](https://developers.cloudflare.com/workers/runtime-apis/kv/)
 - [Thunder Client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)

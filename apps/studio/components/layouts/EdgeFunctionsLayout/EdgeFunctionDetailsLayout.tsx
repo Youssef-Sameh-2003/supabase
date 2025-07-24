@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Download, FileArchive, Send } from 'lucide-react'
 import { useRouter } from 'next/router'
 import { useEffect, useState, type PropsWithChildren } from 'react'
@@ -168,7 +168,7 @@ const EdgeFunctionDetailsLayout = ({
                 }
               />
             )}
-            <DocsButton href="https://supabase.com/docs/guides/functions" />
+            <DocsButton href="https://skybase.com/docs/guides/functions" />
             <Popover_Shadcn_>
               <PopoverTrigger_Shadcn_ asChild>
                 <Button type="default" icon={<Download />}>
@@ -184,7 +184,7 @@ const EdgeFunctionDetailsLayout = ({
                     readOnly
                     containerClassName=""
                     className="text-xs font-mono tracking-tighter"
-                    value={`supabase functions download ${functionSlug}`}
+                    value={`skybase functions download ${functionSlug}`}
                   />
                 </div>
                 <Separator className="!bg-border-overlay" />

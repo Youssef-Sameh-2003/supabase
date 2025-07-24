@@ -127,7 +127,7 @@ export const HTTPHeaderFieldsSection = ({ variant }: HTTPHeaderFieldsSectionProp
                   key="add-source-header"
                   onClick={() =>
                     append({
-                      name: 'x-supabase-webhook-source',
+                      name: 'x-skybase-webhook-source',
                       value: `[Use a secret value]`,
                     })
                   }

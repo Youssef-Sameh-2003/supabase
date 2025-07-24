@@ -1,10 +1,10 @@
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
-import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
+import { useSkybaseClient, useUser } from '@skybase/auth-helpers-react'
+import { Auth, ThemeSupa } from '@skybase/auth-ui-react'
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
 
 const LoginPage: NextPage = () => {
-  const supabaseClient = useSupabaseClient()
+  const skybaseClient = useSkybaseClient()
   const user = useUser()
 
   if (!user) {
@@ -13,7 +13,7 @@ const LoginPage: NextPage = () => {
         <Auth
           redirectTo="http://localhost:3000/"
           appearance={{ theme: ThemeSupa }}
-          supabaseClient={supabaseClient}
+          skybaseClient={skybaseClient}
         />
       </main>
     )
@@ -21,7 +21,7 @@ const LoginPage: NextPage = () => {
 
   return (
     <>
-      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
+      <button onClick={() => skybaseClient.auth.signOut()}>Sign out</button>
       <p>user:</p>
       <pre>{JSON.stringify(user, null, 2)}</pre>
     </>

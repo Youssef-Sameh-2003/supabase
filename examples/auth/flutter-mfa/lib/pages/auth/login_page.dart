@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mfa_app/main.dart';
 import 'package:mfa_app/pages/mfa/verify_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   static const route = '/auth/login';
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               try {
                 final email = _emailController.text.trim();
                 final password = _passwordController.text.trim();
-                await supabase.auth.signInWithPassword(
+                await skybase.auth.signInWithPassword(
                   email: email,
                   password: password,
                 );

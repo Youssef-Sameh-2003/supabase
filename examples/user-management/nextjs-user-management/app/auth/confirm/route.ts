@@ -1,7 +1,7 @@
-import { type EmailOtpType } from '@supabase/supabase-js'
+import { type EmailOtpType } from '@skybase/skybase-js'
 import { type NextRequest, NextResponse } from 'next/server'
 
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 
 // Creating a handler to a GET request to route /auth/confirm
 export async function GET(request: NextRequest) {
@@ -17,9 +17,9 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete('type')
 
   if (token_hash && type) {
-    const supabase = await createClient()
+    const skybase = await createClient()
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { error } = await skybase.auth.verifyOtp({
       type,
       token_hash,
     })

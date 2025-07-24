@@ -28,14 +28,14 @@ const IndexesPage: NextPageWithLayout = () => {
         <ScaffoldSectionDetail className="flex items-center lg:justify-end gap-2 flex-wrap">
           <DocsButton
             className="no-underline"
-            href="https://supabase.com/docs/guides/database/query-optimization"
+            href="https://skybase.com/docs/guides/database/query-optimization"
           />
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <a
               target="_blank"
               rel="noreferrer"
               className="no-underline"
-              href="https://supabase.com/docs/guides/database/extensions/index_advisor"
+              href="https://skybase.com/docs/guides/database/extensions/index_advisor"
             >
               Index Advisor
             </a>

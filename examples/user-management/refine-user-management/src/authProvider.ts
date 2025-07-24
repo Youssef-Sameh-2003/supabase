@@ -1,11 +1,11 @@
 import { AuthBindings } from "@refinedev/core";
 
-import { supabaseClient } from "./utility";
+import { skybaseClient } from "./utility";
 
 const authProvider: AuthBindings = {
   login: async ({ email }) => {
     try {
-      const { error } = await supabaseClient.auth.signInWithOtp({ email });
+      const { error } = await skybaseClient.auth.signInWithOtp({ email });
 
       if (!error) {
         alert("Check your email for the login link!");
@@ -24,7 +24,7 @@ const authProvider: AuthBindings = {
     }
   },
   logout: async () => {
-    const { error } = await supabaseClient.auth.signOut();
+    const { error } = await skybaseClient.auth.signOut();
 
     if (error) {
       return {
@@ -44,7 +44,7 @@ const authProvider: AuthBindings = {
   },
   check: async () => {
     try {
-      const { data } = await supabaseClient.auth.getSession();
+      const { data } = await skybaseClient.auth.getSession();
       const { session } = data;
 
       if (!session) {
@@ -75,7 +75,7 @@ const authProvider: AuthBindings = {
     };
   },
   getIdentity: async () => {
-    const { data } = await supabaseClient.auth.getUser();
+    const { data } = await skybaseClient.auth.getUser();
 
     if (data?.user) {
       return {

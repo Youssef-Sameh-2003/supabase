@@ -1,6 +1,6 @@
-import { TypedSupabaseClient } from '@/utils/types'
+import { TypedSkybaseClient } from '@/utils/types'
 
-export function getCountryById(client: TypedSupabaseClient, countryId: number) {
+export function getCountryById(client: TypedSkybaseClient, countryId: number) {
   return client
     .from('countries')
     .select(

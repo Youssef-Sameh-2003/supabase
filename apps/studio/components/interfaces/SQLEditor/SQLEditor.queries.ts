@@ -102,8 +102,8 @@ $$
 $$
 language sql volatile;
 
--- you can call the function from your browser with supabase-js
--- const { data, error } = await supabase.rpc('increment', { row_id: 2 })
+-- you can call the function from your browser with skybase-js
+-- const { data, error } = await skybase.rpc('increment', { row_id: 2 })
   `.trim(),
   },
   {
@@ -494,7 +494,7 @@ insert into public.colors (name, hex, red, green, blue, hue, sat_hsl, light_hsl,
     description: 'Build a basic slack clone with Row Level Security.',
     sql: `
 --
--- For use with https://github.com/supabase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone
+-- For use with https://github.com/skybase/skybase/tree/master/examples/slack-clone/nextjs-slack-clone
 
 -- Custom types
 create type public.app_permission as enum ('channels.delete', 'messages.delete');
@@ -508,7 +508,7 @@ create table public.users (
   status      user_status default 'OFFLINE'::public.user_status
 );
 comment on table public.users is 'Profile data for each user.';
-comment on column public.users.id is 'References the internal Supabase Auth user.';
+comment on column public.users.id is 'References the internal Skybase Auth user.';
 
 -- CHANNELS
 create table public.channels (
@@ -652,16 +652,16 @@ create trigger on_auth_user_created
 
 begin;
   -- remove the realtime publication
-  drop publication if exists supabase_realtime;
+  drop publication if exists skybase_realtime;
 
   -- re-create the publication but don't enable it for any tables
-  create publication supabase_realtime;
+  create publication skybase_realtime;
 commit;
 
 -- add tables to the publication
-alter publication supabase_realtime add table public.channels;
-alter publication supabase_realtime add table public.messages;
-alter publication supabase_realtime add table public.users;
+alter publication skybase_realtime add table public.channels;
+alter publication skybase_realtime add table public.messages;
+alter publication skybase_realtime add table public.users;
 
 -- DUMMY DATA
 insert into public.users (id, username)
@@ -693,8 +693,8 @@ values
     sql: `
 --
 -- For use with:
--- https://github.com/supabase/supabase/tree/master/examples/todo-list/sveltejs-todo-list or
--- https://github.com/supabase/examples-archive/tree/main/supabase-js-v1/todo-list
+-- https://github.com/skybase/skybase/tree/master/examples/todo-list/sveltejs-todo-list or
+-- https://github.com/skybase/examples-archive/tree/main/skybase-js-v1/todo-list
 --
 
 create table todos (
@@ -743,7 +743,7 @@ create policy "Can update own user data." on users
   for update using ((select auth.uid()) = id);
 
 /**
-* This trigger automatically creates a user entry when a new user signs up via Supabase Auth.
+* This trigger automatically creates a user entry when a new user signs up via Skybase Auth.
 */
 create function public.handle_new_user()
 returns trigger
@@ -878,8 +878,8 @@ create policy "Can only view own subs data." on subscriptions
  * REALTIME SUBSCRIPTIONS
  * Only allow realtime listening on public tables.
  */
-drop publication if exists supabase_realtime;
-create publication supabase_realtime
+drop publication if exists skybase_realtime;
+create publication skybase_realtime
   for table products, prices;
 `.trim(),
   },
@@ -901,7 +901,7 @@ create table profiles (
   constraint username_length check (char_length(username) >= 3)
 );
 -- Set up Row Level Security (RLS)
--- See https://supabase.com/docs/guides/auth/row-level-security for more details.
+-- See https://skybase.com/docs/guides/auth/row-level-security for more details.
 alter table profiles
   enable row level security;
 
@@ -914,8 +914,8 @@ create policy "Users can insert their own profile." on profiles
 create policy "Users can update own profile." on profiles
   for update using ((select auth.uid()) = id);
 
--- This trigger automatically creates a profile entry when a new user signs up via Supabase Auth.
--- See https://supabase.com/docs/guides/auth/managing-user-data#using-triggers for more details.
+-- This trigger automatically creates a profile entry when a new user signs up via Skybase Auth.
+-- See https://skybase.com/docs/guides/auth/managing-user-data#using-triggers for more details.
 create function public.handle_new_user()
 returns trigger
 set search_path = ''
@@ -935,7 +935,7 @@ insert into storage.buckets (id, name)
   values ('avatars', 'avatars');
 
 -- Set up access controls for storage.
--- See https://supabase.com/docs/guides/storage#policy-examples for more details.
+-- See https://skybase.com/docs/guides/storage#policy-examples for more details.
 create policy "Avatar images are publicly accessible." on storage.objects
   for select using (bucket_id = 'avatars');
 
@@ -947,7 +947,7 @@ create policy "Anyone can upload an avatar." on storage.objects
     id: 16,
     type: 'quickstart',
     title: 'NextAuth Schema Setup',
-    description: 'Sets up a the Schema and Tables for the NextAuth Supabase Adapter.',
+    description: 'Sets up a the Schema and Tables for the NextAuth Skybase Adapter.',
     sql: `
 --
 -- Name: next_auth; Type: SCHEMA;
@@ -1323,11 +1323,11 @@ For this reason, dbdev should only be used with databases with physical backups 
 */
 create extension if not exists http with schema extensions;
 create extension if not exists pg_tle;
-select pgtle.uninstall_extension_if_exists('supabase-dbdev');
-drop extension if exists "supabase-dbdev";
+select pgtle.uninstall_extension_if_exists('skybase-dbdev');
+drop extension if exists "skybase-dbdev";
 select
     pgtle.install_extension(
-        'supabase-dbdev',
+        'skybase-dbdev',
         resp.contents ->> 'version',
         'PostgreSQL package manager',
         resp.contents ->> 'sql'
@@ -1337,7 +1337,7 @@ from http(
         'GET',
         'https://api.database.dev/rest/v1/'
         || 'package_versions?select=sql,version'
-        || '&package_name=eq.supabase-dbdev'
+        || '&package_name=eq.skybase-dbdev'
         || '&order=version.desc'
         || '&limit=1',
         array[
@@ -1351,10 +1351,10 @@ lateral (
     select
         ((row_to_json(x) -> 'content') #>> '{}')::json -> 0
 ) resp(contents);
-create extension "supabase-dbdev";
-select dbdev.install('supabase-dbdev');
-drop extension if exists "supabase-dbdev";
-create extension "supabase-dbdev";
+create extension "skybase-dbdev";
+select dbdev.install('skybase-dbdev');
+drop extension if exists "skybase-dbdev";
+create extension "skybase-dbdev";
 `.trim(),
   },
   {
@@ -1430,7 +1430,7 @@ as $$
       on conflict do update
         set last_refreshed_at = now();
 
-    -- finally let Supabase Auth do the default behavior for a failed attempt
+    -- finally let Skybase Auth do the default behavior for a failed attempt
     return jsonb_build_object('decision', 'continue');
   end;
 $$;
@@ -1438,11 +1438,11 @@ $$;
 -- Assign appropriate permissions and revoke access
 grant execute
   on function public.hook_mfa_verification_attempt
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 grant all
   on table public.mfa_failed_verification_attempts
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 revoke execute
   on function public.hook_mfa_verification_attempt
@@ -1452,7 +1452,7 @@ revoke all
   on table public.mfa_failed_verification_attempts
   from authenticated, anon, public;
 
-grant usage on schema public to supabase_auth_admin;`.trim(),
+grant usage on schema public to skybase_auth_admin;`.trim(),
   },
   {
     id: 27,
@@ -1502,7 +1502,7 @@ as $$
       on conflict do update
         set last_failed_at = now();
 
-    -- finally let Supabase Auth do the default behavior for a failed attempt
+    -- finally let Skybase Auth do the default behavior for a failed attempt
     return jsonb_build_object('decision', 'continue');
   end;
 $$;
@@ -1510,11 +1510,11 @@ $$;
 -- Assign appropriate permissions
 grant execute
   on function public.hook_password_verification_attempt
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 grant all
   on table public.password_failed_verification_attempts
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 revoke execute
   on function public.hook_password_verification_attempt
@@ -1524,7 +1524,7 @@ revoke all
   on table public.password_failed_verification_attempts
   from authenticated, anon, public;
 
-grant usage on schema public to supabase_auth_admin;`.trim(),
+grant usage on schema public to skybase_auth_admin;`.trim(),
   },
   {
     id: 28,
@@ -1568,13 +1568,13 @@ $$;
 
 grant execute
   on function public.custom_access_token_hook
-  to supabase_auth_admin;
+  to skybase_auth_admin;
 
 revoke execute
   on function public.custom_access_token_hook
   from authenticated, anon, public;
 
-grant usage on schema public to supabase_auth_admin;`.trim(),
+grant usage on schema public to skybase_auth_admin;`.trim(),
   },
 
   {
@@ -1595,7 +1595,7 @@ begin
 end;
 $$;
 -- Permissions for the hook
-grant execute on function public.custom_access_token_hook to supabase_auth_admin;
+grant execute on function public.custom_access_token_hook to skybase_auth_admin;
 revoke execute on function public.custom_access_token_hook from authenticated, anon, public;
     `,
   },

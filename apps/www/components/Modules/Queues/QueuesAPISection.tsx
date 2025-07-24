@@ -4,7 +4,7 @@ import { cn, TextLink } from 'ui'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import CodeWindow from '~/components/CodeWindow'
 
-const codeSnippet = `const queues = createClient(supabaseUrl, supabaseKey, {
+const codeSnippet = `const queues = createClient(skybaseUrl, skybaseKey, {
     db: { schema: "pgmq_public" },
   }
 );

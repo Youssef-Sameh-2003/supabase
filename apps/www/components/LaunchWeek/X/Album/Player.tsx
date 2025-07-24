@@ -5,7 +5,7 @@ import { cn } from 'ui'
 
 const Player = () => {
   const [audio, state, controls, ref] = useAudio({
-    src: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/audio/supabase-album/Bernard.m4a',
+    src: 'https://obuldanrptloktxcffvn.skybase.co/storage/v1/object/public/audio/skybase-album/Bernard.m4a',
     loop: true,
   })
 
@@ -20,7 +20,7 @@ const Player = () => {
     <div className="flex items-center gap-2">
       {audio}
       <Link
-        href="https://supabase.productions/"
+        href="https://skybase.productions/"
         target="_blank"
         className={cn(
           'opacity-0 outline-none group translate-x-2 !ease-[.24,0,.22,.99] duration-200 transition-all text-foreground-muted hover:text-foreground !leading-3 font-mono uppercase text-[10px] flex flex-col text-right',

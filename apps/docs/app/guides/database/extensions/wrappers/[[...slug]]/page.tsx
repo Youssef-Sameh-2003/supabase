@@ -26,10 +26,10 @@ import { SerializeOptions } from '~/types/next-mdx-remote-serialize'
 export const dynamicParams = false
 
 // We fetch these docs at build time from an external repo
-const org = 'supabase'
+const org = 'skybase'
 const repo = 'wrappers'
 const docsDir = 'docs/catalog'
-const externalSite = 'https://supabase.github.io/wrappers'
+const externalSite = 'https://skybase.github.io/wrappers'
 
 type TagQueryResponse = {
   repository: {
@@ -283,7 +283,7 @@ const WrappersDocs = async (props: { params: Promise<Params> }) => {
 
         {dashboardIntegrationURL && (
           <Admonition type="tip" className="mb-4">
-            <p>You can enable the {meta.title} wrapper right from the Supabase dashboard.</p>
+            <p>You can enable the {meta.title} wrapper right from the Skybase dashboard.</p>
 
             <Button asChild>
               <Link href={dashboardIntegrationURL} className="no-underline">
@@ -317,7 +317,7 @@ const getContent = async (params: Params) => {
 
   if (!federatedPage) {
     isExternal = false
-    editLink = `supabase/supabase/apps/docs/content/guides/database/extensions/wrappers${params.slug?.length ? `/${params.slug.join('/')}` : ''}.mdx`
+    editLink = `skybase/skybase/apps/docs/content/guides/database/extensions/wrappers${params.slug?.length ? `/${params.slug.join('/')}` : ''}.mdx`
     const rawContent = await readFile(
       join(
         GUIDES_DIRECTORY,
@@ -369,7 +369,7 @@ const getContent = async (params: Params) => {
 
 const getDashboardIntegrationURL = (wrapperPath?: string) => {
   return wrapperPath
-    ? `https://supabase.com/dashboard/project/_/integrations/${wrapperPath}/overview`
+    ? `https://skybase.com/dashboard/project/_/integrations/${wrapperPath}/overview`
     : null
 }
 

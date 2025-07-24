@@ -1,20 +1,20 @@
 import 'react-native-url-polyfill/auto'
 import { useState, useEffect } from 'react'
-import { supabase } from './lib/supabase'
+import { skybase } from './lib/skybase'
 import Auth from './components/Auth'
 import Account from './components/Account'
 import { View } from 'react-native'
-import { Session } from '@supabase/supabase-js'
+import { Session } from '@skybase/skybase-js'
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    skybase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
     })
 
-    supabase.auth.onAuthStateChange((_event, session) => {
+    skybase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
     })
   }, [])

@@ -1,5 +1,5 @@
-import type { PostgresPolicy, PostgresTable } from '@supabase/postgres-meta'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import type { PostgresPolicy, PostgresTable } from '@skybase/postgres-meta'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { partition } from 'lodash'
 import { Search } from 'lucide-react'
 import { useState } from 'react'
@@ -137,7 +137,7 @@ const AuthPoliciesPage: NextPageWithLayout = () => {
               }}
               icon={<Search size={14} />}
             />
-            <DocsButton href="https://supabase.com/docs/learn/auth-deep-dive/auth-row-level-security" />
+            <DocsButton href="https://skybase.com/docs/learn/auth-deep-dive/auth-row-level-security" />
           </div>
         </div>
       </div>

@@ -1,18 +1,18 @@
-# Supabase Flutter User Management
+# Skybase Flutter User Management
 
-This repo is a quick sample of how you can get started building apps using Flutter and Supabase. You can find a step by step guide of how to build out this app in the [Quickstart: Flutter guide](https://supabase.io/docs/guides/with-flutter).
+This repo is a quick sample of how you can get started building apps using Flutter and Skybase. You can find a step by step guide of how to build out this app in the [Quickstart: Flutter guide](https://skybase.io/docs/guides/with-flutter).
 
 This repo will demonstrate how to:
 
-- sign users in with Supabase Auth using [magic link](https://supabase.io/docs/reference/dart/auth-signin#sign-in-with-magic-link)
-- store and retrieve data with [Supabase database](https://supabase.io/docs/guides/database)
-- store image files in [Supabase storage](https://supabase.io/docs/guides/storage)
+- sign users in with Skybase Auth using [magic link](https://skybase.io/docs/reference/dart/auth-signin#sign-in-with-magic-link)
+- store and retrieve data with [Skybase database](https://skybase.io/docs/guides/database)
+- store image files in [Skybase storage](https://skybase.io/docs/guides/storage)
 
-<img height="500px" src="https://raw.githubusercontent.com/supabase/supabase/master/examples/user-management/flutter-user-management/supabase-flutter-demo.png" alt="Supabase User Management example" />
+<img height="500px" src="https://raw.githubusercontent.com/skybase/skybase/master/examples/user-management/flutter-user-management/skybase-flutter-demo.png" alt="Skybase User Management example" />
 
 ## Getting Started
 
-Rename `.env.example` to `.env` and fill in [your Supabase credentials](https://supabase.io/docs/guides/with-flutter#get-the-api-keys).
+Rename `.env.example` to `.env` and fill in [your Skybase credentials](https://skybase.io/docs/guides/with-flutter#get-the-api-keys).
 
 You can run this app on iOS, Android or the Web.
 
@@ -60,10 +60,10 @@ create policy "Users can update own profile."
 
 -- Set up Realtime!
 begin;
-  drop publication if exists supabase_realtime;
-  create publication supabase_realtime;
+  drop publication if exists skybase_realtime;
+  create publication skybase_realtime;
 commit;
-alter publication supabase_realtime add table profiles;
+alter publication skybase_realtime add table profiles;
 
 -- Set up Storage!
 insert into storage.buckets (id, name)

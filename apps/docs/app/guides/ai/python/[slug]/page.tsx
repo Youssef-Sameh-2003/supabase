@@ -13,11 +13,11 @@ import { SerializeOptions } from '~/types/next-mdx-remote-serialize'
 export const dynamicParams = false
 
 // We fetch these docs at build time from an external repo
-const org = 'supabase'
+const org = 'skybase'
 const repo = 'vecs'
 const branch = 'main'
 const docsDir = 'docs'
-const externalSite = 'https://supabase.github.io/vecs'
+const externalSite = 'https://skybase.github.io/vecs'
 
 // Each external docs page is mapped to a local page
 const pageMap = [

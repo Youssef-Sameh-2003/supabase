@@ -6,7 +6,7 @@ import specRealtimeV0 from '~/spec/realtime_v0_config.yaml' with { type: 'yml' }
 
 const meta = {
   title: 'Realtime Self-hosting Config',
-  description: 'How to configure and deploy Supabase Realtime.',
+  description: 'How to configure and deploy Skybase Realtime.',
 }
 
 const generateMetadata = genGuideMeta(() => ({
@@ -21,7 +21,7 @@ const RealtimeConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'supabase/supabase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/realtime/config/page.tsx'
+        'skybase/skybase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/realtime/config/page.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

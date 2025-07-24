@@ -21,9 +21,9 @@ export default function IndexPage() {
   const router = useRouter()
   const { asPath } = useRouter()
 
-  const meta_title = 'Pricing & Fees | Supabase'
+  const meta_title = 'Pricing & Fees | Skybase'
   const meta_description =
-    'Explore Supabase fees and pricing information. Find our competitive pricing Plans, with no hidden pricing. We have a generous Free Plan for those getting started, and Pay As You Go for those scaling up.'
+    'Explore Skybase fees and pricing information. Find our competitive pricing Plans, with no hidden pricing. We have a generous Free Plan for those getting started, and Pay As You Go for those scaling up.'
 
   // Ability to scroll into pricing sections like storage
   useEffect(() => {
@@ -57,10 +57,10 @@ export default function IndexPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/${router.pathname}`,
+          url: `https://skybase.com/${router.pathname}`,
           images: [
             {
-              url: `https://supabase.com/images/og/supabase-og.png`,
+              url: `https://skybase.com/images/og/skybase-og.png`,
             },
           ],
         }}
@@ -94,7 +94,7 @@ export default function IndexPage() {
           </a>
           <Button size="tiny" type="default" asChild iconRight={<ArrowUpRight className="w-4" />}>
             <a
-              href="/docs/guides/platform/billing-on-supabase#organization-based-billing"
+              href="/docs/guides/platform/billing-on-skybase#organization-based-billing"
               target="_blank"
             >
               Learn how billing works

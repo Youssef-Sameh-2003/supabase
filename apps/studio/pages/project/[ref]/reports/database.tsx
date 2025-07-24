@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { ArrowRight, ExternalLink, RefreshCw } from 'lucide-react'
@@ -399,7 +399,7 @@ const DatabaseUsage = () => {
                 <AlertDescription_Shadcn_>
                   <div className="space-y-2">
                     <p>
-                      New Supabase projects have a database size of ~40-60mb. This space includes
+                      New Skybase projects have a database size of ~40-60mb. This space includes
                       pre-installed extensions, schemas, and default Postgres data. Additional
                       database size is used when installing extensions, even if those extensions are
                       inactive.
@@ -407,7 +407,7 @@ const DatabaseUsage = () => {
 
                     <Button asChild type="default" icon={<ExternalLink />}>
                       <Link
-                        href="https://supabase.com/docs/guides/platform/database-size#disk-space-usage"
+                        href="https://skybase.com/docs/guides/platform/database-size#disk-space-usage"
                         target="_blank"
                         rel="noreferrer"
                       >

@@ -3,7 +3,7 @@ import CodeWindow from '~/components/CodeWindow'
 
 const code = `create trigger "my_webhook" after insert
 on "public"."my_table" for each row
-execute function "supabase_functions"."http_request"(
+execute function "skybase_functions"."http_request"(
   'http://localhost:3000',
   'POST',
   '{"Content-Type":"application/json"}',

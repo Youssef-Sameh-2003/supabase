@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-supabase/next'],
+  extends: ['eslint-config-skybase/next'],
   plugins: ['eslint-plugin-barrel-files'],
   rules: {
     '@next/next/no-img-element': 'off',

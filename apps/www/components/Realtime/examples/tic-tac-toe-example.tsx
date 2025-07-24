@@ -6,13 +6,13 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState, useRef } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 import { X, Circle } from 'lucide-react';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
 const CHANNEL = 'tictactoe-example-${instanceId}';
@@ -46,7 +46,7 @@ export default function App() {
     setUsername(randomName);
     
     // Create and subscribe to channel
-    const channel = supabase.channel(CHANNEL, {
+    const channel = skybase.channel(CHANNEL, {
       config: {
         presence: {
           key: userId.current,
@@ -341,7 +341,7 @@ const layoutProps: ExampleLayoutProps = {
   files: ticTacToeFiles,
   title: 'Tic Tac Toe',
   description:
-    "A multiplayer Tic Tac Toe game that uses Supabase Realtime's broadcast and presence features to synchronize game state and player turns between opponents.",
+    "A multiplayer Tic Tac Toe game that uses Skybase Realtime's broadcast and presence features to synchronize game state and player turns between opponents.",
 }
 
 export default layoutProps

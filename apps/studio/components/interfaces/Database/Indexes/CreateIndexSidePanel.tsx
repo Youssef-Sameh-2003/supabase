@@ -380,7 +380,7 @@ CREATE INDEX ON "${selectedSchema}"."${selectedEntity}" USING ${selectedIndexTyp
                   description="More index types may be supported when OrioleDB is no longer in preview"
                 >
                   {/* [Joshen Oriole] Hook up proper docs URL */}
-                  <DocsButton className="mt-2" abbrev={false} href="https://supabase.com/docs" />
+                  <DocsButton className="mt-2" abbrev={false} href="https://skybase.com/docs" />
                 </Admonition>
               )}
             </SidePanel.Content>

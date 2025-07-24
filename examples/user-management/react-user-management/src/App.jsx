@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { supabase } from './supabaseClient'
+import { skybase } from './skybaseClient'
 import Auth from './Auth'
 import Account from './Account'
 
@@ -8,11 +8,11 @@ function App() {
   const [session, setSession] = useState(null)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    skybase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
     })
 
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data } = skybase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
     })
 

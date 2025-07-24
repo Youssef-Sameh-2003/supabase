@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import supabase from '../../utils/supabase'
+import skybase from '../../utils/skybase'
 
 // realtime subscriptions need to be set up client-side
 // this component takes initial posts as props and automatically
-// updates when new posts are inserted into Supabase's `posts` table
+// updates when new posts are inserted into Skybase's `posts` table
 export default function RealtimePosts({ serverPosts }: { serverPosts: any }) {
   const [posts, setPosts] = useState(serverPosts)
 
@@ -17,8 +17,8 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: any }) {
 
   useEffect(() => {
     // ensure you have enabled replication on the `posts` table
-    // https://supabase.com/dashboard/project/_/database/replication
-    const channel = supabase
+    // https://skybase.com/dashboard/project/_/database/replication
+    const channel = skybase
       .channel('*')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload) =>
         setPosts((posts: any) => [...posts, payload.new])
@@ -26,7 +26,7 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: any }) {
       .subscribe()
 
     return () => {
-      supabase.removeChannel(channel)
+      skybase.removeChannel(channel)
     }
   }, [serverPosts])
 

@@ -85,14 +85,14 @@ export const LaunchSection = (props: WeekDayProps) => {
               <img
                 className="opacity-30"
                 src="/images/launchweek/launchweek-day-placeholder.jpg"
-                alt="Supabase"
+                alt="Skybase"
               />
             </div>
           ) : (
             <>
               <div className="group relative cursor-pointer">
                 <Image
-                  alt="Supabase"
+                  alt="Skybase"
                   width={528}
                   height={352}
                   className="rounded-xl border drop-shadow-lg"

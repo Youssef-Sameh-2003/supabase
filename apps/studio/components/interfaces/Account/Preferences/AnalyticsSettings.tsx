@@ -27,13 +27,13 @@ export const TermsUpdateBanner = () => {
       </AlertTitle_Shadcn_>
       <AlertDescription_Shadcn_>
         We’ve updated our{' '}
-        <a href="https://supabase.com/terms" target="_blank" className="text hover:text-brand">
+        <a href="https://skybase.com/terms" target="_blank" className="text hover:text-brand">
           Terms of Service
         </a>
         . The new terms take effect on August 1, 2025 and reflect changes to support our evolving
         business, legal requirements, and a new arbitration-based dispute resolution process.
         Questions? Contact{' '}
-        <a href="mailto:legal@supabase.io" target="_blank" className="text hover:text-brand">
+        <a href="mailto:legal@skybase.io" target="_blank" className="text hover:text-brand">
           our team
         </a>
         .
@@ -77,8 +77,8 @@ export const AnalyticsSettings = () => {
         <Toggle
           checked={hasAccepted}
           onChange={onToggleOptIn}
-          label="Send telemetry data from Supabase services"
-          descriptionText="By opting in to sharing telemetry data, Supabase can analyze usage patterns to enhance user experience and use it for marketing and advertising purposes"
+          label="Send telemetry data from Skybase services"
+          descriptionText="By opting in to sharing telemetry data, Skybase can analyze usage patterns to enhance user experience and use it for marketing and advertising purposes"
         />
       </Panel.Content>
     </Panel>

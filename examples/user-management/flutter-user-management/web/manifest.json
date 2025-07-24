@@ -1,6 +1,6 @@
 {
-    "name": "supabase_quickstart",
-    "short_name": "supabase_quickstart",
+    "name": "skybase_quickstart",
+    "short_name": "skybase_quickstart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

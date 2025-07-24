@@ -404,7 +404,7 @@ const InfrastructureActivity = () => {
                       >
                         <DocsButton
                           abbrev={false}
-                          href="https://supabase.com/docs/guides/platform/compute-add-ons#disk-throughput-and-iops"
+                          href="https://skybase.com/docs/guides/platform/compute-add-ons#disk-throughput-and-iops"
                         />
                       </Admonition>
                     </>

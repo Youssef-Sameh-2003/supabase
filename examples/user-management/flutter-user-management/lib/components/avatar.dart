@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supabase_quickstart/main.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
+import 'package:skybase_quickstart/main.dart';
 
 class Avatar extends StatefulWidget {
   const Avatar({
@@ -65,12 +65,12 @@ class _AvatarState extends State<Avatar> {
       final fileExt = imageFile.path.split('.').last;
       final fileName = '${DateTime.now().toIso8601String()}.$fileExt';
       final filePath = fileName;
-      await supabase.storage.from('avatars').uploadBinary(
+      await skybase.storage.from('avatars').uploadBinary(
             filePath,
             bytes,
             fileOptions: FileOptions(contentType: imageFile.mimeType),
           );
-      final imageUrlResponse = await supabase.storage
+      final imageUrlResponse = await skybase.storage
           .from('avatars')
           .createSignedUrl(filePath, 60 * 60 * 24 * 365 * 10);
       widget.onUpload(imageUrlResponse);

@@ -2,10 +2,10 @@
 
 import { useCurrentUserImage } from '@/registry/default/blocks/current-user-avatar/hooks/use-current-user-image'
 import { useCurrentUserName } from '@/registry/default/blocks/current-user-avatar/hooks/use-current-user-name'
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/client'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/client'
 import { useEffect, useState } from 'react'
 
-const supabase = createClient()
+const skybase = createClient()
 
 export type RealtimeUser = {
   id: string
@@ -20,7 +20,7 @@ export const useRealtimePresenceRoom = (roomName: string) => {
   const [users, setUsers] = useState<Record<string, RealtimeUser>>({})
 
   useEffect(() => {
-    const room = supabase.channel(roomName)
+    const room = skybase.channel(roomName)
 
     room
       .on('presence', { event: 'sync' }, () => {

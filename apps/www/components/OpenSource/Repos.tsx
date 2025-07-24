@@ -77,7 +77,7 @@ const Repos = ({ tabs }: Props) => {
       const { Octokit } = await import('@octokit/core')
       const octokit = new Octokit()
       const res = await octokit.request('GET /orgs/{org}/repos', {
-        org: 'supabase',
+        org: 'skybase',
         type: 'public',
         per_page: 200,
         page: 1,
@@ -108,7 +108,7 @@ const Repos = ({ tabs }: Props) => {
     <div className="flex flex-col gap-8 xl:gap-10">
       <div className="flex flex-wrap mx-auto items-center justify-center gap-y-6 gap-x-8 text-sm">
         <Link
-          href="https://github.com/supabase/supabase/blob/master/DEVELOPERS.md"
+          href="https://github.com/skybase/skybase/blob/master/DEVELOPERS.md"
           className="text-foreground-lighter hover:underline flex gap-1 items-center"
           target="_blank"
         >
@@ -116,7 +116,7 @@ const Repos = ({ tabs }: Props) => {
           How to contribute
         </Link>
         <Link
-          href="https://github.com/supabase/.github/blob/main/CODE_OF_CONDUCT.md"
+          href="https://github.com/skybase/.github/blob/main/CODE_OF_CONDUCT.md"
           className="text-foreground-lighter hover:underline flex gap-1 items-center"
           target="_blank"
         >

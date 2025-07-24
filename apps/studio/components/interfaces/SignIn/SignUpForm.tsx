@@ -96,7 +96,7 @@ const SignUpForm = () => {
           <AlertTitle_Shadcn_>Check your email to confirm</AlertTitle_Shadcn_>
           <AlertDescription_Shadcn_ className="text-xs">
             You've successfully signed up. Please check your email to confirm your account before
-            signing in to the Supabase dashboard. The confirmation link expires in 10 minutes.
+            signing in to the Skybase dashboard. The confirmation link expires in 10 minutes.
           </AlertDescription_Shadcn_>
         </Alert_Shadcn_>
       </div>

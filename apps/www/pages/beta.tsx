@@ -114,7 +114,7 @@ const Hero = (props: Props) => {
     >
       <div className="container grid items-center h-full grid-cols-12 gap-4 px-8 py-20 mx-auto text-foreground-light lg:px-28">
         <div className="col-span-12 text-foreground md:col-span-9 lg:col-span-8 xl:col-span-6">
-          <p className="mb-10 text-4xl">Supabase is the Postgres development platform.</p>
+          <p className="mb-10 text-4xl">Skybase is the Postgres development platform.</p>
           <p className="text-2xl">
             Today, we're moving to <span className="text-brand">Beta</span>
           </p>
@@ -172,7 +172,7 @@ const Introduction = () => {
           >
             TAYFA
           </a>{' '}
-          are using Supabase to ship more products, faster.
+          are using Skybase to ship more products, faster.
         </p>
       </div>
 
@@ -221,7 +221,7 @@ const TableOfContents = (props: any) => {
       <div className="container grid grid-cols-12 gap-4 px-8 py-20 mx-auto lg:px-28">
         <div className="col-span-12 mb-10 text-base">
           <p className="text-2xl text-foreground">
-            Supabase <span className="text-brand">Beta</span> is starting now.
+            Skybase <span className="text-brand">Beta</span> is starting now.
           </p>
         </div>
         <div className="grid grid-cols-12 col-span-12 gap-y-10">
@@ -309,7 +309,7 @@ const Performance = () => {
                         {stat.name}
                       </p>
                       <Bar
-                        color={stat.name === 'Supabase' ? 'bg-brand' : 'bg-brand-400'}
+                        color={stat.name === 'Skybase' ? 'bg-brand' : 'bg-brand-400'}
                         finalPercentage={Math.ceil((stat.value / maxValue) * 100)}
                       />
                       <p className="ml-2">{stat.value}/s</p>
@@ -336,7 +336,7 @@ const Performance = () => {
         <div className="grid items-center grid-cols-12 col-span-12 mb-10 text-foreground gap-x-2 lg:gap-x-8">
           <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-10">
-              We started Supabase to give developers a web-ready database that is delightful to use,
+              We started Skybase to give developers a web-ready database that is delightful to use,
               without sacrificing speed and scale. Postgres makes this possible, handling massive
               amounts of data without sacrificing read and write speed.
             </p>
@@ -352,7 +352,7 @@ const Performance = () => {
               </a>{' '}
               to handle our{' '}
               <a
-                href="https://github.com/supabase/realtime"
+                href="https://github.com/skybase/realtime"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
@@ -372,14 +372,14 @@ const Performance = () => {
               We're publishing the results of our benchmarks here and we'll continue to seek gains
               throughout our Beta program and beyond. Our{' '}
               <a
-                href="https://github.com/supabase/benchmarks/"
+                href="https://github.com/skybase/benchmarks/"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
                 benchmarks
               </a>{' '}
               are open source so that the community can better our methodologies and identify areas
-              of improvement for the tools which we support at Supabase.
+              of improvement for the tools which we support at Skybase.
             </p>
           </div>
           <div className="col-span-12 mt-10 mb-10">
@@ -389,18 +389,18 @@ const Performance = () => {
             <p className="mb-10">
               Benchmarks were run from a neutral host (Digital Ocean Droplet 4 GB Memory / 80 GB
               Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a table/collection pre-populated with 1
-              million rows. The Supabase database and API used are each running on AWS EC2 t3a.micro
+              million rows. The Skybase database and API used are each running on AWS EC2 t3a.micro
               instances.
             </p>
             <p className="mb-10">
-              Supabase is available in 7 different geographic regions. We're adding more regions as
+              Skybase is available in 7 different geographic regions. We're adding more regions as
               we build up multi-cloud support. Soon we'll offer read-replicas to scale your database
               right to the edge - reducing latency and giving your users a better experience.
             </p>
             <p>
-              One of our key metrics at Supabase is "Time to Value". How fast can a user go from
+              One of our key metrics at Skybase is "Time to Value". How fast can a user go from
               sign up, to making their first API request? How fast can they go from development to
-              production? We've built several case studies on our blog, demonstrating how Supabase
+              production? We've built several case studies on our blog, demonstrating how Skybase
               enables them to build and scale their product in as little time as possible.
             </p>
           </div>
@@ -500,16 +500,16 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.supabase.com"
+                href="https://status.skybase.com"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
-                https://status.supabase.com
+                https://status.skybase.com
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
             <div className="mb-10">
-              <VideoShot src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/statusPage.mp4" />
+              <VideoShot src="https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/statusPage.mp4" />
             </div>
             <p>
               For our Alpha & Beta Users we take free, encrypted daily database backups up to 20GB.
@@ -532,14 +532,14 @@ const NewFeaturesAndIntegrations = () => {
         <div className="grid grid-cols-12 col-span-12 mb-10 text-foreground gap-x-2 lg:gap-x-8">
           <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-5">
-              If you're new to Supabase, here's a few of the things you get when you choose us as
+              If you're new to Skybase, here's a few of the things you get when you choose us as
               your backend.
             </p>
             <ul>
               <li className="mb-10">
                 <p className="w-20 pb-2 mb-2 border-b-2 border-default">Auth</p>
                 <p className="mb-5">
-                  If you're new to Supabase, here's a few of the things you get when you choose us
+                  If you're new to Skybase, here's a few of the things you get when you choose us
                   as your backend. We provide{' '}
                   <a
                     href="/docs/reference/javascript/auth-signup"
@@ -563,7 +563,7 @@ const NewFeaturesAndIntegrations = () => {
                   transactional emails for you. We support passwordless links, and we offer several
                   OAuth providers including Google, GitHub, with more on the way.
                 </p>
-                <VideoShot src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/tabAuthRules.mp4" />
+                <VideoShot src="https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/tabAuthRules.mp4" />
               </li>
               <li className="mb-10">
                 <p className="w-20 pb-2 mb-2 border-b-2 border-default">Realtime</p>
@@ -576,7 +576,7 @@ const NewFeaturesAndIntegrations = () => {
                   >
                     subscribe to changes in your database
                   </a>{' '}
-                  over websockets, receiving your data in realtime. Companies are using Supabase to
+                  over websockets, receiving your data in realtime. Companies are using Skybase to
                   build chat applications, trigger notifications, and pipe data to analytics
                   dashboards whenever it changes in their database.
                 </p>
@@ -615,18 +615,18 @@ const NewFeaturesAndIntegrations = () => {
               <li className="mb-10">
                 <p className="w-24 pb-2 mb-2 border-b-2 border-default">Table View</p>
                 <p className="mb-5">
-                  View and edit your data like a spreadsheet from within the Supabase dashboard.
+                  View and edit your data like a spreadsheet from within the Skybase dashboard.
                   Build your schema, create complex relationships, and import and export to csv.
                 </p>
-                <VideoShot src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/tabTableEditor.mp4" />
+                <VideoShot src="https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/tabTableEditor.mp4" />
               </li>
               <li>
                 <p className="w-24 pb-2 mb-2 border-b-2 border-default">SQL Editor</p>
                 <p className="mb-5">
                   No need to install third party SQL tools, you can run queries directly from the
-                  Supabase Dashboard.
+                  Skybase Dashboard.
                 </p>
-                <VideoShot src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/tabSqlEditor.mp4" />
+                <VideoShot src="https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/tabSqlEditor.mp4" />
               </li>
             </ul>
           </div>
@@ -643,7 +643,7 @@ const BetaPricing = () => (
 
       <div className="grid grid-cols-12 col-span-12 mb-10 text-foreground gap-x-2 lg:gap-x-8">
         <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
-          <p className="mb-10">For up to date pricing info see: https://supabase.com/pricing</p>
+          <p className="mb-10">For up to date pricing info see: https://skybase.com/pricing</p>
           <p className="mb-10">
             We're working closely with many open source projects, infrastructure providers, and of
             course our Alpha Users, to provide a predictable and sustainable pricing model.
@@ -651,7 +651,7 @@ const BetaPricing = () => (
           <p className="mb-5">Our key aims going into this exercise were:</p>
           <ul className="mb-10 ml-6 list-disc list-outside">
             <li className="mb-5">
-              To continue offering free Supabase instances for Students, Hobbyists, and Early
+              To continue offering free Skybase instances for Students, Hobbyists, and Early
               Adopters
             </li>
             <li className="mb-5">
@@ -678,11 +678,11 @@ const BetaPricing = () => (
               University (and participating code school) Students will be eligible for 2 years of
               base plan usage (Code Schools can contact{' '}
               <a
-                href="mailto:rory@supabase.io"
+                href="mailto:rory@skybase.io"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
-                rory@supabase.io
+                rory@skybase.io
               </a>
               )
             </li>
@@ -692,8 +692,8 @@ const BetaPricing = () => (
             </li>
           </ul>
           <p>
-            The Supabase Base plan is now called the Supabase Pro Plan as per the{' '}
-            <a href="https://supabase.com/pricing" className="text-brand hover:text-brand">
+            The Skybase Base plan is now called the Skybase Pro Plan as per the{' '}
+            <a href="https://skybase.com/pricing" className="text-brand hover:text-brand">
               pricing page
             </a>
             .
@@ -715,14 +715,14 @@ const OpenSource = () => (
             Great software is multi generational and stretches beyond any single company.
           </p>
           <p className="mb-10">
-            Supabase is a collection of many projects, and we rely on making contributors to help us
+            Skybase is a collection of many projects, and we rely on making contributors to help us
             build and improve. Because of this, we aim to make open source more accessible and
             attractive to anyone who wants to contribute.
           </p>
           <p className="mb-10">
-            Every dollar that is given to Supabase in{' '}
+            Every dollar that is given to Skybase in{' '}
             <a
-              href="https://github.com/sponsors/supabase/"
+              href="https://github.com/sponsors/skybase/"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -734,7 +734,7 @@ const OpenSource = () => (
           <p className="mb-10">
             One of the biggest barriers to Open Source is knowing exactly how to get started. We're{' '}
             <a
-              href="/blog/2020/12/02/supabase-striveschool"
+              href="/blog/2020/12/02/skybase-striveschool"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -747,18 +747,18 @@ const OpenSource = () => (
             If you teach programming, and you're interested in offering OSS tuition to your
             students, we're actively looking for more education partners. Email{' '}
             <a
-              href="mailto:rory@supabase.io"
+              href="mailto:rory@skybase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              rory@supabase.io
+              rory@skybase.io
             </a>{' '}
             to find out more.
           </p>
           <p>
             Come and get involved in{' '}
             <a
-              href="https://github.com/supabase"
+              href="https://github.com/skybase"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -794,7 +794,7 @@ const FundingPartners = () => (
           <p>
             Follow us on{' '}
             <a
-              href="https://twitter.com/supabase"
+              href="https://twitter.com/skybase"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -822,20 +822,20 @@ const ScalingOurTeam = () => (
           </p>
           <p className="mb-10">
             We're also passionate about tech and open source. We hire open source maintainers to
-            work full time on the products we use, and we spend every Friday dogfooding Supabase to
+            work full time on the products we use, and we spend every Friday dogfooding Skybase to
             make it better.
           </p>
           <p>
             We are hiring across multiple positions including PostgreSQL engineers, Cloud engineers,
             SRE's, and Developer Advocates. We are a fully remote team, spanning 4 continents and 10
             nationalities. If you are interested and think you can be a factor in the success of
-            Supabase, get in touch at{' '}
+            Skybase, get in touch at{' '}
             <a
-              href="mailto:work@supabase.io"
+              href="mailto:work@skybase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              work@supabase.io
+              work@skybase.io
             </a>
             .
           </p>
@@ -854,14 +854,14 @@ const WhatsNext = () => (
         <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-5">
             If you watch our repos you'll see that development never stops, we ship every day (and
-            night!). We're constantly improving Supabase based on user feedback. Alongside
+            night!). We're constantly improving Skybase based on user feedback. Alongside
             performance, security, and reliability improvements, here are some new features we're
             working on for 2021:
           </p>
           <ul className="mb-10 ml-6 list-disc list-outside">
             <li className="mb-5">Storage - Making blob storage easier than ever before</li>
             <li className="mb-5">
-              Functions - write and deploy serverless functions that have access to your Supabase
+              Functions - write and deploy serverless functions that have access to your Skybase
               context
             </li>
             <li className="mb-5">
@@ -873,7 +873,7 @@ const WhatsNext = () => (
               base
             </li>
             <li className="mb-5">
-              Multicloud - Spread your Supabase instances across multiple datacenter providers to
+              Multicloud - Spread your Skybase instances across multiple datacenter providers to
               protect against outages
             </li>
             <li className="mb-5">
@@ -883,21 +883,21 @@ const WhatsNext = () => (
             <li>
               More client libraries - members of the community are helping us build client libraries
               for many different languages including TypeScript, Python, Dart, C#, and Rust. Come
-              and help us bring Supabase to your favorite language or framework.
+              and help us bring Skybase to your favorite language or framework.
             </li>
           </ul>
           <p className="mb-10">
-            We depend on your feedback to continually improve Supabase. Email us at{' '}
+            We depend on your feedback to continually improve Skybase. Email us at{' '}
             <a
-              href="mailto:support@supabase.io"
+              href="mailto:support@skybase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              support@supabase.io
+              support@skybase.io
             </a>{' '}
             or join the{' '}
             <a
-              href="https://github.com/supabase/supabase/discussions"
+              href="https://github.com/skybase/skybase/discussions"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -950,7 +950,7 @@ const Beta = (props: Props) => {
         openGraph={{
           title: site_title,
           description: DEFAULT_META_DESCRIPTION,
-          url: `https://supabase.com/beta`,
+          url: `https://skybase.com/beta`,
           type: 'article',
           article: {
             //
@@ -965,7 +965,7 @@ const Beta = (props: Props) => {
           },
           images: [
             {
-              url: 'https://supabase.com/og/supabase-og.png',
+              url: 'https://skybase.com/og/skybase-og.png',
             },
           ],
         }}

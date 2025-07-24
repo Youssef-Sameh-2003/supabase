@@ -39,13 +39,13 @@ const MAX_DEPTH = 5
 
 function isAllowedCorsOrigin(origin: string): boolean {
   const exactMatches = IS_DEV
-    ? ['http://localhost:8082', 'https://supabase.com']
-    : ['https://supabase.com']
+    ? ['http://localhost:8082', 'https://skybase.com']
+    : ['https://skybase.com']
   if (exactMatches.includes(origin)) {
     return true
   }
 
-  return /^https:\/\/[\w-]+\w-supabase.vercel.app$/.test(origin)
+  return /^https:\/\/[\w-]+\w-skybase.vercel.app$/.test(origin)
 }
 
 function getCorsHeaders(request: Request): Record<string, string> {

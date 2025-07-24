@@ -289,7 +289,7 @@ const AIEditor = ({
       {isDiffMode ? (
         <div className="w-full h-full">
           <DiffEditor
-            theme="supabase"
+            theme="skybase"
             language={language}
             original={diffValue.original}
             modified={diffValue.modified}
@@ -328,7 +328,7 @@ const AIEditor = ({
       ) : (
         <div className="w-full h-full relative">
           <Editor
-            theme="supabase"
+            theme="skybase"
             language={language}
             value={currentValue}
             options={defaultOptions}

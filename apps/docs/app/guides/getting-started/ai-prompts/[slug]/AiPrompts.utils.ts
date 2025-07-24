@@ -85,12 +85,12 @@ export async function generateAiPromptMetadata(props: { params: Promise<{ slug: 
 
   if (!prompt) {
     return {
-      title: 'AI Prompt | Supabase Docs',
+      title: 'AI Prompt | Skybase Docs',
     }
   }
 
   return {
-    title: `AI Prompt: ${prompt.heading} | Supabase Docs`,
+    title: `AI Prompt: ${prompt.heading} | Skybase Docs`,
   }
 }
 

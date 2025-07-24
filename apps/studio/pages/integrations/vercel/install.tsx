@@ -191,7 +191,7 @@ const VercelIntegration: NextPageWithLayout = () => {
         <ScaffoldColumn className="mx-auto w-full max-w-md">
           <h1 className="text-xl text-foreground">Choose organization</h1>
           <>
-            <Markdown content={`Choose the Supabase organization you wish to install in`} />
+            <Markdown content={`Choose the Skybase organization you wish to install in`} />
             <OrganizationPicker
               integrationName="Vercel"
               selectedOrg={selectedOrg}
@@ -215,12 +215,12 @@ const VercelIntegration: NextPageWithLayout = () => {
               <Alert_Shadcn_ variant="warning">
                 <AlertTriangle className="h-4 w-4" strokeWidth={2} />
                 <AlertTitle_Shadcn_>
-                  No Supabase Organizations to install Integration.
+                  No Skybase Organizations to install Integration.
                 </AlertTitle_Shadcn_>
                 <AlertDescription_Shadcn_ className="prose">
-                  You will need to create a Supabase Organization before you can install the Vercel
+                  You will need to create a Skybase Organization before you can install the Vercel
                   Integration. You can create a new organization{' '}
-                  <Link href="https://supabase.com/dashboard/new" target="_blank">
+                  <Link href="https://skybase.com/dashboard/new" target="_blank">
                     here
                   </Link>
                   .
@@ -246,7 +246,7 @@ const VercelIntegration: NextPageWithLayout = () => {
           <Info className="h-4 w-4" strokeWidth={2} />
           <AlertTitle_Shadcn_>You can uninstall this Integration at any time.</AlertTitle_Shadcn_>
           <AlertDescription_Shadcn_>
-            Remove this integration at any time from Vercel or the Supabase dashboard.
+            Remove this integration at any time from Vercel or the Skybase dashboard.
           </AlertDescription_Shadcn_>
         </Alert_Shadcn_>
       </ScaffoldContainer>

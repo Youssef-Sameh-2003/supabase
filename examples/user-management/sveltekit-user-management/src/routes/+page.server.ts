@@ -18,7 +18,7 @@ export const actions: Actions = {
 		const {
 			url,
 			request,
-			locals: { supabase }
+			locals: { skybase }
 		} = event
 		const formData = await request.formData()
 		const email = formData.get('email') as string
@@ -28,7 +28,7 @@ export const actions: Actions = {
 			return fail(400, { errors: { email: "Please enter a valid email address" }, email })
 		}
 
-		const { error } = await supabase.auth.signInWithOtp({ email })
+		const { error } = await skybase.auth.signInWithOtp({ email })
 
 		if (error) {
 			return fail(400, {

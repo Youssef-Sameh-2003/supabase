@@ -10,7 +10,7 @@ import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { Customer, Event, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
 
-const siteName = 'Supabase'
+const siteName = 'Skybase'
 
 const generateTitle: GenerateTitle<Post & Customer & Event> = ({ doc, collectionSlug }) => {
   switch (collectionSlug) {

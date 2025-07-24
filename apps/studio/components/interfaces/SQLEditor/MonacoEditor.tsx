@@ -195,7 +195,7 @@ const MonacoEditor = ({
       )}
       <Editor
         className={cn(className, 'monaco-editor')}
-        theme={'supabase'}
+        theme={'skybase'}
         onMount={handleEditorOnMount}
         onChange={handleEditorChange}
         defaultLanguage="pgsql"

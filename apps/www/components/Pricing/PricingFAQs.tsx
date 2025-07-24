@@ -38,7 +38,7 @@ const PricingFAQs = () => {
           Can&apos;t find the answer to your question?{' '}
           <a
             target="_blank"
-            href="https://supabase.help"
+            href="https://skybase.help"
             className="transition underline text-brand-link hover:text-brand-600"
           >
             Open a support ticket

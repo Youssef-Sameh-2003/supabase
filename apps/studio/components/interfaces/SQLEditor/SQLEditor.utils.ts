@@ -117,19 +117,19 @@ export function isUpdateWithoutWhere(sql: string): boolean {
 
 export const generateMigrationCliCommand = (id: string, name: string, isNpx = false) =>
   `
-${isNpx ? 'npx ' : ''}supabase snippets download ${id} |
-${isNpx ? 'npx ' : ''}supabase migration new ${name}
+${isNpx ? 'npx ' : ''}skybase snippets download ${id} |
+${isNpx ? 'npx ' : ''}skybase migration new ${name}
 `.trim()
 
 export const generateSeedCliCommand = (id: string, isNpx = false) =>
   `
-${isNpx ? 'npx ' : ''}supabase snippets download ${id} >> \\
-  supabase/seed.sql
+${isNpx ? 'npx ' : ''}skybase snippets download ${id} >> \\
+  skybase/seed.sql
 `.trim()
 
 export const generateFileCliCommand = (id: string, name: string, isNpx = false) =>
   `
-${isNpx ? 'npx ' : ''}supabase snippets download ${id} > \\
+${isNpx ? 'npx ' : ''}skybase snippets download ${id} > \\
   ${name}.sql
 `.trim()
 

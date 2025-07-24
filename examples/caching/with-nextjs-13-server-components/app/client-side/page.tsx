@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import supabase from '../../utils/supabase'
+import skybase from '../../utils/skybase'
 
 export default function ClientPosts() {
   const [isLoading, setIsLoading] = useState(true)
@@ -9,7 +9,7 @@ export default function ClientPosts() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await supabase.from('posts').select()
+      const { data } = await skybase.from('posts').select()
       setPosts(data)
       setIsLoading(false)
     }

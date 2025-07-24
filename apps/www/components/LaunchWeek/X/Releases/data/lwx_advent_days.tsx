@@ -19,7 +19,7 @@ export interface AdventLink {
 
 export const days: AdventDay[] = [
   {
-    title: 'Supabase Album',
+    title: 'Skybase Album',
     description: 'The best soundtrack to build your app in a weekend',
     icon: (
       <svg
@@ -49,11 +49,11 @@ export const days: AdventDay[] = [
         />
       </svg>
     ),
-    id: 'supabase-album',
+    id: 'skybase-album',
     is_shipped: true,
     links: [
       {
-        url: 'https://supabase.productions/',
+        url: 'https://skybase.productions/',
         label: 'Listen now',
         target: '_blank',
       },
@@ -92,8 +92,8 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Design at Supabase',
-    description: "The transformative journey of Supabase's Design team",
+    title: 'Design at Skybase',
+    description: "The transformative journey of Skybase's Design team",
     icon: (
       <svg
         width="40"
@@ -114,18 +114,18 @@ export const days: AdventDay[] = [
         />
       </svg>
     ),
-    id: 'design-at-supabase',
+    id: 'design-at-skybase',
     is_shipped: true,
     links: [
       {
-        url: '/blog/how-design-works-at-supabase',
+        url: '/blog/how-design-works-at-skybase',
         label: 'Read blog post',
       },
     ],
   },
   {
-    title: 'Supabase Grafana',
-    description: 'Observability for your Supabase project',
+    title: 'Skybase Grafana',
+    description: 'Observability for your Skybase project',
     is_shipped: true,
     icon: (
       <svg
@@ -141,10 +141,10 @@ export const days: AdventDay[] = [
         />
       </svg>
     ),
-    id: 'supabase-grafana',
+    id: 'skybase-grafana',
     links: [
       {
-        url: 'https://github.com/supabase/supabase-grafana',
+        url: 'https://github.com/skybase/skybase-grafana',
         label: 'View on GitHub',
         target: '_blank',
       },
@@ -240,7 +240,7 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase Wrappers v0.2',
+    title: 'Skybase Wrappers v0.2',
     description: 'Query Pushdown & Remote Subqueries',
     is_shipped: true,
     icon: (
@@ -259,21 +259,21 @@ export const days: AdventDay[] = [
         />
       </svg>
     ),
-    id: 'supabase-wrappers-v0.2',
+    id: 'skybase-wrappers-v0.2',
     links: [
       {
-        url: '/blog/supabase-wrappers-v02',
+        url: '/blog/skybase-wrappers-v02',
         label: 'Read blog post',
       },
     ],
   },
   {
-    title: 'Supabase Libraries V2',
+    title: 'Skybase Libraries V2',
     description: 'Swift, Kotlin, C#, and Python are now stable and moving to the v2 API',
     type: 'clientLibs',
     is_shipped: true,
     className: 'xl:col-span-2 xl:aspect-auto xl:col-span-3 xl:aspect-auto xl:h-full',
-    id: 'supabase-libraries-v2',
+    id: 'skybase-libraries-v2',
     links: [
       {
         url: '/blog/client-libraries-v2',
@@ -282,7 +282,7 @@ export const days: AdventDay[] = [
     ],
     icons: [
       {
-        url: '/blog/client-libraries-v2#supabase-python-v2',
+        url: '/blog/client-libraries-v2#skybase-python-v2',
         label: 'Python',
         icon: (
           <svg
@@ -308,7 +308,7 @@ export const days: AdventDay[] = [
         ),
       },
       {
-        url: '/blog/client-libraries-v2#supabase-swift-v2',
+        url: '/blog/client-libraries-v2#skybase-swift-v2',
         label: 'Swift',
         icon: (
           <svg
@@ -328,7 +328,7 @@ export const days: AdventDay[] = [
         ),
       },
       {
-        url: '/blog/client-libraries-v2#supabase-kotlin-v2',
+        url: '/blog/client-libraries-v2#skybase-kotlin-v2',
         label: 'Kotlin',
         icon: (
           <svg
@@ -390,9 +390,9 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase x Fly.io',
+    title: 'Skybase x Fly.io',
     description:
-      "We're launching a managed Postgres offering jointly developed by Supabase and Fly.io",
+      "We're launching a managed Postgres offering jointly developed by Skybase and Fly.io",
     is_shipped: true,
     className: 'xl:col-span-2 xl:aspect-auto h-full',
     icon: (
@@ -430,7 +430,7 @@ export const days: AdventDay[] = [
     id: 'fly-postgres',
     links: [
       {
-        url: '/blog/postgres-on-fly-by-supabase',
+        url: '/blog/postgres-on-fly-by-skybase',
         label: 'Read blog post',
       },
     ],

@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { isArray } from 'lodash'
 import { Check, ExternalLink } from 'lucide-react'
 import { useRouter } from 'next/router'
@@ -140,7 +140,7 @@ const PlanUpdateSidePanel = () => {
           <div className="flex items-center justify-between">
             <h4>Change subscription plan for {selectedOrganization?.name}</h4>
             <Button asChild type="default" icon={<ExternalLink />}>
-              <a href="https://supabase.com/pricing" target="_blank" rel="noreferrer">
+              <a href="https://skybase.com/pricing" target="_blank" rel="noreferrer">
                 Pricing
               </a>
             </Button>
@@ -226,7 +226,7 @@ const PlanUpdateSidePanel = () => {
                         disabled={
                           subscription?.plan?.id === 'enterprise' ||
                           // Downgrades to free are still allowed through the dashboard given we have much better control about showing customers the impact + any possible issues with downgrading to free
-                          (selectedOrganization?.managed_by !== 'supabase' &&
+                          (selectedOrganization?.managed_by !== 'skybase' &&
                             plan.id !== 'tier_free') ||
                           hasOrioleProjects ||
                           !canUpdateSubscription

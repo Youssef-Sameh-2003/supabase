@@ -184,7 +184,7 @@ const StoragePoliciesEditPolicyModal = ({
     return (
       <div className="w-full flex items-center justify-between gap-x-2 pr-6">
         <h4 className="m-0 truncate">{getTitle()}</h4>
-        <DocsButton href="https://supabase.com/docs/learn/auth-deep-dive/auth-policies" />
+        <DocsButton href="https://skybase.com/docs/learn/auth-deep-dive/auth-policies" />
       </div>
     )
   }

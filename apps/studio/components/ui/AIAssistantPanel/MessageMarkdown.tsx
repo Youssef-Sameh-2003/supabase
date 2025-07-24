@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useRouter } from 'next/router'
 import {
   DragEvent,
@@ -67,7 +67,7 @@ export const InlineCode = memo(
 InlineCode.displayName = 'InlineCode'
 
 export const Hyperlink = memo(({ href, children }: { href?: string; children: ReactNode }) => {
-  const isExternalURL = !href?.startsWith('https://supabase.com/dashboard')
+  const isExternalURL = !href?.startsWith('https://skybase.com/dashboard')
   const safeUrl = defaultUrlTransform(href ?? '')
   const isSafeUrl = safeUrl.length > 0
 

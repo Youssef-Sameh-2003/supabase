@@ -95,7 +95,7 @@ const CustomDomainActivate = ({ projectRef, customDomain }: CustomDomainActivate
 
         <Panel.Content className="w-full">
           <div className="flex items-center justify-between">
-            <DocsButton href="https://supabase.com/docs/guides/platform/custom-domains" />
+            <DocsButton href="https://skybase.com/docs/guides/platform/custom-domains" />
             <div className="flex items-center space-x-2">
               <Button
                 type="default"
@@ -150,7 +150,7 @@ const CustomDomainActivate = ({ projectRef, customDomain }: CustomDomainActivate
       >
         <p className="text-sm">
           This will activate the custom domain <code>{customDomain.hostname}</code>. Your project's
-          Supabase domain will also remain active.
+          Skybase domain will also remain active.
         </p>
       </ConfirmationModal>
     </>

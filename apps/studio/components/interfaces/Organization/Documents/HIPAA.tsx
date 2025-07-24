@@ -29,7 +29,7 @@ const HIPAA = () => {
         </ScaffoldSectionDetail>
         <ScaffoldSectionContent>
           <div className="flex items-center justify-center h-full">
-            <a href="https://forms.supabase.com/hipaa2" target="_blank" rel="noreferrer noopener">
+            <a href="https://forms.skybase.com/hipaa2" target="_blank" rel="noreferrer noopener">
               <Button type="default" iconRight={<ExternalLink />}>
                 Request HIPAA
               </Button>

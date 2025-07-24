@@ -1,6 +1,6 @@
 # ./packages/icons
 
-This package is for custom Supabase icons
+This package is for custom Skybase icons
 They can be used alongside any other icon packages
 
 ## example use

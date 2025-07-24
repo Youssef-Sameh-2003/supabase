@@ -1,8 +1,8 @@
 # Flutter Figma Clone
 
-![Supabase Figma Clone](https://raw.githubusercontent.com/dshukertjr/examples/main/.github/images/design.png 'Supabase Figma Clone')
+![Skybase Figma Clone](https://raw.githubusercontent.com/dshukertjr/examples/main/.github/images/design.png 'Skybase Figma Clone')
 
-This app demonstrates the real-time communication capabilities of [Supabase](https://supabase.com) by creating an interactive design board where you can draw some shapes and move them around while seeing each other's cursors.
+This app demonstrates the real-time communication capabilities of [Skybase](https://skybase.com) by creating an interactive design board where you can draw some shapes and move them around while seeing each other's cursors.
 
 - Authorized Realtime channel
 - Cursor position sharing in real-time
@@ -10,11 +10,11 @@ This app demonstrates the real-time communication capabilities of [Supabase](htt
 
 ## Run locally
 
-- Run `supabase start` while docker running. If you don't have Supabase CLI yet, you can get it [here](https://supabase.com/docs/guides/cli/getting-started).
+- Run `skybase start` while docker running. If you don't have Skybase CLI yet, you can get it [here](https://skybase.com/docs/guides/cli/getting-started).
 - Run Flutter locally. The app should work on any platform, but is not optimized for mobile.
 
 ## Resources
 
-- [Supabase](https://supabase.com/)
-- [Supabase Broadcast](https://supabase.com/docs/guides/realtime/broadcast)
-- [Flutter Tutorial: building a Flutter chat app](https://supabase.com/blog/flutter-tutorial-building-a-chat-app)
+- [Skybase](https://skybase.com/)
+- [Skybase Broadcast](https://skybase.com/docs/guides/realtime/broadcast)
+- [Flutter Tutorial: building a Flutter chat app](https://skybase.com/blog/flutter-tutorial-building-a-chat-app)

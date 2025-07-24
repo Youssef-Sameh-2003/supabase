@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ExternalLink } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
@@ -166,7 +166,7 @@ const PITRSidePanel = () => {
           <h4>Point in Time Recovery</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://supabase.com/docs/guides/platform/backups#point-in-time-recovery"
+              href="https://skybase.com/docs/guides/platform/backups#point-in-time-recovery"
               target="_blank"
               rel="noreferrer"
             >

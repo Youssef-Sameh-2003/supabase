@@ -26,10 +26,10 @@ const Partners = () => {
         openGraph={{
           title: pageData.metaTitle,
           description: pageData.metaDescription,
-          url: `https://supabase.com/partners`,
+          url: `https://skybase.com/partners`,
           images: [
             {
-              url: `https://supabase.com${router.basePath}/images/og/integrations.png`, // TODO
+              url: `https://skybase.com${router.basePath}/images/og/integrations.png`, // TODO
             },
           ],
         }}
@@ -72,8 +72,8 @@ const Partners = () => {
               </div>
 
               <Image
-                src="/images/supabase-logo-icon.svg"
-                alt="Supabase icon"
+                src="/images/skybase-logo-icon.svg"
+                alt="Skybase icon"
                 width={isSm ? 45 : 60}
                 height={isSm ? 45 : 60}
               />
@@ -103,10 +103,10 @@ const Partners = () => {
                 Explore our marketplace
               </h2>
               <p className="text-foreground-lighter text-sm sm:text-sm md:text-base py-3 md:max-w-md">
-                Discover how technology and consulting partners are already working with Supabase.
+                Discover how technology and consulting partners are already working with Skybase.
               </p>
               <TextLink
-                url="https://supabase.com/docs/guides/platform/marketplace"
+                url="https://skybase.com/docs/guides/platform/marketplace"
                 label="View docs"
               />
             </div>
@@ -136,7 +136,7 @@ const Partners = () => {
                 <div>
                   <h3 className="text-foreground text-lg">Integrations</h3>
                   <p className="text-foreground-lighter text-sm">
-                    Use your favorite tools with Supabase.
+                    Use your favorite tools with Skybase.
                   </p>
                 </div>
                 <Link href="/partners/integrations" className="absolute inset-0" />
@@ -180,11 +180,11 @@ const Partners = () => {
                   Publish an OAuth App
                 </h2>
                 <p className="text-foreground-lighter mb-4 max-w-sm">
-                  Supabase lets you build a third-party app that can control organizations or
+                  Skybase lets you build a third-party app that can control organizations or
                   projects programmatically.
                 </p>
                 <TextLink
-                  url="https://supabase.com/docs/guides/platform/oauth-apps/publish-an-oauth-app"
+                  url="https://skybase.com/docs/guides/platform/oauth-apps/publish-an-oauth-app"
                   label="Learn more"
                 />
               </div>
@@ -203,11 +203,11 @@ const Partners = () => {
         <SectionContainer>
           <div className="flex flex-col text-center gap-4 py-8 items-center justify-center">
             <h2 className="heading-gradient text-2xl sm:text-3xl xl:text-4xl">
-              Reach out to partner with Supabase
+              Reach out to partner with Skybase
             </h2>
             <div className="w-full mt-4 flex items-center justify-center text-center gap-4">
               <Button asChild size="medium">
-                <Link href="https://forms.supabase.com/partner" tabIndex={-1}>
+                <Link href="https://forms.skybase.com/partner" tabIndex={-1}>
                   Become a Partner
                 </Link>
               </Button>

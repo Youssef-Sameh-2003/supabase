@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Loader2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -63,7 +63,7 @@ const ComplianceConfig = () => {
           title="High Compliance Configuration"
           description="For projects storing and processing sensitive data (HIPAA)"
         />
-        <DocsButton href="https://supabase.com/docs/guides/platform/hipaa-projects" />
+        <DocsButton href="https://skybase.com/docs/guides/platform/hipaa-projects" />
       </div>
       <FormPanel>
         <FormSection

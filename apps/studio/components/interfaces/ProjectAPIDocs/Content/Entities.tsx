@@ -23,7 +23,7 @@ const Entities = ({ language }: ContentProps) => {
       const res = await generateTypes({ ref, included_schemas: config?.db_schema })
       let element = document.createElement('a')
       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(res.types))
-      element.setAttribute('download', 'supabase.ts')
+      element.setAttribute('download', 'skybase.ts')
       element.style.display = 'none'
       document.body.appendChild(element)
       element.click()
@@ -42,7 +42,7 @@ const Entities = ({ language }: ContentProps) => {
       <div>
         <ContentSnippet selectedLanguage={language} snippet={DOCS_CONTENT.generatingTypes} />
         <div className="flex items-center gap-x-2 px-4 mt-3">
-          <DocsButton href="https://supabase.com/docs/guides/database/api/generating-types" />
+          <DocsButton href="https://skybase.com/docs/guides/database/api/generating-types" />
           <Button
             type="default"
             disabled={isGeneratingTypes}

@@ -1,11 +1,11 @@
-import { createClient } from '@/registry/default/clients/react-router/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/react-router/lib/skybase/server'
 import { Button } from '@/registry/default/components/ui/button'
 import { type LoaderFunctionArgs, redirect, useLoaderData } from 'react-router'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const { supabase } = createClient(request)
+  const { skybase } = createClient(request)
 
-  const { data, error } = await supabase.auth.getUser()
+  const { data, error } = await skybase.auth.getUser()
   if (error || !data?.user) {
     return redirect('/login')
   }

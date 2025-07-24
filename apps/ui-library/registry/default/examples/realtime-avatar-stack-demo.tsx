@@ -2,25 +2,25 @@
 
 import { AvatarStack } from '@/registry/default/blocks/realtime-avatar-stack/components/avatar-stack'
 import { RealtimeUser } from '@/registry/default/blocks/realtime-avatar-stack/hooks/use-realtime-presence-room'
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/client'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/client'
 import { useUser } from 'common'
 import { useEffect, useMemo, useState } from 'react'
 import { Label_Shadcn_, Switch } from 'ui'
 import { getRandomUser } from './utils'
 
-const supabase = createClient()
+const skybase = createClient()
 const roomName = 'realtime-avatar-stack-demo'
 
 const randomUser = getRandomUser()
 
-// This demo is using the supabase.com account to broadcast its data to a realtime channel from a normal Supabase project.
-// This is a workaround to make the more interactive. Don't use it this way in production (it only works on supabase.com)
+// This demo is using the skybase.com account to broadcast its data to a realtime channel from a normal Skybase project.
+// This is a workaround to make the more interactive. Don't use it this way in production (it only works on skybase.com)
 const RealtimeAvatarStackDemo = () => {
-  // this demo only works on supabase.com because all apps are on the same domain and share cookies
+  // this demo only works on skybase.com because all apps are on the same domain and share cookies
   const user = useUser()
   const [dashboardUser, setDashboardUser] = useState(false)
 
-  // generate a random name for the current user or use his supabase.com name
+  // generate a random name for the current user or use his skybase.com name
   const currentUserName = useMemo(() => {
     let name = randomUser.name
     if (dashboardUser) {
@@ -29,7 +29,7 @@ const RealtimeAvatarStackDemo = () => {
     return name ?? '?'
   }, [dashboardUser, user?.user_metadata.full_name])
 
-  // generate a random image for the current user or use his supabase.com avatar
+  // generate a random image for the current user or use his skybase.com avatar
   const currentUserImage = useMemo(() => {
     let image = randomUser.image
     if (dashboardUser) {
@@ -42,7 +42,7 @@ const RealtimeAvatarStackDemo = () => {
   const [usersMap, setUsersMap] = useState<Record<string, RealtimeUser> | null>(null)
 
   useEffect(() => {
-    const room = supabase.channel(roomName)
+    const room = skybase.channel(roomName)
 
     room
       .on('presence', { event: 'sync' }, () => {
@@ -95,7 +95,7 @@ const RealtimeAvatarStackDemo = () => {
       ) : user ? (
         <div className="flex items-center space-x-2">
           <Switch id="current-user" checked={dashboardUser} onCheckedChange={setDashboardUser} />
-          <Label_Shadcn_ htmlFor="current-user">Use my supabase.com account instead</Label_Shadcn_>
+          <Label_Shadcn_ htmlFor="current-user">Use my skybase.com account instead</Label_Shadcn_>
         </div>
       ) : (
         <span className="text-sm text-foreground-light">
@@ -103,7 +103,7 @@ const RealtimeAvatarStackDemo = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://supabase.com/dashboard/sign-in"
+            href="https://skybase.com/dashboard/sign-in"
             className="text-foreground underline decoration-1 decoration-foreground-muted underline-offset-4 transition-colors hover:decoration-brand hover:decoration-2"
           >
             Dashboard

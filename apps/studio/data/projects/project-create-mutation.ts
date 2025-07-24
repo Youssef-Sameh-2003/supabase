@@ -14,8 +14,8 @@ const WHITELIST_ERRORS = [
   'db_pass must be longer than or equal to 4 characters',
   'There are overdue invoices in the organization(s)',
   'name should not contain a . string',
-  'Project creation in the Supabase dashboard is disabled for this Vercel-managed organization.',
-  'Your account, which is handled by the Fly Supabase extension, cannot access this endpoint.',
+  'Project creation in the Skybase dashboard is disabled for this Vercel-managed organization.',
+  'Your account, which is handled by the Fly Skybase extension, cannot access this endpoint.',
   'already exists in your organization.',
 ]
 
@@ -28,7 +28,7 @@ export type ProjectCreateVariables = {
   dbPricingTierId?: string
   cloudProvider?: string
   authSiteUrl?: string
-  customSupabaseRequest?: object
+  customSkybaseRequest?: object
   dbInstanceSize?: DesiredInstanceSize
   dataApiExposedSchemas?: string[]
   dataApiUseApiSchema?: boolean
@@ -44,7 +44,7 @@ export async function createProject({
   dbSql,
   cloudProvider = PROVIDERS.AWS.id,
   authSiteUrl,
-  customSupabaseRequest,
+  customSkybaseRequest,
   dbInstanceSize,
   dataApiExposedSchemas,
   dataApiUseApiSchema,
@@ -59,8 +59,8 @@ export async function createProject({
     db_region: dbRegion,
     db_sql: dbSql,
     auth_site_url: authSiteUrl,
-    ...(customSupabaseRequest !== undefined && {
-      custom_supabase_internal_requests: customSupabaseRequest as any,
+    ...(customSkybaseRequest !== undefined && {
+      custom_skybase_internal_requests: customSkybaseRequest as any,
     }),
     desired_instance_size: dbInstanceSize,
     data_api_exposed_schemas: dataApiExposedSchemas,

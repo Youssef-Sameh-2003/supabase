@@ -1,5 +1,5 @@
-import { PostgresTrigger } from '@supabase/postgres-meta'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PostgresTrigger } from '@skybase/postgres-meta'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { noop, partition } from 'lodash'
 import { Plus, Search } from 'lucide-react'
 import { useState } from 'react'
@@ -173,7 +173,7 @@ const TriggersList = ({
                         side: 'bottom',
                         text: !canCreateTriggers
                           ? 'You need additional permissions to create triggers'
-                          : 'Create with Supabase Assistant',
+                          : 'Create with Skybase Assistant',
                       },
                     }}
                   />

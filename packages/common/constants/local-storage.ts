@@ -3,18 +3,18 @@ export const LOCAL_STORAGE_KEYS = {
    * STUDIO
    */
   AI_ASSISTANT_STATE: (projectRef: string | undefined) =>
-    `supabase-ai-assistant-state-${projectRef}`,
-  SIDEBAR_BEHAVIOR: 'supabase-sidebar-behavior',
-  EDITOR_PANEL_STATE: 'supabase-editor-panel-state',
+    `skybase-ai-assistant-state-${projectRef}`,
+  SIDEBAR_BEHAVIOR: 'skybase-sidebar-behavior',
+  EDITOR_PANEL_STATE: 'skybase-editor-panel-state',
 
-  UI_PREVIEW_API_SIDE_PANEL: 'supabase-ui-api-side-panel',
-  UI_PREVIEW_CLS: 'supabase-ui-cls',
-  UI_PREVIEW_INLINE_EDITOR: 'supabase-ui-preview-inline-editor',
-  UI_PREVIEW_UNIFIED_LOGS: 'supabase-ui-preview-unified-logs',
-  UI_ONBOARDING_NEW_PAGE_SHOWN: 'supabase-ui-onboarding-new-page-shown',
-  UI_PREVIEW_REALTIME_SETTINGS: 'supabase-ui-realtime-settings',
-  UI_PREVIEW_BRANCHING_2_0: 'supabase-ui-branching-2-0',
-  UI_PREVIEW_ADVISOR_RULES: 'supabase-ui-advisor-rules',
+  UI_PREVIEW_API_SIDE_PANEL: 'skybase-ui-api-side-panel',
+  UI_PREVIEW_CLS: 'skybase-ui-cls',
+  UI_PREVIEW_INLINE_EDITOR: 'skybase-ui-preview-inline-editor',
+  UI_PREVIEW_UNIFIED_LOGS: 'skybase-ui-preview-unified-logs',
+  UI_ONBOARDING_NEW_PAGE_SHOWN: 'skybase-ui-onboarding-new-page-shown',
+  UI_PREVIEW_REALTIME_SETTINGS: 'skybase-ui-realtime-settings',
+  UI_PREVIEW_BRANCHING_2_0: 'skybase-ui-branching-2-0',
+  UI_PREVIEW_ADVISOR_RULES: 'skybase-ui-advisor-rules',
 
   NEW_LAYOUT_NOTICE_ACKNOWLEDGED: 'new-layout-notice-acknowledge',
   TABS_INTERFACE_ACKNOWLEDGED: 'tabs-interface-acknowledge',
@@ -24,47 +24,47 @@ export const LOCAL_STORAGE_KEYS = {
   DASHBOARD_HISTORY: (ref: string) => `dashboard-history-${ref}`,
   STORAGE_PREFERENCE: (ref: string) => `storage-explorer-${ref}`,
 
-  SQL_EDITOR_INTELLISENSE: 'supabase_sql-editor-intellisense-enabled',
-  SQL_EDITOR_SPLIT_SIZE: 'supabase_sql-editor-split-size',
+  SQL_EDITOR_INTELLISENSE: 'skybase_sql-editor-intellisense-enabled',
+  SQL_EDITOR_SPLIT_SIZE: 'skybase_sql-editor-split-size',
   // Key to track which schemas are ok to be sent to AI. The project ref is intentionally put at the end for easier search in the browser console.
-  SQL_EDITOR_AI_SCHEMA: (ref: string) => `supabase_sql-editor-ai-schema-enabled-${ref}`,
-  SQL_EDITOR_AI_OPEN: 'supabase_sql-editor-ai-open',
+  SQL_EDITOR_AI_SCHEMA: (ref: string) => `skybase_sql-editor-ai-schema-enabled-${ref}`,
+  SQL_EDITOR_AI_OPEN: 'skybase_sql-editor-ai-open',
   SQL_EDITOR_LAST_SELECTED_DB: (ref: string) => `sql-editor-last-selected-db-${ref}`,
   SQL_EDITOR_SQL_BLOCK_ACKNOWLEDGED: (ref: string) => `sql-editor-sql-block-acknowledged-${ref}`,
   SQL_EDITOR_SECTION_STATE: (ref: string) => `sql-editor-section-state-${ref}`,
   SQL_EDITOR_SORT: (ref: string) => `sql-editor-sort-${ref}`,
 
-  LOG_EXPLORER_SPLIT_SIZE: 'supabase_log-explorer-split-size',
+  LOG_EXPLORER_SPLIT_SIZE: 'skybase_log-explorer-split-size',
   GRAPHIQL_RLS_BYPASS_WARNING: 'graphiql-rls-bypass-warning-dismissed',
   CLS_DIFF_WARNING: 'cls-diff-warning-dismissed',
   CLS_SELECT_STAR_WARNING: 'cls-select-star-warning-dismissed',
-  QUERY_PERF_SHOW_BOTTOM_SECTION: 'supabase-query-perf-show-bottom-section',
+  QUERY_PERF_SHOW_BOTTOM_SECTION: 'skybase-query-perf-show-bottom-section',
   // Key to track account deletion requests
-  ACCOUNT_DELETION_REQUEST: 'supabase-account-deletion-request',
+  ACCOUNT_DELETION_REQUEST: 'skybase-account-deletion-request',
   // Used for storing a user id when sending reports to Sentry. The id is hashed for anonymity.
-  SENTRY_USER_ID: 'supabase-sentry-user-id',
+  SENTRY_USER_ID: 'skybase-sentry-user-id',
   // Used for storing the last sign in method used by the user
-  LAST_SIGN_IN_METHOD: 'supabase-last-sign-in-method',
+  LAST_SIGN_IN_METHOD: 'skybase-last-sign-in-method',
   // Key to track the last selected schema. The project ref is intentionally put at the end for easier search in the browser console.
   LAST_SELECTED_SCHEMA: (ref: string) => `last-selected-schema-${ref}`,
   // Track position of nodes for schema visualizer
   SCHEMA_VISUALIZER_POSITIONS: (ref: string, schemaId: number) =>
     `schema-visualizer-positions-${ref}-${schemaId}`,
   // Used for allowing the main nav panel to expand on hover
-  EXPAND_NAVIGATION_PANEL: 'supabase-expand-navigation-panel',
-  GITHUB_AUTHORIZATION_STATE: 'supabase-github-authorization-state',
+  EXPAND_NAVIGATION_PANEL: 'skybase-expand-navigation-panel',
+  GITHUB_AUTHORIZATION_STATE: 'skybase-github-authorization-state',
   // Notice banner keys
   FLY_POSTGRES_DEPRECATION_WARNING: 'fly-postgres-deprecation-warning-dismissed',
-  API_KEYS_FEEDBACK_DISMISSED: (ref: string) => `supabase-api-keys-feedback-dismissed-${ref}`,
+  API_KEYS_FEEDBACK_DISMISSED: (ref: string) => `skybase-api-keys-feedback-dismissed-${ref}`,
   MIDDLEWARE_OUTAGE_BANNER: 'middleware-outage-banner-2025-05-16',
-  AUTH_USERS_COLUMNS_CONFIGURATION: (ref: string) => `supabase-auth-users-columns-${ref}`,
-  REPORT_DATERANGE: 'supabase-report-daterange',
+  AUTH_USERS_COLUMNS_CONFIGURATION: (ref: string) => `skybase-auth-users-columns-${ref}`,
+  REPORT_DATERANGE: 'skybase-report-daterange',
 
   // api keys view switcher for new and legacy api keys
-  API_KEYS_VIEW: (ref: string) => `supabase-api-keys-view-${ref}`,
+  API_KEYS_VIEW: (ref: string) => `skybase-api-keys-view-${ref}`,
 
   // last visited logs page
-  LAST_VISITED_LOGS_PAGE: 'supabase-last-visited-logs-page',
+  LAST_VISITED_LOGS_PAGE: 'skybase-last-visited-logs-page',
   LAST_VISITED_ORGANIZATION: 'last-visited-organization',
 
   // user impersonation selector previous searches
@@ -75,8 +75,8 @@ export const LOCAL_STORAGE_KEYS = {
    * COMMON
    */
   /** @deprecated – we're using usercentrics instead to handle telemetry consent */
-  TELEMETRY_CONSENT: 'supabase-consent-ph',
-  TELEMETRY_DATA: 'supabase-telemetry-data',
+  TELEMETRY_CONSENT: 'skybase-consent-ph',
+  TELEMETRY_DATA: 'skybase-telemetry-data',
 
   /**
    * DOCS
@@ -85,12 +85,12 @@ export const LOCAL_STORAGE_KEYS = {
   SAVED_PROJECT: 'docs.ui.user.selected.project',
   SAVED_BRANCH: 'docs.ui.user.selected.branch',
 
-  HIDE_PROMO_TOAST: 'supabase-hide-promo-toast-lw15-ticket',
+  HIDE_PROMO_TOAST: 'skybase-hide-promo-toast-lw15-ticket',
 
   /**
    * WWW
    */
-  BLOG_VIEW: 'supabase-blog-view',
+  BLOG_VIEW: 'skybase-blog-view',
 } as const
 
 export type LocalStorageKey = (typeof LOCAL_STORAGE_KEYS)[keyof typeof LOCAL_STORAGE_KEYS]
@@ -98,9 +98,9 @@ export type LocalStorageKey = (typeof LOCAL_STORAGE_KEYS)[keyof typeof LOCAL_STO
 const LOCAL_STORAGE_KEYS_ALLOWLIST = [
   'graphiql:theme',
   'theme',
-  'supabaseDarkMode',
-  'supabase.dashboard.auth.debug',
-  'supabase.dashboard.auth.navigatorLock.disabled',
+  'skybaseDarkMode',
+  'skybase.dashboard.auth.debug',
+  'skybase.dashboard.auth.navigatorLock.disabled',
   LOCAL_STORAGE_KEYS.TELEMETRY_CONSENT,
   LOCAL_STORAGE_KEYS.UI_PREVIEW_API_SIDE_PANEL,
   LOCAL_STORAGE_KEYS.UI_PREVIEW_INLINE_EDITOR,

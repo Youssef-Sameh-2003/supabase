@@ -7,7 +7,7 @@ import {
   formatSortURLParams,
   loadTableEditorStateFromLocalStorage,
   parseSupaTable,
-} from 'components/grid/SupabaseGrid.utils'
+} from 'components/grid/SkybaseGrid.utils'
 import { Filter, Sort } from 'components/grid/types'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import { prefetchTableEditor } from 'data/table-editor/table-editor-query'

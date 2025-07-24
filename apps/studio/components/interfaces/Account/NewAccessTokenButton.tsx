@@ -128,7 +128,7 @@ const NewAccessTokenButton = ({ onCreateToken }: NewAccessTokenButtonProps) => {
                     <div className="mt-4">
                       <Button asChild type="default" icon={<ExternalLink />}>
                         <Link
-                          href="https://api.supabase.com/api/v0"
+                          href="https://api.skybase.com/api/v0"
                           target="_blank"
                           rel="noreferrer"
                         >

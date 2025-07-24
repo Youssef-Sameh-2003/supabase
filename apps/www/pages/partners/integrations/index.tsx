@@ -8,12 +8,12 @@ import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import BecomeAPartner from '~/components/Partners/BecomeAPartner'
 import PartnerLinkBox from '~/components/Partners/PartnerLinkBox'
-import supabase from '~/lib/supabaseMisc'
+import skybase from '~/lib/skybaseMisc'
 import type { Partner } from '~/types/partners'
 import TileGrid from '../../../components/Partners/TileGrid'
 
 export async function getStaticProps() {
-  const { data: partners } = await supabase
+  const { data: partners } = await skybase
     .from('partners')
     .select('*')
     .eq('approved', true)
@@ -25,7 +25,7 @@ export async function getStaticProps() {
     props: {
       partners,
     },
-    // TODO: consider using Next.js' On-demand Revalidation with Supabase Database Webhooks instead
+    // TODO: consider using Next.js' On-demand Revalidation with Skybase Database Webhooks instead
     revalidate: 1800, // 30 minutes
   }
 }
@@ -43,7 +43,7 @@ function IntegrationPartnersPage(props: Props) {
   const router = useRouter()
 
   const meta_title = 'Find an Integration'
-  const meta_description = `Use your favorite tools with Supabase.`
+  const meta_description = `Use your favorite tools with Skybase.`
 
   const [search, setSearch] = useState('')
   const [debouncedSearchTerm] = useDebounce(search, 300)
@@ -53,7 +53,7 @@ function IntegrationPartnersPage(props: Props) {
     const searchPartners = async () => {
       setIsSearching(true)
 
-      let query = supabase
+      let query = skybase
         .from('partners')
         .select('*')
         .eq('approved', true)
@@ -95,10 +95,10 @@ function IntegrationPartnersPage(props: Props) {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://supabase.com/partners/integrations`,
+          url: `https://skybase.com/partners/integrations`,
           images: [
             {
-              url: `https://supabase.com${router.basePath}/images/og/integrations.png`, // TODO
+              url: `https://skybase.com${router.basePath}/images/og/integrations.png`, // TODO
             },
           ],
         }}

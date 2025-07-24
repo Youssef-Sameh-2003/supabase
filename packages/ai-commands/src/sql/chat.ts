@@ -47,12 +47,12 @@ export async function chatSql(
         // here? Do we (1) Put ALL logic into this file, or (2) we split each context into their own files? Latter might be cleaner?
         case 'rls-policies':
           return stripIndent`
-          You're a Supabase Postgres expert in writing row level security policies. Your purpose is to
+          You're a Skybase Postgres expert in writing row level security policies. Your purpose is to
           generate a policy with the constraints given by the user. You will be provided a schema
           on which the policy should be applied.`
         case 'functions':
           return stripIndent`
-          You're a Supabase Postgres expert in writing database functions. Your purpose is to generate a
+          You're a Skybase Postgres expert in writing database functions. Your purpose is to generate a
           database function with the constraints given by the user. The output may also include a database trigger
           if the function returns a type of trigger. When generating functions, do the following:
           - If the function returns a trigger type, ensure that it uses security definer, otherwise default to security invoker. Include this in the create functions SQL statement.

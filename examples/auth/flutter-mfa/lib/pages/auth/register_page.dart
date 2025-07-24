@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mfa_app/main.dart';
 import 'package:mfa_app/pages/auth/login_page.dart';
 import 'package:mfa_app/pages/mfa/enroll_page.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   static const route = '/auth/register';
@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 });
                 final email = _emailController.text.trim();
                 final password = _passwordController.text.trim();
-                await supabase.auth.signUp(
+                await skybase.auth.signUp(
                   email: email,
                   password: password,
                   emailRedirectTo:

@@ -1,7 +1,7 @@
 import React from 'react'
 import CodeWindow from '~/components/CodeWindow'
 
-const code = `const supabase = createClient(
+const code = `const skybase = createClient(
   Deno.env.get('SUPABASE_URL'),
   Deno.env.get('SUPABASE_ANON_KEY')
 )`

@@ -2,9 +2,9 @@ import { ArrowUpRight } from 'lucide-react'
 import { IconDiscord, IconDiscussions, IconGitHubSolid } from 'ui'
 
 const data = {
-  meta_title: 'Help & Support | Supabase',
+  meta_title: 'Help & Support | Skybase',
   meta_description:
-    'Find help and support for Supabase. Our Support team provide answers on all types of issues, including account information, billing, and refunds.',
+    'Find help and support for Skybase. Our Support team provide answers on all types of issues, including account information, billing, and refunds.',
   hero: {
     h1: 'Support',
     title: 'Hello, how can we help?',
@@ -16,7 +16,7 @@ const data = {
       links: [
         {
           label: 'Open GitHub Issue',
-          link: 'https://github.com/supabase/supabase/issues',
+          link: 'https://github.com/skybase/skybase/issues',
           target: '_blank',
           icon: <IconGitHubSolid />,
           type: 'default',
@@ -29,7 +29,7 @@ const data = {
       links: [
         {
           label: 'Request feature',
-          link: 'https://github.com/orgs/supabase/discussions/categories/feature-requests',
+          link: 'https://github.com/orgs/skybase/discussions/categories/feature-requests',
           target: '_blank',
           icon: <IconGitHubSolid />,
           type: 'default',
@@ -43,14 +43,14 @@ const data = {
       links: [
         {
           label: 'Ask a question',
-          link: 'https://github.com/supabase/supabase/discussions',
+          link: 'https://github.com/skybase/skybase/discussions',
           target: '_blank',
           icon: <IconDiscussions />,
           type: 'default',
         },
         {
           label: 'Join Discord',
-          link: 'https://discord.supabase.com/',
+          link: 'https://discord.skybase.com/',
           target: '_blank',
           icon: <IconDiscord fill="hsl(var(--background-default))" />,
           type: 'secondary',
@@ -63,7 +63,7 @@ const data = {
     title: "Can't find what you're looking for?",
     paragraph: (
       <>
-        <p className="text-foreground-light">The Supabase Support Team is ready to help.</p>
+        <p className="text-foreground-light">The Skybase Support Team is ready to help.</p>
         <p className="text-foreground-lighter text-sm">
           Response time for support tickets will vary depending on plan type and severity of the
           issue.
@@ -73,13 +73,13 @@ const data = {
     links: [
       {
         label: 'Contact Enterprise Sales',
-        link: 'https://forms.supabase.com/enterprise',
+        link: 'https://forms.skybase.com/enterprise',
         target: '_blank',
         type: 'default',
       },
       {
         label: 'Open Ticket',
-        link: 'https://supabase.com/dashboard/support/new',
+        link: 'https://skybase.com/dashboard/support/new',
         target: '_blank',
         icon: <ArrowUpRight />,
         className: '!text-foreground-light hover:!text-foreground',

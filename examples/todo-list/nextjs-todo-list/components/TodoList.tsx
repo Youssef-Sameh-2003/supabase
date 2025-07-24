@@ -1,11 +1,11 @@
 import { Database } from '@/lib/schema'
-import { Session, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { Session, useSkybaseClient } from '@skybase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 
 type Todos = Database['public']['Tables']['todos']['Row']
 
 export default function TodoList({ session }: { session: Session }) {
-  const supabase = useSupabaseClient<Database>()
+  const skybase = useSkybaseClient<Database>()
   const [todos, setTodos] = useState<Todos[]>([])
   const [newTaskText, setNewTaskText] = useState('')
   const [errorText, setErrorText] = useState('')
@@ -14,7 +14,7 @@ export default function TodoList({ session }: { session: Session }) {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const { data: todos, error } = await supabase
+      const { data: todos, error } = await skybase
         .from('todos')
         .select('*')
         .order('id', { ascending: true })
@@ -24,12 +24,12 @@ export default function TodoList({ session }: { session: Session }) {
     }
 
     fetchTodos()
-  }, [supabase])
+  }, [skybase])
 
   const addTodo = async (taskText: string) => {
     let task = taskText.trim()
     if (task.length) {
-      const { data: todo, error } = await supabase
+      const { data: todo, error } = await skybase
         .from('todos')
         .insert({ task, user_id: user.id })
         .select()
@@ -46,7 +46,7 @@ export default function TodoList({ session }: { session: Session }) {
 
   const deleteTodo = async (id: number) => {
     try {
-      await supabase.from('todos').delete().eq('id', id).throwOnError()
+      await skybase.from('todos').delete().eq('id', id).throwOnError()
       setTodos(todos.filter((x) => x.id != id))
     } catch (error) {
       console.log('error', error)
@@ -90,12 +90,12 @@ export default function TodoList({ session }: { session: Session }) {
 }
 
 const Todo = ({ todo, onDelete }: { todo: Todos; onDelete: () => void }) => {
-  const supabase = useSupabaseClient<Database>()
+  const skybase = useSkybaseClient<Database>()
   const [isCompleted, setIsCompleted] = useState(todo.is_complete)
 
   const toggle = async () => {
     try {
-      const { data } = await supabase
+      const { data } = await skybase
         .from('todos')
         .update({ is_complete: !isCompleted })
         .eq('id', todo.id)

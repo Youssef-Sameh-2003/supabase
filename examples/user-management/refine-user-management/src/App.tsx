@@ -6,11 +6,11 @@ import routerBindings, {
     DocumentTitleHandler,
     UnsavedChangesNotifier,
 } from '@refinedev/react-router-v6';
-import { dataProvider, liveProvider } from '@refinedev/supabase';
+import { dataProvider, liveProvider } from '@refinedev/skybase';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
 import authProvider from './authProvider';
-import { supabaseClient } from './utility';
+import { skybaseClient } from './utility';
 import Account from './components/account';
 import Auth from './components/auth';
 
@@ -19,8 +19,8 @@ function App() {
         <BrowserRouter>
             <RefineKbarProvider>
                 <Refine
-                    dataProvider={dataProvider(supabaseClient)}
-                    liveProvider={liveProvider(supabaseClient)}
+                    dataProvider={dataProvider(skybaseClient)}
+                    liveProvider={liveProvider(skybaseClient)}
                     authProvider={authProvider}
                     routerProvider={routerBindings}
                     options={{

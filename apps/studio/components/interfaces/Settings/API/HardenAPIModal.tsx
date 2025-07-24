@@ -122,7 +122,7 @@ export const HardenAPIModal = ({ visible, onClose }: HardenAPIModalProps) => {
           <DocsButton
             abbrev={false}
             className="w-min mt-4"
-            href="https://supabase.com/docs/guides/database/hardening-data-api"
+            href="https://skybase.com/docs/guides/database/hardening-data-api"
           />
         </DialogSection>
 

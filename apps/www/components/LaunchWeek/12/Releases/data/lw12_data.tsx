@@ -83,7 +83,7 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/lw12-xspace-1',
+        href: 'https://skybase.link/lw12-xspace-1',
       },
     ],
     steps: [
@@ -109,7 +109,7 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     shipped: true,
     isToday: false,
     hasCountdown: false,
-    blog: '/blog/supabase-realtime-broadcast-and-presence-authorization',
+    blog: '/blog/skybase-realtime-broadcast-and-presence-authorization',
     date: '13 August',
     published_at: '2024-08-13T08:00:00.000-07:00',
     title: 'Realtime Broadcast and Presence Authorization',
@@ -126,13 +126,13 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/lw12-xspace-2',
+        href: 'https://skybase.link/lw12-xspace-2',
       },
     ],
     steps: [
       {
         title: 'Realtime Broadcast and Presence Authorization',
-        blog: '/blog/supabase-realtime-broadcast-and-presence-authorization',
+        blog: '/blog/skybase-realtime-broadcast-and-presence-authorization',
         bg_layers: [
           {
             img: '/images/launchweek/12/d2/realtime-dark.svg',
@@ -155,10 +155,10 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
     blog: '/blog/third-party-auth-mfa-phone-send-hooks',
     date: '14 August',
     published_at: '2024-08-14T08:00:00.000-07:00',
-    title: 'Supabase Auth: Bring-your-own Auth0, Cognito, or Firebase',
+    title: 'Skybase Auth: Bring-your-own Auth0, Cognito, or Firebase',
     description: (
       <>
-        <span className="text-foreground">Supabase Auth</span>:<br className="hidden sm:block" />{' '}
+        <span className="text-foreground">Skybase Auth</span>:<br className="hidden sm:block" />{' '}
         Bring-your-own Auth0,
         <br className="hidden sm:block" /> Cognito, or Firebase
       </>
@@ -170,12 +170,12 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/lw12-xspace-3',
+        href: 'https://skybase.link/lw12-xspace-3',
       },
     ],
     steps: [
       {
-        title: 'Supabase Auth: Bring-your-own Auth0, Cognito, or Firebase',
+        title: 'Skybase Auth: Bring-your-own Auth0, Cognito, or Firebase',
         blog: '/blog/third-party-auth-mfa-phone-send-hooks',
         bg_layers: [
           {
@@ -208,7 +208,7 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/lw12-xspace-4',
+        href: 'https://skybase.link/lw12-xspace-4',
       },
     ],
     steps: [
@@ -250,7 +250,7 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
       },
       {
         type: 'xSpace',
-        href: 'https://supabase.link/lw12-xspace-5',
+        href: 'https://skybase.link/lw12-xspace-5',
       },
     ],
     steps: [

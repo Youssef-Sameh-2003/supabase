@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_quickstart/main.dart';
+import 'package:skybase_quickstart/main.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
 
-    final session = supabase.auth.currentSession;
+    final session = skybase.auth.currentSession;
     if (session != null) {
       Navigator.of(context).pushReplacementNamed('/account');
     } else {

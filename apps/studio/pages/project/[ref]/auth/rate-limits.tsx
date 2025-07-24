@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 
 import RateLimits from 'components/interfaces/Auth/RateLimits/RateLimits'
 import AuthLayout from 'components/layouts/AuthLayout/AuthLayout'
@@ -33,7 +33,7 @@ RateLimitsPage.getLayout = (page) => (
         title="Rate Limits"
         subtitle="Safeguard against bursts of incoming traffic to prevent abuse and maximize stability"
         primaryActions={
-          <DocsButton href="https://supabase.com/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention" />
+          <DocsButton href="https://skybase.com/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention" />
         }
       >
         {page}

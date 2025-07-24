@@ -3,7 +3,7 @@ import { unstable_cache } from 'next/cache'
 import { type NavMenuSection } from '~/components/Navigation/Navigation.types'
 import { REVALIDATION_TAGS } from '~/features/helpers.fetch'
 import Layout from '~/layouts/guides'
-import { supabaseMisc } from '~/lib/supabaseMisc'
+import { skybaseMisc } from '~/lib/skybaseMisc'
 
 export default async function IntegrationsLayout({ children }: { children: React.ReactNode }) {
   const additionalNavItems = { integrations: await getPartners() }
@@ -19,7 +19,7 @@ const getPartners = unstable_cache(getPartnersImpl, [], {
 async function getPartnersImpl() {
   if (!IS_PLATFORM) return []
 
-  const { data, error } = await supabaseMisc()
+  const { data, error } = await skybaseMisc()
     .from('partners')
     .select('slug, title')
     .eq('approved', true)
@@ -33,7 +33,7 @@ async function getPartnersImpl() {
     (partner) =>
       ({
         name: partner.title,
-        url: `https://supabase.com/partners/integrations/${partner.slug}` as `https://${string}`,
+        url: `https://skybase.com/partners/integrations/${partner.slug}` as `https://${string}`,
       }) as Partial<NavMenuSection>
   )
 

@@ -1,5 +1,5 @@
-import { PostgresTrigger } from '@supabase/postgres-meta'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PostgresTrigger } from '@skybase/postgres-meta'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useState } from 'react'
 
 import { useIsInlineEditorEnabled } from 'components/interfaces/App/FeaturePreview/FeaturePreviewContext'
@@ -78,7 +78,7 @@ execute function function_name();`,
             <FormHeader
               title="Database Triggers"
               description="Execute a set of actions automatically on specified table events"
-              docsUrl="https://supabase.com/docs/guides/database/postgres/triggers"
+              docsUrl="https://skybase.com/docs/guides/database/postgres/triggers"
             />
             <TriggersList
               createTrigger={createTrigger}

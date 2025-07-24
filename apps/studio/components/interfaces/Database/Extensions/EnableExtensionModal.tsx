@@ -1,4 +1,4 @@
-import type { PostgresExtension } from '@supabase/postgres-meta'
+import type { PostgresExtension } from '@skybase/postgres-meta'
 import { Database, ExternalLinkIcon, Plus } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -145,7 +145,7 @@ const EnableExtensionModal = ({ visible, extension, onCancel }: EnableExtensionM
                       {extension.name} cannot be accelerated by indexes on tables that are using the
                       OrioleDB access method
                     </span>
-                    <DocsButton abbrev={false} className="mt-2" href="https://supabase.com/docs" />
+                    <DocsButton abbrev={false} className="mt-2" href="https://skybase.com/docs" />
                   </Admonition>
                 )}
 

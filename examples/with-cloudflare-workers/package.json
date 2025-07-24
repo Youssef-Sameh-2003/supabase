@@ -1,5 +1,5 @@
 {
-  "name": "supabase-at-the-edge",
+  "name": "skybase-at-the-edge",
   "version": "0.0.0",
   "devDependencies": {
     "wrangler": "2.20.1"

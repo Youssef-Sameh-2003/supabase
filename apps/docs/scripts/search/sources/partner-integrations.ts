@@ -1,4 +1,4 @@
-import { type SupabaseClient, createClient } from '@supabase/supabase-js'
+import { type SkybaseClient, createClient } from '@skybase/skybase-js'
 import { upperFirst } from 'lodash-es'
 import { processMdx } from '../../helpers.mdx.js'
 import { BaseLoader, BaseSource } from './base.js'
@@ -8,20 +8,20 @@ type PartnerData = {
   overview: string // The Markdown content for indexing
 }
 
-const supabaseUrl = process.env.NEXT_PUBLIC_MISC_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_MISC_ANON_KEY!
+const skybaseUrl = process.env.NEXT_PUBLIC_MISC_URL!
+const skybaseAnonKey = process.env.NEXT_PUBLIC_MISC_ANON_KEY!
 
-let supabaseClient: SupabaseClient
-function getSupabaseClient() {
-  if (!supabaseClient) {
-    supabaseClient = createClient(supabaseUrl, supabaseAnonKey)
+let skybaseClient: SkybaseClient
+function getSkybaseClient() {
+  if (!skybaseClient) {
+    skybaseClient = createClient(skybaseUrl, skybaseAnonKey)
   }
-  return supabaseClient
+  return skybaseClient
 }
 
 export async function fetchPartners() {
-  const supabase = getSupabaseClient()
-  const { data: partners } = await supabase
+  const skybase = getSkybaseClient()
+  const { data: partners } = await skybase
     .from('partners')
     .select('slug,overview')
     .eq('approved', true)

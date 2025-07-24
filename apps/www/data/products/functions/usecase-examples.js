@@ -56,14 +56,14 @@ serve(async (req: Request) => {
     description: `Read and write to any of your buckets, while also respecting storage auth policies.`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { createClient } from "jsr:@skybase/skybase-js@2";
 
 serve(async (req) => {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
+  const skybase = createClient(SUPABASE_URL, SERVICE_KEY);
   if (req.headers.get("Authorization") === "super-secret-key") {
-    const { data } = await supabase.storage
+    const { data } = await skybase.storage
       .from("newbucket")
       .download("supameme.png");
     return new Response(data, { headers: { "content-type": "image/png" } });
@@ -78,13 +78,13 @@ serve(async (req) => {
     description: `Read, Write, Update, Insert anything on the database`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { createClient } from "jsr:@skybase/skybase-js@2";
 
 serve(async () => {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
-  const { data } = await supabase.from("todos").select();
+  const skybase = createClient(SUPABASE_URL, SERVICE_KEY);
+  const { data } = await skybase.from("todos").select();
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {

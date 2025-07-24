@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-supabase/next'],
+  extends: ['eslint-config-skybase/next'],
   rules: {
     'react-hooks/rules-of-hooks': 'warn',
     'react/no-unescaped-entities': 'warn',

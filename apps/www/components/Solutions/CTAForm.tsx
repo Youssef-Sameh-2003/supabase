@@ -28,12 +28,12 @@ const UseCases: FC<Props> = () => {
 
 const ConnectCallout: FC<{ className?: string }> = ({ className }) => (
   <div className={cn('border rounded-lg p-4 md:p-6 bg-surface-75 flex flex-col gap-2', className)}>
-    <h5>Connect your app to Supabase now</h5>
+    <h5>Connect your app to Skybase now</h5>
     <p className="text-foreground-lighter">
-      Set up a Supabase OAuth app so your users can start interacting with their Supabase Project.
+      Set up a Skybase OAuth app so your users can start interacting with their Skybase Project.
     </p>
     <TextLink
-      url="https://supabase.com/docs/guides/integrations/build-a-supabase-integration"
+      url="https://skybase.com/docs/guides/integrations/build-a-skybase-integration"
       label="View docs"
     />
   </div>

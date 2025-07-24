@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useParams } from 'common'
 import { useAPIKeysQuery } from 'data/api-keys/api-keys-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'

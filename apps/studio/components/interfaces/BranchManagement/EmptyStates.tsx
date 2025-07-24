@@ -69,7 +69,7 @@ export const PreviewBranchesEmptyState = ({
         your database schema without affecting your main database.
       </p>
       <div className="flex items-center space-x-2">
-        <DocsButton href="https://supabase.com/docs/guides/platform/branching" />
+        <DocsButton href="https://skybase.com/docs/guides/platform/branching" />
         <Button type="primary" onClick={() => onSelectCreateBranch()}>
           Create your first branch
         </Button>

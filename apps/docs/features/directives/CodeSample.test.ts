@@ -50,7 +50,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   \`\`\`javascript
   const A = 'A'
   const B = 3
@@ -94,7 +94,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   \`\`\`javascript
   const A = 'A'
   const B = 3
@@ -134,7 +134,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   \`\`\`javascript
   const A = 'A'
   const B = 3
@@ -178,7 +178,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/python.py">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/python.py">
   \`\`\`python
   PI = 3.14159
   E = 2.71828
@@ -208,8 +208,8 @@ Some more text.
 
 <$CodeSample
   external={true}
-  org="supabase"
-  repo="supabase"
+  org="skybase"
+  repo="skybase"
   commit="68d5s42hvs7p342kl65ldk90dsafdsa"
   path="/path/to/file.ts"
   lines={[[1, -1]]}
@@ -228,7 +228,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/68d5s42hvs7p342kl65ldk90dsafdsa/path/to/file.ts">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/68d5s42hvs7p342kl65ldk90dsafdsa/path/to/file.ts">
   \`\`\`typescript
   ok
   \`\`\`
@@ -239,8 +239,8 @@ Some more text.
 
     expect(fetchFromGitHubMock).toHaveBeenCalledTimes(1)
     expect(fetchFromGitHubMock).toHaveBeenCalledWith({
-      org: 'supabase',
-      repo: 'supabase',
+      org: 'skybase',
+      repo: 'skybase',
       path: '/path/to/file.ts',
       branch: '68d5s42hvs7p342kl65ldk90dsafdsa',
       options: { onError: expect.any(Function), fetch: expect.any(Function) },
@@ -271,7 +271,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   \`\`\`javascript utils/client.ts
   const A = 'A'
   const B = 3
@@ -319,7 +319,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   <CH.Code>
     \`\`\`javascript utils/client.ts
     const A = 'A'
@@ -379,7 +379,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source={['https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js', 'https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/python.py']}>
+<CodeSampleWrapper source={['https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js', 'https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/python.py']}>
   <CH.Code>
     \`\`\`javascript utils/client.ts
     const A = 'A'
@@ -467,7 +467,7 @@ Some more text.
     const expected = `
 # Embed code sample
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   <CH.Code>
     \`\`\`javascript utils/client1.ts
     const A = 'A'
@@ -507,7 +507,7 @@ Some more text.
 
 Another one:
 
-<CodeSampleWrapper source="https://github.com/supabase/supabase/blob/1234567890/examples/_internal/fixtures/javascript.js">
+<CodeSampleWrapper source="https://github.com/skybase/skybase/blob/1234567890/examples/_internal/fixtures/javascript.js">
   <CH.Code>
     \`\`\`javascript utils/client3.ts
     const A = 'A'

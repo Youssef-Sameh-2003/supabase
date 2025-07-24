@@ -6,16 +6,16 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState, useRef } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Physics, useBox, usePlane } from '@react-three/cannon';
 import { OrbitControls } from '@react-three/drei';
 import { Vector3, MathUtils } from 'three';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
 const CHANNEL = 'platformer-3d-example-${instanceId}';
@@ -102,8 +102,8 @@ export default function App() {
     setLocalPlayer(initialPlayerState);
     localPlayerRef.current = initialPlayerState; // Also set the ref directly
     
-    // Set up Supabase channel
-    const channel = supabase.channel(CHANNEL, {
+    // Set up Skybase channel
+    const channel = skybase.channel(CHANNEL, {
       config: {
         presence: {
           key: userId.current,

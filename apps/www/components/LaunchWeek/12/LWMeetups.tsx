@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { SkybaseClient } from '@skybase/skybase-js'
 import useConfData from '../hooks/use-conf-data'
 import { cn } from 'ui'
 
@@ -22,18 +22,18 @@ function addHours(start_at: Date, hours: number) {
 }
 
 const LWMeetups = ({ meetups, className }: { meetups?: Meetup[]; className?: string }) => {
-  const { supabase } = useConfData()
+  const { skybase } = useConfData()
   const now = new Date(Date.now())
   const [meets, setMeets] = useState<Meetup[]>(meetups ?? [])
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    SupabaseClient['channel']
+    SkybaseClient['channel']
   > | null>(null)
   const [activeMeetup, setActiveMeetup] = useState<Meetup>(meets[0])
 
   useEffect(() => {
     // Listen to realtime changes
-    if (supabase && !realtimeChannel) {
-      const channel = supabase
+    if (skybase && !realtimeChannel) {
+      const channel = skybase
         .channel('meetups')
         .on(
           'postgres_changes',
@@ -44,7 +44,7 @@ const LWMeetups = ({ meetups, className }: { meetups?: Meetup[]; className?: str
             filter: undefined,
           },
           async () => {
-            const { data: newMeets } = await supabase
+            const { data: newMeets } = await skybase
               .from('meetups')
               .select('*')
               .eq('launch_week', 'lw12')

@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { ExternalLink, PauseCircle } from 'lucide-react'
@@ -207,7 +207,7 @@ export const ProjectPausedState = ({ product }: ProjectPausedStateProps) => {
                               <a
                                 target="_blank"
                                 rel="noreferrer"
-                                href="https://supabase.com/docs/guides/platform/migrating-and-upgrading-projects#time-limits"
+                                href="https://skybase.com/docs/guides/platform/migrating-and-upgrading-projects#time-limits"
                               >
                                 More information
                               </a>

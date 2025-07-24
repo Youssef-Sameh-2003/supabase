@@ -533,7 +533,7 @@ export function LogDrainDestinationSheetForm({
                   <DocsButton
                     abbrev={false}
                     className="w-min"
-                    href="https://supabase.com/docs/guides/platform/log-drains"
+                    href="https://skybase.com/docs/guides/platform/log-drains"
                   />
                 </div>
               }

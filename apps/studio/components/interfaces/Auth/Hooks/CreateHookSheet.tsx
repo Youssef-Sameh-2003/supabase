@@ -178,8 +178,8 @@ export const CreateHookSheet = ({
     if (values.postgresValues.functionName !== '') {
       permissionChanges = [
         ...permissionChanges,
-        `-- Grant access to function to supabase_auth_admin\ngrant execute on function ${values.postgresValues.schema}.${values.postgresValues.functionName} to supabase_auth_admin;`,
-        `-- Grant access to schema to supabase_auth_admin\ngrant usage on schema ${values.postgresValues.schema} to supabase_auth_admin;`,
+        `-- Grant access to function to skybase_auth_admin\ngrant execute on function ${values.postgresValues.schema}.${values.postgresValues.functionName} to skybase_auth_admin;`,
+        `-- Grant access to schema to skybase_auth_admin\ngrant usage on schema ${values.postgresValues.schema} to skybase_auth_admin;`,
         `-- Revoke function permissions from authenticated, anon and public\nrevoke execute on function ${values.postgresValues.schema}.${values.postgresValues.functionName} from authenticated, anon, public;`,
       ]
     }
@@ -290,7 +290,7 @@ export const CreateHookSheet = ({
               {isCreating ? `Add ${title}` : `Update ${title}`}
             </SheetTitle>
           </div>
-          <DocsButton href={'https://supabase.com/docs/guides/auth/auth-hooks/' + hook.docSlug} />
+          <DocsButton href={'https://skybase.com/docs/guides/auth/auth-hooks/' + hook.docSlug} />
         </SheetHeader>
         <Separator />
         <SheetSection className="overflow-auto flex-grow px-0">
@@ -387,7 +387,7 @@ export const CreateHookSheet = ({
                       render={({ field }) => (
                         <FormItemLayout
                           label="Postgres function"
-                          description="This function will be called by Supabase Auth each time the hook is triggered"
+                          description="This function will be called by Skybase Auth each time the hook is triggered"
                         >
                           <FormControl_Shadcn_>
                             <FunctionSelector
@@ -442,7 +442,7 @@ export const CreateHookSheet = ({
                     render={({ field }) => (
                       <FormItemLayout
                         label="URL"
-                        description="Supabase Auth will send a HTTPS POST request to this URL each time the hook is triggered."
+                        description="Skybase Auth will send a HTTPS POST request to this URL each time the hook is triggered."
                       >
                         <FormControl_Shadcn_>
                           <Input_Shadcn_ {...field} />

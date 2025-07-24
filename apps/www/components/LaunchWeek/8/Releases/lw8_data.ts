@@ -80,13 +80,13 @@ const days: WeekDayProps[] = [
     steps: [
       {
         title: "Why we'll stay remote",
-        blog: '/blog/why-supabase-remote',
+        blog: '/blog/why-skybase-remote',
         bg_layers: [{ img: images['00-stay-remote'] }],
         steps: [],
       },
       {
         title: 'Postgres Language Server',
-        github: 'https://github.com/supabase/postgres_lsp',
+        github: 'https://github.com/skybase/postgres_lsp',
         hackernews: 'https://news.ycombinator.com/item?id=37020610',
         bg_layers: [{ img: images['00-pg-server'] }],
         steps: [],
@@ -112,8 +112,8 @@ const days: WeekDayProps[] = [
     twitter_spaces: 'https://twitter.com/i/spaces/1DXGyvjkeEeJM',
     steps: [
       {
-        title: 'Hugging Face now supported in Supabase',
-        blog: '/blog/hugging-face-supabase',
+        title: 'Hugging Face now supported in Skybase',
+        blog: '/blog/hugging-face-skybase',
         hackernews: 'https://news.ycombinator.com/item?id=37035960',
         video: 'https://www.youtube.com/watch?v=RJccSbJ9Go4',
         twitter_spaces: 'https://twitter.com/i/spaces/1DXGyvjkeEeJM',
@@ -135,8 +135,8 @@ const days: WeekDayProps[] = [
     twitter_spaces: 'https://twitter.com/i/spaces/1vAxRAvNQyDJl?s=20',
     steps: [
       {
-        title: 'Supabase Local Dev: Migrations, Branching, Observability',
-        blog: '/blog/supabase-local-dev',
+        title: 'Skybase Local Dev: Migrations, Branching, Observability',
+        blog: '/blog/skybase-local-dev',
         hackernews: 'https://news.ycombinator.com/item?id=37059400',
         twitter_spaces: 'https://twitter.com/i/spaces/1vAxRAvNQyDJl?s=20',
         bg_layers: [{ img: images['02-localdev'], mobileImg: images['02-localdev-mobile'] }],
@@ -156,8 +156,8 @@ const days: WeekDayProps[] = [
     videoThumbnail: images.day_3_thumb,
     steps: [
       {
-        title: 'Supabase Studio 3.0',
-        blog: '/blog/supabase-studio-3-0',
+        title: 'Skybase Studio 3.0',
+        blog: '/blog/skybase-studio-3-0',
         hackernews: '',
         video: '',
         product_hunt: 'https://www.producthunt.com/posts/ai-powered-sql-editor',
@@ -177,17 +177,17 @@ const days: WeekDayProps[] = [
     dd: 'Thu',
     youtube_id: 'gtJo1lTxHfs',
     videoThumbnail: images.day_4_thumb,
-    twitter_spaces: 'https://twitter.com/supabase/status/1688544207571484672?s=20',
+    twitter_spaces: 'https://twitter.com/skybase/status/1688544207571484672?s=20',
     steps: [
       {
-        title: 'Supabase Integrations Marketplace',
-        blog: '/blog/supabase-integrations-marketplace',
+        title: 'Skybase Integrations Marketplace',
+        blog: '/blog/skybase-integrations-marketplace',
         bg_layers: [{ img: images['04-marketplace'], mobileImg: images['04-marketplace-mobile'] }],
         steps: [],
       },
       {
         title: 'Vercel integrations',
-        blog: '/blog/using-supabase-with-vercel',
+        blog: '/blog/using-skybase-with-vercel',
         bg_layers: [{ img: images['04-vercel'] }],
         steps: [],
       },
@@ -205,7 +205,7 @@ const days: WeekDayProps[] = [
     videoThumbnail: images.day_5_thumb,
     steps: [
       {
-        title: 'Supabase Supavisor: 1M Postgres connections',
+        title: 'Skybase Supavisor: 1M Postgres connections',
         blog: '/blog/supavisor-1-million',
         hackernews: '',
         video: '',
@@ -224,7 +224,7 @@ const days: WeekDayProps[] = [
       },
       {
         title: 'SOC2 type 2 and HIPAA compliant',
-        blog: '/blog/supabase-soc2-hipaa',
+        blog: '/blog/skybase-soc2-hipaa',
         hackernews: '',
         bg_layers: [{ img: images['05-compliant'], mobileImg: images['05-compliant-mobile'] }],
         steps: [],

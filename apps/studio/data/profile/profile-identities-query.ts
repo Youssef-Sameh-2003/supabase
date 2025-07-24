@@ -1,4 +1,4 @@
-import type { UserIdentity } from '@supabase/supabase-js'
+import type { UserIdentity } from '@skybase/skybase-js'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
 import { auth } from 'lib/gotrue'

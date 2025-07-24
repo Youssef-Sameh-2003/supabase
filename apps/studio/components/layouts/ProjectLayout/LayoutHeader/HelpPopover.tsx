@@ -58,7 +58,7 @@ export const HelpPopover = () => {
         <div className="mb-5 px-5">
           <h5 className="text-foreground mb-2">Need help with your project?</h5>
           <p className="text-sm text-foreground-lighter">
-            For issues with your project hosted on supabase.com or other hosted service inquiries.
+            For issues with your project hosted on skybase.com or other hosted service inquiries.
             Response times are based on your billing plan, with paid plans prioritized.
           </p>
         </div>
@@ -94,12 +94,12 @@ export const HelpPopover = () => {
                   })
                 }}
               >
-                Supabase Assistant
+                Skybase Assistant
               </ButtonGroupItem>
             )}
             <ButtonGroupItem size="tiny" icon={<Wrench strokeWidth={1.5} size={14} />} asChild>
               <a
-                href="https://supabase.com/docs/guides/platform/troubleshooting"
+                href="https://skybase.com/docs/guides/platform/troubleshooting"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -107,13 +107,13 @@ export const HelpPopover = () => {
               </a>
             </ButtonGroupItem>
             <ButtonGroupItem size="tiny" icon={<BookOpen strokeWidth={1.5} size={14} />} asChild>
-              <a href="https://supabase.com/docs/" target="_blank" rel="noreferrer">
+              <a href="https://skybase.com/docs/" target="_blank" rel="noreferrer">
                 Docs
               </a>
             </ButtonGroupItem>
             <ButtonGroupItem size="tiny" icon={<Activity strokeWidth={1.5} size={14} />} asChild>
-              <a href="https://status.supabase.com/" target="_blank" rel="noreferrer">
-                Supabase Status
+              <a href="https://status.skybase.com/" target="_blank" rel="noreferrer">
+                Skybase Status
               </a>
             </ButtonGroupItem>
             <ButtonGroupItem size="tiny" icon={<Mail strokeWidth={1.5} size={14} />}>
@@ -137,7 +137,7 @@ export const HelpPopover = () => {
               style={{ background: '#404EED' }}
             >
               <a
-                href="https://discord.supabase.com"
+                href="https://discord.skybase.com"
                 target="_blank"
                 rel="noreferrer"
                 className="dark block cursor-pointer"
@@ -161,7 +161,7 @@ export const HelpPopover = () => {
           <div className="px-5">
             <div className="relative space-y-2 overflow-hidden rounded px-5 py-4 pb-12 shadow-md">
               <a
-                href="https://github.com/supabase/supabase/discussions"
+                href="https://github.com/skybase/skybase/discussions"
                 target="_blank"
                 rel="noreferrer"
                 className="block cursor-pointer"

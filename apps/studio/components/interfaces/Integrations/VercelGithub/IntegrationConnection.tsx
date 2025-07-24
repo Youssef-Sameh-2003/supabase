@@ -35,7 +35,7 @@ const IntegrationConnectionItem = forwardRef<HTMLLIElement, IntegrationConnectio
 
     const { type, connection } = props
     const { data: projects } = useProjectsQuery()
-    const project = projects?.find((project) => project.ref === connection.supabase_project_ref)
+    const project = projects?.find((project) => project.ref === connection.skybase_project_ref)
     const isBranchingEnabled = project?.is_branch_enabled === true
 
     const [isOpen, setIsOpen] = useState(false)
@@ -108,7 +108,7 @@ const IntegrationConnectionItem = forwardRef<HTMLLIElement, IntegrationConnectio
                       <Link
                         href={projectIntegrationUrl.replace(
                           '[ref]',
-                          connection.supabase_project_ref
+                          connection.skybase_project_ref
                         )}
                       >
                         Configure connection

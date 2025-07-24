@@ -227,7 +227,7 @@ const PrivilegesPage: NextPageWithLayout = () => {
                 <p>Grant or revoke privileges on a column based on user role.</p>
               </div>
             </div>
-            <DocsButton href="https://supabase.com/docs/guides/auth/column-level-security" />
+            <DocsButton href="https://skybase.com/docs/guides/auth/column-level-security" />
           </div>
 
           {isEnabled ? (
@@ -237,10 +237,10 @@ const PrivilegesPage: NextPageWithLayout = () => {
                   <AlertCircle strokeWidth={2} />
                   <AlertTitle_Shadcn_>
                     Changes to column privileges will not be reflected in migrations when running{' '}
-                    <code className="text-xs">supabase db diff</code>.
+                    <code className="text-xs">skybase db diff</code>.
                   </AlertTitle_Shadcn_>
                   <AlertDescription_Shadcn_>
-                    Column privileges are not supported in the current version of the Supabase CLI.
+                    Column privileges are not supported in the current version of the Skybase CLI.
                     <br />
                     You will need to manually apply these changes to your database.
                   </AlertDescription_Shadcn_>

@@ -27,8 +27,8 @@ const Footer = ({ className }: { className?: string }) => (
       <hr className="border-default my-6"></hr>
       <div className="flex gap-4 items-center justify-between">
         <div className="flex flex-col lg:flex-row gap-3 ">
-          <Link href="https://supabase.com/" className="text-xs text-foreground-lighter">
-            &copy; Supabase Inc
+          <Link href="https://skybase.com/" className="text-xs text-foreground-lighter">
+            &copy; Skybase Inc
           </Link>
           <span className="text-xs text-foreground-lighter">—</span>
           {secondaryLinks.map(({ component: Component, ...item }) =>
@@ -55,7 +55,7 @@ const Footer = ({ className }: { className?: string }) => (
         <div className="flex items-center gap-2">
           <Button type="text" asChild>
             <a
-              href="https://github.com/supabase/supabase"
+              href="https://github.com/skybase/skybase"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -78,7 +78,7 @@ const Footer = ({ className }: { className?: string }) => (
           </Button>
           <Button type="text" asChild>
             <span className="sr-only">YouTube</span>
-            <a href="https://youtube.com/c/supabase" target="_blank" rel="noreferrer noopener">
+            <a href="https://youtube.com/c/skybase" target="_blank" rel="noreferrer noopener">
               <svg
                 width="16"
                 height="17"
@@ -94,7 +94,7 @@ const Footer = ({ className }: { className?: string }) => (
             </a>
           </Button>
           <Button type="text" asChild>
-            <a href="https://twitter.com/supabase" target="_blank" rel="noreferrer noopener">
+            <a href="https://twitter.com/skybase" target="_blank" rel="noreferrer noopener">
               <span className="sr-only">Twitter</span>
               <svg
                 width="15"
@@ -111,7 +111,7 @@ const Footer = ({ className }: { className?: string }) => (
             </a>
           </Button>
           <Button type="text" asChild>
-            <a href="https://discord.supabase.com/" target="_blank" rel="noreferrer noopener">
+            <a href="https://discord.skybase.com/" target="_blank" rel="noreferrer noopener">
               <span className="sr-only">Discord</span>
               <svg
                 width="17"

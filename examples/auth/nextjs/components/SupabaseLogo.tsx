@@ -1,7 +1,7 @@
-export default function SupabaseLogo() {
+export default function SkybaseLogo() {
   return (
     <svg
-      aria-label="Supabase logo"
+      aria-label="Skybase logo"
       width="140"
       height="30"
       viewBox="0 0 115 23"

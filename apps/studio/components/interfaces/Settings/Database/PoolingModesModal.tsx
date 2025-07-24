@@ -42,7 +42,7 @@ export const PoolingModesModal = () => {
           <DialogTitle>
             <div className="w-full flex items-center justify-between">
               <p className="max-w-2xl">Which pooling mode should I use?</p>
-              <DocsButton href="https://supabase.com/docs/guides/database/connecting-to-postgres#how-connection-pooling-works" />
+              <DocsButton href="https://skybase.com/docs/guides/database/connecting-to-postgres#how-connection-pooling-works" />
             </div>
           </DialogTitle>
           <DialogDescription className="max-w-2xl">

@@ -7,7 +7,7 @@ import ExampleCard from '../ExampleCard'
 import Examples from 'data/Examples'
 import ExamplesMobile from './ExamplesMobile'
 
-const BuiltWithSupabase = () => {
+const BuiltWithSkybase = () => {
   return (
     <>
       <SectionContainer id="examples" className="xl:pt-32 !pb-0">
@@ -26,7 +26,7 @@ const BuiltWithSupabase = () => {
               icon={<IconGitHubSolid size="tiny" className="!w-full !h-full" />}
               size="small"
             >
-              <Link href="https://github.com/supabase/supabase/tree/master/examples">
+              <Link href="https://github.com/skybase/skybase/tree/master/examples">
                 Official GitHub library
               </Link>
             </Button>
@@ -55,4 +55,4 @@ const BuiltWithSupabase = () => {
   )
 }
 
-export default BuiltWithSupabase
+export default BuiltWithSkybase

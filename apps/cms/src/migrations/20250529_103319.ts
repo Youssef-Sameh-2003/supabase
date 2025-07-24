@@ -3,12 +3,12 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
    CREATE TYPE "cms-payload"."enum_customers_industry" AS ENUM('healthcare', 'fintech', 'ecommerce', 'education', 'gaming', 'media', 'real-estate', 'saas', 'social', 'analytics', 'ai', 'developer-tools');
-  CREATE TYPE "cms-payload"."enum_customers_supabase_products" AS ENUM('database', 'auth', 'storage', 'realtime', 'functions', 'vector');
+  CREATE TYPE "cms-payload"."enum_customers_skybase_products" AS ENUM('database', 'auth', 'storage', 'realtime', 'functions', 'vector');
   CREATE TYPE "cms-payload"."enum_customers_company_size" AS ENUM('startup', 'enterprise', 'indie_dev');
   CREATE TYPE "cms-payload"."enum_customers_region" AS ENUM('Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania');
   CREATE TYPE "cms-payload"."enum_customers_status" AS ENUM('draft', 'published');
   CREATE TYPE "cms-payload"."enum__customers_v_version_industry" AS ENUM('healthcare', 'fintech', 'ecommerce', 'education', 'gaming', 'media', 'real-estate', 'saas', 'social', 'analytics', 'ai', 'developer-tools');
-  CREATE TYPE "cms-payload"."enum__customers_v_version_supabase_products" AS ENUM('database', 'auth', 'storage', 'realtime', 'functions', 'vector');
+  CREATE TYPE "cms-payload"."enum__customers_v_version_skybase_products" AS ENUM('database', 'auth', 'storage', 'realtime', 'functions', 'vector');
   CREATE TYPE "cms-payload"."enum__customers_v_version_company_size" AS ENUM('startup', 'enterprise', 'indie_dev');
   CREATE TYPE "cms-payload"."enum__customers_v_version_region" AS ENUM('Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania');
   CREATE TYPE "cms-payload"."enum__customers_v_version_status" AS ENUM('draft', 'published');
@@ -82,10 +82,10 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   	"id" serial PRIMARY KEY NOT NULL
   );
   
-  CREATE TABLE IF NOT EXISTS "cms-payload"."customers_supabase_products" (
+  CREATE TABLE IF NOT EXISTS "cms-payload"."customers_skybase_products" (
   	"order" integer NOT NULL,
   	"parent_id" integer NOT NULL,
-  	"value" "cms-payload"."enum_customers_supabase_products",
+  	"value" "cms-payload"."enum_customers_skybase_products",
   	"id" serial PRIMARY KEY NOT NULL
   );
   
@@ -137,10 +137,10 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   	"id" serial PRIMARY KEY NOT NULL
   );
   
-  CREATE TABLE IF NOT EXISTS "cms-payload"."_customers_v_version_supabase_products" (
+  CREATE TABLE IF NOT EXISTS "cms-payload"."_customers_v_version_skybase_products" (
   	"order" integer NOT NULL,
   	"parent_id" integer NOT NULL,
-  	"value" "cms-payload"."enum__customers_v_version_supabase_products",
+  	"value" "cms-payload"."enum__customers_v_version_skybase_products",
   	"id" serial PRIMARY KEY NOT NULL
   );
   
@@ -558,7 +558,7 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   END $$;
   
   DO $$ BEGIN
-   ALTER TABLE "cms-payload"."customers_supabase_products" ADD CONSTRAINT "customers_supabase_products_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "cms-payload"."customers"("id") ON DELETE cascade ON UPDATE no action;
+   ALTER TABLE "cms-payload"."customers_skybase_products" ADD CONSTRAINT "customers_skybase_products_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "cms-payload"."customers"("id") ON DELETE cascade ON UPDATE no action;
   EXCEPTION
    WHEN duplicate_object THEN null;
   END $$;
@@ -600,7 +600,7 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   END $$;
   
   DO $$ BEGIN
-   ALTER TABLE "cms-payload"."_customers_v_version_supabase_products" ADD CONSTRAINT "_customers_v_version_supabase_products_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "cms-payload"."_customers_v"("id") ON DELETE cascade ON UPDATE no action;
+   ALTER TABLE "cms-payload"."_customers_v_version_skybase_products" ADD CONSTRAINT "_customers_v_version_skybase_products_parent_fk" FOREIGN KEY ("parent_id") REFERENCES "cms-payload"."_customers_v"("id") ON DELETE cascade ON UPDATE no action;
   EXCEPTION
    WHEN duplicate_object THEN null;
   END $$;
@@ -920,8 +920,8 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "customers_misc_parent_id_idx" ON "cms-payload"."customers_misc" USING btree ("_parent_id");
   CREATE INDEX IF NOT EXISTS "customers_industry_order_idx" ON "cms-payload"."customers_industry" USING btree ("order");
   CREATE INDEX IF NOT EXISTS "customers_industry_parent_idx" ON "cms-payload"."customers_industry" USING btree ("parent_id");
-  CREATE INDEX IF NOT EXISTS "customers_supabase_products_order_idx" ON "cms-payload"."customers_supabase_products" USING btree ("order");
-  CREATE INDEX IF NOT EXISTS "customers_supabase_products_parent_idx" ON "cms-payload"."customers_supabase_products" USING btree ("parent_id");
+  CREATE INDEX IF NOT EXISTS "customers_skybase_products_order_idx" ON "cms-payload"."customers_skybase_products" USING btree ("order");
+  CREATE INDEX IF NOT EXISTS "customers_skybase_products_parent_idx" ON "cms-payload"."customers_skybase_products" USING btree ("parent_id");
   CREATE INDEX IF NOT EXISTS "customers_slug_idx" ON "cms-payload"."customers" USING btree ("slug");
   CREATE INDEX IF NOT EXISTS "customers_meta_meta_image_idx" ON "cms-payload"."customers" USING btree ("meta_image_id");
   CREATE INDEX IF NOT EXISTS "customers_logo_idx" ON "cms-payload"."customers" USING btree ("logo_id");
@@ -935,8 +935,8 @@ export async function up({ db }: MigrateUpArgs): Promise<void> {
   CREATE INDEX IF NOT EXISTS "_customers_v_version_misc_parent_id_idx" ON "cms-payload"."_customers_v_version_misc" USING btree ("_parent_id");
   CREATE INDEX IF NOT EXISTS "_customers_v_version_industry_order_idx" ON "cms-payload"."_customers_v_version_industry" USING btree ("order");
   CREATE INDEX IF NOT EXISTS "_customers_v_version_industry_parent_idx" ON "cms-payload"."_customers_v_version_industry" USING btree ("parent_id");
-  CREATE INDEX IF NOT EXISTS "_customers_v_version_supabase_products_order_idx" ON "cms-payload"."_customers_v_version_supabase_products" USING btree ("order");
-  CREATE INDEX IF NOT EXISTS "_customers_v_version_supabase_products_parent_idx" ON "cms-payload"."_customers_v_version_supabase_products" USING btree ("parent_id");
+  CREATE INDEX IF NOT EXISTS "_customers_v_version_skybase_products_order_idx" ON "cms-payload"."_customers_v_version_skybase_products" USING btree ("order");
+  CREATE INDEX IF NOT EXISTS "_customers_v_version_skybase_products_parent_idx" ON "cms-payload"."_customers_v_version_skybase_products" USING btree ("parent_id");
   CREATE INDEX IF NOT EXISTS "_customers_v_parent_idx" ON "cms-payload"."_customers_v" USING btree ("parent_id");
   CREATE INDEX IF NOT EXISTS "_customers_v_version_version_slug_idx" ON "cms-payload"."_customers_v" USING btree ("version_slug");
   CREATE INDEX IF NOT EXISTS "_customers_v_version_meta_version_meta_image_idx" ON "cms-payload"."_customers_v" USING btree ("version_meta_image_id");
@@ -1077,12 +1077,12 @@ export async function down({ db }: MigrateDownArgs): Promise<void> {
   DROP TABLE "cms-payload"."customers_stats" CASCADE;
   DROP TABLE "cms-payload"."customers_misc" CASCADE;
   DROP TABLE "cms-payload"."customers_industry" CASCADE;
-  DROP TABLE "cms-payload"."customers_supabase_products" CASCADE;
+  DROP TABLE "cms-payload"."customers_skybase_products" CASCADE;
   DROP TABLE "cms-payload"."customers" CASCADE;
   DROP TABLE "cms-payload"."_customers_v_version_stats" CASCADE;
   DROP TABLE "cms-payload"."_customers_v_version_misc" CASCADE;
   DROP TABLE "cms-payload"."_customers_v_version_industry" CASCADE;
-  DROP TABLE "cms-payload"."_customers_v_version_supabase_products" CASCADE;
+  DROP TABLE "cms-payload"."_customers_v_version_skybase_products" CASCADE;
   DROP TABLE "cms-payload"."_customers_v" CASCADE;
   DROP TABLE "cms-payload"."events_type" CASCADE;
   DROP TABLE "cms-payload"."events" CASCADE;
@@ -1106,12 +1106,12 @@ export async function down({ db }: MigrateDownArgs): Promise<void> {
   DROP TABLE "cms-payload"."payload_preferences_rels" CASCADE;
   DROP TABLE "cms-payload"."payload_migrations" CASCADE;
   DROP TYPE "cms-payload"."enum_customers_industry";
-  DROP TYPE "cms-payload"."enum_customers_supabase_products";
+  DROP TYPE "cms-payload"."enum_customers_skybase_products";
   DROP TYPE "cms-payload"."enum_customers_company_size";
   DROP TYPE "cms-payload"."enum_customers_region";
   DROP TYPE "cms-payload"."enum_customers_status";
   DROP TYPE "cms-payload"."enum__customers_v_version_industry";
-  DROP TYPE "cms-payload"."enum__customers_v_version_supabase_products";
+  DROP TYPE "cms-payload"."enum__customers_v_version_skybase_products";
   DROP TYPE "cms-payload"."enum__customers_v_version_company_size";
   DROP TYPE "cms-payload"."enum__customers_v_version_region";
   DROP TYPE "cms-payload"."enum__customers_v_version_status";

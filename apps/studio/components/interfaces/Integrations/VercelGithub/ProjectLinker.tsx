@@ -41,7 +41,7 @@ export interface ForeignProject {
 export interface ProjectLinkerProps {
   organizationIntegrationId?: string
   foreignProjects: ForeignProject[]
-  supabaseProjects: Project[]
+  skybaseProjects: Project[]
   onCreateConnections: (variables: IntegrationConnectionsCreateVariables) => void
   installedConnections?: IntegrationProjectConnection[]
   isLoading?: boolean
@@ -50,10 +50,10 @@ export interface ProjectLinkerProps {
   choosePrompt?: string
   onSkip?: () => void
   loadingForeignProjects?: boolean
-  loadingSupabaseProjects?: boolean
+  loadingSkybaseProjects?: boolean
   showNoEntitiesState?: boolean
 
-  defaultSupabaseProjectRef?: string
+  defaultSkybaseProjectRef?: string
   defaultForeignProjectId?: string
   mode: 'Vercel' | 'GitHub'
 }
@@ -61,7 +61,7 @@ export interface ProjectLinkerProps {
 const ProjectLinker = ({
   organizationIntegrationId,
   foreignProjects,
-  supabaseProjects,
+  skybaseProjects,
   onCreateConnections: _onCreateConnections,
   installedConnections = EMPTY_ARR,
   isLoading,
@@ -70,28 +70,28 @@ const ProjectLinker = ({
   choosePrompt = 'Choose a project',
   onSkip,
   loadingForeignProjects,
-  loadingSupabaseProjects,
+  loadingSkybaseProjects,
   showNoEntitiesState = true,
 
-  defaultSupabaseProjectRef,
+  defaultSkybaseProjectRef,
   defaultForeignProjectId,
   mode,
 }: ProjectLinkerProps) => {
   const router = useRouter()
-  const [supabaseProjectsComboBoxOpen, setSupabaseProjectsComboboxOpen] = useState(false)
+  const [skybaseProjectsComboBoxOpen, setSkybaseProjectsComboboxOpen] = useState(false)
   const [foreignProjectsComboBoxOpen, setForeignProjectsComboboxOpen] = useState(false)
-  const supabaseProjectsComboBoxRef = useRef<HTMLButtonElement>(null)
+  const skybaseProjectsComboBoxRef = useRef<HTMLButtonElement>(null)
   const foreignProjectsComboBoxRef = useRef<HTMLButtonElement>(null)
 
   const selectedOrganization = useSelectedOrganization()
 
-  const [supabaseProjectRef, setSupabaseProjectRef] = useState<string | undefined>(
-    defaultSupabaseProjectRef
+  const [skybaseProjectRef, setSkybaseProjectRef] = useState<string | undefined>(
+    defaultSkybaseProjectRef
   )
   useEffect(() => {
-    if (defaultSupabaseProjectRef !== undefined && supabaseProjectRef === undefined)
-      setSupabaseProjectRef(defaultSupabaseProjectRef)
-  }, [defaultSupabaseProjectRef, supabaseProjectRef])
+    if (defaultSkybaseProjectRef !== undefined && skybaseProjectRef === undefined)
+      setSkybaseProjectRef(defaultSkybaseProjectRef)
+  }, [defaultSkybaseProjectRef, skybaseProjectRef])
 
   const [foreignProjectId, setForeignProjectId] = useState<string | undefined>(
     defaultForeignProjectId
@@ -104,8 +104,8 @@ const ProjectLinker = ({
   // create a flat array of foreign project ids. ie, ["prj_MlkO6AiLG5ofS9ojKrkS3PhhlY3f", ..]
   const flatInstalledConnectionsIds = new Set(installedConnections.map((x) => x.foreign_project_id))
 
-  const selectedSupabaseProject = supabaseProjectRef
-    ? supabaseProjects.find((x) => x.ref?.toLowerCase() === supabaseProjectRef?.toLowerCase())
+  const selectedSkybaseProject = skybaseProjectRef
+    ? skybaseProjects.find((x) => x.ref?.toLowerCase() === skybaseProjectRef?.toLowerCase())
     : undefined
 
   const selectedForeignProject = foreignProjectId
@@ -116,7 +116,7 @@ const ProjectLinker = ({
     const projectDetails = selectedForeignProject
 
     if (!selectedForeignProject?.id) return console.error('No Foreign project ID set')
-    if (!selectedSupabaseProject?.ref) return console.error('No Supabase project ref set')
+    if (!selectedSkybaseProject?.ref) return console.error('No Skybase project ref set')
 
     const alreadyInstalled = flatInstalledConnectionsIds.has(foreignProjectId ?? '')
     if (alreadyInstalled) {
@@ -129,7 +129,7 @@ const ProjectLinker = ({
       organizationIntegrationId: organizationIntegrationId!,
       connection: {
         foreign_project_id: selectedForeignProject?.id,
-        supabase_project_ref: selectedSupabaseProject?.ref,
+        skybase_project_ref: selectedSkybaseProject?.ref,
         integration_id: '0',
         metadata: {
           ...projectDetails,
@@ -138,7 +138,7 @@ const ProjectLinker = ({
       orgSlug: selectedOrganization?.slug,
       new: {
         installation_id: selectedForeignProject.installation_id!,
-        project_ref: selectedSupabaseProject.ref,
+        project_ref: selectedSkybaseProject.ref,
         repository_id: Number(selectedForeignProject.id),
       },
     })
@@ -158,10 +158,10 @@ const ProjectLinker = ({
     )
   }
 
-  const noSupabaseProjects = supabaseProjects.length === 0
+  const noSkybaseProjects = skybaseProjects.length === 0
   const noForeignProjects = foreignProjects.length === 0
-  const missingEntity = noSupabaseProjects ? 'Supabase' : mode
-  const oppositeMissingEntity = noSupabaseProjects ? mode : 'Supabase'
+  const missingEntity = noSkybaseProjects ? 'Skybase' : mode
+  const oppositeMissingEntity = noSkybaseProjects ? mode : 'Skybase'
 
   return (
     <div className="flex flex-col bg border shadow rounded-lg overflow-hidden">
@@ -171,12 +171,12 @@ const ProjectLinker = ({
           style={{ backgroundPosition: '10px 10px' }}
         />
 
-        {loadingForeignProjects || loadingSupabaseProjects ? (
+        {loadingForeignProjects || loadingSkybaseProjects ? (
           <div className="w-1/2 mx-auto space-y-2 py-4">
             <p className="text-sm text-foreground text-center">Loading projects</p>
             <ShimmerLine active />
           </div>
-        ) : showNoEntitiesState && (noSupabaseProjects || noForeignProjects) ? (
+        ) : showNoEntitiesState && (noSkybaseProjects || noForeignProjects) ? (
           <div className="text-center">
             <h5 className="text-foreground">No {missingEntity} Projects found</h5>
             <p className="text-foreground-light text-sm">
@@ -190,69 +190,69 @@ const ProjectLinker = ({
           <div className="flex justify-center gap-0 w-full relative">
             <Panel>
               <div className="bg-white shadow border rounded p-1 w-12 h-12 flex justify-center items-center">
-                <img src={`${BASE_PATH}/img/supabase-logo.svg`} alt="Supabase" className="w-6" />
+                <img src={`${BASE_PATH}/img/skybase-logo.svg`} alt="Skybase" className="w-6" />
               </div>
 
               <Popover_Shadcn_
-                open={supabaseProjectsComboBoxOpen}
-                onOpenChange={setSupabaseProjectsComboboxOpen}
+                open={skybaseProjectsComboBoxOpen}
+                onOpenChange={setSkybaseProjectsComboboxOpen}
               >
                 <PopoverTrigger_Shadcn_ asChild>
                   <Button
-                    ref={supabaseProjectsComboBoxRef}
+                    ref={skybaseProjectsComboBoxRef}
                     type="default"
                     block
-                    disabled={defaultSupabaseProjectRef !== undefined || loadingSupabaseProjects}
-                    loading={loadingSupabaseProjects}
+                    disabled={defaultSkybaseProjectRef !== undefined || loadingSkybaseProjects}
+                    loading={loadingSkybaseProjects}
                     className="justify-start h-[34px]"
                     icon={
                       <div className="bg-white shadow border rounded p-1 w-6 h-6 flex justify-center items-center">
                         <img
-                          src={`${BASE_PATH}/img/supabase-logo.svg`}
-                          alt="Supabase"
+                          src={`${BASE_PATH}/img/skybase-logo.svg`}
+                          alt="Skybase"
                           className="w-4"
                         />
                       </div>
                     }
                     iconRight={
-                      defaultSupabaseProjectRef === undefined ? (
+                      defaultSkybaseProjectRef === undefined ? (
                         <span className="grow flex justify-end">
                           <ChevronDown />
                         </span>
                       ) : null
                     }
                   >
-                    {selectedSupabaseProject
-                      ? selectedSupabaseProject.name
-                      : 'Choose Supabase Project'}
+                    {selectedSkybaseProject
+                      ? selectedSkybaseProject.name
+                      : 'Choose Skybase Project'}
                   </Button>
                 </PopoverTrigger_Shadcn_>
                 <PopoverContent_Shadcn_
                   className="p-0 !w-72"
                   side="bottom"
                   align="center"
-                  style={{ width: supabaseProjectsComboBoxRef.current?.offsetWidth }}
+                  style={{ width: skybaseProjectsComboBoxRef.current?.offsetWidth }}
                 >
                   <Command_Shadcn_>
                     <CommandInput_Shadcn_ placeholder="Search for a project" />
                     <CommandList_Shadcn_ className="!max-h-[170px]">
                       <CommandEmpty_Shadcn_>No results found.</CommandEmpty_Shadcn_>
                       <CommandGroup_Shadcn_>
-                        {supabaseProjects.map((project, i) => {
+                        {skybaseProjects.map((project, i) => {
                           return (
                             <CommandItem_Shadcn_
                               value={`${project.name.replaceAll('"', '')}-${i}`}
                               key={project.ref}
                               className="flex gap-2 items-center"
                               onSelect={() => {
-                                if (project.ref) setSupabaseProjectRef(project.ref)
-                                setSupabaseProjectsComboboxOpen(false)
+                                if (project.ref) setSkybaseProjectRef(project.ref)
+                                setSkybaseProjectsComboboxOpen(false)
                               }}
                             >
                               <div className="bg-white shadow border rounded p-1 w-6 h-6 flex justify-center items-center">
                                 <img
-                                  src={`${BASE_PATH}/img/supabase-logo.svg`}
-                                  alt="Supabase"
+                                  src={`${BASE_PATH}/img/skybase-logo.svg`}
+                                  alt="Skybase"
                                   className="w-4"
                                 />
                               </div>
@@ -260,7 +260,7 @@ const ProjectLinker = ({
                             </CommandItem_Shadcn_>
                           )
                         })}
-                        {supabaseProjects.length === 0 && (
+                        {skybaseProjects.length === 0 && (
                           <p className="text-xs text-foreground-lighter px-2 py-2">
                             No projects found in this organization
                           </p>
@@ -394,10 +394,10 @@ const ProjectLinker = ({
           disabled={
             // data loading states
             loadingForeignProjects ||
-            loadingSupabaseProjects ||
+            loadingSkybaseProjects ||
             isLoading ||
             // check whether both project types are not undefined
-            !selectedSupabaseProject ||
+            !selectedSkybaseProject ||
             !selectedForeignProject
           }
         >

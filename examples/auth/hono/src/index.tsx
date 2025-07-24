@@ -1,12 +1,12 @@
 import { Hono } from 'hono';
-import { getSupabase, supabaseMiddleware } from './middleware/auth.middleware';
+import { getSkybase, skybaseMiddleware } from './middleware/auth.middleware';
 
 const app = new Hono();
-app.use('*', supabaseMiddleware());
+app.use('*', skybaseMiddleware());
 
 const routes = app.get('/api/user', async (c) => {
-  const supabase = getSupabase(c);
-  const { data, error } = await supabase.auth.getUser();
+  const skybase = getSkybase(c);
+  const { data, error } = await skybase.auth.getUser();
 
   if (error) console.log('error', error);
 
@@ -23,15 +23,15 @@ const routes = app.get('/api/user', async (c) => {
 });
 
 app.get('/signout', async (c) => {
-  const supabase = getSupabase(c);
-  await supabase.auth.signOut();
+  const skybase = getSkybase(c);
+  await skybase.auth.signOut();
   console.log('Signed out server-side!');
   return c.redirect('/');
 });
 
 app.get('/countries', async (c) => {
-  const supabase = getSupabase(c);
-  const { data, error } = await supabase.from('countries').select('*');
+  const skybase = getSkybase(c);
+  const { data, error } = await skybase.from('countries').select('*');
   if (error) console.log(error);
   return c.json(data);
 });

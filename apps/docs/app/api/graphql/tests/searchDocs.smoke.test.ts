@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-const GRAPHQL_URL = 'https://supabase.com/docs/api/graphql'
+const GRAPHQL_URL = 'https://skybase.com/docs/api/graphql'
 // For dev testing: comment out above and uncomment below
 // const GRAPHQL_URL = 'http://localhost:3001/docs/api/graphql'
 
@@ -185,7 +185,7 @@ describe('prod smoke test: graphql: searchDocs', () => {
       `
     const result = await fetch(GRAPHQL_URL, {
       method: 'POST',
-      body: JSON.stringify({ query, variables: { query: 'supabase db reset' } }),
+      body: JSON.stringify({ query, variables: { query: 'skybase db reset' } }),
     })
 
     expect(result.status).toBe(200)

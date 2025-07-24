@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
-import { supabase } from 'lib/Store'
-import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { skybase } from 'lib/Store'
+import { Auth } from '@skybase/auth-ui-react'
+import { ThemeSupa } from '@skybase/auth-ui-shared'
 
 const Home = () => {
   const [session, setSession] = useState(null)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    skybase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
     })
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = skybase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
     })
 
@@ -26,7 +26,7 @@ const Home = () => {
         <div className="w-full sm:w-1/2 xl:w-1/3">
           <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg bg-white">
             <Auth
-              supabaseClient={supabase}
+              skybaseClient={skybase}
               appearance={{ theme: ThemeSupa }}
               providers={['github']}
             />

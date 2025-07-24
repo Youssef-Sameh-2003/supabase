@@ -5,7 +5,7 @@
 //  Created by Guilherme Souza on 17/11/23.
 //
 
-import Supabase
+import Skybase
 import SwiftUI
 
 struct AuthView: View {
@@ -47,7 +47,7 @@ struct AuthView: View {
     .onOpenURL(perform: { url in
       Task {
         do {
-          try await supabase.auth.session(from: url)
+          try await skybase.auth.session(from: url)
         } catch {
           result = .failure(error)
         }
@@ -61,9 +61,9 @@ struct AuthView: View {
       defer { isLoading = false }
 
       do {
-        try await supabase.auth.signInWithOTP(
+        try await skybase.auth.signInWithOTP(
           email: email,
-          redirectTo: URL(string: "io.supabase.user-management://login-callback")
+          redirectTo: URL(string: "io.skybase.user-management://login-callback")
         )
         result = .success(())
       } catch {

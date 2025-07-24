@@ -1,4 +1,4 @@
-import type { PostgresPolicy } from '@supabase/postgres-meta'
+import type { PostgresPolicy } from '@skybase/postgres-meta'
 import { noop } from 'lodash'
 import { Info } from 'lucide-react'
 
@@ -107,7 +107,7 @@ export const PolicyTableRow = ({
           <span className="text-foreground-light">
             {isPubliclyReadableWritable
               ? 'Row Level Security is disabled. Your table is publicly readable and writable.'
-              : 'Row Level Security is enabled, but no policies exist. No data will be selectable via Supabase APIs.'}
+              : 'Row Level Security is enabled, but no policies exist. No data will be selectable via Skybase APIs.'}
           </span>
           {isPubliclyReadableWritable && (
             <Tooltip>

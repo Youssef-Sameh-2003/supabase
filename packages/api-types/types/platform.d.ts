@@ -579,7 +579,7 @@ export interface paths {
     /** List organization GitHub connections */
     get: operations['GitHubConnectionsController_listOrganizationGitHubConnections']
     put?: never
-    /** Connects a GitHub project to a supabase project */
+    /** Connects a GitHub project to a skybase project */
     post: operations['GitHubConnectionsController_createGitHubConnection']
     delete?: never
     options?: never
@@ -601,7 +601,7 @@ export interface paths {
     delete: operations['GitHubConnectionsController_deleteGitHubConnection']
     options?: never
     head?: never
-    /** Updates a GitHub connection for a supabase project */
+    /** Updates a GitHub connection for a skybase project */
     patch: operations['GitHubConnectionsController_updateGitHubConnection']
     trace?: never
   }
@@ -724,7 +724,7 @@ export interface paths {
     }
     get?: never
     put?: never
-    /** Connects a Vercel project to a supabase project */
+    /** Connects a Vercel project to a skybase project */
     post: operations['VercelConnectionsController_createVercelConnection']
     delete?: never
     options?: never
@@ -746,7 +746,7 @@ export interface paths {
     delete: operations['VercelConnectionsController_deleteVercelConnection']
     options?: never
     head?: never
-    /** Updates a Vercel connection for a supabase project */
+    /** Updates a Vercel connection for a skybase project */
     patch: operations['VercelConnectionsController_updateVercelConnection']
     trace?: never
   }
@@ -759,7 +759,7 @@ export interface paths {
     }
     get?: never
     put?: never
-    /** Syncs supabase project envs with given connection id */
+    /** Syncs skybase project envs with given connection id */
     post: operations['VercelConnectionsController_syncVercelConnectionEnvironments']
     delete?: never
     options?: never
@@ -4503,7 +4503,7 @@ export interface components {
       new_branch_per_pr?: boolean
       project_ref: string
       repository_id: number
-      supabase_changes_only?: boolean
+      skybase_changes_only?: boolean
       workdir?: string
     }
     CreateGitHubConnectionResponse: {
@@ -4512,7 +4512,7 @@ export interface components {
       inserted_at: string
       installation_id: number
       new_branch_per_pr: boolean
-      supabase_changes_only: boolean
+      skybase_changes_only: boolean
       updated_at: string
       workdir: string
     }
@@ -4703,7 +4703,7 @@ export interface components {
     CreateProjectBody: {
       auth_site_url?: string
       cloud_provider: string
-      custom_supabase_internal_requests?: {
+      custom_skybase_internal_requests?: {
         ami: {
           search_tags?: {
             [key: string]: string
@@ -5023,7 +5023,7 @@ export interface components {
         metadata: {
           [key: string]: unknown
         }
-        supabase_project_ref: string
+        skybase_project_ref: string
       }
       organization_integration_id: string
     }
@@ -5432,7 +5432,7 @@ export interface components {
         id: string
         inserted_at: string
         organization_integration_id: string
-        supabase_project_ref: string
+        skybase_project_ref: string
         updated_at: string
       }[]
       id: string
@@ -5566,7 +5566,7 @@ export interface components {
       addons: {
         name: string
         price: number
-        supabase_prod_id: string
+        skybase_prod_id: string
       }[]
       billing_cycle_anchor: number
       /** @enum {string} */
@@ -5747,7 +5747,7 @@ export interface components {
         [key: string]: unknown
       }
       organization_integration_id: string
-      supabase_project_ref: string
+      skybase_project_ref: string
       updated_at: string
     }[]
     GetVercelProjectsResponse: {
@@ -6115,7 +6115,7 @@ export interface components {
           id: number
           name: string
         }
-        supabase_changes_only: boolean
+        skybase_changes_only: boolean
         updated_at: string
         user: {
           id: number
@@ -7704,7 +7704,7 @@ export interface components {
     ServiceVersions: {
       gotrue?: string
       postgrest?: string
-      'supabase-postgres': string
+      'skybase-postgres': string
     }
     SetupIntentRequest: {
       hcaptchaToken?: string
@@ -8171,7 +8171,7 @@ export interface components {
     UpdateGitHubConnectionBody: {
       branch_limit?: number
       new_branch_per_pr?: boolean
-      supabase_changes_only?: boolean
+      skybase_changes_only?: boolean
       workdir?: string
     }
     UpdateGoTrueConfigBody: {
@@ -10492,7 +10492,7 @@ export interface operations {
         }
         content?: never
       }
-      /** @description Failed to sync supabase project envs with given connection id */
+      /** @description Failed to sync skybase project envs with given connection id */
       500: {
         headers: {
           [name: string]: unknown
@@ -17442,9 +17442,9 @@ export interface operations {
           | 'supavisor_connections_active'
           | 'client_connections_postgres'
           | 'client_connections_authenticator'
-          | 'client_connections_supabase_auth_admin'
-          | 'client_connections_supabase_storage_admin'
-          | 'client_connections_supabase_admin'
+          | 'client_connections_skybase_auth_admin'
+          | 'client_connections_skybase_storage_admin'
+          | 'client_connections_skybase_admin'
           | 'client_connections_other'
           | 'max_db_connections'
           | 'network_receive_bytes'

@@ -55,7 +55,7 @@ module.exports = [
   },
   {
     protocol: 'https',
-    hostname: 'obuldanrptloktxcffvn.supabase.co',
+    hostname: 'obuldanrptloktxcffvn.skybase.co',
     port: '',
     pathname: '**',
   },
@@ -67,7 +67,7 @@ module.exports = [
   },
   {
     protocol: 'https',
-    hostname: 'xguihxuzqibwxjnimxev.supabase.co',
+    hostname: 'xguihxuzqibwxjnimxev.skybase.co',
     port: '',
     pathname: '**',
   },
@@ -85,7 +85,7 @@ module.exports = [
   },
   {
     protocol: 'https',
-    hostname: 'supabase.com',
+    hostname: 'skybase.com',
     port: '',
     pathname: '**',
   },

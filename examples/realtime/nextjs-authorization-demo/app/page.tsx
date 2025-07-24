@@ -1,19 +1,19 @@
-import SupabaseLogo from '@/components/SupabaseLogo'
+import SkybaseLogo from '@/components/SkybaseLogo'
 import AuthButton from '../components/AuthButton'
 import Link from 'next/link'
-import { createClient } from '@/utils/supabase/server'
+import { createClient } from '@/utils/skybase/server'
 
 export default async function Index() {
-  const supabase = createClient()
+  const skybase = createClient()
 
   const {
     data: { user },
-  } = await supabase.auth.getUser()
+  } = await skybase.auth.getUser()
 
   return (
     <main className="flex flex-col gap-6 items-center h-full mt-40">
       <h2 className="flex items-center gap-6">
-        <SupabaseLogo />
+        <SkybaseLogo />
       </h2>
       {user ? (
         <Link

@@ -31,7 +31,7 @@ const VideoWithHighlights = (props: Props) => {
         playsInline
         poster={
           props.video.poster ??
-          `/images/index/dashboard/supabase-table-editor${resolvedTheme?.includes('dark') ? '' : '-light'}.png`
+          `/images/index/dashboard/skybase-table-editor${resolvedTheme?.includes('dark') ? '' : '-light'}.png`
         }
       >
         {props.video.sources.map((source, i) => (

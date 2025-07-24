@@ -102,7 +102,7 @@ const PricingDiskSection = () => (
     </Panel>
     <div className="mt-8 flex justify-center">
       <Button asChild size="tiny" type="default" iconRight={<ArrowUpRight className="w-4" />}>
-        <Link href="https://supabase.com/docs/guides/platform/compute-and-disk#disk">
+        <Link href="https://skybase.com/docs/guides/platform/compute-and-disk#disk">
           Learn about advanced disk config
         </Link>
       </Button>

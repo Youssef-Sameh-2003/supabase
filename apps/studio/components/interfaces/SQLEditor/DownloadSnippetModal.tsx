@@ -40,7 +40,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
       label: 'Seed file',
       title: 'Download as seed file',
       description:
-        'If your query consists of sample data, append the snippet to the end of `supabase/seed.sql`',
+        'If your query consists of sample data, append the snippet to the end of `skybase/seed.sql`',
       cli: generateSeedCliCommand(id),
       npm: generateSeedCliCommand(id, true),
     },
@@ -59,7 +59,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
       hideFooter
       showCloseButton
       size="xlarge"
-      header={<p>Download snippet as local migration file via the Supabase CLI.</p>}
+      header={<p>Download snippet as local migration file via the Skybase CLI.</p>}
       {...props}
     >
       <div className="flex flex-col items-start justify-between gap-4 relative pt-2">
@@ -104,7 +104,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
           <div className="flex justify-between items-center gap-x-2">
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://supabase.com/docs/guides/deployment/database-migrations"
+                href="https://skybase.com/docs/guides/deployment/database-migrations"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -114,7 +114,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
 
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://supabase.com/docs/guides/cli/local-development"
+                href="https://skybase.com/docs/guides/cli/local-development"
                 target="_blank"
                 rel="noreferrer"
               >

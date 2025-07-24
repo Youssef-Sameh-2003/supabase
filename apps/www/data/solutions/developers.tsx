@@ -64,12 +64,12 @@ const data: () => {
 
   return {
     metadata: {
-      metaTitle: 'Supabase for Developers',
+      metaTitle: 'Skybase for Developers',
       metaDescription: 'Build fast. Scale easily. Trust your tech stack.',
     },
     heroSection: {
       id: 'hero',
-      title: 'Supabase for Developers',
+      title: 'Skybase for Developers',
       h1: (
         <>
           <span className="block text-foreground">Build fast. Scale easily.</span>
@@ -78,7 +78,7 @@ const data: () => {
       ),
       subheader: [
         <>
-          Supabase is the Postgres development platform that includes a developer experience
+          Skybase is the Postgres development platform that includes a developer experience
           designed for speed, an integrated suite of backend services, and a scalable, trusted
           foundation for building powerful applications.
         </>,
@@ -89,7 +89,7 @@ const data: () => {
             dark: '/images/solutions/developers/developers-hero-dark.svg',
             light: '/images/solutions/developers/developers-hero-light.svg',
           }}
-          alt="Supabase for Developers"
+          alt="Skybase for Developers"
           className="not-sr-only"
           width={1000}
           height={1000}
@@ -98,7 +98,7 @@ const data: () => {
       ctas: [
         {
           label: 'Start your project',
-          href: 'https://supabase.com/dashboard',
+          href: 'https://skybase.com/dashboard',
           type: 'primary' as any,
           onClick: () =>
             sendTelemetryEvent({
@@ -108,7 +108,7 @@ const data: () => {
         },
         {
           label: 'Request a demo',
-          href: 'https://supabase.com/contact/sales',
+          href: 'https://skybase.com/contact/sales',
           type: 'default' as any,
           onClick: () =>
             sendTelemetryEvent({
@@ -119,15 +119,15 @@ const data: () => {
       ],
     },
     why: {
-      id: 'why-supabase',
+      id: 'why-skybase',
       label: '',
       heading: (
         <>
-          Why <span className="text-foreground">developers</span> choose Supabase
+          Why <span className="text-foreground">developers</span> choose Skybase
         </>
       ),
       subheading:
-        'Supabase helps you build and get to market faster and more cost-effectively using a composable platform of application services built on Postgres. Supabase scales as your business grows.',
+        'Skybase helps you build and get to market faster and more cost-effectively using a composable platform of application services built on Postgres. Skybase scales as your business grows.',
       features: [
         {
           id: 'easy-to-use',
@@ -141,7 +141,7 @@ const data: () => {
           icon: CubeIcon,
           heading: 'Complete development platform',
           subheading:
-            'Supabase offers a fully integrated suite of tools including authentication, storage, edge functions, real-time subscriptions, and vector search. Developers don’t have to stitch together multiple services. Use one or all.',
+            'Skybase offers a fully integrated suite of tools including authentication, storage, edge functions, real-time subscriptions, and vector search. Developers don’t have to stitch together multiple services. Use one or all.',
         },
         {
           id: 'scalable-and-dependable',
@@ -168,7 +168,7 @@ const data: () => {
           ),
           heading: 'Scalable and dependable',
           subheading:
-            'Built on Postgres, Supabase provides enterprise-grade performance, high availability, and the flexibility to grow without vendor lock-in.',
+            'Built on Postgres, Skybase provides enterprise-grade performance, high availability, and the flexibility to grow without vendor lock-in.',
         },
       ],
     },
@@ -176,11 +176,11 @@ const data: () => {
       id: 'postgres-platform',
       title: (
         <>
-          Supabase helps you <span className="text-foreground">build</span>
+          Skybase helps you <span className="text-foreground">build</span>
         </>
       ),
       subheading:
-        'Supabase includes everything you need to create the perfect app for your brand, business, or just for fun.',
+        'Skybase includes everything you need to create the perfect app for your brand, business, or just for fun.',
       features: [
         {
           id: 'database',
@@ -402,7 +402,7 @@ const data: () => {
       className: '[&_h2]:!max-w-sm',
       title: (
         <>
-          <span className="text-foreground">Build faster</span> with Supabase
+          <span className="text-foreground">Build faster</span> with Skybase
         </>
       ),
       subheading: 'Features that help developers move quickly and focus.',
@@ -413,7 +413,7 @@ const data: () => {
           icon: 'M11.8949 2.39344C12.5051 1.78324 13.4944 1.78324 14.1046 2.39344L22.9106 11.1994C23.5208 11.8096 23.5208 12.7989 22.9106 13.4091L14.1046 22.2151C13.4944 22.8253 12.5051 22.8253 11.8949 22.2151L3.08892 13.4091C2.47872 12.7989 2.47872 11.8096 3.08892 11.1994L11.8949 2.39344Z M16.5408 12.3043C16.5408 14.2597 14.9556 15.8449 13.0002 15.8449C11.0448 15.8449 9.45961 14.2597 9.45961 12.3043C9.45961 10.3489 11.0448 8.76371 13.0002 8.76371C14.9556 8.76371 16.5408 10.3489 16.5408 12.3043Z',
           subheading: (
             <>
-              A single panel that persists across the Supabase Dashboard and maintains{' '}
+              A single panel that persists across the Skybase Dashboard and maintains{' '}
               <span className="text-foreground">context across AI prompts</span>.
             </>
           ),
@@ -460,7 +460,7 @@ const data: () => {
           subheading: (
             <>
               Connect your <span className="text-foreground">favorite AI tools</span> such as Cursor
-              or Claude directly with Supabase.
+              or Claude directly with Skybase.
             </>
           ),
           image: (
@@ -484,7 +484,7 @@ const data: () => {
           subheading: (
             <>
               <span className="text-foreground">Learn SQL when you're ready.</span> In the meantime,
-              Supabase generates automatic APIs to make coding a lot easier.
+              Skybase generates automatic APIs to make coding a lot easier.
             </>
           ),
           image: (
@@ -507,7 +507,7 @@ const data: () => {
           icon: 'M10.2805 18.2121C11.2419 18.6711 12.3325 18.8932 13.4711 18.8084C15.2257 18.6776 16.7596 17.843 17.8169 16.6015M8.21496 8.36469C9.27117 7.14237 10.7928 6.322 12.5311 6.19248C13.7196 6.10392 14.8558 6.34979 15.8474 6.85054M17.8169 16.6015L20.5242 19.3223C22.1857 17.5141 23.1562 15.1497 23.1562 12.5005C23.1562 6.89135 18.6091 2.34424 13 2.34424C10.9595 2.34424 9.16199 2.87659 7.57035 3.91232C8.35717 3.56865 9.22613 3.37801 10.1396 3.37801C12.6236 3.37801 14.7783 4.78762 15.8474 6.85054M17.8169 16.6015V16.6015C16.277 15.059 16.3448 12.5527 16.5387 10.3817C16.5557 10.191 16.5644 9.99794 16.5644 9.80282C16.5644 8.73844 16.3056 7.73451 15.8474 6.85054M13 22.6567C7.39086 22.6567 2.84375 18.1096 2.84375 12.5005C2.84375 9.84123 3.8026 7.48969 5.4753 5.67921L8.21496 8.42354V8.42354C9.76942 9.98064 9.69844 12.5133 9.51947 14.7062C9.50526 14.8803 9.49802 15.0564 9.49802 15.2341C9.49802 18.7705 12.3648 21.6373 15.9012 21.6373C16.8116 21.6373 17.6776 21.4473 18.4618 21.1048C16.8609 22.1588 15.06 22.6567 13 22.6567Z',
           subheading: (
             <>
-              Connect Supabase to <span className="text-foreground">Redshift, BigQuery, MySQL</span>
+              Connect Skybase to <span className="text-foreground">Redshift, BigQuery, MySQL</span>
               , and external APIs for seamless integrations.
             </>
           ),
@@ -603,7 +603,7 @@ const data: () => {
         </>
       ),
       subheading:
-        "Supabase ensures optimal database performance at any scale, so you can focus on innovating and growing without worrying about infrastructure limitations — whether you're handling high-traffic applications, complex queries, or massive data volumes.",
+        "Skybase ensures optimal database performance at any scale, so you can focus on innovating and growing without worrying about infrastructure limitations — whether you're handling high-traffic applications, complex queries, or massive data volumes.",
       highlights: [
         {
           heading: 'databases managed',
@@ -752,11 +752,11 @@ const data: () => {
       ),
       headingRight: (
         <>
-          Or, start with <span className="text-foreground">Supabase AI Prompts</span>{' '}
+          Or, start with <span className="text-foreground">Skybase AI Prompts</span>{' '}
           <Sparkles size={24} className="inline text-foreground" />
         </>
       ),
-      docsUrl: 'https://supabase.com/docs/guides/getting-started/ai-prompts',
+      docsUrl: 'https://skybase.com/docs/guides/getting-started/ai-prompts',
       leftFooter: (
         <div className="grid grid-cols-5 divide-x divide-y rounded-lg overflow-hidden border">
           {frameworks.map((framework) => (
@@ -767,56 +767,56 @@ const data: () => {
       aiPrompts: [
         {
           id: 'auth-setup',
-          title: 'Bootstrap Next.js app with Supabase Auth',
+          title: 'Bootstrap Next.js app with Skybase Auth',
           description:
-            '## Overview of implementing Supabase Auth SSR\n1. Install @supabase/supabase-js and...',
-          code: `1. Install @supabase/supabase-js and @supabase/ssr packages.
+            '## Overview of implementing Skybase Auth SSR\n1. Install @skybase/skybase-js and...',
+          code: `1. Install @skybase/skybase-js and @skybase/ssr packages.
 2. Set up environment variables.
 3. Write two utility functions with \u0060createClient\u0060 functions to create a browser client and a server client. 
 4. Hook up middleware to refresh auth tokens
 `,
           language: 'markdown',
           docsUrl:
-            'https://supabase.com/docs/guides/getting-started/ai-prompts/nextjs-supabase-auth',
+            'https://skybase.com/docs/guides/getting-started/ai-prompts/nextjs-skybase-auth',
         },
         {
           id: 'edge-functions',
-          title: 'Writing Supabase Edge Functions',
+          title: 'Writing Skybase Edge Functions',
           description:
-            "You're a Supabase Postgres expert in writing row level security policies. Your purpose is to generate...",
+            "You're a Skybase Postgres expert in writing row level security policies. Your purpose is to generate...",
           code: `1. Try to use Web APIs and Deno’s core APIs instead of external dependencies (eg: use fetch instead of Axios, use WebSockets API instead of node-ws)
-2. If you are reusing utility methods between Edge Functions, add them to 'supabase/functions/_shared' and import using a relative path. Do NOT have cross dependencies between Edge Functions.
-3. Do NOT use bare specifiers when importing dependecnies. If you need to use an external dependency, make sure it's prefixed with either 'npm:' or 'jsr:'. For example, '@supabase/supabase-js' should be written as 'npm:@supabase/supabase-js'.
+2. If you are reusing utility methods between Edge Functions, add them to 'skybase/functions/_shared' and import using a relative path. Do NOT have cross dependencies between Edge Functions.
+3. Do NOT use bare specifiers when importing dependecnies. If you need to use an external dependency, make sure it's prefixed with either 'npm:' or 'jsr:'. For example, '@skybase/skybase-js' should be written as 'npm:@skybase/skybase-js'.
 4. For external imports, always define a version. For example, 'npm:@express' should be written as 'npm:express@4.18.2'.
 5. For external dependencies, importing via 'npm:' and 'jsr:' is preferred. Minimize the use of imports from @'deno.land/x' , 'esm.sh' and @'unpkg.com' . If you have a package from one of those CDNs, you can replace the CDN hostname with 'npm:' specifier.
 `,
           language: 'markdown',
-          docsUrl: 'https://supabase.com/docs/guides/getting-started/ai-prompts/edge-functions',
+          docsUrl: 'https://skybase.com/docs/guides/getting-started/ai-prompts/edge-functions',
         },
         {
           id: 'declarative-db-schema',
           title: 'Declarative Database Schema',
           description:
-            "You're a Supabase Postgres expert in writing row level security policies. Your purpose is to generate...",
-          code: `Mandatory Instructions for Supabase Declarative Schema Management
+            "You're a Skybase Postgres expert in writing row level security policies. Your purpose is to generate...",
+          code: `Mandatory Instructions for Skybase Declarative Schema Management
 ## 1. **Exclusive Use of Declarative Schema**
--**All database schema modifications must be defined within '.sql' files located in the 'supabase/schemas/' directory.`,
+-**All database schema modifications must be defined within '.sql' files located in the 'skybase/schemas/' directory.`,
           language: 'markdown',
           docsUrl:
-            'https://supabase.com/docs/guides/getting-started/ai-prompts/declarative-database-schema',
+            'https://skybase.com/docs/guides/getting-started/ai-prompts/declarative-database-schema',
         },
         {
           id: 'rls-policies',
           title: 'Create RLS policies',
           description:
-            "You're a Supabase Postgres expert in writing row level security policies. Your purpose is to generate...",
-          code: `You're a Supabase Postgres expert in writing row level security policies. Your purpose is to generate a policy with the constraints given by the user. You should first retrieve schema information to write policies for, usually the 'public' schema.
+            "You're a Skybase Postgres expert in writing row level security policies. Your purpose is to generate...",
+          code: `You're a Skybase Postgres expert in writing row level security policies. Your purpose is to generate a policy with the constraints given by the user. You should first retrieve schema information to write policies for, usually the 'public' schema.
 The output should use the following instructions:
 
 - The generated SQL must be valid SQL.`,
           language: 'markdown',
           docsUrl:
-            'https://supabase.com/docs/guides/getting-started/ai-prompts/database-rls-policies',
+            'https://skybase.com/docs/guides/getting-started/ai-prompts/database-rls-policies',
         },
       ],
     },
@@ -824,7 +824,7 @@ The output should use the following instructions:
       id: 'mcp',
       heading: (
         <div className="text-foreground-lighter">
-          Supabase MCP server works seamlessly with{' '}
+          Skybase MCP server works seamlessly with{' '}
           <span className="text-foreground">your favorite AI code editor</span>
         </div>
       ),
@@ -837,11 +837,11 @@ The output should use the following instructions:
           title: 'macOS',
           code: `{
 "mcpServers": {
-  "supabase": {
+  "skybase": {
     "command": "npx",
     "args": [
       "-y",
-      "@supabase/mcp-server-supabase@latest",
+      "@skybase/mcp-server-skybase@latest",
       "--read-only",
       "--project-ref=<project-ref>"
     ],
@@ -857,13 +857,13 @@ The output should use the following instructions:
           title: 'Windows',
           code: `{
 "mcpServers": {
-  "supabase": {
+  "skybase": {
     "command": "cmd",
     "args": [
       "/c",
       "npx",
       "-y",
-      "@supabase/mcp-server-supabase@latest",
+      "@skybase/mcp-server-skybase@latest",
       "--read-only",
       "--project-ref=<project-ref>"
     ],
@@ -879,12 +879,12 @@ The output should use the following instructions:
           title: 'Windows (WSL)',
           code: `{
 "mcpServers": {
-  "supabase": {
+  "skybase": {
     "command": "wsl",
     "args": [
       "npx",
       "-y",
-      "@supabase/mcp-server-supabase@latest",
+      "@skybase/mcp-server-skybase@latest",
       "--read-only",
       "--project-ref=<project-ref>"
     ],
@@ -900,11 +900,11 @@ The output should use the following instructions:
           title: 'Linux',
           code: `{
   "mcpServers": {
-    "supabase": {
+    "skybase": {
       "command": "npx",
       "args": [
         "-y",
-        "@supabase/mcp-server-supabase@latest",
+        "@skybase/mcp-server-skybase@latest",
         "--read-only",
         "--project-ref=<project-ref>"
       ],

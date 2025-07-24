@@ -1,4 +1,4 @@
-import { DatabaseUpgradeProgress, DatabaseUpgradeStatus } from '@supabase/shared-types/out/events'
+import { DatabaseUpgradeProgress, DatabaseUpgradeStatus } from '@skybase/shared-types/out/events'
 import { useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import {

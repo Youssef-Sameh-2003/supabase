@@ -1,11 +1,11 @@
 import React from 'react'
 import CodeWindow from '~/components/CodeWindow'
 
-const code = `import { createClient } from 'jsr:@supabase/supabase-js@2'
+const code = `import { createClient } from 'jsr:@skybase/skybase-js@2'
 
 Deno.serve(async (req: Request) => {
-  // Create supabase client
-  const supabase = createClient(
+  // Create skybase client
+  const skybase = createClient(
     Deno.env.get('SUPABASE_URL')!,
     Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
     { global: {
@@ -16,7 +16,7 @@ Deno.serve(async (req: Request) => {
   )
 
   // Get the session or user object
-  const { data } = await supabase.auth.getUser()
+  const { data } = await skybase.auth.getUser()
   const user = data.user
 })`
 

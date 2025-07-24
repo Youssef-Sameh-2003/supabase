@@ -204,7 +204,7 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/library/getting-started',
-    destination: '/docs/reference/javascript/supabase-client',
+    destination: '/docs/reference/javascript/skybase-client',
   },
   {
     permanent: false,
@@ -259,8 +259,8 @@ module.exports = [
   },
   {
     permanent: false,
-    source: '/docs/client/supabase-client',
-    destination: '/docs/reference/javascript/supabase-client',
+    source: '/docs/client/skybase-client',
+    destination: '/docs/reference/javascript/skybase-client',
   },
   {
     permanent: false,
@@ -515,12 +515,12 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/careers',
-    destination: 'https://about.supabase.com/careers',
+    destination: 'https://about.skybase.com/careers',
   },
   {
     permanent: false,
     source: '/docs/careers/:match*',
-    destination: 'https://about.supabase.com/careers//:match*',
+    destination: 'https://about.skybase.com/careers//:match*',
   },
 
   { permanent: false, source: '/docs/resources', destination: '/docs/guides' },
@@ -632,13 +632,13 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/docs/reference/javascript/supabase-client',
+    source: '/docs/reference/javascript/skybase-client',
     destination: '/docs#reference-documentation',
   },
   {
     permanent: true,
     source: '/join',
-    destination: 'https://supabase.com/',
+    destination: 'https://skybase.com/',
   },
   {
     permanent: true,
@@ -647,33 +647,33 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/06/15/blog/2022/06/29/visualizing-supabase-data-using-metabase',
-    destination: '/blog/visualizing-supabase-data-using-metabase',
+    source: '/blog/2022/06/15/blog/2022/06/29/visualizing-skybase-data-using-metabase',
+    destination: '/blog/visualizing-skybase-data-using-metabase',
   },
   {
     permanent: true,
     source: '/_app',
-    destination: 'https://supabase.com/dashboard',
+    destination: 'https://skybase.com/dashboard',
   },
   {
     permanent: true,
-    source: '/blog/2020/05/01/supabase-alpha-april-2020',
-    destination: 'blog/supabase-alpha-april-2020',
+    source: '/blog/2020/05/01/skybase-alpha-april-2020',
+    destination: 'blog/skybase-alpha-april-2020',
   },
   {
     permanent: true,
-    source: '/blog/2020/06/01/supabase-alpha-may-2020',
-    destination: '/blog/supabase-alpha-may-2020',
+    source: '/blog/2020/06/01/skybase-alpha-may-2020',
+    destination: '/blog/skybase-alpha-may-2020',
   },
   {
     permanent: true,
-    source: '/blog/2020/06/15/supabase-steve-chavez',
-    destination: '/blog/supabase-steve-chavez',
+    source: '/blog/2020/06/15/skybase-steve-chavez',
+    destination: '/blog/skybase-steve-chavez',
   },
   {
     permanent: true,
-    source: '/blog/2020/07/01/supabase-alpha-june-2020',
-    destination: '/blog/supabase-alpha-june-2020',
+    source: '/blog/2020/07/01/skybase-alpha-june-2020',
+    destination: '/blog/skybase-alpha-june-2020',
   },
   {
     permanent: true,
@@ -697,28 +697,28 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2020/08/02/supabase-alpha-july-2020',
-    destination: '/blog/supabase-alpha-july-2020',
+    source: '/blog/2020/08/02/skybase-alpha-july-2020',
+    destination: '/blog/skybase-alpha-july-2020',
   },
   {
     permanent: true,
-    source: '/blog/2020/08/05/supabase-auth',
-    destination: '/blog/supabase-auth',
+    source: '/blog/2020/08/05/skybase-auth',
+    destination: '/blog/skybase-auth',
   },
   {
     permanent: true,
-    source: '/blog/2020/09/03/supabase-alpha-august-2020',
-    destination: '/blog/supabase-alpha-august-2020',
+    source: '/blog/2020/09/03/skybase-alpha-august-2020',
+    destination: '/blog/skybase-alpha-august-2020',
   },
   {
     permanent: true,
-    source: '/blog/2020/09/11/supabase-hacktoberfest-2020',
-    destination: '/blog/supabase-hacktoberfest-2020',
+    source: '/blog/2020/09/11/skybase-hacktoberfest-2020',
+    destination: '/blog/skybase-hacktoberfest-2020',
   },
   {
     permanent: true,
-    source: '/blog/2020/10/03/supabase-alpha-september-2020',
-    destination: '/blog/supabase-alpha-september-2020',
+    source: '/blog/2020/10/03/skybase-alpha-september-2020',
+    destination: '/blog/skybase-alpha-september-2020',
   },
   {
     permanent: true,
@@ -727,8 +727,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2020/11/02/supabase-alpha-october-2020',
-    destination: '/blog/supabase-alpha-october-2020',
+    source: '/blog/2020/11/02/skybase-alpha-october-2020',
+    destination: '/blog/skybase-alpha-october-2020',
   },
   {
     permanent: true,
@@ -737,8 +737,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2020/12/01/supabase-alpha-november-2020',
-    destination: '/blog/supabase-alpha-november-2020',
+    source: '/blog/2020/12/01/skybase-alpha-november-2020',
+    destination: '/blog/skybase-alpha-november-2020',
   },
   {
     permanent: true,
@@ -757,23 +757,23 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2020/12/02/supabase-striveschool',
-    destination: '/blog/supabase-striveschool',
+    source: '/blog/2020/12/02/skybase-striveschool',
+    destination: '/blog/skybase-striveschool',
   },
   {
     permanent: true,
-    source: '/blog/2020/12/13/supabase-dashboard-performance',
-    destination: '/blog/supabase-dashboard-performance',
+    source: '/blog/2020/12/13/skybase-dashboard-performance',
+    destination: '/blog/skybase-dashboard-performance',
   },
   {
     permanent: true,
-    source: '/blog/2021/01/02/supabase-beta-december-2020',
-    destination: '/blog/supabase-beta-december-2020',
+    source: '/blog/2021/01/02/skybase-beta-december-2020',
+    destination: '/blog/skybase-beta-december-2020',
   },
   {
     permanent: true,
-    source: '/blog/2021/02/02/supabase-beta-january-2021',
-    destination: '/blog/supabase-beta-january-2021',
+    source: '/blog/2021/02/02/skybase-beta-january-2021',
+    destination: '/blog/skybase-beta-january-2021',
   },
   {
     permanent: true,
@@ -782,8 +782,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/03/02/supabase-beta-february-2021',
-    destination: '/blog/supabase-beta-february-2021',
+    source: '/blog/2021/03/02/skybase-beta-february-2021',
+    destination: '/blog/skybase-beta-february-2021',
   },
   {
     permanent: true,
@@ -797,8 +797,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/03/11/using-supabase-replit',
-    destination: '/blog/using-supabase-replit',
+    source: '/blog/2021/03/11/using-skybase-replit',
+    destination: '/blog/using-skybase-replit',
   },
   {
     permanent: true,
@@ -807,8 +807,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/03/25/angels-of-supabase',
-    destination: '/blog/angels-of-supabase',
+    source: '/blog/2021/03/25/angels-of-skybase',
+    destination: '/blog/angels-of-skybase',
   },
   {
     permanent: true,
@@ -822,48 +822,48 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/03/30/supabase-storage',
-    destination: '/blog/supabase-storage',
+    source: '/blog/2021/03/30/skybase-storage',
+    destination: '/blog/skybase-storage',
   },
   {
     permanent: true,
-    source: '/blog/2021/03/31/supabase-cli',
-    destination: '/blog/supabase-cli',
+    source: '/blog/2021/03/31/skybase-cli',
+    destination: '/blog/skybase-cli',
   },
   {
     permanent: true,
-    source: '/blog/2021/04/01/supabase-nft-marketplace',
-    destination: '/blog/supabase-nft-marketplace',
+    source: '/blog/2021/04/01/skybase-nft-marketplace',
+    destination: '/blog/skybase-nft-marketplace',
   },
   {
     permanent: true,
-    source: '/blog/2021/04/02/supabase-dot-com',
-    destination: '/blog/supabase-dot-com',
+    source: '/blog/2021/04/02/skybase-dot-com',
+    destination: '/blog/skybase-dot-com',
   },
   {
     permanent: true,
-    source: '/blog/2021/04/02/supabase-pgbouncer',
-    destination: '/blog/supabase-pgbouncer',
+    source: '/blog/2021/04/02/skybase-pgbouncer',
+    destination: '/blog/skybase-pgbouncer',
   },
   {
     permanent: true,
-    source: '/blog/2021/04/02/supabase-workflows',
-    destination: '/blog/supabase-workflows',
+    source: '/blog/2021/04/02/skybase-workflows',
+    destination: '/blog/skybase-workflows',
   },
   {
     permanent: true,
-    source: '/blog/2021/04/06/supabase-beta-march-2021',
-    destination: '/blog/supabase-beta-march-2021',
+    source: '/blog/2021/04/06/skybase-beta-march-2021',
+    destination: '/blog/skybase-beta-march-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/05/03/supabase-beta-april-2021',
-    destination: '/blog/supabase-beta-april-2021',
+    source: '/blog/2021/05/03/skybase-beta-april-2021',
+    destination: '/blog/skybase-beta-april-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/06/02/supabase-beta-may-2021',
-    destination: '/blog/supabase-beta-may-2021',
+    source: '/blog/2021/06/02/skybase-beta-may-2021',
+    destination: '/blog/skybase-beta-may-2021',
   },
   {
     permanent: true,
@@ -872,13 +872,13 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/07/02/supabase-beta-june-2021',
-    destination: '/blog/supabase-beta-june-2021',
+    source: '/blog/2021/07/02/skybase-beta-june-2021',
+    destination: '/blog/skybase-beta-june-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/22/supabase-launch-week-sql',
-    destination: '/blog/supabase-launch-week-sql',
+    source: '/blog/2021/07/22/skybase-launch-week-sql',
+    destination: '/blog/skybase-launch-week-sql',
   },
   {
     permanent: true,
@@ -887,13 +887,13 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/07/26/supabase-community-day',
-    destination: '/blog/supabase-community-day',
+    source: '/blog/2021/07/26/skybase-community-day',
+    destination: '/blog/skybase-community-day',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/26/supabase-postgres-13',
-    destination: '/blog/supabase-postgres-13',
+    source: '/blog/2021/07/26/skybase-postgres-13',
+    destination: '/blog/skybase-postgres-13',
   },
   {
     permanent: true,
@@ -907,33 +907,33 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/07/28/mobbin-supabase-200000-users',
+    source: '/blog/2021/07/28/mobbin-skybase-200000-users',
     destination: '/customers/mobbin',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/28/supabase-auth-passwordless-sms-login',
-    destination: '/blog/supabase-auth-passwordless-sms-login',
+    source: '/blog/2021/07/28/skybase-auth-passwordless-sms-login',
+    destination: '/blog/skybase-auth-passwordless-sms-login',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/29/supabase-reports-and-metrics',
-    destination: '/blog/supabase-reports-and-metrics',
+    source: '/blog/2021/07/29/skybase-reports-and-metrics',
+    destination: '/blog/skybase-reports-and-metrics',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/30/1-the-supabase-hackathon',
-    destination: '/blog/the-supabase-hackathon',
+    source: '/blog/2021/07/30/1-the-skybase-hackathon',
+    destination: '/blog/the-skybase-hackathon',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/30/supabase-functions-updates',
-    destination: '/blog/supabase-functions-updates',
+    source: '/blog/2021/07/30/skybase-functions-updates',
+    destination: '/blog/skybase-functions-updates',
   },
   {
     permanent: true,
-    source: '/blog/2021/07/30/supabase-swag-store',
-    destination: '/blog/supabase-swag-store',
+    source: '/blog/2021/07/30/skybase-swag-store',
+    destination: '/blog/skybase-swag-store',
   },
   {
     permanent: true,
@@ -942,23 +942,23 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/08/12/supabase-beta-july-2021',
-    destination: '/blog/supabase-beta-july-2021',
+    source: '/blog/2021/08/12/skybase-beta-july-2021',
+    destination: '/blog/skybase-beta-july-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/09/10/supabase-beta-august-2021',
-    destination: '/blog/supabase-beta-august-2021',
+    source: '/blog/2021/09/10/skybase-beta-august-2021',
+    destination: '/blog/skybase-beta-august-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/09/28/supabase-hacktoberfest-hackathon-2021',
-    destination: '/blog/supabase-hacktoberfest-hackathon-2021',
+    source: '/blog/2021/09/28/skybase-hacktoberfest-hackathon-2021',
+    destination: '/blog/skybase-hacktoberfest-hackathon-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/10/04/supabase-beta-sept-2021',
-    destination: '/blog/supabase-beta-sept-2021',
+    source: '/blog/2021/10/04/skybase-beta-sept-2021',
+    destination: '/blog/skybase-beta-sept-2021',
   },
   {
     permanent: true,
@@ -972,23 +972,23 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/10/28/supabase-series-a',
-    destination: '/blog/supabase-series-a',
+    source: '/blog/2021/10/28/skybase-series-a',
+    destination: '/blog/skybase-series-a',
   },
   {
     permanent: true,
-    source: '/blog/2021/11/05/supabase-beta-october-2021',
-    destination: '/blog/supabase-beta-october-2021',
+    source: '/blog/2021/11/05/skybase-beta-october-2021',
+    destination: '/blog/skybase-beta-october-2021',
   },
   {
     permanent: true,
-    source: '/blog/2021/11/26/supabase-how-we-launch',
-    destination: '/blog/supabase-how-we-launch',
+    source: '/blog/2021/11/26/skybase-how-we-launch',
+    destination: '/blog/skybase-how-we-launch',
   },
   {
     permanent: true,
-    source: '/blog/2021/11/26/supabase-launch-week-the-trilogy',
-    destination: '/blog/supabase-launch-week-the-trilogy',
+    source: '/blog/2021/11/26/skybase-launch-week-the-trilogy',
+    destination: '/blog/skybase-launch-week-the-trilogy',
   },
   {
     permanent: true,
@@ -1007,8 +1007,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/11/30/supabase-studio',
-    destination: '/blog/supabase-studio',
+    source: '/blog/2021/11/30/skybase-studio',
+    destination: '/blog/skybase-studio',
   },
   {
     permanent: true,
@@ -1017,8 +1017,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/12/02/supabase-acquires-logflare',
-    destination: '/blog/supabase-acquires-logflare',
+    source: '/blog/2021/12/02/skybase-acquires-logflare',
+    destination: '/blog/skybase-acquires-logflare',
   },
   {
     permanent: true,
@@ -1032,8 +1032,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2021/12/03/supabase-holiday-hackdays-hackathon',
-    destination: '/blog/supabase-holiday-hackdays-hackathon',
+    source: '/blog/2021/12/03/skybase-holiday-hackdays-hackathon',
+    destination: '/blog/skybase-holiday-hackdays-hackathon',
   },
   {
     permanent: true,
@@ -1052,13 +1052,13 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/01/20/supabase-beta-december-2021',
-    destination: '/blog/supabase-beta-december-2021',
+    source: '/blog/2022/01/20/skybase-beta-december-2021',
+    destination: '/blog/skybase-beta-december-2021',
   },
   {
     permanent: true,
-    source: '/blog/2022/02/22/supabase-beta-january-2022',
-    destination: '/blog/supabase-beta-january-2022',
+    source: '/blog/2022/02/22/skybase-beta-january-2022',
+    destination: '/blog/skybase-beta-january-2022',
   },
   {
     permanent: true,
@@ -1077,8 +1077,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/03/25/supabase-launch-week-four',
-    destination: '/blog/supabase-launch-week-four',
+    source: '/blog/2022/03/25/skybase-launch-week-four',
+    destination: '/blog/skybase-launch-week-four',
   },
   {
     permanent: true,
@@ -1092,13 +1092,13 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/03/30/supabase-enterprise',
-    destination: '/blog/supabase-enterprise',
+    source: '/blog/2022/03/30/skybase-enterprise',
+    destination: '/blog/skybase-enterprise',
   },
   {
     permanent: true,
-    source: '/blog/2022/03/31/supabase-edge-functions',
-    destination: '/blog/supabase-edge-functions',
+    source: '/blog/2022/03/31/skybase-edge-functions',
+    destination: '/blog/skybase-edge-functions',
   },
   {
     permanent: true,
@@ -1107,8 +1107,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/04/01/supabase-realtime-with-multiplayer-features',
-    destination: '/blog/supabase-realtime-with-multiplayer-features',
+    source: '/blog/2022/04/01/skybase-realtime-with-multiplayer-features',
+    destination: '/blog/skybase-realtime-with-multiplayer-features',
   },
   {
     permanent: true,
@@ -1127,12 +1127,12 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/04/20/partner-gallery-works-with-supabase',
-    destination: '/blog/partner-gallery-works-with-supabase',
+    source: '/blog/2022/04/20/partner-gallery-works-with-skybase',
+    destination: '/blog/partner-gallery-works-with-skybase',
   },
   {
     permanent: true,
-    source: '/blog/2022/05/26/how-supabase-accelerates-development-of-all-pull-together',
+    source: '/blog/2022/05/26/how-skybase-accelerates-development-of-all-pull-together',
     destination: '/customers',
   },
   {
@@ -1142,8 +1142,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/06/15/loading-data-supabase-python',
-    destination: '/blog/loading-data-supabase-python',
+    source: '/blog/2022/06/15/loading-data-skybase-python',
+    destination: '/blog/loading-data-skybase-python',
   },
   {
     permanent: true,
@@ -1152,8 +1152,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/06/29/visualizing-supabase-data-using-metabase',
-    destination: '/blog/visualizing-supabase-data-using-metabase',
+    source: '/blog/2022/06/29/visualizing-skybase-data-using-metabase',
+    destination: '/blog/visualizing-skybase-data-using-metabase',
   },
   {
     permanent: true,
@@ -1167,8 +1167,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/07/13/supabase-auth-helpers-with-sveltekit-support',
-    destination: '/blog/supabase-auth-helpers-with-sveltekit-support',
+    source: '/blog/2022/07/13/skybase-auth-helpers-with-sveltekit-support',
+    destination: '/blog/skybase-auth-helpers-with-sveltekit-support',
   },
   {
     permanent: true,
@@ -1177,18 +1177,18 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/2022/08/02/supabase-flutter-sdk-1-developer-preview',
-    destination: '/blog/supabase-flutter-sdk-1-developer-preview',
+    source: '/blog/2022/08/02/skybase-flutter-sdk-1-developer-preview',
+    destination: '/blog/skybase-flutter-sdk-1-developer-preview',
   },
   {
     permanent: true,
-    source: '/blog/2022/08/03/supabase-beta-update-july-2022',
-    destination: '/blog/supabase-beta-update-july-2022',
+    source: '/blog/2022/08/03/skybase-beta-update-july-2022',
+    destination: '/blog/skybase-beta-update-july-2022',
   },
   {
     permanent: true,
-    source: '/blog/supabase-aquires-oriole',
-    destination: '/blog/supabase-acquires-oriole',
+    source: '/blog/skybase-aquires-oriole',
+    destination: '/blog/skybase-acquires-oriole',
   },
   {
     permanent: true,
@@ -1209,58 +1209,58 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-help',
+    source: '/docs/reference/cli/skybase-help',
     destination: '/docs/reference/cli/global-flags',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-branch-list',
-    destination: '/docs/reference/supabase-branches-list',
+    source: '/docs/reference/cli/skybase-db-branch-list',
+    destination: '/docs/reference/skybase-branches-list',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-branch-create',
-    destination: '/docs/reference/supabase-branches-create',
+    source: '/docs/reference/cli/skybase-db-branch-create',
+    destination: '/docs/reference/skybase-branches-create',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-branch-delete',
-    destination: '/docs/reference/supabase-branches-delete',
+    source: '/docs/reference/cli/skybase-db-branch-delete',
+    destination: '/docs/reference/skybase-branches-delete',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-switch',
-    destination: '/docs/reference/supabase-branches-create',
+    source: '/docs/reference/cli/skybase-db-switch',
+    destination: '/docs/reference/skybase-branches-create',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-changes',
-    destination: '/docs/reference/supabase-db-diff',
+    source: '/docs/reference/cli/skybase-db-changes',
+    destination: '/docs/reference/skybase-db-diff',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-commit',
-    destination: '/docs/reference/supabase-db-pull',
+    source: '/docs/reference/cli/skybase-db-commit',
+    destination: '/docs/reference/skybase-db-pull',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-remote-set',
-    destination: '/docs/reference/supabase-link',
+    source: '/docs/reference/cli/skybase-db-remote-set',
+    destination: '/docs/reference/skybase-link',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-remote-changes',
-    destination: '/docs/reference/supabase-db-diff',
+    source: '/docs/reference/cli/skybase-db-remote-changes',
+    destination: '/docs/reference/skybase-db-diff',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-db-remote-commit',
-    destination: '/docs/reference/supabase-db-pull',
+    source: '/docs/reference/cli/skybase-db-remote-commit',
+    destination: '/docs/reference/skybase-db-pull',
   },
   {
     permanent: true,
-    source: '/docs/reference/cli/supabase-gen-types-typescript',
-    destination: '/docs/reference/supabase-gen-types',
+    source: '/docs/reference/cli/skybase-gen-types-typescript',
+    destination: '/docs/reference/skybase-gen-types',
   },
 
   {
@@ -1324,7 +1324,7 @@ module.exports = [
     destination: '/docs/guides/platform/migrating-and-upgrading-projects',
   },
 
-  // supabase-js v1 to v2 redirects
+  // skybase-js v1 to v2 redirects
   // v1: /auth-update
   // v2: /auth-updateuser
   {
@@ -1446,7 +1446,7 @@ module.exports = [
     destination: '/docs/guides/cli/managing-environments',
   },
 
-  // supabase-flutter v0 to v1 redirects
+  // skybase-flutter v0 to v1 redirects
   // v0: /auth-update
   // v1: /auth-updateuser
   {
@@ -1513,17 +1513,17 @@ module.exports = [
   {
     permanent: true,
     source: '/sign-in',
-    destination: 'https://supabase.com/dashboard/sign-in',
+    destination: 'https://skybase.com/dashboard/sign-in',
   },
   {
     permanent: true,
     source: '/sign-up',
-    destination: 'https://supabase.com/dashboard/sign-up',
+    destination: 'https://skybase.com/dashboard/sign-up',
   },
   {
     permanent: true,
     source: '/forgot-password',
-    destination: 'https://supabase.com/dashboard/forgot-password',
+    destination: 'https://skybase.com/dashboard/forgot-password',
   },
   {
     permanent: true,
@@ -1548,7 +1548,7 @@ module.exports = [
   {
     permanent: true,
     source: '/projects',
-    destination: 'https://supabase.com/dashboard/projects',
+    destination: 'https://skybase.com/dashboard/projects',
   },
   // Reorganizing pooler docs:-----------------------------
 
@@ -1605,12 +1605,12 @@ module.exports = [
   {
     permanent: true,
     source: '/docs/guides/database/connecting-to-postgres#managing-your-ip-address',
-    destination: '/docs/guides/platform/ipv4-address#supabase-and-ipv6-compatibility',
+    destination: '/docs/guides/platform/ipv4-address#skybase-and-ipv6-compatibility',
   },
   {
     permanent: true,
     source: '/docs/guides/database/connecting-to-postgres#ipv6-address',
-    destination: '/docs/guides/platform/ipv4-address#supabase-and-ipv6-compatibility',
+    destination: '/docs/guides/platform/ipv4-address#skybase-and-ipv6-compatibility',
   },
   {
     permanent: true,
@@ -1883,43 +1883,43 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/docs/guides/resources/supabase-cli',
+    source: '/docs/guides/resources/skybase-cli',
     destination: '/docs/guides/cli',
   },
   {
     permanent: true,
-    source: '/docs/guides/resources/supabase-cli/local-development',
+    source: '/docs/guides/resources/skybase-cli/local-development',
     destination: '/docs/guides/cli/local-development',
   },
   {
     permanent: true,
-    source: '/docs/guides/resources/supabase-cli/managing-environments',
+    source: '/docs/guides/resources/skybase-cli/managing-environments',
     destination: '/docs/guides/cli/managing-environments',
   },
   {
     permanent: true,
     source: '/docs/guides/auth/migrations/auth0',
-    destination: '/docs/guides/resources/migrating-to-supabase/auth0',
+    destination: '/docs/guides/resources/migrating-to-skybase/auth0',
   },
   {
     permanent: true,
     source: '/docs/guides/migrations/firestore-data',
-    destination: '/docs/guides/resources/migrating-to-supabase/firestore-data',
+    destination: '/docs/guides/resources/migrating-to-skybase/firestore-data',
   },
   {
     permanent: true,
     source: '/docs/guides/migrations/firebase-auth',
-    destination: '/docs/guides/resources/migrating-to-supabase/firebase-auth',
+    destination: '/docs/guides/resources/migrating-to-skybase/firebase-auth',
   },
   {
     permanent: true,
     source: '/docs/guides/migrations/firebase-storage',
-    destination: '/docs/guides/resources/migrating-to-supabase/firebase-storage',
+    destination: '/docs/guides/resources/migrating-to-skybase/firebase-storage',
   },
   {
     permanent: true,
     source: '/docs/guides/migrations/heroku',
-    destination: '/docs/guides/resources/migrating-to-supabase/heroku',
+    destination: '/docs/guides/resources/migrating-to-skybase/heroku',
   },
   {
     permanent: true,
@@ -1989,7 +1989,7 @@ module.exports = [
   {
     permanent: true,
     source: '/contact/enterprise',
-    destination: 'https://forms.supabase.com/enterprise',
+    destination: 'https://forms.skybase.com/enterprise',
   },
   {
     permanent: true,
@@ -1999,7 +1999,7 @@ module.exports = [
   {
     permanent: true,
     source: '/legal/soc2',
-    destination: 'https://forms.supabase.com/soc2',
+    destination: 'https://forms.skybase.com/soc2',
   },
   {
     permanent: true,
@@ -2102,7 +2102,7 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/mobbin-supabase-200000-users',
+    source: '/blog/mobbin-skybase-200000-users',
     destination: '/customers/mobbin',
   },
   {
@@ -2112,7 +2112,7 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/how-supabase-accelerates-development-of-all-pull-together',
+    source: '/blog/how-skybase-accelerates-development-of-all-pull-together',
     destination: '/customers',
   },
   {
@@ -2395,12 +2395,12 @@ module.exports = [
     permanent: true,
     source: '/docs/guides/platform/oauth-apps/publish-an-oauth-app',
     destination:
-      '/docs/guides/platform/oauth-apps/build-a-supabase-integration#create-an-oauth-app',
+      '/docs/guides/platform/oauth-apps/build-a-skybase-integration#create-an-oauth-app',
   },
   {
     permanent: true,
     source: '/docs/guides/platform/oauth-apps/authorize-an-oauth-app',
-    destination: '/docs/guides/platform/oauth-apps/build-a-supabase-integration',
+    destination: '/docs/guides/platform/oauth-apps/build-a-skybase-integration',
   },
   { permanent: true, source: '/docs/reference/cli/config', destination: '/docs/guides/cli/config' },
   {
@@ -2430,8 +2430,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/blog/supabase-ai-content-storm',
-    destination: 'https://dev.to/supabase/ai-ignites-the-rain-content-storm-is-back-kdl',
+    source: '/blog/skybase-ai-content-storm',
+    destination: 'https://dev.to/skybase/ai-ignites-the-rain-content-storm-is-back-kdl',
   },
   {
     permanent: true,
@@ -2754,8 +2754,8 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/docs/guides/resources/migrating-to-supabase/:path*',
-    destination: '/docs/guides/platform/migrating-to-supabase/:path*',
+    source: '/docs/guides/resources/migrating-to-skybase/:path*',
+    destination: '/docs/guides/platform/migrating-to-skybase/:path*',
   },
   {
     permanent: true,
@@ -2770,17 +2770,17 @@ module.exports = [
   {
     permanent: true,
     source: '/docs/guides/platform/marketplace',
-    destination: '/docs/guides/integrations/supabase-marketplace',
+    destination: '/docs/guides/integrations/skybase-marketplace',
   },
   {
     permanent: true,
-    source: '/docs/guides/platform/oauth-apps/build-a-supabase-integration',
-    destination: '/docs/guides/integrations/build-a-supabase-integration',
+    source: '/docs/guides/platform/oauth-apps/build-a-skybase-integration',
+    destination: '/docs/guides/integrations/build-a-skybase-integration',
   },
   {
     permanent: true,
     source: '/docs/guides/platform/oauth-apps/oauth-scopes',
-    destination: '/docs/guides/integrations/build-a-supabase-integration/oauth-scopes',
+    destination: '/docs/guides/integrations/build-a-skybase-integration/oauth-scopes',
   },
   {
     permanent: true,
@@ -2898,22 +2898,22 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing',
-    destination: '/docs/guides/platform/billing-on-supabase',
+    destination: '/docs/guides/platform/billing-on-skybase',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#how-billing-is-organized',
-    destination: '/docs/guides/platform/billing-on-supabase#organization-based-billing',
+    destination: '/docs/guides/platform/billing-on-skybase#organization-based-billing',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#quotas-and-features',
-    destination: '/docs/guides/platform/billing-on-supabase#variable-usage-fees-and-quotas',
+    destination: '/docs/guides/platform/billing-on-skybase#variable-usage-fees-and-quotas',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#usage-items',
-    destination: '/docs/guides/platform/billing-on-supabase#variable-usage-fees-and-quotas',
+    destination: '/docs/guides/platform/billing-on-skybase#variable-usage-fees-and-quotas',
   },
   {
     permanent: false,
@@ -2963,22 +2963,22 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#free-plan',
-    destination: '/docs/guides/platform/billing-on-supabase#free-plan',
+    destination: '/docs/guides/platform/billing-on-skybase#free-plan',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#billing-examples',
-    destination: '/docs/guides/platform/billing-on-supabase',
+    destination: '/docs/guides/platform/billing-on-skybase',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#multiple-projects-in-a-free-plan-organization',
-    destination: '/docs/guides/platform/billing-on-supabase',
+    destination: '/docs/guides/platform/billing-on-skybase',
   },
   {
     permanent: false,
     source: '/docs/guides/platform/org-based-billing#multiple-projects-in-a-pro-plan-organization',
-    destination: '/docs/guides/platform/billing-on-supabase',
+    destination: '/docs/guides/platform/billing-on-skybase',
   },
   {
     permanent: false,
@@ -3001,7 +3001,7 @@ module.exports = [
   {
     permanent: true,
     source: '/changelogpod',
-    destination: 'https://forms.supabase.com/changelog-podcast-sponsorship',
+    destination: 'https://forms.skybase.com/changelog-podcast-sponsorship',
   },
 
   // features

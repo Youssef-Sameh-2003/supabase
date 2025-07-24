@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { AlertTitle } from '@ui/components/shadcn/ui/alert'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -109,7 +109,7 @@ export const S3Connection = () => {
           <FormHeader
             title="S3 Connection"
             description="Connect to your bucket using any S3-compatible service via the S3 protocol"
-            docsUrl="https://supabase.com/docs/guides/storage/s3/authentication"
+            docsUrl="https://skybase.com/docs/guides/storage/s3/authentication"
           />
           {projectIsLoading ? (
             <GenericSkeletonLoader />
@@ -123,7 +123,7 @@ export const S3Connection = () => {
                     layout="horizontal"
                     className="px-8 py-8 [&>*>label]:text-foreground"
                     label="Enable connection via S3 protocol"
-                    description="Allow clients to connect to Supabase Storage via the S3 protocol"
+                    description="Allow clients to connect to Skybase Storage via the S3 protocol"
                   >
                     <FormControl_Shadcn_>
                       <Switch

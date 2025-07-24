@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { includes, noop } from 'lodash'
 import { Edit3, MoreVertical, Trash } from 'lucide-react'
 import Image from 'next/legacy/image'
@@ -50,8 +50,8 @@ const HookList = ({ schema, filterString, editHook = noop, deleteHook = noop }: 
     <>
       {filteredHooks.map((x: any) => {
         const isEdgeFunction = (url: string) =>
-          url.includes(`https://${ref}.functions.supabase.${restUrlTld}/`) ||
-          url.includes(`https://${ref}.supabase.${restUrlTld}/functions/`)
+          url.includes(`https://${ref}.functions.skybase.${restUrlTld}/`) ||
+          url.includes(`https://${ref}.skybase.${restUrlTld}/functions/`)
         const [url, method] = x.function_args
 
         return (
@@ -62,14 +62,14 @@ const HookList = ({ schema, filterString, editHook = noop, deleteHook = noop }: 
                   <Image
                     src={
                       isEdgeFunction(url)
-                        ? `${BASE_PATH}/img/function-providers/supabase-severless-function.png`
+                        ? `${BASE_PATH}/img/function-providers/skybase-severless-function.png`
                         : `${BASE_PATH}/img/function-providers/http-request.png`
                     }
                     alt="hook-type"
                     layout="fixed"
                     width="20"
                     height="20"
-                    title={isEdgeFunction(url) ? 'Supabase Edge Function' : 'HTTP Request'}
+                    title={isEdgeFunction(url) ? 'Skybase Edge Function' : 'HTTP Request'}
                   />
                 </div>
                 <p title={x.name} className="truncate">

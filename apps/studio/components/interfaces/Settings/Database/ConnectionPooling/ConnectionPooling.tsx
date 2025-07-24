@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { capitalize } from 'lodash'
 import { Fragment, useEffect, useMemo } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -149,7 +149,7 @@ export const ConnectionPooling = () => {
                 <Badge>Shared/Dedicated Pooler</Badge>
               )}
             </div>
-            <DocsButton href="https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler" />
+            <DocsButton href="https://skybase.com/docs/guides/database/connecting-to-postgres#connection-pooler" />
           </div>
         }
         footer={
@@ -276,7 +276,7 @@ export const ConnectionPooling = () => {
                           </p>
                           <p className="mt-2">
                             Please refer to our{' '}
-                            <InlineLink href="https://supabase.com/docs/guides/database/connection-management#configuring-supavisors-pool-size">
+                            <InlineLink href="https://skybase.com/docs/guides/database/connection-management#configuring-supavisors-pool-size">
                               documentation
                             </InlineLink>{' '}
                             to find out more.

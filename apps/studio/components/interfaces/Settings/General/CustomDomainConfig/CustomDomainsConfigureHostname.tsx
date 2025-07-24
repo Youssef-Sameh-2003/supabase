@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import * as yup from 'yup'
 
 import { useParams } from 'common'
@@ -73,7 +73,7 @@ const CustomDomainsConfigureHostname = () => {
                       !canConfigureCustomDomain ? (
                         "You need additional permissions to update your project's custom domain settings"
                       ) : (
-                        <DocsButton href="https://supabase.com/docs/guides/platform/custom-domains" />
+                        <DocsButton href="https://skybase.com/docs/guides/platform/custom-domains" />
                       )
                     }
                   />

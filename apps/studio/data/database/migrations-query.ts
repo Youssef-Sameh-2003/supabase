@@ -12,7 +12,7 @@ export const getMigrationsSql = () => {
   const sql = /* SQL */ `
     select
       *
-    from supabase_migrations.schema_migrations sm
+    from skybase_migrations.schema_migrations sm
     order by sm.version desc
   `.trim()
 
@@ -40,7 +40,7 @@ export async function getMigrations(
   } catch (error) {
     if (
       (error as ExecuteSqlError).message.includes(
-        'relation "supabase_migrations.schema_migrations" does not exist'
+        'relation "skybase_migrations.schema_migrations" does not exist'
       )
     ) {
       return []

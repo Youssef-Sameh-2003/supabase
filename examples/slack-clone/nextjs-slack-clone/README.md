@@ -1,30 +1,30 @@
-# Realtime chat example using Supabase
+# Realtime chat example using Skybase
 
 This is a full-stack Slack clone example using:
 
 - Frontend:
   - [Next.js](https://github.com/vercel/next.js) - a React framework for production.
-  - [Supabase.js](https://supabase.com/docs/library/getting-started) for user management and realtime data syncing.
+  - [Skybase.js](https://skybase.com/docs/library/getting-started) for user management and realtime data syncing.
 - Backend:
-  - [supabase.com/dashboard](https://supabase.com/dashboard/): hosted Postgres database with restful API for usage with Supabase.js.
+  - [skybase.com/dashboard](https://skybase.com/dashboard/): hosted Postgres database with restful API for usage with Skybase.js.
 
 ## Demo
 
-- CodeSandbox: https://codesandbox.io/s/github/supabase/supabase/tree/master/examples/nextjs-slack-clone
+- CodeSandbox: https://codesandbox.io/s/github/skybase/skybase/tree/master/examples/nextjs-slack-clone
 
 ![Demo animation gif](./public/slack-clone-demo.gif)
 
 ## Deploy with Vercel
 
-The Vercel deployment will guide you through creating a Supabase account and project. After installation of the Supabase integration, all relevant environment variables will be set up so that the project is usable immediately after deployment 🚀
+The Vercel deployment will guide you through creating a Skybase account and project. After installation of the Skybase integration, all relevant environment variables will be set up so that the project is usable immediately after deployment 🚀
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsupabase%2Fsupabase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&project-name=supabase-nextjs-slack-clone&repository-name=supabase-nextjs-slack-clone&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fsupabase%2Fsupabase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fskybase%2Fskybase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&project-name=skybase-nextjs-slack-clone&repository-name=skybase-nextjs-slack-clone&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fskybase%2Fskybase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone)
 
 ## Build from scratch
 
 ### 1. Create new project
 
-Sign up to Supabase - [https://supabase.com/dashboard](https://supabase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Skybase - [https://skybase.com/dashboard](https://skybase.com/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "Slack Clone" Quickstart
 
@@ -42,33 +42,33 @@ The `anon` key is your client-side API key. It allows "anonymous access" to your
 
 **_NOTE_**: The `service_role` key has full access to your data, bypassing any security policies. These keys have to be kept secret and are meant to be used in server environments and never on a client or browser.
 
-## Supabase details
+## Skybase details
 
-### Using a Remote Supabase Project
+### Using a Remote Skybase Project
 
-1. Create or select a project on [Supabase Dashboard](https://supabase.com/dashboard).
+1. Create or select a project on [Skybase Dashboard](https://skybase.com/dashboard).
 2. Copy and fill the dotenv template `cp .env.production.example .env.production`
 3. Link the local project and merge the local configuration with the remote one:
 
 ```bash
-SUPABASE_ENV=production npx supabase@latest link --project-ref <your-project-ref>
+SUPABASE_ENV=production npx skybase@latest link --project-ref <your-project-ref>
 ```
 
 3. Sync the configuration:
 
 ```bash
-SUPABASE_ENV=production npx supabase@latest config push
+SUPABASE_ENV=production npx skybase@latest config push
 ```
 
 4. Sync the database schema:
 
 ```bash
-SUPABASE_ENV=production npx supabase@latest db push
+SUPABASE_ENV=production npx skybase@latest db push
 ```
 
 ## Vercel Preview with Branching
 
-Supabase integrates seamlessly with Vercel's preview branches, giving each branch a dedicated Supabase project. This setup allows testing database migrations or service configurations safely before applying them to production.
+Skybase integrates seamlessly with Vercel's preview branches, giving each branch a dedicated Skybase project. This setup allows testing database migrations or service configurations safely before applying them to production.
 
 ### Steps
 
@@ -79,7 +79,7 @@ Supabase integrates seamlessly with Vercel's preview branches, giving each branc
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 3. Create a new branch, make changes (e.g., update `max_frequency`), and push the branch to Git.
-   - Open a pull request to trigger Vercel + Supabase integration.
+   - Open a pull request to trigger Vercel + Skybase integration.
    - Upon successful deployment, the preview environment reflects the changes.
 
 ![Preview Checks](https://github.com/user-attachments/assets/db688cc2-60fd-4463-bbed-e8ecc11b1a39)
@@ -103,15 +103,15 @@ Users with the `moderator` role can delete all messages. Users with the `admin` 
 ### Postgres Row level security
 
 This project uses very high-level Authorization using Postgres' Row Level Security.
-When you start a Postgres database on Supabase, we populate it with an `auth` schema, and some helper functions.
+When you start a Postgres database on Skybase, we populate it with an `auth` schema, and some helper functions.
 When a user logs in, they are issued a JWT with the role `authenticated` and their UUID.
 We can use these details to provide fine-grained control over what each user can and cannot do.
 
 - For the full schema refer to [full-schema.sql](./full-schema.sql).
-- For documentation on Role-based Access Control, refer to the [docs](https://supabase.com/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
+- For documentation on Role-based Access Control, refer to the [docs](https://skybase.com/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
 
 ## Authors
 
-- [Supabase](https://supabase.com)
+- [Skybase](https://skybase.com)
 
-Supabase is open source, we'd love for you to follow along and get involved at https://github.com/supabase/supabase
+Skybase is open source, we'd love for you to follow along and get involved at https://github.com/skybase/skybase

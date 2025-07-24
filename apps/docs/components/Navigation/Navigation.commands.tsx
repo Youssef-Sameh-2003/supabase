@@ -141,7 +141,7 @@ const navCommands = [
   {
     id: 'nav-integrations',
     name: 'Go to Integrations',
-    route: 'https://supabase.com/partners/integrations',
+    route: 'https://skybase.com/partners/integrations',
     icon: () => <ArrowRight />,
   },
 ] satisfies ICommand[]

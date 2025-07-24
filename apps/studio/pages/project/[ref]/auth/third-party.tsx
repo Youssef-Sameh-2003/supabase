@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 
 import { ThirdPartyAuthForm } from 'components/interfaces/Auth'
 import { AuthProvidersLayout } from 'components/layouts/AuthLayout/AuthProvidersLayout'

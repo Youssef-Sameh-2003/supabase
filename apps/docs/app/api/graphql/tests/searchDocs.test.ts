@@ -36,7 +36,7 @@ const rpcSpy = vi.fn().mockImplementation((funcName, params) => {
       {
         type: 'reference',
         page_title: 'Create a SSO provider',
-        href: 'https://supabase.com/docs/reference/api/v1-create-a-sso-provider',
+        href: 'https://skybase.com/docs/reference/api/v1-create-a-sso-provider',
         content: params?.include_full_content ? 'Creates a new SSO provider for a project' : null,
         metadata: {
           title: 'Create a SSO provider',
@@ -48,8 +48,8 @@ const rpcSpy = vi.fn().mockImplementation((funcName, params) => {
   }
   return Promise.resolve({ data: [], error: null })
 })
-vi.mock('~/lib/supabase', () => ({
-  supabase: () => ({
+vi.mock('~/lib/skybase', () => ({
+  skybase: () => ({
     rpc: rpcSpy,
   }),
 }))
@@ -62,7 +62,7 @@ describe('/api/graphql searchDocs', () => {
   afterAll(() => {
     vi.restoreAllMocks()
     vi.doUnmock('~/lib/openAi')
-    vi.doUnmock('~/lib/supabase')
+    vi.doUnmock('~/lib/skybase')
   })
 
   it('should return search results when given a valid query', async () => {
@@ -232,7 +232,7 @@ describe('/api/graphql searchDocs', () => {
     const managementApiNode = json.data.searchDocs.nodes[2]
     expect(managementApiNode).toMatchObject({
       title: 'Create a SSO provider',
-      href: 'https://supabase.com/docs/reference/api/v1-create-a-sso-provider',
+      href: 'https://skybase.com/docs/reference/api/v1-create-a-sso-provider',
       content: 'Creates a new SSO provider for a project',
     })
   })

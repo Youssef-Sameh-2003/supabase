@@ -2,10 +2,10 @@ import '~/styles/style.scss'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import UserContext from 'lib/UserContext'
-import { supabase } from 'lib/Store'
+import { skybase } from 'lib/Store'
 import { jwtDecode } from 'jwt-decode'
 
-export default function SupabaseSlackClone({ Component, pageProps }) {
+export default function SkybaseSlackClone({ Component, pageProps }) {
   const [userLoaded, setUserLoaded] = useState(false)
   const [user, setUser] = useState(null)
   const [session, setSession] = useState(null)
@@ -13,7 +13,7 @@ export default function SupabaseSlackClone({ Component, pageProps }) {
 
   useEffect(() => {
     function saveSession(
-      /** @type {Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']} */
+      /** @type {Awaited<ReturnType<typeof skybase.auth.getSession>>['data']['session']} */
       session
     ) {
       setSession(session)
@@ -29,9 +29,9 @@ export default function SupabaseSlackClone({ Component, pageProps }) {
       }
     }
 
-    supabase.auth.getSession().then(({ data: { session } }) => saveSession(session))
+    skybase.auth.getSession().then(({ data: { session } }) => saveSession(session))
 
-    const { subscription: authListener } = supabase.auth.onAuthStateChange(
+    const { subscription: authListener } = skybase.auth.onAuthStateChange(
       async (event, session) => {
         console.log(session)
         saveSession(session)
@@ -44,7 +44,7 @@ export default function SupabaseSlackClone({ Component, pageProps }) {
   }, [])
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
+    const { error } = await skybase.auth.signOut()
     if (!error) {
       router.push('/')
     }

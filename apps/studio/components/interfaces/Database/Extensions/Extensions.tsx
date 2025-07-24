@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { isNull, partition } from 'lodash'
 import { AlertCircle, Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -64,7 +64,7 @@ const Extensions = () => {
             className="w-52"
             icon={<Search size={14} />}
           />
-          <DocsButton href="https://supabase.com/docs/guides/database/extensions" />
+          <DocsButton href="https://skybase.com/docs/guides/database/extensions" />
         </div>
       </div>
 

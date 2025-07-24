@@ -63,7 +63,7 @@ const InfrastructureInfo = () => {
 
   const isOnLatestVersion = current_app_version === latest_app_version
   const currentPgVersion = (current_app_version ?? '')
-    .split('supabase-postgres-')[1]
+    .split('skybase-postgres-')[1]
     ?.replace('-orioledb', '')
   const isVisibleReleaseChannel =
     current_app_version_release_channel &&
@@ -71,7 +71,7 @@ const InfrastructureInfo = () => {
       ? current_app_version_release_channel
       : undefined
   const isOrioleDb = useIsOrioleDb()
-  const latestPgVersion = (latest_app_version ?? '').split('supabase-postgres-')[1]
+  const latestPgVersion = (latest_app_version ?? '').split('skybase-postgres-')[1]
 
   const isInactive = project?.status === 'INACTIVE'
   const hasReadReplicas = (databases ?? []).length > 1
@@ -142,7 +142,7 @@ const InfrastructureInfo = () => {
                         <Input
                           readOnly
                           disabled
-                          value={currentPgVersion || serviceVersions?.['supabase-postgres'] || ''}
+                          value={currentPgVersion || serviceVersions?.['skybase-postgres'] || ''}
                           label="Postgres version"
                           actions={[
                             isVisibleReleaseChannel && (
@@ -178,7 +178,7 @@ const InfrastructureInfo = () => {
                                   </Badge>
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom" className="w-52 text-center">
-                                  Project is on the latest version of Postgres that Supabase
+                                  Project is on the latest version of Postgres that Skybase
                                   supports
                                 </TooltipContent>
                               </Tooltip>

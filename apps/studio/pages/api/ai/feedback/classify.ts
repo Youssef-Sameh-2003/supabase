@@ -39,7 +39,7 @@ export async function handlePost(req: NextApiRequest, res: NextApiResponse) {
       if (error instanceof ContextLengthError) {
         return res.status(400).json({
           error:
-            'Your feedback prompt is too large for Supabase AI to ingest. Try splitting it into smaller prompts.',
+            'Your feedback prompt is too large for Skybase AI to ingest. Try splitting it into smaller prompts.',
         })
       }
     } else {

@@ -56,7 +56,7 @@ const days: WeekDayProps[] = [
     id: 'day-1',
     d: 1,
     dd: 'Mon',
-    title: 'Supabase Studio',
+    title: 'Skybase Studio',
     shipped: true,
     isToday: false,
     blog: '/blog/studio-introducing-assistant',
@@ -65,7 +65,7 @@ const days: WeekDayProps[] = [
     published_at: '2023-12-11T08:00:00.000-08:00',
     description: (
       <>
-        Supabase Studio: introducing an <strong>AI Assistant</strong>,{' '}
+        Skybase Studio: introducing an <strong>AI Assistant</strong>,{' '}
         <strong>Postgres roles</strong>, and <strong>user impersonation</strong>
       </>
     ),
@@ -148,21 +148,21 @@ const days: WeekDayProps[] = [
     id: 'day-3',
     d: 3,
     dd: 'Wed',
-    title: 'Supabase Branching',
+    title: 'Skybase Branching',
     shipped: true,
     hasCountdown: false,
-    blog: '/blog/supabase-branching',
+    blog: '/blog/skybase-branching',
     date: '13 Dec',
     published_at: '2023-12-13T08:00:00.000-08:00',
     description: (
       <>
-        Introducing Supabase <strong>Branching</strong>, a Postgres database for every pull request
+        Introducing Skybase <strong>Branching</strong>, a Postgres database for every pull request
       </>
     ),
     links: [
       {
         type: 'blog',
-        href: '/blog/supabase-branching',
+        href: '/blog/skybase-branching',
       },
       {
         type: 'video',
@@ -176,7 +176,7 @@ const days: WeekDayProps[] = [
     steps: [
       {
         title: '',
-        blog: '/blog/supabase-branching',
+        blog: '/blog/skybase-branching',
         bg_layers: [
           {
             img: '/images/launchweek/lwx/day3/branching.svg',
@@ -194,19 +194,19 @@ const days: WeekDayProps[] = [
     title: '',
     shipped: true,
     hasCountdown: false,
-    blog: '/blog/supabase-auth-identity-linking-hooks',
+    blog: '/blog/skybase-auth-identity-linking-hooks',
     date: '14 Dec',
     published_at: '2023-12-14T08:00:00.000-08:00',
     description: (
       <>
-        Supabase Auth: <strong>Identity Linking</strong>, <strong>Session Control</strong>,{' '}
+        Skybase Auth: <strong>Identity Linking</strong>, <strong>Session Control</strong>,{' '}
         <strong>Password Protection</strong> and <strong>Hooks</strong>
       </>
     ),
     links: [
       {
         type: 'blog',
-        href: '/blog/supabase-auth-identity-linking-hooks',
+        href: '/blog/skybase-auth-identity-linking-hooks',
       },
       {
         type: 'video',
@@ -220,7 +220,7 @@ const days: WeekDayProps[] = [
     steps: [
       {
         title: '',
-        blog: '/blog/supabase-auth-identity-linking-hooks',
+        blog: '/blog/skybase-auth-identity-linking-hooks',
         bg_layers: [
           {
             img: '/images/launchweek/lwx/day4/d4_auth.svg',

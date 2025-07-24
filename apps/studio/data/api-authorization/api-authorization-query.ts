@@ -1,4 +1,4 @@
-import type { OAuthScope } from '@supabase/shared-types/out/constants'
+import type { OAuthScope } from '@skybase/shared-types/out/constants'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
 import { get, handleError } from 'data/fetchers'

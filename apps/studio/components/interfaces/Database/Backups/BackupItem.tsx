@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Download } from 'lucide-react'
 
 import { useParams } from 'common'
@@ -76,7 +76,7 @@ const BackupItem = ({ index, isHealthy, backup, onSelectBackup }: BackupItemProp
                   <>
                     Physical backups cannot be downloaded through the dashboard. You can still
                     download it via pgdump by following our guide{' '}
-                    <InlineLink href="https://supabase.com/docs/guides/troubleshooting/download-logical-backups">
+                    <InlineLink href="https://skybase.com/docs/guides/troubleshooting/download-logical-backups">
                       here
                     </InlineLink>
                     .
@@ -113,7 +113,7 @@ const BackupItem = ({ index, isHealthy, backup, onSelectBackup }: BackupItemProp
           </TooltipTrigger>
           <TooltipContent side="bottom">
             Learn more about backup types{' '}
-            <InlineLink href="https://supabase.com/blog/postgresql-physical-logical-backups">
+            <InlineLink href="https://skybase.com/blog/postgresql-physical-logical-backups">
               here
             </InlineLink>
           </TooltipContent>

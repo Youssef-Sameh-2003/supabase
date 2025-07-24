@@ -13,7 +13,7 @@ class ProjectsPage extends StatelessWidget {
       extendBody: true,
       appBar: AppBar(title: const Text('Projects')),
       body: FutureBuilder<List<Project>>(
-          future: supabase
+          future: skybase
               .from('projects')
               .select('*, profiles(*)')
               .order('created_at')
@@ -99,7 +99,7 @@ class ProjectsPage extends StatelessWidget {
           }),
       floatingActionButton: ElevatedButton.icon(
         onPressed: () async {
-          final projectId = await supabase.rpc('create_new_project');
+          final projectId = await skybase.rpc('create_new_project');
           context.go('/canvas/$projectId');
         },
         label: const Text('Create a Project'),

@@ -53,7 +53,7 @@ export const AIOptInLevelSelector = ({
       description={
         <div className="flex flex-col gap-y-4 my-4 max-w-xl">
           <p>
-            Supabase AI can provide more relevant answers if you choose to share different levels of
+            Skybase AI can provide more relevant answers if you choose to share different levels of
             data. This feature is powered by Amazon Bedrock which does not store or log your prompts
             and completions, nor does it use them to train AWS models or distribute them to third
             parties. This is an organization-wide setting, so please select the level of data you

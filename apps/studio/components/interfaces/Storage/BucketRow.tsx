@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { noop } from 'lodash'
 import { ChevronDown, Columns3, Edit2, Trash, XCircle } from 'lucide-react'
 import Link from 'next/link'

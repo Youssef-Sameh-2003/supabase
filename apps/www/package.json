@@ -1,7 +1,7 @@
 {
   "name": "www",
   "version": "0.0.3",
-  "description": "Supabase main website",
+  "description": "Skybase main website",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -43,7 +43,7 @@
     "config": "workspace:*",
     "contentlayer2": "0.5.3",
     "dayjs": "^1.11.12",
-    "eslint-config-supabase": "workspace:*",
+    "eslint-config-skybase": "workspace:*",
     "framer-motion": "^11.0.3",
     "globby": "^13.2.2",
     "gray-matter": "^4.0.3",

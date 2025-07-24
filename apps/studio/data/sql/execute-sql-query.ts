@@ -9,7 +9,7 @@ import {
 } from 'lib/role-impersonation'
 import type { ResponseError } from 'types'
 import { sqlKeys } from './keys'
-import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@supabase/pg-meta/src/constants'
+import { DEFAULT_PLATFORM_APPLICATION_NAME } from '@skybase/pg-meta/src/constants'
 
 export type ExecuteSqlVariables = {
   projectRef?: string
@@ -77,7 +77,7 @@ export async function executeSql<T = any>(
         header: {
           'x-connection-encrypted': connectionString ?? '',
           'x-pg-application-name': isStatementTimeoutDisabled
-            ? 'supabase/dashboard-query-editor'
+            ? 'skybase/dashboard-query-editor'
             : DEFAULT_PLATFORM_APPLICATION_NAME,
         },
         path: { ref: projectRef },

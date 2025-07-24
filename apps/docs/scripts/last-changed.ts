@@ -13,7 +13,7 @@
 
 import _configureDotEnv from './utils/dotenv.js'
 
-import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import { createClient, type SkybaseClient } from '@skybase/skybase-js'
 import matter from 'gray-matter'
 import { createHash } from 'node:crypto'
 import { readdirSync } from 'node:fs'
@@ -37,7 +37,7 @@ interface Stats {
 }
 
 interface Ctx {
-  supabase: SupabaseClient
+  skybase: SkybaseClient
   git: SimpleGit
   stats: Stats
 }
@@ -60,7 +60,7 @@ async function main() {
   checkEnv()
 
   const { reset } = parseOptions()
-  const supabase = createSupabaseClient()
+  const skybase = createSkybaseClient()
   const git = simpleGit()
 
   const stats: Stats = {
@@ -68,7 +68,7 @@ async function main() {
     sectionsErrored: 0,
   }
 
-  const ctx: Ctx = { supabase, git, stats }
+  const ctx: Ctx = { skybase, git, stats }
 
   await updateContentDates({ reset, ctx })
 
@@ -109,7 +109,7 @@ function parseOptions(): Options {
   return { reset: reset ?? false }
 }
 
-function createSupabaseClient() {
+function createSkybaseClient() {
   return createClient(
     process.env[REQUIRED_ENV_VARS.SUPABASE_URL]!,
     process.env[REQUIRED_ENV_VARS.SERVICE_ROLE_KEY]!
@@ -219,7 +219,7 @@ async function updateTimestampsWithLastCommitDate(
   try {
     const updatedAt = await getGitUpdatedAt(filePath, ctx)
 
-    const { error } = await ctx.supabase
+    const { error } = await ctx.skybase
       .from('last_changed')
       .upsert(
         {
@@ -257,7 +257,7 @@ async function updateTimestampsWithChecksumMatch(
   try {
     const gitUpdatedAt = await getGitUpdatedAt(filePath, ctx)
 
-    const { data, error } = await ctx.supabase.rpc('update_last_changed_checksum', {
+    const { data, error } = await ctx.skybase.rpc('update_last_changed_checksum', {
       new_parent_page: parentPage,
       new_heading: section.heading,
       new_checksum: section.checksum,

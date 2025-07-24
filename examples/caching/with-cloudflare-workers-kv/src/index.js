@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from "@skybase/skybase-js";
 import { Router } from "itty-router";
 import { json, status, withContent } from "itty-router-extras";
 import { readFrom, writeTo } from "./utils/cache";
@@ -29,9 +29,9 @@ router.get(
 
     console.log("fetching fresh articles");
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const skybase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    const { data } = await supabase.from("articles").select("*");
+    const { data } = await skybase.from("articles").select("*");
     await writeTo(ARTICLES, "/articles", data);
     return json(data);
   }
@@ -50,9 +50,9 @@ router.get(
 
     console.log("fetching fresh article");
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const skybase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    const { data } = await supabase
+    const { data } = await skybase
       .from("articles")
       .select("*")
       .match({ id })
@@ -70,7 +70,7 @@ router.post(
   async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }, context) => {
     const updateCache = async () => {
       const { type, record, old_record } = request.content;
-      const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const skybase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       if (type === "INSERT" || type === "UPDATE") {
         await writeTo(ARTICLES, `/articles/${record.id}`, record);
@@ -80,7 +80,7 @@ router.post(
         await ARTICLES.delete(`/articles/${old_record.id}`);
       }
 
-      const { data: articles } = await supabase.from("articles").select("*");
+      const { data: articles } = await skybase.from("articles").select("*");
       await writeTo(ARTICLES, "/articles", articles);
       console.log("updated cache");
     };

@@ -1,4 +1,4 @@
-import type { HttpRequest, Statement, SupabaseJsQuery } from '@supabase/sql-to-rest'
+import type { HttpRequest, Statement, SkybaseJsQuery } from '@skybase/sql-to-rest'
 
 export type BaseResult = {
   statement: Statement
@@ -10,10 +10,10 @@ export type HttpResult = BaseResult &
     language: 'http' | 'curl'
   }
 
-export type SupabaseJsResult = BaseResult &
-  SupabaseJsQuery & {
-    type: 'supabase-js'
+export type SkybaseJsResult = BaseResult &
+  SkybaseJsQuery & {
+    type: 'skybase-js'
     language: 'js'
   }
 
-export type ResultBundle = HttpResult | SupabaseJsResult
+export type ResultBundle = HttpResult | SkybaseJsResult

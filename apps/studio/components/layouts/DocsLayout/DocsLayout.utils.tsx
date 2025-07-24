@@ -91,7 +91,7 @@ export const generateDocsMenu = (
         {
           name: 'Guides',
           key: 'guides',
-          url: `https://supabase.com/docs`,
+          url: `https://skybase.com/docs`,
           icon: <Book size={14} strokeWidth={2} />,
           items: [],
           isExternal: true,
@@ -99,7 +99,7 @@ export const generateDocsMenu = (
         {
           name: 'API Reference',
           key: 'api-reference',
-          url: `https://supabase.com/docs/guides/api`,
+          url: `https://skybase.com/docs/guides/api`,
           icon: <BookOpen size={14} strokeWidth={2} />,
           items: [],
           isExternal: true,

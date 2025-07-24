@@ -25,7 +25,7 @@ async function fetchReplicationPublications(
     handleError(error)
   }
 
-  return data.publications.filter((pub) => pub.name !== 'supabase_realtime')
+  return data.publications.filter((pub) => pub.name !== 'skybase_realtime')
 }
 
 export type ReplicationPublicationsData = Awaited<ReturnType<typeof fetchReplicationPublications>>

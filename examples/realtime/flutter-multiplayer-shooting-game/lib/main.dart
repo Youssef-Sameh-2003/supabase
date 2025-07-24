@@ -1,19 +1,19 @@
 import 'package:flame/game.dart';
 import 'package:flame_realtime_shooting/game/game.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
 import 'package:uuid/uuid.dart';
 
 void main() async {
-  await Supabase.initialize(
-    url: 'supabaseUrl',
-    anonKey: 'supabaseAnonKey',
+  await Skybase.initialize(
+    url: 'skybaseUrl',
+    anonKey: 'skybaseAnonKey',
     realtimeClientOptions: const RealtimeClientOptions(eventsPerSecond: 40),
   );
   runApp(const MyApp());
 }
 
-final supabase = Supabase.instance.client;
+final skybase = Skybase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -86,7 +86,7 @@ class _GamePageState extends State<GamePage> {
                 TextButton(
                   onPressed: () async {
                     Navigator.of(context).pop();
-                    await supabase.removeChannel(_gameChannel!);
+                    await skybase.removeChannel(_gameChannel!);
                     _openLobbyDialog();
                   },
                   child: const Text('Back to Lobby'),
@@ -120,7 +120,7 @@ class _GamePageState extends State<GamePage> {
 
               _game.startNewGame();
 
-              _gameChannel = supabase.channel(gameId,
+              _gameChannel = skybase.channel(gameId,
                   opts: const RealtimeChannelConfig(ack: true));
 
               _gameChannel!
@@ -174,7 +174,7 @@ class _LobbyDialogState extends State<_LobbyDialog> {
   void initState() {
     super.initState();
 
-    _lobbyChannel = supabase.channel(
+    _lobbyChannel = skybase.channel(
       'lobby',
       opts: const RealtimeChannelConfig(self: true),
     );
@@ -212,7 +212,7 @@ class _LobbyDialogState extends State<_LobbyDialog> {
 
   @override
   void dispose() {
-    supabase.removeChannel(_lobbyChannel);
+    skybase.removeChannel(_lobbyChannel);
     super.dispose();
   }
 

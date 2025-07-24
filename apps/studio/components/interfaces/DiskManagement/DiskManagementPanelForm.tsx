@@ -13,7 +13,7 @@ export function DiskManagementPanelForm() {
     <div id="disk-management">
       <FormHeader
         title="Disk Management"
-        docsUrl="https://supabase.com/docs/guides/platform/database-size#disk-management"
+        docsUrl="https://skybase.com/docs/guides/platform/database-size#disk-management"
       />
       <NoticeBar
         visible={true}

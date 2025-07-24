@@ -27,7 +27,7 @@
       }
     ]
   },
-  "exclude": ["node_modules", "supabase"],
+  "exclude": ["node_modules", "skybase"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

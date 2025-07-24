@@ -82,7 +82,7 @@ function FeaturesPage() {
   })
 
   const meta = {
-    title: 'Supabase Features',
+    title: 'Skybase Features',
     description:
       'From authentication to storage, everything you need to build and ship your next project.',
   }
@@ -106,7 +106,7 @@ function FeaturesPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.5, easing: 'easeOut' } }}
             >
-              <h1 className="h1 text-foreground !m-0">Supabase Features</h1>
+              <h1 className="h1 text-foreground !m-0">Skybase Features</h1>
               <p className="text-foreground-light text-base">
                 Everything you need <br className="md:hidden" /> to build and ship your next
                 project.

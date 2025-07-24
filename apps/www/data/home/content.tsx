@@ -25,7 +25,7 @@ export default () => {
       ),
       subheading: (
         <>
-          Supabase is the Postgres development platform. <br className="hidden md:block" />
+          Skybase is the Postgres development platform. <br className="hidden md:block" />
           Start your project with a Postgres database, Authentication, instant APIs, Edge Functions,
           Realtime subscriptions, Storage, and Vector embeddings.
         </>
@@ -33,7 +33,7 @@ export default () => {
       image: '/images/index/gradient-bg.png',
       cta: {
         label: 'Start your project',
-        link: 'https://app.supabase.com',
+        link: 'https://app.skybase.com',
       },
       secondaryCta: {
         label: 'Documentation',
@@ -54,7 +54,7 @@ export default () => {
           ),
           description_short: 'Instant ready-to-use Restful APIs.',
           label: '',
-          url: 'https://supabase.com/docs/guides/api',
+          url: 'https://skybase.com/docs/guides/api',
         },
       },
     },
@@ -71,14 +71,14 @@ export default () => {
           panel: ({ isDark }: { isDark: boolean }) => (
             <VideoWithHighlights
               video={{
-                title: 'Supabase dashboard table editor',
+                title: 'Skybase dashboard table editor',
                 sources: [
                   {
-                    src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/supabase-table-editor${isDark ? '' : '-light'}`,
+                    src: `https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/website/skybase-table-editor${isDark ? '' : '-light'}`,
                     type: 'video/mp4',
                   },
                 ],
-                poster: `/images/index/dashboard/supabase-table-editor${isDark ? '' : '-light'}.png`,
+                poster: `/images/index/dashboard/skybase-table-editor${isDark ? '' : '-light'}.png`,
               }}
             />
           ),
@@ -104,14 +104,14 @@ export default () => {
           panel: ({ isDark }: { isDark: boolean }) => (
             <VideoWithHighlights
               video={{
-                title: 'Supabase dashboard SQL editor',
+                title: 'Skybase dashboard SQL editor',
                 sources: [
                   {
-                    src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/supabase-sql-editor${isDark ? '' : '-light'}`,
+                    src: `https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/website/skybase-sql-editor${isDark ? '' : '-light'}`,
                     type: 'video/mp4',
                   },
                 ],
-                poster: `/images/index/dashboard/supabase-sql-editor${isDark ? '' : '-light'}.png`,
+                poster: `/images/index/dashboard/skybase-sql-editor${isDark ? '' : '-light'}.png`,
               }}
             />
           ),
@@ -136,14 +136,14 @@ export default () => {
           panel: ({ isDark }: { isDark: boolean }) => (
             <VideoWithHighlights
               video={{
-                title: 'Supabase dashboard Row Level Security',
+                title: 'Skybase dashboard Row Level Security',
                 sources: [
                   {
-                    src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/supabase-rls${isDark ? '' : '-light'}`,
+                    src: `https://xguihxuzqibwxjnimxev.skybase.co/storage/v1/object/public/videos/marketing/website/skybase-rls${isDark ? '' : '-light'}`,
                     type: 'video/mp4',
                   },
                 ],
-                poster: `/images/index/dashboard/supabase-rls${isDark ? '' : '-light'}.png`,
+                poster: `/images/index/dashboard/skybase-rls${isDark ? '' : '-light'}.png`,
               }}
             />
           ),
@@ -155,7 +155,7 @@ export default () => {
             },
             {
               label: '20+ Third-party Logins',
-              link: '/docs/guides/auth/social-login#set-up-a-social-provider-with-supabase-auth',
+              link: '/docs/guides/auth/social-login#set-up-a-social-provider-with-skybase-auth',
             },
             {
               label: 'Custom Access Policies via RLS',
@@ -171,12 +171,12 @@ export default () => {
     },
     twitterSocialSection: {
       heading: 'Join the community',
-      subheading: 'Discover what our community has to say about their Supabase experience.',
+      subheading: 'Discover what our community has to say about their Skybase experience.',
       ctas: (
         <>
           <Button asChild size="small" iconRight={<MessageCircle size={14} />} type="default">
             <Link
-              href={'https://github.com/supabase/supabase/discussions'}
+              href={'https://github.com/skybase/skybase/discussions'}
               target="_blank"
               tabIndex={-1}
               onClick={() =>
@@ -190,7 +190,7 @@ export default () => {
           </Button>
           <Button asChild type="default" size="small" iconRight={<MessageCircle size={14} />}>
             <Link
-              href={'https://discord.supabase.com/'}
+              href={'https://discord.skybase.com/'}
               target="_blank"
               tabIndex={-1}
               onClick={() =>

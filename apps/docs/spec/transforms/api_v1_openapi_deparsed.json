@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Supabase API (v1)",
-    "description": "Supabase API generated from the OpenAPI specification.<br>Visit [https://supabase.com/docs](https://supabase.com/docs) for a complete documentation.",
+    "title": "Skybase API (v1)",
+    "description": "Skybase API generated from the OpenAPI specification.<br>Visit [https://skybase.com/docs](https://skybase.com/docs) for a complete documentation.",
     "version": "1.0.0",
     "contact": {}
   },
@@ -650,7 +650,7 @@
                     "type": "string",
                     "format": "uri",
                     "description": "Template URL used to create the project from the CLI.",
-                    "example": "https://github.com/supabase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone"
+                    "example": "https://github.com/skybase/skybase/tree/master/examples/slack-clone/nextjs-slack-clone"
                   }
                 },
                 "required": ["db_pass", "name", "organization_id", "region"],
@@ -3871,7 +3871,7 @@
       "get": {
         "operationId": "v1-generate-typescript-types",
         "summary": "Generate TypeScript types",
-        "description": "Returns the TypeScript types of your schema for use with supabase-js.",
+        "description": "Returns the TypeScript types of your schema for use with skybase-js.",
         "parameters": [
           {
             "name": "included_schemas",
@@ -11889,7 +11889,7 @@
             "type": "string",
             "format": "uri",
             "description": "Template URL used to create the project from the CLI.",
-            "example": "https://github.com/supabase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone"
+            "example": "https://github.com/skybase/skybase/tree/master/examples/slack-clone/nextjs-slack-clone"
           }
         },
         "required": ["db_pass", "name", "organization_id", "region"],

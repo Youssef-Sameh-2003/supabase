@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { Download } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -67,7 +67,7 @@ const SOC2 = () => {
         <ConfirmationModal
           visible={isOpen}
           size="large"
-          title="Non-Disclosure Agreement to access Supabase's SOC2 Report"
+          title="Non-Disclosure Agreement to access Skybase's SOC2 Report"
           confirmLabel="I agree"
           confirmLabelLoading="Downloading"
           onCancel={() => setIsOpen(false)}
@@ -79,8 +79,8 @@ const SOC2 = () => {
             <li>The information that you are about to access is confidential.</li>
             <li>
               Your access to our SOC 2 materials is governed by confidentiality obligations
-              contained in the agreement between Supabase, Inc ("Supabase", "we", "our" or "us") and
-              the Supabase customer that has authorized you to access our platform to obtain this
+              contained in the agreement between Skybase, Inc ("Skybase", "we", "our" or "us") and
+              the Skybase customer that has authorized you to access our platform to obtain this
               information (our "Customer").
             </li>
             <li>

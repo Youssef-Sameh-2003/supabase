@@ -8,8 +8,8 @@ import aiEditorRules from './default/ai-editor-rules/registry-item.json' with { 
 import { platform } from './platform'
 
 export const registry = {
-  name: 'Supabase UI Library',
-  homepage: 'https://supabase.com/ui',
+  name: 'Skybase UI Library',
+  homepage: 'https://skybase.com/ui',
   items: [
     ...blocks,
     ...clients,

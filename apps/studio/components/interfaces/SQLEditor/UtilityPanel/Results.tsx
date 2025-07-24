@@ -2,7 +2,7 @@ import { Clipboard, Expand } from 'lucide-react'
 import { useState } from 'react'
 import DataGrid, { CalculatedColumn } from 'react-data-grid'
 
-import { handleCopyCell } from 'components/grid/SupabaseGrid.utils'
+import { handleCopyCell } from 'components/grid/SkybaseGrid.utils'
 import {
   cn,
   ContextMenu_Shadcn_,

@@ -1,9 +1,9 @@
-import type { PostgresColumn, PostgresRelationship, PostgresTable } from '@supabase/postgres-meta'
+import type { PostgresColumn, PostgresRelationship, PostgresTable } from '@skybase/postgres-meta'
 import dayjs from 'dayjs'
 import { compact, isEqual, isNull, isString, omitBy } from 'lodash'
 import type { Dictionary } from 'types'
 
-import { MAX_ARRAY_SIZE, MAX_CHARACTERS } from '@supabase/pg-meta/src/query/table-row-query'
+import { MAX_ARRAY_SIZE, MAX_CHARACTERS } from '@skybase/pg-meta/src/query/table-row-query'
 import { minifyJSON, tryParseJson } from 'lib/helpers'
 import { ForeignKey } from '../ForeignKeySelector/ForeignKeySelector.types'
 import {

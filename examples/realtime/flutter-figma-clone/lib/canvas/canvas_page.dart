@@ -7,7 +7,7 @@ import 'package:canvas/models/profile.dart';
 import 'package:canvas/models/project.dart';
 import 'package:canvas/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_auth_ui/supabase_auth_ui.dart';
+import 'package:skybase_auth_ui/skybase_auth_ui.dart';
 
 /// Different input modes users can perform
 enum _DrawMode {
@@ -46,7 +46,7 @@ class _CanvasPageState extends State<CanvasPage> {
   /// Holds the list of objects drawn on the canvas
   final Map<String, CanvasObject> _canvasObjects = {};
 
-  /// Supabase realtime channel to communicate to other clients
+  /// Skybase realtime channel to communicate to other clients
   late final RealtimeChannel _canvasChanel;
 
   /// Username of each users
@@ -84,7 +84,7 @@ class _CanvasPageState extends State<CanvasPage> {
   Future<void> _initialize() async {
     final projectId = widget.projectId;
     // Get the project data
-    _project = await supabase
+    _project = await skybase
         .from('projects')
         .select('*, profiles(*)')
         .eq('id', widget.projectId)
@@ -92,16 +92,16 @@ class _CanvasPageState extends State<CanvasPage> {
         .withConverter(Project.fromJson);
 
     // Get the user's username
-    final profileMap = await supabase
+    final profileMap = await skybase
         .from('profiles')
         .select('username')
-        .eq('id', supabase.auth.currentUser!.id)
+        .eq('id', skybase.auth.currentUser!.id)
         .maybeSingle();
 
     _myUsername = profileMap?['username'] as String;
 
     // Start listening to broadcast messages to display other users' cursors and objects.
-    _canvasChanel = supabase
+    _canvasChanel = skybase
         .channel(
           projectId,
           opts: const RealtimeChannelConfig(
@@ -133,7 +133,7 @@ class _CanvasPageState extends State<CanvasPage> {
       }
     });
 
-    final initialData = await supabase
+    final initialData = await skybase
         .from('canvas_objects')
         .select()
         .eq('project_id', widget.projectId)
@@ -254,12 +254,12 @@ class _CanvasPageState extends State<CanvasPage> {
       _currentlyDrawingObjectId = null;
     });
 
-    // Save whatever was drawn to Supabase DB
+    // Save whatever was drawn to Skybase DB
     if (drawnObjectId == null) {
       return;
     }
 
-    await supabase.from('canvas_objects').upsert({
+    await skybase.from('canvas_objects').upsert({
       'id': drawnObjectId,
       'project_id': widget.projectId,
       'object': _canvasObjects[drawnObjectId]!.toJson(),
@@ -345,7 +345,7 @@ class _CanvasPageState extends State<CanvasPage> {
                                 TextButton(
                                   onPressed: () async {
                                     final username = _addUserController.text;
-                                    final profileMap = await supabase
+                                    final profileMap = await skybase
                                         .from('profiles')
                                         .select()
                                         .eq('username', username)
@@ -358,7 +358,7 @@ class _CanvasPageState extends State<CanvasPage> {
                                     }
                                     final profile =
                                         Profile.fromJson(profileMap);
-                                    await supabase
+                                    await skybase
                                         .from('project_members')
                                         .insert({
                                       'project_id': widget.projectId,

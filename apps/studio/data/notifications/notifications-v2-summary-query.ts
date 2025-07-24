@@ -1,4 +1,4 @@
-import type { Notification } from '@supabase/shared-types/out/notifications'
+import type { Notification } from '@skybase/shared-types/out/notifications'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
 import { get, handleError } from 'data/fetchers'

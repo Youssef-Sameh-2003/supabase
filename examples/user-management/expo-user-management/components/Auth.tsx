@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Alert, StyleSheet, View } from 'react-native'
-import { supabase } from '../lib/supabase'
+import { skybase } from '../lib/skybase'
 import { Button, Input } from '@rneui/themed'
 
 export default function Auth() {
@@ -11,7 +11,7 @@ export default function Auth() {
   async function signInWithEmail() {
     setLoading(true)
     console.log({ email, password })
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await skybase.auth.signInWithPassword({
       email: email,
       password: password,
     })
@@ -22,7 +22,7 @@ export default function Auth() {
 
   async function signUpWithEmail() {
     setLoading(true)
-    const { error } = await supabase.auth.signUp({
+    const { error } = await skybase.auth.signUp({
       email: email,
       password: password,
     })

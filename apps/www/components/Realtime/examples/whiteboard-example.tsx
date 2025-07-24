@@ -6,13 +6,13 @@ const instanceId = Math.random().toString(36).substring(2, 9)
 
 const appJsCode = `import { useEffect, useState, useRef } from 'react';
 import './styles.css';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@skybase/skybase-js';
 import { Trash2 } from "lucide-react";
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Initialize Skybase client
+const skybaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
+const skybaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+const skybase = createClient(skybaseUrl, skybaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
 const CHANNEL = 'whiteboard-example-${instanceId}';
@@ -123,7 +123,7 @@ export default function App() {
     pointsBuffer.current = [];
   };
   
-  // Set up Supabase channel
+  // Set up Skybase channel
   useEffect(() => {
     // Generate a random username
     const adjectives = ['Happy', 'Clever', 'Brave', 'Bright', 'Kind'];
@@ -134,7 +134,7 @@ export default function App() {
     setUsername(randomName);
     
     // Subscribe to channel
-    const channel = supabase.channel(CHANNEL);
+    const channel = skybase.channel(CHANNEL);
     channelRef.current = channel;
     
     // Handle presence for user list
@@ -413,7 +413,7 @@ const layoutProps: ExampleLayoutProps = {
   files: whiteboardFiles,
   title: 'Whiteboard',
   description:
-    "A collaborative whiteboard that uses Supabase Realtime's broadcast channel to synchronize drawing strokes and cursor positions between multiple users in real-time.",
+    "A collaborative whiteboard that uses Skybase Realtime's broadcast channel to synchronize drawing strokes and cursor positions between multiple users in real-time.",
 }
 
 export default layoutProps

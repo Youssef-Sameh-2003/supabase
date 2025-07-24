@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import { ExternalLink } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
@@ -69,7 +69,7 @@ const CostControl = ({}: CostControlProps) => {
               <p className="text-sm text-foreground-light m-0">More information</p>
               <div>
                 <Link
-                  href="https://supabase.com/docs/guides/platform/cost-control#spend-cap"
+                  href="https://skybase.com/docs/guides/platform/cost-control#spend-cap"
                   target="_blank"
                   rel="noreferrer"
                 >

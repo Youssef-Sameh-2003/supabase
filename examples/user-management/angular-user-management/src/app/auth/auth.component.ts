@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { SupabaseService } from '../supabase.service';
+import { SkybaseService } from '../skybase.service';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +15,7 @@ export class AuthComponent implements OnInit {
   });
 
   constructor(
-    private readonly supabase: SupabaseService,
+    private readonly skybase: SkybaseService,
     private readonly formBuilder: FormBuilder
   ) {}
 
@@ -25,7 +25,7 @@ export class AuthComponent implements OnInit {
     try {
       this.loading = true;
       const email = this.signInForm.value.email as string;
-      const { error } = await this.supabase.signIn(email);
+      const { error } = await this.skybase.signIn(email);
       if (error) throw error;
       alert('Check your email for the login link!');
     } catch (error) {

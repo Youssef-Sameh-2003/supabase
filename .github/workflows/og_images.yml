@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'supabase/functions/og-images/**'
+      - 'skybase/functions/og-images/**'
   workflow_dispatch:
 
 permissions:
@@ -23,9 +23,9 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Setup the Supabase CLI
-        uses: supabase/setup-cli@v1
+      - name: Setup the Skybase CLI
+        uses: skybase/setup-cli@v1
         with:
           version: latest
 
-      - run: supabase functions deploy og-images --project-ref $PROJECT_ID --no-verify-jwt
+      - run: skybase functions deploy og-images --project-ref $PROJECT_ID --no-verify-jwt

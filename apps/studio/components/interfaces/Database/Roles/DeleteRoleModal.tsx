@@ -1,4 +1,4 @@
-import type { PostgresRole } from '@supabase/postgres-meta'
+import type { PostgresRole } from '@skybase/postgres-meta'
 import { toast } from 'sonner'
 import { Modal } from 'ui'
 

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supabase_quickstart/pages/account_page.dart';
-import 'package:supabase_quickstart/pages/login_page.dart';
+import 'package:skybase_flutter/skybase_flutter.dart';
+import 'package:skybase_quickstart/pages/account_page.dart';
+import 'package:skybase_quickstart/pages/login_page.dart';
 
 Future<void> main() async {
   await dotenv.load();
 
-  await Supabase.initialize(
+  await Skybase.initialize(
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
   runApp(const MyApp());
 }
 
-final supabase = Supabase.instance.client;
+final skybase = Skybase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Supabase Flutter',
+      title: 'Skybase Flutter',
       theme: ThemeData.dark().copyWith(
         primaryColor: Colors.green,
         textButtonTheme: TextButtonThemeData(
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: supabase.auth.currentSession == null
+      home: skybase.auth.currentSession == null
           ? const LoginPage()
           : const AccountPage(),
     );

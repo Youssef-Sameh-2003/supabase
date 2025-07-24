@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skybase-client-react",
+  "type": "registry:lib",
+  "title": "Skybase Client for React",
+  "description": "",
+  "dependencies": [
+    "@skybase/skybase-js@latest"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/clients/react/lib/skybase/client.ts",
+      "content": "import { createClient as createSkybaseClient } from '@skybase/skybase-js'\n\nexport function createClient() {\n  return createSkybaseClient(\n    import.meta.env.VITE_SUPABASE_URL!,\n    import.meta.env.VITE_SUPABASE_ANON_KEY!\n  )\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "docs": "You'll need to add a `.env` file with the following environment variables to your project: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`."
+}

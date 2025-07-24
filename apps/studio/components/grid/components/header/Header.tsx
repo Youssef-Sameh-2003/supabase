@@ -1,4 +1,4 @@
-import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { PermissionAction } from '@skybase/shared-types/out/constants'
 import saveAs from 'file-saver'
 import { ArrowUp, ChevronDown, FileText, Trash } from 'lucide-react'
 import Link from 'next/link'
@@ -46,7 +46,7 @@ export const MAX_EXPORT_ROW_COUNT_MESSAGE = (
   <>
     Sorry! We're unable to support exporting row counts larger than $
     {MAX_EXPORT_ROW_COUNT.toLocaleString()} at the moment. Alternatively, you may consider using
-    <Link href="https://supabase.com/docs/reference/cli/supabase-db-dump" target="_blank">
+    <Link href="https://skybase.com/docs/reference/cli/skybase-db-dump" target="_blank">
       pg_dump
     </Link>{' '}
     via our CLI instead.
