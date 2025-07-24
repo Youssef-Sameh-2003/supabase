@@ -1,6 +1,6 @@
 'use client'
 
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/client'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/client'
 import { Button } from '@/registry/default/components/ui/button'
 import { useRouter } from 'next/navigation'
 

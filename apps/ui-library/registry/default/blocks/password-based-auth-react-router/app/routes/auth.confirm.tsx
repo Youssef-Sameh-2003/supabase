@@ -1,4 +1,4 @@
-import { createClient } from '@/registry/default/clients/react-router/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/react-router/lib/skybase/server'
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { type LoaderFunctionArgs, redirect } from 'react-router'
 

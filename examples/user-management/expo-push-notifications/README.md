@@ -7,7 +7,7 @@
 - [Create a new Supabase project](https://database.new)
 - Link your project: `supabase link --project-ref your-supabase-project-ref`
 - Start supabase locally: `supabase start`
-- Push up the schema: `supabase db push` (schema is defined in [supabase/migrations](./supabase/migrations/))
+- Push up the schema: `supabase db push` (schema is defined in [supabase/migrations](./skybase/migrations/))
 
 ## Expo Setup
 
@@ -31,7 +31,7 @@ To utilize Expo's push notification service, you must configure your app by inst
 
 ## Deploy the Skybase Edge Function
 
-The database webhook handler to send push notifications is located in [supabase/functions/push/index.ts](./supabase/functions/push/index.ts). Deploy the function to your linked project and set the `EXPO_ACCESS_TOKEN` secret.
+The database webhook handler to send push notifications is located in [supabase/functions/push/index.ts](./skybase/functions/push/index.ts). Deploy the function to your linked project and set the `EXPO_ACCESS_TOKEN` secret.
 
 1. `supabase functions deploy push`
 1. `supabase secrets set --env-file .env.local`

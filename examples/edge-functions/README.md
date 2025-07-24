@@ -2,7 +2,7 @@
 
 ## What are Skybase Edge Functions?
 
-[Supabase Edge Functions](https://supabase.com/edge-functions) are written in TypeScript, run via Deno, and deployed with the Supabase CLI. Please [download](https://github.com/supabase/cli#install-the-cli) the latest version of the Supabase CLI, or [upgrade](https://github.com/supabase/cli#install-the-cli) it if you have it already installed.
+[Supabase Edge Functions](https://supabase.com/edge-functions) are written in TypeScript, run via Deno, and deployed with the Supabase CLI. Please [download](https://github.co./skybase/cli#install-the-cli) the latest version of the Supabase CLI, or [upgrade](https://github.co./skybase/cli#install-the-cli) it if you have it already installed.
 
 ## Example Functions
 
@@ -11,9 +11,9 @@ We're constantly adding new Function Examples, [check our docs](https://supabase
 ## Develop locally
 
 - Run `supabase start` (make sure your Docker daemon is running.)
-- Run `cp ./supabase/.env.local.example ./supabase/.env.local` to create your local `.env` file.
+- Run `cp ./skybase/.env.local.example ./skybase/.env.local` to create your local `.env` file.
 - Set the required variables for the corresponding edge functions in the `.env.local` file.
-- Run `supabase functions serve --env-file ./supabase/.env.local --no-verify-jwt`
+- Run `supabase functions serve --env-file ./skybase/.env.local --no-verify-jwt`
 - Run the CURL command in the example function, or use the [invoke method](https://supabase.com/docs/reference/javascript/invoke) on the Supabase client or use the test client [app](./app/).
 
 ## Test Client
@@ -40,7 +40,7 @@ Note: when testing locally, the select dropdown doesn't have any effect, and inv
   - Within your project root run `supabase link --project-ref your-project-ref`
 - Set up your secrets
 
-  - Run `supabase secrets set --env-file ./supabase/.env.local` to set the environment variables.
+  - Run `supabase secrets set --env-file ./skybase/.env.local` to set the environment variables.
 
   (This is assuming your local and production secrets are the same. The recommended way is to create a separate `.env` file for storing production secrets, and then use it to set the environment variables while deploying.)
 
@@ -93,7 +93,7 @@ jobs:
       - run: supabase functions deploy --project-ref $PROJECT_ID
 ```
 
-Since Supabase CLI [v1.62.0](https://github.com/supabase/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
+Since Supabase CLI [v1.62.0](https://github.co./skybase/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
 
 Individual function configuration like [JWT verification](/docs/reference/cli/config#functions.function_name.verify_jwt) and [import map location](/docs/reference/cli/config#functions.function_name.import_map) can be set via the `config.toml` file.
 
@@ -106,4 +106,4 @@ verify_jwt = false
 
 \o/ That's it, you can now invoke your Supabase Function via the [`supabase-js`](https://supabase.com/docs/reference/javascript/invoke) and [`supabase-dart`](https://supabase.com/docs/reference/dart/invoke) client libraries. (More client libraries coming soon. Check the [supabase-community](https://github.com/supabase-community#client-libraries) org for details).
 
-For more info on Supabase Functions, check out the [docs](https://supabase.com/docs/guides/functions) and the [examples](https://github.com/supabase/supabase/tree/master/examples/edge-functions).
+For more info on Supabase Functions, check out the [docs](https://supabase.com/docs/guides/functions) and the [examples](https://github.co./skybase/supabase/tree/master/examples/edge-functions).

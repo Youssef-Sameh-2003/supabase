@@ -10,7 +10,7 @@ This is a full-stack Slack clone example using:
 
 ## Demo
 
-- CodeSandbox: https://codesandbox.io/s/github/supabase/supabase/tree/master/examples/nextjs-slack-clone
+- CodeSandbox: https://codesandbox.io/s/githu./skybase/supabase/tree/master/examples/nextjs-slack-clone
 
 ![Demo animation gif](./public/slack-clone-demo.gif)
 
@@ -114,4 +114,4 @@ We can use these details to provide fine-grained control over what each user can
 
 - [Supabase](https://supabase.com)
 
-Supabase is open source, we'd love for you to follow along and get involved at https://github.com/supabase/supabase
+Supabase is open source, we'd love for you to follow along and get involved at https://github.co./skybase/supabase

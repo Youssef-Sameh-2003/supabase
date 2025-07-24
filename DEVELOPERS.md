@@ -28,7 +28,7 @@
 
 Thank you for your interest in [Skybase](https://supabase.com) and your willingness to contribute!
 
-To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/supabase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/supabase/supabase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
+To ensure a positive and inclusive environment, please read our [code of conduct](https://github.co./skybase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.co./skybase/supabase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
@@ -48,7 +48,7 @@ All of our apps are in this [Turborepo](https://turborepo.org/docs), which make 
 
 ### Fork the repo
 
-To contribute code to [Skybase](https://supabase.com), you must fork the [Supabase repo](https://github.com/supabase/supabase).
+To contribute code to [Skybase](https://supabase.com), you must fork the [Supabase repo](https://github.co./skybase/supabase).
 
 ### Clone the repo
 
@@ -161,7 +161,7 @@ Remember to keep the Docker application open as long as you're working with your
 
 After making any changes, open a pull request. Once you submit your pull request, the Supabase team will review it with you.
 
-Once your PR has been merged, you will be proudly listed as a contributor in the [contributor chart](https://github.com/supabase/supabase/graphs/contributors)!
+Once your PR has been merged, you will be proudly listed as a contributor in the [contributor chart](https://github.co./skybase/supabase/graphs/contributors)!
 
 ## Issue assignment
 
@@ -177,36 +177,36 @@ We review PRs in the order of their submission. We try to accept the earliest on
 
 ### Add a redirect
 
-Create a new entry in the [`redirects.js`](https://github.com/supabase/supabase/blob/master/apps/www/lib/redirects.js) file in our main site.
+Create a new entry in the [`redirects.js`](https://github.co./skybase/supabase/blob/master/apps/www/lib/redirects.js) file in our main site.
 
 ---
 
 ### Federated docs
 
-We support "federating" docs, meaning doc content can come directly from external repos other than [`supabase/supabase`](https://github.com/supabase/supabase).
+We support "federating" docs, meaning doc content can come directly from external repos other than [`supabase/supabase`](https://github.co./skybase/supabase).
 
-- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Supabase docs (eg. [`supabase/vecs`](https://github.com/supabase/vecs)).
+- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Supabase docs (eg. [`supabase/vecs`](https://github.co./skybase/vecs)).
 - No duplication or manual steps required - fetches and generates automatically as part of the docs build pipeline
 - It's flexible - you can "embed" external docs nearly anywhere at any level in Supabase docs, but they will feel native
 - If you are maintaining a repo containing docs that you think could also live in Supabase docs, feel free to create an issue and we can work together to integrate
 
 Federated docs work using Next.js's build pipeline. We use `getStaticProps()` to fetch remote documentation (ie. markdown) at build time which is processed and passed to the respective page within the docs.
 
-See the [Vecs Python source code](https://github.com/supabase/supabase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`supabase/vecs`](https://github.com/supabase/vecs). Use this as a starting point for federating other docs.
+See the [Vecs Python source code](https://github.co./skybase/supabase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`supabase/vecs`](https://github.co./skybase/vecs). Use this as a starting point for federating other docs.
 
 Some things to consider:
 
-- Links will often need to be transformed. For example if you are bringing in external markdown content, they may contain relative links that may not translate 1-to-1 after rendering in the Supabase docs. Use the [Link Transform](https://github.com/supabase/supabase/blob/master/apps/docs/lib/mdx/plugins/rehypeLinkTransform.ts) rehype plugin to transform links.
-- External markdown may contain syntax extensions that Supabase docs don't understand by default (eg. [mkdocs-material extensions](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown)). We've built a few remark plugins to support these extensions (eg. [MkDocs Admonition](https://github.com/supabase/supabase/blob/master/apps/docs/lib/mdx/plugins/remarkAdmonition.ts)). If there is a markdown extension that you need that isn't built yet, feel free to open an issue and we can work together to create it.
+- Links will often need to be transformed. For example if you are bringing in external markdown content, they may contain relative links that may not translate 1-to-1 after rendering in the Supabase docs. Use the [Link Transform](https://github.co./skybase/supabase/blob/master/apps/docs/lib/mdx/plugins/rehypeLinkTransform.ts) rehype plugin to transform links.
+- External markdown may contain syntax extensions that Supabase docs don't understand by default (eg. [mkdocs-material extensions](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown)). We've built a few remark plugins to support these extensions (eg. [MkDocs Admonition](https://github.co./skybase/supabase/blob/master/apps/docs/lib/mdx/plugins/remarkAdmonition.ts)). If there is a markdown extension that you need that isn't built yet, feel free to open an issue and we can work together to create it.
 
 ---
 
 ## Community channels
 
-If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.supabase.com/) or the [Github Discussions](https://github.com/supabase/supabase/discussions). We are here to help!
+If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.supabase.com/) or the [Github Discussions](https://github.co./skybase/supabase/discussions). We are here to help!
 
 ## Contributors
 
-<a href="https://github.com/supabase/supabase/graphs/contributors">
-   <img src="https://contributors.deno.dev/supabase/supabase?height=1200&width=1200&count=90" width="1200" height="1200" alt="contributors">
+<a href="https://github.co./skybase/supabase/graphs/contributors">
+   <img src="https://contributors.deno.de./skybase/supabase?height=1200&width=1200&count=90" width="1200" height="1200" alt="contributors">
 </a>

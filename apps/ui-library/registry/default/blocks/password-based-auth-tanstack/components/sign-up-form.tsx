@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { createClient } from '@/registry/default/clients/tanstack/lib/supabase/client'
+import { createClient } from '@/registry/default/clients/tanstack/lib/skybase/client'
 import { Button } from '@/registry/default/components/ui/button'
 import {
   Card,

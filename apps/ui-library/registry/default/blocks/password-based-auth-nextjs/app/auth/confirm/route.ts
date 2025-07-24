@@ -1,4 +1,4 @@
-import { createClient } from '@/registry/default/clients/nextjs/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/nextjs/lib/skybase/server'
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { redirect } from 'next/navigation'
 import { type NextRequest } from 'next/server'

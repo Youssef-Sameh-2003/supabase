@@ -1,6 +1,6 @@
 'use client'
 
-import { createClient } from '@/registry/default/fixtures/lib/supabase/client'
+import { createClient } from '@/registry/default/fixtures/lib/skybase/client'
 import { PostgrestQueryBuilder } from '@supabase/postgrest-js'
 import { SupabaseClient } from '@supabase/supabase-js'
 import { useEffect, useRef, useSyncExternalStore } from 'react'

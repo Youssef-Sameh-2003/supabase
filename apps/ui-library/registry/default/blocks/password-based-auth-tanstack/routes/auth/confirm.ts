@@ -1,4 +1,4 @@
-import { createClient } from '@/registry/default/clients/tanstack/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/tanstack/lib/skybase/server'
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { createFileRoute, redirect } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'

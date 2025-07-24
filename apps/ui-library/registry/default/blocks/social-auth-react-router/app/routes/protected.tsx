@@ -1,4 +1,4 @@
-import { createClient } from '@/registry/default/clients/react-router/lib/supabase/server'
+import { createClient } from '@/registry/default/clients/react-router/lib/skybase/server'
 import { Button } from '@/registry/default/components/ui/button'
 import { type LoaderFunctionArgs, redirect, useLoaderData } from 'react-router'
 

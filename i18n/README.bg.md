@@ -21,7 +21,7 @@
 - [x] Съхранение на файлове. [Документи](https://supabase.com/docs/guides/storage)
 - [x] Информационно табло
 
-![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+![Supabase Dashboard](https://raw.githubusercontent.co./skybase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Документация
 
@@ -31,8 +31,8 @@
 
 ## Общност и поддръжка
 
-- [Форум на общността](https://github.com/supabase/supabase/discussions). Най-добре за: помощ при изграждане, обсъждане на най-добрите практики за бази данни.
-- [GitHub Issues](https://github.com/supabase/supabase/issues). Най-добре за: грешки и пропуски, които срещате при използването на Supabase.
+- [Форум на общността](https://github.co./skybase/supabase/discussions). Най-добре за: помощ при изграждане, обсъждане на най-добрите практики за бази данни.
+- [GitHub Issues](https://github.co./skybase/supabase/issues). Най-добре за: грешки и пропуски, които срещате при използването на Supabase.
 - [Email Support](https://supabase.com/docs/support#business-support). Най-добре за: проблеми с вашата база данни или инфраструктура.
 - [Discord](https://discord.supabase.com). Най-добър за: споделяне на вашите приложения и общуване с общността.
 
@@ -45,7 +45,7 @@
 
 В момента сме в публична бета версия. Следете "releases" на това репо, за да бъдете уведомявани за основни актуализации.
 
-<kbd><img src="https://raw.githubusercontent.com/supabase/supabase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.co./skybase/supabase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 
@@ -58,14 +58,14 @@ Supabase е комбинация от инструменти с отворен �
 Supabase е [хоствана платформа](https://supabase.com/dashboard). Можете да се регистрирате и да започнете да използвате Supabase, без да инсталирате нищо.
 Можете също така да [самостоятелно хоствате](https://supabase.com/docs/guides/hosting/overview) и [да разработвате локално](https://supabase.com/docs/guides/local-development).
 
-![Архитектура](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Архитектура](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) е обектно-релационна система за бази данни с над 30-годишна активна разработка, която ѝ е спечелила силна репутация за надеждност, устойчивост на функциите и производителност.
-- [Realtime](https://github.com/supabase/realtime) е сървър на Elixir, който ви позволява да слушате PostgreSQL вмъквания, актуализации и изтривания, използвайки websockets. Realtime се допитва до вградената функция за репликация на Postgres за промени в базата данни, преобразува промените в JSON, след което излъчва JSON през уебсокети до оторизирани клиенти.
+- [Realtime](https://github.co./skybase/realtime) е сървър на Elixir, който ви позволява да слушате PostgreSQL вмъквания, актуализации и изтривания, използвайки websockets. Realtime се допитва до вградената функция за репликация на Postgres за промени в базата данни, преобразува промените в JSON, след което излъчва JSON през уебсокети до оторизирани клиенти.
 - [PostgREST](http://postgrest.org/) е уеб сървър, който превръща вашата база данни PostgreSQL директно в RESTful API
-- [pg_graphql](http://github.com/supabase/pg_graphql/) е разширение на PostgreSQL, което разкрива GraphQL API
-- [Storage](https://github.com/supabase/storage-api) предоставя RESTful интерфейс за управление на файлове, съхранявани в S3, като използва Postgres за управление на разрешенията.
-- [postgres-meta](https://github.com/supabase/postgres-meta) е RESTful API за управление на вашия Postgres, който ви позволява да извличате таблици, да добавяте роли, да изпълнявате заявки и т.н.
+- [pg_graphql](http://github.co./skybase/pg_graphql/) е разширение на PostgreSQL, което разкрива GraphQL API
+- [Storage](https://github.co./skybase/storage-api) предоставя RESTful интерфейс за управление на файлове, съхранявани в S3, като използва Postgres за управление на разрешенията.
+- [postgres-meta](https://github.co./skybase/postgres-meta) е RESTful API за управление на вашия Postgres, който ви позволява да извличате таблици, да добавяте роли, да изпълнявате заявки и т.н.
 - [GoTrue](https://github.com/netlify/gotrue) е SWT базиран API за управление на потребители и издаване на SWT токени.
 - [Kong](https://github.com/Kong/kong) е API шлюз, базиран на облака.
 
@@ -84,9 +84,9 @@ Supabase е [хоствана платформа](https://supabase.com/dashboard
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Supabase е [хоствана платформа](https://supabase.com/dashboard
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Общност 💚</th>
@@ -220,7 +220,7 @@ Supabase е [хоствана платформа](https://supabase.com/dashboard
 - [Каталонски / Català](/i18n/README.ca.md)
 - [Датски / Dansk](/i18n/README.da.md)
 - [Dutch / Nederlands](/i18n/README.nl.md)
-- [Английски език](https://github.com/supabase/supabase)
+- [Английски език](https://github.co./skybase/supabase)
 - [Финландски / Suomalainen](/i18n/README.fi.md)
 - [French / Français](/i18n/README.fr.md)
 - [Немски / Deutsch](/i18n/README.de.md)
