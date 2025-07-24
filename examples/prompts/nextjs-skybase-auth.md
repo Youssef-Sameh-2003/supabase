@@ -1,12 +1,12 @@
 ---
 # Specify the following for Cursor rules
-description: Guidelines for writing Next.js apps with Supabase Auth
+description: Guidelines for writing Next.js apps with Skybase Auth
 alwaysApply: false
 ---
 
-# Bootstrap Next.js app with Supabase Auth
+# Bootstrap Next.js app with Skybase Auth
 
-## Overview of implementing Supabase Auth SSR
+## Overview of implementing Skybase Auth SSR
 
 1. Install @supabase/supabase-js and @supabase/ssr packages.
 2. Set up environment variables.
