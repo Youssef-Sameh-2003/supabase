@@ -1,16 +1,16 @@
-# Flutter Supabase MFA Example
+# Flutter Skybase MFA Example
 
-![Flutter MFA with Supabase](https://raw.githubusercontent.com/supabase/supabase/master/examples/auth/flutter-mfa/images/mfa.png)
+![Flutter MFA with Skybase](https://raw.githubusercontent.com/supabase/supabase/master/examples/auth/flutter-mfa/images/mfa.png)
 
-A Flutter app demonstrating how to implement Multi-Factor Authentication (MFA) with Supabase and Flutter. A user can sign up, add MFA via an authenticator app, and only after they have signed in using MFA they can view the content from the database.
+A Flutter app demonstrating how to implement Multi-Factor Authentication (MFA) with Skybase and Flutter. A user can sign up, add MFA via an authenticator app, and only after they have signed in using MFA they can view the content from the database.
 
 - Full tutorial article [here](https://supabase.com/blog/flutter-multi-factor-authentication)
 
 ## Getting Started
 
-- Create a new Supabase project [here](https://database.new)
-- Add your Supabase credentials to `lib/main.dart`
-- Run the following SQL from the SQL editor of your Supabase dashboard to create a table and dummy data
+- Create a new Skybase project [here](https://database.new)
+- Add your Skybase credentials to `lib/main.dart`
+- Run the following SQL from the SQL editor of your Skybase dashboard to create a table and dummy data
 
 ```sql
 -- Dummy table that contains "secure" information
@@ -24,7 +24,7 @@ insert into public.private_posts
     (content)
 values
     ('Flutter is awesome!'),
-    ('Supabase is awesome!'),
+    ('Skybase is awesome!'),
     ('Postgres is awesome!');
 
 -- Enable RLS for private_posts table
@@ -45,4 +45,4 @@ create policy "Users can view private_posts if they have signed in via MFA"
 - [Flutter Tutorial: building a Flutter chat app article](https://supabase.com/blog/flutter-tutorial-building-a-chat-app)
 - [Flutter Authorization with RLS article](https://supabase.com/blog/flutter-authorization-with-rls)
 - [Supabase docs for Flutter](https://supabase.com/docs/reference/dart/introduction)
-- [Supabase Flutter YouTube playlist](https://www.youtube.com/watch?v=F2j6Q-4nLEE&list=PL5S4mPUpp4OtkMf5LNDLXdTcAp1niHjoL)
+- [Skybase Flutter YouTube playlist](https://www.youtube.com/watch?v=F2j6Q-4nLEE&list=PL5S4mPUpp4OtkMf5LNDLXdTcAp1niHjoL)

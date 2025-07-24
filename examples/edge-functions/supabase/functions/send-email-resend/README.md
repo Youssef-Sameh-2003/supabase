@@ -1,4 +1,4 @@
-# Resend with Supabase Edge Functions
+# Resend with Skybase Edge Functions
 
 This example shows how to use Resend with [Supabase Edge Functions](https://supabase.com/docs/guides/functions).
 
@@ -27,7 +27,7 @@ supabase functions serve --no-verify-jwt --env-file ./supabase/.env.local
 
 GET http://localhost:54321/functions/v1/send-email-resend
 
-3. Deploy function to Supabase:
+3. Deploy function to Skybase:
 
 ```sh
 supabase functions deploy resend --no-verify-jwt

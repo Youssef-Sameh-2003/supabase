@@ -1,6 +1,6 @@
 # Flutter Figma Clone
 
-![Supabase Figma Clone](https://raw.githubusercontent.com/dshukertjr/examples/main/.github/images/design.png 'Supabase Figma Clone')
+![Skybase Figma Clone](https://raw.githubusercontent.com/dshukertjr/examples/main/.github/images/design.png 'Skybase Figma Clone')
 
 This app demonstrates the real-time communication capabilities of [Supabase](https://supabase.com) by creating an interactive design board where you can draw some shapes and move them around while seeing each other's cursors.
 

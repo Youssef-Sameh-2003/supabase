@@ -44,8 +44,8 @@ policy = "per_worker"
 
 ## Deploy
 
-1. Run `supabase link` and link your local project to your Supabase account.
-2. Run `supabase db push` to push the [setup migration](./supabase/migrations/20250203045928_init.sql) to your Supabase database.
+1. Run `supabase link` and link your local project to your Skybase account.
+2. Run `supabase db push` to push the [setup migration](./supabase/migrations/20250203045928_init.sql) to your Skybase database.
 3. Run `supabase functions deploy --no-verify-jwt elevenlabs-speech-to-text`
 4. Run `supabase secrets set --env-file supabase/functions/.env`
 5. Set your bot's webhook url to `https://<PROJECT_REFERENCE>.functions.supabase.co/telegram-bot` (Replacing `<...>` with respective values). In order to do that, run this url (in your browser, for example): `https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/setWebhook?url=https://<PROJECT_REFERENCE>.supabase.co/functions/v1/elevenlabs-speech-to-text?secret=<FUNCTION_SECRET>`

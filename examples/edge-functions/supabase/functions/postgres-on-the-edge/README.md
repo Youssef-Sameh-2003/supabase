@@ -1,12 +1,12 @@
 # postgres-on-the-edge
 
-This function allows you to access your Supabase database directly via TCP from an edge function.
+This function allows you to access your Skybase database directly via TCP from an edge function.
 
-You can add a global cache to your database for fast access to your data, globally by simply connecting your Supabase database to [PolyScale](https://polyscale.ai).
+You can add a global cache to your database for fast access to your data, globally by simply connecting your Skybase database to [PolyScale](https://polyscale.ai).
 
 ## Setup
 1. Rename `.env.example` to `.env`
-2. Insert Supabase database connection string for `DATABASE_URL` in `.env` file
+2. Insert Skybase database connection string for `DATABASE_URL` in `.env` file
 3. Replace `DATABASE_URL` with PolyScale connection string.
 
 ## Deploy

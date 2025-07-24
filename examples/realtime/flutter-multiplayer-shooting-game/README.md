@@ -8,7 +8,7 @@ You can find a step by step guide on how to build this app on [How to build a re
 
 ### 1. Create new project
 
-Sign up to Supabase - [app.supabase.io](https://app.supabase.io) and create a new project. Wait for your database to start.
+Sign up to Skybase - [app.supabase.io](https://app.supabase.io) and create a new project. Wait for your database to start.
 
 ### 2. Get the URL and Key
 
@@ -16,19 +16,19 @@ Go to the Project Settings (the cog icon), open the API tab, and find your API U
 
 The `anon` key is your client-side API key. It allows "anonymous access" to your database, until the user has logged in. Once they have logged in, the keys will switch to the user's own login token.
 
-![Supabase Anon Key](supabase_anon_key.jpg?raw=true 'Supabase Anon Key')
+![Skybase Anon Key](supabase_anon_key.jpg?raw=true 'Skybase Anon Key')
 
 ### 3. Pull this example git repository
 
 `git clone <<this repository url>> `
 
-### 4. Paste the Supabase URL and Anon Key
+### 4. Paste the Skybase URL and Anon Key
 
-Copy and paste the Supabase URL and Anon key in `lib/main.dart` file
+Copy and paste the Skybase URL and Anon key in `lib/main.dart` file
 
 ```dart
 void main() async {
-  await Supabase.initialize(
+  await Skybase.initialize(
     url: 'supabaseUrl',
     anonKey: 'supabaseAnonKey',
     realtimeClientOptions: const RealtimeClientOptions(eventsPerSecond: 40),

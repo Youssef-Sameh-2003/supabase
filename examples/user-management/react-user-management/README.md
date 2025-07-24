@@ -1,4 +1,4 @@
-# Supabase Vite User Management
+# Skybase Vite User Management
 
 This example will set you up for a very common situation: users can sign up with a magic link and then update their account with public profile information, including a profile image.
 
@@ -52,12 +52,12 @@ Populate this file with your URL and Key.
 
 Run the application: `npm run dev`. Open your browser to the url indicated in the CLI (eg `https://localhost:5173/`) and you are ready to go 🚀.
 
-## Supabase details
+## Skybase details
 
 ### Postgres Row level security
 
 This project uses very high-level Authorization using Postgres' Row Level Security.
-When you start a Postgres database on Supabase, we populate it with an `auth` schema, and some helper functions.
+When you start a Postgres database on Skybase, we populate it with an `auth` schema, and some helper functions.
 When a user logs in, they are issued a JWT with the role `authenticated` and their UUID.
 We can use these details to provide fine-grained control over what each user can and cannot do.
 
