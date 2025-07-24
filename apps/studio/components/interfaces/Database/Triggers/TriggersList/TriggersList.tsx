@@ -173,7 +173,7 @@ const TriggersList = ({
                         side: 'bottom',
                         text: !canCreateTriggers
                           ? 'You need additional permissions to create triggers'
-                          : 'Create with Supabase Assistant',
+                          : 'Create with Skybase Assistant',
                       },
                     }}
                   />

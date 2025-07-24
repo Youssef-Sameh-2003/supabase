@@ -48,8 +48,8 @@ type SectionWithChecksum = Omit<Section, 'heading'> &
   }
 
 const REQUIRED_ENV_VARS = {
-  SUPABASE_URL: 'NEXT_PUBLIC_SUPABASE_URL',
-  SERVICE_ROLE_KEY: 'SUPABASE_SECRET_KEY',
+  SKYBASE_URL: 'NEXT_PUBLIC_SKYBASE_URL',
+  SERVICE_ROLE_KEY: 'SKYBASE_SECRET_KEY',
 } as const
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -111,7 +111,7 @@ function parseOptions(): Options {
 
 function createSupabaseClient() {
   return createClient(
-    process.env[REQUIRED_ENV_VARS.SUPABASE_URL]!,
+    process.env[REQUIRED_ENV_VARS.SKYBASE_URL]!,
     process.env[REQUIRED_ENV_VARS.SERVICE_ROLE_KEY]!
   )
 }

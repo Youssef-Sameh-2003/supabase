@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   let user
 
   const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SKYBASE_URL!,
     process.env.LIVE_SUPABASE_COM_SERVICE_ROLE_KEY!
   )
 
@@ -100,7 +100,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const ticketType = 'regular'
-  const ogImageUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images/launch-week/lw15/og/${ticketType}/${username}.png?t=${dayjs(new Date()).format('DHHmmss')}`
+  const ogImageUrl = `${process.env.NEXT_PUBLIC_SKYBASE_URL}/storage/v1/object/public/images/launch-week/lw15/og/${ticketType}/${username}.png?t=${dayjs(new Date()).format('DHHmmss')}`
 
   return {
     props: {

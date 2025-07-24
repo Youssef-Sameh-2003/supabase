@@ -64,7 +64,7 @@ const ComputeMetric = ({ slug, metric, usage, relativeToSubscription }: ComputeM
           <div className="my-2">
             {usageMeta?.metric === ComputeUsageMetric.COMPUTE_HOURS_BRANCH ? (
               <p className="text-sm">
-                Each Preview branch is a separate environment with all Supabase services (Database,
+                Each Preview branch is a separate environment with all Skybase services (Database,
                 Auth, Storage, etc.).{' '}
                 <Link
                   href="https://supabase.com/docs/guides/platform/manage-your-usage/branching"

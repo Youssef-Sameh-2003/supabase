@@ -20,7 +20,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env.local">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-EXPO_PUBLIC_SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+EXPO_PUBLIC_SKYBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
 EXPO_PUBLIC_SUPABASE_KEY=${projectKeys.publishableKey ?? '<prefer publishable key instead of anon key for mobile and desktop apps>'}
         `}
         </SimpleCodeBlock>
@@ -34,7 +34,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createClient, processLock } from '@supabase/supabase-js'
 
 export const supabase = createClient(
-  process.env.EXPO_PUBLIC_SUPABASE_URL!,
+  process.env.EXPO_PUBLIC_SKYBASE_URL!,
   process.env.EXPO_PUBLIC_SUPABASE_KEY!,
   {
     auth: {

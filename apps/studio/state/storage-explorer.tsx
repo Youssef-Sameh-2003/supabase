@@ -265,7 +265,7 @@ function createStorageExplorerState({
     },
 
     addNewFolder: async (folderName: string, columnIndex: number) => {
-      if (!state.supabaseClient) return console.error('Supabase Client is missing')
+      if (!state.supabaseClient) return console.error('Skybase Client is missing')
 
       const autofix = false
       const formattedName = state.sanitizeNameForDuplicateInColumn({

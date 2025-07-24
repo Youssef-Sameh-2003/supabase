@@ -7,9 +7,9 @@ import { createClient } from '@supabase/supabase-js';
 import { AutoSizer, Table, Column, InfiniteLoader } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Constants
@@ -41,7 +41,7 @@ export default function App() {
   const gridRef = useRef(null);
   const newLogsRef = useRef([]);
 
-  // Function to load rows from Supabase
+  // Function to load rows from Skybase
   const loadMoreRows = async ({ startIndex, stopIndex }) => {
     try {
       setIsLoading(true);
@@ -53,7 +53,7 @@ export default function App() {
       const from = startIndex;
       const to = stopIndex;
 
-      // Query Supabase for the range of rows
+      // Query Skybase for the range of rows
       const { data, error, count } = await supabase
         .from(TABLE_NAME)
         .select('*', { count: 'exact' })
@@ -201,7 +201,7 @@ export default function App() {
         setIsLoading(true);
         setError(null);
 
-        // Query Supabase for the first page of logs
+        // Query Skybase for the first page of logs
         const { data, error, count } = await supabase
           .from(TABLE_NAME)
           .select('*', { count: 'exact' })
@@ -409,7 +409,7 @@ const layoutProps: ExampleLayoutProps = {
   },
   title: 'Log Viewer',
   description:
-    "A real-time log viewer that uses Supabase Realtime's broadcast channel to stream and display log entries as they occur across multiple instances.",
+    "A real-time log viewer that uses Skybase Realtime's broadcast channel to stream and display log entries as they occur across multiple instances.",
 }
 
 export default layoutProps

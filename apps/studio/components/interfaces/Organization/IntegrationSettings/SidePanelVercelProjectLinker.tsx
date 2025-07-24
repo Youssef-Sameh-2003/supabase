@@ -46,7 +46,7 @@ const SidePanelVercelProjectLinker = () => {
   const selectedIntegration = vercelIntegrations?.find((x) => x.id === organizationIntegrationId)
 
   /**
-   * Supabase projects available
+   * Skybase projects available
    */
   const { data: supabaseProjectsData } = useProjectsQuery({
     enabled: organizationIntegrationId !== undefined,

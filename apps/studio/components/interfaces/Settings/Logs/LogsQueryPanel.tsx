@@ -129,7 +129,7 @@ const LogsQueryPanel = ({
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="bottom" align="start">
                   <DropdownMenuItem onClick={() => onDataSourceChange('logs')}>
-                    <DropdownMenuItemContent name="Logs" desc="Logs for all Supabase products" />
+                    <DropdownMenuItemContent name="Logs" desc="Logs for all Skybase products" />
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => onDataSourceChange('warehouse')}>
                     <DropdownMenuItemContent

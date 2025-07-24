@@ -116,7 +116,7 @@ const ProjectLinker = ({
     const projectDetails = selectedForeignProject
 
     if (!selectedForeignProject?.id) return console.error('No Foreign project ID set')
-    if (!selectedSupabaseProject?.ref) return console.error('No Supabase project ref set')
+    if (!selectedSupabaseProject?.ref) return console.error('No Skybase project ref set')
 
     const alreadyInstalled = flatInstalledConnectionsIds.has(foreignProjectId ?? '')
     if (alreadyInstalled) {
@@ -160,8 +160,8 @@ const ProjectLinker = ({
 
   const noSupabaseProjects = supabaseProjects.length === 0
   const noForeignProjects = foreignProjects.length === 0
-  const missingEntity = noSupabaseProjects ? 'Supabase' : mode
-  const oppositeMissingEntity = noSupabaseProjects ? mode : 'Supabase'
+  const missingEntity = noSupabaseProjects ? 'Skybase' : mode
+  const oppositeMissingEntity = noSupabaseProjects ? mode : 'Skybase'
 
   return (
     <div className="flex flex-col bg border shadow rounded-lg overflow-hidden">
@@ -190,7 +190,7 @@ const ProjectLinker = ({
           <div className="flex justify-center gap-0 w-full relative">
             <Panel>
               <div className="bg-white shadow border rounded p-1 w-12 h-12 flex justify-center items-center">
-                <img src={`${BASE_PATH}/img/supabase-logo.svg`} alt="Supabase" className="w-6" />
+                <img src={`${BASE_PATH}/img/supabase-logo.svg`} alt="Skybase" className="w-6" />
               </div>
 
               <Popover_Shadcn_
@@ -209,7 +209,7 @@ const ProjectLinker = ({
                       <div className="bg-white shadow border rounded p-1 w-6 h-6 flex justify-center items-center">
                         <img
                           src={`${BASE_PATH}/img/supabase-logo.svg`}
-                          alt="Supabase"
+                          alt="Skybase"
                           className="w-4"
                         />
                       </div>
@@ -224,7 +224,7 @@ const ProjectLinker = ({
                   >
                     {selectedSupabaseProject
                       ? selectedSupabaseProject.name
-                      : 'Choose Supabase Project'}
+                      : 'Choose Skybase Project'}
                   </Button>
                 </PopoverTrigger_Shadcn_>
                 <PopoverContent_Shadcn_
@@ -252,7 +252,7 @@ const ProjectLinker = ({
                               <div className="bg-white shadow border rounded p-1 w-6 h-6 flex justify-center items-center">
                                 <img
                                   src={`${BASE_PATH}/img/supabase-logo.svg`}
-                                  alt="Supabase"
+                                  alt="Skybase"
                                   className="w-4"
                                 />
                               </div>

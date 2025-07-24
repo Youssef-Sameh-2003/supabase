@@ -34,13 +34,13 @@ const VercelIntegration: NextPageWithLayout = () => {
             <h1 className="text-xl text-foreground">New project</h1>
             <Markdown
               className="text-foreground-light"
-              content={`Choose the Supabase organization you wish to install in`}
+              content={`Choose the Skybase organization you wish to install in`}
             />
           </header>
           <CreateProject />
           <Alert withIcon variant="info" title="You can uninstall this Integration at any time.">
             <Markdown
-              content={`You can remove this integration at any time via Vercel or the Supabase dashboard.`}
+              content={`You can remove this integration at any time via Vercel or the Skybase dashboard.`}
             />
           </Alert>
         </ScaffoldColumn>
@@ -210,7 +210,7 @@ const CreateProject = () => {
 
   return (
     <div>
-      <p className="mb-2">Supabase project details</p>
+      <p className="mb-2">Skybase project details</p>
       <div className="py-2">
         <Input
           autoFocus

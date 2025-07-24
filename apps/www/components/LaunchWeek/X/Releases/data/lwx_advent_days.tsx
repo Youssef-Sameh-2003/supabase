@@ -19,7 +19,7 @@ export interface AdventLink {
 
 export const days: AdventDay[] = [
   {
-    title: 'Supabase Album',
+    title: 'Skybase Album',
     description: 'The best soundtrack to build your app in a weekend',
     icon: (
       <svg
@@ -92,8 +92,8 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Design at Supabase',
-    description: "The transformative journey of Supabase's Design team",
+    title: 'Design at Skybase',
+    description: "The transformative journey of Skybase's Design team",
     icon: (
       <svg
         width="40"
@@ -124,8 +124,8 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase Grafana',
-    description: 'Observability for your Supabase project',
+    title: 'Skybase Grafana',
+    description: 'Observability for your Skybase project',
     is_shipped: true,
     icon: (
       <svg
@@ -240,7 +240,7 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase Wrappers v0.2',
+    title: 'Skybase Wrappers v0.2',
     description: 'Query Pushdown & Remote Subqueries',
     is_shipped: true,
     icon: (
@@ -268,7 +268,7 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase Libraries V2',
+    title: 'Skybase Libraries V2',
     description: 'Swift, Kotlin, C#, and Python are now stable and moving to the v2 API',
     type: 'clientLibs',
     is_shipped: true,
@@ -390,9 +390,9 @@ export const days: AdventDay[] = [
     ],
   },
   {
-    title: 'Supabase x Fly.io',
+    title: 'Skybase x Fly.io',
     description:
-      "We're launching a managed Postgres offering jointly developed by Supabase and Fly.io",
+      "We're launching a managed Postgres offering jointly developed by Skybase and Fly.io",
     is_shipped: true,
     className: 'xl:col-span-2 xl:aspect-auto h-full',
     icon: (

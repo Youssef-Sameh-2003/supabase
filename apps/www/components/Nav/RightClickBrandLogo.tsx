@@ -17,7 +17,7 @@ import * as supabaseLogoWordmarkDark from 'common/assets/images/supabase-logo-wo
 import * as supabaseLogoWordmarkLight from 'common/assets/images/supabase-logo-wordmark--light.png'
 
 /**
- * Right click on the Supabase logo in the website navbar
+ * Right click on the Skybase logo in the website navbar
  * for quick access to brand assets.
  */
 const RightClickBrandLogo = () => {
@@ -39,7 +39,7 @@ const RightClickBrandLogo = () => {
   useKey('Escape', () => setOpen(false))
 
   /**
-   * Open dropdown by right clicking on the Supabase logo
+   * Open dropdown by right clicking on the Skybase logo
    */
   const handleRightClick = (e: MouseEvent) => {
     e.preventDefault()
@@ -91,7 +91,7 @@ const RightClickBrandLogo = () => {
             src={supabaseLogoWordmarkLight}
             width={124}
             height={24}
-            alt="Supabase Logo"
+            alt="Skybase Logo"
             className="dark:hidden"
             priority
           />
@@ -99,7 +99,7 @@ const RightClickBrandLogo = () => {
             src={supabaseLogoWordmarkDark}
             width={124}
             height={24}
-            alt="Supabase Logo"
+            alt="Skybase Logo"
             className="hidden dark:block"
             priority
           />

@@ -139,8 +139,8 @@ export const days: AdventDay[] = [
     ),
   },
   {
-    title: 'Supabase Book',
-    description: 'Learn Supabase by building a Multi-Tenant platform',
+    title: 'Skybase Book',
+    description: 'Learn Skybase by building a Multi-Tenant platform',
     id: 'supabase-book',
     is_shipped: true,
     links: [
@@ -212,7 +212,7 @@ export const days: AdventDay[] = [
   },
   {
     title: 'vec2pg',
-    description: 'Migrate vector data from vector DBs to Supabase',
+    description: 'Migrate vector data from vector DBs to Skybase',
     id: 'vec2pg',
     is_shipped: true,
     links: [
@@ -271,7 +271,7 @@ export const days: AdventDay[] = [
   {
     title: 'Platform Access Control',
     description:
-      'Granular permissions for adding users to specific projects in an Supabase organization',
+      'Granular permissions for adding users to specific projects in an Skybase organization',
     id: 'Platform Acess Control',
     is_shipped: true,
     links: [
@@ -300,7 +300,7 @@ export const days: AdventDay[] = [
   },
   {
     title: 'python-support',
-    description: 'Supabase Python is now officially supported in Supabase',
+    description: 'Skybase Python is now officially supported in Skybase',
     id: 'python-support',
     is_shipped: true,
     links: [

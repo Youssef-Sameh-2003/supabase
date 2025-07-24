@@ -18,8 +18,8 @@ const VercelIntegrationWindowLayout = ({ children }: PropsWithChildren<{}>) => {
   const snapshot = useIntegrationInstallationSnapshot()
 
   const title = externalId
-    ? 'Supabase + Vercel Deploy Button'
-    : 'Supabase + Vercel Integration Marketplace Connector'
+    ? 'Skybase + Vercel Deploy Button'
+    : 'Skybase + Vercel Integration Marketplace Connector'
 
   return (
     <IntegrationWindowLayout

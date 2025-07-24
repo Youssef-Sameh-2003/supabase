@@ -123,7 +123,7 @@ export const S3Connection = () => {
                     layout="horizontal"
                     className="px-8 py-8 [&>*>label]:text-foreground"
                     label="Enable connection via S3 protocol"
-                    description="Allow clients to connect to Supabase Storage via the S3 protocol"
+                    description="Allow clients to connect to Skybase Storage via the S3 protocol"
                   >
                     <FormControl_Shadcn_>
                       <Switch

@@ -9,9 +9,9 @@ import './styles.css';
 import { createClient } from '@supabase/supabase-js';
 import { useForm, Controller } from 'react-hook-form';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate a random user ID and name
@@ -470,7 +470,7 @@ const layoutProps: ExampleLayoutProps = {
     'react-hook-form': 'latest',
   },
   description:
-    "A multi-user form that uses Supabase Realtime's presence feature to show which fields are currently being edited by other users in real-time.",
+    "A multi-user form that uses Skybase Realtime's presence feature to show which fields are currently being edited by other users in real-time.",
 }
 
 export default layoutProps

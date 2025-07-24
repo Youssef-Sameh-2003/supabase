@@ -28,7 +28,7 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = [
     {
       name: 'anon',
-      api_key: process.env.SUPABASE_ANON_KEY ?? '',
+      api_key: process.env.SKYBASE_ANON_KEY ?? '',
       id: 'anon',
       type: 'legacy',
       hash: '',
@@ -37,7 +37,7 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
     },
     {
       name: 'service_role',
-      api_key: process.env.SUPABASE_SERVICE_KEY ?? '',
+      api_key: process.env.SKYBASE_SERVICE_KEY ?? '',
       id: 'service_role',
       type: 'legacy',
       hash: '',

@@ -154,7 +154,7 @@ const ResourceContent = ({
           <div className="doc-section">
             <article className="code-column text-foreground">
               <h4 className="mt-0 text-white">Filtering</h4>
-              <p>Supabase provides a wide range of filters.</p>
+              <p>Skybase provides a wide range of filters.</p>
               <p>
                 <a
                   href="https://supabase.com/docs/reference/javascript/using-filters"
@@ -280,7 +280,7 @@ const ResourceContent = ({
             <div className="doc-section">
               <article className="code-column text-foreground">
                 <p>
-                  Supabase provides realtime functionality and broadcasts database changes to
+                  Skybase provides realtime functionality and broadcasts database changes to
                   authorized users depending on Row Level Security (RLS) policies.
                 </p>
                 <p>

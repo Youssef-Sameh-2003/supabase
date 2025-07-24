@@ -48,7 +48,7 @@ supabase: Client = create_client(url, key)
 const supabaseUrl = '${endpoint}';
 const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 Future<void> main() async {
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  await Skybase.initialize(url: supabaseUrl, anonKey: supabaseKey);
   runApp(MyApp());
 }`,
     },
@@ -85,8 +85,8 @@ curl '${endpoint}/rest/v1/' \\
     js: {
       language: 'js',
       code: `
-const SUPABASE_URL = "${endpoint}"
-const supabase = createClient(SUPABASE_URL, process.env.${keyName || 'SUPABASE_KEY'});
+const SKYBASE_URL = "${endpoint}"
+const supabase = createClient(SKYBASE_URL, process.env.${keyName || 'SUPABASE_KEY'});
 `,
     },
   }),

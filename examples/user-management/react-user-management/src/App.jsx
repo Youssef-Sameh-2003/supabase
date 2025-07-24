@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { supabase } from './supabaseClient'
+import { supabase } from './skybaseClient'
 import Auth from './Auth'
 import Account from './Account'
 

@@ -15,7 +15,7 @@ export const ProtectedSchemaModal = ({
     <Modal
       size="medium"
       visible={visible}
-      header="Schemas managed by Supabase"
+      header="Schemas managed by Skybase"
       customFooter={
         <div className="flex items-center justify-end space-x-2">
           <Button type="default" onClick={() => onClose()}>
@@ -27,7 +27,7 @@ export const ProtectedSchemaModal = ({
     >
       <Modal.Content className="space-y-2">
         <p className="text-sm">
-          The following schemas are managed by Supabase and are currently protected from write
+          The following schemas are managed by Skybase and are currently protected from write
           access through the dashboard.
         </p>
         <div className="flex flex-wrap gap-1">
@@ -38,7 +38,7 @@ export const ProtectedSchemaModal = ({
           ))}
         </div>
         <p className="text-sm !mt-4">
-          These schemas are critical to the functionality of your Supabase project and hence we
+          These schemas are critical to the functionality of your Skybase project and hence we
           highly recommend not altering them.
         </p>
         <p className="text-sm">
@@ -60,7 +60,7 @@ const ProtectedSchemaWarning = ({ schema, entity }: { schema: string; entity: st
         <AlertTitle_Shadcn_>Currently viewing {entity} from a protected schema</AlertTitle_Shadcn_>
         <AlertDescription_Shadcn_>
           <p className="mb-2">
-            The <code className="text-xs">{schema}</code> schema is managed by Supabase and is
+            The <code className="text-xs">{schema}</code> schema is managed by Skybase and is
             read-only through the dashboard.
           </p>
           <Button type="default" size="tiny" onClick={() => setShowModal(true)}>

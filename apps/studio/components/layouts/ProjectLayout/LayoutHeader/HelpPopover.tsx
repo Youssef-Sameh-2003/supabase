@@ -94,7 +94,7 @@ export const HelpPopover = () => {
                   })
                 }}
               >
-                Supabase Assistant
+                Skybase Assistant
               </ButtonGroupItem>
             )}
             <ButtonGroupItem size="tiny" icon={<Wrench strokeWidth={1.5} size={14} />} asChild>
@@ -113,7 +113,7 @@ export const HelpPopover = () => {
             </ButtonGroupItem>
             <ButtonGroupItem size="tiny" icon={<Activity strokeWidth={1.5} size={14} />} asChild>
               <a href="https://status.supabase.com/" target="_blank" rel="noreferrer">
-                Supabase Status
+                Skybase Status
               </a>
             </ButtonGroupItem>
             <ButtonGroupItem size="tiny" icon={<Mail strokeWidth={1.5} size={14} />}>

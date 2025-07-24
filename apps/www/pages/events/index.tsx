@@ -105,8 +105,8 @@ export default function Events({
     return updatedCategories
   }, [staticCategories, lumaEvents])
 
-  const meta_title = 'Supabase Events: webinars, talks, hackathons, and meetups'
-  const meta_description = 'Join Supabase and the open-source community at the upcoming events.'
+  const meta_title = 'Skybase Events: webinars, talks, hackathons, and meetups'
+  const meta_description = 'Join Skybase and the open-source community at the upcoming events.'
 
   return (
     <>
@@ -134,7 +134,7 @@ export default function Events({
       <DefaultLayout className="min-h-[80dvh]">
         <SectionContainer className="!py-8 lg:!py-16">
           <h1 className="h1">
-            <span className="sr-only">Supabase</span> Events
+            <span className="sr-only">Skybase</span> Events
           </h1>
           <p className="text-foreground-light">Join us at the following upcoming events</p>
         </SectionContainer>

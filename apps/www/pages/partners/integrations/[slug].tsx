@@ -60,10 +60,10 @@ function Partner({
   return (
     <>
       <NextSeo
-        title={`${partner.title} | Works With Supabase`}
+        title={`${partner.title} | Works With Skybase`}
         description={partner.description}
         openGraph={{
-          title: `${partner.title} | Works With Supabase`,
+          title: `${partner.title} | Works With Skybase`,
           description: partner.description,
           url: `https://supabase.com/partners/integrations/${partner.slug}`,
           images: [
@@ -198,7 +198,7 @@ function Partner({
               <div className="bg-background hover:border-default-control border-default rounded-2xl border p-10 drop-shadow-sm max-w-5xl mx-auto mt-12">
                 <div className="flex flex-row justify-between">
                   <h1 className="text-2xl font-medium self-center">
-                    Get started with {partner.title} and Supabase.
+                    Get started with {partner.title} and Skybase.
                   </h1>
                   <a href={partner.call_to_action_link} target="_blank" rel="noreferrer">
                     <Button size="medium" type="secondary">
@@ -284,7 +284,7 @@ const PartnerDetails = ({ partner }: { partner: Partner }) => {
           )}
         </div>
         <p className="text-foreground-light text-sm">
-          Third-party integrations and docs are managed by Supabase partners.
+          Third-party integrations and docs are managed by Skybase partners.
         </p>
       </div>
     </div>

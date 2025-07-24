@@ -9,7 +9,7 @@ describe('apiHelpers', () => {
   describe('constructHeaders', () => {
     beforeEach(() => {
       process.env.READ_ONLY_API_KEY = 'test-readonly-key'
-      process.env.SUPABASE_SERVICE_KEY = 'test-service-key'
+      process.env.SKYBASE_SERVICE_KEY = 'test-service-key'
     })
 
     it('should return default headers when no headers are provided', () => {

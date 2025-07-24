@@ -1,7 +1,7 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL
   ? new URL(process.env.NEXT_PUBLIC_API_URL).origin
   : ''
-const SUPABASE_URL = process.env.SUPABASE_URL ? new URL(process.env.SUPABASE_URL).origin : ''
+const SKYBASE_URL = process.env.SKYBASE_URL ? new URL(process.env.SKYBASE_URL).origin : ''
 const GOTRUE_URL = process.env.NEXT_PUBLIC_GOTRUE_URL
   ? new URL(process.env.NEXT_PUBLIC_GOTRUE_URL).origin
   : ''
@@ -10,15 +10,15 @@ const SUPABASE_PROJECTS_URL_WS = 'wss://*.supabase.co'
 
 // construct the URL for the Websocket Local URLs
 let SUPABASE_LOCAL_PROJECTS_URL_WS = ''
-if (SUPABASE_URL) {
-  const url = new URL(SUPABASE_URL)
+if (SKYBASE_URL) {
+  const url = new URL(SKYBASE_URL)
   const wsUrl = `${url.hostname}:${url.port}`
   SUPABASE_LOCAL_PROJECTS_URL_WS = `ws://${wsUrl} wss://${wsUrl}`
 }
 
 // Needed to test docs search in local dev
-const SUPABASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
+const SUPABASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_SKYBASE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SKYBASE_URL).origin
   : ''
 
 // Needed to test docs content API in local dev
@@ -71,7 +71,7 @@ const GOOGLE_MAPS_API_URL = 'https://maps.googleapis.com'
 module.exports.getCSP = function getCSP() {
   const DEFAULT_SRC_URLS = [
     API_URL,
-    SUPABASE_URL,
+    SKYBASE_URL,
     GOTRUE_URL,
     SUPABASE_LOCAL_PROJECTS_URL_WS,
     SUPABASE_PROJECTS_URL,
@@ -99,7 +99,7 @@ module.exports.getCSP = function getCSP() {
   ]
   const FRAME_SRC_URLS = [HCAPTCHA_ASSET_URL, STRIPE_JS_URL, STAPE_URL]
   const IMG_SRC_URLS = [
-    SUPABASE_URL,
+    SKYBASE_URL,
     SUPABASE_COM_URL,
     SUPABASE_PROJECTS_URL,
     GITHUB_USER_AVATAR_URL,

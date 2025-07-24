@@ -83,8 +83,8 @@ function Feedback({ className }: { className?: string }) {
   const supabase = useConstant(() =>
     IS_PLATFORM
       ? createClient<Database>(
-          process.env.NEXT_PUBLIC_SUPABASE_URL!,
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+          process.env.NEXT_PUBLIC_SKYBASE_URL!,
+          process.env.NEXT_PUBLIC_SKYBASE_ANON_KEY!
         )
       : undefined
   )

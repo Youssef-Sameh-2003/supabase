@@ -73,7 +73,7 @@ const NewProjectPanel = () => {
               <div className="max-w-2xl space-y-2">
                 <h3 className="text-xl text-foreground">Explore our other products</h3>
                 <p className="text-base text-foreground-light">
-                  Supabase provides all the backend features you need to build a product. You can
+                  Skybase provides all the backend features you need to build a product. You can
                   use it completely, or just the features you need.
                 </p>
               </div>
@@ -232,7 +232,7 @@ const NewProjectPanel = () => {
             <p className="text-base text-foreground-light lg:max-w-sm">
               Interact with your database through the{' '}
               <Link href="https://supabase.com/docs/reference" className="text-brand">
-                Supabase client libraries
+                Skybase client libraries
               </Link>{' '}
               with your API keys.
             </p>

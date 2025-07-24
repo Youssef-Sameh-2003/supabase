@@ -67,7 +67,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         1. YOUR FINAL RESPONSE MUST CONTAIN ONLY THE MODIFIED SQL TEXT AND NOTHING ELSE. NO EXPLANATIONS, MARKDOWN, OR CODE BLOCKS.
         2. WHEN USING TOOLS: Call them directly based on the instructions. DO NOT add any explanatory text or conversation before or between tool calls in the output stream. Your reasoning is internal; just call the tool.
 
-        You are a Supabase Postgres expert helping a user edit their SQL code based on a selection and a prompt.
+        You are a Skybase Postgres expert helping a user edit their SQL code based on a selection and a prompt.
         Your goal is to modify the selected SQL according to the user's prompt, using the available tools to understand the schema and RLS policies if necessary.
         You MUST respond ONLY with the modified SQL that should replace the user's selection. Do not explain the changes or the tool results in the final output.
 
@@ -111,7 +111,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
                     - UPDATE: \`USING (condition) WITH CHECK (condition)\`
                     - DELETE: \`USING (condition)\`
                 - Prefer \`PERMISSIVE\` policies unless \`RESTRICTIVE\` is explicitly needed.
-                - Leverage Supabase helper functions: \`auth.uid()\`, \`auth.jwt()\` (\`app_metadata\` for authz, \`user_metadata\` is user-updatable).
+                - Leverage Skybase helper functions: \`auth.uid()\`, \`auth.jwt()\` (\`app_metadata\` for authz, \`user_metadata\` is user-updatable).
                 - **Performance**: Indexes on columns used in RLS policies are crucial. Minimize joins within policy definitions.
         - **Functions**:
             - Use \`security definer\` for functions returning type \`trigger\`; otherwise, default to \`security invoker\`.

@@ -382,9 +382,9 @@ export const InviteMemberButton = () => {
                 description={
                   <div className="space-y-4 mb-1">
                     <p>
-                      Supabase offers single sign-on (SSO) as a login option to provide additional
+                      Skybase offers single sign-on (SSO) as a login option to provide additional
                       account security for your team. This allows company administrators to enforce
-                      the use of an identity provider when logging into Supabase.
+                      the use of an identity provider when logging into Skybase.
                     </p>
                     <p>This is only available for organizations on Team Plan or above.</p>
                     <div className="flex items-center space-x-2">

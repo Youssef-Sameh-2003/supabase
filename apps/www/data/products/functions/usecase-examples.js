@@ -59,9 +59,9 @@ serve(async (req: Request) => {
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async (req) => {
-  const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+  const SKYBASE_URL = Deno.env.get("SKYBASE_URL") ?? "";
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
+  const supabase = createClient(SKYBASE_URL, SERVICE_KEY);
   if (req.headers.get("Authorization") === "super-secret-key") {
     const { data } = await supabase.storage
       .from("newbucket")
@@ -81,9 +81,9 @@ serve(async (req) => {
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async () => {
-  const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+  const SKYBASE_URL = Deno.env.get("SKYBASE_URL") ?? "";
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
+  const supabase = createClient(SKYBASE_URL, SERVICE_KEY);
   const { data } = await supabase.from("todos").select();
   return new Response(JSON.stringify(data), {
     status: 200,

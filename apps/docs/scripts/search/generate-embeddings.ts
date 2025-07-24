@@ -24,9 +24,9 @@ async function generateEmbeddings() {
     'DOCS_GITHUB_APP_PRIVATE_KEY',
     'NEXT_PUBLIC_MISC_ANON_KEY',
     'NEXT_PUBLIC_MISC_URL',
-    'NEXT_PUBLIC_SUPABASE_URL',
+    'NEXT_PUBLIC_SKYBASE_URL',
     'OPENAI_API_KEY',
-    'SUPABASE_SECRET_KEY',
+    'SKYBASE_SECRET_KEY',
   ]
 
   const missingEnvVars = requiredEnvVars.filter((name) => !process.env[name])
@@ -39,8 +39,8 @@ async function generateEmbeddings() {
   }
 
   const supabaseClient = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SECRET_KEY!,
+    process.env.NEXT_PUBLIC_SKYBASE_URL!,
+    process.env.SKYBASE_SECRET_KEY!,
     {
       auth: {
         persistSession: false,

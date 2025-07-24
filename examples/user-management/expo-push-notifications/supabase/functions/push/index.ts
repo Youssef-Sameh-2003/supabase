@@ -20,7 +20,7 @@ interface WebhookPayload {
 }
 
 const supabase = createClient(
-  Deno.env.get('SUPABASE_URL')!,
+  Deno.env.get('SKYBASE_URL')!,
   Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 )
 

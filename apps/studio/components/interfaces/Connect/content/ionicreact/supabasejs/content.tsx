@@ -20,7 +20,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-REACT_APP_SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+REACT_APP_SKYBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
 REACT_APP_SUPABASE_KEY=${projectKeys.publishableKey ?? '<prefer publishable key instead of anon key for mobile or desktop apps>'}
         `}
         </SimpleCodeBlock>
@@ -31,7 +31,7 @@ REACT_APP_SUPABASE_KEY=${projectKeys.publishableKey ?? '<prefer publishable key 
           {`
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL
+const supabaseUrl = process.env.REACT_APP_SKYBASE_URL
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)

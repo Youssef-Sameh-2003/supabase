@@ -28,7 +28,7 @@ export const DataPrivacyForm = () => {
               control={form.control}
               disabled={!canUpdateOrganization || isUpdating}
               layout="flex-row-reverse"
-              label="Supabase Assistant Opt-in Level"
+              label="Skybase Assistant Opt-in Level"
             />
           </CardContent>
           <CardFooter className="flex justify-end p-4 md:px-8">

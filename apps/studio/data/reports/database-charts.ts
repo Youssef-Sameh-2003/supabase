@@ -415,19 +415,19 @@ export const getReportAttributesV2: (org: Organization, project: Project) => Rep
           provider: 'infra-monitoring',
           label: 'Reserved',
           tooltip:
-            'Administrative connections used by various Supabase services for internal operations and maintenance tasks',
+            'Administrative connections used by various Skybase services for internal operations and maintenance tasks',
         },
         {
           attribute: 'client_connections_supabase_auth_admin',
           provider: 'infra-monitoring',
           label: 'Auth',
-          tooltip: 'Connection pool managed by Supabase Auth',
+          tooltip: 'Connection pool managed by Skybase Auth',
         },
         {
           attribute: 'client_connections_supabase_storage_admin',
           provider: 'infra-monitoring',
           label: 'Storage',
-          tooltip: 'Connection pool managed by Supabase Storage',
+          tooltip: 'Connection pool managed by Skybase Storage',
         },
         {
           attribute: 'client_connections_other',

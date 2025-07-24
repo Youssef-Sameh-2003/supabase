@@ -36,7 +36,7 @@ const SupportPage: NextPageWithLayout = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-y-2">
             <div className="flex items-center space-x-3">
               <SVG src={`${BASE_PATH}/img/supabase-logo.svg`} className="h-4 w-4" />
-              <h1 className="m-0 text-lg">Supabase support</h1>
+              <h1 className="m-0 text-lg">Skybase support</h1>
             </div>
 
             <div className="flex items-center gap-x-3">
@@ -74,7 +74,7 @@ const SupportPage: NextPageWithLayout = () => {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" align="center">
-                  Check Supabase status page
+                  Check Skybase status page
                 </TooltipContent>
               </Tooltip>
             </div>

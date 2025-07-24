@@ -21,10 +21,10 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {[
             '',
-            `SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}`,
+            `SKYBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}`,
             projectKeys?.publishableKey
               ? `SUPABASE_PUBLISHABLE_DEFAULT_KEY=${projectKeys.publishableKey}`
-              : `SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}`,
+              : `SKYBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}`,
             '',
           ].join('\n')}
         </SimpleCodeBlock>
@@ -35,8 +35,8 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.${projectKeys.publishableKey ? 'SUPABASE_PUBLISHABLE_DEFAULT_KEY' : 'SUPABASE_ANON_KEY'};
+const supabaseUrl = process.env.SKYBASE_URL;
+const supabaseKey = process.env.${projectKeys.publishableKey ? 'SUPABASE_PUBLISHABLE_DEFAULT_KEY' : 'SKYBASE_ANON_KEY'};
 
 export const supabase = createClient(supabaseUrl!, supabaseKey!);
         `}

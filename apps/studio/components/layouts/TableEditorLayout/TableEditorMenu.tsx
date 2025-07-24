@@ -165,7 +165,7 @@ const TableEditorMenu = () => {
                 </AlertTitle_Shadcn_>
                 <AlertDescription_Shadcn_ className="text-xs">
                   <p className="mb-2">
-                    This schema is managed by Supabase and is read-only through the table editor
+                    This schema is managed by Skybase and is read-only through the table editor
                   </p>
                   <Button type="default" size="tiny" onClick={() => setShowModal(true)}>
                     Learn more

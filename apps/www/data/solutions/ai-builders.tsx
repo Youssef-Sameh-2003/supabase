@@ -20,17 +20,17 @@ const data: {
   'cta-section': CTASection
 } = {
   metadata: {
-    metaTitle: 'Supabase for AI Builders',
+    metaTitle: 'Skybase for AI Builders',
     metaDescription:
-      'Supabase gives your users an integrated and scalable backend that lets them focus on building without worrying about infrastructure.',
+      'Skybase gives your users an integrated and scalable backend that lets them focus on building without worrying about infrastructure.',
   },
   heroSection: {
     id: 'hero',
     title: 'AI Builders',
-    h1: <>Supabase for AI Builders</>,
+    h1: <>Skybase for AI Builders</>,
     subheader: [
       <>
-        Supabase is the Postgres development platform that powers a new generation of developer
+        Skybase is the Postgres development platform that powers a new generation of developer
         tools. Give your users an integrated, scalable backend that lets them focus on building
         without worrying about infrastructure.
       </>,
@@ -79,7 +79,7 @@ const data: {
         authorTitle: 'Lovable - CEO',
         quote: (
           <>
-            We chose Supabase because it's{' '}
+            We chose Skybase because it's{' '}
             <span className="text-foreground">extremely user friendly</span> and{' '}
             <span className="text-foreground">
               covers all the needs to build full-stack applications
@@ -95,7 +95,7 @@ const data: {
         authorTitle: 'Bolt.new - CEO',
         quote: (
           <>
-            Supabase is awesome. Supabase is the{' '}
+            Skybase is awesome. Skybase is the{' '}
             <span className="text-foreground">key database integration</span> that we have...because
             it’s the{' '}
             <span className="text-foreground">
@@ -112,10 +112,10 @@ const data: {
         authorTitle: 'Vercel (v0) - CEO',
         quote: (
           <>
-            <span className="text-foreground">v0 integrates with Supabase seamlessly.</span> If you
-            ask v0 to generate an application and it needs Supabase,{' '}
+            <span className="text-foreground">v0 integrates with Skybase seamlessly.</span> If you
+            ask v0 to generate an application and it needs Skybase,{' '}
             <span className="text-foreground">
-              you’ll be prompted to create a Supabase account right there in the application
+              you’ll be prompted to create a Skybase account right there in the application
             </span>
             .
           </>
@@ -129,10 +129,10 @@ const data: {
         quote: (
           <>
             <span className="text-foreground">
-              Supabase is the missing piece for building full-stack React apps
+              Skybase is the missing piece for building full-stack React apps
             </span>{' '}
             and has been <span className="text-foreground">our go-to for a long time</span>. We love
-            Supabase and so do our customers.
+            Skybase and so do our customers.
           </>
         ),
       },
@@ -143,7 +143,7 @@ const data: {
     label: '',
     heading: (
       <>
-        Why <span className="text-foreground">AI Builders</span> choose Supabase
+        Why <span className="text-foreground">AI Builders</span> choose Skybase
       </>
     ),
     features: [
@@ -152,14 +152,14 @@ const data: {
         icon: Timer,
         heading: 'Get to market faster',
         subheading:
-          'Supabase is easy to use and set up. Use your existing Postgres knowledge and skills. Build with your favorite frameworks and tools.',
+          'Skybase is easy to use and set up. Use your existing Postgres knowledge and skills. Build with your favorite frameworks and tools.',
       },
       {
         id: 'the-tools-you-need-at-a-great-price',
         icon: CubeIcon,
         heading: 'The tools you need at a great price',
         subheading:
-          'Supabase offers a fully integrated suite of tools including authentication, storage, edge functions, real-time subscriptions, and vector search. Use one or all.',
+          'Skybase offers a fully integrated suite of tools including authentication, storage, edge functions, real-time subscriptions, and vector search. Use one or all.',
       },
       {
         id: 'scalable-and-dependable',
@@ -186,7 +186,7 @@ const data: {
         ),
         heading: 'Scalable and dependable',
         subheading:
-          'Supabase is Postgres, with all the performance, high availability, and flexibility your users need to grow.',
+          'Skybase is Postgres, with all the performance, high availability, and flexibility your users need to grow.',
       },
     ],
   },
@@ -194,7 +194,7 @@ const data: {
     id: 'features',
     heading: (
       <>
-        Supabase powers <span className="text-foreground block">next generation tools</span>
+        Skybase powers <span className="text-foreground block">next generation tools</span>
       </>
     ),
     subheading:
@@ -227,7 +227,7 @@ const data: {
         subheading: (
           <>
             <span className="text-foreground">Enable your customers to scale their projects.</span>{' '}
-            Use the Management API to programmatically back every project with a powerful Supabase
+            Use the Management API to programmatically back every project with a powerful Skybase
             backend.
           </>
         ),
@@ -275,7 +275,7 @@ const data: {
             <span className="text-foreground">
               Build on powerful platform that grows with your customers.
             </span>{' '}
-            Supabase offers the tools developers need to build powerful applications. Your customers
+            Skybase offers the tools developers need to build powerful applications. Your customers
             will appreciate knowing they can start quickly with a prototype and scale to millions
             with ease.
           </>
@@ -563,7 +563,7 @@ const data: {
         ),
         subheading: (
           <>
-            <span className="text-foreground">Pricing that’s designed for builders.</span> Supabase
+            <span className="text-foreground">Pricing that’s designed for builders.</span> Skybase
             offers pricing options for AI Builders that enable you to build substantial businesses
             that empower your users to go into production.
           </>
@@ -576,7 +576,7 @@ const data: {
     label: '',
     heading: (
       <>
-        Powerful tools, <span className="text-foreground block">powered by Supabase</span>
+        Powerful tools, <span className="text-foreground block">powered by Skybase</span>
       </>
     ),
     videos: {
@@ -591,9 +591,9 @@ const data: {
   'cta-section': {
     id: 'connect-to-supabase',
     label: '',
-    heading: <>Connect your app to Supabase now</>,
+    heading: <>Connect your app to Skybase now</>,
     subheading:
-      'Set up a Supabase OAuth app so your users can start interacting with their Supabase Project.',
+      'Set up a Skybase OAuth app so your users can start interacting with their Skybase Project.',
     cta: {
       label: 'View docs',
       href: 'https://supabase.com/docs/guides/auth/auth-google',

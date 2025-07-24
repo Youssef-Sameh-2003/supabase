@@ -8,9 +8,9 @@ const appJsCode = `import { useEffect, useState } from 'react';
 import './styles.css';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate a random user ID and avatar
@@ -109,7 +109,7 @@ const layoutProps: ExampleLayoutProps = {
   files: presenceFiles,
   title: 'Presence',
   description:
-    "A demonstration of Supabase Realtime's presence feature that tracks and displays online users in real-time with their avatars and usernames.",
+    "A demonstration of Skybase Realtime's presence feature that tracks and displays online users in real-time with their avatars and usernames.",
 }
 
 export default layoutProps

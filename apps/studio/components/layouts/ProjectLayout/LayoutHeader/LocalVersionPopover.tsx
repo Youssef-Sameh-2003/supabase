@@ -58,7 +58,7 @@ export const LocalVersionPopover = () => {
         {hasLatestCLIVersion ? (
           !isBeta && hasUpdate ? (
             <div className="px-4 mb-3">
-              <p className="text-sm mb-2">A new version of Supabase CLI is available:</p>
+              <p className="text-sm mb-2">A new version of Skybase CLI is available:</p>
               <Tabs_Shadcn_ defaultValue="macos">
                 <TabsList_Shadcn_ className="mt-2">
                   <TabsTrigger_Shadcn_ className="px-2 text-xs" value="macos">
@@ -99,9 +99,9 @@ export const LocalVersionPopover = () => {
           ) : (
             <div className="px-4 mb-3">
               {isBeta ? (
-                <p className="text-sm">You're on the Beta version of Supabase CLI</p>
+                <p className="text-sm">You're on the Beta version of Skybase CLI</p>
               ) : (
-                <p className="text-sm">You're on the latest version of Supabase CLI</p>
+                <p className="text-sm">You're on the latest version of Skybase CLI</p>
               )}
             </div>
           )
@@ -132,7 +132,7 @@ export const LocalVersionPopover = () => {
                     Approximate next release: {approximateNextRelease}
                   </p>
                   <p className="text-sm">
-                    Supabase CLI releases follows a two-week schedule, with stable updates available
+                    Skybase CLI releases follows a two-week schedule, with stable updates available
                     through the{' '}
                     <InlineLink href="https://supabase.com/docs/guides/local-development/cli/getting-started?queryGroups=platform&platform=linux#updating-the-supabase-cli">
                       CLI

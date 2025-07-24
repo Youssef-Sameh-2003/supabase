@@ -24,8 +24,8 @@ function Blog(props: any) {
   const isList = view === 'list'
   const router = useRouter()
 
-  const meta_title = 'Supabase Blog: the Postgres development platform'
-  const meta_description = 'Get all your Supabase News on the Supabase blog.'
+  const meta_title = 'Skybase Blog: the Postgres development platform'
+  const meta_description = 'Get all your Skybase News on the Skybase blog.'
 
   return (
     <>
@@ -51,7 +51,7 @@ function Blog(props: any) {
         ]}
       />
       <DefaultLayout>
-        <h1 className="sr-only">Supabase blog</h1>
+        <h1 className="sr-only">Skybase blog</h1>
         <div className="md:container mx-auto py-4 lg:py-10 px-4 sm:px-12 xl:px-16">
           {props.blogs.slice(0, 1).map((blog: any, i: number) => (
             <FeaturedThumb key={i} {...blog} />

@@ -5,7 +5,7 @@ import { fetchPost } from 'data/fetchers'
 import { constructHeaders } from 'lib/api/apiHelpers'
 import apiWrapper from 'lib/api/apiWrapper'
 
-const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!)
+const supabase = createClient(process.env.SKYBASE_URL!, process.env.SKYBASE_SERVICE_KEY!)
 
 export default (req: NextApiRequest, res: NextApiResponse) => apiWrapper(req, res, handler)
 
@@ -25,9 +25,9 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
   const headers = constructHeaders({
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}`,
+    Authorization: `Bearer ${process.env.SKYBASE_SERVICE_KEY}`,
   })
-  const url = `${process.env.SUPABASE_URL}/auth/v1/invite`
+  const url = `${process.env.SKYBASE_URL}/auth/v1/invite`
   const payload = { email: req.body.email }
 
   const response = await fetchPost(url, payload, { headers })

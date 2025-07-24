@@ -8,9 +8,9 @@ const appJsCode = `import { useEffect, useState } from 'react';
 import './styles.css';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate a unique instance ID for this session
@@ -155,7 +155,7 @@ export default function App() {
     if (!newTodo.trim() || !isConnected || !user) return;
 
     try {
-      // Insert the todo into the Supabase table
+      // Insert the todo into the Skybase table
       // The database trigger will handle broadcasting
       const { error } = await supabase
         .from(TABLE)

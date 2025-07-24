@@ -28,15 +28,15 @@ const Authentication = ({ selectedLang, showApiKey }: AuthenticationProps) => {
       : 'SUPABASE_CLIENT_API_KEY'
   const serviceApiKey =
     showApiKey !== 'SUPABASE_KEY'
-      ? serviceKey?.api_key ?? 'SUPABASE_SERVICE_KEY'
-      : 'SUPABASE_SERVICE_KEY'
+      ? serviceKey?.api_key ?? 'SKYBASE_SERVICE_KEY'
+      : 'SKYBASE_SERVICE_KEY'
 
   return (
     <>
       <h2 className="doc-heading">Authentication</h2>
       <div className="doc-section">
         <article className="code-column text-foreground">
-          <p>Supabase works through a mixture of JWT and Key auth.</p>
+          <p>Skybase works through a mixture of JWT and Key auth.</p>
           <p>
             If no <code>Authorization</code> header is included, the API will assume that you are
             making a request with an anonymous user.

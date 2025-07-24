@@ -15,25 +15,25 @@ export const getSupabase = (c: Context) => {
 };
 
 type SupabaseEnv = {
-  VITE_SUPABASE_URL: string;
-  VITE_SUPABASE_ANON_KEY: string;
+  VITE_SKYBASE_URL: string;
+  VITE_SKYBASE_ANON_KEY: string;
 };
 
 export const supabaseMiddleware = (): MiddlewareHandler => {
   return async (c, next) => {
     const supabaseEnv = env<SupabaseEnv>(c);
     const supabaseUrl =
-      supabaseEnv.VITE_SUPABASE_URL ?? import.meta.env.VITE_SUPABASE_URL;
+      supabaseEnv.VITE_SKYBASE_URL ?? import.meta.env.VITE_SKYBASE_URL;
     const supabaseAnonKey =
-      supabaseEnv.VITE_SUPABASE_ANON_KEY ??
-      import.meta.env.VITE_SUPABASE_ANON_KEY;
+      supabaseEnv.VITE_SKYBASE_ANON_KEY ??
+      import.meta.env.VITE_SKYBASE_ANON_KEY;
 
     if (!supabaseUrl) {
-      throw new Error('SUPABASE_URL missing!');
+      throw new Error('SKYBASE_URL missing!');
     }
 
     if (!supabaseAnonKey) {
-      throw new Error('SUPABASE_ANON_KEY missing!');
+      throw new Error('SKYBASE_ANON_KEY missing!');
     }
 
     const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {

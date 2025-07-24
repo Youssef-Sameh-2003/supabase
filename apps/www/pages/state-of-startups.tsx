@@ -472,7 +472,7 @@ const Hero = (props: any) => {
               <div className="w-11 h-11 relative flex items-center justify-center bg-default border rounded-lg">
                 <Image
                   src="/images/supabase-logo-icon.svg"
-                  alt="Supabase icon"
+                  alt="Skybase icon"
                   width={60}
                   height={60}
                   className="w-6 h-6"

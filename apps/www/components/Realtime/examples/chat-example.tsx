@@ -8,9 +8,9 @@ const appJsCode = `import { useEffect, useState, useRef } from 'react';
 import './styles.css';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate a random user ID and avatar
@@ -184,7 +184,7 @@ const layoutProps: ExampleLayoutProps = {
   files: chatFiles,
   title: 'Chat Example',
   description:
-    "A real-time chat application that uses Supabase Realtime's broadcast and presence features to enable instant messaging and show online users.",
+    "A real-time chat application that uses Skybase Realtime's broadcast and presence features to enable instant messaging and show online users.",
 }
 
 export default layoutProps

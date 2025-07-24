@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
 import JSONInput from 'react-json-editor-ajrm'
 import locale from 'react-json-editor-ajrm/locale/en'
-import { supabase } from './utils/supabaseClient'
+import { supabase } from './utils/skybaseClient'
 import { functionsList } from './functionsList'
 
 const sampleObject = { name: 'world' }

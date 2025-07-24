@@ -23,10 +23,10 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {[
             '',
-            `NEXT_PUBLIC_SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}`,
+            `NEXT_PUBLIC_SKYBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}`,
             projectKeys?.publishableKey
-              ? `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=${projectKeys.publishableKey}`
-              : `NEXT_PUBLIC_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}`,
+              ? `NEXT_PUBLIC_SKYBASE_PUBLISHABLE_DEFAULT_KEY=${projectKeys.publishableKey}`
+              : `NEXT_PUBLIC_SKYBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}`,
             '',
           ].join('\n')}
         </SimpleCodeBlock>
@@ -62,8 +62,8 @@ export default async function Page() {
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SUPABASE_ANON_KEY'};
+const supabaseUrl = process.env.NEXT_PUBLIC_SKYBASE_URL;
+const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SKYBASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SKYBASE_ANON_KEY'};
 
 export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
   return createServerClient(
@@ -95,8 +95,8 @@ export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
           {`
 import { createBrowserClient } from "@supabase/ssr";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SUPABASE_ANON_KEY'};
+const supabaseUrl = process.env.NEXT_PUBLIC_SKYBASE_URL;
+const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SKYBASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SKYBASE_ANON_KEY'};
 
 export const createClient = () =>
   createBrowserClient(
@@ -113,8 +113,8 @@ export const createClient = () =>
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SUPABASE_ANON_KEY'};
+const supabaseUrl = process.env.NEXT_PUBLIC_SKYBASE_URL;
+const supabaseKey = process.env.${projectKeys?.publishableKey ? 'NEXT_PUBLIC_SKYBASE_PUBLISHABLE_DEFAULT_KEY' : 'NEXT_PUBLIC_SKYBASE_ANON_KEY'};
 
 export const createClient = (request: NextRequest) => {
   // Create an unmodified response

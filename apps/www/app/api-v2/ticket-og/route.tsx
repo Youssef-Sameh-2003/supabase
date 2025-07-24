@@ -13,9 +13,9 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const SKYBASE_URL = process.env.NEXT_PUBLIC_SKYBASE_URL
 
-const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/images/launch-week/lw15`
+const STORAGE_URL = `${SKYBASE_URL}/storage/v1/object/public/images/launch-week/lw15`
 // Load custom fonts
 const FONT_URLS = {
   SANS: 'https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/fonts/CircularStd-Book.otf',
@@ -36,7 +36,7 @@ export async function GET(req: Request, res: Response) {
     if (!username) throw new Error('missing username param')
 
     const supabaseAdminClient = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL as string,
+      process.env.NEXT_PUBLIC_SKYBASE_URL as string,
       process.env.LIVE_SUPABASE_COM_SERVICE_ROLE_KEY as string
     )
 

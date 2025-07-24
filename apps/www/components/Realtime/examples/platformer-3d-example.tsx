@@ -12,9 +12,9 @@ import { Physics, useBox, usePlane } from '@react-three/cannon';
 import { OrbitControls } from '@react-three/drei';
 import { Vector3, MathUtils } from 'three';
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
@@ -102,7 +102,7 @@ export default function App() {
     setLocalPlayer(initialPlayerState);
     localPlayerRef.current = initialPlayerState; // Also set the ref directly
     
-    // Set up Supabase channel
+    // Set up Skybase channel
     const channel = supabase.channel(CHANNEL, {
       config: {
         presence: {

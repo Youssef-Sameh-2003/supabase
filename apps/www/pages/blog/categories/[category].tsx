@@ -38,7 +38,7 @@ function CategoriesIndex(props: Props) {
     <>
       <NextSeo
         title={`Blog | ${capitalizedCategory}`}
-        description="Latest news from the Supabase team."
+        description="Latest news from the Skybase team."
       />
       <DefaultLayout>
         <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">

@@ -77,8 +77,8 @@ export const AnalyticsSettings = () => {
         <Toggle
           checked={hasAccepted}
           onChange={onToggleOptIn}
-          label="Send telemetry data from Supabase services"
-          descriptionText="By opting in to sharing telemetry data, Supabase can analyze usage patterns to enhance user experience and use it for marketing and advertising purposes"
+          label="Send telemetry data from Skybase services"
+          descriptionText="By opting in to sharing telemetry data, Skybase can analyze usage patterns to enhance user experience and use it for marketing and advertising purposes"
         />
       </Panel.Content>
     </Panel>

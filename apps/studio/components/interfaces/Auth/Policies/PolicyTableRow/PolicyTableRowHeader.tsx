@@ -125,7 +125,7 @@ const PolicyTableRowHeader = ({
                   text:
                     !canToggleRLS || !canCreatePolicies
                       ? 'You need additional permissions to create RLS policies'
-                      : 'Create with Supabase Assistant',
+                      : 'Create with Skybase Assistant',
                 },
               }}
             >

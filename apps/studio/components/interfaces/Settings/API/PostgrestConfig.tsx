@@ -195,7 +195,7 @@ export const PostgrestConfig = () => {
                           className="w-full px-8 py-8"
                           layout="flex"
                           label="Enable Data API"
-                          description="When enabled you will be able to use any Supabase client library and PostgREST endpoints with any schema configured below."
+                          description="When enabled you will be able to use any Skybase client library and PostgREST endpoints with any schema configured below."
                         >
                           <FormControl_Shadcn_>
                             <Switch

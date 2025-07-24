@@ -245,7 +245,7 @@ export const QueryPerformance = ({
           <p>Inspect your database for potential issues</p>
           <Markdown
             className="text-xs"
-            content="The Supabase CLI comes with a range of tools to help inspect your Postgres instances for
+            content="The Skybase CLI comes with a range of tools to help inspect your Postgres instances for
             potential issues. [Learn more here](https://supabase.com/docs/guides/database/inspect)."
           />
         </div>

@@ -37,8 +37,8 @@ describe('_handleRevalidateRequest', () => {
     // Mock environment variables
     process.env.DOCS_REVALIDATION_KEYS = 'basic_key'
     process.env.DOCS_REVALIDATION_OVERRIDE_KEYS = 'override_key,other_override_key'
-    process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:3000'
-    process.env.SUPABASE_SECRET_KEY = 'secret_key'
+    process.env.NEXT_PUBLIC_SKYBASE_URL = 'http://localhost:3000'
+    process.env.SKYBASE_SECRET_KEY = 'secret_key'
 
     // Silence intentional console errors for cleaner test output
     vi.spyOn(console, 'error').mockImplementation(() => {})

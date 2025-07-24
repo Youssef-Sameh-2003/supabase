@@ -23,9 +23,9 @@ type Props = {}
 const Index = ({}: Props) => {
   const router = useRouter()
 
-  const meta_title = "One of the world's fastest-growing open source communities | Supabase"
+  const meta_title = "One of the world's fastest-growing open source communities | Skybase"
   const meta_description =
-    'Supabase is the community that builds the infrastructure for your applications. Build using Supabase for any size project—from a new startup to even large growing companies'
+    'Skybase is the community that builds the infrastructure for your applications. Build using Skybase for any size project—from a new startup to even large growing companies'
 
   return (
     <>
@@ -83,7 +83,7 @@ const Team = () => {
           <div className="col-span-8 ">
             <p>
               <p className="text-foreground text-lg">
-                Supabase is fully remote, with a strong affinity for open source maintainers and
+                Skybase is fully remote, with a strong affinity for open source maintainers and
                 ex-Founders. Our engineering team is made up of developers from AWS, Google,
                 Palantir, Stripe, and other YC companies.
               </p>

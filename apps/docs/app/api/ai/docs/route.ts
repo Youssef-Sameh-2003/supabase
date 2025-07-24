@@ -31,8 +31,8 @@ export const preferredRegion = [
 ]
 
 const openAiKey = process.env.OPENAI_API_KEY
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const supabaseUrl = process.env.NEXT_PUBLIC_SKYBASE_URL as string
+const supabaseServiceKey = process.env.NEXT_PUBLIC_SKYBASE_ANON_KEY as string
 
 export async function POST(req: NextRequest) {
   if (!openAiKey || !supabaseUrl || !supabaseServiceKey) {

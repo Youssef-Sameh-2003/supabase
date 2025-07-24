@@ -61,8 +61,8 @@ const AccountLayout = ({ children, title }: PropsWithChildren<AccountLayoutProps
   return (
     <>
       <Head>
-        <title>{title ? `${title} | Supabase` : 'Supabase'}</title>
-        <meta name="description" content="Supabase Studio" />
+        <title>{title ? `${title} | Skybase` : 'Skybase'}</title>
+        <meta name="description" content="Skybase Studio" />
       </Head>
       <div className={cn('flex flex-col h-screen w-screen')}>
         <ScaffoldContainerLegacy>

@@ -9,9 +9,9 @@ import './styles.css';
 import { createClient } from '@supabase/supabase-js';
 import { Trash2 } from "lucide-react";
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
@@ -123,7 +123,7 @@ export default function App() {
     pointsBuffer.current = [];
   };
   
-  // Set up Supabase channel
+  // Set up Skybase channel
   useEffect(() => {
     // Generate a random username
     const adjectives = ['Happy', 'Clever', 'Brave', 'Bright', 'Kind'];
@@ -413,7 +413,7 @@ const layoutProps: ExampleLayoutProps = {
   files: whiteboardFiles,
   title: 'Whiteboard',
   description:
-    "A collaborative whiteboard that uses Supabase Realtime's broadcast channel to synchronize drawing strokes and cursor positions between multiple users in real-time.",
+    "A collaborative whiteboard that uses Skybase Realtime's broadcast channel to synchronize drawing strokes and cursor positions between multiple users in real-time.",
 }
 
 export default layoutProps

@@ -11,9 +11,9 @@ import * as Y from 'yjs';
 import Quill from 'quill';
 import 'quill/dist/quill.bubble.css'; // Using bubble theme without toolbar
 
-// Initialize Supabase client
-const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_URL}';
-const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SUPABASE_ANON_KEY}';
+// Initialize Skybase client
+const supabaseUrl = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_URL}';
+const supabaseKey = '${process.env.NEXT_PUBLIC_EXAMPLES_SKYBASE_ANON_KEY}';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Channel name - using a unique ID to ensure both instances connect to the same channel
@@ -76,7 +76,7 @@ export default function App() {
     // Create a shared text type
     const ytext = ydoc.getText('quill');
     
-    // Set up Supabase channel
+    // Set up Skybase channel
     const channel = supabase.channel(CHANNEL);
     channelRef.current = channel;
     
@@ -149,7 +149,7 @@ export default function App() {
         updateObj[index] = value;
       });
       
-      // Send update via Supabase
+      // Send update via Skybase
       channel.send({
         type: 'broadcast',
         event: 'document-update',
@@ -233,7 +233,7 @@ const layoutProps: ExampleLayoutProps = {
   },
   title: 'Collaborative Editor',
   description:
-    "A real-time collaborative text editor that uses Supabase Realtime's broadcast channel to sync document changes between users via YJS CRDT.",
+    "A real-time collaborative text editor that uses Skybase Realtime's broadcast channel to sync document changes between users via YJS CRDT.",
 }
 
 export default layoutProps

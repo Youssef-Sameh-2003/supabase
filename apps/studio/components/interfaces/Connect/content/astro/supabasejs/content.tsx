@@ -20,7 +20,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env.local">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+SKYBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
 SUPABASE_KEY=${projectKeys.publishableKey ?? projectKeys.anonKey ?? 'your-anon-key'}
         `}
         </SimpleCodeBlock>
@@ -31,7 +31,7 @@ SUPABASE_KEY=${projectKeys.publishableKey ?? projectKeys.anonKey ?? 'your-anon-k
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.SUPABASE_URL;
+const supabaseUrl = import.meta.env.SKYBASE_URL;
 const supabaseKey = import.meta.env.SUPABASE_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);

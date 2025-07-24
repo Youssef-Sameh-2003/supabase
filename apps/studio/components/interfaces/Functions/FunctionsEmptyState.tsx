@@ -125,7 +125,7 @@ export const FunctionsEmptyState = () => {
               <h4 className="text-base text-foreground">Via CLI</h4>
             </div>
             <p className="text-sm text-foreground-light mb-4 mt-1">
-              Create and deploy functions using the Supabase CLI. Ideal for local development and
+              Create and deploy functions using the Skybase CLI. Ideal for local development and
               version control.
             </p>
 
@@ -202,7 +202,7 @@ export const FunctionsEmptyStateLocal = () => {
               </div>
               <p className="text-sm text-foreground-light mt-1 mb-4 prose [&>code]:text-xs text-sm max-w-full">
                 Create a new edge function called <code>hello-world</code> in your project via the
-                Supabase CLI.
+                Skybase CLI.
               </p>
               <div className="mb-4">
                 <CodeBlock
@@ -258,7 +258,7 @@ supabase functions serve # start the Functions watcher`.trim()}
                   )}
                   value={`
 curl --request POST 'http://localhost:54321/functions/v1/hello-world' \\
-  --header 'Authorization: Bearer SUPABASE_ANON_KEY' \\
+  --header 'Authorization: Bearer SKYBASE_ANON_KEY' \\
   --header 'Content-Type: application/json' \\
   --data '{ "name":"Functions" }'`.trim()}
                 />
@@ -279,7 +279,7 @@ curl --request POST 'http://localhost:54321/functions/v1/hello-world' \\
                 <h4 className="text-base text-foreground">Self-hosting Edge Functions</h4>
               </div>
               <p className="text-sm text-foreground-light mt-1 mb-4 max-w-3xl">
-                Supabase Edge Runtime consists of a web server based on the Deno runtime, capable of
+                Skybase Edge Runtime consists of a web server based on the Deno runtime, capable of
                 running Javascript, Typescript, and WASM services. You may self-host edge functions
                 on providers like Fly.io, Digital Ocean, or AWS.
               </p>

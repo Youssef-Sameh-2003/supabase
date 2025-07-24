@@ -33,8 +33,8 @@ export const config = {
 }
 
 const openAiKey = process.env.OPENAI_API_KEY
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const supabaseUrl = process.env.NEXT_PUBLIC_SKYBASE_URL as string
+const supabaseServiceKey = process.env.NEXT_PUBLIC_SKYBASE_ANON_KEY as string
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -53,7 +53,7 @@ export default async function handler(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error:
-          'No NEXT_PUBLIC_SUPABASE_URL set. Create this environment variable to use AI features.',
+          'No NEXT_PUBLIC_SKYBASE_URL set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,
@@ -66,7 +66,7 @@ export default async function handler(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error:
-          'No NEXT_PUBLIC_SUPABASE_ANON_KEY set. Create this environment variable to use AI features.',
+          'No NEXT_PUBLIC_SKYBASE_ANON_KEY set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,

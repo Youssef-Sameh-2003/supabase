@@ -43,7 +43,7 @@ const LinterPageFooter = ({
           <p>
             <span>These suggestions use </span>
             <a href="https://github.com/supabase/splinter" target="" rel="">
-              splinter (Supabase Postgres LINTER)
+              splinter (Skybase Postgres LINTER)
             </a>
             .
           </p>
@@ -55,7 +55,7 @@ const LinterPageFooter = ({
           <p>Inspect your database for potential issues</p>
           <Markdown
             className="text-xs"
-            content="The Supabase CLI comes with a range of tools to help inspect your Postgres instances for
+            content="The Skybase CLI comes with a range of tools to help inspect your Postgres instances for
             potential issues. [Learn more here](https://supabase.com/docs/guides/database/inspect)."
           />
         </div>

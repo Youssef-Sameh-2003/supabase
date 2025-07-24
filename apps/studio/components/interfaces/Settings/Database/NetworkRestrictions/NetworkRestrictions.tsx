@@ -222,7 +222,7 @@ const NetworkRestrictions = () => {
                       database.
                     </p>
                     <p className="text-foreground-light text-sm">
-                      Note: Restrictions only apply to your database, and not to Supabase services
+                      Note: Restrictions only apply to your database, and not to Skybase services
                     </p>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ const NetworkRestrictions = () => {
                       database
                     </p>
                     <p className="text-foreground-light text-sm">
-                      Note: Restrictions only apply to your database, and not to Supabase services
+                      Note: Restrictions only apply to your database, and not to Skybase services
                     </p>
                   </div>
                   <div className="flex items-center space-x-2">

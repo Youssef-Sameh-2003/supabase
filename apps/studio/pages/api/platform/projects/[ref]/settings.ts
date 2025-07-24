@@ -48,12 +48,12 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
     region: 'ap-southeast-1',
     service_api_keys: [
       {
-        api_key: process.env.SUPABASE_SERVICE_KEY ?? '',
+        api_key: process.env.SKYBASE_SERVICE_KEY ?? '',
         name: 'service_role key',
         tags: 'service_role',
       },
       {
-        api_key: process.env.SUPABASE_ANON_KEY ?? '',
+        api_key: process.env.SKYBASE_ANON_KEY ?? '',
         name: 'anon key',
         tags: 'anon',
       },

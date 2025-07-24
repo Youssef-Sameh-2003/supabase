@@ -46,7 +46,7 @@ Deno.serve(async (req) => {
         React.createElement(SignUpEmail, {
           username: user['user_metadata'].username,
           lang: user['user_metadata'].lang,
-          supabase_url: Deno.env.get('SUPABASE_URL') ?? '',
+          supabase_url: Deno.env.get('SKYBASE_URL') ?? '',
           token,
           token_hash,
           redirect_to,
@@ -56,7 +56,7 @@ Deno.serve(async (req) => {
     } else if (email_action_type == 'login') {
       html = await renderAsync(
         React.createElement(MagicLinkEmail, {
-          supabase_url: Deno.env.get('SUPABASE_URL') ?? '',
+          supabase_url: Deno.env.get('SKYBASE_URL') ?? '',
           token,
           token_hash,
           redirect_to,

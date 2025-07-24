@@ -109,7 +109,7 @@ const footerData = [
         url: '/docs',
       },
       {
-        text: 'Supabase UI',
+        text: 'Skybase UI',
         url: 'https://supabase.com/ui',
       },
       {

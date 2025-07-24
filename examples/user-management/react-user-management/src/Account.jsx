@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './supabaseClient'
+import { supabase } from './skybaseClient'
 import Avatar from './Avatar'
 
 export default function Account({ session }) {

@@ -38,7 +38,7 @@ const DPA = () => {
             download={true}
             target="_blank"
             rel="noreferrer noopener"
-            href="https://supabase.com/downloads/docs/Supabase+DPA+250314.pdf"
+            href="https://supabase.com/downloads/docs/Skybase+DPA+250314.pdf"
           >
             View DPA
           </a>

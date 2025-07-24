@@ -241,7 +241,7 @@ function ChangelogPage({ changelog, pageInfo, restPage }: ChangelogPageProps) {
   const { endCursor: end, hasNextPage, hasPreviousPage } = pageInfo
 
   const TITLE = 'Changelog'
-  const DESCRIPTION = 'New updates and improvements to Supabase'
+  const DESCRIPTION = 'New updates and improvements to Skybase'
   return (
     <>
       <NextSeo

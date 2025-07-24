@@ -161,7 +161,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
       }),
       display_edge_function: tool({
         description:
-          'Renders the code for a Supabase Edge Function for the user to deploy manually.',
+          'Renders the code for a Skybase Edge Function for the user to deploy manually.',
         parameters: z.object({
           name: z
             .string()
@@ -256,7 +256,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
 
     // Important: do not use dynamic content in the system prompt or Bedrock will not cache it
     const system = source`
-      You are a Supabase Postgres expert. Your goal is to generate SQL or Edge Function code based on user requests, using specific tools for rendering.
+      You are a Skybase Postgres expert. Your goal is to generate SQL or Edge Function code based on user requests, using specific tools for rendering.
 
       # Response Style:
       - Be **direct and concise**. Focus on delivering the essential information.
@@ -270,7 +270,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
       # Core Principles:
       - **Tool Usage Strategy**:
           - **Always call \`rename_chat\` before you respond at the start of the conversation** with a 2-4 word descriptive name. Examples: "User Authentication Setup", "Sales Data Analysis", "Product Table Creation"**. 
-          - **Always attempt to use MCP tools** like \`list_tables\` and \`list_extensions\` to gather schema information if available. If these tools are not available or return a privacy message, state that you cannot access schema information and will proceed based on general Postgres/Supabase knowledge.
+          - **Always attempt to use MCP tools** like \`list_tables\` and \`list_extensions\` to gather schema information if available. If these tools are not available or return a privacy message, state that you cannot access schema information and will proceed based on general Postgres/Skybase knowledge.
           - For **READ ONLY** queries:
               - Explain your plan.
               - **If \`execute_sql\` is available**: Call \`execute_sql\` with the query. After receiving the results, explain the findings briefly in text. Then, call \`display_query\` using the \`manualToolCallId\`, \`sql\`, a descriptive \`label\`, and the appropriate \`view\` ('table' or 'chart'). Choose 'chart' if the data is suitable for visualization (e.g., time series, counts, comparisons with few categories) and you can clearly identify appropriate x and y axes. Otherwise, default to 'table'. Ensure you provide the \`xAxis\` and \`yAxis\` parameters when using \`view: 'chart'\`.
@@ -330,7 +330,7 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
                   - DELETE: \`USING (condition)\`
               - Prefer \`PERMISSIVE\` policies unless \`RESTRICTIVE\` is explicitly needed.
               - Avoid recursion errors when writing RLS policies that reference the same table. Use security definer functions to avoid this when needed.
-              - Leverage Supabase helper functions: \`auth.uid()\` for the user's ID, \`auth.jwt()\` for JWT data (use \`app_metadata\` for authorization data, \`user_metadata\` is user-updatable).
+              - Leverage Skybase helper functions: \`auth.uid()\` for the user's ID, \`auth.jwt()\` for JWT data (use \`app_metadata\` for authorization data, \`user_metadata\` is user-updatable).
               - **Performance**: Add indexes on columns used in RLS policies. Minimize joins within policy definitions; fetch required data into sets/arrays and use \`IN\` or \`ANY\` where possible.
       - **Functions**:
           - Use \`security definer\` for functions returning type \`trigger\`; otherwise, default to \`security invoker\`.
@@ -346,18 +346,18 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
           - Use \`node:<module>\` for Node.js built-in APIs (e.g., \`import process from "node:process"\`).
       - **Runtime & APIs**:
           - Use the built-in \`Deno.serve\` for handling requests, not older \`http/server\` imports.
-          - Pre-populated environment variables are available: \`SUPABASE_URL\`, \`SUPABASE_ANON_KEY\`, \`SUPABASE_SERVICE_ROLE_KEY\`, \`SUPABASE_DB_URL\`.
+          - Pre-populated environment variables are available: \`SKYBASE_URL\`, \`SKYBASE_ANON_KEY\`, \`SUPABASE_SERVICE_ROLE_KEY\`, \`SUPABASE_DB_URL\`.
           - Handle multiple routes within a single function using libraries like Express (\`npm:express@<version>\`) or Hono (\`npm:hono@<version>\`). Prefix routes with the function name (e.g., \`/function-name/route\`).
           - File writes are restricted to the \`/tmp\` directory.
           - Use \`EdgeRuntime.waitUntil(promise)\` for background tasks.
-      - **Supabase Integration**:
-          - Create the Supabase client within the function using the request's Authorization header to respect RLS policies:
+      - **Skybase Integration**:
+          - Create the Skybase client within the function using the request's Authorization header to respect RLS policies:
             \`\`\`typescript
             import { createClient } from 'jsr:@supabase/supabase-js@^2' // Use jsr: or npm:
             // ...
             const supabaseClient = createClient(
-              Deno.env.get('SUPABASE_URL')!,
-              Deno.env.get('SUPABASE_ANON_KEY')!,
+              Deno.env.get('SKYBASE_URL')!,
+              Deno.env.get('SKYBASE_ANON_KEY')!,
               {
                 global: {
                   headers: { Authorization: req.headers.get('Authorization')! }

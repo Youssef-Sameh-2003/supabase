@@ -4,7 +4,7 @@ import OpenAI from 'https://deno.land/x/openai@v4.68.2/mod.ts'
 const client = new OpenAI({ apiKey: Deno.env.get('OPENAI_API_KEY')! })
 
 const supabase = createClient(
-  Deno.env.get('SUPABASE_URL')!,
+  Deno.env.get('SKYBASE_URL')!,
   Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 )
 

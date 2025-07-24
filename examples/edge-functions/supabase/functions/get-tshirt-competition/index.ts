@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
 
     const supabaseAdminClient = createClient(
       // Supabase API URL - env var exported by default when deployed.
-      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SKYBASE_URL') ?? '',
       // Supabase API SERVICE ROLE KEY - env var exported by default when deployed.
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )

@@ -22,9 +22,9 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
   const headers = constructHeaders({
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}`,
+    Authorization: `Bearer ${process.env.SKYBASE_SERVICE_KEY}`,
   })
-  const url = `${process.env.SUPABASE_URL}/auth/v1/recover`
+  const url = `${process.env.SKYBASE_URL}/auth/v1/recover`
   const payload = { email: req.body.email }
 
   const response = await fetchPost(url, payload, { headers })

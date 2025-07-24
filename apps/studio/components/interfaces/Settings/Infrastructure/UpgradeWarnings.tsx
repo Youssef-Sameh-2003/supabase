@@ -78,7 +78,7 @@ export const UnsupportedExtensionsWarning = ({
           </ul>
         </div>
         <p>
-          These extensions are not supported in newer versions of Supabase Postgres. If you are not
+          These extensions are not supported in newer versions of Skybase Postgres. If you are not
           using them, it is safe to remove them.
         </p>
         <div>
@@ -119,7 +119,7 @@ export const UserDefinedObjectsInInternalSchemasWarning = ({ objects }: { object
           </ul>
         </div>
         <p>
-          These schemas are Supabase-managed and creating custom objects in them is no longer
+          These schemas are Skybase-managed and creating custom objects in them is no longer
           supported. Check the changelog to see how to move them to your own schemas.
         </p>
         <div>

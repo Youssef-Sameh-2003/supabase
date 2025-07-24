@@ -24,7 +24,7 @@ const supabaseUrl = '${endpoint}';
 const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
 Future<void> main() async {
-  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+  await Skybase.initialize(url: supabaseUrl, anonKey: supabaseKey);
   runApp(MyApp());
 }`,
 })
@@ -85,7 +85,7 @@ const APIKeys = () => {
           <p className="text-sm text-foreground-light">
             Your API is secured behind an API gateway which requires an API Key for every request.
             <br />
-            You can use the parameters below to use Supabase client libraries.
+            You can use the parameters below to use Skybase client libraries.
           </p>
         </div>
       }

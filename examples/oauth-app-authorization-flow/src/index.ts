@@ -3,9 +3,9 @@ import { Hono } from 'hono'
 
 declare module 'bun' {
   interface Env {
-    SUPABASE_REDIRECT_URL: string
-    SUPABASE_CLIENT_ID: string
-    SUPABASE_CLIENT_SECRET: string
+    SKYBASE_REDIRECT_URL: string
+    SKYBASE_CLIENT_ID: string
+    SKYBASE_CLIENT_SECRET: string
   }
 }
 
@@ -16,8 +16,8 @@ const app = new Hono()
 
 app.get('/', (c) => {
   const params = new URLSearchParams({
-    client_id: env.SUPABASE_CLIENT_ID,
-    redirect_uri: env.SUPABASE_REDIRECT_URL,
+    client_id: env.SKYBASE_CLIENT_ID,
+    redirect_uri: env.SKYBASE_REDIRECT_URL,
     response_type: 'code',
   })
 
@@ -37,12 +37,12 @@ app.get('/callback', async (c) => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       Accept: 'application/json',
-      Authorization: `Basic ${btoa(`${env.SUPABASE_CLIENT_ID}:${env.SUPABASE_CLIENT_SECRET}`)}`,
+      Authorization: `Basic ${btoa(`${env.SKYBASE_CLIENT_ID}:${env.SKYBASE_CLIENT_SECRET}`)}`,
     },
     body: new URLSearchParams({
       grant_type: 'authorization_code',
       code: c.req.query('code') ?? '',
-      redirect_uri: env.SUPABASE_REDIRECT_URL,
+      redirect_uri: env.SKYBASE_REDIRECT_URL,
     }),
   })
 

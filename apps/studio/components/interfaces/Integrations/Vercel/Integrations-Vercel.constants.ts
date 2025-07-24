@@ -27,12 +27,12 @@ const ENV_VAR_KEYS = {
     key: 'POSTGRES_DATABASE',
     type: 'encrypted',
   },
-  SUPABASE_ANON_KEY: {
-    key: 'SUPABASE_ANON_KEY',
+  SKYBASE_ANON_KEY: {
+    key: 'SKYBASE_ANON_KEY',
     type: 'encrypted',
   },
-  SUPABASE_URL: {
-    key: 'SUPABASE_URL',
+  SKYBASE_URL: {
+    key: 'SKYBASE_URL',
     type: 'encrypted',
   },
   SUPABASE_SERVICE_ROLE_KEY: {
@@ -43,12 +43,12 @@ const ENV_VAR_KEYS = {
     key: 'SUPABASE_JWT_SECRET',
     type: 'encrypted',
   },
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: {
-    key: 'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+  NEXT_PUBLIC_SKYBASE_ANON_KEY: {
+    key: 'NEXT_PUBLIC_SKYBASE_ANON_KEY',
     type: 'encrypted',
   },
-  NEXT_PUBLIC_SUPABASE_URL: {
-    key: 'NEXT_PUBLIC_SUPABASE_URL',
+  NEXT_PUBLIC_SKYBASE_URL: {
+    key: 'NEXT_PUBLIC_SKYBASE_URL',
     type: 'encrypted',
   },
 } as const

@@ -33,7 +33,7 @@ Hooks.getLayout = (page) => (
     <AuthLayout>
       <PageLayout
         title="Auth Hooks"
-        subtitle="Use Postgres functions or HTTP endpoints to customize the behavior of Supabase Auth to meet your needs"
+        subtitle="Use Postgres functions or HTTP endpoints to customize the behavior of Skybase Auth to meet your needs"
         secondaryActions={secondaryActions}
       >
         {page}

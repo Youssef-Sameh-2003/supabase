@@ -22,7 +22,7 @@ Deno.serve((req) => {
 
   const reqUrl = new URL(req.url);
   const url = `${
-    Deno.env.get("SUPABASE_URL")
+    Deno.env.get("SKYBASE_URL")
   }/storage/v1/object/authenticated${reqUrl.pathname}`;
 
   const { method, headers } = req;
