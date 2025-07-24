@@ -31,7 +31,7 @@
   },
   "peerDependencies": {
     "@supabase/auth-js": "catalog:",
-    "@supabase/skybase-js": "catalog:",
+    "@supabase/supabase-js": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
