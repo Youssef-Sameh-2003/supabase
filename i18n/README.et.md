@@ -31,8 +31,8 @@ Et näha, kuidas panustada, külastage [Getting Started](../DEVELOPERS.md)
 
 ## Kogukond ja tugi
 
-- [Ühenduse foorum](https://github.co./skybase/supabase/discussions). Parim: abi ehitamisel, arutelu andmebaasi parimate tavade üle.
-- [GitHub Issues](https://github.co./skybase/supabase/issues). Parim lahendus: vead ja vead, millega Supabase'i kasutades kokku puutute.
+- [Ühenduse foorum](https://github.com/supabase/supabase/discussions). Parim: abi ehitamisel, arutelu andmebaasi parimate tavade üle.
+- [GitHub Issues](https://github.com/supabase/supabase/issues). Parim lahendus: vead ja vead, millega Supabase'i kasutades kokku puutute.
 - [E-posti tugi](https://supabase.com/docs/support#business-support). Parim lahendus: probleemid andmebaasi või infrastruktuuriga.
 - [Discord](https://discord.supabase.com). Parim: oma rakenduste jagamiseks ja kogukonnaga suhtlemiseks.
 
@@ -58,14 +58,14 @@ Supabase on avatud lähtekoodiga tööriistade kombinatsioon. Me ehitame Firebas
 Supabase on [hostitud platvorm](https://supabase.com/dashboard). Võite registreeruda ja alustada Supabase'i kasutamist ilma midagi installimata.
 Võite ka [ise hostida](https://supabase.com/docs/guides/hosting/overview) ja [arendada lokaalselt](https://supabase.com/docs/guides/local-development).
 
-![Arhitektuur](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Arhitektuur](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) on objekt-relatsiooniline andmebaasisüsteem, mille aktiivne arendamine on kestnud üle 30 aasta ja mis on saavutanud hea maine usaldusväärsuse, funktsioonide töökindluse ja jõudluse poolest.
-- [Realtime](https://github.co./skybase/realtime) on Elixir server, mis võimaldab kuulata PostgreSQL-i sisestusi, uuendusi ja kustutusi veebisokkide abil. Realtime küsib Postgres'i sisseehitatud replikatsioonifunktsioone andmebaasi muudatuste kohta, konverteerib muudatused JSON-iks ja edastab seejärel JSON-i üle websocketi volitatud klientidele.
+- [Realtime](https://github.com/supabase/realtime) on Elixir server, mis võimaldab kuulata PostgreSQL-i sisestusi, uuendusi ja kustutusi veebisokkide abil. Realtime küsib Postgres'i sisseehitatud replikatsioonifunktsioone andmebaasi muudatuste kohta, konverteerib muudatused JSON-iks ja edastab seejärel JSON-i üle websocketi volitatud klientidele.
 - [PostgREST](http://postgrest.org/) on veebiserver, mis muudab teie PostgreSQL andmebaasi otse RESTful API-ks
-- [pg_graphql](http://github.co./skybase/pg_graphql/) on PostgreSQLi laiendus, mis avab GraphQL API
-- [Storage](https://github.co./skybase/storage-api) pakub RESTful liidest S3-s salvestatud failide haldamiseks, kasutades Postgres'i õiguste haldamiseks.
-- [postgres-meta](https://github.co./skybase/postgres-meta) on RESTful API oma Postgres'i haldamiseks, mis võimaldab tabelite hankimist, rollide lisamist ja päringute käivitamist jne.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) on PostgreSQLi laiendus, mis avab GraphQL API
+- [Storage](https://github.com/supabase/storage-api) pakub RESTful liidest S3-s salvestatud failide haldamiseks, kasutades Postgres'i õiguste haldamiseks.
+- [postgres-meta](https://github.com/supabase/postgres-meta) on RESTful API oma Postgres'i haldamiseks, mis võimaldab tabelite hankimist, rollide lisamist ja päringute käivitamist jne.
 - [GoTrue](https://github.com/netlify/gotrue) on SWT-põhine API kasutajate haldamiseks ja SWT-tokenite väljastamiseks.
 - [Kong](https://github.com/Kong/kong) on pilvepõhine API-värav.
 
@@ -84,9 +84,9 @@ Meie lähenemine kliendiraamatukogudele on modulaarne. Iga alamraamatukogu on is
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Meie lähenemine kliendiraamatukogudele on modulaarne. Iga alamraamatukogu on is
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Kogukond 💚</th>
@@ -220,7 +220,7 @@ Meie lähenemine kliendiraamatukogudele on modulaarne. Iga alamraamatukogu on is
 - [katalaani / Català](/i18n/README.ca.md)
 - [Taani / Dansk](/i18n/README.da.md)
 - [Hollandi keel / Nederlands](/i18n/README.nl.md)
-- [inglise keel](https://github.co./skybase/supabase)
+- [inglise keel](https://github.com/supabase/supabase)
 - [Soome / Suomalainen](/i18n/README.fi.md)
 - [Prantsuse / Français](/i18n/README.fr.md)
 - [Saksa / Deutsch](/i18n/README.de.md)

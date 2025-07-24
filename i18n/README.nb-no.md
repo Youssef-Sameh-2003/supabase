@@ -25,8 +25,8 @@ Besøk [supabase.com/docs](https://supabase.com/docs) for full dokumentasjon.
 
 ## Community & support
 
-- [Community-forum](https://github.co./skybase/supabase/discussions). Egnet for: hjelp med utvikling, best practices-diskusjoner.
-- [GitHub Issues](https://github.co./skybase/supabase/issues). Egnet for: bugs og feil du opplever med Supabase.
+- [Community-forum](https://github.com/supabase/supabase/discussions). Egnet for: hjelp med utvikling, best practices-diskusjoner.
+- [GitHub Issues](https://github.com/supabase/supabase/issues). Egnet for: bugs og feil du opplever med Supabase.
 - [Support på e-post](https://supabase.com/docs/support#business-support). Egnet for: problemer med databasen din eller infrastruktur.
 
 ## Status
@@ -50,13 +50,13 @@ Supabase er en samling av open source-verktøy. Vi bygger funksjonaliteten til F
 
 Supabase er en [hostet plattform](https://supabase.com/dashboard). Du kan registrere deg og begynne å bruke Supabase uten å installere noe. Vi holder fortsatt på å bygge verktøy for lokalt bruk – dette er nå vårt kjernefokus, i tillegg til plattformstabilitet.
 
-![Arkitektur](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Arkitektur](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) er et objektrelasjonelt databasesystem med over 30 år med aktiv utvikling, som har gitt det et godt rykte for pålitelighet, robusthet og ytelse.
-- [Realtime](https://github.co./skybase/realtime) er en Elixir-server som lar deg lytte til PostgreSQL-innsettinger, -oppdateringer og -slettinger ved hjelp av websockets. Supabase lytter til Postgres sin innebygde replikasjonsfunksjonalitet, konverterer replikasjonsbyte-strømmen til JSON, og sender deretter JSON over websockets.
+- [Realtime](https://github.com/supabase/realtime) er en Elixir-server som lar deg lytte til PostgreSQL-innsettinger, -oppdateringer og -slettinger ved hjelp av websockets. Supabase lytter til Postgres sin innebygde replikasjonsfunksjonalitet, konverterer replikasjonsbyte-strømmen til JSON, og sender deretter JSON over websockets.
 - [PostgREST](http://postgrest.org/) er en web-server som gir deg et RESTful-API direkte fra PostgreSQL-databasen
-- [Storage](https://github.co./skybase/storage-api) tilbyr et RESTful-grensesnitt for håndtering av filer lagret i S3, med tilgangsstyring gjennom Postgres.
-- [postgres-meta](https://github.co./skybase/postgres-meta) er et RESTful-API for å håndtere Postgres-databasen din, som lar deg hente ut tabeller, legge til roller og kjøre spørringer m.m.
+- [Storage](https://github.com/supabase/storage-api) tilbyr et RESTful-grensesnitt for håndtering av filer lagret i S3, med tilgangsstyring gjennom Postgres.
+- [postgres-meta](https://github.com/supabase/postgres-meta) er et RESTful-API for å håndtere Postgres-databasen din, som lar deg hente ut tabeller, legge til roller og kjøre spørringer m.m.
 - [GoTrue](https://github.com/netlify/gotrue) er et SWT-basert API for å administrere brukere og utstede SWT-tokens.
 - [Kong](https://github.com/Kong/kong) er et sky-basert API-gateway.
 
@@ -66,15 +66,15 @@ Klient-bibliotekene våre er modulære. Hvert under-bibliotek er en fristtående
 
 - **`supabase-{lang}`**: Kombinerer biblioteker, samt forbedringer.
   - `postgrest-{lang}`: Klient-bibliotek for [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: Klient-bibliotek for [Realtime](https://github.co./skybase/realtime)
+  - `realtime-{lang}`: Klient-bibliotek for [Realtime](https://github.com/supabase/realtime)
   - `gotrue-{lang}`: Klient-bibliotek for [GoTrue](https://github.com/netlify/gotrue)
 
 | Repo                  | Offisiell                                        | Community                                                                                                                                                                                                                  |
 | --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`supabase-{lang}`** | [`JS`](https://github.co./skybase/supabase-js)  | [`C#`](https://github.co./skybase/supabase-csharp) \| [`Flutter`](https://github.co./skybase/supabase-flutter) \| [`Python`](https://github.co./skybase/supabase-py) \| `Rust`                                          |
-| `postgrest-{lang}`    | [`JS`](https://github.co./skybase/postgrest-js) | [`C#`](https://github.co./skybase/postgrest-csharp) \| [`Dart`](https://github.co./skybase/postgrest-dart) \| [`Python`](https://github.co./skybase/postgrest-py) \| [`Rust`](https://github.co./skybase/postgrest-rs) |
-| `realtime-{lang}`     | [`JS`](https://github.co./skybase/realtime-js)  | [`C#`](https://github.co./skybase/realtime-csharp) \| [`Dart`](https://github.co./skybase/realtime-dart) \| [`Python`](https://github.co./skybase/realtime-py) \| `Rust`                                                |
-| `gotrue-{lang}`       | [`JS`](https://github.co./skybase/gotrue-js)    | [`C#`](https://github.co./skybase/gotrue-csharp) \| [`Dart`](https://github.co./skybase/gotrue-dart) \| [`Python`](https://github.co./skybase/gotrue-py) \| `Rust`                                                      |
+| **`supabase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/supabase/supabase-csharp) \| [`Flutter`](https://github.com/supabase/supabase-flutter) \| [`Python`](https://github.com/supabase/supabase-py) \| `Rust`                                          |
+| `postgrest-{lang}`    | [`JS`](https://github.com/supabase/postgrest-js) | [`C#`](https://github.com/supabase/postgrest-csharp) \| [`Dart`](https://github.com/supabase/postgrest-dart) \| [`Python`](https://github.com/supabase/postgrest-py) \| [`Rust`](https://github.com/supabase/postgrest-rs) |
+| `realtime-{lang}`     | [`JS`](https://github.com/supabase/realtime-js)  | [`C#`](https://github.com/supabase/realtime-csharp) \| [`Dart`](https://github.com/supabase/realtime-dart) \| [`Python`](https://github.com/supabase/realtime-py) \| `Rust`                                                |
+| `gotrue-{lang}`       | [`JS`](https://github.com/supabase/gotrue-js)    | [`C#`](https://github.com/supabase/gotrue-csharp) \| [`Dart`](https://github.com/supabase/gotrue-dart) \| [`Python`](https://github.com/supabase/gotrue-py) \| `Rust`                                                      |
 
 ## Oversettelser
 

@@ -31,8 +31,8 @@ Om te zien hoe u kunt bijdragen, bezoek [Aan de slag](../DEVELOPERS.md)
 
 ## Gemeenschap en ondersteuning
 
-- [Community Forum](https://github.co./skybase/supabase/discussions). Het beste voor: hulp bij het bouwen, discussie over database best practices.
-- [GitHub Issues](https://github.co./skybase/supabase/issues). Het beste voor: bugs en fouten die u tegenkomt bij het gebruik van Supabase.
+- [Community Forum](https://github.com/supabase/supabase/discussions). Het beste voor: hulp bij het bouwen, discussie over database best practices.
+- [GitHub Issues](https://github.com/supabase/supabase/issues). Het beste voor: bugs en fouten die u tegenkomt bij het gebruik van Supabase.
 - [Ondersteuning per e-mail](https://supabase.com/docs/support#business-support). Meest geschikt voor: problemen met uw database of infrastructuur.
 - [Discord](https://discord.supabase.com). Het beste voor: het delen van uw applicaties en omgang met de gemeenschap.
 
@@ -58,14 +58,14 @@ Supabase is een combinatie van open source tools. We bouwen de functies van Fire
 Supabase is een [gehost platform](https://supabase.com/dashboard). U kunt zich aanmelden en Supabase gebruiken zonder iets te installeren.
 U kunt ook [zelf hosten](https://supabase.com/docs/guides/hosting/overview) en [lokaal ontwikkelen](https://supabase.com/docs/guides/local-development).
 
-![architectuur](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![architectuur](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) is een object-relationeel database systeem met meer dan 30 jaar actieve ontwikkeling die het een sterke reputatie heeft opgeleverd voor betrouwbaarheid, robuustheid en prestaties.
-- [Realtime](https://github.co./skybase/realtime) is een Elixir server waarmee je kunt luisteren naar PostgreSQL inserts, updates en deletes met behulp van websockets. Realtime peilt de ingebouwde replicatiefunctionaliteit van Postgres voor database wijzigingen, converteert wijzigingen naar JSON, en zendt vervolgens de JSON over websockets uit naar geautoriseerde clients.
+- [Realtime](https://github.com/supabase/realtime) is een Elixir server waarmee je kunt luisteren naar PostgreSQL inserts, updates en deletes met behulp van websockets. Realtime peilt de ingebouwde replicatiefunctionaliteit van Postgres voor database wijzigingen, converteert wijzigingen naar JSON, en zendt vervolgens de JSON over websockets uit naar geautoriseerde clients.
 - [PostgREST](http://postgrest.org/) is een webserver die uw PostgreSQL database direct in een RESTful API verandert
-- [pg_graphql](http://github.co./skybase/pg_graphql/) een PostgreSQL uitbreiding die een GraphQL API blootstelt
-- [Storage](https://github.co./skybase/storage-api) biedt een RESTful interface voor het beheren van bestanden opgeslagen in S3, met behulp van Postgres om machtigingen te beheren.
-- [postgres-meta](https://github.co./skybase/postgres-meta) is een RESTful API voor het beheer van uw Postgres, waarmee u tabellen kunt ophalen, rollen kunt toevoegen, en queries kunt uitvoeren, enz.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) een PostgreSQL uitbreiding die een GraphQL API blootstelt
+- [Storage](https://github.com/supabase/storage-api) biedt een RESTful interface voor het beheren van bestanden opgeslagen in S3, met behulp van Postgres om machtigingen te beheren.
+- [postgres-meta](https://github.com/supabase/postgres-meta) is een RESTful API voor het beheer van uw Postgres, waarmee u tabellen kunt ophalen, rollen kunt toevoegen, en queries kunt uitvoeren, enz.
 - [GoTrue](https://github.com/netlify/gotrue) is een SWT gebaseerde API voor het beheren van gebruikers en het uitgeven van SWT tokens.
 - [Kong](https://github.com/Kong/kong) is een cloud-native API gateway.
 
@@ -84,9 +84,9 @@ Onze aanpak voor client libraries is modulair. Elke sub-bibliotheek is een op zi
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Onze aanpak voor client libraries is modulair. Elke sub-bibliotheek is een op zi
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 gemeenschap 💚</th>
@@ -220,7 +220,7 @@ Onze aanpak voor client libraries is modulair. Elke sub-bibliotheek is een op zi
 - [Catalaans / Català](/i18n/README.ca.md)
 - [Deens / Dansk](/i18n/README.da.md)
 - [Nederlands / Nederlands](/i18n/README.nl.md)
-- [Engels](https://github.co./skybase/supabase)
+- [Engels](https://github.com/supabase/supabase)
 - [Fins / Suomalainen](/i18n/README.fi.md)
 - [Frans / Français](/i18n/README.fr.md)
 - [Duits / Deutsch](/i18n/README.de.md)

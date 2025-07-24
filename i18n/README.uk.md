@@ -31,8 +31,8 @@
 
 ## Спільнота та підтримка
 
-- [Форум спільноти](https://github.co./skybase/supabase/discussions). Найкраще для: допомоги у створенні, обговорення найкращих практик роботи з базами даних.
-- [Проблеми GitHub](https://github.co./skybase/supabase/issues). Найкраще для: помилок і помилок, з якими ви зіткнулися при використанні Supabase.
+- [Форум спільноти](https://github.com/supabase/supabase/discussions). Найкраще для: допомоги у створенні, обговорення найкращих практик роботи з базами даних.
+- [Проблеми GitHub](https://github.com/supabase/supabase/issues). Найкраще для: помилок і помилок, з якими ви зіткнулися при використанні Supabase.
 - [Підтримка електронною поштою](https://supabase.com/docs/support#business-support). Найкраще для: проблем з вашою базою даних або інфраструктурою.
 - [Discord](https://discord.supabase.com). Найкраще для: обміну вашими додатками та спілкування зі спільнотою.
 
@@ -58,14 +58,14 @@ Supabase - це комбінація інструментів з відкрит�
 Supabase - це [хостингова платформа](https://supabase.com/dashboard). Ви можете зареєструватися і почати використовувати Supabase без встановлення.
 Ви також можете [самостійно хостити](https://supabase.com/docs/guides/hosting/overview) і [розробляти локально](https://supabase.com/docs/guides/local-development).
 
-![Архітектура](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Архітектура](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) - це об'єктно-реляційна система баз даних з більш ніж 30-річною історією активного розвитку, яка заслужила міцну репутацію надійності, функціональної стійкості та продуктивності.
-- [Realtime](https://github.co./skybase/realtime) - це сервер Elixir, який дозволяє прослуховувати вставки, оновлення та видалення PostgreSQL за допомогою веб-сокетів. В режимі реального часу опитує вбудовану функцію реплікації Postgres на предмет змін в базі даних, конвертує зміни в JSON, а потім транслює JSON через веб-сокети авторизованим клієнтам.
+- [Realtime](https://github.com/supabase/realtime) - це сервер Elixir, який дозволяє прослуховувати вставки, оновлення та видалення PostgreSQL за допомогою веб-сокетів. В режимі реального часу опитує вбудовану функцію реплікації Postgres на предмет змін в базі даних, конвертує зміни в JSON, а потім транслює JSON через веб-сокети авторизованим клієнтам.
 - [PostgREST](http://postgrest.org/) - веб-сервер, який перетворює вашу базу даних PostgreSQL безпосередньо в RESTful API
-- [pg_graphql](http://github.co./skybase/pg_graphql/) - розширення PostgreSQL, яке надає API GraphQL
-- [Storage](https://github.co./skybase/storage-api) надає RESTful інтерфейс для керування файлами, що зберігаються у S3, використовуючи Postgres для керування дозволами.
-- [postgres-meta](https://github.co./skybase/postgres-meta) - RESTful API для керування Postgres, що дозволяє отримувати таблиці, додавати ролі, виконувати запити тощо.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) - розширення PostgreSQL, яке надає API GraphQL
+- [Storage](https://github.com/supabase/storage-api) надає RESTful інтерфейс для керування файлами, що зберігаються у S3, використовуючи Postgres для керування дозволами.
+- [postgres-meta](https://github.com/supabase/postgres-meta) - RESTful API для керування Postgres, що дозволяє отримувати таблиці, додавати ролі, виконувати запити тощо.
 - [GoTrue](https://github.com/netlify/gotrue) - API на основі SWT для керування користувачами та випуску токенів SWT.
 - [Kong](https://github.com/Kong/kong) - хмарний API-шлюз.
 
@@ -84,9 +84,9 @@ Supabase - це [хостингова платформа](https://supabase.com/d
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Supabase - це [хостингова платформа](https://supabase.com/d
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Спільнота 💚</th>
@@ -220,7 +220,7 @@ Supabase - це [хостингова платформа](https://supabase.com/d
 - [Каталонська / Català](/i18n/README.ca.md)
 - [Данська / Dansk](/i18n/README.da.md)
 - [нідерландська / Nederlands](/i18n/README.nl.md)
-- [Англійська](https://github.co./skybase/supabase)
+- [Англійська](https://github.com/supabase/supabase)
 - [Фінською / Suomalainen](/i18n/README.fi.md)
 - [Французька / Français](/i18n/README.fr.md)
 - [Німецька / Deutsch](/i18n/README.de.md)

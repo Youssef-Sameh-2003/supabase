@@ -31,8 +31,8 @@
 
 ## コミュニティとサポート
 
-- [コミュニティフォーラム](https://github.co./skybase/supabase/discussions) どんな時に使うか：構築の手助け、データベースのベストプラクティスに関する議論など
-- [GitHub Issue](https://github.co./skybase/supabase/issues) どんな時に使うか: Supabase で起こったバグやエラーについて
+- [コミュニティフォーラム](https://github.com/supabase/supabase/discussions) どんな時に使うか：構築の手助け、データベースのベストプラクティスに関する議論など
+- [GitHub Issue](https://github.com/supabase/supabase/issues) どんな時に使うか: Supabase で起こったバグやエラーについて
 - [Email サポート](https://supabase.com/docs/support#business-support) どんな時に使うか: ユーザー自身のデータベースやインフラに何か問題が発生した場合
 - [Discord](https://discord.supabase.com) どんな時に使うか: アプリケーションの共有やコミュニティとの交流
 
@@ -58,13 +58,13 @@ Supabase は、オープンソースのツールを組み合わせてできて�
 Supabase は[ホスティングされたプラットフォーム](https://supabase.com/dashboard)です。登録するだけで、何もインストールせずに使い始めることができます。
 さらに、 [セルフホスティング](https://supabase.com/docs/guides/hosting/overview) や [ローカル開発](https://supabase.com/docs/guides/local-development)も可能です。
 
-![アーキテクチャー](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![アーキテクチャー](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/)は、30 年以上にわたって開発・改善されてきたオブジェクトリレーショナルデータベースシステムで、信頼性、機能の堅牢性、パフォーマンスの面で高い評価を得ています。
-- [Realtime](https://github.co./skybase/realtime)は、PostgreSQL の insert、update、delete の情報を WebSocket で受信できる Elixir サーバです。Supabase は Postgres に組み込まれたレプリケーション機能をリッスンし、レプリケーションのバイトストリームを JSON に変換し、その JSON を WebSocket でブロードキャストします。
+- [Realtime](https://github.com/supabase/realtime)は、PostgreSQL の insert、update、delete の情報を WebSocket で受信できる Elixir サーバです。Supabase は Postgres に組み込まれたレプリケーション機能をリッスンし、レプリケーションのバイトストリームを JSON に変換し、その JSON を WebSocket でブロードキャストします。
 - [PostgREST](http://postgrest.org/)は、PostgreSQL データベースを RESTful API に直接変換するウェブサーバです。
-- [Storage](https://github.co./skybase/storage-api)は、S3 に保存されたファイルを管理するための RESTful なインターフェイスで、パーミッションの管理には Postgres を使用しています。
-- [postgres-meta](https://github.co./skybase/postgres-meta) は、Postgres を管理するための RESTful API で、テーブルの取得、ロールの追加、クエリの実行などを行うことができます。
+- [Storage](https://github.com/supabase/storage-api)は、S3 に保存されたファイルを管理するための RESTful なインターフェイスで、パーミッションの管理には Postgres を使用しています。
+- [postgres-meta](https://github.com/supabase/postgres-meta) は、Postgres を管理するための RESTful API で、テーブルの取得、ロールの追加、クエリの実行などを行うことができます。
 - [GoTrue](https://github.com/netlify/gotrue) は、ユーザー管理と SWT トークン発行のための SWT ベースの API です。
 - [Kong](https://github.com/Kong/kong) は、クラウドネイティブな API ゲートウェイです。
 
@@ -82,9 +82,9 @@ Supabase クライアントライブラリはモジュール化されていま�
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -101,12 +101,12 @@ Supabase クライアントライブラリはモジュール化されていま�
   <th colspan="7">⚡️ 公式 ⚡️</th>
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
   <th colspan="7">💚 コミュニティ 💚</th>
   <tr>
@@ -120,11 +120,11 @@ Supabase クライアントライブラリはモジュール化されていま�
   </tr>
   <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-dart</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-dart</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
     <td><a href="https://github.com/supabase-community/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   <tr>

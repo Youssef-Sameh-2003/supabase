@@ -31,8 +31,8 @@ Para ver cómo contribuir, visite [Getting Started](../DEVELOPERS.md)
 
 ## Comunidad y soporte
 
-- [Foro de la comunidad](https://github.co./skybase/supabase/discussions). Lo mejor para: ayuda con la construcción, discusión sobre las mejores prácticas de bases de datos.
-- [Problemas en GitHub](https://github.co./skybase/supabase/issues). Lo mejor para: bugs y errores que encuentres usando Supabase.
+- [Foro de la comunidad](https://github.com/supabase/supabase/discussions). Lo mejor para: ayuda con la construcción, discusión sobre las mejores prácticas de bases de datos.
+- [Problemas en GitHub](https://github.com/supabase/supabase/issues). Lo mejor para: bugs y errores que encuentres usando Supabase.
 - [Soporte por correo electrónico](https://supabase.com/docs/support#business-support). Lo mejor para: problemas con tu base de datos o infraestructura.
 - [Discord](https://discord.supabase.com). Lo mejor para: compartir tus aplicaciones y pasar el rato con la comunidad.
 
@@ -58,14 +58,14 @@ Supabase es una combinación de herramientas de código abierto. Estamos constru
 Supabase es una [plataforma alojada](https://supabase.com/dashboard). Puedes registrarte y empezar a usar Supabase sin instalar nada.
 También puede [autoalojarse](https://supabase.com/docs/guides/hosting/overview) y [desarrollar localmente](https://supabase.com/docs/guides/local-development).
 
-![arquitectura](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![arquitectura](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) es un sistema de base de datos objeto-relacional con más de 30 años de desarrollo activo que le ha valido una sólida reputación por su fiabilidad, robustez de características y rendimiento.
-- [Realtime](https://github.co./skybase/realtime) es un servidor Elixir que te permite escuchar las inserciones, actualizaciones y eliminaciones de PostgreSQL utilizando websockets. Realtime sondea la funcionalidad de replicación integrada de Postgres en busca de cambios en la base de datos, convierte los cambios a JSON y, a continuación, transmite el JSON a través de websockets a los clientes autorizados.
+- [Realtime](https://github.com/supabase/realtime) es un servidor Elixir que te permite escuchar las inserciones, actualizaciones y eliminaciones de PostgreSQL utilizando websockets. Realtime sondea la funcionalidad de replicación integrada de Postgres en busca de cambios en la base de datos, convierte los cambios a JSON y, a continuación, transmite el JSON a través de websockets a los clientes autorizados.
 - [PostgREST](http://postgrest.org/) es un servidor web que convierte su base de datos PostgreSQL directamente en una API RESTful
-- [pg_graphql](http://github.co./skybase/pg_graphql/) una extensión de PostgreSQL que expone una API GraphQL
-- [Storage](https://github.co./skybase/storage-api) proporciona una interfaz RESTful para gestionar archivos almacenados en S3, usando Postgres para gestionar permisos.
-- [postgres-meta](https://github.co./skybase/postgres-meta) es una API RESTful para gestionar tu Postgres, permitiéndote obtener tablas, añadir roles, ejecutar consultas, etc.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) una extensión de PostgreSQL que expone una API GraphQL
+- [Storage](https://github.com/supabase/storage-api) proporciona una interfaz RESTful para gestionar archivos almacenados en S3, usando Postgres para gestionar permisos.
+- [postgres-meta](https://github.com/supabase/postgres-meta) es una API RESTful para gestionar tu Postgres, permitiéndote obtener tablas, añadir roles, ejecutar consultas, etc.
 - [GoTrue](https://github.com/netlify/gotrue) es una API basada en SWT para gestionar usuarios y emitir tokens SWT.
 - [Kong](https://github.com/Kong/kong) es una pasarela API nativa en la nube.
 
@@ -84,9 +84,9 @@ Nuestro enfoque para las bibliotecas cliente es modular. Cada sublibrería es un
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Nuestro enfoque para las bibliotecas cliente es modular. Cada sublibrería es un
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Comunidad 💚</th>
@@ -220,7 +220,7 @@ Nuestro enfoque para las bibliotecas cliente es modular. Cada sublibrería es un
 - [Catalán / Català](/i18n/README.ca.md)
 - [Danés / Dansk](/i18n/README.da.md)
 - [Holandés / Nederlands](/i18n/README.nl.md)
-- [Inglés](https://github.co./skybase/supabase)
+- [Inglés](https://github.com/supabase/supabase)
 - [Finlandés / Suomalainen](/i18n/README.fi.md)
 - [Francés / Français](/i18n/README.fr.md)
 - [Alemán / Deutsch](/i18n/README.de.md)

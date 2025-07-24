@@ -120,4 +120,4 @@ with
 
 - [Supabase](https://supabase.com)
 
-Supabase is open source, we'd love for you to follow along and get involved at https://github.co./skybase/supabase
+Supabase is open source, we'd love for you to follow along and get involved at https://github.com/supabase/supabase

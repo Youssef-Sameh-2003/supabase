@@ -31,8 +31,8 @@ Norėdami sužinoti, kaip prisidėti, apsilankykite [Getting Started](../DEVELOP
 
 ## Bendruomenė ir palaikymas
 
-- [Bendrijos forumas](https://github.co./skybase/supabase/discussions). Geriausiai tinka: pagalbai kuriant, diskusijoms apie geriausią duomenų bazių praktiką.
-- [GitHub Issues](https://github.co./skybase/supabase/issues). Geriausia: klaidos ir klaidos, su kuriomis susiduriate naudodami "Supabase".
+- [Bendrijos forumas](https://github.com/supabase/supabase/discussions). Geriausiai tinka: pagalbai kuriant, diskusijoms apie geriausią duomenų bazių praktiką.
+- [GitHub Issues](https://github.com/supabase/supabase/issues). Geriausia: klaidos ir klaidos, su kuriomis susiduriate naudodami "Supabase".
 - [Pagalba el. paštu](https://supabase.com/docs/support#business-support). Geriausiai tinka: problemoms, susijusioms su jūsų duomenų baze ar infrastruktūra, spręsti.
 - [Discord](https://discord.supabase.com). Geriausiai tinka: dalytis savo programomis ir bendrauti su bendruomene.
 
@@ -58,14 +58,14 @@ Norėdami sužinoti, kaip prisidėti, apsilankykite [Getting Started](../DEVELOP
 Supabase yra [prieglobos platforma](https://supabase.com/dashboard). Galite užsiregistruoti ir pradėti naudotis "Supabase" nieko neįdiegę.
 Taip pat galite [savarankiškai talpinti](https://supabase.com/docs/guides/hosting/overview) ir [kurti vietoje](https://supabase.com/docs/guides/local-development).
 
-![Architektūra](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Architektūra](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) - tai objektinė-reliacinė duomenų bazių sistema, aktyviai plėtojama daugiau kaip 30 metų, todėl ji pelnė gerą reputaciją dėl patikimumo, funkcijų tvirtumo ir našumo.
-- [Realtime](https://github.co./skybase/realtime) - tai "Elixir" serveris, leidžiantis klausytis "PostgreSQL" įterpimų, atnaujinimų ir ištrynimų naudojant žiniatinklio lizdus. "Realtime" apklausia "Postgres" integruotą replikavimo funkciją dėl duomenų bazės pakeitimų, konvertuoja pakeitimus į JSON ir transliuoja JSON per žiniatinklio lizdus įgaliotiems klientams.
+- [Realtime](https://github.com/supabase/realtime) - tai "Elixir" serveris, leidžiantis klausytis "PostgreSQL" įterpimų, atnaujinimų ir ištrynimų naudojant žiniatinklio lizdus. "Realtime" apklausia "Postgres" integruotą replikavimo funkciją dėl duomenų bazės pakeitimų, konvertuoja pakeitimus į JSON ir transliuoja JSON per žiniatinklio lizdus įgaliotiems klientams.
 - [PostgREST](http://postgrest.org/) - tai žiniatinklio serveris, kuris paverčia jūsų "PostgreSQL" duomenų bazę tiesiogiai į RESTful API
-- [pg_graphql](http://github.co./skybase/pg_graphql/) - "PostgreSQL" plėtinys, kuris atveria GraphQL API
-- [Storage](https://github.co./skybase/storage-api) - tai REST sąsaja, skirta S3 saugomiems failams valdyti, naudojant "Postgres" leidimams valdyti.
-- [postgres-meta](https://github.co./skybase/postgres-meta) - tai RESTful API, skirta "Postgres" valdymui, leidžianti gauti lenteles, pridėti vaidmenis, vykdyti užklausas ir t. t.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) - "PostgreSQL" plėtinys, kuris atveria GraphQL API
+- [Storage](https://github.com/supabase/storage-api) - tai REST sąsaja, skirta S3 saugomiems failams valdyti, naudojant "Postgres" leidimams valdyti.
+- [postgres-meta](https://github.com/supabase/postgres-meta) - tai RESTful API, skirta "Postgres" valdymui, leidžianti gauti lenteles, pridėti vaidmenis, vykdyti užklausas ir t. t.
 - [GoTrue](https://github.com/netlify/gotrue) yra SWT pagrįsta API, skirta naudotojams valdyti ir SWT žetonams išduoti.
 - [Kong](https://github.com/Kong/kong) - tai debesijos API vartai.
 
@@ -84,9 +84,9 @@ Mūsų požiūris į klientų bibliotekas yra modulinis. Kiekviena dalinė bibli
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -105,21 +105,21 @@ Mūsų požiūris į klientų bibliotekas yra modulinis. Kiekviena dalinė bibli
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Bendruomenė 💚</th>
@@ -220,7 +220,7 @@ Mūsų požiūris į klientų bibliotekas yra modulinis. Kiekviena dalinė bibli
 - [Katalonų kalba](/i18n/README.ca.md)
 - [Danų kalba](/i18n/README.da.md)
 - [Dutch / Nederlands](/i18n/README.nl.md)
-- [anglų kalba](https://github.co./skybase/supabase)
+- [anglų kalba](https://github.com/supabase/supabase)
 - [Suomių kalba](/i18n/README.fi.md)
 - [Prancūzų kalba](/i18n/README.fr.md)
 - [Vokiečių kalba / Deutsch](/i18n/README.de.md)

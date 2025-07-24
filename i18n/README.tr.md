@@ -32,8 +32,8 @@ Nasıl Katkıda bulunacağınızı görmek için [Başlarken](../DEVELOPERS.md) 
 
 ## Topluluk ve Destek
 
-- [Topluluk Forumu](https://github.co./skybase/supabase/discussions). Şunlar için en iyisi: oluşturma konusunda yardım, veritabanı en iyi uygulamaları hakkında tartışma.
-- [GitHub Sorunları](https://github.co./skybase/supabase/issues). Supabase'i kullanırken karşılaştığınız hatalar ve hatalar için en iyisi.
+- [Topluluk Forumu](https://github.com/supabase/supabase/discussions). Şunlar için en iyisi: oluşturma konusunda yardım, veritabanı en iyi uygulamaları hakkında tartışma.
+- [GitHub Sorunları](https://github.com/supabase/supabase/issues). Supabase'i kullanırken karşılaştığınız hatalar ve hatalar için en iyisi.
 - [E-posta Desteği](https://supabase.com/docs/support#business-support). Veritabanınız veya altyapınızla ilgili sorunlar için en iyisi.
 - [Discord](https://discord.supabase.com). Uygulamalarınızı paylaşmak ve toplulukla takılmak için en iyisi.
 
@@ -46,14 +46,14 @@ Supabase açık kaynak araçlarının bir birleşimidir. Firebase'in özellikler
 Supabase [barındırılan bir platformdur](https://supabase.com/dashboard). Supabase'e kaydolabilir ve hiçbir şey yüklemeden kullanmaya başlayabilirsiniz.
 Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel olarak geliştirebilirsiniz](https://supabase.com/docs/guides/local-development).
 
-![Mimarlık](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Mimarlık](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/), 30 yılı aşkın süredir aktif olarak geliştirilmekte olan ve güvenilirlik, özellik sağlamlığı ve performans açısından güçlü bir üne sahip olan nesne ilişkisel bir veritabanı sistemidir.
-- [Realtime](https://github.co./skybase/realtime), websockets kullanarak PostgreSQL ekleme, güncelleme ve silme işlemlerini dinlemenizi sağlayan bir Elixir sunucusudur. Realtime, veritabanı değişiklikleri için Postgres'in yerleşik çoğaltma işlevini yoklar, değişiklikleri JSON'a dönüştürür ve ardından JSON'u web soketleri üzerinden yetkili istemcilere yayınlar.
+- [Realtime](https://github.com/supabase/realtime), websockets kullanarak PostgreSQL ekleme, güncelleme ve silme işlemlerini dinlemenizi sağlayan bir Elixir sunucusudur. Realtime, veritabanı değişiklikleri için Postgres'in yerleşik çoğaltma işlevini yoklar, değişiklikleri JSON'a dönüştürür ve ardından JSON'u web soketleri üzerinden yetkili istemcilere yayınlar.
 - [PostgREST](http://postgrest.org/), PostgreSQL veritabanınızı doğrudan RESTful API'ye dönüştüren bir web sunucusudur
-- [pg_graphql](http://github.co./skybase/pg_graphql/) GraphQL API'si sunan bir PostgreSQL uzantısı
-- [Storage](https://github.co./skybase/storage-api), izinleri yönetmek için Postgres kullanarak S3'te depolanan Dosyaları yönetmek için RESTful bir arayüz sağlar.
-- [postgres-meta](https://github.co./skybase/postgres-meta) Postgres'inizi yönetmek için RESTful bir API'dir ve tabloları getirmenize, roller eklemenize ve sorgular çalıştırmanıza vb. olanak tanır.
+- [pg_graphql](http://github.com/supabase/pg_graphql/) GraphQL API'si sunan bir PostgreSQL uzantısı
+- [Storage](https://github.com/supabase/storage-api), izinleri yönetmek için Postgres kullanarak S3'te depolanan Dosyaları yönetmek için RESTful bir arayüz sağlar.
+- [postgres-meta](https://github.com/supabase/postgres-meta) Postgres'inizi yönetmek için RESTful bir API'dir ve tabloları getirmenize, roller eklemenize ve sorgular çalıştırmanıza vb. olanak tanır.
 - [GoTrue](https://github.com/netlify/gotrue) kullanıcıları yönetmek ve SWT belirteçleri vermek için SWT tabanlı bir API'dir.
 - [Kong](https://github.com/Kong/kong) bulut tabanlı bir API ağ geçididir.
 
@@ -72,9 +72,9 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -93,21 +93,21 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
   
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
     <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
-    <td><a href="https://github.co./skybase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-flutter</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   
   <th colspan="7">💚 Topluluk 💚</th>
@@ -244,7 +244,7 @@ Ayrıca [self-host](https://supabase.com/docs/guides/hosting/overview) ve [yerel
 - [Katalanca / Català](/i18n/README.ca.md)
 - [Danca / Dansk](/i18n/README.da.md)
 - [Hollandaca / Nederlands](/i18n/README.nl.md)
-- [İngilizce](https://github.co./skybase/supabase)
+- [İngilizce](https://github.com/supabase/supabase)
 - [Fince / Suomalainen](/i18n/README.fi.md)
 - [Fransızca / Français](/i18n/README.fr.md)
 - [Almanca / Deutsch](/i18n/README.de.md)

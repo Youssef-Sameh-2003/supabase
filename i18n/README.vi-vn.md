@@ -31,8 +31,8 @@
 
 ## Hỗ trợ & Cộng đồng
 
-- [Diễn đàn cộng đồng](https://github.co./skybase/supabase/discussions). Tốt nhất cho: hỗ trợ xây dựng và thảo luận về các phương pháp tối ưu nhất dành cho cơ sở dữ liệu.
-- [Các vấn đề trên GitHub](https://github.co./skybase/supabase/issues). Tốt nhất cho: các lỗi và "bugs" mà bạn gặp phải khi sử dụng Supabase.
+- [Diễn đàn cộng đồng](https://github.com/supabase/supabase/discussions). Tốt nhất cho: hỗ trợ xây dựng và thảo luận về các phương pháp tối ưu nhất dành cho cơ sở dữ liệu.
+- [Các vấn đề trên GitHub](https://github.com/supabase/supabase/issues). Tốt nhất cho: các lỗi và "bugs" mà bạn gặp phải khi sử dụng Supabase.
 - [Hỗ trợ qua email](https://supabase.com/docs/support#business-support). Tốt nhất cho: các vấn đề với cơ sở dữ liệu hoặc cơ sở hạ tầng của bạn.
 - [Discord](https://discord.supabase.com). Tốt nhất cho: chia sẻ ứng dụng của bạn và dành thời gian với cộng đồng.
 
@@ -58,13 +58,13 @@ Supabase là sự kết hợp của các công cụ mã nguồn mở. Các tính
 Supabase là một [nền tảng lưu trữ cơ sở dữ liệu](https://supabase.com/dashboard). Bạn có thể đăng ký và bắt đầu sử dụng Supabase mà không cần cài đặt bất kỳ thứ gì.
 Bạn cũng có thể [tự quản lý](https://supabase.com/docs/guides/hosting/overview) và [phát triển cục bộ](https://supabase.com/docs/guides/local-development).
 
-![Kiến trúc](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Kiến trúc](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) là một hệ thống cơ sở dữ liệu quan hệ đối tượng với hơn 30 năm phát triển tích cực, do đó có danh tiếng mạnh mẽ về độ tin cậy, tính năng mạnh mẽ và hiệu suất.
-- [Realtime](https://github.co./skybase/realtime) là một máy chủ Elixir cho phép bạn lắng nghe các lệnh chèn, cập nhật và xóa của PostgreSQL bằng cách sử dụng websockets. Supabase lắng nghe chức năng sao chép có sẵn của Postgres, chuyển đổi luồng byte sao chép thành JSON, sau đó phát JSON qua các cổng websockets được uỷ quyền.
+- [Realtime](https://github.com/supabase/realtime) là một máy chủ Elixir cho phép bạn lắng nghe các lệnh chèn, cập nhật và xóa của PostgreSQL bằng cách sử dụng websockets. Supabase lắng nghe chức năng sao chép có sẵn của Postgres, chuyển đổi luồng byte sao chép thành JSON, sau đó phát JSON qua các cổng websockets được uỷ quyền.
 - [PostgREST](http://postgrest.org/) là một máy chủ web có khả năng biến cơ sở dữ liệu PostgreSQL của bạn thành một hệ thống REST API một cách trực tiếp.
-- [Storage](https://github.co./skybase/storage-api) cung cấp giao diện RESTful để quản lý các tệp được lưu trữ trong S3, sử dụng Postgres để quản lý quyền.
-- [postgres-meta](https://github.co./skybase/postgres-meta) là một API RESTful để quản lý Postgres của bạn, cho phép bạn tìm nạp bảng, thêm vai trò và chạy truy vấn, v.v.
+- [Storage](https://github.com/supabase/storage-api) cung cấp giao diện RESTful để quản lý các tệp được lưu trữ trong S3, sử dụng Postgres để quản lý quyền.
+- [postgres-meta](https://github.com/supabase/postgres-meta) là một API RESTful để quản lý Postgres của bạn, cho phép bạn tìm nạp bảng, thêm vai trò và chạy truy vấn, v.v.
 - [GoTrue](https://github.com/netlify/gotrue) là một API dựa trên SWT để quản lý người dùng và phát hành mã token SWT.
 - [Kong](https://github.com/Kong/kong) là một cổng API trên đám mây.
 
@@ -82,9 +82,9 @@ Phương pháp tiếp cận của chúng tôi cho các thư viện hỗ trợ l�
     <th></th>
     <th>Supabase</th>
     <th><a href="https://github.com/postgrest/postgrest" target="_blank" rel="noopener noreferrer">PostgREST</a></th>
-    <th><a href="https://github.co./skybase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
-    <th><a href="https://github.co./skybase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
-    <th><a href="https://github.co./skybase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
+    <th><a href="https://github.com/supabase/gotrue" target="_blank" rel="noopener noreferrer">GoTrue</a></th>
+    <th><a href="https://github.com/supabase/realtime" target="_blank" rel="noopener noreferrer">Realtime</a></th>
+    <th><a href="https://github.com/supabase/storage-api" target="_blank" rel="noopener noreferrer">Storage</a></th>
     <th>Functions</th>
   </tr>
   <!-- TEMPLATE FOR NEW ROW -->
@@ -101,12 +101,12 @@ Phương pháp tiếp cận của chúng tôi cho các thư viện hỗ trợ l�
   <th colspan="7">⚡️ Chính thức ⚡️</th>
   <tr>
     <td>JavaScript (TypeScript)</td>
-    <td><a href="https://github.co./skybase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
-    <td><a href="https://github.co./skybase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
-    <td><a href="https://github.co./skybase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
-    <td><a href="https://github.co./skybase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
-    <td><a href="https://github.co./skybase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
-    <td><a href="https://github.co./skybase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
+    <td><a href="https://github.com/supabase/supabase-js" target="_blank" rel="noopener noreferrer">supabase-js</a></td>
+    <td><a href="https://github.com/supabase/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
+    <td><a href="https://github.com/supabase/gotrue-js" target="_blank" rel="noopener noreferrer">gotrue-js</a></td>
+    <td><a href="https://github.com/supabase/realtime-js" target="_blank" rel="noopener noreferrer">realtime-js</a></td>
+    <td><a href="https://github.com/supabase/storage-js" target="_blank" rel="noopener noreferrer">storage-js</a></td>
+    <td><a href="https://github.com/supabase/functions-js" target="_blank" rel="noopener noreferrer">functions-js</a></td>
   </tr>
   <th colspan="7">💚 Cộng đồng 💚</th>
   <tr>
@@ -120,11 +120,11 @@ Phương pháp tiếp cận của chúng tôi cho các thư viện hỗ trợ l�
   </tr>
   <tr>
     <td>Flutter</td>
-    <td><a href="https://github.co./skybase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-dart</a></td>
-    <td><a href="https://github.co./skybase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
-    <td><a href="https://github.co./skybase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
-    <td><a href="https://github.co./skybase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
-    <td><a href="https://github.co./skybase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
+    <td><a href="https://github.com/supabase/supabase-flutter" target="_blank" rel="noopener noreferrer">supabase-dart</a></td>
+    <td><a href="https://github.com/supabase/postgrest-dart" target="_blank" rel="noopener noreferrer">postgrest-dart</a></td>
+    <td><a href="https://github.com/supabase/gotrue-dart" target="_blank" rel="noopener noreferrer">gotrue-dart</a></td>
+    <td><a href="https://github.com/supabase/realtime-dart" target="_blank" rel="noopener noreferrer">realtime-dart</a></td>
+    <td><a href="https://github.com/supabase/storage-dart" target="_blank" rel="noopener noreferrer">storage-dart</a></td>
     <td><a href="https://github.com/supabase-community/functions-dart" target="_blank" rel="noopener noreferrer">functions-dart</a></td>
   </tr>
   <tr>

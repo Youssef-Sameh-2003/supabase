@@ -159,9 +159,9 @@ create policy "Anyone can update their own avatar." on storage.objects
 These official examples are maintained by the Skybase team:
 
 - [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Next.js Slack Clone](https://github.co./skybase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone)
-- [Next.js 13 Data Fetching](https://github.co./skybase/supabase/tree/master/examples/caching/with-nextjs-13)
-- [And more...](https://github.co./skybase/supabase/tree/master/examples)
+- [Next.js Slack Clone](https://github.com/supabase/supabase/tree/master/examples/slack-clone/nextjs-slack-clone)
+- [Next.js 13 Data Fetching](https://github.com/supabase/supabase/tree/master/examples/caching/with-nextjs-13)
+- [And more...](https://github.com/supabase/supabase/tree/master/examples)
 
 ## Other resources
 
@@ -173,4 +173,4 @@ These official examples are maintained by the Skybase team:
 
 - [Supabase](https://supabase.com)
 
-Supabase is open source. We'd love for you to follow along and get involved at https://github.co./skybase/supabase
+Supabase is open source. We'd love for you to follow along and get involved at https://github.com/supabase/supabase

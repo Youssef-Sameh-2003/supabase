@@ -25,8 +25,8 @@ Për dokumentimin e plotë, vizitoni [supabase.com/docs](https://supabase.com/do
 
 ## Komuniteti dhe Mbështetja
 
-- [Forumi i Komunitetit](https://github.co./skybase/supabase/discussions). Me e mirë për: ndihmë për ndërtime, diskutime për databasat dhe praktikat më të mira.
-- [GitHub Problemet](https://github.co./skybase/supabase/issues). Me e mirë për: të meta dhe gabime që ju përmballeni duke përdorur Supabase
+- [Forumi i Komunitetit](https://github.com/supabase/supabase/discussions). Me e mirë për: ndihmë për ndërtime, diskutime për databasat dhe praktikat më të mira.
+- [GitHub Problemet](https://github.com/supabase/supabase/issues). Me e mirë për: të meta dhe gabime që ju përmballeni duke përdorur Supabase
 - [Mbështetje nëpërmjet Adresës Elektronike](https://supabase.com/docs/support#business-support). Më e mirë për: problemet me infrastrukturën e databases tuaj.
 
 ## Statusi
@@ -50,13 +50,13 @@ Supabase është një kombinim i mjeteve që janë projekte të hapura (open sou
 
 Supabase është një [platform hostimi](https://supabase.com/dashboard). Ti mundesh të regjistrohesh dhe të fillosh ta përdorish Supabase duke mos instaluar asgjë. Poashtu ne jemi duke punuar për ta ndërtuar eksperiencën për zhvillim lokal, por kjo nuk është fokusi ynë kryesorë dhe thelbësor, së bashku me stabilitetin e platformës.
 
-![Arkitektura](https://github.co./skybase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
+![Arkitektura](https://github.com/supabase/supabase/blob/master/apps/docs/public/img/supabase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) është një objekt-relacional i databasës si sistem me më shumë se 30 vite zhvillim aktiv e cila ka fituar një reputacion të fortë për besueshmërinë, karakteristikë të qëndrueshmërisë ,dhe performancë.
-- [Realtime](https://github.co./skybase/realtime) është një Elixir server që lejon të dëgjosh për insertime, fshirje dhe përdisime në databasën PostgreSQL duke përdorur websockets. Supabase dëgjon në Postgres' funksionaliteti i replikimit i integruar, ajo kthen rrjedhjen e bajteve të replikimit, pastaj transmeton JSON mbi/në websockets.
+- [Realtime](https://github.com/supabase/realtime) është një Elixir server që lejon të dëgjosh për insertime, fshirje dhe përdisime në databasën PostgreSQL duke përdorur websockets. Supabase dëgjon në Postgres' funksionaliteti i replikimit i integruar, ajo kthen rrjedhjen e bajteve të replikimit, pastaj transmeton JSON mbi/në websockets.
 - [PostgREST](http://postgrest.org/) është një ueb server që e kthen databasën tuaj PostgreSQL direk në RESTful API.
-- [Storage](https://github.co./skybase/storage-api) ofron një RESTful ndërfaqe (interface) për menaxhimin e fajllave të ruajtura në S3, duke përdorur Postgres për të menanxhuar akseset.
-- [postgres-meta](https://github.co./skybase/postgres-meta) është një RESTful API për të menaxhuar Postgres databasën, duke ju lejuar për të thirur / marur tabelat, për të shtuar rolet, dhe për të ekzekutuar komanda query, dhe tjera.
+- [Storage](https://github.com/supabase/storage-api) ofron një RESTful ndërfaqe (interface) për menaxhimin e fajllave të ruajtura në S3, duke përdorur Postgres për të menanxhuar akseset.
+- [postgres-meta](https://github.com/supabase/postgres-meta) është një RESTful API për të menaxhuar Postgres databasën, duke ju lejuar për të thirur / marur tabelat, për të shtuar rolet, dhe për të ekzekutuar komanda query, dhe tjera.
 - [GoTrue](https://github.com/netlify/gotrue) është një SWT bazaur APi për të menaxhuar klientët dhe lëshimin e tokenave SWT.
 - [Kong](https://github.com/Kong/kong) është portë hyrëse e një re (hostim) API.
 
@@ -66,15 +66,15 @@ Libraria jonë e klineteve është modulare, Secila nën librari është një im
 
 - **`supabase-{lang}`**: Kombinon bibliotekat dhe shton pasurimet.
   - `postgrest-{lang}`: Libraria e klientit për të punuar meh [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: Libraria e klientit për të punuar me [Realtime](https://github.co./skybase/realtime)
+  - `realtime-{lang}`: Libraria e klientit për të punuar me [Realtime](https://github.com/supabase/realtime)
   - `gotrue-{lang}`: Libraria e klientit për të punuar me [GoTrue](https://github.com/netlify/gotrue)
 
 | Depo                  | Zyrtare                                          | Komuniteti                                                                                                                                                                                                                                                                                                                           |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`supabase-{lang}`** | [`JS`](https://github.co./skybase/supabase-js)  | [`C#`](https://github.co./skybase/supabase-csharp) \| [`Flutter`](https://github.co./skybase/supabase-flutter) \| [`Python`](https://github.co./skybase/supabase-py) \| `Rust` \| [`Ruby`](https://github.co./skybase/supabase-rb) \| `Go`                                                                                       |
-| `postgrest-{lang}`    | [`JS`](https://github.co./skybase/postgrest-js) | [`C#`](https://github.co./skybase/postgrest-csharp) \| [`Dart`](https://github.co./skybase/postgrest-dart) \| [`Python`](https://github.co./skybase/postgrest-py) \| [`Rust`](https://github.co./skybase/postgrest-rs) \| [`Ruby`](https://github.co./skybase/postgrest-rb) \| [`Go`](https://github.co./skybase/postgrest-go) |
-| `realtime-{lang}`     | [`JS`](https://github.co./skybase/realtime-js)  | [`C#`](https://github.co./skybase/realtime-csharp) \| [`Dart`](https://github.co./skybase/realtime-dart) \| [`Python`](https://github.co./skybase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
-| `gotrue-{lang}`       | [`JS`](https://github.co./skybase/gotrue-js)    | [`C#`](https://github.co./skybase/gotrue-csharp) \| [`Dart`](https://github.co./skybase/gotrue-dart) \| [`Python`](https://github.co./skybase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
+| **`supabase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/supabase/supabase-csharp) \| [`Flutter`](https://github.com/supabase/supabase-flutter) \| [`Python`](https://github.com/supabase/supabase-py) \| `Rust` \| [`Ruby`](https://github.com/supabase/supabase-rb) \| `Go`                                                                                       |
+| `postgrest-{lang}`    | [`JS`](https://github.com/supabase/postgrest-js) | [`C#`](https://github.com/supabase/postgrest-csharp) \| [`Dart`](https://github.com/supabase/postgrest-dart) \| [`Python`](https://github.com/supabase/postgrest-py) \| [`Rust`](https://github.com/supabase/postgrest-rs) \| [`Ruby`](https://github.com/supabase/postgrest-rb) \| [`Go`](https://github.com/supabase/postgrest-go) |
+| `realtime-{lang}`     | [`JS`](https://github.com/supabase/realtime-js)  | [`C#`](https://github.com/supabase/realtime-csharp) \| [`Dart`](https://github.com/supabase/realtime-dart) \| [`Python`](https://github.com/supabase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
+| `gotrue-{lang}`       | [`JS`](https://github.com/supabase/gotrue-js)    | [`C#`](https://github.com/supabase/gotrue-csharp) \| [`Dart`](https://github.com/supabase/gotrue-dart) \| [`Python`](https://github.com/supabase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
 
 ## Sponsorët
 
