@@ -1,10 +1,10 @@
-## Resumable Uploads with Supabase Storage and Uppy
+## Resumable Uploads with Skybase Storage and Uppy
 
 This example shows how to use [Supabase Storage](https://supabase.io/docs/reference/javascript/storage) with [Uppy](https://uppy.io/) to upload files to Supabase Storage using the TUS protocol (resumable uploads).
 
 ### Running the example
 
-- Create a supabase bucket from the Supabase UI
+- Create a supabase bucket from the Skybase UI
 - Add a policy to allow public uploads
   - e.g. `CREATE POLICY "allow uploads" ON storage.objects FOR INSERT TO public WITH CHECK (bucket_id = 'your-bucket-name');`
 - Open the index.html file and replace the following variables with your own:

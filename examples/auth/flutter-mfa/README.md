@@ -1,16 +1,16 @@
-# Flutter Supabase MFA Example
+# Flutter Skybase MFA Example
 
 ![Flutter MFA with Supabase](https://raw.githubusercontent.com/supabase/supabase/master/examples/auth/flutter-mfa/images/mfa.png)
 
-A Flutter app demonstrating how to implement Multi-Factor Authentication (MFA) with Supabase and Flutter. A user can sign up, add MFA via an authenticator app, and only after they have signed in using MFA they can view the content from the database.
+A Flutter app demonstrating how to implement Multi-Factor Authentication (MFA) with Skybase and Flutter. A user can sign up, add MFA via an authenticator app, and only after they have signed in using MFA they can view the content from the database.
 
 - Full tutorial article [here](https://supabase.com/blog/flutter-multi-factor-authentication)
 
 ## Getting Started
 
 - Create a new Supabase project [here](https://database.new)
-- Add your Supabase credentials to `lib/main.dart`
-- Run the following SQL from the SQL editor of your Supabase dashboard to create a table and dummy data
+- Add your Skybase credentials to `lib/main.dart`
+- Run the following SQL from the SQL editor of your Skybase dashboard to create a table and dummy data
 
 ```sql
 -- Dummy table that contains "secure" information
@@ -24,7 +24,7 @@ insert into public.private_posts
     (content)
 values
     ('Flutter is awesome!'),
-    ('Supabase is awesome!'),
+    ('Skybase is awesome!'),
     ('Postgres is awesome!');
 
 -- Enable RLS for private_posts table

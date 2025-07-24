@@ -1,6 +1,6 @@
-# Developing Supabase
+# Developing Skybase
 
-- [Developing Supabase](#developing-supabase)
+- [Developing Skybase](#developing-supabase)
 
   - [Getting started](#getting-started)
     - [Install dependencies](#install-dependencies)
@@ -11,7 +11,7 @@
       - [Running sites individually](#running-sites-individually)
       - [Shared components](#shared-components)
       - [Installing packages](#installing-packages)
-  - [Running Docker for Supabase Studio](#running-docker-for-supabase-studio)
+  - [Running Docker for Skybase Studio](#running-docker-for-supabase-studio)
     - [Prerequisites](#prerequisites)
     - [Get Started](#get-started)
   - [Create a pull request](#create-a-pull-request)
@@ -26,13 +26,13 @@
 
 ## Getting started
 
-Thank you for your interest in [Supabase](https://supabase.com) and your willingness to contribute!
+Thank you for your interest in [Skybase](https://supabase.com) and your willingness to contribute!
 
 To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/supabase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/supabase/supabase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
-You will need to install and configure the following dependencies on your machine to build [Supabase](https://supabase.com):
+You will need to install and configure the following dependencies on your machine to build [Skybase](https://supabase.com):
 
 - [Git](https://git-scm.com/)
 - [Node.js v22.x or higher](https://nodejs.org)
@@ -48,7 +48,7 @@ All of our apps are in this [Turborepo](https://turborepo.org/docs), which make 
 
 ### Fork the repo
 
-To contribute code to [Supabase](https://supabase.com), you must fork the [Supabase repo](https://github.com/supabase/supabase).
+To contribute code to [Skybase](https://supabase.com), you must fork the [Supabase repo](https://github.com/supabase/supabase).
 
 ### Clone the repo
 
@@ -123,7 +123,7 @@ For example:
 
 ---
 
-## Running Docker for Supabase Studio
+## Running Docker for Skybase Studio
 
 To run Studio locally, you'll need to setup Docker in addition to your NextJS frontend.
 

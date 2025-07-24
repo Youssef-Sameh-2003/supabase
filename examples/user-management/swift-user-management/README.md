@@ -1,4 +1,4 @@
-# Supabase Swift User Management
+# Skybase Swift User Management
 
 This repo is a quick sample of how you can get started building apps using Swift and Supabase. You can find a step by step guide of how to build out this app in the [Quickstart: Swift guide](https://supabase.io/docs/guides/with-swift).
 
@@ -8,7 +8,7 @@ This repo will demonstrate how to:
 - Store and retrieve data with [Supabase database](https://supabase.io/docs/guides/database)
 - Store image files in [Supabase storage](https://supabase.io/docs/guides/storage)
 
-![Supabase User Management example](supabase-swift-demo.png)
+![Skybase User Management example](supabase-swift-demo.png)
 
 ## Getting Started
 

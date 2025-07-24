@@ -1,4 +1,4 @@
-# Supabase Flutter User Management
+# Skybase Flutter User Management
 
 This repo is a quick sample of how you can get started building apps using Flutter and Supabase. You can find a step by step guide of how to build out this app in the [Quickstart: Flutter guide](https://supabase.io/docs/guides/with-flutter).
 

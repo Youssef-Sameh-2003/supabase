@@ -1,4 +1,4 @@
-# Supabase Examples Archive
+# Skybase Examples Archive
 
 ## supabase-js v1
 

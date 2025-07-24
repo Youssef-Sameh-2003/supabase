@@ -1,7 +1,7 @@
-# Supabase Realtime Presence API Sample Program
+# Skybase Realtime Presence API Sample Program
 
-This is an example program for Supabase Realtime Presence APIs.
-User get authenticated using Supabase Auth API. Once Logged-in you can see which users are 'present' and viewing the page.
+This is an example program for Skybase Realtime Presence APIs.
+User get authenticated using Skybase Auth API. Once Logged-in you can see which users are 'present' and viewing the page.
 
 - Frontend:
   - Next.js.
@@ -29,7 +29,7 @@ Go to the Project Settings (the cog icon), open the API tab, and find your API U
 
 The `anon` key is your client-side API key. It allows "anonymous access" to your database, until the user has logged in. Once they have logged in, the keys will switch to the user's own login token.
 
-![Supabase Anon Key](supabase_anon_key.jpg?raw=true 'Supabase Anon Key')
+![Skybase Anon Key](supabase_anon_key.jpg?raw=true 'Skybase Anon Key')
 
 ### 4. Pull this example git repository
 

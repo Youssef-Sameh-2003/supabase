@@ -1,4 +1,4 @@
-# Supabase Vue 3 User Management
+# Skybase Vue 3 User Management
 
 This repo is a quick sample of how you can get started building apps using Vue 3 and Supabase. You can find a step by step guide of how to build out this app in the [Quickstart: Vue guide](https://supabase.io/docs/guides/with-vue-3).
 
