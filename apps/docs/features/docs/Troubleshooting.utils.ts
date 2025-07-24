@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 import { cache_fullProcess_withDevCacheBust } from '~/features/helpers.fs'
 import { IS_PLATFORM } from '~/lib/constants'
-import { supabaseAdmin } from '~/lib/supabaseAdmin'
+import { skybaseAdmin } from '~/lib/skybaseAdmin'
 import {
   getAllTroubleshootingEntriesInternal,
   getArticleSlug as getArticleSlugInternal,
@@ -99,7 +99,7 @@ async function getTroubleshootingUpdatedDatesInternal() {
     .map((entry) => entry.data.database_id)
     .filter((id) => !id.startsWith('pseudo-'))
 
-  const { data, error } = await supabaseAdmin()
+  const { data, error } = await skybaseAdmin()
     .from('troubleshooting_entries')
     .select('id, date_updated')
     .in('id', databaseIds)

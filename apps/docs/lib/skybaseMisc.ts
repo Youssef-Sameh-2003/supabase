@@ -1,14 +1,14 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
-let _supabaseMisc: SupabaseClient
+let _skybaseMisc: SupabaseClient
 
-export function supabaseMisc() {
-  if (!_supabaseMisc) {
-    _supabaseMisc = createClient(
+export function skybaseMisc() {
+  if (!_skybaseMisc) {
+    _skybaseMisc = createClient(
       process.env.NEXT_PUBLIC_MISC_URL!,
       process.env.NEXT_PUBLIC_MISC_ANON_KEY!
     )
   }
 
-  return _supabaseMisc
+  return _skybaseMisc
 }

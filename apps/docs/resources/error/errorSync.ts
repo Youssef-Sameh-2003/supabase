@@ -7,8 +7,8 @@ import { Service } from '../../__generated__/graphql'
 import { extractMessageFromAnyError, MultiError } from '../../app/api/utils'
 import { Result } from '../../features/helpers.fn'
 import { CONTENT_DIRECTORY } from '../../lib/docs'
-import { DatabaseCorrected } from '../../lib/supabase'
-import { supabaseAdmin } from '../../lib/supabaseAdmin'
+import { DatabaseCorrected } from '../../lib/skybase'
+import { skybaseAdmin } from '../../lib/skybaseAdmin'
 import { type ErrorCodeDefinition } from './errorTypes'
 
 type ErrorCodeUploadParameters =
@@ -107,7 +107,7 @@ async function uploadErrorCodes(
 ): Promise<[number, MultiError<never> | undefined]> {
   return Promise.all(
     errorCodes.map(async (errorCode) => {
-      return new Result(await supabaseAdmin().schema('content').rpc('update_error_code', errorCode))
+      return new Result(await skybaseAdmin().schema('content').rpc('update_error_code', errorCode))
     })
   )
     .then((data) => handleErrorCodeUploadErrors(data, errorCodes))
@@ -132,7 +132,7 @@ async function deleteUnusedErrorCodes(
     service: code.service,
   }))
   return new Result(
-    await supabaseAdmin()
+    await skybaseAdmin()
       .schema('content')
       .rpc('delete_error_codes_except', { skip_codes: retainedErrorCodes })
   )

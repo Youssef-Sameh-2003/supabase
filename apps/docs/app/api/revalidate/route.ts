@@ -56,13 +56,13 @@ export async function _handleRevalidateRequest(request: NextRequest) {
     )
   }
 
-  const supabaseAdmin = createClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SECRET_KEY!
+  const skybaseAdmin = createClient<Database>(
+    process.env.NEXT_PUBLIC_SKYBASE_URL!,
+    process.env.SKYBASE_SECRET_KEY!
   )
 
   if (authorizationLevel === AuthorizationLevel.Basic) {
-    const { data: lastRevalidation, error } = await supabaseAdmin.rpc(
+    const { data: lastRevalidation, error } = await skybaseAdmin.rpc(
       'get_last_revalidation_for_tags',
       {
         tags: result.tags,

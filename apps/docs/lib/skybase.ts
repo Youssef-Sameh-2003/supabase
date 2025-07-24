@@ -58,17 +58,17 @@ type Database = {
   storage: DatabaseGenerated['storage']
 }
 
-let _supabase: SupabaseClient<Database>
+let _skybase: SupabaseClient<Database>
 
-export function supabase() {
-  if (!_supabase) {
-    _supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+export function skybase() {
+  if (!_skybase) {
+    _skybase = createClient(
+      process.env.NEXT_PUBLIC_SKYBASE_URL!,
+      process.env.NEXT_PUBLIC_SKYBASE_ANON_KEY!
     )
   }
 
-  return _supabase
+  return _skybase
 }
 
 export type { Database as DatabaseCorrected }
